@@ -1,31 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>kotazi.com</title>
+    <link>http://kotazi.github.io/blog/</link>
+    <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2015 01:06:43 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>first</title>
-      <link>http://localhost:1313/blog/post/first/</link>
-      <pubDate>Tue, 10 Nov 2015 01:06:43 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/post/first/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>about</title>
-      <link>http://localhost:1313/blog/about/</link>
-      <pubDate>Tue, 10 Nov 2015 01:06:32 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/about/</guid>
-      <description></description>
-    </item>
+    <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
