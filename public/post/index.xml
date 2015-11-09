@@ -2,28 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on kotazi.com</title>
-    <link>http://localhost:1313/blog/post/</link>
+    <link>http://kotazi.github.io/blog/post/</link>
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2015 01:23:48 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Nov 2015 01:50:49 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>second</title>
-      <link>http://localhost:1313/blog/post/second/</link>
-      <pubDate>Tue, 10 Nov 2015 01:23:48 +0900</pubDate>
+      <title>my first blog</title>
+      <link>http://kotazi.github.io/blog/post/first/</link>
+      <pubDate>Tue, 10 Nov 2015 01:50:49 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/post/second/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>first</title>
-      <link>http://localhost:1313/blog/post/first/</link>
-      <pubDate>Tue, 10 Nov 2015 01:06:43 +0900</pubDate>
-      
-      <guid>http://localhost:1313/blog/post/first/</guid>
+      <guid>http://kotazi.github.io/blog/post/first/</guid>
       <description>&lt;p&gt;This is my first blog!!&lt;/p&gt;
 </description>
     </item>

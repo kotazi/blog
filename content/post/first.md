@@ -1,7 +1,7 @@
 +++
-date = "2015-11-10T01:06:43+09:00"
-draft = true
-title = "first"
+date = "2015-11-10T01:50:49+09:00"
+draft = false
+title = "my first blog"
 
 +++
 
