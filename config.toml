@@ -1,6 +1,0 @@
-baseurl = "http://kotazi.github.io/blog/"
-languageCode = "en-us"
-title = "kotazi.com"
-contentdir = "content"
-layoutdir = "layouts"
-publishdir = "public"
