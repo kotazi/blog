@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>my first blog &middot; kotazi.com</title>
+		<title>AngularJS Masonry Directiveの検証 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,11 +32,43 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>my first blog</h1>
-                    <h2 class="headline">November 10, 2015</h2>
+                    <h1>AngularJS Masonry Directiveの検証</h1>
+                    <h2 class="headline">November 11, 2015</h2>
                 </header>
                 <section id="post-body">
-                    <p>This is my first blog!!</p>
+                    
+
+<p>現在プロジェクトで使っているMasonryが正しく動作しなくなった。
+確認もかねてサンプルを作った。</p>
+
+<p><p data-height="266" data-theme-id="15717" data-slug-hash="avQGaQ" data-default-tab="result" data-user="kotazi" class='codepen'>See the Pen <a href='http://codepen.io/kotazi/pen/avQGaQ/'>【AngularJS】Masonry Directive Behavior with adding items</a> by Kohei  Saeki (<a href='http://codepen.io/kotazi'>@kotazi</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h2 id="基本サンプル:7ef331abb9d711f5cad819da97b17e52">■ 基本サンプル</h2>
+
+<pre><code>&lt;div masonry&gt;
+    &lt;div class=&quot;masonry-brick&quot; ng-repeat=&quot;brick in bricks&quot;&gt;
+        &lt;img ng-src=&quot;{{ brick.src }}&quot; alt=&quot;A masonry brick&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="attributes:7ef331abb9d711f5cad819da97b17e52">■ Attributes</h3>
+
+<ul>
+<li><code>item-selector</code>: エレメント指定。<code>masonry-brick</code>属性も付ける必要あり？</li>
+<li><code>load-images</code>: <code>ImagesLoaded</code>用。初期値で<code>true</code></li>
+<li><code>reload-on-show</code>: 表示切替時にリロード</li>
+<li><code>reload-on-resize</code>: Masonryアイテムの横幅が変更された時リロード</li>
+<li><code>masonry-options</code>: その他のオプションはこれで設定</li>
+</ul>
+
+<h3 id="url:7ef331abb9d711f5cad819da97b17e52">■ URL</h3>
+
+<ul>
+<li><a href="http://masonry.desandro.com/">Masonry</a></li>
+<li><a href="https://github.com/passy/angular-masonry">AngularJS Masonry Directive</a></li>
+</ul>
 
                 </section>
             </article>
@@ -49,7 +81,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2ffirst%2f - my%20first%20blog by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111101%2f - AngularJS%20Masonry%20Directive%e3%81%ae%e6%a4%9c%e8%a8%bc by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -67,12 +99,12 @@
     
     
         
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2015111101/">AngularJS Masonry Directiveの検証<aside class="dates">Nov 11</aside></a>
-        </li>
-        
    
     
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/first/">my first blog<aside class="dates">Nov 10</aside></a>
+        </li>
         
    
 </ul>
