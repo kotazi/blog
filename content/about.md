@@ -5,3 +5,7 @@ title = "about"
 
 +++
 
+Hi, all.  
+I'm kotazi, web engineer.
+
+I write this blog for the future.

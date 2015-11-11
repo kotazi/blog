@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kotazi.com</title>
-    <link>http://kotazi.github.io/blog/</link>
-    <description>Recent content on kotazi.com</description>
+    <title>Tips on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/tips/</link>
+    <description>Recent content in Tips on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Nov 2015 17:31:11 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://kotazi.github.io/blog/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>AngularJS Masonry Directiveの検証</title>
@@ -48,16 +48,6 @@
 &lt;li&gt;&lt;a href=&#34;http://masonry.desandro.com/&#34;&gt;Masonry&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/passy/angular-masonry&#34;&gt;AngularJS Masonry Directive&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>my first blog</title>
-      <link>http://kotazi.github.io/blog/post/first/</link>
-      <pubDate>Tue, 10 Nov 2015 01:50:49 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/first/</guid>
-      <description>&lt;p&gt;This is my first blog!!&lt;/p&gt;
 </description>
     </item>
     
