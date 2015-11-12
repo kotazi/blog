@@ -1,0 +1,442 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【Hugo】Hosting on GitHub Pages【翻訳】 &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://localhost:1313/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/blog/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/blog/css/highlight.css">
+		<link href="http://localhost:1313/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://localhost:1313/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【Hugo】Hosting on GitHub Pages【翻訳】</h1>
+                    <h2 class="headline">November 12, 2015</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>HugoをGithub Pages上でホスティングする際に、大きくハマってしまったので全訳した。<br />
+一度訳してみると、案外簡単にいった。</p>
+
+<hr>
+
+<h2 id="導入:21faba431ee5196663af6ba4fcd50428">導入</h2>
+
+<p>多くのHugoユーザーが作成したブログをGithub Pages上にホストする方法に興味を抱いています。
+このチュートリアルはまさにそのためのものです。私たちに必要なドキュメントは、Hugoを正しくインストールし、git上で快適に動作させるためのものなのです。</p>
+
+<p>このチュートリアルでは、主要なステップを通して<a href="http://spencerlyon2.github.io/hugo_gh_blog">http://spencerlyon2.github.io/hugo_gh_blog</a>上で動作するサンプルブログを作成していきます。ソースコードは<a href="https://github.com/spencerlyon2/hugo_gh_blog">Github</a>上に上がっています。読者はサンプルのリポジトリをダウンロードして、それに従ってみることを推奨します。</p>
+
+<h3 id="リポジトリの作成:21faba431ee5196663af6ba4fcd50428">リポジトリの作成</h3>
+
+<p>私たちの目的はGithub Pages上にブログをホストすることなので、ブログ記事をGithubリポジトリ上にホストするのは自然なことです。<br />
+従って、最初のステップではウェブサイトのコンテンツを設置する新しいリポジトリ、もしくは既存のリポジトリに新しいディレクトリを作成します。
+このため、私は<code>spencerlyon2/hugo_gh_blog</code>というリポジトリを作成しました。</p>
+
+<h2 id="ブログの作成:21faba431ee5196663af6ba4fcd50428">ブログの作成</h2>
+
+<h3 id="設定ファイルを用意する:21faba431ee5196663af6ba4fcd50428">設定ファイルを用意する</h3>
+
+<p>新しいHugoサイトを作成するための第一歩として、<a href="https://gohugo.io/overview/configuration/">configファイル</a>を記述します。このconfigファイルは下記の２つの理由において重要な役割を果たします。(1)baseurlなどの、サイトについての広い設定を行います。(2)またこのファイルが、Hugoサイトがどのように作られたかを示すためのものとなります。
+例として、私が作成した<code>config.yaml</code>ファイルがあります。</p>
+
+<pre><code>---
+contentdir: &quot;content&quot;
+layoutdir: &quot;layouts&quot;
+publishdir: &quot;public&quot;
+indexes:
+  category: &quot;categories&quot;
+baseurl: &quot;http://spencerlyon2.github.io/hugo_gh_blog&quot;
+title: &quot;Hugo Blog Template for GitHub Pages&quot;
+canonifyurls: true
+...
+
+</code></pre>
+
+<blockquote>
+<p>警告: このチュートリアル作成以後、デフォルトであった<code>canonifyurls:true</code>は<code>false</code>に変更されました。もしも、Spencerによる<a href="https://github.com/spencerlyon2/hugo_gh_blog">https://github.com/spencerlyon2/hugo_gh_blog</a>サイトをチュートリアルで使うのであれば、自身の<code>config.yaml</code>ファイルに<code>canonifyurls:true</code>を手動で追加するようにしてください。でないと、CSSファイルが読み込まれません。
+より詳しくは、“Extras: URLs page”にある“Canonicalization: Caveat”を参考にしてみてください。</p>
+</blockquote>
+
+<h3 id="サイト構造を定義する:21faba431ee5196663af6ba4fcd50428">サイト構造を定義する</h3>
+
+<p>Hugoはあなた自身が意味のあるサイト構造を設計し、それと同じ構造でサイトをレンダリングすることを想定しています。設定ファイルにある<code>contentdir: &quot;content&quot;</code>という行に注目してください。これは全てのコンテンツは<code>content</code>という名前のフォルダ配下に置かれるということを意味します。Hugoでは全てのディレクトリをセクションとして扱います。たとえばセクションがひとつしかなければ、投稿が一箇所に置かれることになります。そのため私たちは新たに２つのフォルダを作成しました。</p>
+
+<pre><code>▾ &lt;root&gt;/
+    ▾ content/
+        ▾ posts/
+</code></pre>
+
+<h3 id="htmlテンプレートの作成:21faba431ee5196663af6ba4fcd50428">HTMLテンプレートの作成</h3>
+
+<p>続いて新しいサイトの見た目の部分を定義していきます。
+Hugoではユーザー(あなた)が作成したHTMLテンプレートを使ってサイトを生成します。このステップはとても主観的なものです。私は単にブログを生成することが可能なテーマを使っています。LanyonというJekyllのテーマを使うことに決めました。LanyonはピュアCSSを使っており、少しだけ修正したものが/static/cssリポジトリに上がっています。チュートリアルに沿っていれば、サンプルリポジトリのstaticフォルダに格納されているはずです。</p>
+
+<p>完璧なウェブサイトを作るにはたくさんのファイルが必要になるので、このチュートリアルで全てを補うことはできません。しかしながら、ディレクトリ構成だけ紹介させていただきます。</p>
+
+<pre><code>▾ &lt;root&gt;/
+    ▾ content/
+        ▾ posts/
+            &lt;blog posts&gt;.md
+    ▾ static/
+        ▾ css/
+            lanyon.css
+            poole.css
+    ▾ layouts/
+        ▾ partials/
+            &lt;templates to be used in other files&gt;.html
+        ▾ posts/
+            li.html
+            single.html
+            summary.html
+        ▾ indexes/
+            category.html
+            indexes.html
+            posts.html
+        index.html
+    README.md
+</code></pre>
+
+<p>サンプルリポジトリの各ファイルは、そのファイルについてのコメントがなされています。Hugoでの、もしくはWebサイト自体の開発が初めてであれば、これらのファイルを確認しながらどのようにHugoのテンプレートが動いているかを確認してみるのもいいでしょう。</p>
+
+<h3 id="コンテンツの追加:21faba431ee5196663af6ba4fcd50428">コンテンツの追加</h3>
+
+<p>ブログ作成の最終ステップとして、実際の記事を追加してみます。このように、単なるMarkdown(<code>.md</code>)で作成されたファイルです。各ファイルのトップに、投稿についてのメタデータを含むようにします。サンプルリポジトリから<code>/content/posts/newest.md</code>に含まれるメタデータを参考にしてみてください。</p>
+
+<pre><code>---
+title: &quot;Just another sample post&quot;
+date: &quot;2014-03-29&quot;
+description: &quot;This should be a more useful description&quot;
+categories:
+    - &quot;hugo&quot;
+    - &quot;fun&quot;
+    - &quot;test&quot;
+---
+</code></pre>
+
+<p>このセクションで設定されているキーは、タイトルと日付は必要で、説明とカテゴリは任意のものとなります。各アイテムは<code>/layouts</code>ディレクトリ内のテンプレートを通して使用され、Hugoに投稿についての情報を与えます。</p>
+
+<h2 id="gitワークフローの構築:21faba431ee5196663af6ba4fcd50428">gitワークフローの構築</h2>
+
+<p>適切なサイト設定ができたら、Github Pages上で提供するために、それらをGithubの正しいブランチにpushしていく必要があります。これには多くの方法があります。ここでは私が現在も使っているワークフローを紹介します。</p>
+
+<p>Github Pagesは有効な<code>index.html</code>をリポジトリルートに含んだ<code>gh-pages</code>という名のブランチをもったリポジトリから提供されます。典型的なワークフローは、ウェブサイトのコンテンツを<code>master</code>ブランチに持ち、ウェブサイトを<code>gh-pages</code>ブランチに持つという方法です。この方法はインプットとアウトプット間の良いセパレーションを提供しますが、作業が面倒だったりもします。一時的な解決方法として、<code>git subtree</code>コマンドを使って<code>public</code>ディレクトリ(<code>publishdir</code>で設定しているもの)を<code>gh-pages</code>ブランチのルートにミラーします。</p>
+
+<p>適切にセットアップするために、ターミナル上で一連のコマンドを使います。私はコピペのためにも全てのコマンドをこのチュートリアルに含み、コメントで各コマンドについて説明します。このコマンドが<code>&lt;root&gt;</code>ディレクトリで行われていることに注意してください。また、Githubアドレスを自身のリポジトリにすることにも注意してください。</p>
+
+<pre><code># Create a new orphand branch (no commit history) named gh-pages
+# gh-pagesという空のブランチを作成します
+git checkout --orphan gh-pages
+
+# Unstage all files
+# 全てのファイルをunstageします
+git rm --cached $(git ls-files)
+
+# Grab one file from the master branch so we can make a commit
+# masterブランチからファイルを取得し、コミットできるようにします。
+git checkout master README.md
+
+# Add and commit that file
+# Addしてコミットします
+git add .
+git commit -m &quot;INIT: initial commit on gh-pages branch&quot;
+
+# Push to remote gh-pages branch
+# リモートにgh-pagesブランチをプッシュします
+git push origin gh-pages
+
+# Return to master branch
+# masterブランチへcheckout
+git checkout master
+
+# Remove the public folder to make room for the gh-pages subtree
+# gh-pages subtreeを作成するために、publicフォルダを削除します
+rm -rf public
+
+# Add the gh-pages branch of the repository. It will look like a folder named public
+# gh-pagesブランチをリポジトリに追加します。それはpublicフォルダとして動作するはずです。
+git subtree add --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages --squash
+
+
+# Pull down the file we just committed. This helps avoid merge conflicts
+# 先ほどコミットしたファイルをpullします。コンフリクトを避けるためです。
+git subtree pull --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages
+
+# Run hugo. Generated site will be placed in public directory (or omit -t ThemeName if you're not using a theme)
+# Hugoを起動します。生成されたサイトはpublicディレクトリに格納されます。
+hugo -t ThemeName
+
+
+# Add everything
+# 全て追加します
+git add -A
+
+# Commit and push to master
+# masterにコミットしてpushします
+git commit -m &quot;Updating site&quot; &amp;&amp; git push origin master
+
+# Push the public subtree to the gh-pages branch
+# gh-pagesブランチにpublic subtreeをpushします
+git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages
+
+
+</code></pre>
+
+<p>これらのコマンドを実行してGithubサーバーの更新を待てば、<a href="http://spencerlyon2.github.io/hugo_gh_blog上にブログが作成されていることでしょう。">http://spencerlyon2.github.io/hugo_gh_blog上にブログが作成されていることでしょう。</a></p>
+
+<h3 id="deploy-sh:21faba431ee5196663af6ba4fcd50428"><code>deploy.sh</code></h3>
+
+<p>そして、ブログへ新しい投稿をするために、下記のステップを実行していきましょう。</p>
+
+<ul>
+<li><code>content/posts</code>ディレクトリに新しい投稿のMarkdownファイルを生成する</li>
+<li><code>hugo server --watch</code>で、プレビュー確認する</li>
+<li>Hugoを実行し、ウェブサイト用のURLを生成する</li>
+<li>masterブランチにAddしてコミットする</li>
+<li>masterブランチにpushする</li>
+<li>リモートのgh-pagesブランチへpublic subtreeをプッシュする</li>
+</ul>
+
+<p>上のリストの最初の２つはシンプルで便利な方法であり、まあまあ合理的な方法でしょう。しかし、残りのステップは毎回同じことをしなくてはなりません。この繰り返しのプロセスを簡単にするために、リポジトリにスクリプトを用意しておきました。<code>deploy.sh</code>というファイルで、下記のようになってます。</p>
+
+<h3 id="注意:21faba431ee5196663af6ba4fcd50428">注意:</h3>
+
+<p>最初のコマンドでデフォルトの設定を実行します。
+テーマを使うために、<code>-t ThemeName</code>もつけましょう。</p>
+
+<pre><code>hugo -t ThemeName
+</code></pre>
+
+<p>To build all draft posts (If you only have drafts, no site will be generated)</p>
+
+<pre><code>hugo --buildDrafts
+</code></pre>
+
+<h3 id="deploy-sh-1:21faba431ee5196663af6ba4fcd50428">Deploy.sh:</h3>
+
+<pre><code>#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+# Build the project.
+hugo
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages
+</code></pre>
+
+<p>これで、ワークフローリストの後ろ4つを<code>bash deploy.sh</code>コマンドに置き換えることができます。
+このスクリプトはオプションでコミットメッセージを含めることができます。カスタムのコミットメッセージを含めたければ、<code>bash deploy.sh &quot;&lt;my commit msg&gt;&quot;</code>としてください。何もなければ現在時刻が生成されます。</p>
+
+<h3 id="別の方法:21faba431ee5196663af6ba4fcd50428">別の方法</h3>
+
+<p>上記の<code>git subtree</code>を用いた例では<code>gh-pages</code>ブランチにデプロイしました。素晴らしいワークですが、ひとつ欠点があります。それは生成されたコンテンツをコミットする必要があるということです。</p>
+
+<p>ここでは別のアプローチをとりましょう。</p>
+
+<ol>
+<li><code>mater</code>にHugoサイトをセットする</li>
+<li>空の<code>gh-pages</code>ブランチを作成する</li>
+<li>下記のフローに従う</li>
+</ol>
+
+<p><code>gh-pages</code>ブランチのセットアップが完了し、<code>master</code>にはパブリッシュしたいコンテンツがコミットしてあるとします。</p>
+
+<pre><code># Fetch the deployment script into the root of your source tree, make it executable.
+wget https://github.com/X1011/git-directory-deploy/raw/master/deploy.sh &amp;&amp; chmod +x deploy.sh
+
+# For setting it up to build to a folder other than &quot;dist&quot;, see the options in deploy.sh.
+# Build the site to /dist.
+hugo -d dist
+
+# Run the deploy.sh script installed above.
+./deploy.sh
+</code></pre>
+
+<p>このコマンドでは、最後のコミットを使用します。
+より詳しくは、こちらを参考にしてください。</p>
+
+<h3 id="個人のページをホストする:21faba431ee5196663af6ba4fcd50428">個人のページをホストする</h3>
+
+<p>Githubの記事でも言及されているように、個人のページをホストすることもできます。ここでは下記の点が変わってきます。</p>
+
+<blockquote>
+<ul>
+<li><code>username.github.io</code>を使う必要がある</li>
+<li><code>master</code>ブランチのコンテンツが生成される</li>
+</ul>
+</blockquote>
+
+<p>よりシンプルにする例として、２つのレポジトリを作成し、ひとつはHugoコンテンツのもの、もうひとつはpublic フォルダを含んだgit submoduleとします。</p>
+
+<ol>
+<li><code>&lt;your-project&gt;-hugo</code>リポジトリを作成します(Hugo用)</li>
+<li><code>&lt;username&gt;.github.io</code>ブランチを作成します。(publicフォルダ用)</li>
+<li><code>git clone &lt;&lt;your-project&gt;-hugo-url&gt; &amp;&amp; cd &lt;your-project&gt;-hugo</code></li>
+<li>ローカルでサイトが動くようにします。</li>
+<li>一度喜びを噛みしめ、サーバーを終了し、publicフォルダを削除</li>
+<li><code>git submodule add git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git public</code></li>
+<li>ほぼ完了。<code>deploy.sh</code>を追加しましょう。</li>
+</ol>
+
+<pre><code>#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+# Build the project.
+hugo # if using a theme, replace by `hugo -t &lt;yourtheme&gt;`
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back
+cd ..
+</code></pre>
+
+<p>これで完了！<code>http://username.github.io/</code>といった個人ページで動いているはずです！</p>
+
+<h3 id="結論:21faba431ee5196663af6ba4fcd50428">結論</h3>
+
+<p>Hopefully this tutorial helped you get your website off its feet and out into the open! If you have any further questions, feel free to contact the community through the discussion forum.</p>
+
+<p>このチュートリアルがあなたのお役に立てばなによりです。<br />
+まだ分からないことがあれば、<a href="https://gohugo.io/community/mailing-list/">ディスカッションフォーラム</a>から連絡してください。</p>
+
+<hr>
+
+<p>以上です。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://localhost:1313/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fblog%2fpost%2f2015111301%2f - %e3%80%90Hugo%e3%80%91Hosting%20on%20GitHub%20Pages%e3%80%90%e7%bf%bb%e8%a8%b3%e3%80%91 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2015111201/">HugoブログとGithub Pagesと独自ドメイン<aside class="dates">Nov 12</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2015111101/">AngularJS Masonry Directiveの検証<aside class="dates">Nov 11</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/first/">my first blog<aside class="dates">Nov 10</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/second/">second<aside class="dates">Nov 10</aside></a>
+        </li>
+        
+   
+    
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/blog/js/main.js"></script>
+<script src="http://localhost:1313/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
