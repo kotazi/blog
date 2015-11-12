@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>AngularJS Masonry Directiveの検証 &middot; kotazi.com</title>
+		<title>HugoブログとGithub Pagesと独自ドメイン &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,43 +32,57 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>AngularJS Masonry Directiveの検証</h1>
-                    <h2 class="headline">November 11, 2015</h2>
+                    <h1>HugoブログとGithub Pagesと独自ドメイン</h1>
+                    <h2 class="headline">November 12, 2015</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>現在プロジェクトで使っているMasonryが正しく動作しなくなった。
-確認もかねてサンプルを作った。</p>
+<p>Wordpressで続けていたブログをやめて、Hugoでブログを作りなおした。
+以前の記事は削除した。
+<a href="https://gohugo.io/">Hugo</a>はGoで書かれた静的サイトジェネレータだ。早くて便利。</p>
 
-<p><p data-height="266" data-theme-id="15717" data-slug-hash="avQGaQ" data-default-tab="result" data-user="kotazi" class='codepen'>See the Pen <a href='http://codepen.io/kotazi/pen/avQGaQ/'>【AngularJS】Masonry Directive Behavior with adding items</a> by Kohei  Saeki (<a href='http://codepen.io/kotazi'>@kotazi</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+<hr>
 
-<h2 id="基本サンプル:7ef331abb9d711f5cad819da97b17e52">■ 基本サンプル</h2>
+<h2 id="hugoブログの立ちあげ:19f26223fdf7a5c73f196d31f8af4d1d">Hugoブログの立ちあげ</h2>
 
-<pre><code>&lt;div masonry&gt;
-    &lt;div class=&quot;masonry-brick&quot; ng-repeat=&quot;brick in bricks&quot;&gt;
-        &lt;img ng-src=&quot;{{ brick.src }}&quot; alt=&quot;A masonry brick&quot;&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+<p>基本的には公式サイトの<a href="https://gohugo.io/overview/quickstart/">Quickstart</a>に従う。</p>
+
+<pre><code># Hugoをローカルで立ちあげ
+hugo server --theme=hugo-cactus-theme --buildDrafts -w
+
+# 新しく投稿
+hugo new post/newpost.md
 </code></pre>
 
-<h3 id="attributes:7ef331abb9d711f5cad819da97b17e52">■ Attributes</h3>
+<h2 id="github-pages:19f26223fdf7a5c73f196d31f8af4d1d">Github Pages</h2>
+
+<p>Github PagesもHugo公式の<a href="https://gohugo.io/tutorials/github-pages-blog/">Hosting on GitHub Pages</a>を参考にする。</p>
 
 <ul>
-<li><code>item-selector</code>: エレメント指定。<code>masonry-brick</code>属性も付ける必要あり？</li>
-<li><code>load-images</code>: <code>ImagesLoaded</code>用。初期値で<code>true</code></li>
-<li><code>reload-on-show</code>: 表示切替時にリロード</li>
-<li><code>reload-on-resize</code>: Masonryアイテムの横幅が変更された時リロード</li>
-<li><code>masonry-options</code>: その他のオプションはこれで設定</li>
+<li><code>git subtree</code>を使う</li>
+<li>全体のコンテンツは<code>master</code>ブランチに、公開ファイルを<code>gh-pages</code>ブランチで運用</li>
+<li><code>deploy.sh</code>の作成</li>
 </ul>
 
-<h3 id="url:7ef331abb9d711f5cad819da97b17e52">■ URL</h3>
+<p>チュートリアルに沿えばGithub Pagesにサイトができる。</p>
+
+<h2 id="独自ドメイン:19f26223fdf7a5c73f196d31f8af4d1d">独自ドメイン</h2>
+
+<p>僕はもともとムームードメインで取得したドメインと、ロリポップのレンタルサーバーを使ってWordpressブログを使っていた。<br />
+それにあたりこちらの記事を参考にした。</p>
+
+<p><a href="http://tanksuzuki.com/post/hugo-github-pages-2/">Hugo + GitHub Pagesでブログを作る#2|TANKSUZUKI.COM</a></p>
 
 <ul>
-<li><a href="http://masonry.desandro.com/">Masonry</a></li>
-<li><a href="https://github.com/passy/angular-masonry">AngularJS Masonry Directive</a></li>
+<li>サブドメインと<code>Zone Apex</code>(kotazi.com)で公開するのでは手順が異なる</li>
+<li>ムームードメインでは<code>Apex Alias</code>が使えない</li>
+<li>そのため<a href="https://www.gehirn.jp/">Gehirn DNS</a>などを使う必要がある</li>
 </ul>
+
+<h5 id="toc_3:19f26223fdf7a5c73f196d31f8af4d1d">　</h5>
+
+<p>そんな感じでブログの移行が完了しました。</p>
 
                 </section>
             </article>
@@ -81,7 +95,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111101%2f - AngularJS%20Masonry%20Directive%e3%81%ae%e6%a4%9c%e8%a8%bc by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111201%2f - Hugo%e3%83%96%e3%83%ad%e3%82%b0%e3%81%a8Github%20Pages%e3%81%a8%e7%8b%ac%e8%87%aa%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -99,12 +113,12 @@
     
     
         
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2015111201/">HugoブログとGithub Pagesと独自ドメイン<aside class="dates">Nov 12</aside></a>
-        </li>
-        
    
     
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2015111101/">AngularJS Masonry Directiveの検証<aside class="dates">Nov 11</aside></a>
+        </li>
         
    
 </ul>
