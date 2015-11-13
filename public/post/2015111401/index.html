@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>AngularJS Masonry Directiveの検証 &middot; kotazi.com</title>
+		<title>PowderとrbenvとYosemiteと &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,43 +32,69 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>AngularJS Masonry Directiveの検証</h1>
-                    <h2 class="headline">November 11, 2015</h2>
+                    <h1>PowderとrbenvとYosemiteと</h1>
+                    <h2 class="headline">November 16, 2015</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>現在プロジェクトで使っているMasonryが正しく動作しなくなった。
-確認もかねてサンプルを作った。</p>
+<p>言われるがまま導入したPowderがいつのまにか動かなくなっていた。<br />
+いまいちなんなのか分かっていなかったので調べながら直しました。</p>
 
-<p><p data-height="266" data-theme-id="15717" data-slug-hash="avQGaQ" data-default-tab="result" data-user="kotazi" class='codepen'>See the Pen <a href='http://codepen.io/kotazi/pen/avQGaQ/'>【AngularJS】Masonry Directive Behavior with adding items</a> by Kohei  Saeki (<a href='http://codepen.io/kotazi'>@kotazi</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+<hr>
 
-<h2 id="基本サンプル:7ef331abb9d711f5cad819da97b17e52">■ 基本サンプル</h2>
+<p><img src="./../../media/logo-pow.png" alt="pow" /></p>
 
-<pre><code>&lt;div masonry&gt;
-    &lt;div class=&quot;masonry-brick&quot; ng-repeat=&quot;brick in bricks&quot;&gt;
-        &lt;img ng-src=&quot;{{ brick.src }}&quot; alt=&quot;A masonry brick&quot;&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+<p><a href="http://pow.cx/">Pow</a>は設定が不要なRails &amp; Rackサーバ。<br />
+そしてそのコマンド操作を手助けしてくれるのが<a href="https://github.com/Rodreegez/powder">powder</a>。</p>
+
+<h2 id="設定周り:daa11b13df79a9f8958f02dbe992863e">設定周り</h2>
+
+<h5 id="powのインストール:daa11b13df79a9f8958f02dbe992863e">◯ Powのインストール</h5>
+
+<pre><code>$ curl get.pow.cx | sh
 </code></pre>
 
-<h3 id="attributes:7ef331abb9d711f5cad819da97b17e52">■ Attributes</h3>
+<h5 id="シンボリックリンクの作成:daa11b13df79a9f8958f02dbe992863e">◯ シンボリックリンクの作成</h5>
 
-<ul>
-<li><code>item-selector</code>: エレメント指定。<code>masonry-brick</code>属性も付ける必要あり？</li>
-<li><code>load-images</code>: <code>ImagesLoaded</code>用。初期値で<code>true</code></li>
-<li><code>reload-on-show</code>: 表示切替時にリロード</li>
-<li><code>reload-on-resize</code>: Masonryアイテムの横幅が変更された時リロード</li>
-<li><code>masonry-options</code>: その他のオプションはこれで設定</li>
-</ul>
+<pre><code>$ cd ~/.pow
+$ ln -s /path/to/myapp
+</code></pre>
 
-<h3 id="url:7ef331abb9d711f5cad819da97b17e52">■ URL</h3>
+<h5 id="powderのインストール:daa11b13df79a9f8958f02dbe992863e">◯ powderのインストール</h5>
 
-<ul>
-<li><a href="http://masonry.desandro.com/">Masonry</a></li>
-<li><a href="https://github.com/passy/angular-masonry">AngularJS Masonry Directive</a></li>
-</ul>
+<pre><code>$ gem install powder
+</code></pre>
+
+<h5 id="powderコマンド:daa11b13df79a9f8958f02dbe992863e">◯ powderコマンド</h5>
+
+<pre><code>
+# link
+$ powder link
+
+# unlink
+$ powder unlink
+
+# list
+$ powder list
+
+# config
+$ powder config
+
+# restart
+$ powder restart
+</code></pre>
+
+<h5 id="rbenvで使う時:daa11b13df79a9f8958f02dbe992863e">◯ rbenvで使う時</h5>
+
+<p>rbenvで使う場合は<code>~/.powconfig</code>にパスを通す必要がある。<br />
+powがrbenvを使っているにもかかわらず、システムのrubyを使ってしまうため。</p>
+
+<pre><code># ~/.powconfig
+export PATH=&quot;/Users/kz/.rbenv/shims:/Users/kz/.rbenv/bin:$PATH&quot;
+</code></pre>
+
+<p>参考: <a href="https://github.com/basecamp/pow/issues/202">rbenv does not work well with pow</a></p>
 
                 </section>
             </article>
@@ -81,7 +107,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111101%2f - AngularJS%20Masonry%20Directive%e3%81%ae%e6%a4%9c%e8%a8%bc by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111401%2f - Powder%e3%81%a8rbenv%e3%81%a8Yosemite%e3%81%a8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -99,10 +125,6 @@
     
     
         
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2015111401/">PowderとrbenvとYosemiteと<aside class="dates">Nov 16</aside></a>
-        </li>
-        
    
     
         
@@ -119,6 +141,10 @@
         
    
     
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2015111101/">AngularJS Masonry Directiveの検証<aside class="dates">Nov 11</aside></a>
+        </li>
         
    
     
