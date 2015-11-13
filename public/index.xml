@@ -107,5 +107,18 @@ hugo new post/newpost.md
 </description>
     </item>
     
+    <item>
+      <title>about</title>
+      <link>http://kotazi.github.io/blog/about/</link>
+      <pubDate>Tue, 10 Nov 2015 01:06:32 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/about/</guid>
+      <description>&lt;p&gt;Hi, all.&lt;br /&gt;
+I&amp;rsquo;m kotazi, web engineer.&lt;/p&gt;
+
+&lt;p&gt;I write this blog for the future.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
