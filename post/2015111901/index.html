@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>PG::ConnectionBad: could not connect to server &middot; kotazi.com</title>
+		<title>【訳読】PDFMakeにおけるカスタムフォントの利用 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://localhost:1313/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://localhost:1313/blog/css/style.css">
 		<link rel="stylesheet" href="http://localhost:1313/blog/css/highlight.css">
@@ -32,17 +32,85 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>PG::ConnectionBad: could not connect to server</h1>
-                    <h2 class="headline">November 17, 2015</h2>
+                    <h1>【訳読】PDFMakeにおけるカスタムフォントの利用</h1>
+                    <h2 class="headline">November 19, 2015</h2>
                 </header>
                 <section id="post-body">
-                    <p>久しぶりに立ち上げようとしたアプリケーションが動かなくなってしまった。
-その原因と対応。</p>
+                    
 
-<hr>
+<h2 id="カスタムフォントの使用-https-github-com-bpampuch-pdfmake-issues-33:16a5f450dd8c50b145f388ac7343234c"><a href="https://github.com/bpampuch/pdfmake/issues/33">カスタムフォントの使用</a></h2>
 
-<p><img src="https://www.evernote.com/l/AHW-3fZJvYdLRK6_0M8PPLW5vXoJ12yV0-8B/image.png" alt="error" />
-こんな画面が出てしまいました。</p>
+<p><code>vfs_fonts.js</code>は&rdquo;virtual-file-system&rdquo;オブジェクトを<code>pdfMake.vfs</code>に割り当てています。
+このオブジェクトの各キーがファイル名であり、値はbase64エンコードされたファイルを含みます。</p>
+
+<pre><code>grunt dump_dir
+</code></pre>
+
+<p>を実行すると新しく<code>examples/fonts</code>内のフォントを含んだ<code>vfs_fonts.js</code>が生成されます。
+RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊してしまわないように含んでいます。</p>
+
+<p>カスタムフォントを利用するためには、3つのステップが必要になります。</p>
+
+<ol>
+<li>使用するフォントを含んだ<code>vfs_fonts.js</code>を生成する</li>
+<li>font familyを定義する</li>
+<li><code>doc-definition-object</code>内にあるfont familyを変更する</li>
+</ol>
+
+<p><br></p>
+
+<h3 id="1-使用するフォントを含んだ-vfs-fonts-js-を生成する:16a5f450dd8c50b145f388ac7343234c"><strong>1. 使用するフォントを含んだ<code>vfs_fonts.js</code>を生成する:</strong></h3>
+
+<p><code>examples/fonts</code>内にフォントをコピーします。
+<code>grunt dump_dir</code>を実行してください。新しい<code>build/vfs_fonts.js</code>をウェブページで使います。</p>
+
+<p>ちなみに、上記のアクションは<code>examples/fonts</code>内の全てのファイルをダンプしてしまうので、画像ファイルなどを含むこともできます。</p>
+
+<h3 id="2-font-familyを定義する:16a5f450dd8c50b145f388ac7343234c"><strong>2. font familyを定義する</strong></h3>
+
+<p><code>pdfMake.createPdf(docDefinition)</code>が呼ばれる前に、pdfMake.fontsをセットします。</p>
+
+<pre><code>{
+   yourFontName: {
+     normal: 'fontFile.ttf',
+     bold: 'fontFile2.ttf',
+     italics: 'fontFile3.ttf',
+     bolditalics: 'fontFile4.ttf'
+   },
+   anotherFontName: {
+     (...)
+   }
+}
+</code></pre>
+
+<p>キーの部分があとでdoc-definitionで使うfont-family名になります。
+各font-familyは4つのプロパティを定義します。<code>normal</code>/<code>bold</code>/<code>italics</code>/<code>bolditalics</code>です。</p>
+
+<p>デフォルトの構成は下記のようになっています。</p>
+
+<pre><code>{
+        Roboto: {
+                normal: 'Roboto-Regular.ttf',
+                bold: 'Roboto-Medium.ttf',
+                italics: 'Roboto-Italic.ttf',
+                bolditalics: 'Roboto-Italic.ttf'
+        }
+};
+</code></pre>
+
+<h3 id="3-doc-definition-object-内にあるfont-familyを変更する:16a5f450dd8c50b145f388ac7343234c"><strong>3. <code>doc-definition-object</code>内にあるfont familyを変更する</strong></h3>
+
+<p>現在、PDFMakeでは<code>Roboto</code>をデフォルトのfamily nameとして利用しています。あなたのフォントを使うためにはこれを変更する必要があります。一番簡単な方法はグローバルで<code>defaultStyle</code>を定義することです。</p>
+
+<pre><code>var docDefinition = {
+  content: (...),
+  defaultStyle: {
+    font: 'yourFontName'
+  }
+}
+</code></pre>
+
+<p>複雑にしてしまっているので、バージョン0.2.0では変更するつもりです。</p>
 
                 </section>
             </article>
@@ -55,7 +123,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fblog%2fpost%2f2015111501%2f - PG%3a%3aConnectionBad%3a%20could%20not%20connect%20to%20server by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fblog%2fpost%2f2015111901%2f - %e3%80%90%e8%a8%b3%e8%aa%ad%e3%80%91PDFMake%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%81%ae%e5%88%a9%e7%94%a8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -73,10 +141,6 @@
     
     
         
-        <li>
-            <a href="http://localhost:1313/blog/post/2015111901/">【訳読】PDFMakeにおけるカスタムフォントの利用<aside class="dates">Nov 19</aside></a>
-        </li>
-        
    
     
         
@@ -86,6 +150,10 @@
         
    
     
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2015111501/">PG::ConnectionBad: could not connect to server<aside class="dates">Nov 17</aside></a>
+        </li>
         
    
     
