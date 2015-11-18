@@ -6,8 +6,92 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Nov 2015 15:10:01 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2015 15:53:13 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】PDFMakeにおけるカスタムフォントの利用</title>
+      <link>http://kotazi.github.io/blog/post/2015111901/</link>
+      <pubDate>Thu, 19 Nov 2015 15:53:13 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2015111901/</guid>
+      <description>
+
+&lt;h2 id=&#34;カスタムフォントの使用-https-github-com-bpampuch-pdfmake-issues-33:16a5f450dd8c50b145f388ac7343234c&#34;&gt;&lt;a href=&#34;https://github.com/bpampuch/pdfmake/issues/33&#34;&gt;カスタムフォントの使用&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;vfs_fonts.js&lt;/code&gt;は&amp;rdquo;virtual-file-system&amp;rdquo;オブジェクトを&lt;code&gt;pdfMake.vfs&lt;/code&gt;に割り当てています。
+このオブジェクトの各キーがファイル名であり、値はbase64エンコードされたファイルを含みます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;grunt dump_dir
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を実行すると新しく&lt;code&gt;examples/fonts&lt;/code&gt;内のフォントを含んだ&lt;code&gt;vfs_fonts.js&lt;/code&gt;が生成されます。
+RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊してしまわないように含んでいます。&lt;/p&gt;
+
+&lt;p&gt;カスタムフォントを利用するためには、3つのステップが必要になります。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用するフォントを含んだ&lt;code&gt;vfs_fonts.js&lt;/code&gt;を生成する&lt;/li&gt;
+&lt;li&gt;font familyを定義する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;doc-definition-object&lt;/code&gt;内にあるfont familyを変更する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;1-使用するフォントを含んだ-vfs-fonts-js-を生成する:16a5f450dd8c50b145f388ac7343234c&#34;&gt;&lt;strong&gt;1. 使用するフォントを含んだ&lt;code&gt;vfs_fonts.js&lt;/code&gt;を生成する:&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;examples/fonts&lt;/code&gt;内にフォントをコピーします。
+&lt;code&gt;grunt dump_dir&lt;/code&gt;を実行してください。新しい&lt;code&gt;build/vfs_fonts.js&lt;/code&gt;をウェブページで使います。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、上記のアクションは&lt;code&gt;examples/fonts&lt;/code&gt;内の全てのファイルをダンプしてしまうので、画像ファイルなどを含むこともできます。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-font-familyを定義する:16a5f450dd8c50b145f388ac7343234c&#34;&gt;&lt;strong&gt;2. font familyを定義する&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;pdfMake.createPdf(docDefinition)&lt;/code&gt;が呼ばれる前に、pdfMake.fontsをセットします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+   yourFontName: {
+     normal: &#39;fontFile.ttf&#39;,
+     bold: &#39;fontFile2.ttf&#39;,
+     italics: &#39;fontFile3.ttf&#39;,
+     bolditalics: &#39;fontFile4.ttf&#39;
+   },
+   anotherFontName: {
+     (...)
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;キーの部分があとでdoc-definitionで使うfont-family名になります。
+各font-familyは4つのプロパティを定義します。&lt;code&gt;normal&lt;/code&gt;/&lt;code&gt;bold&lt;/code&gt;/&lt;code&gt;italics&lt;/code&gt;/&lt;code&gt;bolditalics&lt;/code&gt;です。&lt;/p&gt;
+
+&lt;p&gt;デフォルトの構成は下記のようになっています。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+        Roboto: {
+                normal: &#39;Roboto-Regular.ttf&#39;,
+                bold: &#39;Roboto-Medium.ttf&#39;,
+                italics: &#39;Roboto-Italic.ttf&#39;,
+                bolditalics: &#39;Roboto-Italic.ttf&#39;
+        }
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;3-doc-definition-object-内にあるfont-familyを変更する:16a5f450dd8c50b145f388ac7343234c&#34;&gt;&lt;strong&gt;3. &lt;code&gt;doc-definition-object&lt;/code&gt;内にあるfont familyを変更する&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;現在、PDFMakeでは&lt;code&gt;Roboto&lt;/code&gt;をデフォルトのfamily nameとして利用しています。あなたのフォントを使うためにはこれを変更する必要があります。一番簡単な方法はグローバルで&lt;code&gt;defaultStyle&lt;/code&gt;を定義することです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var docDefinition = {
+  content: (...),
+  defaultStyle: {
+    font: &#39;yourFontName&#39;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;複雑にしてしまっているので、バージョン0.2.0では変更するつもりです。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【訳読】DataTablesのPDFエクスポート</title>
