@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【訳読】AngularJS - ngInfiniteScroll &middot; kotazi.com</title>
+		<title>【訳読】ngInfiniteScroll &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,25 +32,27 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【訳読】AngularJS - ngInfiniteScroll</h1>
-                    <h2 class="headline">November 26, 2015</h2>
+                    <h1>【訳読】ngInfiniteScroll</h1>
+                    <h2 class="headline">November 27, 2015</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>ngInfiniteScroll</p>
+<p><a href="https://sroze.github.io/ngInfiniteScroll/documentation.html">ngInfiniteScroll</a>についてです。
+AngularでMasonryを使うときに、きれいに書けるのでいい感じ。
+Issueが溜まっているけれど、一年近く更新がない。</p>
 
-<p>Documentation</p>
+<hr>
 
-<h2 id="ドキュメント:c8d5d7f579c3127c5fcd4e00fb86ffe3">ドキュメント</h2>
+<h2 id="ドキュメント:6bb2504481b08df6e18dc7a6890ecaba">ドキュメント</h2>
 
 <p>infiniteScroll (directive in module infinite-scroll)</p>
 
-<h2 id="説明:c8d5d7f579c3127c5fcd4e00fb86ffe3">説明</h2>
+<h2 id="説明:6bb2504481b08df6e18dc7a6890ecaba">説明</h2>
 
 <p>要素の底がブラウザの底に近づいた時に、infiniteScrollで特定の振る舞いを指定することができます。</p>
 
-<h2 id="使い方:c8d5d7f579c3127c5fcd4e00fb86ffe3">使い方</h2>
+<h2 id="使い方:6bb2504481b08df6e18dc7a6890ecaba">使い方</h2>
 
 <pre><code>&lt;ANY infinite-scroll='{expression}'
      [infinite-scroll-distance='{number}']
@@ -60,38 +62,36 @@
 &lt;/ANY&gt;
 </code></pre>
 
-<h2 id="パラメータ:c8d5d7f579c3127c5fcd4e00fb86ffe3">パラメータ</h2>
+<h2 id="パラメータ:6bb2504481b08df6e18dc7a6890ecaba">パラメータ</h2>
 
-<h4 id="infinite-scroll-expression:c8d5d7f579c3127c5fcd4e00fb86ffe3"><strong>infinite-scroll - {expression}</strong></h4>
+<h4 id="infinite-scroll-expression:6bb2504481b08df6e18dc7a6890ecaba"><strong>infinite-scroll - {expression}</strong></h4>
 
 <p>エレメントの底がブラウザの底に近づいた時に、式を評価します。(基本的には関数呼び出し)</p>
 
-<h4 id="infinite-scroll-distance-optional-number:c8d5d7f579c3127c5fcd4e00fb86ffe3"><strong>infinite-scroll-distance (optional) - {number}</strong></h4>
+<h4 id="infinite-scroll-distance-optional-number:6bb2504481b08df6e18dc7a6890ecaba"><strong>infinite-scroll-distance (optional) - {number}</strong></h4>
 
 <p>infinite-scrollに評価された式がトリガーされる前に、エレメントの底がブラウザの底にどれだけ近いかを表す数字です。ウインドウの高さの倍数で測定します。たとえば、ブラウザウィンドウの高さが1000pxで、<code>infinite-scroll-distance</code>が2にセットされている場合、infinite scrollの式はエレメントの底がブラウザウィンドウの底から2000px以内にあるときに評価します。デフォルトは0です。(要素の底がブラウザウィンドウの下部を横切るとき式が評価されます)</p>
 
-<h4 id="infinite-scroll-disabled-optional-boolean:c8d5d7f579c3127c5fcd4e00fb86ffe3"><strong>infinite-scroll-disabled (optional) - {boolean}</strong></h4>
+<h4 id="infinite-scroll-disabled-optional-boolean:6bb2504481b08df6e18dc7a6890ecaba"><strong>infinite-scroll-disabled (optional) - {boolean}</strong></h4>
 
 <p>ブール式です。trueの場合、他のすべての条件が満たされている場合でも infininite scrollが評価されることはありません。たいていは一時停止などで使われます。例えばAjax読込中などです。スクロールイベントが発火し、この属性が評価を妨げた場合、そのイベントは属性値が再度falseになったタイミングで再度評価されます。</p>
 
-<h4 id="infinite-scroll-immediate-check-optional-boolean:c8d5d7f579c3127c5fcd4e00fb86ffe3"><strong>infinite-scroll-immediate-check (optional) - {boolean}</strong></h4>
+<h4 id="infinite-scroll-immediate-check-optional-boolean:6bb2504481b08df6e18dc7a6890ecaba"><strong>infinite-scroll-immediate-check (optional) - {boolean}</strong></h4>
 
 <p>スクロールイベントが起こっていない場合でも、ディレクティブがinfinite scroll式を評価するかを指定するブール式です。コンテンツの高さが十分にないときに便利です。デフォルトはtrueです。</p>
 
-<h4 id="infinite-scroll-listen-for-event-optional-string:c8d5d7f579c3127c5fcd4e00fb86ffe3"><strong>infinite-scroll-listen-for-event (optional) - {string}</strong></h4>
+<h4 id="infinite-scroll-listen-for-event-optional-string:6bb2504481b08df6e18dc7a6890ecaba"><strong>infinite-scroll-listen-for-event (optional) - {string}</strong></h4>
 
 <p>イベント名を設定します。このイベントが実行された際、スクロール位置のチェックが走ります。手動でスクロールハンドラをトリガーする必要がある場合に便利です。</p>
 
-<h2 id="モジュールの読み込み:c8d5d7f579c3127c5fcd4e00fb86ffe3">モジュールの読み込み</h2>
+<h2 id="モジュールの読み込み:6bb2504481b08df6e18dc7a6890ecaba">モジュールの読み込み</h2>
 
 <p>infiniteScrollディレクティブは<code>infinite-scroll</code>モジュール内で利用可能です。アクセスを可能にするために、<code>infinite-scroll</code>が自身のモジュールの依存関係に含まれていることを確認してください。</p>
 
 <pre><code>var myApp = angular.module('myApp', ['infinite-scroll']);
 </code></pre>
 
-<h2 id="スクロールイベントを絞る:c8d5d7f579c3127c5fcd4e00fb86ffe3">スクロールイベントを絞る</h2>
-
-<p>Scroll events can be triggered very frequently, which can hurt performance and make scrolling appear jerky. To mitigate this, infiniteScroll can be configured to process scroll events a maximum of once every x milliseconds:</p>
+<h2 id="スクロールイベントを絞る:6bb2504481b08df6e18dc7a6890ecaba">スクロールイベントを絞る</h2>
 
 <p>スクロールイベントは非常に頻繁に発火します。これによってパフォーマンスを低下させたり、スクロールの挙動を悪くしてしまうことがあります。これを和らげるために、infiniteScrollではmillisecondsにおけるスクロールイベントの上限を設定することができます。</p>
 
@@ -99,7 +99,7 @@
 angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
 </code></pre>
 
-<h2 id="手動でスクロールハンドラをトリガーする:c8d5d7f579c3127c5fcd4e00fb86ffe3">手動でスクロールハンドラをトリガーする</h2>
+<h2 id="手動でスクロールハンドラをトリガーする:6bb2504481b08df6e18dc7a6890ecaba">手動でスクロールハンドラをトリガーする</h2>
 
 <p>アイテムの高さを変更したり隠したりした際に、ユーザーのスクロールイベント無しで短いリストを取得し、再構築させることができます。この場合、<code>infinite-scroll-listen-for-event</code>を使います。また、スクロールチェックが必要であれば、対応するイベントを発生できます。例えば、</p>
 
@@ -113,7 +113,7 @@ angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
 <pre><code>$scope.$emit('list:filtered')
 </code></pre>
 
-<h2 id="典型的な使い方:c8d5d7f579c3127c5fcd4e00fb86ffe3">典型的な使い方</h2>
+<h2 id="典型的な使い方:6bb2504481b08df6e18dc7a6890ecaba">典型的な使い方</h2>
 
 <p>一般的には、配列やオブジェクトで一連性を持ったものを見せるためにngRepeatを使うなど、他の要素を含んだ要素上で<code>infiniteScroll</code>ディレクティブを使います。たいてい、infinite-scroll属性に渡す式ではngRepeatの配列にエレメントを追加します。</p>
 
@@ -133,7 +133,7 @@ angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015112401%2f - %e3%80%90%e8%a8%b3%e8%aa%ad%e3%80%91AngularJS%20-%20ngInfiniteScroll by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015112701%2f - %e3%80%90%e8%a8%b3%e8%aa%ad%e3%80%91ngInfiniteScroll by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -151,12 +151,12 @@ angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
     
     
         
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2015112701/">【訳読】ngInfiniteScroll<aside class="dates">Nov 27</aside></a>
-        </li>
-        
    
     
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2015112401/">【訳読】AngularJS - ngInfiniteScroll<aside class="dates">Nov 26</aside></a>
+        </li>
         
    
     

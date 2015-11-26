@@ -6,8 +6,102 @@
     <description>Recent content in Angularjs on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Nov 2015 17:30:17 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2015 15:18:19 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】ngInfiniteScroll</title>
+      <link>http://kotazi.github.io/blog/post/2015112701/</link>
+      <pubDate>Fri, 27 Nov 2015 15:18:19 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2015112701/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://sroze.github.io/ngInfiniteScroll/documentation.html&#34;&gt;ngInfiniteScroll&lt;/a&gt;についてです。
+AngularでMasonryを使うときに、きれいに書けるのでいい感じ。
+Issueが溜まっているけれど、一年近く更新がない。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;ドキュメント:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;ドキュメント&lt;/h2&gt;
+
+&lt;p&gt;infiniteScroll (directive in module infinite-scroll)&lt;/p&gt;
+
+&lt;h2 id=&#34;説明:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;説明&lt;/h2&gt;
+
+&lt;p&gt;要素の底がブラウザの底に近づいた時に、infiniteScrollで特定の振る舞いを指定することができます。&lt;/p&gt;
+
+&lt;h2 id=&#34;使い方:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;使い方&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ANY infinite-scroll=&#39;{expression}&#39;
+     [infinite-scroll-distance=&#39;{number}&#39;]
+     [infinite-scroll-disabled=&#39;{boolean}&#39;]
+     [infinite-scroll-immediate-check=&#39;{boolean}&#39;]
+     [infinite-scroll-listen-for-event=&#39;{string}&#39;]&amp;gt;
+&amp;lt;/ANY&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;パラメータ:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;パラメータ&lt;/h2&gt;
+
+&lt;h4 id=&#34;infinite-scroll-expression:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll - {expression}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;エレメントの底がブラウザの底に近づいた時に、式を評価します。(基本的には関数呼び出し)&lt;/p&gt;
+
+&lt;h4 id=&#34;infinite-scroll-distance-optional-number:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll-distance (optional) - {number}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;infinite-scrollに評価された式がトリガーされる前に、エレメントの底がブラウザの底にどれだけ近いかを表す数字です。ウインドウの高さの倍数で測定します。たとえば、ブラウザウィンドウの高さが1000pxで、&lt;code&gt;infinite-scroll-distance&lt;/code&gt;が2にセットされている場合、infinite scrollの式はエレメントの底がブラウザウィンドウの底から2000px以内にあるときに評価します。デフォルトは0です。(要素の底がブラウザウィンドウの下部を横切るとき式が評価されます)&lt;/p&gt;
+
+&lt;h4 id=&#34;infinite-scroll-disabled-optional-boolean:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll-disabled (optional) - {boolean}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;ブール式です。trueの場合、他のすべての条件が満たされている場合でも infininite scrollが評価されることはありません。たいていは一時停止などで使われます。例えばAjax読込中などです。スクロールイベントが発火し、この属性が評価を妨げた場合、そのイベントは属性値が再度falseになったタイミングで再度評価されます。&lt;/p&gt;
+
+&lt;h4 id=&#34;infinite-scroll-immediate-check-optional-boolean:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll-immediate-check (optional) - {boolean}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;スクロールイベントが起こっていない場合でも、ディレクティブがinfinite scroll式を評価するかを指定するブール式です。コンテンツの高さが十分にないときに便利です。デフォルトはtrueです。&lt;/p&gt;
+
+&lt;h4 id=&#34;infinite-scroll-listen-for-event-optional-string:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll-listen-for-event (optional) - {string}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;イベント名を設定します。このイベントが実行された際、スクロール位置のチェックが走ります。手動でスクロールハンドラをトリガーする必要がある場合に便利です。&lt;/p&gt;
+
+&lt;h2 id=&#34;モジュールの読み込み:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;モジュールの読み込み&lt;/h2&gt;
+
+&lt;p&gt;infiniteScrollディレクティブは&lt;code&gt;infinite-scroll&lt;/code&gt;モジュール内で利用可能です。アクセスを可能にするために、&lt;code&gt;infinite-scroll&lt;/code&gt;が自身のモジュールの依存関係に含まれていることを確認してください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var myApp = angular.module(&#39;myApp&#39;, [&#39;infinite-scroll&#39;]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;スクロールイベントを絞る:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;スクロールイベントを絞る&lt;/h2&gt;
+
+&lt;p&gt;スクロールイベントは非常に頻繁に発火します。これによってパフォーマンスを低下させたり、スクロールの挙動を悪くしてしまうことがあります。これを和らげるために、infiniteScrollではmillisecondsにおけるスクロールイベントの上限を設定することができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// you might call this after your module initalization
+angular.module(&#39;infinite-scroll&#39;).value(&#39;THROTTLE_MILLISECONDS&#39;, 250)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;手動でスクロールハンドラをトリガーする:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;手動でスクロールハンドラをトリガーする&lt;/h2&gt;
+
+&lt;p&gt;アイテムの高さを変更したり隠したりした際に、ユーザーのスクロールイベント無しで短いリストを取得し、再構築させることができます。この場合、&lt;code&gt;infinite-scroll-listen-for-event&lt;/code&gt;を使います。また、スクロールチェックが必要であれば、対応するイベントを発生できます。例えば、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div infinite-scroll=&amp;quot;addMoreItems()&amp;quot; infinite-scroll-listen-for-event=&amp;quot;list:filtered&amp;quot;&amp;gt;
+  [...]
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そしてコントローラーで下記のチェックをトリガーします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$scope.$emit(&#39;list:filtered&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;典型的な使い方:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;典型的な使い方&lt;/h2&gt;
+
+&lt;p&gt;一般的には、配列やオブジェクトで一連性を持ったものを見せるためにngRepeatを使うなど、他の要素を含んだ要素上で&lt;code&gt;infiniteScroll&lt;/code&gt;ディレクティブを使います。たいてい、infinite-scroll属性に渡す式ではngRepeatの配列にエレメントを追加します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div infinite-scroll=&amp;quot;addMoreItems()&amp;quot;&amp;gt;
+  &amp;lt;div ng-repeat=&amp;quot;item in items&amp;quot;&amp;gt;Item number {{$index}}: {{$item}}&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>【訳読】AngularJS - ngInfiniteScroll</title>
