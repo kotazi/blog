@@ -22,6 +22,16 @@
 
 &lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/AHW-3fZJvYdLRK6_0M8PPLW5vXoJ12yV0-8B/image.png&#34; alt=&#34;error&#34; /&gt;
 こんな画面が出てしまいました。&lt;/p&gt;
+
+&lt;p&gt;調べているとこんなエラーが。
+つまりPostgreSQLをアップデートしてしまっていて、バージョンがあっていないのだ。
+あげる必要がある。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~ ❯❯❯ postgres -D /usr/local/var/postgres
+LOG:  skipping missing configuration file &amp;quot;/usr/local/var/postgres/postgresql.auto.conf&amp;quot;
+FATAL:  database files are incompatible with server
+DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.4.5.
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

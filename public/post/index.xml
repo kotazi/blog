@@ -6,8 +6,249 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Nov 2015 19:18:11 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2015 17:30:17 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】AngularJS - ngInfiniteScroll</title>
+      <link>http://kotazi.github.io/blog/post/2015112401/</link>
+      <pubDate>Thu, 26 Nov 2015 17:30:17 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2015112401/</guid>
+      <description>
+
+&lt;p&gt;ngInfiniteScroll&lt;/p&gt;
+
+&lt;p&gt;Documentation&lt;/p&gt;
+
+&lt;h2 id=&#34;ドキュメント:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;ドキュメント&lt;/h2&gt;
+
+&lt;p&gt;infiniteScroll (directive in module infinite-scroll)&lt;/p&gt;
+
+&lt;h2 id=&#34;説明:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;説明&lt;/h2&gt;
+
+&lt;p&gt;要素の底がブラウザの底に近づいた時に、infiniteScrollで特定の振る舞いを指定することができます。&lt;/p&gt;
+
+&lt;h2 id=&#34;使い方:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;使い方&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ANY infinite-scroll=&#39;{expression}&#39;
+     [infinite-scroll-distance=&#39;{number}&#39;]
+     [infinite-scroll-disabled=&#39;{boolean}&#39;]
+     [infinite-scroll-immediate-check=&#39;{boolean}&#39;]
+     [infinite-scroll-listen-for-event=&#39;{string}&#39;]&amp;gt;
+&amp;lt;/ANY&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;パラメータ:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;パラメータ&lt;/h2&gt;
+
+&lt;h4 id=&#34;infinite-scroll-expression:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;&lt;strong&gt;infinite-scroll - {expression}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;エレメントの底がブラウザの底に近づいた時に、式を評価します。(基本的には関数呼び出し)&lt;/p&gt;
+
+&lt;h4 id=&#34;infinite-scroll-distance-optional-number:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;&lt;strong&gt;infinite-scroll-distance (optional) - {number}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;infinite-scrollに評価された式がトリガーされる前に、エレメントの底がブラウザの底にどれだけ近いかを表す数字です。ウインドウの高さの倍数で測定します。たとえば、ブラウザウィンドウの高さが1000pxで、&lt;code&gt;infinite-scroll-distance&lt;/code&gt;が2にセットされている場合、infinite scrollの式はエレメントの底がブラウザウィンドウの底から2000px以内にあるときに評価します。デフォルトは0です。(要素の底がブラウザウィンドウの下部を横切るとき式が評価されます)&lt;/p&gt;
+
+&lt;h4 id=&#34;infinite-scroll-disabled-optional-boolean:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;&lt;strong&gt;infinite-scroll-disabled (optional) - {boolean}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;ブール式です。trueの場合、他のすべての条件が満たされている場合でも infininite scrollが評価されることはありません。たいていは一時停止などで使われます。例えばAjax読込中などです。スクロールイベントが発火し、この属性が評価を妨げた場合、そのイベントは属性値が再度falseになったタイミングで再度評価されます。&lt;/p&gt;
+
+&lt;h4 id=&#34;infinite-scroll-immediate-check-optional-boolean:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;&lt;strong&gt;infinite-scroll-immediate-check (optional) - {boolean}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;スクロールイベントが起こっていない場合でも、ディレクティブがinfinite scroll式を評価するかを指定するブール式です。コンテンツの高さが十分にないときに便利です。デフォルトはtrueです。&lt;/p&gt;
+
+&lt;h4 id=&#34;infinite-scroll-listen-for-event-optional-string:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;&lt;strong&gt;infinite-scroll-listen-for-event (optional) - {string}&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;イベント名を設定します。このイベントが実行された際、スクロール位置のチェックが走ります。手動でスクロールハンドラをトリガーする必要がある場合に便利です。&lt;/p&gt;
+
+&lt;h2 id=&#34;モジュールの読み込み:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;モジュールの読み込み&lt;/h2&gt;
+
+&lt;p&gt;infiniteScrollディレクティブは&lt;code&gt;infinite-scroll&lt;/code&gt;モジュール内で利用可能です。アクセスを可能にするために、&lt;code&gt;infinite-scroll&lt;/code&gt;が自身のモジュールの依存関係に含まれていることを確認してください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var myApp = angular.module(&#39;myApp&#39;, [&#39;infinite-scroll&#39;]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;スクロールイベントを絞る:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;スクロールイベントを絞る&lt;/h2&gt;
+
+&lt;p&gt;Scroll events can be triggered very frequently, which can hurt performance and make scrolling appear jerky. To mitigate this, infiniteScroll can be configured to process scroll events a maximum of once every x milliseconds:&lt;/p&gt;
+
+&lt;p&gt;スクロールイベントは非常に頻繁に発火します。これによってパフォーマンスを低下させたり、スクロールの挙動を悪くしてしまうことがあります。これを和らげるために、infiniteScrollではmillisecondsにおけるスクロールイベントの上限を設定することができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// you might call this after your module initalization
+angular.module(&#39;infinite-scroll&#39;).value(&#39;THROTTLE_MILLISECONDS&#39;, 250)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;手動でスクロールハンドラをトリガーする:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;手動でスクロールハンドラをトリガーする&lt;/h2&gt;
+
+&lt;p&gt;アイテムの高さを変更したり隠したりした際に、ユーザーのスクロールイベント無しで短いリストを取得し、再構築させることができます。この場合、&lt;code&gt;infinite-scroll-listen-for-event&lt;/code&gt;を使います。また、スクロールチェックが必要であれば、対応するイベントを発生できます。例えば、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div infinite-scroll=&amp;quot;addMoreItems()&amp;quot; infinite-scroll-listen-for-event=&amp;quot;list:filtered&amp;quot;&amp;gt;
+  [...]
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そしてコントローラーで下記のチェックをトリガーします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$scope.$emit(&#39;list:filtered&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;典型的な使い方:c8d5d7f579c3127c5fcd4e00fb86ffe3&#34;&gt;典型的な使い方&lt;/h2&gt;
+
+&lt;p&gt;一般的には、配列やオブジェクトで一連性を持ったものを見せるためにngRepeatを使うなど、他の要素を含んだ要素上で&lt;code&gt;infiniteScroll&lt;/code&gt;ディレクティブを使います。たいてい、infinite-scroll属性に渡す式ではngRepeatの配列にエレメントを追加します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div infinite-scroll=&amp;quot;addMoreItems()&amp;quot;&amp;gt;
+  &amp;lt;div ng-repeat=&amp;quot;item in items&amp;quot;&amp;gt;Item number {{$index}}: {{$item}}&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【第2章】公的機関の成果/基本と原則</title>
+      <link>http://kotazi.github.io/blog/post/2015112301/</link>
+      <pubDate>Tue, 24 Nov 2015 19:44:59 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2015112301/</guid>
+      <description>
+
+&lt;p&gt;学生のころは分からなかったことが分かる気がした。&lt;br /&gt;
+ドラッカーの基本と原則をKidleで読みなおした。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;多元社会の到来:b0aa24f3472b1b76afe363662b77c804&#34;&gt;多元社会の到来&lt;/h2&gt;
+
+&lt;p&gt;企業以外の組織もマネジメントを必要としている。また、企業内の各部門でもマネジメントは必要。&lt;/p&gt;
+
+&lt;h2 id=&#34;公的機関不振の原因:b0aa24f3472b1b76afe363662b77c804&#34;&gt;公的機関不振の原因&lt;/h2&gt;
+
+&lt;p&gt;公的機関に欠けているものは、成果であって効率ではない。効率によって成果を手にすることはできない。&lt;/p&gt;
+
+&lt;p&gt;公的機関と企業の基本的な違いは、支払いの受け方にある。予算から支払いを受けるということが、成果と業績の意味を変える。予算型組織における成果とは予算獲得である。
+予算型組織において、少ない予算、少ない人員で成果を上げることは業績にならない。むしろ組織を危うくしかねない。&lt;/p&gt;
+
+&lt;h2 id=&#34;公的機関成功の条件:b0aa24f3472b1b76afe363662b77c804&#34;&gt;公的機関成功の条件&lt;/h2&gt;
+
+&lt;p&gt;公的機関が成果を上げるうえで必要とするのは偉大な人物ではない。仕組みである。&lt;br /&gt;
+公的機関に必要なことは、企業のまねではない。もちろん、成果について評価することは必要である。だがそれらのものは、何よりもまず、病院らしく、行政組織らしく、政府らしくなければならない。自らに特有の使命、も汽笛、機能について徹底的に検討しなければならない。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;公的機関について考えたことはあまりなかった。&lt;br /&gt;
+予算型組織という言葉が印象に残った。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【第1章】企業の成果/基本と原則</title>
+      <link>http://kotazi.github.io/blog/post/2015112001/</link>
+      <pubDate>Mon, 23 Nov 2015 19:44:59 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2015112001/</guid>
+      <description>
+
+&lt;p&gt;学生のころは分からなかったことが分かる気がした。&lt;br /&gt;
+ドラッカーの基本と原則をKidleで読みなおした。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;マネジメントの役割:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;マネジメントの役割&lt;/h2&gt;
+
+&lt;p&gt;組織は目的ではなく手段である。組織自体のために存在するのではなく、何をすべきかが重要。
+組織の中核の機関がマネジメント。マネジメントには3つの役割がある。&lt;/p&gt;
+
+&lt;p&gt;①自らの組織に特有の使命を果たす。&lt;br /&gt;
+②仕事を通じて働く人たちを生かす。&lt;br /&gt;
+③自らが社会に与える影響を処理するとともに、社会の問題について貢献する。&lt;/p&gt;
+
+&lt;p&gt;成果をあげること、人を生かすこと、社会に及ぼす影響を処理するとともに社会に貢献すること、これらの課題すべてを今日と明日のバランスのもとに果たすこと。&lt;/p&gt;
+
+&lt;h2 id=&#34;企業とは何か:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;企業とは何か&lt;/h2&gt;
+
+&lt;p&gt;企業は営利組織ではない。企業の目的の定義は一つしかない。それは、顧客を創造することである。&lt;/p&gt;
+
+&lt;p&gt;そして二つだけの基本的な機能を持つ。それがマーケティングとイノベーションである。マーケティングとイノベーションだけが成果をもたらす。&lt;/p&gt;
+
+&lt;p&gt;真のマーケティングは顧客からスタートする。すなわち現実、欲求、価値からスタートする。「われわれは何を売りたいか」ではなく、「顧客は何を買いたいか」を問う。&lt;/p&gt;
+
+&lt;p&gt;企業の第二の機能は、イノベーションすなわち新しい満足を生みだすことである。企業はより大きくなる必要はないが、より良くなることは必要。イノベーションとは、発明のことではない。技術のみに関するコンセプトでもない。経済に関わることである。経済的なイノベーション、さらに社会的なイノベーションは、技術のイノベーション以上に重要である。&lt;/p&gt;
+
+&lt;h2 id=&#34;事業は何か:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;事業は何か&lt;/h2&gt;
+
+&lt;p&gt;あらゆる組織において、共通のものの見方、理解、方向づけ、努力を実現するには、「われわれの事業は何か。何であるべきか」を定義することが不可欠である。&lt;/p&gt;
+
+&lt;p&gt;企業の目的としての事業が十分に検討されていないことが、企業の挫折や失敗の最大の原因である。&lt;/p&gt;
+
+&lt;p&gt;企業の目的と使命を定義するとき、出発点は一つしかない。顧客にとっての関心は、彼らにとっての価値、欲求、現実である。この事実からしても、「われわれの事業は何か」との問いに答えるには、顧客からスタートしなければならない。すなわち顧客の価値、欲求、期待、現実、状況、行動からスタートしなければならない。&lt;/p&gt;
+
+&lt;p&gt;したがって「顧客は誰か」との問いこそ、個々の企業の使命を定義するうえで、もっとも重要な問いである。この問いに対する答えによって、企業が自らをどう定義するかがほぼ決まってくる。&lt;/p&gt;
+
+&lt;p&gt;ほとんどの事業が少なくとも二種類の顧客を持つ。カーペット産業は建築業者、住宅購入者という二種類の顧客を持つ。この両者に購入してもらわなければならない。生活用品のメーカーは主婦、小売店という二種類の顧客を持つ。主婦に買う気を起こさせても、店が品を置いてくれなければ何にもならない。店が目につくよう陳列しても、主婦が買ってくれなければ何にもならない。&lt;/p&gt;
+
+&lt;h2 id=&#34;事業の目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;事業の目標&lt;/h2&gt;
+
+&lt;p&gt;目標設定においても、中心となるのはマーケティングとイノベーションである。なぜなら、顧客が代価を支払うのは、この二つの分野における成果と貢献に対してだからである。&lt;/p&gt;
+
+&lt;h4 id=&#34;マーケティングの目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;マーケティングの目標&lt;/h4&gt;
+
+&lt;p&gt;①既存の製品についての目標&lt;br /&gt;
+②既存の製品の廃棄についての目標&lt;br /&gt;
+③既存の市場における新製品についての目標&lt;br /&gt;
+④新市場についての目標&lt;br /&gt;
+⑤流通チャネルについての目標&lt;br /&gt;
+⑥アフターサービスについての目標&lt;br /&gt;
+⑦信用供与についての目標&lt;/p&gt;
+
+&lt;p&gt;これらの目標は、&amp;rdquo;集中の目標と市場地位の目標&amp;rdquo;の意思決定のあとでなければ設定できない。&lt;/p&gt;
+
+&lt;p&gt;市場において目指すべき地位は、最大ではなく最適である。&lt;/p&gt;
+
+&lt;p&gt;イノベーションの目標&lt;/p&gt;
+
+&lt;p&gt;イノベーションの種類。&lt;br /&gt;
+①製品とサービスにおけるイノベーション&lt;br /&gt;
+②市場におけるイノベーションと消費者の行動や価値観におけるイノベーション&lt;br /&gt;
+③製品を市場へ持っていくまでの間におけるイノベーション&lt;/p&gt;
+
+&lt;h4 id=&#34;経営資源の目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;経営資源の目標&lt;/h4&gt;
+
+&lt;p&gt;経済活動には三つの資源が必要である。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;土地つまり物的資源&lt;/li&gt;
+&lt;li&gt;労働つまり人材&lt;/li&gt;
+&lt;li&gt;資本つまり明日のための資金&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;である。これら三つの経営資源を確保しなければならない。&lt;/p&gt;
+
+&lt;h4 id=&#34;生産性の目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;生産性の目標&lt;/h4&gt;
+
+&lt;p&gt;生産性の向上こそ、マネジメントにとって重要な仕事の一つである。困難な仕事の一つである。なぜならば、生産性とは各種の要因の間のバランスをとることだからである&lt;/p&gt;
+
+&lt;h4 id=&#34;社会的責任の目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;社会的責任の目標&lt;/h4&gt;
+
+&lt;p&gt;わずか数年前まで、経済学者もマネジメントも、社会的な責任は無形であって、それに目標を設定することはできないとしていた。しかし今日、われわれはこの無形のものがきわめて有形たりうることを知った。消費者運動や、環境破壊に対する攻撃は、企業が社会に与える影響について自ら徹底的に検討し、目標を設定しなければならないことを学ぶための高価な授業だった。企業にとって、社会との関係は自らの存立に関わる問題である。企業は社会と経済のなかに存在する。ところが企業の内部にあっては、自らがあたかも真空に独立して存在していると考えてしまう。事実マネジメントの多くも、自らの事業を内部から眺めている。&lt;/p&gt;
+
+&lt;p&gt;しかし企業は、社会と経済のなかに存在する被創造物である。社会や経済は、いかなる企業をも一夜にして消滅させる力を持つ。企業は、社会や経済の許しがあって存在しているのであり、社会と経済が、その企業が有用かつ生産的な仕事をしていると見なすかぎりにおいて、その存続を許されているにすぎない。&lt;/p&gt;
+
+&lt;p&gt;社会性に関わる目標は、単なる良き意図の表明ではなく、企業の戦略に組み込まなければならない。社会性の目標が必要となるのは、マネジメントが社会に対して責任を負っているためではない。それは、マネジメントがまさに企業に対して責任を負っているためである。&lt;/p&gt;
+
+&lt;h2 id=&#34;戦略計画:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;戦略計画&lt;/h2&gt;
+
+&lt;p&gt;戦略計画ではないもの。&lt;/p&gt;
+
+&lt;p&gt;①戦略計画は魔法の箱や手法の束ではない。思考であり、資源を行動に結びつけるものである。&lt;br /&gt;
+②戦略計画は予測ではない。未来の主人公になろうとすることではない。&lt;br /&gt;
+③戦略計画は未来の意思決定に関わるものではない。それは、現在の意思決定が未来において持つ意味に関わるものである意思決定が存在し得るのは、現在においてのみである。&lt;br /&gt;
+④戦略計画はリスクをなくすためのものではなく、リスクを最小にするためのものでもないり経済的活動の本質とは、リスクを冒すことである。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;マネジメントの役割を明確にできてよかった。&lt;br /&gt;
+また、マーケティングとイノベーションだけが成果をもたらすという話に驚いた。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【忘備録】Github Pagesへの移行経緯</title>
