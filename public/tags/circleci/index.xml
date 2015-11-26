@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Circleci on kotazi.com</title>
+    <link>http://localhost:57326/blog/tags/circleci/</link>
+    <description>Recent content in Circleci on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Dec 2015 15:18:19 +0900</lastBuildDate>
+    <atom:link href="http://localhost:57326/blog/tags/circleci/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Tips】circleciでbundle installに失敗した</title>
+      <link>http://localhost:57326/blog/post/2015120101/</link>
+      <pubDate>Tue, 01 Dec 2015 15:18:19 +0900</pubDate>
+      
+      <guid>http://localhost:57326/blog/post/2015120101/</guid>
+      <description>&lt;p&gt;いつのまにかdevelopがcircleciをパスしなくなってしまった時の概要と対応。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;下記のようなエラーが出た。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Gem::InstallError: mime-types-data requires Ruby version &amp;gt;= 2.0.
+An error occurred while installing mime-types-data (3.2015.1120), and Bundler
+cannot continue.
+Make sure that `gem install mime-types-data -v &#39;3.2015.1120&#39;` succeeds before
+
+bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3  returned exit code 5
+
+bundling. Action failed: bundle install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ので下記で対応。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem &#39;mime-types&#39;, &#39;2.6&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でも先輩に教えてもらったところ、
+CircleCiではデフォルトのRubyのバージョンが1.9.3になっているらしい。&lt;br /&gt;
+今までのmime-typesはそれで良かったが最近のアップデートで2.0以上にしか対応していない。&lt;br /&gt;
+だから、Rubyのバージョンを上げるのが正しい。&lt;/p&gt;
+
+&lt;p&gt;なるほど。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
