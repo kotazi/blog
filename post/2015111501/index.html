@@ -44,6 +44,16 @@
 <p><img src="https://www.evernote.com/l/AHW-3fZJvYdLRK6_0M8PPLW5vXoJ12yV0-8B/image.png" alt="error" />
 こんな画面が出てしまいました。</p>
 
+<p>調べているとこんなエラーが。
+つまりPostgreSQLをアップデートしてしまっていて、バージョンがあっていないのだ。
+あげる必要がある。</p>
+
+<pre><code>~ ❯❯❯ postgres -D /usr/local/var/postgres
+LOG:  skipping missing configuration file &quot;/usr/local/var/postgres/postgresql.auto.conf&quot;
+FATAL:  database files are incompatible with server
+DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.4.5.
+</code></pre>
+
                 </section>
             </article>
             <footer id="post-meta" class="clearfix">
@@ -95,7 +105,7 @@
     
         
         <li>
-            <a href="http://localhost:1313/blog/post/2015112401/">2015112401<aside class="dates">Nov 20</aside></a>
+            <a href="http://localhost:1313/blog/post/2015112401/">【訳読】AngularJS - ngInfiniteScroll<aside class="dates">Nov 20</aside></a>
         </li>
         
    
