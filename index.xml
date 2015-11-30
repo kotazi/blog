@@ -6,8 +6,39 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Nov 2015 15:18:19 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Nov 2015 15:18:19 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MasonryをAngularで使う際に注意すること</title>
+      <link>http://kotazi.github.io/blog/post/2015113001/</link>
+      <pubDate>Mon, 30 Nov 2015 15:18:19 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2015113001/</guid>
+      <description>
+
+&lt;p&gt;Masonryのstampが正しく動かないことがあったのでメモ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Angularプロジェクトで&lt;a href=&#34;https://github.com/desandro/masonry&#34;&gt;Masonry&lt;/a&gt;と&lt;a href=&#34;https://github.com/passy/angular-masonry&#34;&gt;AngularJS Masonry Directive&lt;/a&gt;を利用している。&lt;br /&gt;
+その際にMasonryのstampが動いていなかったのでメモ。
+なんで動かなかったかというと&lt;a href=&#34;http://qiita.com/ukyo/items/0aa47142020c07874415&#34;&gt;MyInclude&lt;/a&gt;とngIfがよくなかった。&lt;br /&gt;
+とりあえずサンプル&lt;/p&gt;
+
+&lt;h3 id=&#34;ng-ifバージョン-動かない:4972609874c0ecfbd9a991e9e31f8075&#34;&gt;■ ng-ifバージョン(動かない)&lt;/h3&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;266&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;ojRRmP&#34; data-default-tab=&#34;result&#34; data-user=&#34;kotazi&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/kotazi/pen/ojRRmP/&#39;&gt;【AngularJS】Masonry Directive Behavior with Stamp(ng-if)&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#39;http://codepen.io/kotazi&#39;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;ng-showバージョン-動く:4972609874c0ecfbd9a991e9e31f8075&#34;&gt;■ ng-showバージョン(動く)&lt;/h3&gt;
+
+&lt;p&gt;&lt;p data-height=&#34;266&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;EVBZeG&#34; data-default-tab=&#34;result&#34; data-user=&#34;kotazi&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/kotazi/pen/EVBZeG/&#39;&gt;【AngularJS】Masonry Directive Behavior with Stamp(ng-show)&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#39;http://codepen.io/kotazi&#39;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;ngIfの場合がDOMが再生性されているので、stampが毎回解除されてしまう。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【訳読】ngInfiniteScroll</title>
