@@ -5,7 +5,7 @@ title = "kotazi.com"
 theme = "kotazi.com"
 
 [params]
-  name = "kotazi"
+  name = "kotazi test"
   description = "Hi, I'm web engineer"
   bio = ""
   # Enter optionally your twitter account
