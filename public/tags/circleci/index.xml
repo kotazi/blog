@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Circleci on kotazi.com</title>
-    <link>http://localhost:1313/blog/tags/circleci/</link>
+    <link>http://kotazi.github.io/blog/tags/circleci/</link>
     <description>Recent content in Circleci on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2015 15:18:19 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/circleci/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2015 19:21:54 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/circleci/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>【Tips】circleciでbundle installに失敗した</title>
-      <link>http://localhost:1313/blog/post/2015120101/</link>
-      <pubDate>Tue, 01 Dec 2015 15:18:19 +0900</pubDate>
+      <link>http://kotazi.github.io/blog/post/2015120101/</link>
+      <pubDate>Tue, 01 Dec 2015 19:21:54 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/post/2015120101/</guid>
+      <guid>http://kotazi.github.io/blog/post/2015120101/</guid>
       <description>&lt;p&gt;いつのまにかdevelopがcircleciをパスしなくなってしまった時の概要と対応。&lt;/p&gt;
 
 &lt;hr&gt;
