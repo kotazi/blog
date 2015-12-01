@@ -24,6 +24,7 @@ theme = "kotazi.com"
   about = ""
   subscribe = ""
   # Pagination links
+  paginatePath = "blog"
   olderPosts = ""
   newerPosts = ""
   readMore = ""
