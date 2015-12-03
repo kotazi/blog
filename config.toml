@@ -3,9 +3,10 @@ baseurl = "http://kotazi.github.io/blog/"
 languageCode = "en-us"
 title = "kotazi.com"
 theme = "kotazi.com"
+canonifyurls = true
 
 [params]
-  name = "kotazi test"
+  name = "kotazi"
   description = "Hi, I'm web engineer"
   bio = ""
   # Enter optionally your twitter account
@@ -24,9 +25,9 @@ theme = "kotazi.com"
   about = ""
   subscribe = ""
   # Pagination links
-  paginatePath = "blog"
-  olderPosts = ""
-  newerPosts = ""
+  paginatePath = ""
+  olderPosts = "次へ"
+  newerPosts = "前へ"
   readMore = ""
   copyright = ""
   # Sharing options and author information in posts
