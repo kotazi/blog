@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pry on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/pry/</link>
+    <description>Recent content in Pry on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Dec 2015 17:48:50 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/pry/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ruby - pry導入編</title>
+      <link>http://kotazi.github.io/blog/post/20151207_pry/</link>
+      <pubDate>Mon, 07 Dec 2015 17:48:50 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151207_pry/</guid>
+      <description>
+
+&lt;p&gt;Railsのデバッグについて調べていた。&lt;br /&gt;
+pryを知った。便利そうだったことメモ書き。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;pryとは:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;Pryとは&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./../../media/pry_logo.png&#34; alt=&#34;pry&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://pryrepl.org/&#34;&gt;Pry&lt;/a&gt;はRuby標準的なIRBシェルの強力な代替手段です。
+シンタックスハイライトや、フレキシブルなプラグインアーキテクチャ、実行時の呼び出しやドキュメントの閲覧を備えています。&lt;/p&gt;
+
+&lt;h2 id=&#34;インストール:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;インストール&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem install pry pry-doc
+$ pry
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;.ls&lt;/code&gt;, &lt;code&gt;.pwd&lt;/code&gt;などでShellコマンドを呼び出せる。&lt;/p&gt;
+
+&lt;h2 id=&#34;railsプロジェクトに組み込む:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;Railsプロジェクトに組み込む&lt;/h2&gt;
+
+&lt;p&gt;RailsプロジェクトにPryを入れて、ブレークポイントやステップ実行が行えるようにした。&lt;/p&gt;
+
+&lt;p&gt;Gemfileを編集(参考:&lt;a href=&#34;http://ruby-rails.hatenadiary.com/entry/20141024/1414081224&#34;&gt;Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp;amp; デバッグをする&lt;/a&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;group :development, :test do
+  gem &#39;pry-rails&#39;, &#39;~&amp;gt; 0.3.4&#39;  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem &#39;pry-doc&#39;, &#39;~&amp;gt; 0.8.0&#39;    # methodを表示
+  gem &#39;pry-byebug&#39;, &#39;~&amp;gt; 3.3.0&#39; # デバッグを実施(Ruby 2.0以降で動作する)
+  gem &#39;pry-stack_explorer&#39;, &#39;~&amp;gt; 0.4.9.2&#39; # スタックをたどれる
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;モデル確認:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;■ モデル確認&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[12] pry(main)&amp;gt; show-models
+Administrator
+  id: integer
+  email: string
+  email_for_index: string
+  hashed_password: string
+  suspended: boolean
+  created_at: datetime
+  updated_at: datetime
+StaffMember
+  id: integer
+  email: string
+  email_for_index: string
+  family_name: string
+  given_name: string
+  family_name_kana: string
+  given_name_kana: string
+  hashed_password: string
+  start_date: date
+  end_date: date
+  suspended: boolean
+  created_at: datetime
+  updated_at: datetime
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ルート確認:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;■ ルート確認&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[13] pry(main)&amp;gt; show-routes
+       Prefix Verb   URI Pattern              Controller#Action
+   staff_root GET    /staff(.:format)         staff/top#index
+  staff_login GET    /staff/login(.:format)   staff/sessions#new
+staff_session POST   /staff/session(.:format) staff/sessions#create
+              DELETE /staff/session(.:format) staff/sessions#destroy
+   admin_root GET    /admin(.:format)         admin/top#index
+  admin_login GET    /admin/login(.:format)   admin/sessions#new
+admin_session POST   /admin/session(.:format) admin/sessions#create
+              DELETE /admin/session(.:format) admin/sessions#destroy
+customer_root GET    /customer(.:format)      customer/top#index
+         root GET    /                        errors#routing_error
+              GET    /*anything(.:format)     errors#routing_error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;デバッグ:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;デバッグ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;binding.pry&lt;/code&gt;を打ち込むとブレークポイントになる。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;show-stack&lt;/code&gt;でスタックトレースを表示&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;参考url:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;参考URL&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://labs.timedia.co.jp/2011/12/rubyist-should-use-pry.html&#34;&gt;Rubyistよ、irbを捨ててPryを使おう&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.tokoyax.com/entry/ruby/how-to-use-pry&#34;&gt;Ruby 2.x.x 入門 -そう、pry ならね。-&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ruby-rails.hatenadiary.com/entry/20141024/1414081224&#34;&gt;Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp;amp; デバッグをする&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/yaotti/items/c6e850010f36acedb0e1&#34;&gt;Railsのコンソールをより便利にするpry-rails gem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/k0kubun/items/b118e9ccaef8707c4d9f&#34;&gt;今更聞けないpryの使い方と便利プラグイン集&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;ものすごく便利だった。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
