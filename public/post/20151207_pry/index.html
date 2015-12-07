@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>PowderとrbenvとYosemiteと &middot; kotazi.com</title>
+		<title>Ruby - pry導入編 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,69 +32,110 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>PowderとrbenvとYosemiteと</h1>
-                    <h2 class="headline">November 16, 2015</h2>
+                    <h1>Ruby - pry導入編</h1>
+                    <h2 class="headline">December 7, 2015</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>言われるがまま導入したPowderがいつのまにか動かなくなっていた。<br />
-いまいちなんなのか分かっていなかったので調べながら直しました。</p>
+<p>Railsのデバッグについて調べていた。<br />
+pryを知った。便利そうだったことメモ書き。</p>
 
 <hr>
 
-<p><img src="./../../media/logo-pow.png" alt="pow" /></p>
+<h2 id="pryとは:f3bd45a4a5113941a84c21ea0e18d62f">Pryとは</h2>
 
-<p><a href="http://pow.cx/">Pow</a>は設定が不要なRails &amp; Rackサーバ。<br />
-そしてそのコマンド操作を手助けしてくれるのが<a href="https://github.com/Rodreegez/powder">powder</a>。</p>
+<p><img src="./../../media/pry_logo.png" alt="pry" /></p>
 
-<h2 id="設定周り:daa11b13df79a9f8958f02dbe992863e">設定周り</h2>
+<p><a href="http://pryrepl.org/">Pry</a>はRuby標準的なIRBシェルの強力な代替手段です。
+シンタックスハイライトや、フレキシブルなプラグインアーキテクチャ、実行時の呼び出しやドキュメントの閲覧を備えています。</p>
 
-<h5 id="powのインストール:daa11b13df79a9f8958f02dbe992863e">◯ Powのインストール</h5>
+<h2 id="インストール:f3bd45a4a5113941a84c21ea0e18d62f">インストール</h2>
 
-<pre><code>$ curl get.pow.cx | sh
+<pre><code>$ gem install pry pry-doc
+$ pry
 </code></pre>
 
-<h5 id="シンボリックリンクの作成:daa11b13df79a9f8958f02dbe992863e">◯ シンボリックリンクの作成</h5>
+<p><code>.ls</code>, <code>.pwd</code>などでShellコマンドを呼び出せる。</p>
 
-<pre><code>$ cd ~/.pow
-$ ln -s /path/to/myapp
+<h2 id="railsプロジェクトに組み込む:f3bd45a4a5113941a84c21ea0e18d62f">Railsプロジェクトに組み込む</h2>
+
+<p>RailsプロジェクトにPryを入れて、ブレークポイントやステップ実行が行えるようにした。</p>
+
+<p>Gemfileを編集(参考:<a href="http://ruby-rails.hatenadiary.com/entry/20141024/1414081224">Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp; デバッグをする</a>)</p>
+
+<pre><code>group :development, :test do
+  gem 'pry-rails', '~&gt; 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-doc', '~&gt; 0.8.0'    # methodを表示
+  gem 'pry-byebug', '~&gt; 3.3.0' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer', '~&gt; 0.4.9.2' # スタックをたどれる
+end
 </code></pre>
 
-<h5 id="powderのインストール:daa11b13df79a9f8958f02dbe992863e">◯ powderのインストール</h5>
+<h3 id="モデル確認:f3bd45a4a5113941a84c21ea0e18d62f">■ モデル確認</h3>
 
-<pre><code>$ gem install powder
+<pre><code>[12] pry(main)&gt; show-models
+Administrator
+  id: integer
+  email: string
+  email_for_index: string
+  hashed_password: string
+  suspended: boolean
+  created_at: datetime
+  updated_at: datetime
+StaffMember
+  id: integer
+  email: string
+  email_for_index: string
+  family_name: string
+  given_name: string
+  family_name_kana: string
+  given_name_kana: string
+  hashed_password: string
+  start_date: date
+  end_date: date
+  suspended: boolean
+  created_at: datetime
+  updated_at: datetime
 </code></pre>
 
-<h5 id="powderコマンド:daa11b13df79a9f8958f02dbe992863e">◯ powderコマンド</h5>
+<h3 id="ルート確認:f3bd45a4a5113941a84c21ea0e18d62f">■ ルート確認</h3>
 
-<pre><code>
-# link
-$ powder link
-
-# unlink
-$ powder unlink
-
-# list
-$ powder list
-
-# config
-$ powder config
-
-# restart
-$ powder restart
+<pre><code>[13] pry(main)&gt; show-routes
+       Prefix Verb   URI Pattern              Controller#Action
+   staff_root GET    /staff(.:format)         staff/top#index
+  staff_login GET    /staff/login(.:format)   staff/sessions#new
+staff_session POST   /staff/session(.:format) staff/sessions#create
+              DELETE /staff/session(.:format) staff/sessions#destroy
+   admin_root GET    /admin(.:format)         admin/top#index
+  admin_login GET    /admin/login(.:format)   admin/sessions#new
+admin_session POST   /admin/session(.:format) admin/sessions#create
+              DELETE /admin/session(.:format) admin/sessions#destroy
+customer_root GET    /customer(.:format)      customer/top#index
+         root GET    /                        errors#routing_error
+              GET    /*anything(.:format)     errors#routing_error
 </code></pre>
 
-<h5 id="rbenvで使う時:daa11b13df79a9f8958f02dbe992863e">◯ rbenvで使う時</h5>
+<h2 id="デバッグ:f3bd45a4a5113941a84c21ea0e18d62f">デバッグ</h2>
 
-<p>rbenvで使う場合は<code>~/.powconfig</code>にパスを通す必要がある。<br />
-powがrbenvを使っているにもかかわらず、システムのrubyを使ってしまうため。</p>
+<ul>
+<li><code>binding.pry</code>を打ち込むとブレークポイントになる。</li>
+<li><code>show-stack</code>でスタックトレースを表示</li>
+</ul>
 
-<pre><code># ~/.powconfig
-export PATH=&quot;/Users/kz/.rbenv/shims:/Users/kz/.rbenv/bin:$PATH&quot;
-</code></pre>
+<h2 id="参考url:f3bd45a4a5113941a84c21ea0e18d62f">参考URL</h2>
 
-<p>参考: <a href="https://github.com/basecamp/pow/issues/202">rbenv does not work well with pow</a></p>
+<ul>
+<li><a href="http://labs.timedia.co.jp/2011/12/rubyist-should-use-pry.html">Rubyistよ、irbを捨ててPryを使おう</a></li>
+<li><a href="http://blog.tokoyax.com/entry/ruby/how-to-use-pry">Ruby 2.x.x 入門 -そう、pry ならね。-</a></li>
+<li><a href="http://ruby-rails.hatenadiary.com/entry/20141024/1414081224">Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp; デバッグをする</a></li>
+<li><a href="http://qiita.com/yaotti/items/c6e850010f36acedb0e1">Railsのコンソールをより便利にするpry-rails gem</a></li>
+<li><a href="http://qiita.com/k0kubun/items/b118e9ccaef8707c4d9f">今更聞けないpryの使い方と便利プラグイン集</a></li>
+</ul>
+
+<hr>
+
+<p>ものすごく便利だった。</p>
 
                 </section>
             </article>
@@ -107,7 +148,7 @@ export PATH=&quot;/Users/kz/.rbenv/shims:/Users/kz/.rbenv/bin:$PATH&quot;
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111401%2f - Powder%e3%81%a8rbenv%e3%81%a8Yosemite%e3%81%a8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f20151207_pry%2f - Ruby%20-%20pry%e5%b0%8e%e5%85%a5%e7%b7%a8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -124,10 +165,6 @@ export PATH=&quot;/Users/kz/.rbenv/shims:/Users/kz/.rbenv/bin:$PATH&quot;
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/20151207_pry/">Ruby - pry導入編<aside class="dates">Dec 7</aside></a>
-        </li>
         
    
     
