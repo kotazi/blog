@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jquery on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/jquery/</link>
+    <description>Recent content in Jquery on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Dec 2015 09:38:50 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>いまいち忘れるjQuery</title>
+      <link>http://kotazi.github.io/blog/post/20151210_jquery/</link>
+      <pubDate>Thu, 10 Dec 2015 09:38:50 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151210_jquery/</guid>
+      <description>&lt;p&gt;なんだかjQueryの使い方ってそこそこに忘れる。
+忘れるというか、それなりに検索をかけているなと。&lt;/p&gt;
+
+&lt;p&gt;そこで。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://semooh.jp/jquery/api/selectors/&#34;&gt;jQuery日本語リファレンス&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ヌーのサイトに一覧ページがあることを知った。&lt;br /&gt;
+困ったときはここを見ればいいし、チートシートもある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://oscarotero.com/jquery/&#34;&gt;jQuery Quick API Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
