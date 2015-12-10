@@ -30,6 +30,10 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://oscarotero.com/jquery/&#34;&gt;jQuery Quick API Reference&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;wrapAll()&lt;/code&gt;とか初めて使ったけど便利だ。&lt;br /&gt;
+ちなみに、&lt;code&gt;createElement()&lt;/code&gt;みたいなメソッドはなくて、
+  普通に&lt;code&gt;$(&#39;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&#39;)&lt;/code&gt;ってやって作るらしい。&lt;/p&gt;
 </description>
     </item>
     
