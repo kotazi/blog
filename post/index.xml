@@ -6,8 +6,32 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Dec 2015 12:57:23 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2015 09:38:50 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>いまいち忘れるjQuery</title>
+      <link>http://kotazi.github.io/blog/post/20151210_jquery/</link>
+      <pubDate>Thu, 10 Dec 2015 09:38:50 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151210_jquery/</guid>
+      <description>&lt;p&gt;なんだかjQueryの使い方ってそこそこに忘れる。
+忘れるというか、それなりに検索をかけているなと。&lt;/p&gt;
+
+&lt;p&gt;そこで。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://semooh.jp/jquery/api/selectors/&#34;&gt;jQuery日本語リファレンス&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ヌーのサイトに一覧ページがあることを知った。&lt;br /&gt;
+困ったときはここを見ればいいし、チートシートもある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://oscarotero.com/jquery/&#34;&gt;jQuery Quick API Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>【第5章】マネジャー/基本と原則</title>
@@ -1246,328 +1270,6 @@ export PATH=&amp;quot;/Users/kz/.rbenv/shims:/Users/kz/.rbenv/bin:$PATH&amp;quot
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;参考: &lt;a href=&#34;https://github.com/basecamp/pow/issues/202&#34;&gt;rbenv does not work well with pow&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Hugo】Hosting on GitHub Pages【翻訳】</title>
-      <link>http://kotazi.github.io/blog/post/2015111301/</link>
-      <pubDate>Fri, 13 Nov 2015 10:09:02 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2015111301/</guid>
-      <description>
-
-&lt;p&gt;HugoをGithub Pages上でホスティングする際に、大きくハマってしまったので全訳した。&lt;br /&gt;
-一度訳してみると、案外簡単にいった。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;導入:21faba431ee5196663af6ba4fcd50428&#34;&gt;導入&lt;/h2&gt;
-
-&lt;p&gt;多くのHugoユーザーが作成したブログをGithub Pages上にホストする方法に興味を抱いています。
-このチュートリアルはまさにそのためのものです。私たちに必要なドキュメントは、Hugoを正しくインストールし、git上で快適に動作させるためのものなのです。&lt;/p&gt;
-
-&lt;p&gt;このチュートリアルでは、主要なステップを通して&lt;a href=&#34;http://spencerlyon2.github.io/hugo_gh_blog&#34;&gt;http://spencerlyon2.github.io/hugo_gh_blog&lt;/a&gt;上で動作するサンプルブログを作成していきます。ソースコードは&lt;a href=&#34;https://github.com/spencerlyon2/hugo_gh_blog&#34;&gt;Github&lt;/a&gt;上に上がっています。読者はサンプルのリポジトリをダウンロードして、それに従ってみることを推奨します。&lt;/p&gt;
-
-&lt;h3 id=&#34;リポジトリの作成:21faba431ee5196663af6ba4fcd50428&#34;&gt;リポジトリの作成&lt;/h3&gt;
-
-&lt;p&gt;私たちの目的はGithub Pages上にブログをホストすることなので、ブログ記事をGithubリポジトリ上にホストするのは自然なことです。&lt;br /&gt;
-従って、最初のステップではウェブサイトのコンテンツを設置する新しいリポジトリ、もしくは既存のリポジトリに新しいディレクトリを作成します。
-このため、私は&lt;code&gt;spencerlyon2/hugo_gh_blog&lt;/code&gt;というリポジトリを作成しました。&lt;/p&gt;
-
-&lt;h2 id=&#34;ブログの作成:21faba431ee5196663af6ba4fcd50428&#34;&gt;ブログの作成&lt;/h2&gt;
-
-&lt;h3 id=&#34;設定ファイルを用意する:21faba431ee5196663af6ba4fcd50428&#34;&gt;設定ファイルを用意する&lt;/h3&gt;
-
-&lt;p&gt;新しいHugoサイトを作成するための第一歩として、&lt;a href=&#34;https://gohugo.io/overview/configuration/&#34;&gt;configファイル&lt;/a&gt;を記述します。このconfigファイルは下記の２つの理由において重要な役割を果たします。(1)baseurlなどの、サイトについての広い設定を行います。(2)またこのファイルが、Hugoサイトがどのように作られたかを示すためのものとなります。
-例として、私が作成した&lt;code&gt;config.yaml&lt;/code&gt;ファイルがあります。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;---
-contentdir: &amp;quot;content&amp;quot;
-layoutdir: &amp;quot;layouts&amp;quot;
-publishdir: &amp;quot;public&amp;quot;
-indexes:
-  category: &amp;quot;categories&amp;quot;
-baseurl: &amp;quot;http://spencerlyon2.github.io/hugo_gh_blog&amp;quot;
-title: &amp;quot;Hugo Blog Template for GitHub Pages&amp;quot;
-canonifyurls: true
-...
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;警告: このチュートリアル作成以後、デフォルトであった&lt;code&gt;canonifyurls:true&lt;/code&gt;は&lt;code&gt;false&lt;/code&gt;に変更されました。もしも、Spencerによる&lt;a href=&#34;https://github.com/spencerlyon2/hugo_gh_blog&#34;&gt;https://github.com/spencerlyon2/hugo_gh_blog&lt;/a&gt;サイトをチュートリアルで使うのであれば、自身の&lt;code&gt;config.yaml&lt;/code&gt;ファイルに&lt;code&gt;canonifyurls:true&lt;/code&gt;を手動で追加するようにしてください。でないと、CSSファイルが読み込まれません。
-より詳しくは、“Extras: URLs page”にある“Canonicalization: Caveat”を参考にしてみてください。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;サイト構造を定義する:21faba431ee5196663af6ba4fcd50428&#34;&gt;サイト構造を定義する&lt;/h3&gt;
-
-&lt;p&gt;Hugoはあなた自身が意味のあるサイト構造を設計し、それと同じ構造でサイトをレンダリングすることを想定しています。設定ファイルにある&lt;code&gt;contentdir: &amp;quot;content&amp;quot;&lt;/code&gt;という行に注目してください。これは全てのコンテンツは&lt;code&gt;content&lt;/code&gt;という名前のフォルダ配下に置かれるということを意味します。Hugoでは全てのディレクトリをセクションとして扱います。たとえばセクションがひとつしかなければ、投稿が一箇所に置かれることになります。そのため私たちは新たに２つのフォルダを作成しました。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/
-    ▾ content/
-        ▾ posts/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;htmlテンプレートの作成:21faba431ee5196663af6ba4fcd50428&#34;&gt;HTMLテンプレートの作成&lt;/h3&gt;
-
-&lt;p&gt;続いて新しいサイトの見た目の部分を定義していきます。
-Hugoではユーザー(あなた)が作成したHTMLテンプレートを使ってサイトを生成します。このステップはとても主観的なものです。私は単にブログを生成することが可能なテーマを使っています。LanyonというJekyllのテーマを使うことに決めました。LanyonはピュアCSSを使っており、少しだけ修正したものが/static/cssリポジトリに上がっています。チュートリアルに沿っていれば、サンプルリポジトリのstaticフォルダに格納されているはずです。&lt;/p&gt;
-
-&lt;p&gt;完璧なウェブサイトを作るにはたくさんのファイルが必要になるので、このチュートリアルで全てを補うことはできません。しかしながら、ディレクトリ構成だけ紹介させていただきます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/
-    ▾ content/
-        ▾ posts/
-            &amp;lt;blog posts&amp;gt;.md
-    ▾ static/
-        ▾ css/
-            lanyon.css
-            poole.css
-    ▾ layouts/
-        ▾ partials/
-            &amp;lt;templates to be used in other files&amp;gt;.html
-        ▾ posts/
-            li.html
-            single.html
-            summary.html
-        ▾ indexes/
-            category.html
-            indexes.html
-            posts.html
-        index.html
-    README.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;サンプルリポジトリの各ファイルは、そのファイルについてのコメントがなされています。Hugoでの、もしくはWebサイト自体の開発が初めてであれば、これらのファイルを確認しながらどのようにHugoのテンプレートが動いているかを確認してみるのもいいでしょう。&lt;/p&gt;
-
-&lt;h3 id=&#34;コンテンツの追加:21faba431ee5196663af6ba4fcd50428&#34;&gt;コンテンツの追加&lt;/h3&gt;
-
-&lt;p&gt;ブログ作成の最終ステップとして、実際の記事を追加してみます。このように、単なるMarkdown(&lt;code&gt;.md&lt;/code&gt;)で作成されたファイルです。各ファイルのトップに、投稿についてのメタデータを含むようにします。サンプルリポジトリから&lt;code&gt;/content/posts/newest.md&lt;/code&gt;に含まれるメタデータを参考にしてみてください。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;---
-title: &amp;quot;Just another sample post&amp;quot;
-date: &amp;quot;2014-03-29&amp;quot;
-description: &amp;quot;This should be a more useful description&amp;quot;
-categories:
-    - &amp;quot;hugo&amp;quot;
-    - &amp;quot;fun&amp;quot;
-    - &amp;quot;test&amp;quot;
----
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このセクションで設定されているキーは、タイトルと日付は必要で、説明とカテゴリは任意のものとなります。各アイテムは&lt;code&gt;/layouts&lt;/code&gt;ディレクトリ内のテンプレートを通して使用され、Hugoに投稿についての情報を与えます。&lt;/p&gt;
-
-&lt;h2 id=&#34;gitワークフローの構築:21faba431ee5196663af6ba4fcd50428&#34;&gt;gitワークフローの構築&lt;/h2&gt;
-
-&lt;p&gt;適切なサイト設定ができたら、Github Pages上で提供するために、それらをGithubの正しいブランチにpushしていく必要があります。これには多くの方法があります。ここでは私が現在も使っているワークフローを紹介します。&lt;/p&gt;
-
-&lt;p&gt;Github Pagesは有効な&lt;code&gt;index.html&lt;/code&gt;をリポジトリルートに含んだ&lt;code&gt;gh-pages&lt;/code&gt;という名のブランチをもったリポジトリから提供されます。典型的なワークフローは、ウェブサイトのコンテンツを&lt;code&gt;master&lt;/code&gt;ブランチに持ち、ウェブサイトを&lt;code&gt;gh-pages&lt;/code&gt;ブランチに持つという方法です。この方法はインプットとアウトプット間の良いセパレーションを提供しますが、作業が面倒だったりもします。一時的な解決方法として、&lt;code&gt;git subtree&lt;/code&gt;コマンドを使って&lt;code&gt;public&lt;/code&gt;ディレクトリ(&lt;code&gt;publishdir&lt;/code&gt;で設定しているもの)を&lt;code&gt;gh-pages&lt;/code&gt;ブランチのルートにミラーします。&lt;/p&gt;
-
-&lt;p&gt;適切にセットアップするために、ターミナル上で一連のコマンドを使います。私はコピペのためにも全てのコマンドをこのチュートリアルに含み、コメントで各コマンドについて説明します。このコマンドが&lt;code&gt;&amp;lt;root&amp;gt;&lt;/code&gt;ディレクトリで行われていることに注意してください。また、Githubアドレスを自身のリポジトリにすることにも注意してください。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Create a new orphand branch (no commit history) named gh-pages
-# gh-pagesという空のブランチを作成します
-git checkout --orphan gh-pages
-
-# Unstage all files
-# 全てのファイルをunstageします
-git rm --cached $(git ls-files)
-
-# Grab one file from the master branch so we can make a commit
-# masterブランチからファイルを取得し、コミットできるようにします。
-git checkout master README.md
-
-# Add and commit that file
-# Addしてコミットします
-git add .
-git commit -m &amp;quot;INIT: initial commit on gh-pages branch&amp;quot;
-
-# Push to remote gh-pages branch
-# リモートにgh-pagesブランチをプッシュします
-git push origin gh-pages
-
-# Return to master branch
-# masterブランチへcheckout
-git checkout master
-
-# Remove the public folder to make room for the gh-pages subtree
-# gh-pages subtreeを作成するために、publicフォルダを削除します
-rm -rf public
-
-# Add the gh-pages branch of the repository. It will look like a folder named public
-# gh-pagesブランチをリポジトリに追加します。それはpublicフォルダとして動作するはずです。
-git subtree add --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages --squash
-
-
-# Pull down the file we just committed. This helps avoid merge conflicts
-# 先ほどコミットしたファイルをpullします。コンフリクトを避けるためです。
-git subtree pull --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages
-
-# Run hugo. Generated site will be placed in public directory (or omit -t ThemeName if you&#39;re not using a theme)
-# Hugoを起動します。生成されたサイトはpublicディレクトリに格納されます。
-hugo -t ThemeName
-
-
-# Add everything
-# 全て追加します
-git add -A
-
-# Commit and push to master
-# masterにコミットしてpushします
-git commit -m &amp;quot;Updating site&amp;quot; &amp;amp;&amp;amp; git push origin master
-
-# Push the public subtree to the gh-pages branch
-# gh-pagesブランチにpublic subtreeをpushします
-git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages
-
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これらのコマンドを実行してGithubサーバーの更新を待てば、&lt;a href=&#34;http://spencerlyon2.github.io/hugo_gh_blog上にブログが作成されていることでしょう。&#34;&gt;http://spencerlyon2.github.io/hugo_gh_blog上にブログが作成されていることでしょう。&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;deploy-sh:21faba431ee5196663af6ba4fcd50428&#34;&gt;&lt;code&gt;deploy.sh&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;そして、ブログへ新しい投稿をするために、下記のステップを実行していきましょう。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;content/posts&lt;/code&gt;ディレクトリに新しい投稿のMarkdownファイルを生成する&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hugo server --watch&lt;/code&gt;で、プレビュー確認する&lt;/li&gt;
-&lt;li&gt;Hugoを実行し、ウェブサイト用のURLを生成する&lt;/li&gt;
-&lt;li&gt;masterブランチにAddしてコミットする&lt;/li&gt;
-&lt;li&gt;masterブランチにpushする&lt;/li&gt;
-&lt;li&gt;リモートのgh-pagesブランチへpublic subtreeをプッシュする&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;上のリストの最初の２つはシンプルで便利な方法であり、まあまあ合理的な方法でしょう。しかし、残りのステップは毎回同じことをしなくてはなりません。この繰り返しのプロセスを簡単にするために、リポジトリにスクリプトを用意しておきました。&lt;code&gt;deploy.sh&lt;/code&gt;というファイルで、下記のようになってます。&lt;/p&gt;
-
-&lt;h3 id=&#34;注意:21faba431ee5196663af6ba4fcd50428&#34;&gt;注意:&lt;/h3&gt;
-
-&lt;p&gt;最初のコマンドでデフォルトの設定を実行します。
-テーマを使うために、&lt;code&gt;-t ThemeName&lt;/code&gt;もつけましょう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo -t ThemeName
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To build all draft posts (If you only have drafts, no site will be generated)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo --buildDrafts
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;deploy-sh-1:21faba431ee5196663af6ba4fcd50428&#34;&gt;Deploy.sh:&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
-
-# Build the project.
-hugo
-
-# Add changes to git.
-git add -A
-
-# Commit changes.
-msg=&amp;quot;rebuilding site `date`&amp;quot;
-if [ $# -eq 1 ]
-  then msg=&amp;quot;$1&amp;quot;
-fi
-git commit -m &amp;quot;$msg&amp;quot;
-
-# Push source and build repos.
-git push origin master
-git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで、ワークフローリストの後ろ4つを&lt;code&gt;bash deploy.sh&lt;/code&gt;コマンドに置き換えることができます。
-このスクリプトはオプションでコミットメッセージを含めることができます。カスタムのコミットメッセージを含めたければ、&lt;code&gt;bash deploy.sh &amp;quot;&amp;lt;my commit msg&amp;gt;&amp;quot;&lt;/code&gt;としてください。何もなければ現在時刻が生成されます。&lt;/p&gt;
-
-&lt;h3 id=&#34;別の方法:21faba431ee5196663af6ba4fcd50428&#34;&gt;別の方法&lt;/h3&gt;
-
-&lt;p&gt;上記の&lt;code&gt;git subtree&lt;/code&gt;を用いた例では&lt;code&gt;gh-pages&lt;/code&gt;ブランチにデプロイしました。素晴らしいワークですが、ひとつ欠点があります。それは生成されたコンテンツをコミットする必要があるということです。&lt;/p&gt;
-
-&lt;p&gt;ここでは別のアプローチをとりましょう。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;mater&lt;/code&gt;にHugoサイトをセットする&lt;/li&gt;
-&lt;li&gt;空の&lt;code&gt;gh-pages&lt;/code&gt;ブランチを作成する&lt;/li&gt;
-&lt;li&gt;下記のフローに従う&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code&gt;gh-pages&lt;/code&gt;ブランチのセットアップが完了し、&lt;code&gt;master&lt;/code&gt;にはパブリッシュしたいコンテンツがコミットしてあるとします。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Fetch the deployment script into the root of your source tree, make it executable.
-wget https://github.com/X1011/git-directory-deploy/raw/master/deploy.sh &amp;amp;&amp;amp; chmod +x deploy.sh
-
-# For setting it up to build to a folder other than &amp;quot;dist&amp;quot;, see the options in deploy.sh.
-# Build the site to /dist.
-hugo -d dist
-
-# Run the deploy.sh script installed above.
-./deploy.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このコマンドでは、最後のコミットを使用します。
-より詳しくは、こちらを参考にしてください。&lt;/p&gt;
-
-&lt;h3 id=&#34;個人のページをホストする:21faba431ee5196663af6ba4fcd50428&#34;&gt;個人のページをホストする&lt;/h3&gt;
-
-&lt;p&gt;Githubの記事でも言及されているように、個人のページをホストすることもできます。ここでは下記の点が変わってきます。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;username.github.io&lt;/code&gt;を使う必要がある&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;master&lt;/code&gt;ブランチのコンテンツが生成される&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;よりシンプルにする例として、２つのレポジトリを作成し、ひとつはHugoコンテンツのもの、もうひとつはpublic フォルダを含んだgit submoduleとします。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;your-project&amp;gt;-hugo&lt;/code&gt;リポジトリを作成します(Hugo用)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;ブランチを作成します。(publicフォルダ用)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git clone &amp;lt;&amp;lt;your-project&amp;gt;-hugo-url&amp;gt; &amp;amp;&amp;amp; cd &amp;lt;your-project&amp;gt;-hugo&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;ローカルでサイトが動くようにします。&lt;/li&gt;
-&lt;li&gt;一度喜びを噛みしめ、サーバーを終了し、publicフォルダを削除&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git submodule add git@github.com:&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io.git public&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;ほぼ完了。&lt;code&gt;deploy.sh&lt;/code&gt;を追加しましょう。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
-
-# Build the project.
-hugo # if using a theme, replace by `hugo -t &amp;lt;yourtheme&amp;gt;`
-
-# Go To Public folder
-cd public
-# Add changes to git.
-git add -A
-
-# Commit changes.
-msg=&amp;quot;rebuilding site `date`&amp;quot;
-if [ $# -eq 1 ]
-  then msg=&amp;quot;$1&amp;quot;
-fi
-git commit -m &amp;quot;$msg&amp;quot;
-
-# Push source and build repos.
-git push origin master
-
-# Come Back
-cd ..
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで完了！&lt;code&gt;http://username.github.io/&lt;/code&gt;といった個人ページで動いているはずです！&lt;/p&gt;
-
-&lt;h3 id=&#34;結論:21faba431ee5196663af6ba4fcd50428&#34;&gt;結論&lt;/h3&gt;
-
-&lt;p&gt;このチュートリアルがあなたのお役に立てばなによりです。&lt;br /&gt;
-まだ分からないことがあれば、&lt;a href=&#34;https://gohugo.io/community/mailing-list/&#34;&gt;ディスカッションフォーラム&lt;/a&gt;から連絡してください。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;以上です。&lt;/p&gt;
 </description>
     </item>
     
