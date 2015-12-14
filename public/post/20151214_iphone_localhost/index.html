@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【訳読】PDFMakeにおけるカスタムフォントの利用 &middot; kotazi.com</title>
+		<title>手っ取り早くiPhoneからMacのローカルホストを確認する方法 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,85 +32,43 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【訳読】PDFMakeにおけるカスタムフォントの利用</h1>
-                    <h2 class="headline">November 18, 2015</h2>
+                    <h1>手っ取り早くiPhoneからMacのローカルホストを確認する方法</h1>
+                    <h2 class="headline">December 14, 2015</h2>
                 </header>
                 <section id="post-body">
                     
 
-<h2 id="カスタムフォントの使用-https-github-com-bpampuch-pdfmake-issues-33:16a5f450dd8c50b145f388ac7343234c"><a href="https://github.com/bpampuch/pdfmake/issues/33">カスタムフォントの使用</a></h2>
+<p>iPhoneでローカル開発環境をかくにんしたいなと思うけれど、
+Charlesを使う方法だったり、ごちゃごちゃさせたり、いろいろ方法がある。
+今回はMacとiPhoneで同じWi-Fiに接続できる際に一番手っ取り早い方法。</p>
 
-<p><code>vfs_fonts.js</code>は&rdquo;virtual-file-system&rdquo;オブジェクトを<code>pdfMake.vfs</code>に割り当てています。
-このオブジェクトの各キーがファイル名であり、値はbase64エンコードされたファイルを含みます。</p>
+<hr>
 
-<pre><code>grunt dump_dir
-</code></pre>
+<p>前提条件としてiPhoneとMacが同じWi-Fiに接続されているものとします。</p>
 
-<p>を実行すると新しく<code>examples/fonts</code>内のフォントを含んだ<code>vfs_fonts.js</code>が生成されます。
-RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊してしまわないように含んでいます。</p>
+<h5 id="macのipアドレスを確認する:f5e0516d08c181fdb7704efa84ca7cf1">◯ Macのipアドレスを確認する</h5>
 
-<p>カスタムフォントを利用するためには、3つのステップが必要になります。</p>
+<p>ターミナル上で<code>ifconfig</code>と入力して確認する。</p>
 
-<ol>
-<li>使用するフォントを含んだ<code>vfs_fonts.js</code>を生成する</li>
-<li>font familyを定義する</li>
-<li><code>doc-definition-object</code>内にあるfont familyを変更する</li>
-</ol>
+<p>ifconfig内の見方についてはここ。
+- <a href="http://www.atmarkit.co.jp/ait/articles/0109/29/news004.html">ifconfig　～（IP）ネットワーク環境の確認／設定を行う</a></p>
 
-<p><br></p>
+<p>各インターフェイスの役割については下記が参考になる。
+- <a href="http://bambinya.hateblo.jp/entry/2015/04/04/234428">ターミナルからプライベートIPアドレスとMACアドレス、ルーティングテーブルを確認する</a></p>
 
-<h3 id="1-使用するフォントを含んだ-vfs-fonts-js-を生成する:16a5f450dd8c50b145f388ac7343234c"><strong>1. 使用するフォントを含んだ<code>vfs_fonts.js</code>を生成する:</strong></h3>
+<p>またifconfigでの確認ができなければ、システム環境設定のネットワークから確認が可能。</p>
 
-<p><code>examples/fonts</code>内にフォントをコピーします。
-<code>grunt dump_dir</code>を実行してください。新しい<code>build/vfs_fonts.js</code>をウェブページで使います。</p>
+<p><img src="https://www.evernote.com/l/AHWkah5P951L7LCfLBTtPbZVz9miBB-hptcB/image.png" alt="" /></p>
 
-<p>ちなみに、上記のアクションは<code>examples/fonts</code>内の全てのファイルをダンプしてしまうので、画像ファイルなどを含むこともできます。</p>
+<h5 id="iphone側の設定:f5e0516d08c181fdb7704efa84ca7cf1">◯ iPhone側の設定</h5>
 
-<h3 id="2-font-familyを定義する:16a5f450dd8c50b145f388ac7343234c"><strong>2. font familyを定義する</strong></h3>
+<p>自分のMacのIPアドレスと確認し、iPhoneのWi-Fi設定を開く。
+HTTPプロキシから手動を選択し、MacのIPアドレスを入力する。</p>
 
-<p><code>pdfMake.createPdf(docDefinition)</code>が呼ばれる前に、pdfMake.fontsをセットします。</p>
+<p><img src="https://www.evernote.com/l/AHVh_WX90mdKrrXSMLQYw8hVFOwR_lOxmboB/image.jpg" alt="" /></p>
 
-<pre><code>{
-   yourFontName: {
-     normal: 'fontFile.ttf',
-     bold: 'fontFile2.ttf',
-     italics: 'fontFile3.ttf',
-     bolditalics: 'fontFile4.ttf'
-   },
-   anotherFontName: {
-     (...)
-   }
-}
-</code></pre>
-
-<p>キーの部分があとでdoc-definitionで使うfont-family名になります。
-各font-familyは4つのプロパティを定義します。<code>normal</code>/<code>bold</code>/<code>italics</code>/<code>bolditalics</code>です。</p>
-
-<p>デフォルトの構成は下記のようになっています。</p>
-
-<pre><code>{
-        Roboto: {
-                normal: 'Roboto-Regular.ttf',
-                bold: 'Roboto-Medium.ttf',
-                italics: 'Roboto-Italic.ttf',
-                bolditalics: 'Roboto-Italic.ttf'
-        }
-};
-</code></pre>
-
-<h3 id="3-doc-definition-object-内にあるfont-familyを変更する:16a5f450dd8c50b145f388ac7343234c"><strong>3. <code>doc-definition-object</code>内にあるfont familyを変更する</strong></h3>
-
-<p>現在、PDFMakeでは<code>Roboto</code>をデフォルトのfamily nameとして利用しています。あなたのフォントを使うためにはこれを変更する必要があります。一番簡単な方法はグローバルで<code>defaultStyle</code>を定義することです。</p>
-
-<pre><code>var docDefinition = {
-  content: (...),
-  defaultStyle: {
-    font: 'yourFontName'
-  }
-}
-</code></pre>
-
-<p>複雑にしてしまっているので、バージョン0.2.0では変更するつもりです。</p>
+<p>iPhone側で設定したIPを直接叩けばアクセスできる。
+<img src="https://www.evernote.com/l/AHWUMT8vaWBG2KRS1P_yJj8tahEkoZX4egoB/image.jpg" alt="" /></p>
 
                 </section>
             </article>
@@ -123,7 +81,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111901%2f - %e3%80%90%e8%a8%b3%e8%aa%ad%e3%80%91PDFMake%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%83%95%e3%82%a9%e3%83%b3%e3%83%88%e3%81%ae%e5%88%a9%e7%94%a8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f20151214_iphone_localhost%2f - %e6%89%8b%e3%81%a3%e5%8f%96%e3%82%8a%e6%97%a9%e3%81%8fiPhone%e3%81%8b%e3%82%89Mac%e3%81%ae%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%9b%e3%82%b9%e3%83%88%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -140,10 +98,6 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/20151214_iphone_localhost/">手っ取り早くiPhoneからMacのローカルホストを確認する方法<aside class="dates">Dec 14</aside></a>
-        </li>
         
    
     

@@ -5,7 +5,10 @@ title = "about"
 
 +++
 
-Hi, all.  
-I'm kotazi, web engineer.
+コタジです。  
+1990年生まれのエンジニア。  
 
-I write this blog for the future.
+新卒入社したサイバーエージェントを一年半で退職し、  
+現在はShuttlerock Japanで働いでいます。  
+
+好きな言葉は「一視同仁」。
