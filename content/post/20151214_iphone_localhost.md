@@ -18,10 +18,12 @@ Charlesを使う方法だったり、ごちゃごちゃさせたり、いろい�
 ターミナル上で`ifconfig`と入力して確認する。
 
 ifconfig内の見方についてはここ。
+
 - [ifconfig　～（IP）ネットワーク環境の確認／設定を行う](http://www.atmarkit.co.jp/ait/articles/0109/29/news004.html)
 
 
 各インターフェイスの役割については下記が参考になる。
+
 - [ターミナルからプライベートIPアドレスとMACアドレス、ルーティングテーブルを確認する](http://bambinya.hateblo.jp/entry/2015/04/04/234428)
 
 またifconfigでの確認ができなければ、システム環境設定のネットワークから確認が可能。
