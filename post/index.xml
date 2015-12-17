@@ -6,13 +6,70 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Dec 2015 09:38:38 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 17 Dec 2015 18:53:29 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Sketch3を始める前に読むべき記事6選</title>
+      <link>http://kotazi.github.io/blog/post/20151218_sketch/</link>
+      <pubDate>Thu, 17 Dec 2015 18:53:29 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151218_sketch/</guid>
+      <description>
+
+&lt;p&gt;AdobeCreativeCloudを会社で利用しようとしたら断られてしまった。&lt;br /&gt;
+基本的なAdobeツールの使い方を理解している人間が最速でSketchを使いこなすために。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;基本説明-充実系:6c4598494aa8504aac5da5593202dfce&#34;&gt;基本説明・充実系&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://leanpub.com/sketch3book/read&#34;&gt;Sketch 3 Book for Beginner&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;まずはこれに目を通すこと。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ascii.jp/elem/000/001/032/1032101/&#34;&gt;アプリUI制作のチュートリアルで学ぶSketchの使い方|ASCII.jp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;シンプルなチュートリアルで基本的な使い方を理解できる。&lt;/p&gt;
+
+&lt;h2 id=&#34;ショートカット系:6c4598494aa8504aac5da5593202dfce&#34;&gt;ショートカット系&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://whiskers.nukos.kitchen/2015/04/08/sketch-page-layer-shortcuts.html&#34;&gt;Sketch 3のページ・レイヤーを自在に操るショートカット|whiskers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;レイヤー操作のショートカット記事。細かい操作を物にするには必須。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://whiskers.nukos.kitchen/2014/11/04/sketch-links.html&#34;&gt;Sketch 3を使いこなすためリンクやメモ|whiskers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ショートカット知れるし、こういう機能があるんだということも知れる良い記事。&lt;/p&gt;
+
+&lt;h2 id=&#34;tips系:6c4598494aa8504aac5da5593202dfce&#34;&gt;TIPS系&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://coliss.com/articles/build-websites/operation/design/10-sketch-tricks-by-assentorp.html&#34;&gt;Sketchの使い方: 初心者がマスターしておきたいSketchでのデザイン作業がぐっと効率的になるチップス|coliss&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;実践的でいい。&lt;/p&gt;
+
+&lt;h2 id=&#34;おすすめプラグイン系:6c4598494aa8504aac5da5593202dfce&#34;&gt;おすすめプラグイン系&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://coliss.com/articles/build-websites/operation/design/best-plugins-for-sketch.html&#34;&gt;Sketchを更に便利にパワーアップするプラグインのまとめ|coliss&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>1つのページに2つのFacebookAppIdをセットした時</title>
       <link>http://kotazi.github.io/blog/post/20151215_fb_app_id/</link>
-      <pubDate>Thu, 17 Dec 2015 09:38:38 +0900</pubDate>
+      <pubDate>Wed, 16 Dec 2015 09:38:38 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/20151215_fb_app_id/</guid>
       <description>
@@ -1028,128 +1085,6 @@ angular.module(&#39;infinite-scroll&#39;).value(&#39;THROTTLE_MILLISECONDS&#39;,
 
 &lt;p&gt;公的機関について考えたことはあまりなかった。&lt;br /&gt;
 予算型組織という言葉が印象に残った。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【第1章】企業の成果/基本と原則</title>
-      <link>http://kotazi.github.io/blog/post/2015112001/</link>
-      <pubDate>Mon, 23 Nov 2015 19:44:59 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2015112001/</guid>
-      <description>
-
-&lt;p&gt;学生のころは分からなかったことが分かる気がした。&lt;br /&gt;
-ドラッカーの基本と原則をKidleで読みなおした。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;マネジメントの役割:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;マネジメントの役割&lt;/h2&gt;
-
-&lt;p&gt;組織は目的ではなく手段である。組織自体のために存在するのではなく、何をすべきかが重要。
-組織の中核の機関がマネジメント。マネジメントには3つの役割がある。&lt;/p&gt;
-
-&lt;p&gt;①自らの組織に特有の使命を果たす。&lt;br /&gt;
-②仕事を通じて働く人たちを生かす。&lt;br /&gt;
-③自らが社会に与える影響を処理するとともに、社会の問題について貢献する。&lt;/p&gt;
-
-&lt;p&gt;成果をあげること、人を生かすこと、社会に及ぼす影響を処理するとともに社会に貢献すること、これらの課題すべてを今日と明日のバランスのもとに果たすこと。&lt;/p&gt;
-
-&lt;h2 id=&#34;企業とは何か:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;企業とは何か&lt;/h2&gt;
-
-&lt;p&gt;企業は営利組織ではない。企業の目的の定義は一つしかない。それは、顧客を創造することである。&lt;/p&gt;
-
-&lt;p&gt;そして二つだけの基本的な機能を持つ。それがマーケティングとイノベーションである。マーケティングとイノベーションだけが成果をもたらす。&lt;/p&gt;
-
-&lt;p&gt;真のマーケティングは顧客からスタートする。すなわち現実、欲求、価値からスタートする。「われわれは何を売りたいか」ではなく、「顧客は何を買いたいか」を問う。&lt;/p&gt;
-
-&lt;p&gt;企業の第二の機能は、イノベーションすなわち新しい満足を生みだすことである。企業はより大きくなる必要はないが、より良くなることは必要。イノベーションとは、発明のことではない。技術のみに関するコンセプトでもない。経済に関わることである。経済的なイノベーション、さらに社会的なイノベーションは、技術のイノベーション以上に重要である。&lt;/p&gt;
-
-&lt;h2 id=&#34;事業は何か:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;事業は何か&lt;/h2&gt;
-
-&lt;p&gt;あらゆる組織において、共通のものの見方、理解、方向づけ、努力を実現するには、「われわれの事業は何か。何であるべきか」を定義することが不可欠である。&lt;/p&gt;
-
-&lt;p&gt;企業の目的としての事業が十分に検討されていないことが、企業の挫折や失敗の最大の原因である。&lt;/p&gt;
-
-&lt;p&gt;企業の目的と使命を定義するとき、出発点は一つしかない。顧客にとっての関心は、彼らにとっての価値、欲求、現実である。この事実からしても、「われわれの事業は何か」との問いに答えるには、顧客からスタートしなければならない。すなわち顧客の価値、欲求、期待、現実、状況、行動からスタートしなければならない。&lt;/p&gt;
-
-&lt;p&gt;したがって「顧客は誰か」との問いこそ、個々の企業の使命を定義するうえで、もっとも重要な問いである。この問いに対する答えによって、企業が自らをどう定義するかがほぼ決まってくる。&lt;/p&gt;
-
-&lt;p&gt;ほとんどの事業が少なくとも二種類の顧客を持つ。カーペット産業は建築業者、住宅購入者という二種類の顧客を持つ。この両者に購入してもらわなければならない。生活用品のメーカーは主婦、小売店という二種類の顧客を持つ。主婦に買う気を起こさせても、店が品を置いてくれなければ何にもならない。店が目につくよう陳列しても、主婦が買ってくれなければ何にもならない。&lt;/p&gt;
-
-&lt;h2 id=&#34;事業の目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;事業の目標&lt;/h2&gt;
-
-&lt;p&gt;目標設定においても、中心となるのはマーケティングとイノベーションである。なぜなら、顧客が代価を支払うのは、この二つの分野における成果と貢献に対してだからである。&lt;/p&gt;
-
-&lt;h4 id=&#34;マーケティングの目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;マーケティングの目標&lt;/h4&gt;
-
-&lt;p&gt;①既存の製品についての目標&lt;br /&gt;
-②既存の製品の廃棄についての目標&lt;br /&gt;
-③既存の市場における新製品についての目標&lt;br /&gt;
-④新市場についての目標&lt;br /&gt;
-⑤流通チャネルについての目標&lt;br /&gt;
-⑥アフターサービスについての目標&lt;br /&gt;
-⑦信用供与についての目標&lt;/p&gt;
-
-&lt;p&gt;これらの目標は、&amp;rdquo;集中の目標と市場地位の目標&amp;rdquo;の意思決定のあとでなければ設定できない。&lt;/p&gt;
-
-&lt;p&gt;市場において目指すべき地位は、最大ではなく最適である。&lt;/p&gt;
-
-&lt;p&gt;イノベーションの目標&lt;/p&gt;
-
-&lt;p&gt;イノベーションの種類。&lt;br /&gt;
-①製品とサービスにおけるイノベーション&lt;br /&gt;
-②市場におけるイノベーションと消費者の行動や価値観におけるイノベーション&lt;br /&gt;
-③製品を市場へ持っていくまでの間におけるイノベーション&lt;/p&gt;
-
-&lt;h4 id=&#34;経営資源の目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;経営資源の目標&lt;/h4&gt;
-
-&lt;p&gt;経済活動には三つの資源が必要である。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;土地つまり物的資源&lt;/li&gt;
-&lt;li&gt;労働つまり人材&lt;/li&gt;
-&lt;li&gt;資本つまり明日のための資金&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;である。これら三つの経営資源を確保しなければならない。&lt;/p&gt;
-
-&lt;h4 id=&#34;生産性の目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;生産性の目標&lt;/h4&gt;
-
-&lt;p&gt;生産性の向上こそ、マネジメントにとって重要な仕事の一つである。困難な仕事の一つである。なぜならば、生産性とは各種の要因の間のバランスをとることだからである&lt;/p&gt;
-
-&lt;h4 id=&#34;社会的責任の目標:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;社会的責任の目標&lt;/h4&gt;
-
-&lt;p&gt;わずか数年前まで、経済学者もマネジメントも、社会的な責任は無形であって、それに目標を設定することはできないとしていた。しかし今日、われわれはこの無形のものがきわめて有形たりうることを知った。消費者運動や、環境破壊に対する攻撃は、企業が社会に与える影響について自ら徹底的に検討し、目標を設定しなければならないことを学ぶための高価な授業だった。企業にとって、社会との関係は自らの存立に関わる問題である。企業は社会と経済のなかに存在する。ところが企業の内部にあっては、自らがあたかも真空に独立して存在していると考えてしまう。事実マネジメントの多くも、自らの事業を内部から眺めている。&lt;/p&gt;
-
-&lt;p&gt;しかし企業は、社会と経済のなかに存在する被創造物である。社会や経済は、いかなる企業をも一夜にして消滅させる力を持つ。企業は、社会や経済の許しがあって存在しているのであり、社会と経済が、その企業が有用かつ生産的な仕事をしていると見なすかぎりにおいて、その存続を許されているにすぎない。&lt;/p&gt;
-
-&lt;p&gt;社会性に関わる目標は、単なる良き意図の表明ではなく、企業の戦略に組み込まなければならない。社会性の目標が必要となるのは、マネジメントが社会に対して責任を負っているためではない。それは、マネジメントがまさに企業に対して責任を負っているためである。&lt;/p&gt;
-
-&lt;h2 id=&#34;戦略計画:77090054d5c2236a6e68ce7b5baeffe5&#34;&gt;戦略計画&lt;/h2&gt;
-
-&lt;p&gt;戦略計画ではないもの。&lt;/p&gt;
-
-&lt;p&gt;①戦略計画は魔法の箱や手法の束ではない。思考であり、資源を行動に結びつけるものである。&lt;br /&gt;
-②戦略計画は予測ではない。未来の主人公になろうとすることではない。&lt;br /&gt;
-③戦略計画は未来の意思決定に関わるものではない。それは、現在の意思決定が未来において持つ意味に関わるものである意思決定が存在し得るのは、現在においてのみである。&lt;br /&gt;
-④戦略計画はリスクをなくすためのものではなく、リスクを最小にするためのものでもないり経済的活動の本質とは、リスクを冒すことである。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;マネジメントの役割を明確にできてよかった。&lt;br /&gt;
-また、マーケティングとイノベーションだけが成果をもたらすという話に驚いた。&lt;/p&gt;
-
-&lt;p&gt;企業の目的は、顧客を創造すること。
-自分たちの提供するものではなく、顧客が何を欲しているか知る努力をする。
-顧客に満足してもらえるよう、自分たちに何ができるか。&lt;/p&gt;
-
-&lt;p&gt;組織としての成長、成果を実現するためには、&lt;br /&gt;
-「われわれの事業は何か。何であるべきか。」を定義することが不可欠。&lt;br /&gt;
-それが自分たちにはまだできていない。少なくとも組織内での共有がうまくできていない。&lt;/p&gt;
-
-&lt;p&gt;クライアントとユーザーを満たすために、&lt;br /&gt;
-自分たちにしかできないこと、自分たちがやっていきたいことを見つけなければならない。&lt;/p&gt;
 </description>
     </item>
     
