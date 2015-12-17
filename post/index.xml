@@ -6,8 +6,29 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Dec 2015 16:41:10 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 17 Dec 2015 09:38:38 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>1つのページに2つのFacebookAppIdをセットした時</title>
+      <link>http://kotazi.github.io/blog/post/20151215_fb_app_id/</link>
+      <pubDate>Thu, 17 Dec 2015 09:38:38 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151215_fb_app_id/</guid>
+      <description>
+
+&lt;p&gt;FacebookのApp IDを一つのページにセットした時のこと。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;sdk.jsで初期化処理に一つのappIDしかセットすることができない。
+２回初期化すれば最後に初期化した時のappIdが使われる。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考:bbd27431d7bc53d05c9c0392b31105ee&#34;&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.sourcecoast.com/forums/jfbconnect/jfbconnect-joomla-15-support/3514-multiple-fb-apps-on-one-domain&#34; alt=&#34;Multiple FB apps on one domain?&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>手っ取り早くiPhoneからMacのローカルホストを確認する方法</title>
@@ -1129,64 +1150,6 @@ angular.module(&#39;infinite-scroll&#39;).value(&#39;THROTTLE_MILLISECONDS&#39;,
 
 &lt;p&gt;クライアントとユーザーを満たすために、&lt;br /&gt;
 自分たちにしかできないこと、自分たちがやっていきたいことを見つけなければならない。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【忘備録】Github Pagesへの移行経緯</title>
-      <link>http://kotazi.github.io/blog/post/2015111902/</link>
-      <pubDate>Fri, 20 Nov 2015 19:18:11 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2015111902/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://www.kotazi.com/blog/post/2015111201/&#34;&gt;こちら&lt;/a&gt;の記事でドメイン移行をした。&lt;br /&gt;
-けれどもそれ以来メールが受け取れなくなってしまったので、忘備録として事の経緯をまとめる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;ドメイン移行前:3d672ebc6c92e3656d74a21c4d609c0c&#34;&gt;ドメイン移行前&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ムームードメイン&lt;/li&gt;
-&lt;li&gt;ロリポップ&lt;/li&gt;
-&lt;li&gt;Wordpress&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;でブログを2〜3年やっていた。&lt;br /&gt;
-Wordpressの更新が疎かになっていたので、Hugoに乗り換えたかった。&lt;br /&gt;
-過去の記事はなくなってもよかったし、レンタルサーバーもそんなに使わないかなという感じ。&lt;/p&gt;
-
-&lt;h2 id=&#34;hugoブログ作成:3d672ebc6c92e3656d74a21c4d609c0c&#34;&gt;Hugoブログ作成&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Gehirn&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;DNSサーバーをロリポップからGithub Pagesへ変更。
-GehirnのZone apexを使って、kotazi.com上でGithub Pagesを表示することができた。&lt;br /&gt;
-これで完了と思ったが、ロリポップメールを使っていたので、メールが使えなくなっていた。&lt;/p&gt;
-
-&lt;h2 id=&#34;zoho-mailを使う:3d672ebc6c92e3656d74a21c4d609c0c&#34;&gt;Zoho Mailを使う&lt;/h2&gt;
-
-&lt;p&gt;Zoho Mailを使えば無料で&lt;code&gt;kotazi@kotazi.com&lt;/code&gt;を使えると知った。
-アカウントを作成したもののGehirn上でMXレコードを設定することができなかった。
-これはAレコードをエイリアスで設定してしまったためかなと思っているが正直分からない。&lt;/p&gt;
-
-&lt;h2 id=&#34;解決編:3d672ebc6c92e3656d74a21c4d609c0c&#34;&gt;解決編&lt;/h2&gt;
-
-&lt;p&gt;結局どうにもならなかったのでGehirnを使うことを諦めた。
-ムームーDNS上でCNAMEを使ってブログを表示させることにした。
-だから&lt;code&gt;kotazi.com&lt;/code&gt;ではなく、&lt;code&gt;www.kotazi.com&lt;/code&gt;になってしまった。
-Aレコードでリダイレクトは設定できた。
-MXレコードもムームーDNS側から設定した。
-とりあえず、メールもWebサイトも使えるようになった。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考になった記事:3d672ebc6c92e3656d74a21c4d609c0c&#34;&gt;参考になった記事&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://tech.blog.aerie.jp/entry/2014/09/09/162135&#34;&gt;CNAME を巡る &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; のジレンマ | 鷲ノ巣&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

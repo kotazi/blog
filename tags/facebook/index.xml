@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Facebook on kotazi.com</title>
-    <link>http://localhost:1313/blog/tags/facebook/</link>
+    <link>http://kotazi.github.io/blog/tags/facebook/</link>
     <description>Recent content in Facebook on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2015 19:01:05 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/facebook/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Dec 2015 09:38:38 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/facebook/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>1つのページに2つのFacebookAppIdをセットした時</title>
-      <link>http://localhost:1313/blog/post/20151215_fb_app_id/</link>
-      <pubDate>Thu, 10 Dec 2015 19:01:05 +0900</pubDate>
+      <link>http://kotazi.github.io/blog/post/20151215_fb_app_id/</link>
+      <pubDate>Thu, 17 Dec 2015 09:38:38 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/post/20151215_fb_app_id/</guid>
+      <guid>http://kotazi.github.io/blog/post/20151215_fb_app_id/</guid>
       <description>
 
 &lt;p&gt;FacebookのApp IDを一つのページにセットした時のこと。&lt;/p&gt;
