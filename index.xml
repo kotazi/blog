@@ -6,8 +6,58 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Dec 2015 18:53:29 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Dec 2015 19:40:35 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>クローラとリファラースパム覚書</title>
+      <link>http://kotazi.github.io/blog/post/20151222_referer_spam/</link>
+      <pubDate>Fri, 18 Dec 2015 19:40:35 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151222_referer_spam/</guid>
+      <description>
+
+&lt;p&gt;404へのアクセスが多いと言われたので調べてみたこと。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;クローラのこと:00d2fb180dc48473aab37c318f758d82&#34;&gt;クローラのこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://web-tan.forum.impressrd.jp/e/2009/03/27/4952&#34;&gt;クローラーとは／検索エンジンの仕組みをおさらい。クローラー対策とステータスコード|エンジニアのためのSEO入門&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://nozziedesign.com/1341.html&#34;&gt;クローラーとは？検索エンジンの仕組みを解説！【初心者向け】|ネットビジネスで自由な人生を描くライフスタイルデザイナーノジーのブログ。&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;リファラースパムのこと:00d2fb180dc48473aab37c318f758d82&#34;&gt;リファラースパムのこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://think-the-web.com/referrer-spam-measures/&#34;&gt;リファラースパムとは-スパムURL一覧表（103個）＋対処法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Referer_spam&#34;&gt;Referer spam - Wikipedia, the free encyclopedia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;その他のこと:00d2fb180dc48473aab37c318f758d82&#34;&gt;その他のこと&lt;/h2&gt;
+
+&lt;p&gt;Googleアナリティクスの設定からロボットやスパイダーからのヒットを除外できる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.blogger-customize.com/2014/08/googleanalytics-crawler.html&#34;&gt;Google Analyticsでクローラーのトラフィックを除外する方法|Blogger-customize.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;リファラスパムの目的はアクセス解析している人間をWebサイトに誘い込むこと。
+アクセスを目的としている場合もあれば、アフィサイトに飛ばされることもある。
+同時にアクセス解析も正しくできなくなるというデメリットも被ることになる。&lt;/p&gt;
+
+&lt;p&gt;スパムクローラーみたいにも呼ばれるのかな？&lt;/p&gt;
+
+&lt;p&gt;GoogleAnalyticsでは設定からこれらを除外することができるようになっている。
+何故デフォルトでなっていないかといえば、そもそもアクセス解析ができて当初の目的は、
+サーバー負荷の計測にあったらしい。そのため、サーバー負荷という観点ではスパムからの
+アクセスも同様に計上するべきという考えらしい。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Sketch3を始める前に読むべき記事6選</title>
@@ -1049,42 +1099,6 @@ angular.module(&#39;infinite-scroll&#39;).value(&#39;THROTTLE_MILLISECONDS&#39;,
   &amp;lt;div ng-repeat=&amp;quot;item in items&amp;quot;&amp;gt;Item number {{$index}}: {{$item}}&amp;lt;/div&amp;gt;
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【第2章】公的機関の成果/基本と原則</title>
-      <link>http://kotazi.github.io/blog/post/2015112301/</link>
-      <pubDate>Tue, 24 Nov 2015 19:44:59 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2015112301/</guid>
-      <description>
-
-&lt;p&gt;学生のころは分からなかったことが分かる気がした。&lt;br /&gt;
-ドラッカーの基本と原則をKidleで読みなおした。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;多元社会の到来:b0aa24f3472b1b76afe363662b77c804&#34;&gt;多元社会の到来&lt;/h2&gt;
-
-&lt;p&gt;企業以外の組織もマネジメントを必要としている。また、企業内の各部門でもマネジメントは必要。&lt;/p&gt;
-
-&lt;h2 id=&#34;公的機関不振の原因:b0aa24f3472b1b76afe363662b77c804&#34;&gt;公的機関不振の原因&lt;/h2&gt;
-
-&lt;p&gt;公的機関に欠けているものは、成果であって効率ではない。効率によって成果を手にすることはできない。&lt;/p&gt;
-
-&lt;p&gt;公的機関と企業の基本的な違いは、支払いの受け方にある。予算から支払いを受けるということが、成果と業績の意味を変える。予算型組織における成果とは予算獲得である。
-予算型組織において、少ない予算、少ない人員で成果を上げることは業績にならない。むしろ組織を危うくしかねない。&lt;/p&gt;
-
-&lt;h2 id=&#34;公的機関成功の条件:b0aa24f3472b1b76afe363662b77c804&#34;&gt;公的機関成功の条件&lt;/h2&gt;
-
-&lt;p&gt;公的機関が成果を上げるうえで必要とするのは偉大な人物ではない。仕組みである。&lt;br /&gt;
-公的機関に必要なことは、企業のまねではない。もちろん、成果について評価することは必要である。だがそれらのものは、何よりもまず、病院らしく、行政組織らしく、政府らしくなければならない。自らに特有の使命、も汽笛、機能について徹底的に検討しなければならない。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;公的機関について考えたことはあまりなかった。&lt;br /&gt;
-予算型組織という言葉が印象に残った。&lt;/p&gt;
 </description>
     </item>
     
