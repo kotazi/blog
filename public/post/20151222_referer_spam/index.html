@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>手っ取り早くiPhoneからMacのローカルホストを確認する方法 &middot; kotazi.com</title>
+		<title>クローラとリファラースパム覚書 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,49 +32,51 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>手っ取り早くiPhoneからMacのローカルホストを確認する方法</h1>
-                    <h2 class="headline">December 14, 2015</h2>
+                    <h1>クローラとリファラースパム覚書</h1>
+                    <h2 class="headline">December 18, 2015</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>iPhoneでローカル開発環境をかくにんしたいなと思うけれど、
-Charlesを使う方法だったり、ごちゃごちゃさせたり、いろいろ方法がある。
-今回はMacとiPhoneで同じWi-Fiに接続できる際に一番手っ取り早い方法。</p>
+<p>404へのアクセスが多いと言われたので調べてみたこと。</p>
 
 <hr>
 
-<p>前提条件としてiPhoneとMacが同じWi-Fiに接続されているものとします。</p>
-
-<h5 id="macのipアドレスを確認する:f5e0516d08c181fdb7704efa84ca7cf1">◯ Macのipアドレスを確認する</h5>
-
-<p>ターミナル上で<code>ifconfig</code>と入力して確認する。</p>
-
-<p>ifconfig内の見方についてはここ。</p>
+<h2 id="クローラのこと:00d2fb180dc48473aab37c318f758d82">クローラのこと</h2>
 
 <ul>
-<li><a href="http://www.atmarkit.co.jp/ait/articles/0109/29/news004.html">ifconfig　～（IP）ネットワーク環境の確認／設定を行う</a></li>
+<li><p><a href="http://web-tan.forum.impressrd.jp/e/2009/03/27/4952">クローラーとは／検索エンジンの仕組みをおさらい。クローラー対策とステータスコード|エンジニアのためのSEO入門</a></p></li>
+
+<li><p><a href="http://nozziedesign.com/1341.html">クローラーとは？検索エンジンの仕組みを解説！【初心者向け】|ネットビジネスで自由な人生を描くライフスタイルデザイナーノジーのブログ。</a></p></li>
 </ul>
 
-<p>各インターフェイスの役割については下記が参考になる。</p>
+<h2 id="リファラースパムのこと:00d2fb180dc48473aab37c318f758d82">リファラースパムのこと</h2>
 
 <ul>
-<li><a href="http://bambinya.hateblo.jp/entry/2015/04/04/234428">ターミナルからプライベートIPアドレスとMACアドレス、ルーティングテーブルを確認する</a></li>
+<li><a href="http://think-the-web.com/referrer-spam-measures/">リファラースパムとは-スパムURL一覧表（103個）＋対処法</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Referer_spam">Referer spam - Wikipedia, the free encyclopedia</a></li>
 </ul>
 
-<p>またifconfigでの確認ができなければ、システム環境設定のネットワークから確認が可能。</p>
+<h2 id="その他のこと:00d2fb180dc48473aab37c318f758d82">その他のこと</h2>
 
-<p><img src="https://www.evernote.com/l/AHWkah5P951L7LCfLBTtPbZVz9miBB-hptcB/image.png" alt="" /></p>
+<p>Googleアナリティクスの設定からロボットやスパイダーからのヒットを除外できる。</p>
 
-<h5 id="iphone側の設定:f5e0516d08c181fdb7704efa84ca7cf1">◯ iPhone側の設定</h5>
+<ul>
+<li><a href="http://www.blogger-customize.com/2014/08/googleanalytics-crawler.html">Google Analyticsでクローラーのトラフィックを除外する方法|Blogger-customize.com</a></li>
+</ul>
 
-<p>自分のMacのIPアドレスと確認し、iPhoneのWi-Fi設定を開く。
-HTTPプロキシから手動を選択し、MacのIPアドレスを入力する。</p>
+<hr>
 
-<p><img src="https://www.evernote.com/l/AHVh_WX90mdKrrXSMLQYw8hVFOwR_lOxmboB/image.jpg" alt="" /></p>
+<p>リファラスパムの目的はアクセス解析している人間をWebサイトに誘い込むこと。
+アクセスを目的としている場合もあれば、アフィサイトに飛ばされることもある。
+同時にアクセス解析も正しくできなくなるというデメリットも被ることになる。</p>
 
-<p>iPhone側で設定したIPを直接叩けばアクセスできる。
-<img src="https://www.evernote.com/l/AHWUMT8vaWBG2KRS1P_yJj8tahEkoZX4egoB/image.jpg" alt="" /></p>
+<p>スパムクローラーみたいにも呼ばれるのかな？</p>
+
+<p>GoogleAnalyticsでは設定からこれらを除外することができるようになっている。
+何故デフォルトでなっていないかといえば、そもそもアクセス解析ができて当初の目的は、
+サーバー負荷の計測にあったらしい。そのため、サーバー負荷という観点ではスパムからの
+アクセスも同様に計上するべきという考えらしい。</p>
 
                 </section>
             </article>
@@ -87,7 +89,7 @@ HTTPプロキシから手動を選択し、MacのIPアドレスを入力する�
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f20151214_iphone_localhost%2f - %e6%89%8b%e3%81%a3%e5%8f%96%e3%82%8a%e6%97%a9%e3%81%8fiPhone%e3%81%8b%e3%82%89Mac%e3%81%ae%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%9b%e3%82%b9%e3%83%88%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f20151222_referer_spam%2f - %e3%82%af%e3%83%ad%e3%83%bc%e3%83%a9%e3%81%a8%e3%83%aa%e3%83%95%e3%82%a1%e3%83%a9%e3%83%bc%e3%82%b9%e3%83%91%e3%83%a0%e8%a6%9a%e6%9b%b8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -105,10 +107,6 @@ HTTPプロキシから手動を選択し、MacのIPアドレスを入力する�
     
     
         
-        <li>
-            <a href="http://kotazi.github.io/blog/post/20151222_referer_spam/">クローラとリファラースパム覚書<aside class="dates">Dec 18</aside></a>
-        </li>
-        
    
     
         
@@ -125,6 +123,10 @@ HTTPプロキシから手動を選択し、MacのIPアドレスを入力する�
         
    
     
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151214_iphone_localhost/">手っ取り早くiPhoneからMacのローカルホストを確認する方法<aside class="dates">Dec 14</aside></a>
+        </li>
         
    
     
