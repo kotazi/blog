@@ -1,0 +1,604 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【AngularJS×InstaAPI】Ohshimagramを作ってみた &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【AngularJS×InstaAPI】Ohshimagramを作ってみた</h1>
+                    <h2 class="headline">December 22, 2015</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>今年のGWの記事。<br />
+ブログを消したのでこの記事だけ復活。</p>
+
+<h2 id="概要:c961446d10dc1756ec8ab013192d7a44">概要</h2>
+
+<p>InstagramAPIを利用して<code>#伊豆大島</code>のついたものを引っ張ってくるAngularJSのサービスを作りました。<br />
+今更感が否めないのですが、いくつか改めて勉強し直したいことがあったので。<br />
+実装前に考えたことや、実装しながら学んだことを下記にまとめます。</p>
+
+<p>ちなみに今回作成したサービスはこちら。</p>
+
+<ul>
+<li><a href="ohshimagram.kotazi.com">ohshimagram</a></li>
+</ul>
+
+<h3 id="はじめに考えたこと:c961446d10dc1756ec8ab013192d7a44">■ はじめに考えたこと</h3>
+
+<h4 id="開発期間:c961446d10dc1756ec8ab013192d7a44">▼ 開発期間</h4>
+
+<p><sup>4</sup>&frasl;<sub>20</sub>(月)〜4/27(月)の空き時間。と伊豆大島旅行中に締め。</p>
+
+<h4 id="実装する機能:c961446d10dc1756ec8ab013192d7a44">▼ 実装する機能</h4>
+
+<ul>
+<li>Instagram画像の収集をする</li>
+<li>Instagramに認証する</li>
+<li>いいね/コメントをユーザーが行えるようにする</li>
+</ul>
+
+<h4 id="使いたいもの-やりたいこと:c961446d10dc1756ec8ab013192d7a44">▼ 使いたいもの/やりたいこと</h4>
+
+<ul>
+<li>AngularJS</li>
+<li><s>ES6</s> =&gt; 諦めた</li>
+<li>CoffeeScript</li>
+<li>BootStrap</li>
+<li>Gulp</li>
+<li>InstagramAPI</li>
+<li>UI-Router</li>
+<li><s>JSDoc</s> =&gt; やめた</li>
+<li>Masonry</li>
+<li>Angular-local-storage</li>
+<li>bootflat</li>
+<li>slim</li>
+<li>$resource</li>
+<li>単体テスト</li>
+<li><s>E2Eテスト</s> =&gt; 1割程度</li>
+<li>ngInfiniteScroll</li>
+</ul>
+
+<h4 id="意識すること:c961446d10dc1756ec8ab013192d7a44">▼ 意識すること</h4>
+
+<ul>
+<li>一週間以内に制作すること</li>
+<li>できたものを公開すること</li>
+<li>テストコードを書くこと</li>
+<li>後に学びをまとめること</li>
+<li>とにかくスピードを重視</li>
+<li>SourceTreeを使わない =&gt; けっこう使った</li>
+</ul>
+
+<h4 id="参考にしたいurl:c961446d10dc1756ec8ab013192d7a44">▼ 参考にしたいURL</h4>
+
+<ul>
+<li><a href="http://syncer.jp/instagram-api-matome">Instagram APIでwebサービスを作りたい全ての人に向けて書きました</a></li>
+<li><a href="http://www.dcrew.jp/ja-instagram-api-doc-v1/index.php/2-uncategorised/2-instagram-api">Instagram API (日本語訳)</a></li>
+<li><a href="https://instagram.com/developer/">Instagram API </a></li>
+</ul>
+
+<h2 id="実装中のメモ:c961446d10dc1756ec8ab013192d7a44">実装中のメモ</h2>
+
+<h3 id="プロジェクトの作成:c961446d10dc1756ec8ab013192d7a44">■ プロジェクトの作成</h3>
+
+<h4 id="プロジェクトを作成する:c961446d10dc1756ec8ab013192d7a44">▼ プロジェクトを作成する</h4>
+
+<p>下記の記事を参考に<code>yoman</code>のジェネレータを探す。</p>
+
+<ul>
+<li><a href="http://blog.kinzal.net/post/104245981055/yeoman-angularjs-2014">yeomanを使ったAngularJSプロジェクトの始め方 2014年版</a></li>
+</ul>
+
+<p><code>gulp</code>を使用したいので<a href="https://github.com/Swiip/generator-gulp-angular">Swiip/generator-gulp-angular</a>にします。</p>
+
+<p>ドキュメント通りに<code>yo gulp-angular kyu-maru-gram</code>としてプロジェクトを作成。<br />
+初期設定はこんな感じ。<a href="http://slim-lang.com/">slim</a>を使ってみたかったのでテンプレートは選ばず。</p>
+
+<pre><code>? Which version of Angular do you want? 1.3.x (latest)
+? Which Angular's modules would you want to have? (ngRoute and ngResource will be addressed after) angular-animate.js (enable animation features), angular-cookies.js (handle cookie management), angular-touch.js (for mobile development), angular-sanitize.js (to securely parse and manipulate HTML)
+? Would you need jQuery or perhaps Zepto? jQuery 2.x (new version, lighter, IE9+)
+? Would you like to use a REST resource library? ngResource, the official support for RESTful services
+? Would you like to use a router ? UI Router, flexible routing with nested views
+? Which UI framework do you want? Bootstrap, the most popular HTML, CSS, and JS framework
+? How do you want to implements your Bootstrap components? Angular UI Bootstrap, Bootstrap components written in pure AngularJS by the AngularUI Team
+? Which CSS preprocessor do you want? Sass (Node), Node.js binding to libsass, the C version of the popular stylesheet preprocessor, Sass.
+? Which JS preprocessor do you want? CoffeeScript, &quot;a little language that compiles into JavaScript&quot;.
+? Which html template engine would you want? None, I like to code in standard HTML.
+</code></pre>
+
+<h5 id="コマンドメモ:c961446d10dc1756ec8ab013192d7a44">◯ コマンドメモ</h5>
+
+<ul>
+<li><code>gulp serve</code>: ローカルで起動</li>
+<li><code>gulp build</code>: ビルド</li>
+<li><code>gulp protractor</code>: e2eテスト</li>
+<li><code>gulp test</code>: 単体テスト</li>
+</ul>
+
+<h4 id="ディレクトリ構成を考える:c961446d10dc1756ec8ab013192d7a44">▼ ディレクトリ構成を考える</h4>
+
+<ul>
+<li><a href="https://github.com/mgechev/angularjs-style-guide/blob/master/README-ja-jp.md">mgechev/angularjs-style-guide</a></li>
+<li><a href="http://qiita.com/n0bisuke/items/6a79d3ee63020f771260">Angular.jsのディレクトリ構成のベストプラクティスを探る</a></li>
+</ul>
+
+<h4 id="環境構築:c961446d10dc1756ec8ab013192d7a44">▼ 環境構築</h4>
+
+<h5 id="gitにあげておく:c961446d10dc1756ec8ab013192d7a44">◯ gitにあげておく</h5>
+
+<ul>
+<li><a href="https://github.com/kotazi/kyu-maru-gram/tree/master">kotazi/kyu-maru-gram</a></li>
+</ul>
+
+<h5 id="slimの導入:c961446d10dc1756ec8ab013192d7a44">◯ slimの導入</h5>
+
+<ul>
+<li><a href="https://www.npmjs.com/package/gulp-slim">gulp-slim</a></li>
+</ul>
+
+<p>slimをHTMLにコンバートするためのタスクを追加。</p>
+
+<pre><code>'use strict';
+
+var gulp = require(&quot;gulp&quot;);
+var slim = require(&quot;gulp-slim&quot;);
+
+module.exports = function(options) {
+  gulp.task('slim', function(){
+†
+  });
+}
+</code></pre>
+
+<p>これである程度開発環境は整った。</p>
+
+<h3 id="ルーティング:c961446d10dc1756ec8ab013192d7a44">■ ルーティング</h3>
+
+<p>ひとまず<code>/about</code>/<code>/contact</code>ページを作ってみることにする。
+HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードでは毎回リクエストが飛んでしまうらしいのでHashモードを使うことに。どうやら一長一短みたい。</p>
+
+<ul>
+<li><a href="http://qiita.com/shogogg/items/542bd6d18f777bcc24bc">AngularJS の $locationProvider.html5Mode について</a></li>
+</ul>
+
+<h4 id="oauth認証について:c961446d10dc1756ec8ab013192d7a44">▼ Oauth認証について</h4>
+
+<p>下記のようにしてリダイレクト時のURLをマッチング。<br />
+<code>*path</code>で任意の文字列とマッチングできる。</p>
+
+<pre><code>        .state('oauth',
+          url: '/access_token=*path'
+          templateUrl: 'app/main/main.html'
+          controller: &quot;MainCtrl&quot;
+        )
+</code></pre>
+
+<h3 id="instagramapiの利用:c961446d10dc1756ec8ab013192d7a44">■ InstagramAPIの利用</h3>
+
+<p>ひとまずDeveloper登録から。</p>
+
+<p><img src="https://www.evernote.com/shard/s117/sh/b4f0761d-b6bc-4c9d-9dbe-c459ac5ed9c7/f0dd1d0a2552d5068fbaccde8bbd0e69/deep/0/貼り付けた画像-2015-04-21-13-28.png" alt="%E8%B2%BC%E3%82%8A%E4%BB%98%E3%81%91%E3%81%9F%E7%94%BB%E5%83%8F%202015/04/21%2013:28" /></p>
+
+<p>アプリケーションを登録する。</p>
+
+<p><img src="https://www.evernote.com/shard/s117/sh/fd17a3f8-feab-4962-a4ff-50500ac36c75/5aa611400a2e240a1e561f4c153484bd/deep/0/貼り付けた画像-2015-04-21-13-33.png" alt="%E8%B2%BC%E3%82%8A%E4%BB%98%E3%81%91%E3%81%9F%E7%94%BB%E5%83%8F%202015/04/21%2013:33" /></p>
+
+<p>アプリケーションの登録ができた。</p>
+
+<p><img src="https://www.evernote.com/shard/s117/sh/010bf137-063c-4b7c-bb49-7dde173b3264/a17e94517e78f21939cf3df1acd66cb2/deep/0/貼り付けた画像-2015-04-21-13-34.png" alt="%E8%B2%BC%E3%82%8A%E4%BB%98%E3%81%91%E3%81%9F%E7%94%BB%E5%83%8F%202015/04/21%2013:34" /></p>
+
+<p>認証画面を確認。
+<img src="https://www.evernote.com/shard/s117/sh/3a74eb3d-e878-4fc5-aa30-acec912ff9b5/e31744b19758225816adaa7744c8a29c/deep/0/貼り付けた画像-2015-04-21-13-53.png" alt="%E8%B2%BC%E3%82%8A%E4%BB%98%E3%81%91%E3%81%9F%E7%94%BB%E5%83%8F%202015/04/21%2013:53" /></p>
+
+<h4 id="認証をアプリケーションないで叩く:c961446d10dc1756ec8ab013192d7a44">▼ 認証をアプリケーションないで叩く。</h4>
+
+<p>アプリケーションの認証には&rdquo;暗黙の認証&rdquo;を使ってクライアント側のみで実行する。<br />
+具体的にはアプリケーション起動時に、ローカルストレージにアクセストークンがなければAPIを叩いて取得するようにした。</p>
+
+<h3 id="corsにハマる:c961446d10dc1756ec8ab013192d7a44">■ CORSにハマる</h3>
+
+<ul>
+<li><a href="http://codepen.io/netsi1964/pen/drmkL?editors=101">Showing popular Instagram pictures|CODEPEN</a>
+=&gt; <code>callback=JSON_CALLBACK</code>をつけること</li>
+</ul>
+
+<pre><code>      $http.jsonp('https://api.instagram.com/v1/media/popular?client_id=4183bc0c52d8448cbd52f6694ad9325b&amp;callback=JSON_CALLBACK'
+      ).success( (data) -&gt;
+        
+      )
+</code></pre>
+
+<ul>
+<li><a href="http://www.bennadel.com/blog/2610-using-jsonp-with-resource-in-angularjs.htm">Using JSONP With $resource In AngularJS</a></li>
+</ul>
+
+<p>=&gt; <code>$resource</code>を使って記述する方法。</p>
+
+<pre><code>      insta = $resource('https://api.instagram.com/v1/media/popular',
+        {
+          callback: &quot;JSON_CALLBACK&quot;
+        },
+        {
+          query:
+            method: 'JSONP'
+            params:
+              client_id: Insta.clientId
+        }
+      )
+
+      insta.query().$promise.then((res)-&gt;
+      )
+</code></pre>
+
+<h3 id="bootstrap:c961446d10dc1756ec8ab013192d7a44">■ Bootstrap</h3>
+
+<p>初めてのBootStrap。<br />
+基本的な使い方はやっぱりドットインストールが助かった。</p>
+
+<ul>
+<li><a href="http://getbootstrap.com/css/">CSS|Bootstrap</a></li>
+<li><a href="http://getbootstrap.com/components/">Components|Bootstrap</a></li>
+<li><a href="http://getbootstrap.com/javascript/">Javascript|Bootstrap</a></li>
+</ul>
+
+<h4 id="bootflat:c961446d10dc1756ec8ab013192d7a44">▼ Bootflat</h4>
+
+<p>せっかくなのでBootflatも使ってみた。</p>
+
+<ul>
+<li><a href="http://bootflat.github.io/">Bootflat</a></li>
+</ul>
+
+<h4 id="modalが閉じれない:c961446d10dc1756ec8ab013192d7a44">▼ modalが閉じれない</h4>
+
+<p>modalが閉じれなくてひどくハマった。<br />
+ 使っていたのが<a href="https://angular-ui.github.io/bootstrap/">AngularのBootStrap</a>だったのでダイアログの閉じ方が違った。</p>
+
+<pre><code>       $scope.close = () -&gt;
+        $modalInstance.dismiss('cancel')
+</code></pre>
+
+<h3 id="masonry:c961446d10dc1756ec8ab013192d7a44">■ Masonry</h3>
+
+<p>今回はMasonryではなく、Isotopeで対応することに。<br />
+itemに高さを持たせることができなくてかなりハマったけれど、<code>new Isotope</code>をする際に<code>ng-repeat</code>がまだ回っていなくてDOMの生成が追いついていないだけだった。
+ImageLoadedも入れたいけれど、これは改善案として先へ進む。</p>
+
+<p>また、IsotopeとOutlayerの読み込みの順番に問題があったようなので<code>bower.json</code>から上書きを行ったのでメモ。</p>
+
+<pre><code>+  &quot;overrides&quot;: {
++    &quot;outlayer&quot;: {
++      &quot;main&quot;: [
++        &quot;item.js&quot;,
++        &quot;outlayer.js&quot;
++      ]
++    },
++    &quot;isotope&quot;: {
++      &quot;main&quot;: [
++        &quot;item.js&quot;,
++        &quot;isotope.js&quot;
++      ]
++    }
+</code></pre>
+
+<p>そのあと<code>isFitWidth: true</code>が効かなくてまたハマったけれど、親にちゃんと<code>margin: 0 auto;</code>を付ける必要があるみたい。<br />
+Masonryはあまり親切ではないと思うようになった。</p>
+
+<h3 id="画像の収集:c961446d10dc1756ec8ab013192d7a44">■ 画像の収集</h3>
+
+<p>この辺りは意外とAPIを叩くだけ。</p>
+
+<pre><code>getKyumaruItems: () -&gt;
+  resource = $resource('https://api.instagram.com/v1/tags/:tagId/media/recent',
+    {
+      tagId: '伊豆大島'
+      callback: &quot;JSON_CALLBACK&quot;
+    },
+    {
+      query:
+        method: 'JSONP'
+        params:
+          client_id: Insta.clientId
+    }
+  )
+  resource.query()
+</code></pre>
+
+<p>次のページを見るには<code>res.pagination</code>内に<code>next_url</code>が含まれているのでそれを使うようにする。</p>
+
+<h3 id="ログイン-ログアウト:c961446d10dc1756ec8ab013192d7a44">■ ログイン/ログアウト</h3>
+
+<p>ログインとログアウトの機能は必要なかった。
+アプリケーションの利用には認証を通すようにした。</p>
+
+<p>ちなみにSafariだとImplicit認証のときにaccess_tokenが返ってこない。。</p>
+
+<h3 id="いいね-コメント:c961446d10dc1756ec8ab013192d7a44">■ いいね/コメント</h3>
+
+<p>クライアントサイドからだと叩くことができないようだった。<br />
+どこかに書いてあったけど分からなくなってしまった。</p>
+
+<h3 id="unit-testing:c961446d10dc1756ec8ab013192d7a44">■ Unit testing</h3>
+
+<h4 id="httpbackend:c961446d10dc1756ec8ab013192d7a44">▼ $httpBackend</h4>
+
+<ol>
+<li>期待するリクエストをレスポンスを記述。</li>
+<li>api呼び出し</li>
+<li><code>httpBackend.flush()</code></li>
+</ol>
+
+<p><code>api.getSelfData</code>の返り値を<code>resource.query().$promise</code>から<code>resource.query()</code>に変更した。</p>
+
+<pre><code>'use strict'
+
+describe 'api.service', -&gt;
+  httpBackend = undefined
+
+  beforeEach module('kyuMaruGram')
+  beforeEach inject(($httpBackend) -&gt;
+    httpBackend = $httpBackend
+
+    return
+  )
+
+  it 'should return correct userData.', inject((api) -&gt;
+
+    userData =      {
+      &quot;username&quot;: &quot;kotazi00&quot;,
+      &quot;bio&quot;: &quot;&quot;,
+      &quot;website&quot;: &quot;http://kotazi.com&quot;,
+      &quot;profile_picture&quot;: &quot;https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/1538500_770312479710878_1172916184_a.jpg&quot;,
+      &quot;full_name&quot;: &quot;kotazi&quot;,
+      &quot;counts&quot;: {
+        &quot;media&quot;: 95,
+        &quot;followed_by&quot;: 125,
+        &quot;follows&quot;: 170
+      },
+      &quot;id&quot;: &quot;13712342&quot;
+    }
+
+    httpBackend
+      .when('JSONP', 'https://api.instagram.com/v1/users/self?callback=JSON_CALLBACK')
+      .respond(userData)
+
+    data = api.getSelfData()
+    httpBackend.flush()
+
+    expect(data.username).toEqual(userData.username)
+    expect(data.website).toEqual(userData.website)
+    expect(data.profile_picture).toEqual(userData.profile_picture)
+  )
+
+
+  return
+</code></pre>
+
+<h3 id="end-to-end-testing:c961446d10dc1756ec8ab013192d7a44">■ End to End testing</h3>
+
+<p>新しいことばかりなので、デフォルトにあったやつを。</p>
+
+<p><code>main.po.js</code></p>
+
+<pre><code>/**
+ * This file uses the Page Object pattern to define the main page for tests
+ * https://docs.google.com/presentation/d/1B6manhG0zEXkC-H-tPo2vwU06JhL8w9-XCF9oehXzAQ
+ */
+
+'use strict';
+
+var MainPage = function() { 
+  debugger
+  this.jumbEl = element(by.css('.jumbotron'));
+  this.h1El = this.jumbEl.element(by.css('h1'));
+  this.imgEl = this.jumbEl.element(by.css('img'));
+  this.thumbnailEls = element(by.css('body')).all(by.repeater('awesomeThing in awesomeThings'));
+};
+
+module.exports = new MainPage();
+</code></pre>
+
+<p><code>main.spec.js</code></p>
+
+<pre><code>'use strict';
+
+describe('The main view', function () {
+  var page;
+
+  beforeEach(function () {
+    browser.get('http://localhost:3000/index.html');
+    page = require('./main.po');
+  });
+
+  it('should include jumbotron with correct data', function() {
+    expect(page.h1El.getText()).toBe('\'Allo, \'Allo!');
+    expect(page.imgEl.getAttribute('src')).toMatch(/assets\/images\/yeoman.png$/);
+    expect(page.imgEl.getAttribute('alt')).toBe('I\'m Yeoman');
+  });
+
+  it('list more than 5 awesome things', function () {
+    expect(page.thumbnailEls.count()).toBeGreaterThan(5);
+  });
+
+});
+
+</code></pre>
+
+<h2 id="成果物:c961446d10dc1756ec8ab013192d7a44">成果物</h2>
+
+<p>改めて一週間で完成したものがこちら。</p>
+
+<ul>
+<li><a href="ohshimagram.kotazi.com">ohshimagram</a></li>
+</ul>
+
+<h4 id="課題:c961446d10dc1756ec8ab013192d7a44">▼ 課題</h4>
+
+<ul>
+<li>Gulpタスクがボロボロ</li>
+<li>CORSにハマりすぎた</li>
+<li>公開に手間取った</li>
+<li>E2Eテストが結局ちゃんと書けていない</li>
+</ul>
+
+<p>とりあえず、この後はどうやってコメントやフォローの機能を付けるかを考える。<br />
+必要であればRailsを学ぶ。というか多分必要。JenkinsとかDatabase周りも触ってみたい。</p>
+
+<h4 id="感想:c961446d10dc1756ec8ab013192d7a44">▼ 感想</h4>
+
+<p>ひとまず一週間でそれなりに動くものができたのでよかった。<br />
+調べてみるとフォローやコメントといった機能はクライアントサイドオンリーではできないみたい？<br />
+あと、アプリケーションが完成したあとの公開方法に非常に困った。<br />
+結局自分のサーバーに置いたのだけれど、そのうちRailsに移植させてコメント機能なども付けてうまいことやりたい。</p>
+
+<p>最後に。パソコンがあればどこでも仕事はできると再認識することができた。<br />
+東京に縛られた生活をするよりも、好きな場所で好きな時に仕事をしていたほうが楽しい。<br />
+数年後、自然に囲まれた場所で働いていますように！！！</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f20151222_ohshima%2f - %e3%80%90AngularJS%c3%97InstaAPI%e3%80%91Ohshimagram%e3%82%92%e4%bd%9c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151222_referer_spam/">クローラとリファラースパム覚書<aside class="dates">Dec 18</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151218_sketch/">Sketch3を始める前に読むべき記事6選<aside class="dates">Dec 17</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151215_fb_app_id/">1つのページに2つのFacebookAppIdをセットした時<aside class="dates">Dec 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151214_iphone_localhost/">手っ取り早くiPhoneからMacのローカルホストを確認する方法<aside class="dates">Dec 14</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151211_mail/">クライアントへのメールを返信を見ていて考えたこと<aside class="dates">Dec 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151214_management/">【第6章】マネジメントの技能/基本と原則<aside class="dates">Dec 11</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151210_jquery/">いまいち忘れるjQuery<aside class="dates">Dec 10</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151209_management/">【第5章】マネジャー/基本と原則<aside class="dates">Dec 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/20151208_management/">【第4章】社会的責任/基本と原則<aside class="dates">Dec 8</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2015 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>
