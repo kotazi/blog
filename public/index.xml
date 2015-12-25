@@ -6,16 +6,21 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Dec 2015 15:02:22 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 25 Dec 2015 16:38:36 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>ドラッカーの『マネジメント』を読んだ</title>
+      <title>ドラッカーから考えるプロダクトマネジャーの仕事</title>
       <link>http://kotazi.github.io/blog/post/20151224_management/</link>
-      <pubDate>Fri, 25 Dec 2015 15:02:22 +0900</pubDate>
+      <pubDate>Fri, 25 Dec 2015 16:38:36 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/20151224_management/</guid>
-      <description>&lt;p&gt;まとめ記事。&lt;/p&gt;
+      <description>&lt;p&gt;この記事は&lt;a href=&#34;http://qiita.com/advent-calendar/2015/productmanager&#34;&gt;Product Manager Advent Calendar 2015&lt;/a&gt;の25日目の記事です。&lt;/p&gt;
+
+&lt;p&gt;こんにちは、kotazi(コタジ)です。&lt;br /&gt;
+Shuttlerock Japanに入社して1年が経ちました。普段はエンジニアをしていますが、組織の抱える課題に対し、エンジニア的アプローチでは解決できないものもあると感じ、「マネジメント〜基本と原則〜」をkindleで購入しました。&lt;/p&gt;
+
+&lt;p&gt;その時のメモ書きを公開します。&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/2015112001/&#34;&gt;【第1章】企業の成果/基本と原則&lt;/a&gt;&lt;/li&gt;
@@ -23,11 +28,24 @@
 &lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151202/&#34;&gt;【第3章】仕事と人間/基本と原則&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151208_management/&#34;&gt;【第4章】社会的責任/基本と原則&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151209_management/&#34;&gt;【第5章】マネジャー/基本と原則&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151209_management/&#34;&gt;【第6章】マネジメントの技能/基本と原則&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151214_management//&#34;&gt;【第6章】マネジメントの技能/基本と原則&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151221_managemant/&#34;&gt;【第7章】マネジメントの組織/基本と原則&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151221_managemant/&#34;&gt;【第8章】トップマネジメント/基本と原則&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151223_management//&#34;&gt;【第8章】トップマネジメント/基本と原則&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://kotazi.github.io/blog/post/20151224_management2/&#34;&gt;【第9章】マネジメントの戦略/基本と原則&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;ドラッカーの基本と原則の中でマネジャーは「組織の成果に責任を持つ者」として定義されています。
+またマネジャーには２つの役割があり、「投入した資源の総和よりも大きなものを生み出す生産体を創造すること」、「決定と行動において、ただちに必要とされているものと遠い将来に必要とされているものを調和させていくこと」です。&lt;/p&gt;
+
+&lt;p&gt;こういったマネジメントの基本と原則についての考えは、プロダクトマネジメントやプロダクトマネジャーの仕事をしていくうえで応用ができるはずです。&lt;/p&gt;
+
+&lt;p&gt;マネジメントの役割も下記のように述べられています。&lt;/p&gt;
+
+&lt;p&gt;1.組織本来の使命を果たすべくマネジメントすること
+2.生産的な仕事を通じて人に成果を上げさせること
+3.社会と個人に生活の質を提供すること&lt;/p&gt;
+
+&lt;p&gt;チーム本来の使命を再確認し、個々の働きがいや自己実現と真摯に向き合い、顧客により良いものを提供できるようなプロダクトマネジメントを行い、それに対し責任を持って成果で応えられるようなプロダクトマネジャーを目指してみてはいかがでしょうか。&lt;/p&gt;
 </description>
     </item>
     
