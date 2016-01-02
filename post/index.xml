@@ -6,8 +6,132 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Dec 2015 12:57:23 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jan 2016 17:58:27 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】Datatablesの初期化エラー</title>
+      <link>http://kotazi.github.io/blog/post/20151229_datatables/</link>
+      <pubDate>Sat, 02 Jan 2016 17:58:27 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151229_datatables/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://datatables.net/manual/tech-notes/3&#34;&gt;http://datatables.net/manual/tech-notes/3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Datatablesのエラー訳してみた。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;DataTablesではテーブルをカスタマイズする広範囲のオプションを初期化時に設定することができます。これは初期化の時のみなので、それ以降にこのようなオプションを設定しようとするとエラーが出てしまいます。&lt;/p&gt;
+
+&lt;h3 id=&#34;意義:f6b344828f1ff5de137281b6efc1cbd7&#34;&gt;意義&lt;/h3&gt;
+
+&lt;p&gt;単純に、DataTablesでは初期化時に設定したオプションを後から変更することができないということです。どんな操作をしたとしても、既に&lt;a href=&#34;http://datatables.net/reference/api&#34;&gt;API&lt;/a&gt;を通して初期化されてしまった後ではエラーが発生します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DataTables warning: table id={id} - Cannot reinitialise DataTable.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;{id}&lt;/code&gt;の部分はエラーを引き起こしたDOMのidで置き換えられます。&lt;/p&gt;
+
+&lt;h3 id=&#34;分析:f6b344828f1ff5de137281b6efc1cbd7&#34;&gt;分析&lt;/h3&gt;
+
+&lt;p&gt;このエラーはDataTablesが選択したノードにおいて既に初期化している際に、DataTablesのコンストラクタオブジェクトを呼び出すと発生しいます。下記がサンプルになります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&#39;#example&#39;).dataTable( {
+    paging: false
+} );
+ 
+ 
+$(&#39;#example&#39;).dataTable( {
+    searching: false
+} );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;#example&lt;/code&gt;は既にDataTableとして初期化されているので、2つ目のコードブロックが実行されるときにエラーが発生します。&lt;/p&gt;
+
+&lt;h3 id=&#34;解法:f6b344828f1ff5de137281b6efc1cbd7&#34;&gt;解法&lt;/h3&gt;
+
+&lt;p&gt;このエラーを再現するにはいくつかの方法があります。なのでこのイシューを解決するためにいくつかの方法が使われます。&lt;/p&gt;
+
+&lt;h4 id=&#34;シングル初期化:f6b344828f1ff5de137281b6efc1cbd7&#34;&gt;シングル初期化&lt;/h4&gt;
+
+&lt;p&gt;複数のDataTablesの初期化を行いたいのであれば、単に同じものを設定してください。サンプルでは、ページングと検索を消しました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&#39;#example&#39;).dataTable( {
+    paging: false,
+    searching: false
+} );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;より詳しく知るためには、&lt;a href=&#34;initialisation options manual&#34;&gt;こちら&lt;/a&gt;のマニュアルを参考にしてください。&lt;/p&gt;
+
+&lt;h4 id=&#34;オブジェクトインスタンス検索:f6b344828f1ff5de137281b6efc1cbd7&#34;&gt;オブジェクトインスタンス検索&lt;/h4&gt;
+
+&lt;p&gt;APIを通してDataTableの活動の参照を得ようとた時にこのエラーはしばしば起こります。
+例えば、もしあなたがDataTableインスタンスを作成する関数を持っていたとしましょう。これに変更を加えようとするとエラーが出てしまいます。
+この要な場合、&lt;code&gt;$.fn.dataTable.isDataTable()&lt;/code&gt;を利用して、DataTableが既に存在するか確認しましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ( $.fn.dataTable.isDataTable( &#39;#example&#39; ) ) {
+    table = $(&#39;#example&#39;).DataTable();
+}
+else {
+    table = $(&#39;#example&#39;).DataTable( {
+        paging: false
+    } );
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;retrieve:f6b344828f1ff5de137281b6efc1cbd7&#34;&gt;retrieve&lt;/h4&gt;
+
+&lt;p&gt;上記サンプルのコートは魅力的ではありません。&lt;code&gt;retrieve&lt;/code&gt;オプションを使って、DataTablesにあなたが初期化後にオプションを変更できないことを知っていると伝えましょう。
+このオプションは&lt;code&gt;$.fn.dataTable.isDataTable()&lt;/code&gt;によるチェックよりショートカットになります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;table = $(&#39;#example&#39;).DataTable( {
+    retrieve: true,
+    paging: false
+} );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;destroy:f6b344828f1ff5de137281b6efc1cbd7&#34;&gt;destroy&lt;/h4&gt;
+
+&lt;p&gt;本当にオプション設定を変更したい場合もあるでしょう。少し特殊な方法を取ることで解決できます。
+古いDatatablesを破壊して新しい物を作るのです。なるべく避けたほうがいいかもしれません。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;table = $(&#39;#example&#39;).DataTable( {
+    paging: false
+} );
+ 
+table.destroy();
+ 
+table = $(&#39;#example&#39;).DataTable( {
+    searching: false
+} );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このサンプルでは、2つめの初期化によって&lt;code&gt;paging&lt;/code&gt;オプションの設定がなくなっていることに注意してください。&lt;/p&gt;
+
+&lt;p&gt;ショートカットとして、&lt;code&gt;destory&lt;/code&gt;オプションが存在しいます。このオプションで既存のDataTableを槊杖することができます。
+下記のように使用してください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&#39;#example&#39;).DataTable( {
+    paging: false
+} );
+ 
+$(&#39;#example&#39;).DataTable( {
+    destroy: true,
+    searching: false
+} );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;retrieve&lt;/code&gt;オプションと&lt;code&gt;destroy&lt;/code&gt;オプションは相容れないので一緒に使用することはできません。&lt;/p&gt;
+
+&lt;h4 id=&#34;reason:f6b344828f1ff5de137281b6efc1cbd7&#34;&gt;Reason&lt;/h4&gt;
+
+&lt;p&gt;初期化後にDataTablesの初期設定を変更することができない理由は、その設定を元にしたコートが多すぎるためです。(例えば、スクロールのオンオフなどは複雑過ぎます。)
+その結果、DataTablesのコアコードをキープしたままにするのは利用可能ではなくなっています。注意点として、&lt;code&gt;destroy&lt;/code&gt;オプションを使ってもperformanceへの影響はありません。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【第Ⅱ部】アジャイルな方向づけ/アジャイルサムライ</title>
@@ -1375,119 +1499,6 @@ HTTPプロキシから手動を選択し、MacのIPアドレスを入力する�
 &lt;p&gt;&lt;code&gt;wrapAll()&lt;/code&gt;とか初めて使ったけど便利だ。&lt;br /&gt;
 ちなみに、&lt;code&gt;createElement()&lt;/code&gt;みたいなメソッドはなくて、
   普通に&lt;code&gt;$(&#39;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&#39;)&lt;/code&gt;ってやって作るらしい。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【第5章】マネジャー/基本と原則</title>
-      <link>http://kotazi.github.io/blog/post/20151209_management/</link>
-      <pubDate>Wed, 09 Dec 2015 12:57:23 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151209_management/</guid>
-      <description>
-
-&lt;p&gt;学生のころは分からなかったことが分かる気がした。&lt;br /&gt;
-ドラッカーの基本と原則をKidleで読みなおした。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;20-マネジメントの必要性:25768f8640d82261e6718ed4a074d99a&#34;&gt;20. マネジメントの必要性&lt;/h2&gt;
-
-&lt;p&gt;マネジメントは企業の基礎資源である。&lt;/p&gt;
-
-&lt;h4 id=&#34;三菱の話:25768f8640d82261e6718ed4a074d99a&#34;&gt;▼ 三菱の話&lt;/h4&gt;
-
-&lt;p&gt;三菱の創業者、岩崎弥太郎(上野の岩崎邸の)は、オーナー兼起業家だけが権限と責任を持つべきであるとした。
-岩崎は50歳でこの世を去り、岩崎家はマネジメントから外された。そこから三菱の新の興隆と成長が始まる。&lt;/p&gt;
-
-&lt;p&gt;企業がある一定の規模と複雑さに達するや、マネジメントを必要とする。
-マネジメントチームという骨格が、オーナー兼企業かという皮膚と交代する。
-それは皮膚が進化したものではない、完全な交替である。&lt;/p&gt;
-
-&lt;p&gt;複数人の人間が協力して、石を疎通させつつ多様な課題を同時に進行する必要が出てきた時、組織はマネジメントを必要とする。
-マネジメントを書く時、組織は管理不能になり、計画は実行にされなくなる。
-最悪の場合、計画の各部分が、それぞれ勝手なときに、勝手な速度で、勝手な目的と目標のもとに遂行されるようになる。
-たとえ製品が優れ、従業員が有能でかつ献身的であっても、また、ボスがいかに偉大な力と魅力を持っていても、組織は、マネジメントという骨格を持つように変化しないかぎり、失敗を重ね、停滞し、坂を下り始める。&lt;/p&gt;
-
-&lt;h2 id=&#34;21-マネジャーとは何か:25768f8640d82261e6718ed4a074d99a&#34;&gt;21. マネジャーとは何か&lt;/h2&gt;
-
-&lt;p&gt;かつては「人の仕事に責任を持つ者」と定義されたが、
-懇意tに最も急速に増えているのが、「組織の成果に責任を持つ者」。これがマネジャーである。&lt;/p&gt;
-
-&lt;p&gt;従って今日、誰がマネジャーかを明らかにすることが緊急の課題になっている。
-専門家が自らのアウトプットを他の人間の仕事と統合する上で頼りにすべき者がマネジャーである。&lt;/p&gt;
-
-&lt;h2 id=&#34;22-マネジャーの仕事:25768f8640d82261e6718ed4a074d99a&#34;&gt;22. マネジャーの仕事&lt;/h2&gt;
-
-&lt;p&gt;マネジャーには２つの役割がある。
-① 投入した資源の総和よりも大きなものを生み出す生産体を創造すること
-② 決定と行動において、直ちに必要とされているものと遠い将来に必要とされるものを調和すること&lt;/p&gt;
-
-&lt;p&gt;あらゆるマネジャーに共通する仕事。&lt;br /&gt;
-① 目標を設定する&lt;br /&gt;
-② 組織する&lt;br /&gt;
-③ 動機付けとコミュニケーションを図る&lt;br /&gt;
-④ 評価測定をする&lt;br /&gt;
-⑤ 人材を開発する&lt;br /&gt;
-そして一番大切なのは「真摯さ」&lt;/p&gt;
-
-&lt;p&gt;マネジャーの仕事は次の４つの視点から設計する。&lt;/p&gt;
-
-&lt;p&gt;① マネジャーの仕事そのもの。これは継続的な職務。&lt;br /&gt;
-② 個々のマネジャーに対し、組織や上司が設定する責任。&lt;br /&gt;
-③ マネジャーの仕事は、上、下、横との関係によって規定される。&lt;br /&gt;
-④ 必要とする情報とその情報の流れにおける彼の位置によって規定される。&lt;/p&gt;
-
-&lt;p&gt;そしてこれらについて考えることが最大の責任であり、この責任から逃れることはできない。&lt;/p&gt;
-
-&lt;h2 id=&#34;23-マネジメント開発:25768f8640d82261e6718ed4a074d99a&#34;&gt;23. マネジメント開発&lt;/h2&gt;
-
-&lt;p&gt;未来を予測することはう可能である。したがって、明日のマネジャー育成、確保、技能について体系的に取り組まなければならない。
-マネジメント開発にあらざるもの。&lt;br /&gt;
-① セミナーに参加することではない。&lt;br /&gt;
-② 人事計画やエリート探しではない&lt;br /&gt;
-③ 人の性格を変え、人を改造するためのものではない。&lt;/p&gt;
-
-&lt;h2 id=&#34;24-自己管理による目標管理:25768f8640d82261e6718ed4a074d99a&#34;&gt;24. 自己管理による目標管理&lt;/h2&gt;
-
-&lt;p&gt;人を間違った方向へ持っていく要因。
-① 技能の文化&lt;br /&gt;
-「石切り工」の話。「生計を立てている」「最高の石切りの仕事」「教会を立てている」。第三の男がマネジャー。&lt;/p&gt;
-
-&lt;p&gt;② 組織の階級化&lt;br /&gt;
-③ 階層の分離&lt;br /&gt;
-コミュニケーションが成立するには、共通の言事と共通の理解が前提となる。(そう行かない場合はどうするんだろ)&lt;br /&gt;
-④ 報酬の意味付け&lt;/p&gt;
-
-&lt;h2 id=&#34;25-ミドルマネジメント:25768f8640d82261e6718ed4a074d99a&#34;&gt;25. ミドルマネジメント&lt;/h2&gt;
-
-&lt;p&gt;伝統的なミドルは命令する人。新種は知識を供給する人。新種のミドルは上や横に向かって、すなわち自分が命令できない人間に対して「責任」を持つ。彼らの決定と行動が、組織の方向と能力に直接影響を与える。&lt;/p&gt;
-
-&lt;h2 id=&#34;26-組織の精神:25768f8640d82261e6718ed4a074d99a&#34;&gt;26. 組織の精神&lt;/h2&gt;
-
-&lt;p&gt;天才に頼ることはできない。&lt;br /&gt;
-① 組織の焦点は、成果に合わせなければならない。&lt;br /&gt;
-② 組織の焦点は、問題ではなく機会に合わせなければならない。&lt;/p&gt;
-
-&lt;p&gt;組織の信条と価値観に沿って行わなければならない。
-真摯さこそ唯一の接待条件。&lt;/p&gt;
-
-&lt;p&gt;弱みがないことを評価してはならない。&lt;br /&gt;
-&lt;strong&gt;組織というものは、問題ではなく機会に目を向けることによって、その精神を高く維持することができる。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;真摯さを絶対視して、初めてまともな組織といえる。&lt;/p&gt;
-
-&lt;p&gt;① 強みよりも弱みに目を向けるものをマネジャーに任命してはならない。&lt;br /&gt;
-② 何が正しいかよりも、誰が正しいかに関心を持つものをマネジャーに任命してはならない。&lt;br /&gt;
-③ 真摯さよりも、頭の良さを重視するものをマネジャーに任命してはならない。&lt;br /&gt;
-④ 部下に脅威を感じるものを昇進させてはならない。&lt;br /&gt;
-⑤ 自らの仕事に高い基準を設定しないものもマネジャーに任命してはならない。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;個人的に最も気になる。マネジャーとは何か。誰か。
-「専門家」という人間(役職)が曖昧な形て定義されているのがマネジャーとの関係性をややこしくさせた。
-「専門家の課題」では、マネジャーは専門家と他の人間のHUBのような存在として登場する。&lt;/p&gt;
 </description>
     </item>
     
