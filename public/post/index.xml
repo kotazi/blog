@@ -6,8 +6,143 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Dec 2015 16:38:36 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 Dec 2015 12:57:23 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【第Ⅱ部】アジャイルな方向づけ/アジャイルサムライ</title>
+      <link>http://kotazi.github.io/blog/post/20151228_ajail/</link>
+      <pubDate>Mon, 28 Dec 2015 12:57:23 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151228_ajail/</guid>
+      <description>
+
+&lt;h2 id=&#34;3-みんなをバスに乗せる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;3. みんなをバスに乗せる&lt;/h2&gt;
+
+&lt;h5 id=&#34;スタートする前からダメになるプロジェクト:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ スタートする前からダメになるプロジェクト&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;答えるべき問に答えれらない&lt;/li&gt;
+&lt;li&gt;手強い質問をする勇気を持てない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;プロジェクトに対する期待をマネジメントするための優れたツールがインセプションデッキ。聞かなきゃいけない10の課題で構成されている。&lt;/p&gt;
+
+&lt;p&gt;チームメンバーがいないところで合意したことを全体にしているから、プロジェクトはだめになる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ゴールやビジョン、プロジェクトの状況や背景についてチームで話し合っておくこと。チームで適切な判断を下せるように&lt;/li&gt;
+&lt;li&gt;ステークホルダーに情報を提供すること。彼らにはプロジェクトを続けるかどうかを決断する材料が必要。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;インセプションデッキの背後にある考え方は、「しかるべき人をみんな同じ部屋に集めて、プロジェクトにまつわる適切な質問をすれば、自分たちのプロジェクトに対する期待を共有して、認識を合わせることができるはずだ」である。このプロジェクトは何であって何でないのか、価値を届けるためにはどこで力を注ぐべきか。&lt;/p&gt;
+
+&lt;h5 id=&#34;インセプションデッキ一覧:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ インセプションデッキ一覧&lt;/h5&gt;
+
+&lt;p&gt;1.我々は何故ここにいるのか
+2.エレベーターピッチを作る =&amp;gt; 2センテンスで説明する
+3.やらないことリストを作る
+4.「ご近所さん」を探せ =&amp;gt; 関係者は思ったよりいるもの
+5.解決策を描く
+6.パッケージデザインを作る
+7.夜も眠れなくなるような問題は何だろう
+8.期間を見極める
+9.何を諦めるかをはっきりさせる
+10.何がどれだけ必要なのか&lt;/p&gt;
+
+&lt;h2 id=&#34;4-全体像を捉える:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;4. 全体像を捉える&lt;/h2&gt;
+
+&lt;p&gt;このプロジェクトの成功には何が必要なのかをハッキリ説明する。「皆さんに積極的にかかわっていただく必要があります。当事者意識を持っていただいたうえで、さまざまなお約束をしていただかなければならない。」&lt;/p&gt;
+
+&lt;h2 id=&#34;5-具現化させる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;5. 具現化させる&lt;/h2&gt;
+
+&lt;p&gt;リスクを話し合うことはいいことだ。&lt;/p&gt;
+
+&lt;h5 id=&#34;何を諦めるのかをはっきりさせる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ 何を諦めるのかをはっきりさせる&lt;/h5&gt;
+
+&lt;p&gt;プロジェクトの四天王
+- 時間
+- 予算
+- 品質
+- スコープ &amp;lt;= 諦めるとしたらこいつに限る&lt;/p&gt;
+
+&lt;h5 id=&#34;インセプションデッキから学んだこと:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ インセプションデッキから学んだこと&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;プロジェクトの最初に手強い質問をすることの重要性&lt;/li&gt;
+&lt;li&gt;プロジェクトが始まる前にみんなの向かう先を揃える&lt;/li&gt;
+&lt;li&gt;プロジェクトの契約までのスコープ設定や計画に何ヶ月もかける必要がない&lt;/li&gt;
+&lt;li&gt;インセプションデッキを使えば数日で期待のマネジメントが可能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;インセプションデッキを通して事前準備の重要性を感じた。&lt;br /&gt;
+インセプションデッキ課題にあることを不明確なままにプロジェクトを進めたしまった場合に、
+のちのち躓いてしまった時に取り返しがつかなくなることが容易に想像できる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【第Ⅰ部】「アジャイル」入門/アジャイルサムライ</title>
+      <link>http://kotazi.github.io/blog/post/20151227_ajail/</link>
+      <pubDate>Sun, 27 Dec 2015 12:57:23 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151227_ajail/</guid>
+      <description>
+
+&lt;h2 id=&#34;1-ざっくり分かるアジャイル開発:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;1. ざっくり分かるアジャイル開発&lt;/h2&gt;
+
+&lt;p&gt;1.大きな問題は小さくする
+2.本当に胎児なことに集中して、それ以外のことは忘れる
+3.ちゃんと動くソフトウェアを届ける
+4.フィードバックを求める
+5.必要とあれば進路を変える
+6.成果責任を果たす&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;仕事の質に責任を持たなければならない&lt;/li&gt;
+&lt;li&gt;スケジュールを守らなければならない&lt;/li&gt;
+&lt;li&gt;お客さんの期待をマネジメントしなければならない&lt;/li&gt;
+&lt;li&gt;身銭を切るかのような覚悟でお客さんの資金を扱えわなければならない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;アジャイル開発では、「マスターストーリーリスト」がプロジェクトのTodoリスト。&lt;/strong&gt;(featureの記述レベルは概要が分かれば十分。)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;具体的に成果を上げていくためのエンジンとなるのがイテレーション。&lt;/strong&gt;イテレーションの長さは1〜2習慣にする。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ベロシティ(1回のイテレーションで完了させられるストーリーの量)を実調することで、自分たちのこなせる仕事量を把握できる。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;アジャイル手法では奇跡は必要なくなる。なぜなら顧客に隠し立てせずに誠実に仕事を進めるから。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;アジャイル手法:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;◯ アジャイル手法&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;スクラム: アジャイルプロジェクトを包んで、プロジェクトマネジメントの装いを与えてくれる運営手法&lt;/li&gt;
+&lt;li&gt;エクストリーム・プログラミング: どんなアジャイルプロジェクトにも欠かせないソフトウェア開発のプラクティスを規律正しく実践する手法&lt;/li&gt;
+&lt;li&gt;リーン: 能率を上げることをとことん追い求める。たゆまぬ改善を続ける企業のためのトヨタ生産方式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;2-アジャイルチームのご紹介:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;2. アジャイルチームのご紹介&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;典型的なアジャイルチームには、予め決まった役割分担が存在しない。チームが一丸となって成果責任を果たすという考え方をとても重要視する。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;「チームの生産性を劇的に改善できる方法をひとつだけ挙げろ」と聞かれたら、間違いなくそれは、全員が同じ仕事場に集まって働くこと。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;同じ場所で働けないなら、プロジェクトの予算に全員分の旅費を予算に入れる。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;顧客はチームのコアメンバーであり、スクラムではプロダクトオーナーという専任の役割を与える。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;チームビルドをうまくするためには、役割に人を合わせるのではなく、人に合わせて役割分担を決める。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;アジャイルなプロジェクトマネージャはプロジェクトを成功させる唯一の方法は開発チームを成功させることだと心得ている。
+優れたPMの条件は一週間いなくなっても業務に支障が出ないようにできること。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;アジャイルの用語や基本的な考え方。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ドラッカーから考えるプロダクトマネジャーの仕事</title>
@@ -1353,213 +1488,6 @@ HTTPプロキシから手動を選択し、MacのIPアドレスを入力する�
 &lt;p&gt;個人的に最も気になる。マネジャーとは何か。誰か。
 「専門家」という人間(役職)が曖昧な形て定義されているのがマネジャーとの関係性をややこしくさせた。
 「専門家の課題」では、マネジャーは専門家と他の人間のHUBのような存在として登場する。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【第4章】社会的責任/基本と原則</title>
-      <link>http://kotazi.github.io/blog/post/20151208_management/</link>
-      <pubDate>Tue, 08 Dec 2015 21:54:29 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151208_management/</guid>
-      <description>
-
-&lt;p&gt;学生のころは分からなかったことが分かる気がした。&lt;br /&gt;
-ドラッカーの基本と原則をKidleで読みなおした。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;15-マネジメントと社会:69aa0425b37204259e91dbea7c98d3bf&#34;&gt;15. マネジメントと社会&lt;/h2&gt;
-
-&lt;p&gt;「企業の社会的責任」の意味が変わった。
-かつては下記の三つの分野。&lt;br /&gt;
-① 私的な倫理と公的な倫理との関係に関わる問題。&lt;br /&gt;
-② 働くものに対する責任に関わる問題&lt;br /&gt;
-③ 地域社会への貢献という意味での責任に関わる問題&lt;/p&gt;
-
-&lt;p&gt;こんにちは、社会の問題に取り組み解決するために、企業は何を行い、何を行うべきか。
-人種差別や環境問題といったものの解決に向けて行いうる貢献に重点が置かれる。&lt;/p&gt;
-
-&lt;h2 id=&#34;16-社会的責任はどこに産まれるか:69aa0425b37204259e91dbea7c98d3bf&#34;&gt;16. 社会的責任はどこに産まれるか&lt;/h2&gt;
-
-&lt;p&gt;社会的責任の問題は、&lt;br /&gt;
-① 自らの活動が社会に対して与える影響から生ずる。&lt;br /&gt;
-② 自らの活動とはかかわりなく社会自体の問題として生ずる。&lt;/p&gt;
-
-&lt;p&gt;社会的影響範囲の問題を解決するにはトレードオフが必要である。
-社会の問題は、社会の機能不全であり、社会を退化させる病である。
-が、それは組織、企業にとっては挑戦であり、機会の源泉である。
-(フォードは賃金引き上げで総労働コストの削減をし、アメリカの産業社会を変えた。)&lt;/p&gt;
-
-&lt;p&gt;企業が健康であるためには、健全な、少なくとも機能する社会が必要である。社会と地域の健全さこそ、企業が成功し成長するための前提である。&lt;/p&gt;
-
-&lt;h2 id=&#34;17-社会的責任の限界:69aa0425b37204259e91dbea7c98d3bf&#34;&gt;17. 社会的責任の限界&lt;/h2&gt;
-
-&lt;p&gt;マネジメントにとっての最大の役割は、自らの組織に対するものである。
-マネジメントは、事業上のリスクを負い、将来の活動に着手する上で必要な利益の最低限度というものを知って置かなければならない。意思決定を行う上で、この限度を知らなければならない。&lt;/p&gt;
-
-&lt;p&gt;能力と価値観に寄る限界。
-自らに能力のない仕事を引き受けることも、無責任である。また、自らの価値体系に合致しない課題に取り組むことを避けなければならない。
-したがって、マネジメントは少なくとも、自らと自らの組織にとって欠けている能力が何であるかを知る必要がある。&lt;/p&gt;
-
-&lt;p&gt;責任と権限は、同一のものの両面である。
-企業が責任を要求されたときは、必ずそれについて「責任を持っているか、持つべきか」を自問する必要がある。&lt;/p&gt;
-
-&lt;p&gt;最大の社会的責任とは、自らに特有の機能を果たすことである。
-最大の無責任とは、能力を超えた課題に取り組み、あるいは社会的責任の名のもとに他から権限を奪うことによって、自らに特有の機能を遂行するための能力を損なうことである。&lt;/p&gt;
-
-&lt;h2 id=&#34;18-企業と政府:69aa0425b37204259e91dbea7c98d3bf&#34;&gt;18. 企業と政府&lt;/h2&gt;
-
-&lt;p&gt;社会的責任に関わる重大な問題のひとつとして、政府との関係がある。
-組織社会の現実とニーズに応じた新しい政治理論を必要としているが、今のところはまだない。
-ただ、それらの中間的な解決策を考え、実行について監視することはマネジメントの仕事である。&lt;/p&gt;
-
-&lt;p&gt;歴史上のモデル。
-資本主義経済すなわち市場経済における政府と企業の関係を表すモデルとして、自由放任(レッセフェール)を説いている。が、現実には19性器のイギリスで短い期間に行われたもの。&lt;/p&gt;
-
-&lt;p&gt;政府と企業の関係を律してきたのは２つの政治モデル。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;重商主義(マーカンティズム): 企業人は完了に比べて社会的に劣る =&amp;gt; 「企業は〜〜しろ」&lt;/li&gt;
-&lt;li&gt;立憲主義(コンスティテューショナリズム): 基本的に政府と企業は対立関係 =&amp;gt; 「企業は〜〜するなかれ」&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;今日、立憲主義も重商主義も陳腐化した。&lt;br /&gt;
-モデルが無くなった今、満たすべき基準&lt;br /&gt;
-① 企業とそのマネジメントを、自立した責任のある存在にする&lt;br /&gt;
-② 変化を可能とする自由で柔軟な社会&lt;br /&gt;
-③ グローバル経済と国家の政治主権とを調和する&lt;br /&gt;
-④ 機能を果たす強力な政府を維持強化する&lt;/p&gt;
-
-&lt;h2 id=&#34;プロフェッショナルの倫理:69aa0425b37204259e91dbea7c98d3bf&#34;&gt;プロフェッショナルの倫理&lt;/h2&gt;
-
-&lt;p&gt;企業倫理や企業人の倫理。正直であるとか美意識であるとか。&lt;/p&gt;
-
-&lt;p&gt;リーダー的地位にあるものの責任。
-彼らは本質的にはプロフェッショナルである。
-つまり、ある身分、地位、卓越性、権限が与えられているということでもある。
-同時に、義務も与えられている。&lt;/p&gt;
-
-&lt;p&gt;2500年前、ギリシャの名医ヒポクラテスのち会の中に、
-「知りながら害をなすことはしないとの約束はしなければならない。」とある。
-これを信じられなければ何も信じられない。プロは自立性を持たなければならない。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ベンチャーをやっていて、社会的責任について考えたことは実はあまりなかった。
-けれども国内の大企業に目を向けてみると、そういった社会的責任への自覚や、行いが感じられる。
-それはきっと企業の唯一性から生まれるのだろう。&lt;/p&gt;
-
-&lt;p&gt;「この事業は自分たちでしかできない。」「他社では絶対に作れない。」、そう思って自分たちの製品や事業を扱っている組織出れば、自然と社会的責任に対する意識が芽生える。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ruby - pry導入編</title>
-      <link>http://kotazi.github.io/blog/post/20151207_pry/</link>
-      <pubDate>Mon, 07 Dec 2015 17:48:50 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151207_pry/</guid>
-      <description>
-
-&lt;p&gt;Railsのデバッグについて調べていた。&lt;br /&gt;
-pryを知った。便利そうだったことメモ書き。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;pryとは:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;Pryとは&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;./../../media/pry_logo.png&#34; alt=&#34;pry&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://pryrepl.org/&#34;&gt;Pry&lt;/a&gt;はRuby標準的なIRBシェルの強力な代替手段です。
-シンタックスハイライトや、フレキシブルなプラグインアーキテクチャ、実行時の呼び出しやドキュメントの閲覧を備えています。&lt;/p&gt;
-
-&lt;h2 id=&#34;インストール:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;インストール&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gem install pry pry-doc
-$ pry
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;.ls&lt;/code&gt;, &lt;code&gt;.pwd&lt;/code&gt;などでShellコマンドを呼び出せる。&lt;/p&gt;
-
-&lt;h2 id=&#34;railsプロジェクトに組み込む:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;Railsプロジェクトに組み込む&lt;/h2&gt;
-
-&lt;p&gt;RailsプロジェクトにPryを入れて、ブレークポイントやステップ実行が行えるようにした。&lt;/p&gt;
-
-&lt;p&gt;Gemfileを編集(参考:&lt;a href=&#34;http://ruby-rails.hatenadiary.com/entry/20141024/1414081224&#34;&gt;Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp;amp; デバッグをする&lt;/a&gt;)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;group :development, :test do
-  gem &#39;pry-rails&#39;, &#39;~&amp;gt; 0.3.4&#39;  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
-  gem &#39;pry-doc&#39;, &#39;~&amp;gt; 0.8.0&#39;    # methodを表示
-  gem &#39;pry-byebug&#39;, &#39;~&amp;gt; 3.3.0&#39; # デバッグを実施(Ruby 2.0以降で動作する)
-  gem &#39;pry-stack_explorer&#39;, &#39;~&amp;gt; 0.4.9.2&#39; # スタックをたどれる
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;モデル確認:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;■ モデル確認&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;[12] pry(main)&amp;gt; show-models
-Administrator
-  id: integer
-  email: string
-  email_for_index: string
-  hashed_password: string
-  suspended: boolean
-  created_at: datetime
-  updated_at: datetime
-StaffMember
-  id: integer
-  email: string
-  email_for_index: string
-  family_name: string
-  given_name: string
-  family_name_kana: string
-  given_name_kana: string
-  hashed_password: string
-  start_date: date
-  end_date: date
-  suspended: boolean
-  created_at: datetime
-  updated_at: datetime
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;ルート確認:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;■ ルート確認&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;[13] pry(main)&amp;gt; show-routes
-       Prefix Verb   URI Pattern              Controller#Action
-   staff_root GET    /staff(.:format)         staff/top#index
-  staff_login GET    /staff/login(.:format)   staff/sessions#new
-staff_session POST   /staff/session(.:format) staff/sessions#create
-              DELETE /staff/session(.:format) staff/sessions#destroy
-   admin_root GET    /admin(.:format)         admin/top#index
-  admin_login GET    /admin/login(.:format)   admin/sessions#new
-admin_session POST   /admin/session(.:format) admin/sessions#create
-              DELETE /admin/session(.:format) admin/sessions#destroy
-customer_root GET    /customer(.:format)      customer/top#index
-         root GET    /                        errors#routing_error
-              GET    /*anything(.:format)     errors#routing_error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;デバッグ:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;デバッグ&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;binding.pry&lt;/code&gt;を打ち込むとブレークポイントになる。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;show-stack&lt;/code&gt;でスタックトレースを表示&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;参考url:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;参考URL&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://labs.timedia.co.jp/2011/12/rubyist-should-use-pry.html&#34;&gt;Rubyistよ、irbを捨ててPryを使おう&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.tokoyax.com/entry/ruby/how-to-use-pry&#34;&gt;Ruby 2.x.x 入門 -そう、pry ならね。-&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ruby-rails.hatenadiary.com/entry/20141024/1414081224&#34;&gt;Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp;amp; デバッグをする&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/yaotti/items/c6e850010f36acedb0e1&#34;&gt;Railsのコンソールをより便利にするpry-rails gem&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/k0kubun/items/b118e9ccaef8707c4d9f&#34;&gt;今更聞けないpryの使い方と便利プラグイン集&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ものすごく便利だった。&lt;/p&gt;
 </description>
     </item>
     
