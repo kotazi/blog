@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>アジャイル on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB/</link>
+    <description>Recent content in アジャイル on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Dec 2015 12:57:23 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【第Ⅱ部】アジャイルな方向づけ/アジャイルサムライ</title>
+      <link>http://kotazi.github.io/blog/post/20151228_ajail/</link>
+      <pubDate>Mon, 28 Dec 2015 12:57:23 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151228_ajail/</guid>
+      <description>
+
+&lt;h2 id=&#34;3-みんなをバスに乗せる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;3. みんなをバスに乗せる&lt;/h2&gt;
+
+&lt;h5 id=&#34;スタートする前からダメになるプロジェクト:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ スタートする前からダメになるプロジェクト&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;答えるべき問に答えれらない&lt;/li&gt;
+&lt;li&gt;手強い質問をする勇気を持てない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;プロジェクトに対する期待をマネジメントするための優れたツールがインセプションデッキ。聞かなきゃいけない10の課題で構成されている。&lt;/p&gt;
+
+&lt;p&gt;チームメンバーがいないところで合意したことを全体にしているから、プロジェクトはだめになる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ゴールやビジョン、プロジェクトの状況や背景についてチームで話し合っておくこと。チームで適切な判断を下せるように&lt;/li&gt;
+&lt;li&gt;ステークホルダーに情報を提供すること。彼らにはプロジェクトを続けるかどうかを決断する材料が必要。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;インセプションデッキの背後にある考え方は、「しかるべき人をみんな同じ部屋に集めて、プロジェクトにまつわる適切な質問をすれば、自分たちのプロジェクトに対する期待を共有して、認識を合わせることができるはずだ」である。このプロジェクトは何であって何でないのか、価値を届けるためにはどこで力を注ぐべきか。&lt;/p&gt;
+
+&lt;h5 id=&#34;インセプションデッキ一覧:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ インセプションデッキ一覧&lt;/h5&gt;
+
+&lt;p&gt;1.我々は何故ここにいるのか
+2.エレベーターピッチを作る =&amp;gt; 2センテンスで説明する
+3.やらないことリストを作る
+4.「ご近所さん」を探せ =&amp;gt; 関係者は思ったよりいるもの
+5.解決策を描く
+6.パッケージデザインを作る
+7.夜も眠れなくなるような問題は何だろう
+8.期間を見極める
+9.何を諦めるかをはっきりさせる
+10.何がどれだけ必要なのか&lt;/p&gt;
+
+&lt;h2 id=&#34;4-全体像を捉える:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;4. 全体像を捉える&lt;/h2&gt;
+
+&lt;p&gt;このプロジェクトの成功には何が必要なのかをハッキリ説明する。「皆さんに積極的にかかわっていただく必要があります。当事者意識を持っていただいたうえで、さまざまなお約束をしていただかなければならない。」&lt;/p&gt;
+
+&lt;h2 id=&#34;5-具現化させる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;5. 具現化させる&lt;/h2&gt;
+
+&lt;p&gt;リスクを話し合うことはいいことだ。&lt;/p&gt;
+
+&lt;h5 id=&#34;何を諦めるのかをはっきりさせる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ 何を諦めるのかをはっきりさせる&lt;/h5&gt;
+
+&lt;p&gt;プロジェクトの四天王
+- 時間
+- 予算
+- 品質
+- スコープ &amp;lt;= 諦めるとしたらこいつに限る&lt;/p&gt;
+
+&lt;h5 id=&#34;インセプションデッキから学んだこと:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ インセプションデッキから学んだこと&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;プロジェクトの最初に手強い質問をすることの重要性&lt;/li&gt;
+&lt;li&gt;プロジェクトが始まる前にみんなの向かう先を揃える&lt;/li&gt;
+&lt;li&gt;プロジェクトの契約までのスコープ設定や計画に何ヶ月もかける必要がない&lt;/li&gt;
+&lt;li&gt;インセプションデッキを使えば数日で期待のマネジメントが可能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;インセプションデッキを通して事前準備の重要性を感じた。&lt;br /&gt;
+インセプションデッキ課題にあることを不明確なままにプロジェクトを進めたしまった場合に、
+のちのち躓いてしまった時に取り返しがつかなくなることが容易に想像できる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【第Ⅰ部】「アジャイル」入門/アジャイルサムライ</title>
+      <link>http://kotazi.github.io/blog/post/20151227_ajail/</link>
+      <pubDate>Sun, 27 Dec 2015 12:57:23 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/20151227_ajail/</guid>
+      <description>
+
+&lt;h2 id=&#34;1-ざっくり分かるアジャイル開発:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;1. ざっくり分かるアジャイル開発&lt;/h2&gt;
+
+&lt;p&gt;1.大きな問題は小さくする
+2.本当に胎児なことに集中して、それ以外のことは忘れる
+3.ちゃんと動くソフトウェアを届ける
+4.フィードバックを求める
+5.必要とあれば進路を変える
+6.成果責任を果たす&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;仕事の質に責任を持たなければならない&lt;/li&gt;
+&lt;li&gt;スケジュールを守らなければならない&lt;/li&gt;
+&lt;li&gt;お客さんの期待をマネジメントしなければならない&lt;/li&gt;
+&lt;li&gt;身銭を切るかのような覚悟でお客さんの資金を扱えわなければならない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;アジャイル開発では、「マスターストーリーリスト」がプロジェクトのTodoリスト。&lt;/strong&gt;(featureの記述レベルは概要が分かれば十分。)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;具体的に成果を上げていくためのエンジンとなるのがイテレーション。&lt;/strong&gt;イテレーションの長さは1〜2習慣にする。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ベロシティ(1回のイテレーションで完了させられるストーリーの量)を実調することで、自分たちのこなせる仕事量を把握できる。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;アジャイル手法では奇跡は必要なくなる。なぜなら顧客に隠し立てせずに誠実に仕事を進めるから。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;アジャイル手法:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;◯ アジャイル手法&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;スクラム: アジャイルプロジェクトを包んで、プロジェクトマネジメントの装いを与えてくれる運営手法&lt;/li&gt;
+&lt;li&gt;エクストリーム・プログラミング: どんなアジャイルプロジェクトにも欠かせないソフトウェア開発のプラクティスを規律正しく実践する手法&lt;/li&gt;
+&lt;li&gt;リーン: 能率を上げることをとことん追い求める。たゆまぬ改善を続ける企業のためのトヨタ生産方式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;2-アジャイルチームのご紹介:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;2. アジャイルチームのご紹介&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;典型的なアジャイルチームには、予め決まった役割分担が存在しない。チームが一丸となって成果責任を果たすという考え方をとても重要視する。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;「チームの生産性を劇的に改善できる方法をひとつだけ挙げろ」と聞かれたら、間違いなくそれは、全員が同じ仕事場に集まって働くこと。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;同じ場所で働けないなら、プロジェクトの予算に全員分の旅費を予算に入れる。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;顧客はチームのコアメンバーであり、スクラムではプロダクトオーナーという専任の役割を与える。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;チームビルドをうまくするためには、役割に人を合わせるのではなく、人に合わせて役割分担を決める。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;アジャイルなプロジェクトマネージャはプロジェクトを成功させる唯一の方法は開発チームを成功させることだと心得ている。
+優れたPMの条件は一週間いなくなっても業務に支障が出ないようにできること。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;アジャイルの用語や基本的な考え方。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
