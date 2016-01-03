@@ -6,8 +6,149 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Jan 2016 17:58:27 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 03 Jan 2016 12:53:46 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【読書】アジャイルサムライを読んで</title>
+      <link>http://kotazi.github.io/blog/post/2016/0103_ajail/</link>
+      <pubDate>Sun, 03 Jan 2016 12:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0103_ajail/</guid>
+      <description>
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4274068560/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4274068560&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;アジャイルサムライ−達人開発者への道−&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4274068560&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;を読んだ。その感想や学んだこと。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Ⅰ部とⅡ部については別記事でまとめました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./../../20151227_ajail&#34;&gt;【第Ⅰ部】「アジャイル」入門/アジャイルサムライ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./../../20151228_ajail&#34;&gt;【第Ⅱ部】アジャイルな方向づけ/アジャイルサムライ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;第ⅲ部-アジャイルな計画づくり:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;第Ⅲ部 アジャイルな計画づくり&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ユーザーストーリーを作成する&lt;/li&gt;
+&lt;li&gt;INVEST: 「Independent/Negotiable/Valuable/Estimatable/Small/Testable」&lt;/li&gt;
+&lt;li&gt;ポイントで見積もるのは再調整する作業がいつまでも終わらなくなる状況に陥るのを防ぐため&lt;/li&gt;
+&lt;li&gt;アジャイルな計画ができれば、プロジェクト計画は常に最新であることが分かるようになる&lt;/li&gt;
+&lt;li&gt;アジャイルな計画づくりとは、チームの開発速度を計測して、その速度を元にプロジェクトの完了時期を見通せるようにすること&lt;/li&gt;
+&lt;li&gt;プロジェクトでこなすべきTODOリストを「マスターストーリーリスト」と呼ぶ&lt;/li&gt;
+&lt;li&gt;チームがユーザーストーリーを動くソフトウェアに変換する速度を「ベロシティ」と呼ぶ&lt;/li&gt;
+&lt;li&gt;アジャイルでは最初に立てた計画にはいつまでもこだわらない。計画の方を変える(普通はスコープを調整)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;予めスコープを柔軟にしておくことが計画を誠実に保つ秘訣&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;「最後は良くなりますように」というのは、「奇跡によるマネジメント」という有名なマネジメント手法&lt;/li&gt;
+&lt;li&gt;リリースの単位をMMF(Minimal Marketable Feature Set)と呼ぶ&lt;/li&gt;
+&lt;li&gt;ベロシティはチームで測る。個人の生産性を測るのは悪い方向へ転ぶ&lt;/li&gt;
+&lt;li&gt;バーンダウンチャートを利用することで下記を可視化できる
+
+&lt;ul&gt;
+&lt;li&gt;どれだけの仕事を完成させたのか&lt;/li&gt;
+&lt;li&gt;どれだけの仕事が残っているのか&lt;/li&gt;
+&lt;li&gt;チームのベロシティ&lt;/li&gt;
+&lt;li&gt;いつごろ全てを完了させられそうか&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プロジェクトを途中からアジャイルにする前に、チームメンバーが応えられるべき5つの質問&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;このプロジェクトにいるのは何故？&lt;/li&gt;
+&lt;li&gt;成し遂げようとしていることは何？&lt;/li&gt;
+&lt;li&gt;顧客は誰？&lt;/li&gt;
+&lt;li&gt;解決すべき主要な課題は何？&lt;/li&gt;
+&lt;li&gt;最終判断を下すのは誰？&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;アジャイルな見積もりについて。ベロシティやバーンダウンチャートという考え方を使ってチームの生産性やゴールまでの距離を明確にする。アジャイルにとって重要なことのひとつは誠実であり、明確であること。チームメンバー一人一人が自分たちのゴールやゴールまでの距離を知れるような手引をしたり、環境を整えたりすることがアジャイルなチームを作る上で重要。&lt;/p&gt;
+
+&lt;h2 id=&#34;ⅳ部-アジャイルなプロジェクト運営:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;Ⅳ部 アジャイルなプロジェクト運営&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;何もかもを文書にまとめる時間はない&lt;/li&gt;
+&lt;li&gt;開発プラクティスをしっかりと根付かせる&lt;/li&gt;
+&lt;li&gt;テストは開発と一緒になって進める&lt;/li&gt;
+&lt;li&gt;そのために必要なことが3つ
+
+&lt;ul&gt;
+&lt;li&gt;分析して設計する(作業の段取りをする)&lt;/li&gt;
+&lt;li&gt;開発する(実際に作業する)&lt;/li&gt;
+&lt;li&gt;テストする(作業の結果を確認する)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;アジャイルな意思疎通の作戦:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;◯ アジャイルな意思疎通の作戦&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;開発チームは同じ職場に集まって作業して、ちゃんと動くソフトウェアお成果として、目の前の顧客に定期的に見せていく&lt;/li&gt;
+&lt;li&gt;「期待をマネジメントすること」「フィードバックを得ること」これはどんなアジャイルプロジェクトでも取り組むべき&lt;/li&gt;
+&lt;li&gt;そのためにイテレーションごとに習慣づけるべき4つのミーティング
+
+&lt;ul&gt;
+&lt;li&gt;今回のイテレーション作業に備える(ストーリー計画MTG)&lt;/li&gt;
+&lt;li&gt;今回のイテレーションのフィードバックを得る(ショーケース)&lt;/li&gt;
+&lt;li&gt;次回のイテレーション計画を立てる(イテレーション計画MTG)&lt;/li&gt;
+&lt;li&gt;次回のイテレーションで改善できる余地を探す(ミニ振り返り)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;そして自分たちにあったものを選ぶことが大事&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;現場の状況を目に見えるようにする:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;◯ 現場の状況を目に見えるようにする&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;「現場の状況を目に見えるようにするための貼りもの」おすすめ4つ
+
+&lt;ul&gt;
+&lt;li&gt;ストーリーボード&lt;/li&gt;
+&lt;li&gt;リリースボード&lt;/li&gt;
+&lt;li&gt;ベロシティとバーンダウンチャート&lt;/li&gt;
+&lt;li&gt;インセプションデッキ　四天王&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;第ⅴ部-アジャイルなプログラミング:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;第Ⅴ部 アジャイルなプログラミング&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ユニットテスト: ビルドしたコードがちゃんと動くことを示す方法&lt;/li&gt;
+&lt;li&gt;リファクタリング: コードをシンプルでクリーンな状態に保ち、読みやすくするための技術&lt;/li&gt;
+&lt;li&gt;テスト駆動開発: 複雑さに立ち向かうための設計方法&lt;/li&gt;
+&lt;li&gt;継続的インテグレーション: 決まった感覚で全てを統合し、プロダクトをリリース可能な状態を保ちつづける取り組み&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;このあたりはできていると思った。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;感想:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;ずっとアジャイルに興味を持ち、中途半端に取り組んできた。
+ようやくこの本を読んでアジャイルを俯瞰的に見て、「アジャイルとは何か？」という問いに答えられるようになった。
+アジャイルとは顧客に価値のあるソフトウェアと提供するための開発手法群であり、本書ではその様々な手法と具体的なケースに沿った手法の使い方を学べた。&lt;/p&gt;
+
+&lt;p&gt;最適な開発手法が存在するわけではなく、自分たちのチームにあった最適なプラクティスを見つけ出し実践することこそがアジャイルである。
+けれども根底には「顧客に価値のあるソフトウェアを提供し続ける」という目的があり、チームでそれは共通認識として持っておくべきだろう。(そのためのストーリーボードやインセプションデッキがある)&lt;/p&gt;
+
+&lt;p&gt;また、具体的なアジャイルによる開発手法(リファクタやユニットテストのこと)を読んでいて、案外今のチームでもできていると感じた。&lt;/p&gt;
+
+&lt;p&gt;現状の組織からアジャイルなチーム体制を作っていくには下記が必要&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;プロジェクトごとにチームを作成すること&lt;/li&gt;
+&lt;li&gt;プロジェクトのゴールを設定すること&lt;/li&gt;
+&lt;li&gt;プロジェクトの最終判断を下す人間を決めること&lt;/li&gt;
+&lt;li&gt;(時間/予算/品質/スコープ)を確認すること&lt;/li&gt;
+&lt;li&gt;スコープは柔軟にすること&lt;/li&gt;
+&lt;li&gt;インセプションデッキでチームの期待をマネジメントすること&lt;/li&gt;
+&lt;li&gt;関係者全員でよく話し合い、状況に応じてチームで適切な判断を下せるようにすること&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;そんな感じで2016年はよりよい組織を作り、より良いサービスを生む。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【訳読】Datatablesの初期化エラー</title>
@@ -163,15 +304,15 @@ $(&#39;#example&#39;).DataTable( {
 
 &lt;h5 id=&#34;インセプションデッキ一覧:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ インセプションデッキ一覧&lt;/h5&gt;
 
-&lt;p&gt;1.我々は何故ここにいるのか
-2.エレベーターピッチを作る =&amp;gt; 2センテンスで説明する
-3.やらないことリストを作る
-4.「ご近所さん」を探せ =&amp;gt; 関係者は思ったよりいるもの
-5.解決策を描く
-6.パッケージデザインを作る
-7.夜も眠れなくなるような問題は何だろう
-8.期間を見極める
-9.何を諦めるかをはっきりさせる
+&lt;p&gt;1.我々は何故ここにいるのか&lt;br /&gt;
+2.エレベーターピッチを作る =&amp;gt; 2センテンスで説明する&lt;br /&gt;
+3.やらないことリストを作る&lt;br /&gt;
+4.「ご近所さん」を探せ =&amp;gt; 関係者は思ったよりいるもの&lt;br /&gt;
+5.解決策を描く&lt;br /&gt;
+6.パッケージデザインを作る&lt;br /&gt;
+7.夜も眠れなくなるような問題は何だろう&lt;br /&gt;
+8.期間を見極める&lt;br /&gt;
+9.何を諦めるかをはっきりさせる&lt;br /&gt;
 10.何がどれだけ必要なのか&lt;/p&gt;
 
 &lt;h2 id=&#34;4-全体像を捉える:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;4. 全体像を捉える&lt;/h2&gt;
@@ -217,11 +358,11 @@ $(&#39;#example&#39;).DataTable( {
 
 &lt;h2 id=&#34;1-ざっくり分かるアジャイル開発:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;1. ざっくり分かるアジャイル開発&lt;/h2&gt;
 
-&lt;p&gt;1.大きな問題は小さくする
-2.本当に胎児なことに集中して、それ以外のことは忘れる
-3.ちゃんと動くソフトウェアを届ける
-4.フィードバックを求める
-5.必要とあれば進路を変える
+&lt;p&gt;1.大きな問題は小さくする&lt;br /&gt;
+2.本当に大事なことに集中して、それ以外のことは忘れる&lt;br /&gt;
+3.ちゃんと動くソフトウェアを届ける&lt;br /&gt;
+4.フィードバックを求める&lt;br /&gt;
+5.必要とあれば進路を変える&lt;br /&gt;
 6.成果責任を果たす&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1471,34 +1612,6 @@ HTTPプロキシから手動を選択し、MacのIPアドレスを入力する�
 
 &lt;p&gt;それで回して成果を出す。&lt;br /&gt;
 ぶら下がりの状態から離れれば嫌でも頭を使う。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>いまいち忘れるjQuery</title>
-      <link>http://kotazi.github.io/blog/post/20151210_jquery/</link>
-      <pubDate>Thu, 10 Dec 2015 09:38:50 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151210_jquery/</guid>
-      <description>&lt;p&gt;なんだかjQueryの使い方ってそこそこに忘れる。
-忘れるというか、それなりに検索をかけているなと。&lt;/p&gt;
-
-&lt;p&gt;そこで。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://semooh.jp/jquery/api/selectors/&#34;&gt;jQuery日本語リファレンス&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ヌーのサイトに一覧ページがあることを知った。&lt;br /&gt;
-困ったときはここを見ればいいし、チートシートもある。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://oscarotero.com/jquery/&#34;&gt;jQuery Quick API Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;wrapAll()&lt;/code&gt;とか初めて使ったけど便利だ。&lt;br /&gt;
-ちなみに、&lt;code&gt;createElement()&lt;/code&gt;みたいなメソッドはなくて、
-  普通に&lt;code&gt;$(&#39;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&#39;)&lt;/code&gt;ってやって作るらしい。&lt;/p&gt;
 </description>
     </item>
     
