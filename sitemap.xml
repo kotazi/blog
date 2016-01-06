@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://kotazi.github.io/blog/</loc>
-    <lastmod>2016-01-05T16:41:09+09:00</lastmod>
+    <lastmod>2016-01-06T18:31:41+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</loc>
+    <lastmod>2016-01-06T18:31:41+09:00</lastmod>
   </url>
   
   <url>

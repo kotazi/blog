@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>MasonryをAngularで使う際に注意すること &middot; kotazi.com</title>
+		<title>【Rails】ForbiddenAttributesError覚書 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,32 +32,45 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>MasonryをAngularで使う際に注意すること</h1>
-                    <h2 class="headline">November 30, 2015</h2>
+                    <h1>【Rails】ForbiddenAttributesError覚書</h1>
+                    <h2 class="headline">January 6, 2016</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>Masonryのstampが正しく動かないことがあったのでメモ。</p>
+<p>Railsで<code>ActiveModel::ForbiddenAttributesError:</code>エラーが出た。</p>
 
 <hr>
 
-<p>Angularプロジェクトで<a href="https://github.com/desandro/masonry">Masonry</a>と<a href="https://github.com/passy/angular-masonry">AngularJS Masonry Directive</a>を利用している。<br />
-その際にMasonryのstampが動いていなかったのでメモ。
-なんで動かなかったかというと<a href="http://qiita.com/ukyo/items/0aa47142020c07874415">MyInclude</a>とngIfがよくなかった。<br />
-とりあえずサンプル</p>
+<h2 id="マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162">マスアサインメント脆弱性</h2>
 
-<h3 id="ng-ifバージョン-動かない:4972609874c0ecfbd9a991e9e31f8075">■ ng-ifバージョン(動かない)</h3>
+<p>モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
+モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。</p>
 
-<p><p data-height="266" data-theme-id="15717" data-slug-hash="ojRRmP" data-default-tab="result" data-user="kotazi" class='codepen'>See the Pen <a href='http://codepen.io/kotazi/pen/ojRRmP/'>【AngularJS】Masonry Directive Behavior with Stamp(ng-if)</a> by Kohei  Saeki (<a href='http://codepen.io/kotazi'>@kotazi</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+<p>管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。
+けれども知識のある人間がスクリプト書けば悪用することができてしまう。</p>
 
-<h3 id="ng-showバージョン-動く:4972609874c0ecfbd9a991e9e31f8075">■ ng-showバージョン(動く)</h3>
+<p>このアプリケーションの脆弱性を<strong>マスアサインメント脆弱性</strong>と呼ぶ。</p>
 
-<p><p data-height="266" data-theme-id="15717" data-slug-hash="EVBZeG" data-default-tab="result" data-user="kotazi" class='codepen'>See the Pen <a href='http://codepen.io/kotazi/pen/EVBZeG/'>【AngularJS】Masonry Directive Behavior with Stamp(ng-show)</a> by Kohei  Saeki (<a href='http://codepen.io/kotazi'>@kotazi</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+<p>そしてこの脆弱性に対してRails4.0から導入された対抗策が、<strong>Strong Parameters</strong>。</p>
 
-<p>ngIfの場合がDOMが再生性されているので、stampが毎回解除されてしまう。</p>
+<h2 id="strong-parameters:c93acd2fcd4285cd58c99e0793697162">Strong Parameters</h2>
+
+<p>サンプルコード:</p>
+
+<pre><code>def staff_member_params
+  params.require(:staff_member).permit(
+    :email, :password, :family_name, :given_name,
+    :family_name_kana, :given_name_kana,
+    :start_date, :end_date, :suspended
+  )
+end
+</code></pre>
+
+<p><code>params.require(:staff_member)</code><br />
+paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<code>:staff_member</code>というキーと持っているかを調べる。</p>
+
+<p>=&gt; 持っていなければActionController::ParameterMissingエラー</p>
 
                 </section>
             </article>
@@ -70,7 +83,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015113001%2f - Masonry%e3%82%92Angular%e3%81%a7%e4%bd%bf%e3%81%86%e9%9a%9b%e3%81%ab%e6%b3%a8%e6%84%8f%e3%81%99%e3%82%8b%e3%81%93%e3%81%a8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0105_ForbiddenAttributesError%2f - %e3%80%90Rails%e3%80%91ForbiddenAttributesError%e8%a6%9a%e6%9b%b8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -87,10 +100,6 @@
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/">【Rails】ForbiddenAttributesError覚書<aside class="dates">Jan 6</aside></a>
-        </li>
         
    
     
