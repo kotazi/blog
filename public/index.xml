@@ -6,8 +6,52 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Jan 2016 16:41:09 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jan 2016 18:31:41 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Rails】ForbiddenAttributesError覚書</title>
+      <link>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</link>
+      <pubDate>Wed, 06 Jan 2016 18:31:41 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</guid>
+      <description>
+
+&lt;p&gt;Railsで&lt;code&gt;ActiveModel::ForbiddenAttributesError:&lt;/code&gt;エラーが出た。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162&#34;&gt;マスアサインメント脆弱性&lt;/h2&gt;
+
+&lt;p&gt;モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
+モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。&lt;/p&gt;
+
+&lt;p&gt;管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。
+けれども知識のある人間がスクリプト書けば悪用することができてしまう。&lt;/p&gt;
+
+&lt;p&gt;このアプリケーションの脆弱性を&lt;strong&gt;マスアサインメント脆弱性&lt;/strong&gt;と呼ぶ。&lt;/p&gt;
+
+&lt;p&gt;そしてこの脆弱性に対してRails4.0から導入された対抗策が、&lt;strong&gt;Strong Parameters&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;strong-parameters:c93acd2fcd4285cd58c99e0793697162&#34;&gt;Strong Parameters&lt;/h2&gt;
+
+&lt;p&gt;サンプルコード:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def staff_member_params
+  params.require(:staff_member).permit(
+    :email, :password, :family_name, :given_name,
+    :family_name_kana, :given_name_kana,
+    :start_date, :end_date, :suspended
+  )
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;params.require(:staff_member)&lt;/code&gt;&lt;br /&gt;
+paramsオブジェクトのrequireメソッドで、paramsオブジェクトが&lt;code&gt;:staff_member&lt;/code&gt;というキーと持っているかを調べる。&lt;/p&gt;
+
+&lt;p&gt;=&amp;gt; 持っていなければActionController::ParameterMissingエラー&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【DMM英会話】Asking for Directions | Business Basic</title>
@@ -1788,27 +1832,6 @@ GMのアルフレッド・P・スローン・ジュニアは複雑かつ大規�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://coliss.com/articles/build-websites/operation/design/best-plugins-for-sketch.html&#34;&gt;Sketchを更に便利にパワーアップするプラグインのまとめ|coliss&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>1つのページに2つのFacebookAppIdをセットした時</title>
-      <link>http://kotazi.github.io/blog/post/20151215_fb_app_id/</link>
-      <pubDate>Wed, 16 Dec 2015 09:38:38 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151215_fb_app_id/</guid>
-      <description>
-
-&lt;p&gt;FacebookのApp IDを一つのページにセットした時のこと。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;sdk.jsで初期化処理に一つのappIDしかセットすることができない。
-２回初期化すれば最後に初期化した時のappIdが使われる。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考:bbd27431d7bc53d05c9c0392b31105ee&#34;&gt;参考&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.sourcecoast.com/forums/jfbconnect/jfbconnect-joomla-15-support/3514-multiple-fb-apps-on-one-domain&#34; alt=&#34;Multiple FB apps on one domain?&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
