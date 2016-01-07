@@ -6,8 +6,100 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Jan 2016 00:46:15 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jan 2016 18:31:41 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Rails】Routing周りのメモ書き</title>
+      <link>http://kotazi.github.io/blog/post/2016/0107_rails_routing/</link>
+      <pubDate>Thu, 07 Jan 2016 18:31:41 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0107_rails_routing/</guid>
+      <description>
+
+&lt;p&gt;新しいRailsプロジェクトの&lt;code&gt;routes.rb&lt;/code&gt;を読んでいて調べたこととか。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id=&#34;namespaceとscope-moduleとscopeのち外:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ namespaceとscope moduleとscopeのち外&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;namespace&lt;/code&gt;はURI PatternもController#Actionも指定したパスに&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;scope module&lt;/code&gt;はController#Actionのみ指定したパスに&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;scope&lt;/code&gt;はURI Patternのみ指定したパスに&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/blueplanet/items/522cc8364f6cf189ecad&#34;&gt;routeのmoduleとnamespaceとscopeの違い&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;constraintsについて:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ constraintsについて&lt;/h5&gt;
+
+&lt;p&gt;constraintsを使うことでさまざまな制限を兼ねることができる。
+独自のクラスを使用すうることなども可能。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://y-yagi.tumblr.com/post/92386974040/rails-routing-constraints%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6&#34;&gt;rails routing constraintsについて&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;resourcesルーティング一覧:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ resourcesルーティング一覧&lt;/h5&gt;
+
+&lt;table class=&#34;responsive&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;HTTP動詞&lt;/th&gt;
+&lt;th&gt;パス&lt;/th&gt;
+&lt;th&gt;コントローラ#アクション&lt;/th&gt;
+&lt;th&gt;目的&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;/photos&lt;/td&gt;
+&lt;td&gt;photos#index&lt;/td&gt;
+&lt;td&gt;すべての写真の一覧を表示&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;/photos/new&lt;/td&gt;
+&lt;td&gt;photos#new&lt;/td&gt;
+&lt;td&gt;写真を1つ作成するためのHTMLフォームを返す&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POST&lt;/td&gt;
+&lt;td&gt;/photos&lt;/td&gt;
+&lt;td&gt;photos#create&lt;/td&gt;
+&lt;td&gt;写真を1つ作成する&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;/photos/:id&lt;/td&gt;
+&lt;td&gt;photos#show&lt;/td&gt;
+&lt;td&gt;特定の写真を表示する&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;/photos/:id/edit&lt;/td&gt;
+&lt;td&gt;photos#edit&lt;/td&gt;
+&lt;td&gt;写真編集用のHTMLフォームを1つ返す&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PATCH/PUT&lt;/td&gt;
+&lt;td&gt;/photos/:id&lt;/td&gt;
+&lt;td&gt;photos#update&lt;/td&gt;
+&lt;td&gt;特定の写真を更新する&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DELETE&lt;/td&gt;
+&lt;td&gt;/photos/:id&lt;/td&gt;
+&lt;td&gt;photos#destroy&lt;/td&gt;
+&lt;td&gt;特定の写真を削除する&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;ActiveAdminとEngineについてはまた今度。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【DMM英会話】Requesting Materials | Business Basic</title>
@@ -1848,56 +1940,6 @@ GMのアルフレッド・P・スローン・ジュニアは複雑かつ大規�
 &lt;p&gt;また、リモートワークなどの概念はここには存在しなく、現代は形の変わってきている部分も多い。
 けれども本質的に組織構造が道具であるということは変わっておらず、構造が持つべき明快さや経済性といった指標は今も変わっていない。
 働き方が多様になっていくこの時代で、いかにそういった部分を担保していくかということを自分たちで考えていく必要がある。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>クローラとリファラースパム覚書</title>
-      <link>http://kotazi.github.io/blog/post/20151222_referer_spam/</link>
-      <pubDate>Fri, 18 Dec 2015 19:40:35 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151222_referer_spam/</guid>
-      <description>
-
-&lt;p&gt;404へのアクセスが多いと言われたので調べてみたこと。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;クローラのこと:00d2fb180dc48473aab37c318f758d82&#34;&gt;クローラのこと&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://web-tan.forum.impressrd.jp/e/2009/03/27/4952&#34;&gt;クローラーとは／検索エンジンの仕組みをおさらい。クローラー対策とステータスコード|エンジニアのためのSEO入門&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://nozziedesign.com/1341.html&#34;&gt;クローラーとは？検索エンジンの仕組みを解説！【初心者向け】|ネットビジネスで自由な人生を描くライフスタイルデザイナーノジーのブログ。&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;リファラースパムのこと:00d2fb180dc48473aab37c318f758d82&#34;&gt;リファラースパムのこと&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://think-the-web.com/referrer-spam-measures/&#34;&gt;リファラースパムとは-スパムURL一覧表（103個）＋対処法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Referer_spam&#34;&gt;Referer spam - Wikipedia, the free encyclopedia&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;その他のこと:00d2fb180dc48473aab37c318f758d82&#34;&gt;その他のこと&lt;/h2&gt;
-
-&lt;p&gt;Googleアナリティクスの設定からロボットやスパイダーからのヒットを除外できる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.blogger-customize.com/2014/08/googleanalytics-crawler.html&#34;&gt;Google Analyticsでクローラーのトラフィックを除外する方法|Blogger-customize.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;リファラスパムの目的はアクセス解析している人間をWebサイトに誘い込むこと。
-アクセスを目的としている場合もあれば、アフィサイトに飛ばされることもある。
-同時にアクセス解析も正しくできなくなるというデメリットも被ることになる。&lt;/p&gt;
-
-&lt;p&gt;スパムクローラーみたいにも呼ばれるのかな？&lt;/p&gt;
-
-&lt;p&gt;GoogleAnalyticsでは設定からこれらを除外することができるようになっている。
-何故デフォルトでなっていないかといえば、そもそもアクセス解析ができて当初の目的は、
-サーバー負荷の計測にあったらしい。そのため、サーバー負荷という観点ではスパムからの
-アクセスも同様に計上するべきという考えらしい。&lt;/p&gt;
 </description>
     </item>
     

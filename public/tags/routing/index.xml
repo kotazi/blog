@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rails on kotazi.com</title>
-    <link>http://kotazi.github.io/blog/tags/rails/</link>
-    <description>Recent content in Rails on kotazi.com</description>
+    <title>Routing on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/routing/</link>
+    <description>Recent content in Routing on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Jan 2016 18:31:41 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://kotazi.github.io/blog/tags/routing/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>【Rails】Routing周りのメモ書き</title>
@@ -98,50 +98,6 @@
 &lt;hr&gt;
 
 &lt;p&gt;ActiveAdminとEngineについてはまた今度。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Rails】ForbiddenAttributesError覚書</title>
-      <link>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</link>
-      <pubDate>Wed, 06 Jan 2016 18:31:41 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</guid>
-      <description>
-
-&lt;p&gt;Railsで&lt;code&gt;ActiveModel::ForbiddenAttributesError:&lt;/code&gt;エラーが出た。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162&#34;&gt;マスアサインメント脆弱性&lt;/h2&gt;
-
-&lt;p&gt;モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
-モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。&lt;/p&gt;
-
-&lt;p&gt;管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。
-けれども知識のある人間がスクリプト書けば悪用することができてしまう。&lt;/p&gt;
-
-&lt;p&gt;このアプリケーションの脆弱性を&lt;strong&gt;マスアサインメント脆弱性&lt;/strong&gt;と呼ぶ。&lt;/p&gt;
-
-&lt;p&gt;そしてこの脆弱性に対してRails4.0から導入された対抗策が、&lt;strong&gt;Strong Parameters&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;strong-parameters:c93acd2fcd4285cd58c99e0793697162&#34;&gt;Strong Parameters&lt;/h2&gt;
-
-&lt;p&gt;サンプルコード:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def staff_member_params
-  params.require(:staff_member).permit(
-    :email, :password, :family_name, :given_name,
-    :family_name_kana, :given_name_kana,
-    :start_date, :end_date, :suspended
-  )
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;params.require(:staff_member)&lt;/code&gt;&lt;br /&gt;
-paramsオブジェクトのrequireメソッドで、paramsオブジェクトが&lt;code&gt;:staff_member&lt;/code&gt;というキーと持っているかを調べる。&lt;/p&gt;
-
-&lt;p&gt;=&amp;gt; 持っていなければActionController::ParameterMissingエラー&lt;/p&gt;
 </description>
     </item>
     

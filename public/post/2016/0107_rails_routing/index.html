@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>いまいち忘れるjQuery &middot; kotazi.com</title>
+		<title>【Rails】Routing周りのメモ書き &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,29 +32,93 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>いまいち忘れるjQuery</h1>
-                    <h2 class="headline">December 10, 2015</h2>
+                    <h1>【Rails】Routing周りのメモ書き</h1>
+                    <h2 class="headline">January 7, 2016</h2>
                 </header>
                 <section id="post-body">
-                    <p>なんだかjQueryの使い方ってそこそこに忘れる。
-忘れるというか、それなりに検索をかけているなと。</p>
+                    
 
-<p>そこで。</p>
+<p>新しいRailsプロジェクトの<code>routes.rb</code>を読んでいて調べたこととか。</p>
 
-<ul>
-<li><a href="http://semooh.jp/jquery/api/selectors/">jQuery日本語リファレンス</a></li>
-</ul>
+<hr>
 
-<p>ヌーのサイトに一覧ページがあることを知った。<br />
-困ったときはここを見ればいいし、チートシートもある。</p>
+<h5 id="namespaceとscope-moduleとscopeのち外:67c557ff4a695278f8c1eb16d2539ac6">◯ namespaceとscope moduleとscopeのち外</h5>
 
 <ul>
-<li><a href="https://oscarotero.com/jquery/">jQuery Quick API Reference</a></li>
+<li><code>namespace</code>はURI PatternもController#Actionも指定したパスに</li>
+<li><code>scope module</code>はController#Actionのみ指定したパスに</li>
+<li><code>scope</code>はURI Patternのみ指定したパスに</li>
 </ul>
 
-<p><code>wrapAll()</code>とか初めて使ったけど便利だ。<br />
-ちなみに、<code>createElement()</code>みたいなメソッドはなくて、
-  普通に<code>$('&lt;div&gt;&lt;/div&gt;')</code>ってやって作るらしい。</p>
+<p><a href="http://qiita.com/blueplanet/items/522cc8364f6cf189ecad">routeのmoduleとnamespaceとscopeの違い</a></p>
+
+<h5 id="constraintsについて:67c557ff4a695278f8c1eb16d2539ac6">◯ constraintsについて</h5>
+
+<p>constraintsを使うことでさまざまな制限を兼ねることができる。
+独自のクラスを使用すうることなども可能。</p>
+
+<p><a href="http://y-yagi.tumblr.com/post/92386974040/rails-routing-constraints%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">rails routing constraintsについて</a></p>
+
+<h5 id="resourcesルーティング一覧:67c557ff4a695278f8c1eb16d2539ac6">◯ resourcesルーティング一覧</h5>
+
+<table class="responsive">
+<thead>
+<tr>
+<th>HTTP動詞</th>
+<th>パス</th>
+<th>コントローラ#アクション</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/photos</td>
+<td>photos#index</td>
+<td>すべての写真の一覧を表示</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/photos/new</td>
+<td>photos#new</td>
+<td>写真を1つ作成するためのHTMLフォームを返す</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/photos</td>
+<td>photos#create</td>
+<td>写真を1つ作成する</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/photos/:id</td>
+<td>photos#show</td>
+<td>特定の写真を表示する</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/photos/:id/edit</td>
+<td>photos#edit</td>
+<td>写真編集用のHTMLフォームを1つ返す</td>
+</tr>
+<tr>
+<td>PATCH/PUT</td>
+<td>/photos/:id</td>
+<td>photos#update</td>
+<td>特定の写真を更新する</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/photos/:id</td>
+<td>photos#destroy</td>
+<td>特定の写真を削除する</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<p>ActiveAdminとEngineについてはまた今度。</p>
 
                 </section>
             </article>
@@ -67,7 +131,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f20151210_jquery%2f - %e3%81%84%e3%81%be%e3%81%84%e3%81%a1%e5%bf%98%e3%82%8c%e3%82%8bjQuery by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0107_rails_routing%2f - %e3%80%90Rails%e3%80%91Routing%e5%91%a8%e3%82%8a%e3%81%ae%e3%83%a1%e3%83%a2%e6%9b%b8%e3%81%8d by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -84,10 +148,6 @@
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0107_rails_routing/">【Rails】Routing周りのメモ書き<aside class="dates">Jan 7</aside></a>
-        </li>
         
    
     
