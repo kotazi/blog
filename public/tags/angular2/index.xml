@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angular2 on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/angular2/</link>
+    <description>Recent content in Angular2 on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jan 2016 11:56:56 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/angular2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Angular2メモ</title>
+      <link>http://kotazi.github.io/blog/post/2016/0115_angular2/</link>
+      <pubDate>Fri, 15 Jan 2016 11:56:56 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0115_angular2/</guid>
+      <description>
+
+&lt;h2 id=&#34;speed-performance:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SPEED &amp;amp; PERFORMANCE&lt;/h2&gt;
+
+&lt;p&gt;Angular2ではAngular1から劇的に速くなります。
+- サーバーサイドプリレンダリングによる初期ロードの高速化
+- オフラインコンパイルの立ちあげの速さ、
+- 検出やビューキャッシュの大幅改善によるスムーズなスクロールやトランジション。&lt;/p&gt;
+
+&lt;h2 id=&#34;simple-expressive:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SIMPLE &amp;amp; EXPRESSIVE&lt;/h2&gt;
+
+&lt;p&gt;意図を明確に自然に書きやすくなります。
+柔軟なテンプレートは読みやすく理解しやすいので、
+チームの複雑さがなくなります。&lt;/p&gt;
+
+&lt;h2 id=&#34;cross-platform:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;CROSS PLATFORM&lt;/h2&gt;
+
+&lt;p&gt;Angular2はデスクトップアプリやモバイルウェブ、AndroidとiOSにも対応。
+Angular Universalはモバイル高速化のためにサーバーサイドレンダリングを提供します。&lt;/p&gt;
+
+&lt;p&gt;Web workerによってレスポンシブなアプリUIがサポートされます。&lt;/p&gt;
+
+&lt;h2 id=&#34;seamless-upgrade-from-angular-1:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SEAMLESS UPGRADE FROM ANGULAR 1&lt;/h2&gt;
+
+&lt;p&gt;自身のペースでAngular1からのアップデードができます。&lt;/p&gt;
+
+&lt;h2 id=&#34;flexible-development:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;FLEXIBLE DEVELOPMENT&lt;/h2&gt;
+
+&lt;p&gt;言語を自由に選べます。
+ES5、TypeScript、Dart、ES2015やJSにコンパイルできる言語なら動作します。&lt;/p&gt;
+
+&lt;h2 id=&#34;comprehensive-routing:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;COMPREHENSIVE ROUTING&lt;/h2&gt;
+
+&lt;p&gt;ビューの設計が洗練されています。&lt;/p&gt;
+
+&lt;h2 id=&#34;dependency-injection:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;DEPENDENCY INJECTION&lt;/h2&gt;
+
+&lt;p&gt;依存性注入がシンプルに。
+退屈なコードが不要に。
+テストも書きやすくなる。&lt;/p&gt;
+
+&lt;h2 id=&#34;legacy-browser-support:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;LEGACY BROWSER SUPPORT&lt;/h2&gt;
+
+&lt;p&gt;Chrome, Edge, Firefox, IE, and Safariの最新バージョンをサポート。
+IE9+ and Android 4.1+も。&lt;/p&gt;
+
+&lt;h2 id=&#34;animations:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;ANIMATIONS&lt;/h2&gt;
+
+&lt;p&gt;低レイヤーでのアニメーションをサポート。&lt;/p&gt;
+
+&lt;h2 id=&#34;internationalization-i18n-accessibility:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;INTERNATIONALIZATION (I18N) &amp;amp; ACCESSIBILITY&lt;/h2&gt;
+
+&lt;p&gt;全ての人に届くようにできてる。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

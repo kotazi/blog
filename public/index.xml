@@ -6,8 +6,70 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jan 2016 00:46:15 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jan 2016 11:56:56 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Angular2メモ</title>
+      <link>http://kotazi.github.io/blog/post/2016/0115_angular2/</link>
+      <pubDate>Fri, 15 Jan 2016 11:56:56 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0115_angular2/</guid>
+      <description>
+
+&lt;h2 id=&#34;speed-performance:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SPEED &amp;amp; PERFORMANCE&lt;/h2&gt;
+
+&lt;p&gt;Angular2ではAngular1から劇的に速くなります。
+- サーバーサイドプリレンダリングによる初期ロードの高速化
+- オフラインコンパイルの立ちあげの速さ、
+- 検出やビューキャッシュの大幅改善によるスムーズなスクロールやトランジション。&lt;/p&gt;
+
+&lt;h2 id=&#34;simple-expressive:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SIMPLE &amp;amp; EXPRESSIVE&lt;/h2&gt;
+
+&lt;p&gt;意図を明確に自然に書きやすくなります。
+柔軟なテンプレートは読みやすく理解しやすいので、
+チームの複雑さがなくなります。&lt;/p&gt;
+
+&lt;h2 id=&#34;cross-platform:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;CROSS PLATFORM&lt;/h2&gt;
+
+&lt;p&gt;Angular2はデスクトップアプリやモバイルウェブ、AndroidとiOSにも対応。
+Angular Universalはモバイル高速化のためにサーバーサイドレンダリングを提供します。&lt;/p&gt;
+
+&lt;p&gt;Web workerによってレスポンシブなアプリUIがサポートされます。&lt;/p&gt;
+
+&lt;h2 id=&#34;seamless-upgrade-from-angular-1:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SEAMLESS UPGRADE FROM ANGULAR 1&lt;/h2&gt;
+
+&lt;p&gt;自身のペースでAngular1からのアップデードができます。&lt;/p&gt;
+
+&lt;h2 id=&#34;flexible-development:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;FLEXIBLE DEVELOPMENT&lt;/h2&gt;
+
+&lt;p&gt;言語を自由に選べます。
+ES5、TypeScript、Dart、ES2015やJSにコンパイルできる言語なら動作します。&lt;/p&gt;
+
+&lt;h2 id=&#34;comprehensive-routing:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;COMPREHENSIVE ROUTING&lt;/h2&gt;
+
+&lt;p&gt;ビューの設計が洗練されています。&lt;/p&gt;
+
+&lt;h2 id=&#34;dependency-injection:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;DEPENDENCY INJECTION&lt;/h2&gt;
+
+&lt;p&gt;依存性注入がシンプルに。
+退屈なコードが不要に。
+テストも書きやすくなる。&lt;/p&gt;
+
+&lt;h2 id=&#34;legacy-browser-support:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;LEGACY BROWSER SUPPORT&lt;/h2&gt;
+
+&lt;p&gt;Chrome, Edge, Firefox, IE, and Safariの最新バージョンをサポート。
+IE9+ and Android 4.1+も。&lt;/p&gt;
+
+&lt;h2 id=&#34;animations:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;ANIMATIONS&lt;/h2&gt;
+
+&lt;p&gt;低レイヤーでのアニメーションをサポート。&lt;/p&gt;
+
+&lt;h2 id=&#34;internationalization-i18n-accessibility:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;INTERNATIONALIZATION (I18N) &amp;amp; ACCESSIBILITY&lt;/h2&gt;
+
+&lt;p&gt;全ての人に届くようにできてる。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【DMM英会話】 Business Call | Business Basic</title>
@@ -1483,74 +1545,6 @@ Shuttlerock Japanに入社して1年が経ちました。普段はエンジニ�
 
 &lt;p&gt;マネジメントの役割についても理解することができ、社会のニーズを事業機会に転換できるような企業にしたい。
 またその組織で働く人達が個々の強みを活かしながらイキイキと働けるような環境を作り、社会に還元していきたいものだ。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【第8章】トップマネジメント/基本と原則</title>
-      <link>http://kotazi.github.io/blog/post/20151223_management/</link>
-      <pubDate>Wed, 23 Dec 2015 12:57:23 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151223_management/</guid>
-      <description>
-
-&lt;p&gt;学生のころは分からなかったことが分かる気がした。&lt;br /&gt;
-ドラッカーの基本と原則をKidleで読みなおした。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;36-ドイツ銀行物語:9a8745a1df3f4499c388b5fb47d7dff9&#34;&gt;36. ドイツ銀行物語&lt;/h2&gt;
-
-&lt;p&gt;トップマネジメントを確立したのは、ゲオルグ・シーメンス。
-ドイツ銀行を最強の金融機関にした。&lt;/p&gt;
-
-&lt;p&gt;① トップマネジメントは、事業全体を見ることができ、全体を考えた意思決定を行えるもののみが果たしうる課題&lt;br /&gt;
-② トップマネジメントには独自の構造が必要&lt;br /&gt;
-③ トップマネジメントには独自のインプット機関が必要&lt;/p&gt;
-
-&lt;h2 id=&#34;37-トップマネジメントの役割:9a8745a1df3f4499c388b5fb47d7dff9&#34;&gt;37. トップマネジメントの役割&lt;/h2&gt;
-
-&lt;p&gt;① トップマネジメントには事業の目的を考えるという役割&lt;br /&gt;
-② 基準を設定する役割、すなわち組織全体の規範を定める役割&lt;br /&gt;
-③ 組織を作り上げ、それを維持する役割&lt;br /&gt;
-④ トップの座にあるものだけの仕事として、渉外の役割&lt;br /&gt;
-⑤ 行事や夕食会への出席など、儀礼的な役割&lt;br /&gt;
-⑥ 重大な危機に関しては、自ら出動する役割&lt;/p&gt;
-
-&lt;p&gt;これらを行うために下記の性格が必要。併せ持つヒトは少ない。&lt;br /&gt;
-「考える人」、「行動する人」、「人間的な人」、「表に立つ人」。&lt;/p&gt;
-
-&lt;h2 id=&#34;35-トップマネジメントの構造:9a8745a1df3f4499c388b5fb47d7dff9&#34;&gt;35. トップマネジメントの構造&lt;/h2&gt;
-
-&lt;p&gt;トップマネジメントは一人ではなくチームによる仕事。&lt;br /&gt;
-要求される役割がさまざまであり、量もおおいため。&lt;/p&gt;
-
-&lt;p&gt;ワンマンにならないために、トップマネジメントのひとつをメンバーに直接的かつ優先的に割り当てるようにする。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;チームワークを機能させるために&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;① メンバーはそれぞれの担当分野において最終的な決定権を持つ&lt;br /&gt;
-② メンバーは自らの担当する分野以外の意思決定を行ってはならない&lt;br /&gt;
-③ 仲良くする必要はない&lt;br /&gt;
-④ トップマネジメントは委員会ではない。チームであり、キャプテンがいる。&lt;br /&gt;
-⑤ 自らの担当分野では意思決定を行わなければならない。&lt;br /&gt;
-⑥ トップマネジメントの仕事は、意思の疎通に精力的に取り組むことを要求する&lt;/p&gt;
-
-&lt;h2 id=&#34;39-取締役会:9a8745a1df3f4499c388b5fb47d7dff9&#34;&gt;39. 取締役会&lt;/h2&gt;
-
-&lt;p&gt;トップマネジメントを監督し、助言し、意思決定を審査する機関。&lt;br /&gt;
-あらゆる国にあるがどれも機能を果たしていない。トップマネジメントが完全に支配しているのであれば、消滅すべき。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;取締役会の3つの機能&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;① 審査するための機関
-② 成果を上げられないトップマネジメントを交代する
-③ 渉外のための機関&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;トップマネジメントについての役割は概ねその通りだと思う。
-チームワークを機能させるための条件をメンバー内で共通認識として持たせられるようにしたい。&lt;/p&gt;
 </description>
     </item>
     
