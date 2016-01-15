@@ -6,8 +6,107 @@
     <description>Recent content in Angular2 on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jan 2016 11:56:56 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jan 2016 20:07:16 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/angular2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Angular2のチュートリアル</title>
+      <link>http://kotazi.github.io/blog/post/2016/0115_angular2_2/</link>
+      <pubDate>Fri, 15 Jan 2016 20:07:16 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0115_angular2_2/</guid>
+      <description>
+
+&lt;p&gt;Angualr2のチュートリアルやったのでメモ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kotazi/angular2-quick-start&#34;&gt;kotazi/angular2-quick-start&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/tutorial/&#34;&gt;TUTORIAL: TOUR OF HEROES&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;構成:24456ac087966b3ecdbdd8d437837263&#34;&gt;構成&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;angular2-tour-of-heroes
+|- node_modules
+|-app
+| |- app.component.ts
+| |- boot.ts
+| |- hero.ts
+| |- hero-detail.component.ts
+| |- hero.service.ts
+| |- mock-heroes.ts
+|- index.html
+|- package.json
+|- tsconfig.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;index-html:24456ac087966b3ecdbdd8d437837263&#34;&gt;index.html&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Angular2では&lt;code&gt;angular2-polyfills.js&lt;/code&gt;と&lt;code&gt;Rx.js&lt;/code&gt;が必要&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;System&lt;/code&gt;でconfigとbootの読み込み&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;my-app&amp;gt;&lt;/code&gt;タグを埋め込む&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/00d1d0fbe1a4fb92be11.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;boot-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;boot.ts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bootstrap()&lt;/code&gt;でアプリケーション起動&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/bf9b1e29e590582dc895.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;app-component-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;app.component.ts&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;@Component&lt;/code&gt;はAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;selector&lt;/code&gt;でHTMLのタグ名を指定する。&lt;code&gt;template&lt;/code&gt;にはレンタリングするHTMLを記述する。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;*ngFor=&amp;ldquo;#hero of heroes&amp;rdquo; ng-repeatが変わった&lt;/li&gt;
+&lt;li&gt;アスタリスクとシャープが特徴&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/e407ee5a6dfe7599c8df.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;hero-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero.ts&lt;/h2&gt;
+
+&lt;p&gt;classではなくinterfaceを利用している。&lt;br /&gt;
+ここでの選び方は&lt;code&gt;Hero&lt;/code&gt;をどのように使いたいか。&lt;br /&gt;
+ロジックや振る舞いを書く場合は、&lt;code&gt;class&lt;/code&gt;。
+型の定義などだけであれば、&lt;code&gt;interface&lt;/code&gt;で十分。&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/958abfee0ee7cce36257.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;mock-heroes-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;mock-heroes.ts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HREOES配列はHero型。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/d3b073e5f33ff8ef1605.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;hero-detail-component-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero-detail.component.ts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[(ngModel)]=&amp;ldquo;hero.name&amp;rdquo; 書き方変わった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/9bd78998321fde979038.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;hero-service-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero.service.ts&lt;/h2&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/f27b3bc4c989d37fde72.js&#34;&gt;&lt;/script&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;けっこう変わってるけど抵抗はそんなにないかも。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Angular2メモ</title>
