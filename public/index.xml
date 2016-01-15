@@ -6,8 +6,107 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jan 2016 11:56:56 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jan 2016 20:07:16 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Angular2のチュートリアル</title>
+      <link>http://kotazi.github.io/blog/post/2016/0115_angular2_2/</link>
+      <pubDate>Fri, 15 Jan 2016 20:07:16 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0115_angular2_2/</guid>
+      <description>
+
+&lt;p&gt;Angualr2のチュートリアルやったのでメモ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kotazi/angular2-quick-start&#34;&gt;kotazi/angular2-quick-start&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/tutorial/&#34;&gt;TUTORIAL: TOUR OF HEROES&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;構成:24456ac087966b3ecdbdd8d437837263&#34;&gt;構成&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;angular2-tour-of-heroes
+|- node_modules
+|-app
+| |- app.component.ts
+| |- boot.ts
+| |- hero.ts
+| |- hero-detail.component.ts
+| |- hero.service.ts
+| |- mock-heroes.ts
+|- index.html
+|- package.json
+|- tsconfig.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;index-html:24456ac087966b3ecdbdd8d437837263&#34;&gt;index.html&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Angular2では&lt;code&gt;angular2-polyfills.js&lt;/code&gt;と&lt;code&gt;Rx.js&lt;/code&gt;が必要&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;System&lt;/code&gt;でconfigとbootの読み込み&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;my-app&amp;gt;&lt;/code&gt;タグを埋め込む&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/00d1d0fbe1a4fb92be11.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;boot-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;boot.ts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bootstrap()&lt;/code&gt;でアプリケーション起動&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/bf9b1e29e590582dc895.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;app-component-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;app.component.ts&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;@Component&lt;/code&gt;はAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;selector&lt;/code&gt;でHTMLのタグ名を指定する。&lt;code&gt;template&lt;/code&gt;にはレンタリングするHTMLを記述する。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;*ngFor=&amp;ldquo;#hero of heroes&amp;rdquo; ng-repeatが変わった&lt;/li&gt;
+&lt;li&gt;アスタリスクとシャープが特徴&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/e407ee5a6dfe7599c8df.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;hero-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero.ts&lt;/h2&gt;
+
+&lt;p&gt;classではなくinterfaceを利用している。&lt;br /&gt;
+ここでの選び方は&lt;code&gt;Hero&lt;/code&gt;をどのように使いたいか。&lt;br /&gt;
+ロジックや振る舞いを書く場合は、&lt;code&gt;class&lt;/code&gt;。
+型の定義などだけであれば、&lt;code&gt;interface&lt;/code&gt;で十分。&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/958abfee0ee7cce36257.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;mock-heroes-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;mock-heroes.ts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HREOES配列はHero型。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/d3b073e5f33ff8ef1605.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;hero-detail-component-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero-detail.component.ts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[(ngModel)]=&amp;ldquo;hero.name&amp;rdquo; 書き方変わった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/9bd78998321fde979038.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;hero-service-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero.service.ts&lt;/h2&gt;
+
+&lt;script src=&#34;https://gist.github.com/kotazi/f27b3bc4c989d37fde72.js&#34;&gt;&lt;/script&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;けっこう変わってるけど抵抗はそんなにないかも。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Angular2メモ</title>
@@ -1417,134 +1516,6 @@ Shuttlerock Japanに入社して1年が経ちました。普段はエンジニ�
 3.社会と個人に生活の質を提供すること&lt;/p&gt;
 
 &lt;p&gt;チーム本来の使命を再確認し、個々の働きがいや自己実現と真摯に向き合い、顧客により良いものを提供できるようなプロダクトマネジメントを行い、それに対し責任を持って成果で応えられるようなプロダクトマネジャーを目指してみてはいかがでしょうか。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【第9章】マネジメントの戦略/基本と原則</title>
-      <link>http://kotazi.github.io/blog/post/20151224_management2/</link>
-      <pubDate>Thu, 24 Dec 2015 12:57:23 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151224_management2/</guid>
-      <description>
-
-&lt;p&gt;学生のころは分からなかったことが分かる気がした。&lt;br /&gt;
-ドラッカーの基本と原則をKidleで読みなおした。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;40-規模のマネジメント:a260f3eda151c06ad855e57e5a7891af&#34;&gt;40. 規模のマネジメント&lt;/h2&gt;
-
-&lt;p&gt;規模は戦略に影響をおよぼす。また戦略も規模に影響をおよぼす。
-適切な規模を知るためには、従業員数、売上高、付加価値、製品、市場、技術、産業構造を見なければならない。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;小企業のマネジメント&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;小企業は戦略を必要とする。&lt;/p&gt;
-
-&lt;p&gt;① 「われわれの事業は何か。何であるべきか。」に答える&lt;br /&gt;
-② トップマネジメントの役割を組織化する&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;中企業のマネジメント&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;多くの点で理想的な規模。マネジメントが最も容易になる。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;大企業のマネジメント&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;人間を個人的に知ることができない。フォーマルな組織構造を適切に創りあげなければならない。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;規模が不適切だった場合&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;① 事業の性格を変える&lt;br /&gt;
-② 合併と買収&lt;br /&gt;
-③ 売却、切り捨て、縮小&lt;/p&gt;
-
-&lt;p&gt;また、規模についての問題は組織の内部ではなく、マネジメントの限界でもない。
-地域社会に対して大きくなりすぎることにある。&lt;/p&gt;
-
-&lt;h2 id=&#34;41-多角化のマネジメント:a260f3eda151c06ad855e57e5a7891af&#34;&gt;41. 多角化のマネジメント&lt;/h2&gt;
-
-&lt;p&gt;多角化に成功する条件は、市場、技術、価値観の一致。&lt;br /&gt;
-何かがうまくいかなくなると、全てが上手くいかなくなる。&lt;/p&gt;
-
-&lt;h2 id=&#34;42-グローバル化のマネジメント:a260f3eda151c06ad855e57e5a7891af&#34;&gt;42. グローバル化のマネジメント&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;グローバル企業の出現は、今日自明とされている教義、すなわち国家が人間組織の自然単位であるとする教義と相容れないだけでない。それは、あらゆる組織が、究極的には国民国家の統治機関たる政府からその存在の法的基礎と合法性を得なければならないとする教義とも相容れない。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;グローバル企業は、今日最も重要な経済的存在である。それは、グローバル経済という新しい現実を反映した存在であるがゆえに重要である。資源の最適化のもっとも有効な機関であるがゆえに重要である。&lt;/p&gt;
-
-&lt;h2 id=&#34;43-成長のマネジメント:a260f3eda151c06ad855e57e5a7891af&#34;&gt;43. 成長のマネジメント&lt;/h2&gt;
-
-&lt;p&gt;成長は自動的には起こらない。事業の成功によって、自動的にもたらされるものではない。成長は不連続である。成長のためにはある段階で自らを変えなければならない。
-成長には戦略が必要である、準備が必要である。なりたいと思うことに焦点を合わせた行動が必要である。トップに変革の意識がなければ、いずれも無駄になる。&lt;/p&gt;
-
-&lt;p&gt;長期に渡る高度の成長は不可能であり、不健全である。あまりに急速な成長は組織を脆弱化する。マネジメントを不可能にする。緊張、弱点、欠陥をもたらす。
-成長そのものを目標にすることはまちがいである、大きくなる事自体に価値はない。よい企業になることが正しい目標である。成長そのものは虚栄でしか無い。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;成長への準備&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;成長の機会はいつ起きるか分からない。準備が必要である。準備ができていなければ機会を逃すことになる。&lt;/p&gt;
-
-&lt;p&gt;① 基本活動を明らかにし、それらの活動に取り組むべきトップマネジメントチームを編成する&lt;br /&gt;
-② 変化すべき時を知るために、方針と行動の変化を要求する兆候に注意する&lt;br /&gt;
-③ 心底変化を望んでいるかを正直に判断する&lt;/p&gt;
-
-&lt;h2 id=&#34;44-イノベーション:a260f3eda151c06ad855e57e5a7891af&#34;&gt;44. イノベーション&lt;/h2&gt;
-
-&lt;p&gt;これからのイノベーションは19世紀のそれとは著しく異なり、既存の組織において行わなければならない。企業や公的機関は、既存のもののためだけではなく、イノベーションのために自らを組織する能力が必要。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;イノベーションを行う組織の特徴&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;① イノベーションの意味を知っている&lt;br /&gt;
-② イノベーションの力学を知っている&lt;br /&gt;
-③ イノベーションの戦略を持っている&lt;br /&gt;
-④ 管理的な目標や基準とは別に、イノベーションのための目標と基準の必要を知っている&lt;br /&gt;
-⑤ マネジメント、特にトップマネジメントの果たす役割と姿勢が違う&lt;br /&gt;
-⑥ イノベーションのための活動を、管理的な活動のための組織から独立して組織している。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;イノベーションは常に市場に焦点を合わせなければならない&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;トップマネジメントたるものは、アイディアを正面からとりあげることを自らの職務としなければならない。優れたアイディアとは常に非現実的であることをしらなければならない。優れたアイディアを手にするには、多くの馬鹿げたアイディアが必要であり、両者を簡単に識別する手立てのないことを知らなければならない。いずれも、実現性のない馬鹿げたものに見え、同時に素晴らしい物にも見える。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;イノベーションのための仕事は、独立した部門に任せなければならない。イノベーションは、機能としてではなく、事業として組織する必要がある。新しいことに取り組むことが決定したならば、直ちにプロジェクト・マネジャーを任命しなければならない。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;45-マネジメントの正当性:a260f3eda151c06ad855e57e5a7891af&#34;&gt;45. マネジメントの正当性&lt;/h2&gt;
-
-&lt;p&gt;われわれの社会は組織社会になった。現代社会の主な課題はすべて組織によって遂行されている。しかも、ほとんどの人が組織で働いている。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;マネジメントの役割&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;① 組織本来の使命を果たすべくマネジメントすること&lt;br /&gt;
-② 生産的な仕事を通じて人に成果を上げさせること&lt;br /&gt;
-③ 社会と個人に生活の質を提供すること&lt;/p&gt;
-
-&lt;h2 id=&#34;結論:a260f3eda151c06ad855e57e5a7891af&#34;&gt;結論&lt;/h2&gt;
-
-&lt;p&gt;社会においてリーダー的な階層にあるということは、本来の機能を果たすだけでは済まされないということである。本来の成果を上げるだけでは不十分である、正当性が要求される。社会から正しいものとしてその存在を是認させなければならない。&lt;/p&gt;
-
-&lt;p&gt;正当性は曖昧なコンセプトであり厳密に定義することはできないが決定的に重要。
-社会のリーダー的階層としてのマネジメントは、自らの組織に与えられた機能を遂行するための権限を持たなければならない。
-マネジメントは成果をあげるためにその地位にあるが、成果をあげるだけでは彼らの権限は正統とはされない。&lt;/p&gt;
-
-&lt;p&gt;社会のニーズを事業上の機会に転換することが企業の役割である。市場と個人のニーズ、すなわち消費者と従業員のニーズについて、予期し、識別子、満足させることは、マネジメントの役割である。&lt;/p&gt;
-
-&lt;p&gt;組織なるものの本質に基盤を置く正当性の根拠は、人の強みを生産的なものにすることしかない。そしてこれが組織の目的である。
-組織とは、個としての人間一人ひとりに対して、また社会を構成する一人ひとりの人間に対して、何らかの貢献を行わせ、自己実現させるための手段である。&lt;/p&gt;
-
-&lt;p&gt;社会的な目的を達成するための手段としての組織の発明は、人類の歴史にとって一万年前の労働の文化に匹敵する重要さを持つ。組織の基礎となる原理は、「私的な悪徳は社会のためになる」ではない。「個人の強みは社会のためになる」である。これがマネジメントの正当性の根拠である。そして、マネジメントの権限の基盤となりうる理念的原理である。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;成長とイノベーション。昨今ベンチャー盛り上げていくつもりなら成長とイノベーションが何たるかについては知っておきたい。
-また、「大きくなる事自体に価値はない。良い企業になることが正しい目標である。」というのが、最近読んだB Labについての記事と似通って物があって面白かった。
-本来企業とは、世界をより良くするために競い合うべきなのである。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://greenz.jp/2015/12/20/b-lab/&#34;&gt;「企業」の在り方を再定義する。NPOでも株式会社でもない、新しい法人格普及に取り組む米国非営利法人「B Lab」インタビュー&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;マネジメントの役割についても理解することができ、社会のニーズを事業機会に転換できるような企業にしたい。
-またその組織で働く人達が個々の強みを活かしながらイキイキと働けるような環境を作り、社会に還元していきたいものだ。&lt;/p&gt;
 </description>
     </item>
     
