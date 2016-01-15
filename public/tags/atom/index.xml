@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atom on kotazi.com</title>
+    <link>http://localhost:1313/blog/tags/atom/</link>
+    <description>Recent content in Atom on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jan 2016 19:34:51 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/atom/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>0115_atom</title>
+      <link>http://localhost:1313/blog/post/2016/0115_atom/</link>
+      <pubDate>Fri, 15 Jan 2016 19:34:51 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/2016/0115_atom/</guid>
+      <description>
+
+&lt;p&gt;SublimeとTypeScriptの相性が悪かった。&lt;br /&gt;
+というか何故か頻繁に落ちた。&lt;br /&gt;
+直そうと思ったけど「Sublime 落ちる」で検索すると、
+&amp;ldquo;恋に落ちるエディタ&amp;rdquo;ばっかり出てきた嫌になった。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;基本操作:80139a796bc23182b40091c5b1d792f1&#34;&gt;基本操作&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/yamagh/items/0fb4e7bbbd3c9ef4d855&#34;&gt;[Mac] Atomの基本的なショートカットキー&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

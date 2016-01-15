@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>my first blog &middot; kotazi.com</title>
+		<title>0115_angular2_2 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://localhost:1313/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://localhost:1313/blog/css/style.css">
 		<link rel="stylesheet" href="http://localhost:1313/blog/css/highlight.css">
@@ -32,11 +32,100 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>my first blog</h1>
-                    <h2 class="headline">November 10, 2015</h2>
+                    <h1>0115_angular2_2</h1>
+                    <h2 class="headline">January 15, 2016</h2>
                 </header>
                 <section id="post-body">
-                    <p>This is my first blog!!</p>
+                    
+
+<p>Angualr2のチュートリアルやったのでメモ。</p>
+
+<ul>
+<li><a href="https://github.com/kotazi/angular2-quick-start">kotazi/angular2-quick-start</a></li>
+<li><a href="https://angular.io/docs/ts/latest/tutorial/">TUTORIAL: TOUR OF HEROES</a></li>
+</ul>
+
+<hr>
+
+<h2 id="構成:24456ac087966b3ecdbdd8d437837263">構成</h2>
+
+<pre><code>angular2-tour-of-heroes
+|- node_modules
+|-app
+| |- app.component.ts
+| |- boot.ts
+| |- hero.ts
+| |- hero-detail.component.ts
+| |- hero.service.ts
+| |- mock-heroes.ts
+|- index.html
+|- package.json
+|- tsconfig.json
+</code></pre>
+
+<h2 id="index-html:24456ac087966b3ecdbdd8d437837263">index.html</h2>
+
+<ul>
+<li>Angular2では<code>angular2-polyfills.js</code>と<code>Rx.js</code>が必要</li>
+<li><code>System</code>でconfigとbootの読み込み</li>
+<li><code>&lt;my-app&gt;</code>タグを埋め込む</li>
+</ul>
+
+<script src="https://gist.github.com/kotazi/00d1d0fbe1a4fb92be11.js"></script>
+
+<h2 id="boot-ts:24456ac087966b3ecdbdd8d437837263">boot.ts</h2>
+
+<ul>
+<li><code>bootstrap()</code>でアプリケーション起動</li>
+</ul>
+
+<script src="https://gist.github.com/kotazi/bf9b1e29e590582dc895.js"></script>
+
+<h2 id="app-component-ts:24456ac087966b3ecdbdd8d437837263">app.component.ts</h2>
+
+<p><code>@Component</code>はAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。</p>
+
+<p><code>selector</code>でHTMLのタグ名を指定する。<code>template</code>にはレンタリングするHTMLを記述する。</p>
+
+<ul>
+<li>*ngFor=&ldquo;#hero of heroes&rdquo; ng-repeatが変わった</li>
+<li>アスタリスクとシャープが特徴</li>
+</ul>
+
+<script src="https://gist.github.com/kotazi/e407ee5a6dfe7599c8df.js"></script>
+
+<h2 id="hero-ts:24456ac087966b3ecdbdd8d437837263">hero.ts</h2>
+
+<p>classではなくinterfaceを利用している。<br />
+ここでの選び方は<code>Hero</code>をどのように使いたいか。<br />
+ロジックや振る舞いを書く場合は、<code>class</code>。
+型の定義などだけであれば、<code>interface</code>で十分。</p>
+
+<script src="https://gist.github.com/kotazi/958abfee0ee7cce36257.js"></script>
+
+<h2 id="mock-heroes-ts:24456ac087966b3ecdbdd8d437837263">mock-heroes.ts</h2>
+
+<ul>
+<li>HREOES配列はHero型。</li>
+</ul>
+
+<script src="https://gist.github.com/kotazi/d3b073e5f33ff8ef1605.js"></script>
+
+<h2 id="hero-detail-component-ts:24456ac087966b3ecdbdd8d437837263">hero-detail.component.ts</h2>
+
+<ul>
+<li>[(ngModel)]=&ldquo;hero.name&rdquo; 書き方変わった</li>
+</ul>
+
+<script src="https://gist.github.com/kotazi/9bd78998321fde979038.js"></script>
+
+<h2 id="hero-service-ts:24456ac087966b3ecdbdd8d437837263">hero.service.ts</h2>
+
+<script src="https://gist.github.com/kotazi/f27b3bc4c989d37fde72.js"></script>
+
+<hr>
+
+<p>けっこう変わってるけど抵抗はそんなにないかも。</p>
 
                 </section>
             </article>
@@ -49,7 +138,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fblog%2fpost%2ffirst%2f - my%20first%20blog by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fblog%2fpost%2f2016%2f0115_angular2_2%2f - 0115_angular2_2 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -66,10 +155,6 @@
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://localhost:1313/blog/post/2016/0115_angular2_2/">0115_angular2_2<aside class="dates">Jan 15</aside></a>
-        </li>
         
    
     
