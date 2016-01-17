@@ -6,8 +6,68 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jan 2016 20:07:16 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jan 2016 12:53:46 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【読書】Being Geek</title>
+      <link>http://kotazi.github.io/blog/post/2016/0117_geek/</link>
+      <pubDate>Sun, 17 Jan 2016 12:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0117_geek/</guid>
+      <description>&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4873114993/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873114993&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;Being Geek ―ギークであり続けるためのキャリア戦略&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4873114993&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第一部 キャリアの形成&lt;/li&gt;
+&lt;li&gt;第二部 マネージメント&lt;/li&gt;
+&lt;li&gt;第三部 日々の仕事に必要なスキル&lt;/li&gt;
+&lt;li&gt;第四部 変化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上記4部が全40章で構成されている。&lt;/p&gt;
+
+&lt;p&gt;Geekとはについてよく書かれた本である。&lt;br /&gt;
+「Geekは普通の人とは違っている。」&lt;/p&gt;
+
+&lt;p&gt;そんなGeekのための本であり、&lt;br /&gt;
+Geekがいかにして生きていくべきかを掘り下げていく。&lt;/p&gt;
+
+&lt;p&gt;基本的には日本でいう「オタク」のような技術者を想定された本であり、
+「電話に出るべきか？」とか「Geekにとって人間は困りごと」だとかそういう視点でキャリアや人生が語られる。&lt;/p&gt;
+
+&lt;p&gt;本著ではGeekとは次のような信条を持つ人のことであると記される。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;物事を理解するにはまず定義を知るべき&lt;/li&gt;
+&lt;li&gt;システムは必ず認識可能な要素に分けられる&lt;/li&gt;
+&lt;li&gt;何をすべきかを判断するには、まずルールを見つける&lt;/li&gt;
+&lt;li&gt;ルールを知れば成功のための行動がとれる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Geekと呼ばれる人たちにとって何よりも重要なものは「構造」である。&lt;br /&gt;
+すべてのGeekに共通しているのは「この世界について十分に学べば、全ては予測可能になる。」と信じているという点だ。&lt;/p&gt;
+
+&lt;p&gt;Geekのキャリア形成や転職といってことについて書かれた本著であるが、本の終わりではアイディアについて語られている。&lt;/p&gt;
+
+&lt;p&gt;良いアイディアが思い浮かんでしまったらどうしようという話である。&lt;br /&gt;
+もしも、まったく誰も思いついていない斬新なアイディアが浮かんでしまったらどうしよう。&lt;/p&gt;
+
+&lt;p&gt;真剣に考えなくてはならない。
+住宅ローンを抱え、幼い子供がいるあなたが素晴らしいアイディアを思いついたとする。
+しかも、今のところ、誰も実現していない。ならば、思い切って実現に乗り出すべきではないだろうか。&lt;/p&gt;
+
+&lt;p&gt;ともかくやってみよう。小さいところから始めてみるのだ。
+自分で考え、自分の判断で先へ進むのだ。
+成功するかは分からないが、いろいろと面倒なことに巻き込まれるのは確実だろう。
+新しいことをしようとすれば、おそらく既存のルールをいくつも破ることになるからだ。
+だが、きっとそれは気分の悪いことではないはずだ。直感を信じて前進しよう。&lt;/p&gt;
+
+&lt;p&gt;という話。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Angular2のチュートリアル</title>
@@ -1582,67 +1642,6 @@ $(&#39;#example&#39;).DataTable( {
 &lt;p&gt;インセプションデッキを通して事前準備の重要性を感じた。&lt;br /&gt;
 インセプションデッキ課題にあることを不明確なままにプロジェクトを進めたしまった場合に、
 のちのち躓いてしまった時に取り返しがつかなくなることが容易に想像できる。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【第Ⅰ部】「アジャイル」入門/アジャイルサムライ</title>
-      <link>http://kotazi.github.io/blog/post/20151227_ajail/</link>
-      <pubDate>Sun, 27 Dec 2015 12:57:23 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151227_ajail/</guid>
-      <description>
-
-&lt;h2 id=&#34;1-ざっくり分かるアジャイル開発:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;1. ざっくり分かるアジャイル開発&lt;/h2&gt;
-
-&lt;p&gt;1.大きな問題は小さくする&lt;br /&gt;
-2.本当に大事なことに集中して、それ以外のことは忘れる&lt;br /&gt;
-3.ちゃんと動くソフトウェアを届ける&lt;br /&gt;
-4.フィードバックを求める&lt;br /&gt;
-5.必要とあれば進路を変える&lt;br /&gt;
-6.成果責任を果たす&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;仕事の質に責任を持たなければならない&lt;/li&gt;
-&lt;li&gt;スケジュールを守らなければならない&lt;/li&gt;
-&lt;li&gt;お客さんの期待をマネジメントしなければならない&lt;/li&gt;
-&lt;li&gt;身銭を切るかのような覚悟でお客さんの資金を扱えわなければならない&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;アジャイル開発では、「マスターストーリーリスト」がプロジェクトのTodoリスト。&lt;/strong&gt;(featureの記述レベルは概要が分かれば十分。)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;具体的に成果を上げていくためのエンジンとなるのがイテレーション。&lt;/strong&gt;イテレーションの長さは1〜2習慣にする。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ベロシティ(1回のイテレーションで完了させられるストーリーの量)を実調することで、自分たちのこなせる仕事量を把握できる。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;アジャイル手法では奇跡は必要なくなる。なぜなら顧客に隠し立てせずに誠実に仕事を進めるから。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;アジャイル手法:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;◯ アジャイル手法&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;スクラム: アジャイルプロジェクトを包んで、プロジェクトマネジメントの装いを与えてくれる運営手法&lt;/li&gt;
-&lt;li&gt;エクストリーム・プログラミング: どんなアジャイルプロジェクトにも欠かせないソフトウェア開発のプラクティスを規律正しく実践する手法&lt;/li&gt;
-&lt;li&gt;リーン: 能率を上げることをとことん追い求める。たゆまぬ改善を続ける企業のためのトヨタ生産方式&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;2-アジャイルチームのご紹介:4e2844be10cbbdf0317c35d3b6d2835b&#34;&gt;2. アジャイルチームのご紹介&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;典型的なアジャイルチームには、予め決まった役割分担が存在しない。チームが一丸となって成果責任を果たすという考え方をとても重要視する。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;「チームの生産性を劇的に改善できる方法をひとつだけ挙げろ」と聞かれたら、間違いなくそれは、全員が同じ仕事場に集まって働くこと。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;同じ場所で働けないなら、プロジェクトの予算に全員分の旅費を予算に入れる。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;顧客はチームのコアメンバーであり、スクラムではプロダクトオーナーという専任の役割を与える。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;チームビルドをうまくするためには、役割に人を合わせるのではなく、人に合わせて役割分担を決める。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;アジャイルなプロジェクトマネージャはプロジェクトを成功させる唯一の方法は開発チームを成功させることだと心得ている。
-優れたPMの条件は一週間いなくなっても業務に支障が出ないようにできること。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;アジャイルの用語や基本的な考え方。&lt;/p&gt;
 </description>
     </item>
     
