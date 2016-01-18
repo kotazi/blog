@@ -6,8 +6,64 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jan 2016 12:53:46 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jan 2016 12:53:46 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【読書】小さなチーム、大きな仕事</title>
+      <link>http://kotazi.github.io/blog/post/2016/0118_37signals/</link>
+      <pubDate>Mon, 18 Jan 2016 12:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0118_37signals/</guid>
+      <description>&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/415209267X/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=415209267X&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;小さなチーム、大きな仕事〔完全版〕: 37シグナルズ成功の法則&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=415209267X&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;本書は37signalsのCEO、ジェイソン・フリードに書かれた本である。
+37signalsは1999年にシカゴに設立されたウェブアプリケーションの会社である。
+プロジェクト管理ツール「Basecamp」や、Ruby用のフレームワークである「Runy on Rails」を開発した会社として有名。&lt;/p&gt;
+
+&lt;p&gt;この本は&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;はじめに&lt;/li&gt;
+&lt;li&gt;まず最初に&lt;/li&gt;
+&lt;li&gt;見直す&lt;/li&gt;
+&lt;li&gt;先に進む&lt;/li&gt;
+&lt;li&gt;進展&lt;/li&gt;
+&lt;li&gt;生産性&lt;/li&gt;
+&lt;li&gt;競合相手&lt;/li&gt;
+&lt;li&gt;進化&lt;/li&gt;
+&lt;li&gt;プロモーション&lt;/li&gt;
+&lt;li&gt;人を雇う&lt;/li&gt;
+&lt;li&gt;ダメージ・コントロール&lt;/li&gt;
+&lt;li&gt;文化&lt;/li&gt;
+&lt;li&gt;最後に&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;といった各章から成る。
+小題は2ページ程度で挿絵も入っていて読みやすい。&lt;/p&gt;
+
+&lt;p&gt;「ビジネスを立ちあげて、経営して、拡大する(あるいは拡大しない)ことについて、言いたいことがある。」
+という一文から本書は始まる。&lt;/p&gt;
+
+&lt;p&gt;本書の著者、ジェイソン・フリードが経営する37signalsは少数精鋭型のチームと自分たちのやり方で大きな成果を残してきた。
+大方この本は、そんなジェイソン・フリードが一般的なビジネス手法をやんわりと否定するビジネスエッセイである。&lt;/p&gt;
+
+&lt;p&gt;この本でも最後に書かれているのは「ひらめき」についてだった。&lt;/p&gt;
+
+&lt;p&gt;「ひらめきには賞味期限がある」&lt;/p&gt;
+
+&lt;p&gt;ひらめきは永遠に持続できるものではない。何かしたいことがあれば、今しなければならない。
+しばらく放っておいて二ヶ月後に取りかかるというわけにはいかない。
+「後でやる」とはいえない。「後で」ではそんなにやる気満々でもないだろう。&lt;/p&gt;
+
+&lt;p&gt;待ってはくれない。ひらめきとは「今」のものだ。
+もし、虜にされたなら、逆に仕事に専念することだ。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【読書】Being Geek</title>
@@ -1570,80 +1626,6 @@ $(&#39;#example&#39;).DataTable( {
 
 &lt;p&gt;初期化後にDataTablesの初期設定を変更することができない理由は、その設定を元にしたコートが多すぎるためです。(例えば、スクロールのオンオフなどは複雑過ぎます。)
 その結果、DataTablesのコアコードをキープしたままにするのは利用可能ではなくなっています。注意点として、&lt;code&gt;destroy&lt;/code&gt;オプションを使ってもperformanceへの影響はありません。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【第Ⅱ部】アジャイルな方向づけ/アジャイルサムライ</title>
-      <link>http://kotazi.github.io/blog/post/20151228_ajail/</link>
-      <pubDate>Mon, 28 Dec 2015 12:57:23 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/20151228_ajail/</guid>
-      <description>
-
-&lt;h2 id=&#34;3-みんなをバスに乗せる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;3. みんなをバスに乗せる&lt;/h2&gt;
-
-&lt;h5 id=&#34;スタートする前からダメになるプロジェクト:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ スタートする前からダメになるプロジェクト&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;答えるべき問に答えれらない&lt;/li&gt;
-&lt;li&gt;手強い質問をする勇気を持てない&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;プロジェクトに対する期待をマネジメントするための優れたツールがインセプションデッキ。聞かなきゃいけない10の課題で構成されている。&lt;/p&gt;
-
-&lt;p&gt;チームメンバーがいないところで合意したことを全体にしているから、プロジェクトはだめになる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ゴールやビジョン、プロジェクトの状況や背景についてチームで話し合っておくこと。チームで適切な判断を下せるように&lt;/li&gt;
-&lt;li&gt;ステークホルダーに情報を提供すること。彼らにはプロジェクトを続けるかどうかを決断する材料が必要。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;インセプションデッキの背後にある考え方は、「しかるべき人をみんな同じ部屋に集めて、プロジェクトにまつわる適切な質問をすれば、自分たちのプロジェクトに対する期待を共有して、認識を合わせることができるはずだ」である。このプロジェクトは何であって何でないのか、価値を届けるためにはどこで力を注ぐべきか。&lt;/p&gt;
-
-&lt;h5 id=&#34;インセプションデッキ一覧:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ インセプションデッキ一覧&lt;/h5&gt;
-
-&lt;p&gt;1.我々は何故ここにいるのか&lt;br /&gt;
-2.エレベーターピッチを作る =&amp;gt; 2センテンスで説明する&lt;br /&gt;
-3.やらないことリストを作る&lt;br /&gt;
-4.「ご近所さん」を探せ =&amp;gt; 関係者は思ったよりいるもの&lt;br /&gt;
-5.解決策を描く&lt;br /&gt;
-6.パッケージデザインを作る&lt;br /&gt;
-7.夜も眠れなくなるような問題は何だろう&lt;br /&gt;
-8.期間を見極める&lt;br /&gt;
-9.何を諦めるかをはっきりさせる&lt;br /&gt;
-10.何がどれだけ必要なのか&lt;/p&gt;
-
-&lt;h2 id=&#34;4-全体像を捉える:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;4. 全体像を捉える&lt;/h2&gt;
-
-&lt;p&gt;このプロジェクトの成功には何が必要なのかをハッキリ説明する。「皆さんに積極的にかかわっていただく必要があります。当事者意識を持っていただいたうえで、さまざまなお約束をしていただかなければならない。」&lt;/p&gt;
-
-&lt;h2 id=&#34;5-具現化させる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;5. 具現化させる&lt;/h2&gt;
-
-&lt;p&gt;リスクを話し合うことはいいことだ。&lt;/p&gt;
-
-&lt;h5 id=&#34;何を諦めるのかをはっきりさせる:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ 何を諦めるのかをはっきりさせる&lt;/h5&gt;
-
-&lt;p&gt;プロジェクトの四天王
-- 時間
-- 予算
-- 品質
-- スコープ &amp;lt;= 諦めるとしたらこいつに限る&lt;/p&gt;
-
-&lt;h5 id=&#34;インセプションデッキから学んだこと:06ad9abec4a4fcb7f0380841015fdfb4&#34;&gt;◯ インセプションデッキから学んだこと&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;プロジェクトの最初に手強い質問をすることの重要性&lt;/li&gt;
-&lt;li&gt;プロジェクトが始まる前にみんなの向かう先を揃える&lt;/li&gt;
-&lt;li&gt;プロジェクトの契約までのスコープ設定や計画に何ヶ月もかける必要がない&lt;/li&gt;
-&lt;li&gt;インセプションデッキを使えば数日で期待のマネジメントが可能&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;インセプションデッキを通して事前準備の重要性を感じた。&lt;br /&gt;
-インセプションデッキ課題にあることを不明確なままにプロジェクトを進めたしまった場合に、
-のちのち躓いてしまった時に取り返しがつかなくなることが容易に想像できる。&lt;/p&gt;
 </description>
     </item>
     

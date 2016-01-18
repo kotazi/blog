@@ -1,6 +1,6 @@
 +++
 date = "2016-01-18T12:53:46+09:00"
-draft = true
+draft = false
 title = "【読書】小さなチーム、大きな仕事"
 tags = ["読書"]
 +++
