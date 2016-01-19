@@ -6,8 +6,210 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Jan 2016 13:55:26 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 19 Jan 2016 22:53:46 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【読書】強いチームはオフィスを捨てる</title>
+      <link>http://kotazi.github.io/blog/post/2016/0119_37signals/</link>
+      <pubDate>Tue, 19 Jan 2016 22:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0119_37signals/</guid>
+      <description>
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4152094338/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4152094338&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;強いチームはオフィスを捨てる: 37シグナルズが考える「働き方革命」&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4152094338&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;本書は37signalsのCEO、ジェイソン・フリードに書かれた本である。
+37signalsは1999年にシカゴに設立されたウェブアプリケーションの会社である。
+プロジェクト管理ツール「Basecamp」や、Ruby用のフレームワークである「Runy on Rails」を開発した会社として有名。&lt;/p&gt;
+
+&lt;p&gt;この本は&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;はじめに&lt;/li&gt;
+&lt;li&gt;イントロダクション: オフィスのない世界&lt;/li&gt;
+&lt;li&gt;リモートワークの時代がやってきた&lt;/li&gt;
+&lt;li&gt;リモートワークの誤解を解く&lt;/li&gt;
+&lt;li&gt;リモートのコラボレーション術&lt;/li&gt;
+&lt;li&gt;リモートワークの落とし穴&lt;/li&gt;
+&lt;li&gt;リモート時代の人材採用&lt;/li&gt;
+&lt;li&gt;リモート時代のマネジメント&lt;/li&gt;
+&lt;li&gt;リモートワーカーの仕事スタイル&lt;/li&gt;
+&lt;li&gt;おわりに&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;といった各章から成る。
+小題は2ページ程度で挿絵も入っていて読みやすい。&lt;/p&gt;
+
+&lt;p&gt;本書はリモートワークに対する考え方をアップデートするために書かれた本だ。&lt;/p&gt;
+
+&lt;p&gt;技術は既に揃った。
+世界中の人といつでも簡単にコミュニケーションが取れ、
+一緒に作業を進められるツールがいくらでもある。&lt;/p&gt;
+
+&lt;p&gt;オフィスに集まって働くという固定概念をくつがえし、新しい働き方を提唱する本だ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;往復2時間の通勤時間が無駄。それだけで疲弊する。&lt;/li&gt;
+&lt;li&gt;本気で日中のオフィスが働きやすいと思っているのか？&lt;/li&gt;
+&lt;li&gt;もっとも自分の集中力の高まる時間に働くべき。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;ざっくりまとめると従来のオフィスでの働き方を上記の理由から否定する。　
+リモートワークであればこれらに縛られることなく好きな時に好きな場所で働くことができる。&lt;/p&gt;
+
+&lt;p&gt;実際にリモートワークを取り入れている会社もたくさんある。&lt;/p&gt;
+
+&lt;h5 id=&#34;従業員数1万人以上:5370d8405ec555469de54826754668f4&#34;&gt;◯ 従業員数1万人以上&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AT&amp;amp;T(通信)&lt;/li&gt;
+&lt;li&gt;ユナイテッドヘルス・グループ(医療)&lt;/li&gt;
+&lt;li&gt;マッキンゼー・アンド・カンパニー(コンサルティング)&lt;/li&gt;
+&lt;li&gt;インテル(IT)&lt;/li&gt;
+&lt;li&gt;SCジョンソン(メーカー)&lt;/li&gt;
+&lt;li&gt;エトナ(保険)&lt;/li&gt;
+&lt;li&gt;シスコ(IT)&lt;/li&gt;
+&lt;li&gt;デロイト(会計)&lt;/li&gt;
+&lt;li&gt;HSBC UK(金融)&lt;/li&gt;
+&lt;li&gt;ブリティッシュ・テレコム(通信)&lt;/li&gt;
+&lt;li&gt;ユニリーバ(消費財)&lt;/li&gt;
+&lt;li&gt;エクスプレス・スクリプツ(薬剤給付管理)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;従業員数1000-1万人:5370d8405ec555469de54826754668f4&#34;&gt;◯ 従業員数1000〜1万人&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;メルセデス・ベンツUSA(自動車)&lt;/li&gt;
+&lt;li&gt;ティーチ・フォー・アメリカ(教育)&lt;/li&gt;
+&lt;li&gt;プランテ・モラン(会計・コンサルティング)&lt;/li&gt;
+&lt;li&gt;ドリームワークス・アニメーションSKG(アニメ制作)&lt;/li&gt;
+&lt;li&gt;パーキンス・クーイ(法律)&lt;/li&gt;
+&lt;li&gt;アメリカン・フィデリティ・アシュアランス(保険)&lt;/li&gt;
+&lt;li&gt;米国教育省(行政)&lt;/li&gt;
+&lt;li&gt;ヴァージン・アトランティック(航空)&lt;/li&gt;
+&lt;li&gt;ブロケード・コミュニケーションズ・システムズ(IT)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;従業員数1000人以下:5370d8405ec555469de54826754668f4&#34;&gt;◯ 従業員数1000人以下&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GitHub(ソフトウェア)&lt;/li&gt;
+&lt;li&gt;ライアン(税務)&lt;/li&gt;
+&lt;li&gt;オートマティック(ウェブ開発)&lt;/li&gt;
+&lt;li&gt;MWW(広報・PR)&lt;/li&gt;
+&lt;li&gt;コニー(モバイルアプリケーション)&lt;/li&gt;
+&lt;li&gt;テキストマスター(翻訳・コピーライティング)&lt;/li&gt;
+&lt;li&gt;BeBanjo(オンデマンド配信)&lt;/li&gt;
+&lt;li&gt;ブライトボックス(クラウドホスティング)&lt;/li&gt;
+&lt;li&gt;HE:labs(ウェブ開発)&lt;/li&gt;
+&lt;li&gt;フォトリア(画像素材)&lt;/li&gt;
+&lt;li&gt;フリーエージェント(経理ソフト)&lt;/li&gt;
+&lt;li&gt;プルーフ・ブランディング(ブランディングデザイン)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;実際弊社でもリモートワークは取り入れているし、個人的にもその魅力を強く感じている。
+特に体制を整えれば世界のどこからでも優秀な人間を採用し、一緒に働ける点は大きい。&lt;/p&gt;
+
+&lt;p&gt;けれども実際、別の課題が出てくる。
+その点についてまとめたのが「リモートのコラボレーション術」である。&lt;/p&gt;
+
+&lt;h5 id=&#34;コアタイムを決める:5370d8405ec555469de54826754668f4&#34;&gt;◯ コアタイムを決める&lt;/h5&gt;
+
+&lt;p&gt;共通のコアタイムを決める。毎日4時間は一緒に働けるといい。
+コミュニケーションもうまくいくし、チームの一体感が出てくる。&lt;/p&gt;
+
+&lt;p&gt;また個人的には、見えない相手が確実に捕まる時間をこちらで把握できていることが非常に大きいと感じる。&lt;/p&gt;
+
+&lt;h5 id=&#34;同じ画面を見る:5370d8405ec555469de54826754668f4&#34;&gt;◯ 同じ画面を見る&lt;/h5&gt;
+
+&lt;p&gt;互いの顔を見るのではなく、画面共有を使うということ。
+フォーカスを仕事に当てる。&lt;/p&gt;
+
+&lt;h5 id=&#34;情報を閉じ込めてはいけない:5370d8405ec555469de54826754668f4&#34;&gt;◯ 情報を閉じ込めてはいけない&lt;/h5&gt;
+
+&lt;p&gt;同じオフィスで働くと些細な確認や質問が飛び交う。
+これは相手の集中力を途切れさせる良くない習慣であるが、
+このあたりの仕組みを整えないままリモートワークをすると困ってしまうことが多い。&lt;/p&gt;
+
+&lt;p&gt;必要な資料や情報がいつでもみんなの手の届くところに来るようにしておくことが大切&lt;/p&gt;
+
+&lt;h5 id=&#34;バーチャルな雑談場を作る:5370d8405ec555469de54826754668f4&#34;&gt;◯ バーチャルな雑談場を作る&lt;/h5&gt;
+
+&lt;p&gt;チームが雑談できる場所を作る。
+オフィスにいない分、小さなコミュニケーションが生まれなかったり、
+しばらく一緒に働いていても相手のことをよく知れなかったりすることがある。&lt;/p&gt;
+
+&lt;p&gt;リモートワークで働く場合はこういった文化は積極的に取り組むべき。&lt;/p&gt;
+
+&lt;h5 id=&#34;進み具体を共有する:5370d8405ec555469de54826754668f4&#34;&gt;◯ 進み具体を共有する&lt;/h5&gt;
+
+&lt;p&gt;同じオフィスで働いていると社内の情報ななんとなく耳にするものだが、
+リモートワークでは周りのことがよく分からなくなってしまうことがある。&lt;/p&gt;
+
+&lt;p&gt;定期的に自分のやっていることを報告したり、
+たまには相手の仕事に興味を持ってみるのもいいかもしれない。&lt;br /&gt;
+弊社でも「週報」を導入するか現在検討中。&lt;/p&gt;
+
+&lt;h5 id=&#34;印象よりも中身を見る:5370d8405ec555469de54826754668f4&#34;&gt;◯ 印象よりも中身を見る&lt;/h5&gt;
+
+&lt;p&gt;これはオフィスワークと一長一短。&lt;/p&gt;
+
+&lt;p&gt;オフィスワークでは、毎日5分遅れる人、フェイスブックをいつも開いている人。
+その人の仕事ぶりにかかわらず、その印象が残ってしまう。
+リモートワークではそういった部分が垣間見えないものの、純粋に仕事で相手を測ることができる。&lt;/p&gt;
+
+&lt;h5 id=&#34;まずは近くで試してみる:5370d8405ec555469de54826754668f4&#34;&gt;◯ まずは近くで試してみる&lt;/h5&gt;
+
+&lt;p&gt;これからリモートワークを導入する人は、
+いきなり遠くの人を採用しなくとも、今のメンバーで始めてみればいい。&lt;/p&gt;
+
+&lt;h5 id=&#34;ひとつの場所に依存しない:5370d8405ec555469de54826754668f4&#34;&gt;◯ ひとつの場所に依存しない&lt;/h5&gt;
+
+&lt;p&gt;チームがリモートワークに対応できるような柔軟なチームであれば、
+例えば雪で電車が大きく遅れるようなことがあっても、みんないつも通りの仕事をこなすことができる。&lt;/p&gt;
+
+&lt;h5 id=&#34;ミーティングを減らそう:5370d8405ec555469de54826754668f4&#34;&gt;◯ ミーティングを減らそう&lt;/h5&gt;
+
+&lt;p&gt;リモートワークに対して懐疑的な人間はだいたい次の2点を言う。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;みんな同じ場所にいないとその場でミーティングができない&lt;/li&gt;
+&lt;li&gt;その場で見張っていないと、部下が仕事しているかどうかわからない&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;5人で1時間のミーティングは5時間使っている。
+ミーティングはもっと高い質でやったほうがいい。&lt;/p&gt;
+
+&lt;p&gt;といった感じだ。&lt;/p&gt;
+
+&lt;p&gt;他の章も面白いので是非読んで欲しい。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;読んでくれてありがとうございました。&lt;br /&gt;
+せっかくなので、最近僕が面白いなあと思っているサービス「コデアル」のリンクを貼っておきます。&lt;br /&gt;
+こういうサービスから新しい働き方が広がったら素晴らしいことだと思います。&lt;/p&gt;
+
+&lt;iframe src=&#34;//dspb1oyxjua32.cloudfront.net/p?t=YOj5SQJVvS9yi0j79FoK5YHyUUu5UYSOi7t1HB0qSAU%3D&#34; frameborder=&#34;0&#34; height=&#34;230&#34; width=&#34;170&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
     
     <item>
       <title>gemをインストールしたけれど見つからない時に疑うこと</title>
@@ -1424,161 +1626,6 @@ On the letter I tell him that the apologies for our mistake and we&amp;rsquo;ll 
 &lt;hr&gt;
 
 &lt;p&gt;普通に英語で自己紹介するときに気をつける点なども学べて、教材としてGood!!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】アジャイルサムライを読んで</title>
-      <link>http://kotazi.github.io/blog/post/2016/0103_ajail/</link>
-      <pubDate>Sun, 03 Jan 2016 12:53:46 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0103_ajail/</guid>
-      <description>
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4274068560/ref=as_li_tf_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4274068560&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;アジャイルサムライ−達人開発者への道−&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4274068560&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;を読んだ。その感想や学んだこと。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Ⅰ部とⅡ部については別記事でまとめました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;./../../20151227_ajail&#34;&gt;【第Ⅰ部】「アジャイル」入門/アジャイルサムライ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./../../20151228_ajail&#34;&gt;【第Ⅱ部】アジャイルな方向づけ/アジャイルサムライ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;第ⅲ部-アジャイルな計画づくり:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;第Ⅲ部 アジャイルな計画づくり&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ユーザーストーリーを作成する&lt;/li&gt;
-&lt;li&gt;INVEST: 「Independent/Negotiable/Valuable/Estimatable/Small/Testable」&lt;/li&gt;
-&lt;li&gt;ポイントで見積もるのは再調整する作業がいつまでも終わらなくなる状況に陥るのを防ぐため&lt;/li&gt;
-&lt;li&gt;アジャイルな計画ができれば、プロジェクト計画は常に最新であることが分かるようになる&lt;/li&gt;
-&lt;li&gt;アジャイルな計画づくりとは、チームの開発速度を計測して、その速度を元にプロジェクトの完了時期を見通せるようにすること&lt;/li&gt;
-&lt;li&gt;プロジェクトでこなすべきTODOリストを「マスターストーリーリスト」と呼ぶ&lt;/li&gt;
-&lt;li&gt;チームがユーザーストーリーを動くソフトウェアに変換する速度を「ベロシティ」と呼ぶ&lt;/li&gt;
-&lt;li&gt;アジャイルでは最初に立てた計画にはいつまでもこだわらない。計画の方を変える(普通はスコープを調整)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;予めスコープを柔軟にしておくことが計画を誠実に保つ秘訣&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;「最後は良くなりますように」というのは、「奇跡によるマネジメント」という有名なマネジメント手法&lt;/li&gt;
-&lt;li&gt;リリースの単位をMMF(Minimal Marketable Feature Set)と呼ぶ&lt;/li&gt;
-&lt;li&gt;ベロシティはチームで測る。個人の生産性を測るのは悪い方向へ転ぶ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;バーンダウンチャートを利用することで可視化できる4つ:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;◯ バーンダウンチャートを利用することで可視化できる4つ&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;どれだけの仕事を完成させたのか&lt;/li&gt;
-&lt;li&gt;どれだけの仕事が残っているのか&lt;/li&gt;
-&lt;li&gt;チームのベロシティ&lt;/li&gt;
-&lt;li&gt;いつごろ全てを完了させられそうか&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;プロジェクトを途中からアジャイルにする前に-チームメンバーが応えられるべき5つの質問:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;◯ プロジェクトを途中からアジャイルにする前に、チームメンバーが応えられるべき5つの質問&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;このプロジェクトにいるのは何故？&lt;/li&gt;
-&lt;li&gt;成し遂げようとしていることは何？&lt;/li&gt;
-&lt;li&gt;顧客は誰？&lt;/li&gt;
-&lt;li&gt;解決すべき主要な課題は何？&lt;/li&gt;
-&lt;li&gt;最終判断を下すのは誰？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;アジャイルな見積もりについて。ベロシティやバーンダウンチャートという考え方を使ってチームの生産性やゴールまでの距離を明確にする。アジャイルにとって重要なことのひとつは誠実であり、明確であること。チームメンバー一人一人が自分たちのゴールやゴールまでの距離を知れるような手引をしたり、環境を整えたりすることがアジャイルなチームを作る上で重要。&lt;/p&gt;
-
-&lt;h2 id=&#34;ⅳ部-アジャイルなプロジェクト運営:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;Ⅳ部 アジャイルなプロジェクト運営&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;何もかもを文書にまとめる時間はない&lt;/li&gt;
-&lt;li&gt;開発プラクティスをしっかりと根付かせる&lt;/li&gt;
-&lt;li&gt;テストは開発と一緒になって進める&lt;/li&gt;
-&lt;li&gt;そのために必要なことが3つ
-
-&lt;ul&gt;
-&lt;li&gt;分析して設計する(作業の段取りをする)&lt;/li&gt;
-&lt;li&gt;開発する(実際に作業する)&lt;/li&gt;
-&lt;li&gt;テストする(作業の結果を確認する)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;アジャイルな意思疎通の作戦:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;◯ アジャイルな意思疎通の作戦&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;開発チームは同じ職場に集まって作業して、ちゃんと動くソフトウェアお成果として、目の前の顧客に定期的に見せていく&lt;/li&gt;
-&lt;li&gt;「期待をマネジメントすること」「フィードバックを得ること」これはどんなアジャイルプロジェクトでも取り組むべき&lt;/li&gt;
-&lt;li&gt;そのためにイテレーションごとに習慣づけるべき4つのミーティング
-
-&lt;ul&gt;
-&lt;li&gt;今回のイテレーション作業に備える(ストーリー計画MTG)&lt;/li&gt;
-&lt;li&gt;今回のイテレーションのフィードバックを得る(ショーケース)&lt;/li&gt;
-&lt;li&gt;次回のイテレーション計画を立てる(イテレーション計画MTG)&lt;/li&gt;
-&lt;li&gt;次回のイテレーションで改善できる余地を探す(ミニ振り返り)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;そして自分たちにあったものを選ぶことが大事&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;現場の状況を目に見えるようにする:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;◯ 現場の状況を目に見えるようにする&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;「現場の状況を目に見えるようにするための貼りもの」おすすめ4つ
-
-&lt;ul&gt;
-&lt;li&gt;ストーリーボード&lt;/li&gt;
-&lt;li&gt;リリースボード&lt;/li&gt;
-&lt;li&gt;ベロシティとバーンダウンチャート&lt;/li&gt;
-&lt;li&gt;インセプションデッキ　四天王&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;第ⅴ部-アジャイルなプログラミング:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;第Ⅴ部 アジャイルなプログラミング&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ユニットテスト: ビルドしたコードがちゃんと動くことを示す方法&lt;/li&gt;
-&lt;li&gt;リファクタリング: コードをシンプルでクリーンな状態に保ち、読みやすくするための技術&lt;/li&gt;
-&lt;li&gt;テスト駆動開発: 複雑さに立ち向かうための設計方法&lt;/li&gt;
-&lt;li&gt;継続的インテグレーション: 決まった感覚で全てを統合し、プロダクトをリリース可能な状態を保ちつづける取り組み&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;このあたりはできていると思った。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;感想:2d010f97a8f7d5793839b938d1f6cf2a&#34;&gt;感想&lt;/h2&gt;
-
-&lt;p&gt;ずっとアジャイルに興味を持ち、中途半端に取り組んできた。
-ようやくこの本を読んでアジャイルを俯瞰的に見て、「アジャイルとは何か？」という問いに答えられるようになった。
-アジャイルとは顧客に価値のあるソフトウェアと提供するための開発手法群であり、本書ではその様々な手法と具体的なケースに沿った手法の使い方を学べた。&lt;/p&gt;
-
-&lt;p&gt;最適な開発手法が存在するわけではなく、自分たちのチームにあった最適なプラクティスを見つけ出し実践することこそがアジャイルである。
-けれども根底には「顧客に価値のあるソフトウェアを提供し続ける」という目的があり、チームでそれは共通認識として持っておくべきだろう。(そのためのストーリーボードやインセプションデッキがある)&lt;/p&gt;
-
-&lt;p&gt;また、具体的なアジャイルによる開発手法(リファクタやユニットテストのこと)を読んでいて、案外今のチームでもできていると感じた。&lt;/p&gt;
-
-&lt;p&gt;現状の組織からアジャイルなチーム体制を作っていくには下記が必要&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;プロジェクトごとにチームを作成すること&lt;/li&gt;
-&lt;li&gt;プロジェクトのゴールを設定すること&lt;/li&gt;
-&lt;li&gt;プロジェクトの最終判断を下す人間を決めること&lt;/li&gt;
-&lt;li&gt;(時間/予算/品質/スコープ)を確認すること&lt;/li&gt;
-&lt;li&gt;スコープは柔軟にすること&lt;/li&gt;
-&lt;li&gt;インセプションデッキでチームの期待をマネジメントすること&lt;/li&gt;
-&lt;li&gt;関係者全員でよく話し合い、状況に応じてチームで適切な判断を下せるようにすること&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;そんな感じで2016年はよりよい組織を作り、より良いサービスを生む。&lt;/p&gt;
 </description>
     </item>
     
