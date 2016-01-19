@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/git/</link>
+    <description>Recent content in Git on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Jan 2016 13:55:26 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>gemをインストールしたけれど見つからない時に疑うこと</title>
+      <link>http://kotazi.github.io/blog/post/2016/0119_gitup/</link>
+      <pubDate>Tue, 19 Jan 2016 13:55:26 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0119_gitup/</guid>
+      <description>&lt;nav&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#git-up-をインストール:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ &lt;code&gt;git-up&lt;/code&gt;をインストール&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#探す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ 探す&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#パスを通す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ パスを通す&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;p&gt;&lt;code&gt;git-up&lt;/code&gt;をインストールしたけれど使えなかったのでその時の対処法をメモ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h6 id=&#34;git-up-をインストール:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ &lt;code&gt;git-up&lt;/code&gt;をインストール&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem install git-up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この状態で&lt;code&gt;git up&lt;/code&gt;を試したけれど見つからなかった&lt;/p&gt;
+
+&lt;h6 id=&#34;探す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ 探す&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bundle list | grep git-up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これは見つかる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which git-up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これが見つからない。rbenvあたりでパスが通っていないっぽい。&lt;/p&gt;
+
+&lt;h5 id=&#34;パスを通す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ パスを通す&lt;/h5&gt;
+
+&lt;p&gt;rbev内にgit-upが入っているかを確認する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ find .rbenv -name git-up
+.rbenv/versions/2.2.2/bin/git-up
+.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/git-up-0.5.12/bin/git-up
+.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/git-up-0.5.12/lib/git-up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あった。&lt;/p&gt;
+
+&lt;p&gt;シンボリックリンクを作成する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ln -s ~/.rbenv/versions/2.2.2/bin/git-up /usr/local/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最後にgit-upがあることを確認する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which git-up
+/usr/local/bin/git-up
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【Rails】ForbiddenAttributesError覚書 &middot; kotazi.com</title>
+		<title>gemをインストールしたけれど見つからない時に疑うこと &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,45 +32,78 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【Rails】ForbiddenAttributesError覚書</h1>
-                    <h2 class="headline">January 6, 2016</h2>
+                    <h1>gemをインストールしたけれど見つからない時に疑うこと</h1>
+                    <h2 class="headline">January 19, 2016</h2>
                 </header>
                 <section id="post-body">
-                    
+                    <nav>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#git-up-をインストール:965cc11ac52a827b331d0d676625d376">◯ <code>git-up</code>をインストール</a></li>
+<li><a href="#探す:965cc11ac52a827b331d0d676625d376">◯ 探す</a></li>
+</ul></li>
+<li><a href="#パスを通す:965cc11ac52a827b331d0d676625d376">◯ パスを通す</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 
-<p>Railsで<code>ActiveModel::ForbiddenAttributesError:</code>エラーが出た。</p>
+<p><code>git-up</code>をインストールしたけれど使えなかったのでその時の対処法をメモ。</p>
 
 <hr>
 
-<h2 id="マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162">マスアサインメント脆弱性</h2>
+<h6 id="git-up-をインストール:965cc11ac52a827b331d0d676625d376">◯ <code>git-up</code>をインストール</h6>
 
-<p>モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
-モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。</p>
-
-<p>管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。
-けれども知識のある人間がスクリプト書けば悪用することができてしまう。</p>
-
-<p>このアプリケーションの脆弱性を<strong>マスアサインメント脆弱性</strong>と呼ぶ。</p>
-
-<p>そしてこの脆弱性に対してRails4.0から導入された対抗策が、<strong>Strong Parameters</strong>。</p>
-
-<h2 id="strong-parameters:c93acd2fcd4285cd58c99e0793697162">Strong Parameters</h2>
-
-<p>サンプルコード:</p>
-
-<pre><code>def staff_member_params
-  params.require(:staff_member).permit(
-    :email, :password, :family_name, :given_name,
-    :family_name_kana, :given_name_kana,
-    :start_date, :end_date, :suspended
-  )
-end
+<pre><code>$ gem install git-up
 </code></pre>
 
-<p><code>params.require(:staff_member)</code><br />
-paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<code>:staff_member</code>というキーと持っているかを調べる。</p>
+<p>この状態で<code>git up</code>を試したけれど見つからなかった</p>
 
-<p>=&gt; 持っていなければActionController::ParameterMissingエラー</p>
+<h6 id="探す:965cc11ac52a827b331d0d676625d376">◯ 探す</h6>
+
+<pre><code>$ bundle list | grep git-up
+</code></pre>
+
+<p>これは見つかる。</p>
+
+<pre><code>$ which git-up
+</code></pre>
+
+<p>これが見つからない。rbenvあたりでパスが通っていないっぽい。</p>
+
+<h5 id="パスを通す:965cc11ac52a827b331d0d676625d376">◯ パスを通す</h5>
+
+<p>rbev内にgit-upが入っているかを確認する</p>
+
+<pre><code>$ find .rbenv -name git-up
+.rbenv/versions/2.2.2/bin/git-up
+.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/git-up-0.5.12/bin/git-up
+.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/git-up-0.5.12/lib/git-up
+</code></pre>
+
+<p>あった。</p>
+
+<p>シンボリックリンクを作成する</p>
+
+<pre><code>$ ln -s ~/.rbenv/versions/2.2.2/bin/git-up /usr/local/bin
+</code></pre>
+
+<p>最後にgit-upがあることを確認する。</p>
+
+<pre><code>$ which git-up
+/usr/local/bin/git-up
+</code></pre>
 
                 </section>
             </article>
@@ -83,7 +116,7 @@ paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0105_ForbiddenAttributesError%2f - %e3%80%90Rails%e3%80%91ForbiddenAttributesError%e8%a6%9a%e6%9b%b8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0119_gitup%2f - gem%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%9f%e3%81%91%e3%82%8c%e3%81%a9%e8%a6%8b%e3%81%a4%e3%81%8b%e3%82%89%e3%81%aa%e3%81%84%e6%99%82%e3%81%ab%e7%96%91%e3%81%86%e3%81%93%e3%81%a8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -100,10 +133,6 @@ paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0119_gitup/">gemをインストールしたけれど見つからない時に疑うこと<aside class="dates">Jan 19</aside></a>
-        </li>
         
    
     
