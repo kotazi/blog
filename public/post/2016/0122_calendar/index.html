@@ -1,0 +1,300 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【FullCalendar】Google Calendar &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://localhost:1313/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/blog/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/blog/css/highlight.css">
+		<link href="http://localhost:1313/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://localhost:1313/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【FullCalendar】Google Calendar</h1>
+                    <h2 class="headline">January 19, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<ul>
+<li><a href="http://fullcalendar.io/docs/google_calendar/">Google Calendar</a></li>
+</ul>
+
+<hr>
+
+<h3 id="google-calendar:d1c1dad631980de0087d81fc9c503c32">Google Calendar</h3>
+
+<p>FullCalendarではGoogle Calendarのイベントを表示することができます。
+GoogleCalendarはバックエンド側で管理・保持しているイベントデータを提供することができます。
+(FullCalendarにはない機能)</p>
+
+<hr>
+
+<h3 id="before-you-code:d1c1dad631980de0087d81fc9c503c32">Before you code&hellip;</h3>
+
+<p><strong>GoogleCalendarのAPIキーが必要です</strong></p>
+
+<ol>
+<li><a href="https://console.developers.google.com/">Google Developer Console</a>から新しいプロジェクトを作成してください</li>
+<li>そのプロジェクトのサイドバーから、「APIs &amp; auth &gt; APIs」と移動します</li>
+<li>&ldquo;Calendar API&rdquo;をオンにしてください。</li>
+<li>サイドバーから「APIs &amp; auth &gt; Credentials」と移動します</li>
+<li>&ldquo;Public API access&rdquo;セクション内の&rdquo;Create new Key&rdquo;をクリックします</li>
+<li>&ldquo;Browser Key&rdquo;を選択します</li>
+<li>カレンダーをホストするドメインが分かれば入力してください。いつでも変更できるので分からなければそのままで大丈夫です</li>
+<li>新しいAPIキーが現れます。</li>
+</ol>
+
+<hr>
+
+<p><strong>Googleを公開する</strong></p>
+
+<ol>
+<li>GoogleCalendarのインターフェイスで、左側にある&rdquo;My calendars&rdquo;へ</li>
+<li>カレンダーにカーソルを当て、矢印をクリックします</li>
+<li>メニューが表示されるので&rdquo;Share this Calendar&rdquo;をクリックします</li>
+<li>&ldquo;Make this calendar public&rdquo;にチェックします</li>
+<li>&ldquo;Share only my free/busy information&rdquo;にチェックが入っていないことを確認してください</li>
+<li>保存します</li>
+</ol>
+
+<hr>
+
+<p><strong>GoogleCalendarのIDを取得する</strong></p>
+
+<ol>
+<li>GoogleCalendarのインターフェイスで、左側にある&rdquo;My calendars&rdquo;へ</li>
+<li>カレンダーにカーソルを当て、矢印をクリックします</li>
+<li>メニューが表示されるので&rdquo;Calendar settings&rdquo;をクリックします</li>
+<li>&ldquo;Calendar Address&rdquo;セクションのCalendarIDを見てください。 &ldquo;abcd1234@group.calendar.google.com&rdquo;のようなものです。</li>
+</ol>
+
+<hr>
+
+<h3 id="dependencies:d1c1dad631980de0087d81fc9c503c32">Dependencies</h3>
+
+<p>続いて、必要なJS/CSSを追加します。標準的なファイルに加え、<code>gcal.js</code>も追加します。</p>
+
+<pre><code>&lt;script type='text/javascript' src='fullcalendar/gcal.js'&gt;&lt;/script&gt;
+</code></pre>
+
+<hr>
+
+<h3 id="writing-the-code:d1c1dad631980de0087d81fc9c503c32">Writing the code</h3>
+
+<p>JSでカレンダーを初期化する準備が整いました。これが最小のサンプルになります。</p>
+
+<pre><code>&lt;script type='text/javascript'&gt;
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: '&lt;YOUR API KEY&gt;',
+        events: {
+            googleCalendarId: 'abcd1234@group.calendar.google.com'
+        }
+    });
+});
+
+&lt;/script&gt;
+</code></pre>
+
+<p>特定の<a href="http://fullcalendar.io/docs/event_data/Event_Source_Object/">Event Source</a>オプションを追加したければ、<code>events</code>オブジェクトに含めることができます。</p>
+
+<pre><code>&lt;script type='text/javascript'&gt;
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: '&lt;YOUR API KEY&gt;',
+        events: {
+            googleCalendarId: 'abcd1234@group.calendar.google.com',
+            className: 'gcal-event' // an option!
+        }
+    });
+});
+
+&lt;/script&gt;
+</code></pre>
+
+<hr>
+
+<h3 id="timezones:d1c1dad631980de0087d81fc9c503c32">Timezones</h3>
+
+<p>GoogleCalendarのプラグインでは<a href="http://fullcalendar.io/docs/timezone/timezone/">timezone</a>をリスペクトしています。
+<code>false</code>(デフォルト)にしておくと、GoogleCalendarのタイムゾーン設定が使用されます。特定のものを指定していれば、これらは無視されます。</p>
+
+<Hr>
+
+<h3 id="multiple-google-calendars:d1c1dad631980de0087d81fc9c503c32">Multiple Google Calendars</h3>
+
+<p><code>eventSources</code>オプションを利用すれば複数のGoogleCalendarを利用することができます。</p>
+
+<pre><code>&lt;script type='text/javascript'&gt;
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: '&lt;YOUR API KEY&gt;',
+        eventSources: [
+            {
+                googleCalendarId: 'abcd1234@group.calendar.google.com'
+            },
+            {
+                googleCalendarId: 'efgh5678@group.calendar.google.com',
+                className: 'nice-event'
+            }
+        ]
+    });
+});
+
+&lt;/script&gt;
+</code></pre>
+
+<Hr>
+
+<h3 id="advanced:d1c1dad631980de0087d81fc9c503c32">Advanced</h3>
+
+<p>カレンダーごとに異なるAPIキーを利用する場合、<code>googleCalendarApiKey</code>をセットするには個々の[EventSource]を用います。</p>
+
+<p>GoogleAPIのエラーを検知する必要がある場合、jQueryのAJAZエラーハンドリングには方法がありません。FullCalendarの<code>googleCalendarError</code>を使います。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://localhost:1313/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fblog%2fpost%2f2016%2f0122_calendar%2f - %e3%80%90FullCalendar%e3%80%91Google%20Calendar by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0121_calendar/">【FullCalendar】Basic Usage<aside class="dates">Jan 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0126_jsx/">0126_jsx<aside class="dates">Jan 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0119_37signals/">【読書】強いチームはオフィスを捨てる<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0123_calendar/">【FullCalendar】General Display<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0124_calendar/">【FullCalendar】Agenda Options<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0125_calendar/">【FullCalendar】Current Date<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0119_gitup/">gemをインストールしたけれど見つからない時に疑うこと<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0118_37signals/">【読書】小さなチーム、大きな仕事<aside class="dates">Jan 18</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0117_geek/">【読書】Being Geek<aside class="dates">Jan 17</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/blog/js/main.js"></script>
+<script src="http://localhost:1313/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

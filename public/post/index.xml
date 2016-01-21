@@ -6,8 +6,102 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Jan 2016 22:53:46 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 21 Jan 2016 22:53:46 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【FullCalendar】Basic Usage</title>
+      <link>http://kotazi.github.io/blog/post/2016/0121_calendar/</link>
+      <pubDate>Thu, 21 Jan 2016 22:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0121_calendar/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://fullcalendar.io/&#34;&gt;FullCalendar&lt;/a&gt;の基本的な使い方です。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/usage/&#34;&gt;Basic Usage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;basic-usage:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Basic Usage&lt;/h3&gt;
+
+&lt;p&gt;Webページにカレンダーを組み込む最初のステップは、正しいJSとCSSファイルを用意することです。
+FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイルを&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;に含めたことを確認してください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&#39;stylesheet&#39; href=&#39;fullcalendar/fullcalendar.css&#39; /&amp;gt;
+&amp;lt;script src=&#39;lib/jquery.min.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&#39;lib/moment.min.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&#39;fullcalendar/fullcalendar.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;jQueryとMomentは必ずFullCalendarのJSファイルより先に読み込んでください。&lt;/p&gt;
+
+&lt;p&gt;もしドラッグやリサイズをするのであれば、追加する必要のあるライブラリがあるかもしれないので、&lt;a href=&#34;http://fullcalendar.io/docs/event_ui/Requirements/&#34;&gt;こちら&lt;/a&gt;を見てください。&lt;/p&gt;
+
+&lt;p&gt;依存関係を書き終えたら、カレンダーを初期化するためのスクリプトを記述します。
+このコードはページの初期化後に実行される必要があります。最も良い方法はjQueryの&lt;code&gt;$(document).ready&lt;/code&gt;あたりを使うことです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $(&#39;#calendar&#39;).fullCalendar({
+        // put your options and callbacks here
+    })
+
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記のコードは&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;タグで囲んでください。
+ページ内のID&lt;code&gt;calendar&lt;/code&gt;要素の中にカレンダーを生成します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&#39;calendar&#39;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで空っぽの月カレンダーが表示されると思います。
+イベントの表示方法について学ぶには&lt;a href=&#34;http://fullcalendar.io/docs/google_calendar/&#34;&gt;Google Calendar&lt;/a&gt;もしくは&lt;a href=&#34;http://fullcalendar.io/docs/event_data/&#34;&gt;Event Data&lt;/a&gt;のセクションを参考にしてください。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;options:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Options&lt;/h3&gt;
+
+&lt;p&gt;FullCalendarのドキュメントの大半は、オプションの影響や振る舞いについてです。
+オプションはこのように、たいていカレンダーの初期化時にセットされます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar({
+    weekends: false // will hide Saturdays and Sundays
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;callbacks:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Callbacks&lt;/h3&gt;
+
+&lt;p&gt;コールバックはオプションのように並べられますが、これらの関数は特別なことが起こらなければ呼ばれません。
+下記のサンプルでは、ユーザーが日にちをクリックするとアラートが表示されるものです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar({
+    dayClick: function() {
+        alert(&#39;a day has been clicked!&#39;);
+    }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;methods:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Methods&lt;/h3&gt;
+
+&lt;p&gt;メソッドは様々な方法を提供します。
+メソッドは既に初期化されたカレンダーのjQueryオブジェクトに対し、&lt;code&gt;fullCalendar&lt;/code&gt;コマンドを買います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar(&#39;next&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これは&lt;code&gt;next&lt;/code&gt;メソッドです。カレンダーを次に進めるためのメソッドです。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【読書】強いチームはオフィスを捨てる</title>
@@ -1473,159 +1567,6 @@ On the letter I tell him that the apologies for our mistake and we&amp;rsquo;ll 
 &lt;li&gt;あなたなら何て答える？&lt;/li&gt;
 &lt;li&gt;電波が悪い&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【DMM英会話】Self-Introduction|Business Basic</title>
-      <link>http://kotazi.github.io/blog/post/2016/0103_dmm/</link>
-      <pubDate>Sun, 03 Jan 2016 16:41:09 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0103_dmm/</guid>
-      <description>
-
-&lt;p&gt;DMM英会話のレッスン中。その日学んだことをメモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://eikaiwa.dmm.com/download/pdf/Business_basic_01_01.pdf/&#34;&gt;Lesson 01: Self-Introduction|Business Basic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;practice-1-formal-and-informal-expressions:3b6611648246b99f3a027a826155f0a9&#34;&gt;◯ Practice 1 | Formal and Informal Expressions&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-2-reading-sentences:3b6611648246b99f3a027a826155f0a9&#34;&gt;◯ Practice 2 | Reading Sentences&lt;/h5&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;What type of language is used in each of the two examples? Formal or informal?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In introduction 1 is formal, and introduction 2 is informal.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;How is Patrick Clover trying to build rapport with the person he addresses himself to in the first introduction?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;To build rapport he tried to find something in common.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;What major difference between the contents of the two introductions do you recognize?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In introduction 1 he explained about his business, but in 2 is about his personal info.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;What can you tell us about the structure of the two introductions?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Introduction 1 is polite. 2 is rough.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-3-studying-the-manual:3b6611648246b99f3a027a826155f0a9&#34;&gt;◯ Practice 3 | Studying the Manual&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A connection with the listeners: &amp;ldquo;Good morning, ladies and gentlemen/Hello, Mr. Jameson, I am&amp;hellip; ”&lt;/li&gt;
-&lt;li&gt;If possible, before saying your name it is a very good idea to mention the name of the person you are introducing yourself to. This creates a connection and keeps the listener’s attention.&lt;/li&gt;
-&lt;li&gt;Several issues that will vary depending on your audience (For example, if you have different businesses, you need to prepare at least one introduction for each).&lt;/li&gt;
-&lt;li&gt;A strong belief in what you are saying. It is best to stay true to yourself and mention the things that you really enjoy instead of lying about something. Happiness attracts happiness.&lt;/li&gt;
-&lt;li&gt;Keywords. You should include keywords such as your experience, your company’s name, your position in the company, etc.&lt;/li&gt;
-&lt;li&gt;Time for response. You should be very attentive while talking and let people ask you questions if they have any.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;strong&gt;意訳&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;Good morning, ladies and gentlemen/Hello, Mr. Jameson, I am&amp;hellip; ” などから始める&lt;/li&gt;
-&lt;li&gt;可能であれば名乗る前に相手を読んで関係を築く&lt;/li&gt;
-&lt;li&gt;いくつかの話題は相手に合わせる&lt;/li&gt;
-&lt;li&gt;嘘を付かずに楽しむこと。幸福は幸福を呼ぶ。&lt;/li&gt;
-&lt;li&gt;キーワードを用意する。体験や会社名、役職など。&lt;/li&gt;
-&lt;li&gt;レスポンス時間。相手の質問には関心を持って答える。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-4-situation-questions:3b6611648246b99f3a027a826155f0a9&#34;&gt;◯ Practice 4 | Situation Questions&lt;/h5&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;You see a person you need to introduce yourself to, but you don’t know his /her name. What do you do?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I&amp;rsquo;ll ask his/her name before my self introduce.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;You are taking your coffee with you and accidentally spill it on a stranger’s shoes at a business party. What would you do?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I&amp;rsquo;ll buy new one.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;覚えた英単語:3b6611648246b99f3a027a826155f0a9&#34;&gt;◯ 覚えた英単語&lt;/h5&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;単語&lt;/th&gt;
-&lt;th&gt;意味&lt;/th&gt;
-&lt;th&gt;その他&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;rapport&lt;/td&gt;
-&lt;td&gt;良い関係&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;address oneself to A&lt;/td&gt;
-&lt;td&gt;Aに取り組む&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;vary&lt;/td&gt;
-&lt;td&gt;異なる/さまざま&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;attentive&lt;/td&gt;
-&lt;td&gt;注意深い&lt;/td&gt;
-&lt;td&gt;careful with interest&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;spill&lt;/td&gt;
-&lt;td&gt;こぼす&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;普通に英語で自己紹介するときに気をつける点なども学べて、教材としてGood!!&lt;/p&gt;
 </description>
     </item>
     
