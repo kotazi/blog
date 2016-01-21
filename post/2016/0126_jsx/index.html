@@ -1,0 +1,638 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>0126_jsx &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://localhost:1313/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/blog/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/blog/css/highlight.css">
+		<link href="http://localhost:1313/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://localhost:1313/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>0126_jsx</h1>
+                    <h2 class="headline">January 21, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<h3 id="background:eefede6fd0575a7a2327da935aefa0bf">Background</h3>
+
+<p>JSXはJavaScriptへのコンパイルが可能な、静的型付けかつオブジェクト指向のプログラミング言語です。
+JavaScriptよりも頑丈なプログラミング言語が必要だったためにJSXは開発されました。
+とはいえ、JSXはとりわけ文や式など、そこそこJavaScriptに近いように作られています。</p>
+
+<p>ミスタイポや変数名や関数の定義忘れなどをコンパイル時に検知可能のため、静的型付け言語は頑丈なプログラミング言語といえます。
+これは特に多くのエンジニアが携わる中規模から大規模のプロジェクトにおいて重要なことです。</p>
+
+<p>それゆえに、JSXは静的型付け言語として設計されました。
+全ての値と変数には静的な型があり、適切な方の値のみを代入することができます。
+加えて、全ての関数はパラメータと返り値によって決定されたクロージャーに含まれます。
+引数の型が間違っていると代入することはできません。</p>
+
+<p>またJSXを開発した別の重要な理由として、JSのパフォーマンスを引き上げつことがありました。
+JavaScript自身が遅いということはないのですが、大規模開発になると抽象的なレイヤーが肥大化しがちです。
+例えば代用的なクラスやアクセサメソッドのことであり、これらはしばしばパフォーマンスにネガティブな影響を与えます。
+JSZでは&rdquo;inline expansion&rdquo;によってパフォーマンスを引き上げています。
+これはコンパイル時に関数呼び出しが決定したものを、関数本体を呼び出し元の方へ拡張することです。
+静的型付け言語のパフォーマンスのちからになります。</p>
+
+<h3 id="run-hello-world:eefede6fd0575a7a2327da935aefa0bf">Run &ldquo;Hello, World!&rdquo;</h3>
+
+<p>JSXのプログタムを実行してみましょう。<code>jsx</code>コマンドを使い、JSXをJavaScriptにコンパイルします。</p>
+
+<p>まずはnpmでjsxをインストールします。</p>
+
+<pre><code>$ npm install -g jsx
+</code></pre>
+
+<p>そしたら下記のコードで<code>hello.jsx</code>を作成しましょう。</p>
+
+<pre><code>class _Main {
+    static function main(args : string[]) : void {
+        log &quot;Hello, world!&quot;;
+    }
+}
+</code></pre>
+
+<p>下記のコマンドでJSXを実行することができ、&rdquo;Hello, world&rdquo;がコンソール上に出力されます。</p>
+
+<pre><code>$ jsx --run hello.jsx
+</code></pre>
+
+<p>次のセクションではhello.jsxについて詳しく見ていきましょう。</p>
+
+<h3 id="program-structure:eefede6fd0575a7a2327da935aefa0bf">Program Structure</h3>
+
+<p>ここでは&rdquo;Hello world!&ldquo;サンプルであるhello.jsxについて取り扱っていきます。
+このプログラムに名前や静的型付け、クラス構造といったいくつかのJSXの機能を見ることができます。</p>
+
+<pre><code>class _Main {
+    static function main(args : string[]) : void {
+        log &quot;Hello, world!&quot;;
+    }
+}
+</code></pre>
+
+<p><code>_Main</code>クラスは<code>main</code>という名前の静的メンバ関数を持ちます。<code>main</code>関数は文字列型の配列を引数に取り、返り値はありません。
+<code>_Main.main(:string[]):</code>はJSXアプリケーションのエントリーポイントであり、ユーザーがコマンドラインからアプリケーションを実行した時に呼び出されるものです。JSXはJavaのように、トップレベルに文や関数を置くことを許しません。</p>
+
+<p><code>log</code>文はJavaScriptの<code>console.log()</code>をマップしたものです。</p>
+
+<p>続いて、別の典型的なライブラリのクラスを見ていきます。</p>
+
+<pre><code>class Point {
+    var x = 0;
+    var y = 0;
+
+    function constructor() {
+    }
+
+    function constructor(x : number, y : number) {
+        this.set(x, y);
+    }
+
+    function constructor(other : Point) {
+        this.set(other);
+    }
+
+    function set(x : number, y : number) : void {
+        this.x = x;
+        this.y = y;
+    }
+
+    function set(other : Point) : void {
+        this.set(other.x, other.y);
+    }
+}
+</code></pre>
+
+<p>見て分かる通り、Pointのメンバ変数であるxとyは型なしで宣言されています。
+けれどもそれらの方は初期値からnumber型であることが分かります。</p>
+
+<p>複数のconstructorsに驚いたかもしれません。
+ひとつはパラメータをとらず、他のものはとります。
+パラメータの型が重複しています。
+あなたが<code>new Point()</code>を用いてクラスを生成する場合、最初のコンストラクタは引数無しで呼びだされます。
+ふたつ目のコンストラクタは、<code>new Point(2, 3)</code>といったように２つの引数を必要とします。３つめはコピーのコンストラクタとしてひとつ引数にとります。
+<code>new Point(42)</code>や<code>new Point(&quot;foo&quot;, &quot;bar&quot;)</code>といったその他の方法では、コンパイル時にエラーが起きます。</p>
+
+<p><code>Point#set()</code>関数もまた重複しており、コンパイラは正しい引数の取り方を知っています。</p>
+
+<h3 id="static-typing:eefede6fd0575a7a2327da935aefa0bf">Static Typing</h3>
+
+<p>基本的な型の概要についてはこの章で述べます。プリミティブ型やオブジェクト型、Variant型、Null型がJSZには存在します。</p>
+
+<h4 id="pritimive-types:eefede6fd0575a7a2327da935aefa0bf">Pritimive Types</h4>
+
+<p>JSXには3つのプリミティブ型が存在します。<code>string</code>、<code>number</code>、<code>boolean</code>です。
+これらの3つはNull型にはならず、不変の型です。</p>
+
+<p>下の例文では<code>s</code>、<code>n</code>、<code>b</code>の変数を型とともに宣言しています。<code>:</code>マークを使って変数名の右側に記述します。</p>
+
+<pre><code>var s : string;
+var n : number;
+var b : boolean;
+</code></pre>
+
+<p>型宣言は初期値を代入することで省略することができます。</p>
+
+<pre><code>var s = &quot;hello&quot;;  // s is string, initialized as &quot;hello&quot;
+var n = 42;       // n is number, initialized as 42
+var b = true;     // b is boolean, initialized as true
+</code></pre>
+
+<h4 id="object-types:eefede6fd0575a7a2327da935aefa0bf">Object Types</h4>
+
+<p>オブジェクト型はクラスのインスタンスオブジェクトに参照を持つ方になります。
+例えば、関数、文字列配列、Dateオブジェクトは全てオブジェクト型になります。
+型が変わりやすいかは各クラスの定義に依存しいます。</p>
+
+<p>大半のオブジェクトは<code>new</code>演算子を用いて生成します。</p>
+
+<pre><code>var d = new Date();            // instantiate an object of class Date
+var a = new Array.&lt;string&gt;();  // instantiate an array of string
+var m = new Map.&lt;number&gt;();    // instantiate an associative map of strings to numbers
+</code></pre>
+
+<p>ArrayとMapについては初期化式を用いたイニシャライズが可能です。</p>
+
+<pre><code>var a1 = [] : Array.&lt;string&gt;;  // a1 is Array.&lt;string&gt;, and is empty
+var a2 = [ 1, 2, 3 ];          // a2 is Array.&lt;number&gt; with three elements
+
+var m1 : {} : Map.&lt;number&gt;;    // m1 is Map.&lt;number&gt;
+var m2 = {                     // m2 is Map.&lt;string&gt;
+  en: &quot;Good morning&quot;,
+  de: &quot;Guten Morgen&quot;,
+  ja: &quot;ãã¯ãããããã¾ã&quot;
+};
+</code></pre>
+
+<p>Functionクラスの変数のみ、静的関数として生成することや、またfunction式やfunction文を使って生成することが可能です。</p>
+
+<h4 id="the-variant-type:eefede6fd0575a7a2327da935aefa0bf">The Variant Type</h4>
+
+<p>Variant型は&rdquo;静的型情報がない&rdquo;という意味です。既存のJavaScriptAPIに役立ちます。
+バリアント変数を返すJavaScriptライブラリもあるかもしれません。これらの型はコンパイル時に決定することができません。
+バリアントの値に対してできることは、variantのあたいかそうでない値かをチェックすることだけです。</p>
+
+<p>何かする前に値に対してチェックをする必要があります。</p>
+
+<pre><code>function guessTheType(v : variant) : void {
+    if (typeof v == &quot;string&quot;) {
+        log &quot;v is string and the value is:&quot; + v as string;
+    } else {
+        log &quot;v is not string&quot;;
+    }
+}
+</code></pre>
+
+<h4 id="nullable-types:eefede6fd0575a7a2327da935aefa0bf">Nullable Types</h4>
+
+<p>Nullable型はメタ型です。値がnullかもしれないことを示します。
+primitive型にnullを代入することは禁止されています。(Object型はデフォルトではnullです。)
+Nullable型はこのような目的で使われます。</p>
+
+<pre><code>var s1 : string;
+s1 = &quot;abc&quot;;       // ok
+s1 = null;        // compile error!  cannot assign null to string
+
+var s2 : Nullable.&lt;string&gt;;
+s2 = &quot;abc&quot;;       // ok
+s2 = null;        // ok
+</code></pre>
+
+<p>Nullable型の最も特出した使い方は、配列との使い方です。
+ある配列の数より多い値にアクセスするとnullを返します。</p>
+
+<pre><code>var a = [ 1, 2, 3 ]; // creates Array.&lt;number&gt; with three elements
+a[3];                // out-of-bounds access, returns null
+</code></pre>
+
+<p>Nullableを返すAPIが他にも存在します。例えば<code>&lt;string&gt;#shift() is Nullable.&lt;string&gt;</code>。
+Nullableな値を使った時、その値がnullでないか確認する必要があります。</p>
+
+<pre><code>function shiftOrReturnEmptyString(args : string[]) : string {
+    if (args.length &gt; 0)
+        return args.shift();
+    else
+        return &quot;&quot;;
+}
+</code></pre>
+
+<p>コードがデバッグモードでコンパイルされる時(デフォルト値です。)、コンパイラは実行時に型の確認コードを埋め込みます。
+null値の誤用が検知されると例外が発生します。
+ランタイム型確認では<code>--release</code>オプションでコンパイルを生着することができます。</p>
+
+<p>より詳しく知るためには<a href="https://jsx.github.io/doc/typeref.html">Types</a>セクションを参照してください。</p>
+
+<hr>
+
+<h3 id="expressions:eefede6fd0575a7a2327da935aefa0bf">Expressions</h3>
+
+<p>JSXにおける演算子の定義はほとんどJavaScriptと同じです。しかしながら違う点もあります。</p>
+
+<ul>
+<li>算術演算子は非演算子に数字のみをとります</li>
+</ul>
+
+<pre><code>var a = 3;
+a + 1;      // OK, returns 4
+a * a;      // OK, returns 9
+a + &quot;abc&quot;;  // compile error
+</code></pre>
+
+<p>注意: 連結演算子(+)による文字列の結合は存在します。</p>
+
+<ul>
+<li>ドット演算子によるプロパティアクセスは定義されたプロパティのみになります</li>
+</ul>
+
+<pre><code>class Point {
+    var x : number;
+    var y : number;
+    function print() : void {
+        log this.z;             // compile error! no property named z
+    }
+}
+</code></pre>
+
+<ul>
+<li><code>[]</code>プロパティではMapかvariantのみにアクセスできます</li>
+</ul>
+
+<pre><code>var m = {            // m is Map.&lt;string&gt;
+    hello: &quot;world!&quot;
+};
+log m[&quot;hello&quot;];      // OK
+log m.hello;         // compile error!
+</code></pre>
+
+<ul>
+<li><code>as</code>演算子を導入します。型変換に用いられます</li>
+</ul>
+
+<pre><code>var n = 123;
+var s = &quot;value of n is &quot; + (n as string);
+log s;               // print &quot;value of n is 123&quot;
+</code></pre>
+
+<ul>
+<li><code>&amp;&amp;, ||</code>演算子はBooleanを返します。<code>?:</code>を導入します。これは<code>||</code>と等価です。</li>
+</ul>
+
+<p>詳しくは<a href="https://jsx.github.io/doc/operatorref.html">Operator Reference</a>を見てください。</p>
+
+<h4 id="statements:eefede6fd0575a7a2327da935aefa0bf">Statements</h4>
+
+<p>JSXではJavaScriptで提供される多くの構文をサポートします。</p>
+
+<ul>
+<li>log statement</li>
+</ul>
+
+<pre><code>log &quot;hello, world&quot;;    // log strings to console, can turned off with compile option: --release
+</code></pre>
+
+<ul>
+<li>assert statement</li>
+</ul>
+
+<pre><code>var n = 123;
+assert n != 0;         // assertions.  also can be turned off with --release
+</code></pre>
+
+<ul>
+<li>try-catch-finally statement</li>
+</ul>
+
+<pre><code>try {
+    ...
+} catch (e : TypeError) {
+    // got TypeError
+} catch (e : Error) {
+    // got Error, which is not TypeError
+} catch (e : variant) {
+    // applications may throw any kind of value
+} finally {
+    ...
+}
+</code></pre>
+
+<ul>
+<li>try-catch-finally statement</li>
+</ul>
+
+<p>詳しくは<a href="https://jsx.github.io/doc/statementref.html">Statement Reference</a>を見てください。</p>
+
+<hr>
+
+<h3 id="classes-and-interfaces:eefede6fd0575a7a2327da935aefa0bf">Classes and Interfaces</h3>
+
+<p>JSXはクラスベースのオブジェクト指向言語です。クラスモデルはJavaに似ています。</p>
+
+<ul>
+<li>クラスを別のクラスに拡張できる</li>
+<li>クラスは福通のインターフェイスやミックスインを実装する</li>
+<li>すべてのクラスはひとつのルートクラスをシェアする: Objectクラス</li>
+</ul>
+
+<pre><code>all classes share a single root class: the Object class
+interface Flyable {
+    abstract function fly() : void;
+}
+
+abstract class Animal {
+    function eat() : void {
+      log &quot;An animal is eating!&quot;;
+    }
+}
+
+class Bat extends Animal implements Flyable {
+    override function fly() : void {
+        log &quot;A bat is flying!&quot;;
+    }
+}
+
+abstract class Insect {
+}
+
+class Bee extends Insect implements Flyable {
+    override function fly() : void {
+        log &quot;A bee is flying!&quot;;
+    }
+}
+
+class _Main {
+
+    static function main(args : string[]) : void {
+        // fo bar
+        var bat = new Bat();
+
+        var animal : Animal = bat; // OK. A bat is an animal.
+        animal.eat();
+
+        var flyable : Flyable = bat; // OK. A bat can fly
+        flyable.fly();
+
+        // for Bee
+        var bee = new Bee();
+
+        flyable = bee; // A bee is also flyable
+        flyable.fly();
+    }
+}
+</code></pre>
+
+<p>例において、BatクラスはAnimalクラスを拡張したものであり、<code>Animal#eat()</code>というメンバ関数を継承しています。そしてAnimal型に変数に代入することも可能です。
+BatクラスはまたFlyableクラスの<code>Flyable#fly()</code>メンバ関数をオーバーライドして実装しています。そのため、Flyableの変数に代入することも可能です。
+また、別のflyableクラスがありいます。Beeクラスです。
+Flyableインターフェイスを使うことで、例えbeeとbatが完全に異なる組織だったとしても、両方のクラスに対応することができます。</p>
+
+<p>メンバ関数をオーバーライドした時に、<code>override</code>キーワードの使用は委任されます。
+それにも関わらず、コンパイラはエラーを発生させます。言い換えれば、やっかいなエラーを出す代わりに、予期せぬベースクラスのインターフェイスの変更による編集エラーからあなたを救っています。</p>
+
+<hr>
+
+<h3 id="functions-and-closures:eefede6fd0575a7a2327da935aefa0bf">Functions and Closures</h3>
+
+<p>JSXでは、関数が最初のクラスオブジェクトであり、静的な型をもっています。
+<code>var f : function(arg : number) : number</code>といった関数型の変数を宣言することができます。
+関数は引数にnumberを取り、別のnumberを返すといったように。(同じ値を返すかもしれませんがここでは重要ではありません。)
+その変数<code>f</code>は<code>f(42)</code>といって呼び出しをされ、数値を返しいます。</p>
+
+<p>function式やfunction文を使ってクロージャーを定義することができあmす。
+典型的な方法でGUIプログラミングで人気のイベントリスナやコールバックを実装します。
+クロージャーはJavaScriptの<code>this</code>に似ています。メンバ関数内でクロージャーが出意義された時、メンバ関数のレシーバーを参照します。下記のサンプルを見てください。</p>
+
+<pre><code>class _Main {
+    var foo = 42;
+
+    function constructor() {
+        var f = function() : void {
+            log this.foo;
+        };
+
+        f(); // says 42
+    }
+
+    static function main(args : string[]) : void {
+        var o = new _Main();
+    }
+}
+</code></pre>
+
+<p>function式やfunction文のアノテーションはコンパイラに推測された場合に省略されるかもしれません。
+下記の例では、引数のnも式の返り値も<code>Array#map</code>の定義からnumberになることが推測されます。</p>
+
+<hr>
+
+<h3 id="modules:eefede6fd0575a7a2327da935aefa0bf">Modules</h3>
+
+<p>JSXはモジュールシステムを持ちます。<code>import</code>式を使ってJSXのクラスライブラリを利用することができます。
+例えば、下記のプログラムでは<code>timer.jsx</code>モジュールを使用し、Timerクラスをエクスポートしています。</p>
+
+<pre><code>import &quot;timer.jsx&quot;;
+
+class _Main {
+
+    static function main(args : string[]) : void {
+        Timer.setTimeout(function() : void {
+            log &quot;Hello, world!&quot;;
+        }, 1000);
+    }
+
+}
+</code></pre>
+
+<p>モジュールは複数のクラスをエクスポートしますが、インポートするモジュールを指定したり、インポートしたモジュールにネームスペースをつけたりすることができます。</p>
+
+<hr>
+
+<h3 id="interface-to-web-browsers:eefede6fd0575a7a2327da935aefa0bf">Interface to Web Browsers</h3>
+
+<p><code>js/web.jsx</code>モジュールはWebブラウザへのインターフェイスを提供します。
+下記のサンプルではどのように挿入するかを見せます。</p>
+
+<pre><code>// hello.jsx
+import &quot;js/web.jsx&quot;;
+
+class _Main {
+
+    static function main(args : string[]) : void {
+        var document = dom.window.document;
+
+        var text = document.createTextNode(&quot;Hello, world!&quot;);
+        document.getElementById(&quot;hello&quot;).appendChild(text);
+    }
+
+}
+</code></pre>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello, world!&lt;/title&gt;
+    &lt;script src=&quot;hello.jsx.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;p id=&quot;hello&quot;&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>以前コマンドからコンパイルした<code>hello.jsx</code>を用いて、アクセスしたHTMLで&rdquo;Hello, world!&ldquo;を確認できます。</p>
+
+<pre><code>$ bin/jsx --executable web --output hello.jsx.js hello.jsx
+</code></pre>
+
+<hr>
+
+<h3 id="further-learning:eefede6fd0575a7a2327da935aefa0bf">Further Learning</h3>
+
+<p>より詳しいドキュメントは<a href="https://github.com/jsx/JSX/wiki">wiki</a>を見てください。</p>
+
+<p>サンプルを探しているのであれば、<a href="https://jsx.github.io/#examples">example</a>を参照してください。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://localhost:1313/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fblog%2fpost%2f2016%2f0126_jsx%2f - 0126_jsx by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0121_calendar/">【FullCalendar】Basic Usage<aside class="dates">Jan 21</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0119_37signals/">【読書】強いチームはオフィスを捨てる<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0122_calendar/">【FullCalendar】Google Calendar<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0123_calendar/">【FullCalendar】General Display<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0124_calendar/">【FullCalendar】Agenda Options<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0125_calendar/">【FullCalendar】Current Date<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0119_gitup/">gemをインストールしたけれど見つからない時に疑うこと<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0118_37signals/">【読書】小さなチーム、大きな仕事<aside class="dates">Jan 18</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0117_geek/">【読書】Being Geek<aside class="dates">Jan 17</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/blog/js/main.js"></script>
+<script src="http://localhost:1313/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

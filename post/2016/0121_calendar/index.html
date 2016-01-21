@@ -1,0 +1,241 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【FullCalendar】Basic Usage &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【FullCalendar】Basic Usage</h1>
+                    <h2 class="headline">January 21, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p><a href="http://fullcalendar.io/">FullCalendar</a>の基本的な使い方です。</p>
+
+<ul>
+<li><a href="http://fullcalendar.io/docs/usage/">Basic Usage</a></li>
+</ul>
+
+<hr>
+
+<h3 id="basic-usage:618077e916e5f8ed5fedc9c7378a801b">Basic Usage</h3>
+
+<p>Webページにカレンダーを組み込む最初のステップは、正しいJSとCSSファイルを用意することです。
+FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイルを<code>&lt;head&gt;</code>に含めたことを確認してください。</p>
+
+<pre><code>&lt;link rel='stylesheet' href='fullcalendar/fullcalendar.css' /&gt;
+&lt;script src='lib/jquery.min.js'&gt;&lt;/script&gt;
+&lt;script src='lib/moment.min.js'&gt;&lt;/script&gt;
+&lt;script src='fullcalendar/fullcalendar.js'&gt;&lt;/script&gt;
+</code></pre>
+
+<p>jQueryとMomentは必ずFullCalendarのJSファイルより先に読み込んでください。</p>
+
+<p>もしドラッグやリサイズをするのであれば、追加する必要のあるライブラリがあるかもしれないので、<a href="http://fullcalendar.io/docs/event_ui/Requirements/">こちら</a>を見てください。</p>
+
+<p>依存関係を書き終えたら、カレンダーを初期化するためのスクリプトを記述します。
+このコードはページの初期化後に実行される必要があります。最も良い方法はjQueryの<code>$(document).ready</code>あたりを使うことです。</p>
+
+<pre><code>$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
+});
+</code></pre>
+
+<p>上記のコードは<code>&lt;script&gt;</code>タグで囲んでください。
+ページ内のID<code>calendar</code>要素の中にカレンダーを生成します。</p>
+
+<pre><code>&lt;div id='calendar'&gt;&lt;/div&gt;
+</code></pre>
+
+<p>これで空っぽの月カレンダーが表示されると思います。
+イベントの表示方法について学ぶには<a href="http://fullcalendar.io/docs/google_calendar/">Google Calendar</a>もしくは<a href="http://fullcalendar.io/docs/event_data/">Event Data</a>のセクションを参考にしてください。</p>
+
+<hr>
+
+<h3 id="options:618077e916e5f8ed5fedc9c7378a801b">Options</h3>
+
+<p>FullCalendarのドキュメントの大半は、オプションの影響や振る舞いについてです。
+オプションはこのように、たいていカレンダーの初期化時にセットされます。</p>
+
+<pre><code>$('#calendar').fullCalendar({
+    weekends: false // will hide Saturdays and Sundays
+});
+</code></pre>
+
+<hr>
+
+<h3 id="callbacks:618077e916e5f8ed5fedc9c7378a801b">Callbacks</h3>
+
+<p>コールバックはオプションのように並べられますが、これらの関数は特別なことが起こらなければ呼ばれません。
+下記のサンプルでは、ユーザーが日にちをクリックするとアラートが表示されるものです。</p>
+
+<pre><code>$('#calendar').fullCalendar({
+    dayClick: function() {
+        alert('a day has been clicked!');
+    }
+});
+</code></pre>
+
+<hr>
+
+<h3 id="methods:618077e916e5f8ed5fedc9c7378a801b">Methods</h3>
+
+<p>メソッドは様々な方法を提供します。
+メソッドは既に初期化されたカレンダーのjQueryオブジェクトに対し、<code>fullCalendar</code>コマンドを買います。</p>
+
+<pre><code>$('#calendar').fullCalendar('next');
+</code></pre>
+
+<p>これは<code>next</code>メソッドです。カレンダーを次に進めるためのメソッドです。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0121_calendar%2f - %e3%80%90FullCalendar%e3%80%91Basic%20Usage by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0119_37signals/">【読書】強いチームはオフィスを捨てる<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0119_gitup/">gemをインストールしたけれど見つからない時に疑うこと<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0118_37signals/">【読書】小さなチーム、大きな仕事<aside class="dates">Jan 18</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0117_geek/">【読書】Being Geek<aside class="dates">Jan 17</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0115_angular2_2/">Angular2のチュートリアル<aside class="dates">Jan 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0115_angular2/">Angular2メモ<aside class="dates">Jan 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0115_dmm/">【DMM英会話】 Job Interview | Business Basic<aside class="dates">Jan 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0113_dmm/">【DMM英会話】 Business Call | Business Basic<aside class="dates">Jan 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0110_mask/">【読書】イーロン・マスク 未来を創る男<aside class="dates">Jan 10</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>
