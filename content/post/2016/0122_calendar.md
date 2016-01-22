@@ -1,9 +1,11 @@
 +++
-date = "2016-01-19T22:53:46+09:00"
-draft = true
+date = "2016-01-22T22:53:46+09:00"
+draft = false
 title = "【FullCalendar】Google Calendar"
 tags = ["fullcalendar"]
 +++
+
+[FullCalendar](http://fullcalendar.io/)のGoogleCalendar同期について。
 
 - [Google Calendar](http://fullcalendar.io/docs/google_calendar/)
 

@@ -6,8 +6,160 @@
     <description>Recent content in Fullcalendar on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jan 2016 22:53:46 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 Jan 2016 22:53:46 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/fullcalendar/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【FullCalendar】Google Calendar</title>
+      <link>http://kotazi.github.io/blog/post/2016/0122_calendar/</link>
+      <pubDate>Fri, 22 Jan 2016 22:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0122_calendar/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://fullcalendar.io/&#34;&gt;FullCalendar&lt;/a&gt;のGoogleCalendar同期について。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/google_calendar/&#34;&gt;Google Calendar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;google-calendar:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Google Calendar&lt;/h3&gt;
+
+&lt;p&gt;FullCalendarではGoogle Calendarのイベントを表示することができます。
+GoogleCalendarはバックエンド側で管理・保持しているイベントデータを提供することができます。
+(FullCalendarにはない機能)&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;before-you-code:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Before you code&amp;hellip;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;GoogleCalendarのAPIキーが必要です&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Google Developer Console&lt;/a&gt;から新しいプロジェクトを作成してください&lt;/li&gt;
+&lt;li&gt;そのプロジェクトのサイドバーから、「APIs &amp;amp; auth &amp;gt; APIs」と移動します&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Calendar API&amp;rdquo;をオンにしてください。&lt;/li&gt;
+&lt;li&gt;サイドバーから「APIs &amp;amp; auth &amp;gt; Credentials」と移動します&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Public API access&amp;rdquo;セクション内の&amp;rdquo;Create new Key&amp;rdquo;をクリックします&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Browser Key&amp;rdquo;を選択します&lt;/li&gt;
+&lt;li&gt;カレンダーをホストするドメインが分かれば入力してください。いつでも変更できるので分からなければそのままで大丈夫です&lt;/li&gt;
+&lt;li&gt;新しいAPIキーが現れます。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Googleを公開する&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;GoogleCalendarのインターフェイスで、左側にある&amp;rdquo;My calendars&amp;rdquo;へ&lt;/li&gt;
+&lt;li&gt;カレンダーにカーソルを当て、矢印をクリックします&lt;/li&gt;
+&lt;li&gt;メニューが表示されるので&amp;rdquo;Share this Calendar&amp;rdquo;をクリックします&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Make this calendar public&amp;rdquo;にチェックします&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Share only my free/busy information&amp;rdquo;にチェックが入っていないことを確認してください&lt;/li&gt;
+&lt;li&gt;保存します&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;GoogleCalendarのIDを取得する&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;GoogleCalendarのインターフェイスで、左側にある&amp;rdquo;My calendars&amp;rdquo;へ&lt;/li&gt;
+&lt;li&gt;カレンダーにカーソルを当て、矢印をクリックします&lt;/li&gt;
+&lt;li&gt;メニューが表示されるので&amp;rdquo;Calendar settings&amp;rdquo;をクリックします&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Calendar Address&amp;rdquo;セクションのCalendarIDを見てください。 &amp;ldquo;abcd1234@group.calendar.google.com&amp;rdquo;のようなものです。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;dependencies:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Dependencies&lt;/h3&gt;
+
+&lt;p&gt;続いて、必要なJS/CSSを追加します。標準的なファイルに加え、&lt;code&gt;gcal.js&lt;/code&gt;も追加します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#39;text/javascript&#39; src=&#39;fullcalendar/gcal.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;writing-the-code:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Writing the code&lt;/h3&gt;
+
+&lt;p&gt;JSでカレンダーを初期化する準備が整いました。これが最小のサンプルになります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#39;text/javascript&#39;&amp;gt;
+
+$(document).ready(function() {
+    $(&#39;#calendar&#39;).fullCalendar({
+        googleCalendarApiKey: &#39;&amp;lt;YOUR API KEY&amp;gt;&#39;,
+        events: {
+            googleCalendarId: &#39;abcd1234@group.calendar.google.com&#39;
+        }
+    });
+});
+
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;特定の&lt;a href=&#34;http://fullcalendar.io/docs/event_data/Event_Source_Object/&#34;&gt;Event Source&lt;/a&gt;オプションを追加したければ、&lt;code&gt;events&lt;/code&gt;オブジェクトに含めることができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#39;text/javascript&#39;&amp;gt;
+
+$(document).ready(function() {
+    $(&#39;#calendar&#39;).fullCalendar({
+        googleCalendarApiKey: &#39;&amp;lt;YOUR API KEY&amp;gt;&#39;,
+        events: {
+            googleCalendarId: &#39;abcd1234@group.calendar.google.com&#39;,
+            className: &#39;gcal-event&#39; // an option!
+        }
+    });
+});
+
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;timezones:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Timezones&lt;/h3&gt;
+
+&lt;p&gt;GoogleCalendarのプラグインでは&lt;a href=&#34;http://fullcalendar.io/docs/timezone/timezone/&#34;&gt;timezone&lt;/a&gt;をリスペクトしています。
+&lt;code&gt;false&lt;/code&gt;(デフォルト)にしておくと、GoogleCalendarのタイムゾーン設定が使用されます。特定のものを指定していれば、これらは無視されます。&lt;/p&gt;
+
+&lt;Hr&gt;
+
+&lt;h3 id=&#34;multiple-google-calendars:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Multiple Google Calendars&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;eventSources&lt;/code&gt;オプションを利用すれば複数のGoogleCalendarを利用することができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#39;text/javascript&#39;&amp;gt;
+
+$(document).ready(function() {
+    $(&#39;#calendar&#39;).fullCalendar({
+        googleCalendarApiKey: &#39;&amp;lt;YOUR API KEY&amp;gt;&#39;,
+        eventSources: [
+            {
+                googleCalendarId: &#39;abcd1234@group.calendar.google.com&#39;
+            },
+            {
+                googleCalendarId: &#39;efgh5678@group.calendar.google.com&#39;,
+                className: &#39;nice-event&#39;
+            }
+        ]
+    });
+});
+
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;Hr&gt;
+
+&lt;h3 id=&#34;advanced:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Advanced&lt;/h3&gt;
+
+&lt;p&gt;カレンダーごとに異なるAPIキーを利用する場合、&lt;code&gt;googleCalendarApiKey&lt;/code&gt;をセットするには個々の[EventSource]を用います。&lt;/p&gt;
+
+&lt;p&gt;GoogleAPIのエラーを検知する必要がある場合、jQueryのAJAZエラーハンドリングには方法がありません。FullCalendarの&lt;code&gt;googleCalendarError&lt;/code&gt;を使います。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【FullCalendar】Basic Usage</title>
