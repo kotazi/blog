@@ -6,8 +6,121 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2016 22:53:46 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 23 Jan 2016 22:53:46 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【FullCalendar】General Display</title>
+      <link>http://kotazi.github.io/blog/post/2016/0123_calendar/</link>
+      <pubDate>Sat, 23 Jan 2016 22:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0123_calendar/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;General Display&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id=&#34;header-http-fullcalendar-io-docs-display-header:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/header/&#34;&gt;header&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;カレンダー上部のボタンとタイトルを定義します。&lt;/p&gt;
+
+&lt;h5 id=&#34;custombuttons-http-fullcalendar-io-docs-display-custombuttons:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/customButtons&#34;&gt;customButtons&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;ヘッダーで使用されるカスタムボタンを定義します。&lt;/p&gt;
+
+&lt;h5 id=&#34;buttonicons-http-fullcalendar-io-docs-display-buttonicons:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/buttonIcons&#34;&gt;buttonIcons&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;ヘッダーボタンで表示するアイコンを決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;theme-http-fullcalendar-io-docs-display-theme:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/theme&#34;&gt;theme&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;jQuery UIテーマの使用不使用です。&lt;/p&gt;
+
+&lt;h5 id=&#34;themebuttonicons-http-fullcalendar-io-docs-display-themebuttonicons:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/themeButtonIcons&#34;&gt;themeButtonIcons&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;テーマで使用するアイコンを決定します。&lt;/p&gt;
+
+&lt;h5 id=&#34;firstday-http-fullcalendar-io-docs-display-firstday:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/firstDay&#34;&gt;firstDay&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;週始めを決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;isrtl-http-fullcalendar-io-docs-display:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;isRTL&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;カレンダーの表示向きです。&lt;/p&gt;
+
+&lt;h5 id=&#34;weekends-http-fullcalendar-io-docs-display-weekends:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/weekends&#34;&gt;weekends&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;カレンダーのビューに土日を含めるかどうかです。&lt;/p&gt;
+
+&lt;h5 id=&#34;hiddendays-http-fullcalendar-io-docs-display-hiddendays:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/hiddenDays&#34;&gt;hiddenDays&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;決まった曜日を非表示にすることができます。&lt;/p&gt;
+
+&lt;h5 id=&#34;fixedweekcount-http-fullcalendar-io-docs-display-fixedweekcount:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/fixedWeekCount&#34;&gt;fixedWeekCount&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;デフォルトは&lt;code&gt;true&lt;/code&gt;.必ず6週です。
+&lt;code&gt;false&lt;/code&gt;の場合は4や5週の場合があります。&lt;/p&gt;
+
+&lt;h5 id=&#34;weeknumbers-http-fullcalendar-io-docs-display-weeknumbers:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/weekNumbers&#34;&gt;weekNumbers&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;週番号を表示するかです。&lt;code&gt;true&lt;/code&gt;にすると左側に入ります。&lt;/p&gt;
+
+&lt;h5 id=&#34;weeknumbercalculation-http-fullcalendar-io-docs-display:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;weekNumberCalculation&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;weekNumbersの設定に合わせて週の数を計算します。&lt;/p&gt;
+
+&lt;h5 id=&#34;businesshours-http-fullcalendar-io-docs-display-businesshours:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/businessHours&#34;&gt;businessHours&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;ビジネスタイムの設定。&lt;/p&gt;
+
+&lt;h5 id=&#34;height-http-fullcalendar-io-docs-display-height:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/height&#34;&gt;height&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;カレンダーの高さを指定します。&lt;/p&gt;
+
+&lt;h5 id=&#34;aspectratio-http-fullcalendar-io-docs-display-aspectratio:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/aspectRatio&#34;&gt;aspectRatio&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;縦横のアスペクト比を決定します。&lt;/p&gt;
+
+&lt;h5 id=&#34;handlewindowresize-http-fullcalendar-io-docs-display-handlewindowresize:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/handleWindowResize&#34;&gt;handleWindowResize&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;ブラウザがリサイズされた時に、カレンダーをリサイズします。&lt;/p&gt;
+
+&lt;h5 id=&#34;eventlimit-http-fullcalendar-io-docs-display-eventlimit:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/eventLimit&#34;&gt;eventLimit&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;一日に表示するイベントの数の上限。&lt;/p&gt;
+
+&lt;h5 id=&#34;eventlimitclick-http-fullcalendar-io-docs-display-eventlimitclick:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/eventLimitClick&#34;&gt;eventLimitClick&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;eventLimitで設定した上限を超え、&lt;code&gt;more&lt;/code&gt;をクリックした時のアクション。&lt;/p&gt;
+
+&lt;h5 id=&#34;viewrender-callback-http-fullcalendar-io-docs-display-viewrender:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/viewRender&#34;&gt;viewRender (callback)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;レンダリング後のコールバック&lt;/p&gt;
+
+&lt;h5 id=&#34;viewdestroy-callback-http-fullcalendar-io-docs-display-viewdestroy:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/viewDestroy&#34;&gt;viewDestroy (callback)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;データ破壊後のコールバック&lt;/p&gt;
+
+&lt;h5 id=&#34;dayrender-callback-http-fullcalendar-io-docs-display-dayrender:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/dayRender&#34;&gt;dayRender (callback)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;セルを修正した時のコールバック&lt;/p&gt;
+
+&lt;h5 id=&#34;windowresize-callback-http-fullcalendar-io-docs-display-windowresize:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/windowResize&#34;&gt;windowResize (callback)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;リサイズ時のコールバック&lt;/p&gt;
+
+&lt;h5 id=&#34;render-method-http-fullcalendar-io-docs-display-render:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/render&#34;&gt;render (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;レンダリングメソッド。&lt;/p&gt;
+
+&lt;h5 id=&#34;destroy-method-http-fullcalendar-io-docs-display-destroy:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/destroy&#34;&gt;destroy (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;要素を取り除く。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【FullCalendar】Google Calendar</title>
@@ -1437,138 +1550,6 @@ end
 paramsオブジェクトのrequireメソッドで、paramsオブジェクトが&lt;code&gt;:staff_member&lt;/code&gt;というキーと持っているかを調べる。&lt;/p&gt;
 
 &lt;p&gt;=&amp;gt; 持っていなければActionController::ParameterMissingエラー&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【DMM英会話】Asking for Directions | Business Basic</title>
-      <link>http://kotazi.github.io/blog/post/2016/0105_dmm/</link>
-      <pubDate>Tue, 05 Jan 2016 16:41:09 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0105_dmm/</guid>
-      <description>
-
-&lt;p&gt;DMM英会話のレッスン中。その日学んだことをメモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://eikaiwa.dmm.com/download/pdf/Business_basic_03_01.pdf/&#34;&gt;Lesson 03: Asking for Directions | Business Basic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;practice-1-formal-and-informal-expressions:8cc24ae4bd464d21835acf55dfd4c192&#34;&gt;◯ Practice 1 | Formal and Informal Expressions&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-2-reading-sentences:8cc24ae4bd464d21835acf55dfd4c192&#34;&gt;◯ Practice 2 | Reading Sentences&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-3-studying-the-manual:8cc24ae4bd464d21835acf55dfd4c192&#34;&gt;◯ Practice 3 | Studying the Manual&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-4-situation-questions:8cc24ae4bd464d21835acf55dfd4c192&#34;&gt;◯ Practice 4 | Situation Questions&lt;/h5&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;Your boss gave you a task via email and some details are unclear to you. What do you do?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I&amp;rsquo;ll get a few minutes from boss.
-&amp;ldquo;Would you mind sparing me several minutes of your time?&amp;rdquo;
-And I&amp;rsquo;ll ask boss about it in person.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;You were supposed to have a meeting with your business partner but you lost track of time and came one hour late – the partner wasn’t there anymore. What do you do?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I&amp;rsquo;ll call him and tell that the apologies for being late.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;覚えた英単語:8cc24ae4bd464d21835acf55dfd4c192&#34;&gt;◯ 覚えた英単語&lt;/h5&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;単語&lt;/th&gt;
-&lt;th&gt;意味&lt;/th&gt;
-&lt;th&gt;その他&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;sparing&lt;/td&gt;
-&lt;td&gt;倹約して、控えて&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;precision&lt;/td&gt;
-&lt;td&gt;正確さ&lt;/td&gt;
-&lt;td&gt;the quality of being exact, accurate and careful&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;I assure you&lt;/td&gt;
-&lt;td&gt;保証する (I promiss you とは違うらしい)&lt;/td&gt;
-&lt;td&gt;to tell somebody that something is definitely true or is definitely going to happen, especially when they have doubts about it&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;pleasant&lt;/td&gt;
-&lt;td&gt;感じのよい、好感の持てる&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;informative&lt;/td&gt;
-&lt;td&gt;有益な&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;firstly&lt;/td&gt;
-&lt;td&gt;初めに(in the first はそもそも)&lt;/td&gt;
-&lt;td&gt;used to introduce the first of a list of points you want to make in a speech or piece of writing&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;account for something&lt;/td&gt;
-&lt;td&gt;説明する&lt;/td&gt;
-&lt;td&gt;to give an explanation of something&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;colleague&lt;/td&gt;
-&lt;td&gt;同僚&lt;/td&gt;
-&lt;td&gt;a person that you work with, especially in a profession or a business&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-&lt;li&gt;He chose his words with precision.&lt;/li&gt;
-&lt;li&gt;She&amp;rsquo;s perfectly safe, I can assure you.&lt;/li&gt;
-&lt;li&gt;SHe was unable to account for the error.&lt;/li&gt;
-&lt;li&gt;We were friends and colleagues for more than 20 years.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;2分あまったので今年の目標は何かと尋ねたら、&lt;br /&gt;
-「別の仕事を見つけたい。」と言われた。&lt;/p&gt;
 </description>
     </item>
     

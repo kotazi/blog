@@ -1,0 +1,1008 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【訳読】React Tutorial &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://localhost:1313/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://localhost:1313/blog/css/style.css">
+		<link rel="stylesheet" href="http://localhost:1313/blog/css/highlight.css">
+		<link href="http://localhost:1313/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://localhost:1313/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://localhost:1313/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://localhost:1313/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【訳読】React Tutorial</h1>
+                    <h2 class="headline">January 22, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p><a href="https://facebook.github.io/react/docs/tutorial.html">Reactチュートリアル</a>.</p>
+
+<hr>
+
+<h2 id="tutorial:c4edc588c83982a0e8967944828e886f">Tutorial</h2>
+
+<p>シンプルではあるものの、ブログに書ける現実的なコメントボックスを実装していく。
+この基本バージョンのリアルタイムコメントはDisqusやLibeFyre、Facebook commentsにオファーをいただいた。</p>
+
+<p>提供する機能:</p>
+
+<ul>
+<li>全てのコメントのView</li>
+<li>コメントを送信するためのフォーム</li>
+<li>バックエンドをカスタムするためのHook</li>
+</ul>
+
+<p><br></p>
+
+<p>またこれらの機能もしっかり備えている。</p>
+
+<ul>
+<li><strong>オプティミスティックコメント</strong>: サーバーに保存される前にコメントが表示されるため非常に速い</li>
+<li><strong>ライブアップデート</strong>: 他者のコメントがリアルタイムで反映される</li>
+<li><strong>Markdown対応</strong>: Markdownによる記述が可能</li>
+</ul>
+
+<hr>
+
+<h3 id="want-to-skip-all-this-and-just-see-the-source:c4edc588c83982a0e8967944828e886f">Want to skip all this and just see the source?</h3>
+
+<ul>
+<li><a href="https://github.com/reactjs/react-tutorial">GitHub</a></li>
+</ul>
+
+<hr>
+
+<h3 id="running-a-server:c4edc588c83982a0e8967944828e886f">Running a server</h3>
+
+<p>チュートリアルを開始するためには、稼働しているサーバーが必要。
+あくまでデータの取得と保存に使用するAPIエンドポイントとしてのサーバーだ。</p>
+
+<p>できるだけ簡単にするため、仕様を実現するシンプルなサーバーをいくつかのスクリプト言語で用意した。
+開始に必要なものは<a href="https://github.com/reactjs/react-tutorial/">こちら</a>からインストール可能。</p>
+
+<p>簡潔にするために、実行するサーバーはJSONファイルをデータベースとして利用する。
+本番でこんなことはしないが、APIを用いたシュミレーションを行うには簡単でいいだろう。
+一度サーバーを起動したら、APIエンドポイントをサポートし、必要なスタティックペーシを出してくれる。</p>
+
+<hr>
+
+<h3 id="getting-started:c4edc588c83982a0e8967944828e886f">Getting started</h3>
+
+<p>このチュートリアルでは、できるだけ簡単なものにしていくつもりである。
+サーバーパッケージの中に私たちが動かすHTMLファイルが含まれている。
+<code>public/index.html</code>を好みのエディタで開いてみてほしい。このようになっているはずだ。</p>
+
+<pre><code>&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;React Tutorial&lt;/title&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+    &lt;script type=&quot;text/babel&quot; src=&quot;scripts/example.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/babel&quot;&gt;
+      // To get started with this tutorial running your own code, simply remove
+      // the script tag loading scripts/example.js and start writing code here.
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>このチュートリアルのリマインダーとして、このスクリプトタグの中にコードを記述している。
+ライブリロードは備えていないので、ファイルを更新した際はブラウザをリロードすること。
+(サーバー起動後、)ブラウザで<code>http://localhost:3000</code>を開けば進捗が確認できる。
+このファイルをそのまま開けば、完成したプロダクトを確認することができる。
+準備ができたら<code>&lt;script&gt;</code>タグを削除して続けよう。</p>
+
+<p>注意: ajax呼び出しをシンプルに記述するため、jQueryを含んでいるが必ずしも必要なわけではない。</p>
+
+<hr>
+
+<h3 id="your-first-component:c4edc588c83982a0e8967944828e886f">Your first component</h3>
+
+<p>Reactは要するにmodular, composable componentsである。
+コメントボックスのサンプルとして、次のようなコンポーネント構造を持つことにする。</p>
+
+<pre><code>- CommentBox
+  - CommentList
+    - Comment
+  - CommentForm
+</code></pre>
+
+<p>シンプルに<code>&lt;div&gt;</code>を使って、<code>CommentBox</code>コンポーネントを作成しよう。</p>
+
+<pre><code>// tutorial1.js
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        Hello, world! I am a CommentBox.
+      &lt;/div&gt;
+    );
+  }
+});
+ReactDOM.render(
+  &lt;CommentBox /&gt;,
+  document.getElementById('content')
+);
+</code></pre>
+
+<p>ネイティブのHTMLエレメント名が小文字で綴られていることに注意。
+Reactクラスは大文字で始まっている。</p>
+
+<h5 id="jsx-syntax:c4edc588c83982a0e8967944828e886f">JSX Syntax</h5>
+
+<p>JSがXMLのような構文だったことに気づかれただろう。
+シンタックスシュガーをピュアJSに変換するシンプルなプリコンパイラを備えている。</p>
+
+<pre><code>// tutorial1-raw.js
+var CommentBox = React.createClass({displayName: 'CommentBox',
+  render: function() {
+    return (
+      React.createElement('div', {className: &quot;commentBox&quot;},
+        &quot;Hello, world! I am a CommentBox.&quot;
+      )
+    );
+  }
+});
+ReactDOM.render(
+  React.createElement(CommentBox, null),
+  document.getElementById('content')
+);
+</code></pre>
+
+<p>任意ではあるがJSXシンタックスを使ったほうがかんだんだ。
+JSXについては<a href="https://facebook.github.io/react/docs/jsx-in-depth.html">こちら</a></p>
+
+<h5 id="what-s-going-on:c4edc588c83982a0e8967944828e886f">What&rsquo;s going on</h5>
+
+<p>新しいReactコンポーネントを作成するために、<code>React.createClass()</code>にいくつかのメソッドを持ったJSオブジェクトを渡した。
+これらのメソッドの中で最も重要なものが<code>render</code>メソッドだ。
+Reactコンポーネントのツリー構造を返り値にし、ゆくゆくはHTMLにレンダリングするメソッドだ。</p>
+
+<p><code>&lt;div&gt;</code>タグは実際のDOMノードではない。Reactの<code>div</code>コンポーネントのインスタンスである。
+これらのことはReactの操作方法を知るデータの欠片や印と思ってくれていい。
+Reactは安全だ。
+HTML文字列を生成しないため、XSS対策をデフォルトでしていることになる。</p>
+
+<p>基本的なHTMLを返す必要はない。あなた(もしくは誰か)の組み立てたコンポーネントのツリーを返せばいい。
+これがReactをcomposableにしてくれる。フロントエンドを保守するキーとなる。</p>
+
+<p><code>ReactDOM.render()</code>はルートコンポーネントをインスタンス化し、骨組みを作る。
+そしてマークアップ部分を生のDOMへ注入し、ふたつ目の引数として提供される。</p>
+
+<p><code>ReactDOM</code>モジュールはDOM特有のメソッドを提供する。
+<code>React</code>は<a href="http://facebook.github.io/react-native/">React Native</a>といったことなるプラットフォーム上で共有されるコアのツールを持つ。
+<code>ReactDOM.render</code>がこのチュートリアルのスクリプトの最下部にとどまることは重要な事だ。
+<code>ReactDOM.render</code>は複合的なコンポーネントが定義された後に呼び出されるべきだからである。</p>
+
+<hr>
+
+<h3 id="composing-components:c4edc588c83982a0e8967944828e886f">Composing components</h3>
+
+<p>それでは再びシンプルな<code>&lt;div&gt;</code>を使って<code>CommentList</code>と<code>CommentForm</code>の骨組みを作成しよう。
+ファイルに２つのコンポーネントを作成し、<code>CommentBox</code>宣言を保ったうえで<code>ReactDOM.render</code>を呼び出す。</p>
+
+<pre><code>// tutorial2.js
+var CommentList = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;commentList&quot;&gt;
+        Hello, world! I am a CommentList.
+      &lt;/div&gt;
+    );
+  }
+});
+
+var CommentForm = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;commentForm&quot;&gt;
+        Hello, world! I am a CommentForm.
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>続いて<code>CommentBox</code>コンポーネントを更新し、新しいコンポーネントを利用する。</p>
+
+<pre><code>// tutorial3.js
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        &lt;h1&gt;Comments&lt;/h1&gt;
+        &lt;CommentList /&gt;
+        &lt;CommentForm /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>どのようにしてHTMLタグと作成したコンポーネントを混在させるかに注意すること。
+HTMLコンポーネントは通常Reactコンポーネントであり、ひとつの違いはあるが、あなたが定義したもののようだ。
+JSXコンパイラは自動的にHTMLタグを<code>React.createElement(tagName)</code>式に書き直し、全てを孤独にする。
+これが名前名前汚染を防ぐことになる。</p>
+
+<h4 id="using-props:c4edc588c83982a0e8967944828e886f">Using props</h4>
+
+<p><code>Comment</code>コンポーネントを作成しよう。親から渡されたデータに依存するものになる。
+親コンポーネントから渡されたデータは子コンポーネントの<code>property</code>として利用可能だ。
+これらのプロパティには<code>this.props</code>を使ってアクセスする。<code>props</code>を使えば、<code>CommentList</code>から渡された<code>Comment</code>を読むことができ、レンダリングも可能だ。</p>
+
+<pre><code>// tutorial4.js
+var Comment = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;comment&quot;&gt;
+        &lt;h2 className=&quot;commentAuthor&quot;&gt;
+          {this.props.author}
+        &lt;/h2&gt;
+        {this.props.children}
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>JSXの中のJavaScript式を取り囲むことで、ツリー内にReactコンポーネントを書くことができる。
+コンポーネントの属性やネストされた要素に<code>this.props</code>や<code>this.props.children</code>を用いてアクセスする。</p>
+
+<h4 id="component-properties:c4edc588c83982a0e8967944828e886f">Component Properties</h4>
+
+<p><code>Comment</code>コンポーネントの定義が完了したところで、コンポーネントに名前とコメント分を渡していきたい。
+各ユニークなコメントに対して同じコードの再利用が可能になる。
+<code>CommentList</code>にコメントを追加してみよう。</p>
+
+<pre><code>// tutorial5.js
+var CommentList = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;commentList&quot;&gt;
+        &lt;Comment author=&quot;Pete Hunt&quot;&gt;This is one comment&lt;/Comment&gt;
+        &lt;Comment author=&quot;Jordan Walke&quot;&gt;This is *another* comment&lt;/Comment&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>親の<code>CommentList</code>コンポーネントから子の<code>Comment</code>コンポーネントにデータを渡していることに注目。
+たとえば、属性をお通して&rdquo;Pete Hunt&rdquo;、XMLのような子ノードで&rdquo;This is one comment&rdquo;を渡している。
+さらに、<code>Comment</code>コンポーネントはこれらのプロパティに<code>this.props.author</code>や<code>this.props.children</code>を通してアクセスしている。</p>
+
+<h4 id="adding-markdown:c4edc588c83982a0e8967944828e886f">Adding Markdown</h4>
+
+<p>Markdownはテキストをシンプルに記述するためのフォーマットだ。
+例えばテキストをアスタリスクで囲めば、テキストを強調させる。</p>
+
+<p>このチュートリアルでは、受け取ったMarkdownを生のHTMLにコンバートするサードパーティライブラリである*marked*を利用する。既にこのライブラリは読み込んであるので、もう使いはじめることができる。コメント文のMarkdownをコンバートして出力しよう。</p>
+
+<pre><code>// tutorial6.js
+var Comment = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;comment&quot;&gt;
+        &lt;h2 className=&quot;commentAuthor&quot;&gt;
+          {this.props.author}
+        &lt;/h2&gt;
+        {marked(this.props.children.toString())}
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>ここではmarkedライブラリの呼び出しを行っているだけだ。<code>this.props.children</code>をReactのラッパーテキストからmarkedが理解できるように生の文字列にコンバートする必要があるため<code>toString()</code>を呼び出している。</p>
+
+<p>けれども問題がひとつ！レンダリングされたコメントが<code>&lt;p&gt;This is &lt;em&gt;another&lt;/em&gt; comment&lt;/p&gt;</code>のようになっている。
+タグを実際のHTMLとしてレンダリングしたいのに。</p>
+
+<p>これは<a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS攻撃</a>からの防御手段となる。</p>
+
+<pre><code>// tutorial7.js
+var Comment = React.createClass({
+  rawMarkup: function() {
+    var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+    return { __html: rawMarkup };
+  },
+
+  render: function() {
+    return (
+      &lt;div className=&quot;comment&quot;&gt;
+        &lt;h2 className=&quot;commentAuthor&quot;&gt;
+          {this.props.author}
+        &lt;/h2&gt;
+        &lt;span dangerouslySetInnerHTML={this.rawMarkup()} /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>特別なAPIを使って故意に生HTMLの挿入を難しくしているが、markedにとってはメリットとなる。</p>
+
+<p>こうすることでmarkedの安全性に信頼を置くことができる。このケースでは、<code>sanitize: true</code>を渡してmarkedにそのまま渡すのではなくソース内のどんなHTMLでもエスケープするように伝えた。</p>
+
+<h4 id="hook-up-the-data-model:c4edc588c83982a0e8967944828e886f">Hook up the data model</h4>
+
+<p>これまで私たちはコメントをソースコード内に直接挿入してきた。
+代わりにJSONデータの塊をコメントリストにレンダリングしてみよう。
+ゆくゆくはサーバーから受け取るデータだが、ここではコード内に記述しよう。</p>
+
+<pre><code>// tutorial8.js
+var data = [
+  {id: 1, author: &quot;Pete Hunt&quot;, text: &quot;This is one comment&quot;},
+  {id: 2, author: &quot;Jordan Walke&quot;, text: &quot;This is *another* comment&quot;}
+];
+</code></pre>
+
+<p>データをモジュール方式に<code>CommentList</code>に入れる必要がある。
+<code>CommentBox</code>を修正し、このデータをプロパティを通して<code>CommentList</code>に入れるために<code>ReactDom.render()</code>を呼び出す。</p>
+
+<pre><code>// tutorial9.js
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        &lt;h1&gt;Comments&lt;/h1&gt;
+        &lt;CommentList data={this.props.data} /&gt;
+        &lt;CommentForm /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &lt;CommentBox data={data} /&gt;,
+  document.getElementById('content')
+);
+</code></pre>
+
+<p>これでデータが<code>CommentList</code>内で利用可能になる、コメントをレンダリングしよう。</p>
+
+<pre><code>// tutorial10.js
+var CommentList = React.createClass({
+  render: function() {
+    var commentNodes = this.props.data.map(function(comment) {
+      return (
+        &lt;Comment author={comment.author} key={comment.id}&gt;
+          {comment.text}
+        &lt;/Comment&gt;
+      );
+    });
+    return (
+      &lt;div className=&quot;commentList&quot;&gt;
+        {commentNodes}
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<h4 id="fetching-from-the-server:c4edc588c83982a0e8967944828e886f">Fetching from the server</h4>
+
+<p>ハードコーディングしてあるデータをサーバーから受け取るように書き換えよう。
+データプロパティを取り除き、フェッチするURLに置き換える。</p>
+
+<pre><code>// tutorial11.js
+ReactDOM.render(
+  &lt;CommentBox url=&quot;/api/comments&quot; /&gt;,
+  document.getElementById('content')
+);
+</code></pre>
+
+<p>このコンポーネントは先ほどまでのコンポーネントとは異なる。なぜなら自身で再度レンダリングする必要があるからだ。
+コンポーネントにはサーバーからのリクエストが返ってくるまで何もデータがなく、返ってきたら新しいコメントをレンダリングする必要がある。</p>
+
+<h4 id="reactive-state:c4edc588c83982a0e8967944828e886f">Reactive state</h4>
+
+<p>これまではプロパティに基づいて各コンポーネントは1回だけレンダリングをしてきた。
+<code>props</code>は不変のものだったのだ。親からもらったり、自身で所持していたり。
+インタラクションを実装するために、コンポーネントにmutable(変わりやすい)stateを紹介する。
+<code>this.state</code>はprovateであり、<code>this.setState()</code>を呼び出すことで変更される。
+ステートが更新されると、コンポーネントは自身を再レンダリングする。</p>
+
+<p><code>render()</code>メソッドは<code>this.props</code>と<code>this.state</code>の関数の宣言的に記述されている。
+フレームワークはUIが常に入力に対して安定していることを保証する。</p>
+
+<p>サーバーがデータをフェッチすると、所持しているコメントデータを変更する必要がある。
+<code>CommentBox</code>コンポーネントに自身のステートとしてコメントデータの配列を追加しよう。</p>
+
+<pre><code>// tutorial12.js
+var CommentBox = React.createClass({
+  getInitialState: function() {
+    return {data: []};
+  },
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        &lt;h1&gt;Comments&lt;/h1&gt;
+        &lt;CommentList data={this.state.data} /&gt;
+        &lt;CommentForm /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p><code>getInitialState()</code>はコンポーネントのライフサイクルの中で正確に一度だけ実行され、コンポーネントの初期ステートをセットアップする。</p>
+
+<h4 id="updating-state:c4edc588c83982a0e8967944828e886f">Updating state</h4>
+
+<p>コンポーネントが最初に作成されたら、サーバーからJSONをGETし、最新のデータを反映させるためにステートを更新したい。
+サーバーへの非同期通信を行い、必要なデータを手早くフェッチするためにjQueryを使うつもりだ。
+起動しているサーバーの中には既にデータが含まれている。(<code>comments.json</code>)
+なので一度フェッチして、<code>this.state.date</code>を見ていこう。</p>
+
+<pre><code>[
+  {&quot;author&quot;: &quot;Pete Hunt&quot;, &quot;text&quot;: &quot;This is one comment&quot;},
+  {&quot;author&quot;: &quot;Jordan Walke&quot;, &quot;text&quot;: &quot;This is *another* comment&quot;}
+]
+</code></pre>
+
+<pre><code>// tutorial13.js
+var CommentBox = React.createClass({
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        &lt;h1&gt;Comments&lt;/h1&gt;
+        &lt;CommentList data={this.state.data} /&gt;
+        &lt;CommentForm /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p><code>componentDidMount</code>メソッドはコンポーネントが最初にレンダリングされた際にReactから自動的に呼び出されるメソッドである。
+ダイナミックな更新のキーとなっているのが<code>this.setState()</code>の呼び出しである。
+古いコメントの配列をサーバーから取得した新しい物に置き換え、UIを自動的に更新する。
+このリアクティブ性のために、小さな変更を加えライブアップデートを実現する。
+ここではシンプルなポーリングを行うが、WebSocketやその他のテクノロジーを使うため簡単にできる。</p>
+
+<pre><code>// tutorial14.js
+var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        &lt;h1&gt;Comments&lt;/h1&gt;
+        &lt;CommentList data={this.state.data} /&gt;
+        &lt;CommentForm /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &lt;CommentBox url=&quot;/api/comments&quot; pollInterval={2000} /&gt;,
+  document.getElementById('content')
+);
+</code></pre>
+
+<p>この変更で行ったことはAJAX呼び出しのメソッドを分割して移動し、そのメソッドをコンポーネントの初期読み込み時とその後毎2秒おきに呼び出すというものだ。試しにブラウザで実行し<code>comments.json</code>を変更してみよう。
+2秒以内に変更が反映されるはずだ！</p>
+
+<hr>
+
+<h3 id="adding-new-comments:c4edc588c83982a0e8967944828e886f">Adding new comments</h3>
+
+<p>ここではフォームを組み立てよう。<code>CommentForm</code>コンポーネントはユーザーに名前とコメントテキストを求め、コメントを保存するためにサーバーへ送信する。</p>
+
+<pre><code>// tutorial15.js
+var CommentForm = React.createClass({
+  render: function() {
+    return (
+      &lt;form className=&quot;commentForm&quot;&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;Your name&quot; /&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;Say something...&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Post&quot; /&gt;
+      &lt;/form&gt;
+    );
+  }
+});
+</code></pre>
+
+<h4 id="controlled-components:c4edc588c83982a0e8967944828e886f">Controlled components</h4>
+
+<p>伝統的なDOMでは、<code>input</code>要素はレンダリングされ、ブラウザはステートを管理する。
+その結果、実際のDOMのステートとコンポーネントのステートの間に差分が生じる。
+ビューのステートがコンポーネントのステートを異なるのは理想的ではない。
+Reactの場合、初期化の時だけでなくコンポーネントは常にビューのステートを表す。</p>
+
+<p>それゆえに、入力されたユーザーのインプットを保存するには<code>this.state</code>を用いる。
+私たちは初期の<code>state</code>を２つのプロパティ、<code>author</code>と<code>text</code>で定義し、それらに空の文字列を入れた。
+Reactの<code>&lt;input&gt;</code>要素では、コンポーネントの<code>state</code>を反映させるための<code>value</code>プロパティをセットし、<code>onChange</code>ハンドラをつけた。これらの<code>value</code>つきの<code>&lt;input&gt;</code>要素は&rdquo;controlled components&rdquo;と呼ばれる。
+より詳しく知りければ<a href="https://facebook.github.io/react/docs/forms.html#controlled-components">こちら</a></p>
+
+<pre><code>var CommentForm = React.createClass({
+  getInitialState: function() {
+    return {author: '', text: ''};
+  },
+  handleAuthorChange: function(e) {
+    this.setState({author: e.target.value});
+  },
+  handleTextChange: function(e) {
+    this.setState({text: e.target.value});
+  },
+  render: function() {
+    return (
+      &lt;form className=&quot;commentForm&quot;&gt;
+        &lt;input
+          type=&quot;text&quot;
+          placeholder=&quot;Your name&quot;
+          value={this.state.author}
+          onChange={this.handleAuthorChange}
+        /&gt;
+        &lt;input
+          type=&quot;text&quot;
+          placeholder=&quot;Say something...&quot;
+          value={this.state.text}
+          onChange={this.handleTextChange}
+        /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Post&quot; /&gt;
+      &lt;/form&gt;
+    );
+  }
+});
+</code></pre>
+
+<h4 id="events:c4edc588c83982a0e8967944828e886f">Events</h4>
+
+<p>Reactではコンポーネントにイベントハンドラを付けるときにキャメルケースを使う。
+私たちは２つの<code>&lt;input&gt;</code>要素に<code>onChange</code>というイベントハンドラをつけた。
+ここで、ユーザーが<code>&lt;input&gt;</code>フィールドにテキストを入力した場合、<code>onChange</code>コールバックは発火し、コンポーネントの<code>state</code>が変更される。</p>
+
+<p>その後<code>input</code>要素のレンダリングされた値は現在のコンポーネントの<code>state</code>を反映するために更新される。</p>
+
+<h4 id="submitting-the-form:c4edc588c83982a0e8967944828e886f">Submitting the form</h4>
+
+<p>インタラクティブなフォームを作成しよう！
+ユーザーがフォームを送信する時、それらをクリアする必要があり、リクエストをサーバーに送信し、そしてコメントのリストをリフレッシュする。
+はじめに、フォームの送信イベントをキャッチしてクリアしよう。</p>
+
+<pre><code>// tutorial17.js
+var CommentForm = React.createClass({
+  getInitialState: function() {
+    return {author: '', text: ''};
+  },
+  handleAuthorChange: function(e) {
+    this.setState({author: e.target.value});
+  },
+  handleTextChange: function(e) {
+    this.setState({text: e.target.value});
+  },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var author = this.state.author.trim();
+    var text = this.state.text.trim();
+    if (!text || !author) {
+      return;
+    }
+    // TODO: send request to the server
+    this.setState({author: '', text: ''});
+  },
+  render: function() {
+    return (
+      &lt;form className=&quot;commentForm&quot; onSubmit={this.handleSubmit}&gt;
+        &lt;input
+          type=&quot;text&quot;
+          placeholder=&quot;Your name&quot;
+          value={this.state.author}
+          onChange={this.handleAuthorChange}
+        /&gt;
+        &lt;input
+          type=&quot;text&quot;
+          placeholder=&quot;Say something...&quot;
+          value={this.state.text}
+          onChange={this.handleTextChange}
+        /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Post&quot; /&gt;
+      &lt;/form&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>正しい入力でフォームが送信された時はフォームをクリアするような<code>onSubmit</code>ハンドラを追加した。</p>
+
+<p><code>preventDefault()</code>を呼び出してブラウザのデフォルトのフォーム送信アクションを妨げる。</p>
+
+<h4 id="callbacks-as-props:c4edc588c83982a0e8967944828e886f">Callbacks as props</h4>
+
+<p>ユーザーがコメントを送信したら、新しいコメントを追加した状態でリストをリフレッシュ留守必要がある。
+この全てのロジックを<code>CommentBox</code>内で行うので、<code>CommentBox</code>はコメントリストに相応するステートを所有する。</p>
+
+<p>子コンポーネントから親コンポーネントにデータを渡す必要がある。それを親の<code>render</code>メソッド内で子に新しいコールバック(<code>handleCommentSubmit</code>)を渡し、それを子の<code>onCommentSubmit</code>にバインドすることで実行する。
+イベントがトリガーされた時は、コールバックが発動する。</p>
+
+<pre><code>// tutorial18.js
+var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  handleCommentSubmit: function(comment) {
+    // TODO: submit to the server and refresh the list
+  },
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        &lt;h1&gt;Comments&lt;/h1&gt;
+        &lt;CommentList data={this.state.data} /&gt;
+        &lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>ユーザがフォームを送信した時は<code>CommentForm</code>からコールバックを呼びだそう。</p>
+
+<pre><code>// tutorial19.js
+var CommentForm = React.createClass({
+  getInitialState: function() {
+    return {author: '', text: ''};
+  },
+  handleAuthorChange: function(e) {
+    this.setState({author: e.target.value});
+  },
+  handleTextChange: function(e) {
+    this.setState({text: e.target.value});
+  },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var author = this.state.author.trim();
+    var text = this.state.text.trim();
+    if (!text || !author) {
+      return;
+    }
+    this.props.onCommentSubmit({author: author, text: text});
+    this.setState({author: '', text: ''});
+  },
+  render: function() {
+    return (
+      &lt;form className=&quot;commentForm&quot; onSubmit={this.handleSubmit}&gt;
+        &lt;input
+          type=&quot;text&quot;
+          placeholder=&quot;Your name&quot;
+          value={this.state.author}
+          onChange={this.handleAuthorChange}
+        /&gt;
+        &lt;input
+          type=&quot;text&quot;
+          placeholder=&quot;Say something...&quot;
+          value={this.state.text}
+          onChange={this.handleTextChange}
+        /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Post&quot; /&gt;
+      &lt;/form&gt;
+    );
+  }
+});
+</code></pre>
+
+<p>コールバックについて平たく言えば、サーバーに送信してリストをリフレッシュするんだ。</p>
+
+<pre><code>// tutorial20.js
+var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  handleCommentSubmit: function(comment) {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      type: 'POST',
+      data: comment,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        &lt;h1&gt;Comments&lt;/h1&gt;
+        &lt;CommentList data={this.state.data} /&gt;
+        &lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<hr>
+
+<h3 id="optimization-optimistic-updates:c4edc588c83982a0e8967944828e886f">Optimization: optimistic updates</h3>
+
+<p>このアプリケーションについて機能は完璧であるが、コメントが表示されるまでリクエストが完了するのを待たなければならないため遅いように感じる。
+アプリがより早く感じられるようにコメントをリストに追加することが可能だ。</p>
+
+<pre><code>// tutorial21.js
+var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  handleCommentSubmit: function(comment) {
+    var comments = this.state.data;
+    // Optimistically set an id on the new comment. It will be replaced by an
+    // id generated by the server. In a production application you would likely
+    // not use Date.now() for this and would have a more robust system in place.
+    comment.id = Date.now();
+    var newComments = comments.concat([comment]);
+    this.setState({data: newComments});
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      type: 'POST',
+      data: comment,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        this.setState({data: comments});
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function() {
+    return (
+      &lt;div className=&quot;commentBox&quot;&gt;
+        &lt;h1&gt;Comments&lt;/h1&gt;
+        &lt;CommentList data={this.state.data} /&gt;
+        &lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<hr>
+
+<h3 id="congrats:c4edc588c83982a0e8967944828e886f">Congrats!</h3>
+
+<p>いくつかのシンプルなステップとを押してコメントボックスを作成することができた。
+<a href="https://facebook.github.io/react/docs/why-react.html">何故Reactを使うのか</a>、もしくは<a href="https://facebook.github.io/react/docs/top-level-api.html">APIリファレンス</a>について学び開発を始めよう！</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://localhost:1313/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2flocalhost%3a1313%2fblog%2fpost%2f2016%2f0128_react%2f - %e3%80%90%e8%a8%b3%e8%aa%ad%e3%80%91React%20Tutorial by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0123_calendar/">【FullCalendar】General Display<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0122_calendar/">【FullCalendar】Google Calendar<aside class="dates">Jan 22</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0127_culture/">0127_culture<aside class="dates">Jan 22</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0121_calendar/">【FullCalendar】Basic Usage<aside class="dates">Jan 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0126_jsx/">0126_jsx<aside class="dates">Jan 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0119_37signals/">【読書】強いチームはオフィスを捨てる<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0125_calendar/">【FullCalendar】Current Date<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0124_calendar/">【FullCalendar】Agenda Options<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://localhost:1313/blog/post/2016/0119_gitup/">gemをインストールしたけれど見つからない時に疑うこと<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://localhost:1313/blog/js/main.js"></script>
+<script src="http://localhost:1313/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
