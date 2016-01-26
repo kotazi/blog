@@ -6,8 +6,560 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jan 2016 18:40:44 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2016 21:47:07 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】JSX</title>
+      <link>http://kotazi.github.io/blog/post/2016/0126_jsx/</link>
+      <pubDate>Tue, 26 Jan 2016 21:47:07 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0126_jsx/</guid>
+      <description>
+
+&lt;h3 id=&#34;background:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;JSXはJavaScriptへのコンパイルが可能な、静的型付けかつオブジェクト指向のプログラミング言語です。
+JavaScriptよりも頑丈なプログラミング言語が必要だったためにJSXは開発されました。
+とはいえ、JSXはとりわけ文や式など、そこそこJavaScriptに近いように作られています。&lt;/p&gt;
+
+&lt;p&gt;ミスタイポや変数名や関数の定義忘れなどをコンパイル時に検知可能のため、静的型付け言語は頑丈なプログラミング言語といえます。
+これは特に多くのエンジニアが携わる中規模から大規模のプロジェクトにおいて重要なことです。&lt;/p&gt;
+
+&lt;p&gt;それゆえに、JSXは静的型付け言語として設計されました。
+全ての値と変数には静的な型があり、適切な方の値のみを代入することができます。
+加えて、全ての関数はパラメータと返り値によって決定されたクロージャーに含まれます。
+引数の型が間違っていると代入することはできません。&lt;/p&gt;
+
+&lt;p&gt;またJSXを開発した別の重要な理由として、JSのパフォーマンスを引き上げつことがありました。
+JavaScript自身が遅いということはないのですが、大規模開発になると抽象的なレイヤーが肥大化しがちです。
+例えば代用的なクラスやアクセサメソッドのことであり、これらはしばしばパフォーマンスにネガティブな影響を与えます。
+JSZでは&amp;rdquo;inline expansion&amp;rdquo;によってパフォーマンスを引き上げています。
+これはコンパイル時に関数呼び出しが決定したものを、関数本体を呼び出し元の方へ拡張することです。
+静的型付け言語のパフォーマンスのちからになります。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;run-hello-world:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Run &amp;ldquo;Hello, World!&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;JSXのプログタムを実行してみましょう。&lt;code&gt;jsx&lt;/code&gt;コマンドを使い、JSXをJavaScriptにコンパイルします。&lt;/p&gt;
+
+&lt;p&gt;まずはnpmでjsxをインストールします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ npm install -g jsx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そしたら下記のコードで&lt;code&gt;hello.jsx&lt;/code&gt;を作成しましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class _Main {
+    static function main(args : string[]) : void {
+        log &amp;quot;Hello, world!&amp;quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下記のコマンドでJSXを実行することができ、&amp;rdquo;Hello, world&amp;rdquo;がコンソール上に出力されます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ jsx --run hello.jsx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次のセクションではhello.jsxについて詳しく見ていきましょう。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;program-structure:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Program Structure&lt;/h3&gt;
+
+&lt;p&gt;ここでは&amp;rdquo;Hello world!&amp;ldquo;サンプルであるhello.jsxについて取り扱っていきます。
+このプログラムに名前や静的型付け、クラス構造といったいくつかのJSXの機能を見ることができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class _Main {
+    static function main(args : string[]) : void {
+        log &amp;quot;Hello, world!&amp;quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;_Main&lt;/code&gt;クラスは&lt;code&gt;main&lt;/code&gt;という名前の静的メンバ関数を持ちます。&lt;code&gt;main&lt;/code&gt;関数は文字列型の配列を引数に取り、返り値はありません。
+&lt;code&gt;_Main.main(:string[]):&lt;/code&gt;はJSXアプリケーションのエントリーポイントであり、ユーザーがコマンドラインからアプリケーションを実行した時に呼び出されるものです。JSXはJavaのように、トップレベルに文や関数を置くことを許しません。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;log&lt;/code&gt;文はJavaScriptの&lt;code&gt;console.log()&lt;/code&gt;をマップしたものです。&lt;/p&gt;
+
+&lt;p&gt;続いて、別の典型的なライブラリのクラスを見ていきます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Point {
+    var x = 0;
+    var y = 0;
+
+    function constructor() {
+    }
+
+    function constructor(x : number, y : number) {
+        this.set(x, y);
+    }
+
+    function constructor(other : Point) {
+        this.set(other);
+    }
+
+    function set(x : number, y : number) : void {
+        this.x = x;
+        this.y = y;
+    }
+
+    function set(other : Point) : void {
+        this.set(other.x, other.y);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;見て分かる通り、Pointのメンバ変数であるxとyは型なしで宣言されています。
+けれどもそれらの方は初期値からnumber型であることが分かります。&lt;/p&gt;
+
+&lt;p&gt;複数のconstructorsに驚いたかもしれません。
+ひとつはパラメータをとらず、他のものはとります。
+パラメータの型が重複しています。
+あなたが&lt;code&gt;new Point()&lt;/code&gt;を用いてクラスを生成する場合、最初のコンストラクタは引数無しで呼びだされます。
+ふたつ目のコンストラクタは、&lt;code&gt;new Point(2, 3)&lt;/code&gt;といったように２つの引数を必要とします。３つめはコピーのコンストラクタとしてひとつ引数にとります。
+&lt;code&gt;new Point(42)&lt;/code&gt;や&lt;code&gt;new Point(&amp;quot;foo&amp;quot;, &amp;quot;bar&amp;quot;)&lt;/code&gt;といったその他の方法では、コンパイル時にエラーが起きます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Point#set()&lt;/code&gt;関数もまた重複しており、コンパイラは正しい引数の取り方を知っています。&lt;/p&gt;
+
+&lt;Hr&gt;
+
+&lt;h3 id=&#34;static-typing:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Static Typing&lt;/h3&gt;
+
+&lt;p&gt;基本的な型の概要についてはこの章で述べます。プリミティブ型やオブジェクト型、Variant型、Null型がJSZには存在します。&lt;/p&gt;
+
+&lt;h4 id=&#34;pritimive-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Pritimive Types&lt;/h4&gt;
+
+&lt;p&gt;JSXには3つのプリミティブ型が存在します。&lt;code&gt;string&lt;/code&gt;、&lt;code&gt;number&lt;/code&gt;、&lt;code&gt;boolean&lt;/code&gt;です。
+これらの3つはNull型にはならず、不変の型です。&lt;/p&gt;
+
+&lt;p&gt;下の例文では&lt;code&gt;s&lt;/code&gt;、&lt;code&gt;n&lt;/code&gt;、&lt;code&gt;b&lt;/code&gt;の変数を型とともに宣言しています。&lt;code&gt;:&lt;/code&gt;マークを使って変数名の右側に記述します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var s : string;
+var n : number;
+var b : boolean;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;型宣言は初期値を代入することで省略することができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var s = &amp;quot;hello&amp;quot;;  // s is string, initialized as &amp;quot;hello&amp;quot;
+var n = 42;       // n is number, initialized as 42
+var b = true;     // b is boolean, initialized as true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;object-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Object Types&lt;/h4&gt;
+
+&lt;p&gt;オブジェクト型はクラスのインスタンスオブジェクトに参照を持つ方になります。
+例えば、関数、文字列配列、Dateオブジェクトは全てオブジェクト型になります。
+型が変わりやすいかは各クラスの定義に依存しいます。&lt;/p&gt;
+
+&lt;p&gt;大半のオブジェクトは&lt;code&gt;new&lt;/code&gt;演算子を用いて生成します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var d = new Date();            // instantiate an object of class Date
+var a = new Array.&amp;lt;string&amp;gt;();  // instantiate an array of string
+var m = new Map.&amp;lt;number&amp;gt;();    // instantiate an associative map of strings to numbers
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ArrayとMapについては初期化式を用いたイニシャライズが可能です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var a1 = [] : Array.&amp;lt;string&amp;gt;;  // a1 is Array.&amp;lt;string&amp;gt;, and is empty
+var a2 = [ 1, 2, 3 ];          // a2 is Array.&amp;lt;number&amp;gt; with three elements
+
+var m1 : {} : Map.&amp;lt;number&amp;gt;;    // m1 is Map.&amp;lt;number&amp;gt;
+var m2 = {                     // m2 is Map.&amp;lt;string&amp;gt;
+  en: &amp;quot;Good morning&amp;quot;,
+  de: &amp;quot;Guten Morgen&amp;quot;,
+  ja: &amp;quot;ãã¯ãããããã¾ã&amp;quot;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Functionクラスの変数のみ、静的関数として生成することや、またfunction式やfunction文を使って生成することが可能です。&lt;/p&gt;
+
+&lt;h4 id=&#34;the-variant-type:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;The Variant Type&lt;/h4&gt;
+
+&lt;p&gt;Variant型は&amp;rdquo;静的型情報がない&amp;rdquo;という意味です。既存のJavaScriptAPIに役立ちます。
+バリアント変数を返すJavaScriptライブラリもあるかもしれません。これらの型はコンパイル時に決定することができません。
+バリアントの値に対してできることは、variantのあたいかそうでない値かをチェックすることだけです。&lt;/p&gt;
+
+&lt;p&gt;何かする前に値に対してチェックをする必要があります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function guessTheType(v : variant) : void {
+    if (typeof v == &amp;quot;string&amp;quot;) {
+        log &amp;quot;v is string and the value is:&amp;quot; + v as string;
+    } else {
+        log &amp;quot;v is not string&amp;quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;nullable-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Nullable Types&lt;/h4&gt;
+
+&lt;p&gt;Nullable型はメタ型です。値がnullかもしれないことを示します。
+primitive型にnullを代入することは禁止されています。(Object型はデフォルトではnullです。)
+Nullable型はこのような目的で使われます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var s1 : string;
+s1 = &amp;quot;abc&amp;quot;;       // ok
+s1 = null;        // compile error!  cannot assign null to string
+
+var s2 : Nullable.&amp;lt;string&amp;gt;;
+s2 = &amp;quot;abc&amp;quot;;       // ok
+s2 = null;        // ok
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nullable型の最も特出した使い方は、配列との使い方です。
+ある配列の数より多い値にアクセスするとnullを返します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var a = [ 1, 2, 3 ]; // creates Array.&amp;lt;number&amp;gt; with three elements
+a[3];                // out-of-bounds access, returns null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nullableを返すAPIが他にも存在します。例えば&lt;code&gt;&amp;lt;string&amp;gt;#shift() is Nullable.&amp;lt;string&amp;gt;&lt;/code&gt;。
+Nullableな値を使った時、その値がnullでないか確認する必要があります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function shiftOrReturnEmptyString(args : string[]) : string {
+    if (args.length &amp;gt; 0)
+        return args.shift();
+    else
+        return &amp;quot;&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;コードがデバッグモードでコンパイルされる時(デフォルト値です。)、コンパイラは実行時に型の確認コードを埋め込みます。
+null値の誤用が検知されると例外が発生します。
+ランタイム型確認では&lt;code&gt;--release&lt;/code&gt;オプションでコンパイルを生着することができます。&lt;/p&gt;
+
+&lt;p&gt;より詳しく知るためには&lt;a href=&#34;https://jsx.github.io/doc/typeref.html&#34;&gt;Types&lt;/a&gt;セクションを参照してください。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;expressions:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Expressions&lt;/h3&gt;
+
+&lt;p&gt;JSXにおける演算子の定義はほとんどJavaScriptと同じです。しかしながら違う点もあります。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;算術演算子は非演算子に数字のみをとります&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;var a = 3;
+a + 1;      // OK, returns 4
+a * a;      // OK, returns 9
+a + &amp;quot;abc&amp;quot;;  // compile error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意: 連結演算子(+)による文字列の結合は存在します。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ドット演算子によるプロパティアクセスは定義されたプロパティのみになります&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;class Point {
+    var x : number;
+    var y : number;
+    function print() : void {
+        log this.z;             // compile error! no property named z
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[]&lt;/code&gt;プロパティではMapかvariantのみにアクセスできます&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;var m = {            // m is Map.&amp;lt;string&amp;gt;
+    hello: &amp;quot;world!&amp;quot;
+};
+log m[&amp;quot;hello&amp;quot;];      // OK
+log m.hello;         // compile error!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;as&lt;/code&gt;演算子を導入します。型変換に用いられます&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;var n = 123;
+var s = &amp;quot;value of n is &amp;quot; + (n as string);
+log s;               // print &amp;quot;value of n is 123&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&amp;amp;, ||&lt;/code&gt;演算子はBooleanを返します。&lt;code&gt;?:&lt;/code&gt;を導入します。これは&lt;code&gt;||&lt;/code&gt;と等価です。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;詳しくは&lt;a href=&#34;https://jsx.github.io/doc/operatorref.html&#34;&gt;Operator Reference&lt;/a&gt;を見てください。&lt;/p&gt;
+
+&lt;h4 id=&#34;statements:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Statements&lt;/h4&gt;
+
+&lt;p&gt;JSXではJavaScriptで提供される多くの構文をサポートします。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;log statement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;log &amp;quot;hello, world&amp;quot;;    // log strings to console, can turned off with compile option: --release
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;assert statement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;var n = 123;
+assert n != 0;         // assertions.  also can be turned off with --release
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;try-catch-finally statement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;try {
+    ...
+} catch (e : TypeError) {
+    // got TypeError
+} catch (e : Error) {
+    // got Error, which is not TypeError
+} catch (e : variant) {
+    // applications may throw any kind of value
+} finally {
+    ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;try-catch-finally statement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;詳しくは&lt;a href=&#34;https://jsx.github.io/doc/statementref.html&#34;&gt;Statement Reference&lt;/a&gt;を見てください。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;classes-and-interfaces:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Classes and Interfaces&lt;/h3&gt;
+
+&lt;p&gt;JSXはクラスベースのオブジェクト指向言語です。クラスモデルはJavaに似ています。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;クラスを別のクラスに拡張できる&lt;/li&gt;
+&lt;li&gt;クラスは福通のインターフェイスやミックスインを実装する&lt;/li&gt;
+&lt;li&gt;すべてのクラスはひとつのルートクラスをシェアする: Objectクラス&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;all classes share a single root class: the Object class
+interface Flyable {
+    abstract function fly() : void;
+}
+
+abstract class Animal {
+    function eat() : void {
+      log &amp;quot;An animal is eating!&amp;quot;;
+    }
+}
+
+class Bat extends Animal implements Flyable {
+    override function fly() : void {
+        log &amp;quot;A bat is flying!&amp;quot;;
+    }
+}
+
+abstract class Insect {
+}
+
+class Bee extends Insect implements Flyable {
+    override function fly() : void {
+        log &amp;quot;A bee is flying!&amp;quot;;
+    }
+}
+
+class _Main {
+
+    static function main(args : string[]) : void {
+        // fo bar
+        var bat = new Bat();
+
+        var animal : Animal = bat; // OK. A bat is an animal.
+        animal.eat();
+
+        var flyable : Flyable = bat; // OK. A bat can fly
+        flyable.fly();
+
+        // for Bee
+        var bee = new Bee();
+
+        flyable = bee; // A bee is also flyable
+        flyable.fly();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;例において、BatクラスはAnimalクラスを拡張したものであり、&lt;code&gt;Animal#eat()&lt;/code&gt;というメンバ関数を継承しています。そしてAnimal型に変数に代入することも可能です。
+BatクラスはまたFlyableクラスの&lt;code&gt;Flyable#fly()&lt;/code&gt;メンバ関数をオーバーライドして実装しています。そのため、Flyableの変数に代入することも可能です。
+また、別のflyableクラスがありいます。Beeクラスです。
+Flyableインターフェイスを使うことで、例えbeeとbatが完全に異なる組織だったとしても、両方のクラスに対応することができます。&lt;/p&gt;
+
+&lt;p&gt;メンバ関数をオーバーライドした時に、&lt;code&gt;override&lt;/code&gt;キーワードの使用は委任されます。
+それにも関わらず、コンパイラはエラーを発生させます。言い換えれば、やっかいなエラーを出す代わりに、予期せぬベースクラスのインターフェイスの変更による編集エラーからあなたを救っています。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;functions-and-closures:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Functions and Closures&lt;/h3&gt;
+
+&lt;p&gt;JSXでは、関数が最初のクラスオブジェクトであり、静的な型をもっています。
+&lt;code&gt;var f : function(arg : number) : number&lt;/code&gt;といった関数型の変数を宣言することができます。
+関数は引数にnumberを取り、別のnumberを返すといったように。(同じ値を返すかもしれませんがここでは重要ではありません。)
+その変数&lt;code&gt;f&lt;/code&gt;は&lt;code&gt;f(42)&lt;/code&gt;といって呼び出しをされ、数値を返しいます。&lt;/p&gt;
+
+&lt;p&gt;function式やfunction文を使ってクロージャーを定義することができあmす。
+典型的な方法でGUIプログラミングで人気のイベントリスナやコールバックを実装します。
+クロージャーはJavaScriptの&lt;code&gt;this&lt;/code&gt;に似ています。メンバ関数内でクロージャーが出意義された時、メンバ関数のレシーバーを参照します。下記のサンプルを見てください。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class _Main {
+    var foo = 42;
+
+    function constructor() {
+        var f = function() : void {
+            log this.foo;
+        };
+
+        f(); // says 42
+    }
+
+    static function main(args : string[]) : void {
+        var o = new _Main();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;function式やfunction文のアノテーションはコンパイラに推測された場合に省略されるかもしれません。
+下記の例では、引数のnも式の返り値も&lt;code&gt;Array#map&lt;/code&gt;の定義からnumberになることが推測されます。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;modules:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Modules&lt;/h3&gt;
+
+&lt;p&gt;JSXはモジュールシステムを持ちます。&lt;code&gt;import&lt;/code&gt;式を使ってJSXのクラスライブラリを利用することができます。
+例えば、下記のプログラムでは&lt;code&gt;timer.jsx&lt;/code&gt;モジュールを使用し、Timerクラスをエクスポートしています。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import &amp;quot;timer.jsx&amp;quot;;
+
+class _Main {
+
+    static function main(args : string[]) : void {
+        Timer.setTimeout(function() : void {
+            log &amp;quot;Hello, world!&amp;quot;;
+        }, 1000);
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;モジュールは複数のクラスをエクスポートしますが、インポートするモジュールを指定したり、インポートしたモジュールにネームスペースをつけたりすることができます。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;interface-to-web-browsers:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Interface to Web Browsers&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;js/web.jsx&lt;/code&gt;モジュールはWebブラウザへのインターフェイスを提供します。
+下記のサンプルではどのように挿入するかを見せます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// hello.jsx
+import &amp;quot;js/web.jsx&amp;quot;;
+
+class _Main {
+
+    static function main(args : string[]) : void {
+        var document = dom.window.document;
+
+        var text = document.createTextNode(&amp;quot;Hello, world!&amp;quot;);
+        document.getElementById(&amp;quot;hello&amp;quot;).appendChild(text);
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;Hello, world!&amp;lt;/title&amp;gt;
+    &amp;lt;script src=&amp;quot;hello.jsx.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+  &amp;lt;p id=&amp;quot;hello&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以前コマンドからコンパイルした&lt;code&gt;hello.jsx&lt;/code&gt;を用いて、アクセスしたHTMLで&amp;rdquo;Hello, world!&amp;ldquo;を確認できます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ bin/jsx --executable web --output hello.jsx.js hello.jsx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;further-learning:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Further Learning&lt;/h3&gt;
+
+&lt;p&gt;より詳しいドキュメントは&lt;a href=&#34;https://github.com/jsx/JSX/wiki&#34;&gt;wiki&lt;/a&gt;を見てください。&lt;/p&gt;
+
+&lt;p&gt;サンプルを探しているのであれば、&lt;a href=&#34;https://jsx.github.io/#examples&#34;&gt;example&lt;/a&gt;を参照してください。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【FullCalendar】Current Date</title>
+      <link>http://kotazi.github.io/blog/post/2016/0125_calendar/</link>
+      <pubDate>Mon, 25 Jan 2016 22:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0125_calendar/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/current_date/&#34;&gt;Current Date&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;agendaWeek&lt;/code&gt;と&lt;code&gt;agendaDay&lt;/code&gt;用のオプションです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id=&#34;defaultdate-http-fullcalendar-io-docs-current-date-defaultdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/defaultDate&#34;&gt;defaultDate&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;最初の読み込み時に表示する日時。&lt;/p&gt;
+
+&lt;h5 id=&#34;nowindicator-http-fullcalendar-io-docs-current-date-nowindicator:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nowIndicator&#34;&gt;nowIndicator&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;現在時刻にマーカーを引くかどうか。&lt;/p&gt;
+
+&lt;h5 id=&#34;prev-method-http-fullcalendar-io-docs-current-date-prev:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prev&#34;&gt;prev (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;前に戻るためのメソッド。&lt;/p&gt;
+
+&lt;h5 id=&#34;next-method-http-fullcalendar-io-docs-current-date-next:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/next&#34;&gt;next (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;次に進むためのメソッド。&lt;/p&gt;
+
+&lt;h5 id=&#34;prevyear-method-http-fullcalendar-io-docs-current-date-prevyear:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prevYear&#34;&gt;prevYear (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;前年に戻る。&lt;/p&gt;
+
+&lt;h5 id=&#34;nextyear-method-http-fullcalendar-io-docs-current-date-nextyear:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nextYear&#34;&gt;nextYear (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;翌年に進む。&lt;/p&gt;
+
+&lt;h5 id=&#34;today-method-http-fullcalendar-io-docs-current-date-today:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/today&#34;&gt;today(method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;今日を表示する。&lt;/p&gt;
+
+&lt;h5 id=&#34;gotodate-method-http-fullcalendar-io-docs-current-date-gotodate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/gotoDate&#34;&gt;gotoDate(method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;指定日へ移動する。&lt;/p&gt;
+
+&lt;h5 id=&#34;incrementdate-method-http-fullcalendar-io-docs-current-date-incrementdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/incrementDate&#34;&gt;incrementDate(method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;指定日時分だけ移動する。&lt;/p&gt;
+
+&lt;h5 id=&#34;getdate-method-http-fullcalendar-io-docs-current-date-getdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/getDate&#34;&gt;getDate(method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;日付を取得する。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【読書】How Google Works</title>
@@ -793,6 +1345,64 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
     </item>
     
     <item>
+      <title>【FullCalendar】Agenda Options</title>
+      <link>http://kotazi.github.io/blog/post/2016/0124_calendar/</link>
+      <pubDate>Tue, 19 Jan 2016 22:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0124_calendar/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/agenda/&#34;&gt;Agenda Options&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;agendaWeek&lt;/code&gt;と&lt;code&gt;agendaDay&lt;/code&gt;用のオプションです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id=&#34;alldayslot-http-fullcalendar-io-docs-agenda-alldayslot:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDaySlot&#34;&gt;allDaySlot&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;&amp;ldquo;all-day&amp;rdquo;(終日)の表示をカレンダーの上部にするかどうか。&lt;/p&gt;
+
+&lt;h5 id=&#34;alldaytext-http-fullcalendar-io-docs-agenda-alldaytext:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDayText&#34;&gt;allDayText&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;&amp;ldquo;all-day&amp;rdquo;に表示するテキスト。&lt;/p&gt;
+
+&lt;h5 id=&#34;slotduration-http-fullcalendar-io-docs-agenda-slotduration:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotDuration&#34;&gt;slotDuration&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;枠の間隔。&lt;/p&gt;
+
+&lt;h5 id=&#34;slotlabelformat-http-fullcalendar-io-docs-agenda-slotlabelformat:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelFormat&#34;&gt;slotLabelFormat&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;枠の部分の表示フォーマット。&lt;/p&gt;
+
+&lt;h5 id=&#34;slotlabelinterval-http-fullcalendar-io-docs-agenda-slotlabelinterval:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelInterval&#34;&gt;slotLabelInterval&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;枠部分にテキストを表示する間隔を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;snapduration-http-fullcalendar-io-docs-agenda-snapduration:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/snapDuration&#34;&gt;snapDuration&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;イベントをドラックでずらす間隔を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;scrolltime-http-fullcalendar-io-docs-agenda-scrolltime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/scrollTime&#34;&gt;scrollTime&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;スクロール枠を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;mintime-http-fullcalendar-io-docs-agenda-mintime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/minTime&#34;&gt;minTime&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;表示する時間の最低枠を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;maxtime-http-fullcalendar-io-docs-agenda-maxtime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/maxTime&#34;&gt;maxTime&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;表示する時間の最大枠を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;loteventoverlap-http-fullcalendar-io-docs-agenda-loteventoverlap:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/lotEventOverlap&#34;&gt;lotEventOverlap&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;イベントの時間が重複した際の表示方法&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>gemをインストールしたけれど見つからない時に疑うこと</title>
       <link>http://kotazi.github.io/blog/post/2016/0119_gitup/</link>
       <pubDate>Tue, 19 Jan 2016 13:55:26 +0900</pubDate>
@@ -1479,255 +2089,6 @@ And then, to avoid these case I&amp;rsquo;ll take care to take memo.&lt;/p&gt;
 &lt;hr&gt;
 
 &lt;p&gt;けっこう喋れるようになってきた。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】イーロン・マスク 未来を創る男</title>
-      <link>http://kotazi.github.io/blog/post/2016/0110_mask/</link>
-      <pubDate>Sun, 10 Jan 2016 17:42:38 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0110_mask/</guid>
-      <description>&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4062196336/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4062196336&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;イーロン・マスク 未来を創る男&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4062196336&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;夢を追う天才、イーロン・マスク。&lt;br /&gt;
-Paypalの前身、X.com社の共同創業者であり、スペースX社のCEO、テスラ・モーターズのCEO、ソーラーシティ社の会長を務める。&lt;/p&gt;
-
-&lt;p&gt;一見異なる事業をやっているように見えるがマスクの夢は「宇宙移民の実現と持続エネルギー問題の解決」であり一貫している。&lt;/p&gt;
-
-&lt;p&gt;ペイパル共同創業者のピーター・ティールは「人々を幻滅させたのはテクノロジー産業だ」と言い、&lt;br /&gt;
-彼の経営するベンチャーキャピタルのキャッチフレーズは「空飛ぶ車が欲しかったのに、出てきたものはたったの&amp;rdquo;140文字&amp;rdquo;」である。&lt;/p&gt;
-
-&lt;p&gt;人々がイノベーションへの期待を忘れていく中、マスクは非現実的な目標を掲げ夢を追い続けている。&lt;/p&gt;
-
-&lt;p&gt;そんなマスクの幼少期から現在までについて語られた一冊。&lt;/p&gt;
-
-&lt;p&gt;マスクの宇宙にかける想いは強く、人類が地球にとどまらず惑星をまたいで活躍できる種に進化させようとしている。
-人類滅亡を避けるためには別惑星でのコロニー建設が必要であり、それに人生を捧げている。&lt;/p&gt;
-
-&lt;p&gt;火星を温暖化させなければ地球のような惑星にはならないが、それには1000年近く必要だと語っており、
-マスク自身が生きている間には実現できないと考えているようだった。&lt;/p&gt;
-
-&lt;p&gt;また、自身が火星に行くことについても、可能であれば行きたいが行く必要はないと答えている。
-大切なのは数多くの人が火星に行けるようにすること、そして人類が生き延びられるかどうか。
-そのために自身の参加は懸命ではないと思っているそうだ。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Rails】Routing周りのメモ書き</title>
-      <link>http://kotazi.github.io/blog/post/2016/0107_rails_routing/</link>
-      <pubDate>Thu, 07 Jan 2016 18:31:41 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0107_rails_routing/</guid>
-      <description>
-
-&lt;p&gt;新しいRailsプロジェクトの&lt;code&gt;routes.rb&lt;/code&gt;を読んでいて調べたこととか。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;namespaceとscope-moduleとscopeのち外:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ namespaceとscope moduleとscopeのち外&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;namespace&lt;/code&gt;はURI PatternもController#Actionも指定したパスに&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scope module&lt;/code&gt;はController#Actionのみ指定したパスに&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scope&lt;/code&gt;はURI Patternのみ指定したパスに&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/blueplanet/items/522cc8364f6cf189ecad&#34;&gt;routeのmoduleとnamespaceとscopeの違い&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;constraintsについて:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ constraintsについて&lt;/h5&gt;
-
-&lt;p&gt;constraintsを使うことでさまざまな制限を兼ねることができる。
-独自のクラスを使用すうることなども可能。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://y-yagi.tumblr.com/post/92386974040/rails-routing-constraints%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6&#34;&gt;rails routing constraintsについて&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;resourcesルーティング一覧:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ resourcesルーティング一覧&lt;/h5&gt;
-
-&lt;table class=&#34;responsive&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;HTTP動詞&lt;/th&gt;
-&lt;th&gt;パス&lt;/th&gt;
-&lt;th&gt;コントローラ#アクション&lt;/th&gt;
-&lt;th&gt;目的&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos&lt;/td&gt;
-&lt;td&gt;photos#index&lt;/td&gt;
-&lt;td&gt;すべての写真の一覧を表示&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/new&lt;/td&gt;
-&lt;td&gt;photos#new&lt;/td&gt;
-&lt;td&gt;写真を1つ作成するためのHTMLフォームを返す&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;POST&lt;/td&gt;
-&lt;td&gt;/photos&lt;/td&gt;
-&lt;td&gt;photos#create&lt;/td&gt;
-&lt;td&gt;写真を1つ作成する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#show&lt;/td&gt;
-&lt;td&gt;特定の写真を表示する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/:id/edit&lt;/td&gt;
-&lt;td&gt;photos#edit&lt;/td&gt;
-&lt;td&gt;写真編集用のHTMLフォームを1つ返す&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;PATCH/PUT&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#update&lt;/td&gt;
-&lt;td&gt;特定の写真を更新する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DELETE&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#destroy&lt;/td&gt;
-&lt;td&gt;特定の写真を削除する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ActiveAdminとEngineについてはまた今度。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【DMM英会話】Requesting Materials | Business Basic</title>
-      <link>http://kotazi.github.io/blog/post/2016/0106_dmm/</link>
-      <pubDate>Thu, 07 Jan 2016 00:46:15 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0106_dmm/</guid>
-      <description>
-
-&lt;p&gt;DMM英会話のレッスン中。その日学んだことをメモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://eikaiwa.dmm.com/download/pdf/Business_basic_04_01.pdf/&#34;&gt;Lesson 04: Requesting Materials | Business Basic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;practice-1-formal-and-informal-expressions:dd5905c4b3178dddff745f2ed8769927&#34;&gt;◯ Practice 1 | Formal and Informal Expressions&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-2-reading-sentences:dd5905c4b3178dddff745f2ed8769927&#34;&gt;◯ Practice 2 | Reading Sentences&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-3-studying-the-manual:dd5905c4b3178dddff745f2ed8769927&#34;&gt;◯ Practice 3 | Studying the Manual&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Firstly, make sure that you have all the required permissions to get the materials.&lt;/li&gt;
-&lt;li&gt;Find a person who is accountable for these materials.&lt;/li&gt;
-&lt;li&gt;Explain to that person why you need the materials (if needed).&lt;/li&gt;
-&lt;li&gt;Be polite and official, even if you are in a higher position.&lt;/li&gt;
-&lt;li&gt;Check the materials the person gave you in front of him/her. Make sure all documents are there, since you will be held responsible even if it is not you who lost them.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;意訳&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;はじめに、必要な権限を確認すること&lt;/li&gt;
-&lt;li&gt;その件について責任がある人を見つけること&lt;/li&gt;
-&lt;li&gt;その人に何故その資料が必要か説明すること&lt;/li&gt;
-&lt;li&gt;丁寧であること。あなたが上層部の人間だとしても。&lt;/li&gt;
-&lt;li&gt;その人の前で資料を確認すること。全てのドキュメントがあることを確かめること。他の誰かが無くしてもあなたに責任があります。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-4-situation-questions:dd5905c4b3178dddff745f2ed8769927&#34;&gt;◯ Practice 4 | Situation Questions&lt;/h5&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Let’s imagine that you got a task to check some important documents. What will you need to do?&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;You came to your boss‘s secretary and she gave you the minutes of last two weeks. However, when you checked them in front of her, the reports of two meetings were missing. What do you do?&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Your boss gave you a task for which you need some materials, but he forgot to give you a signed permission before he went on a long business trip. You cannot postpone the accomplishment of the task until he returns. What do you do?&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;You are asking the secretary to give you some materials you need urgently but she is new to the office and doesn‘t know where they are. What do you do?&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;覚えた英単語:dd5905c4b3178dddff745f2ed8769927&#34;&gt;◯ 覚えた英単語&lt;/h5&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;単語&lt;/th&gt;
-&lt;th&gt;意味&lt;/th&gt;
-&lt;th&gt;その他&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;gather&lt;/td&gt;
-&lt;td&gt;集める&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;conclusions&lt;/td&gt;
-&lt;td&gt;結論&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;in order to do something&lt;/td&gt;
-&lt;td&gt;〜ために&lt;/td&gt;
-&lt;td&gt;with the purpose or intention of doing or achieving something&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;the minutes&lt;/td&gt;
-&lt;td&gt;要約、議事録&lt;/td&gt;
-&lt;td&gt;the minutes [plural] a summary or record of what is said or decided at a formal meeting&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;proxy&lt;/td&gt;
-&lt;td&gt;代理人&lt;/td&gt;
-&lt;td&gt;a person who has been given the authority to represent somebody else&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-&lt;li&gt;She arrived early in order to get a good seat.&lt;/li&gt;
-&lt;li&gt;Who is going to take the minutes (= write them)?&lt;/li&gt;
-&lt;li&gt;if you have an authorization and a proxy from your boss.&lt;/li&gt;
-&lt;li&gt;She is acting as proxy for her husband.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&amp;ldquo;the minutes&amp;rdquo;が議事録的な意味を持つとは知らなかった。&lt;/p&gt;
 </description>
     </item>
     
