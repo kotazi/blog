@@ -17,6 +17,10 @@
       <guid>http://kotazi.github.io/blog/post/2016/0126_jsx/</guid>
       <description>
 
+&lt;p&gt;勉強がてら&lt;a href=&#34;https://jsx.github.io/doc/tutorial.html&#34;&gt;JSXのTutorial&lt;/a&gt;を翻訳しました。&lt;/p&gt;
+
+&lt;hr&gt;
+
 &lt;h3 id=&#34;background:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;JSXはJavaScriptへのコンパイルが可能な、静的型付けかつオブジェクト指向のプログラミング言語です。
@@ -343,6 +347,8 @@ assert n != 0;         // assertions.  also can be turned off with --release
 &lt;li&gt;クラスは福通のインターフェイスやミックスインを実装する&lt;/li&gt;
 &lt;li&gt;すべてのクラスはひとつのルートクラスをシェアする: Objectクラス&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;all classes share a single root class: the Object class
 interface Flyable {
