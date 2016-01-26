@@ -6,8 +6,66 @@
     <description>Recent content in Fullcalendar on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jan 2016 22:53:46 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Jan 2016 22:53:46 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/fullcalendar/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【FullCalendar】Current Date</title>
+      <link>http://kotazi.github.io/blog/post/2016/0125_calendar/</link>
+      <pubDate>Mon, 25 Jan 2016 22:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0125_calendar/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/current_date/&#34;&gt;Current Date&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;agendaWeek&lt;/code&gt;と&lt;code&gt;agendaDay&lt;/code&gt;用のオプションです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id=&#34;defaultdate-http-fullcalendar-io-docs-current-date-defaultdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/defaultDate&#34;&gt;defaultDate&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;最初の読み込み時に表示する日時。&lt;/p&gt;
+
+&lt;h5 id=&#34;nowindicator-http-fullcalendar-io-docs-current-date-nowindicator:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nowIndicator&#34;&gt;nowIndicator&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;現在時刻にマーカーを引くかどうか。&lt;/p&gt;
+
+&lt;h5 id=&#34;prev-method-http-fullcalendar-io-docs-current-date-prev:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prev&#34;&gt;prev (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;前に戻るためのメソッド。&lt;/p&gt;
+
+&lt;h5 id=&#34;next-method-http-fullcalendar-io-docs-current-date-next:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/next&#34;&gt;next (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;次に進むためのメソッド。&lt;/p&gt;
+
+&lt;h5 id=&#34;prevyear-method-http-fullcalendar-io-docs-current-date-prevyear:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prevYear&#34;&gt;prevYear (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;前年に戻る。&lt;/p&gt;
+
+&lt;h5 id=&#34;nextyear-method-http-fullcalendar-io-docs-current-date-nextyear:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nextYear&#34;&gt;nextYear (method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;翌年に進む。&lt;/p&gt;
+
+&lt;h5 id=&#34;today-method-http-fullcalendar-io-docs-current-date-today:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/today&#34;&gt;today(method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;今日を表示する。&lt;/p&gt;
+
+&lt;h5 id=&#34;gotodate-method-http-fullcalendar-io-docs-current-date-gotodate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/gotoDate&#34;&gt;gotoDate(method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;指定日へ移動する。&lt;/p&gt;
+
+&lt;h5 id=&#34;incrementdate-method-http-fullcalendar-io-docs-current-date-incrementdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/incrementDate&#34;&gt;incrementDate(method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;指定日時分だけ移動する。&lt;/p&gt;
+
+&lt;h5 id=&#34;getdate-method-http-fullcalendar-io-docs-current-date-getdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/getDate&#34;&gt;getDate(method)&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;日付を取得する。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【FullCalendar】General Display</title>
@@ -365,6 +423,64 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;これは&lt;code&gt;next&lt;/code&gt;メソッドです。カレンダーを次に進めるためのメソッドです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【FullCalendar】Agenda Options</title>
+      <link>http://kotazi.github.io/blog/post/2016/0124_calendar/</link>
+      <pubDate>Tue, 19 Jan 2016 22:53:46 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0124_calendar/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/agenda/&#34;&gt;Agenda Options&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;agendaWeek&lt;/code&gt;と&lt;code&gt;agendaDay&lt;/code&gt;用のオプションです。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id=&#34;alldayslot-http-fullcalendar-io-docs-agenda-alldayslot:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDaySlot&#34;&gt;allDaySlot&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;&amp;ldquo;all-day&amp;rdquo;(終日)の表示をカレンダーの上部にするかどうか。&lt;/p&gt;
+
+&lt;h5 id=&#34;alldaytext-http-fullcalendar-io-docs-agenda-alldaytext:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDayText&#34;&gt;allDayText&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;&amp;ldquo;all-day&amp;rdquo;に表示するテキスト。&lt;/p&gt;
+
+&lt;h5 id=&#34;slotduration-http-fullcalendar-io-docs-agenda-slotduration:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotDuration&#34;&gt;slotDuration&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;枠の間隔。&lt;/p&gt;
+
+&lt;h5 id=&#34;slotlabelformat-http-fullcalendar-io-docs-agenda-slotlabelformat:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelFormat&#34;&gt;slotLabelFormat&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;枠の部分の表示フォーマット。&lt;/p&gt;
+
+&lt;h5 id=&#34;slotlabelinterval-http-fullcalendar-io-docs-agenda-slotlabelinterval:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelInterval&#34;&gt;slotLabelInterval&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;枠部分にテキストを表示する間隔を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;snapduration-http-fullcalendar-io-docs-agenda-snapduration:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/snapDuration&#34;&gt;snapDuration&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;イベントをドラックでずらす間隔を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;scrolltime-http-fullcalendar-io-docs-agenda-scrolltime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/scrollTime&#34;&gt;scrollTime&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;スクロール枠を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;mintime-http-fullcalendar-io-docs-agenda-mintime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/minTime&#34;&gt;minTime&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;表示する時間の最低枠を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;maxtime-http-fullcalendar-io-docs-agenda-maxtime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/maxTime&#34;&gt;maxTime&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;表示する時間の最大枠を決めます。&lt;/p&gt;
+
+&lt;h5 id=&#34;loteventoverlap-http-fullcalendar-io-docs-agenda-loteventoverlap:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/lotEventOverlap&#34;&gt;lotEventOverlap&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;イベントの時間が重複した際の表示方法&lt;/p&gt;
 </description>
     </item>
     

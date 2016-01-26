@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jsx on kotazi.com</title>
-    <link>http://localhost:1313/blog/tags/jsx/</link>
+    <link>http://kotazi.github.io/blog/tags/jsx/</link>
     <description>Recent content in Jsx on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jan 2016 21:47:07 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/jsx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jan 2016 21:47:07 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/jsx/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>【訳読】JSX</title>
-      <link>http://localhost:1313/blog/post/2016/0126_jsx/</link>
-      <pubDate>Thu, 21 Jan 2016 21:47:07 +0900</pubDate>
+      <link>http://kotazi.github.io/blog/post/2016/0126_jsx/</link>
+      <pubDate>Tue, 26 Jan 2016 21:47:07 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/post/2016/0126_jsx/</guid>
+      <guid>http://kotazi.github.io/blog/post/2016/0126_jsx/</guid>
       <description>
 
 &lt;h3 id=&#34;background:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Background&lt;/h3&gt;
