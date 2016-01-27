@@ -6,8 +6,100 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jan 2016 21:47:07 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jan 2016 11:40:44 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【読書】コンピュータはなぜ動くのか</title>
+      <link>http://kotazi.github.io/blog/post/2016/0127_why_computer/</link>
+      <pubDate>Wed, 27 Jan 2016 11:40:44 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0127_why_computer/</guid>
+      <description>
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4822281655/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4822281655&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;コンピュータはなぜ動くのか～知っておきたいハードウエア＆ソフトウエアの基礎知識～&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4822281655&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;を読んだ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;本の構成:5107f846ab8915f5eb5dfb42a6814246&#34;&gt;本の構成&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;【第1章】コンピュータの3大原則とは&lt;/li&gt;
+&lt;li&gt;【第2章】コンピュータを作ってみよう&lt;/li&gt;
+&lt;li&gt;【第3章】一度は体験してほしいハンド・アセンブル&lt;/li&gt;
+&lt;li&gt;【第4章】川の流れのようにプログラムは流れる&lt;/li&gt;
+&lt;li&gt;【第5章】アルゴリズムと仲良くなる7つのポイント&lt;/li&gt;
+&lt;li&gt;【第6章】データ構造と仲良くなる7つのポイント&lt;/li&gt;
+&lt;li&gt;【第7章】オブジェクト指向プログラミングを語れるようになろう&lt;/li&gt;
+&lt;li&gt;【第8章】作れば分かるデータベース&lt;/li&gt;
+&lt;li&gt;【第9章】簡単な実験7つでTCP/IPネットワークを理解する&lt;/li&gt;
+&lt;li&gt;【第10章】データを暗号化してみよう&lt;/li&gt;
+&lt;li&gt;【第11章】そもそもXMLって何だっけ&lt;/li&gt;
+&lt;li&gt;【第12章】SEはコンピュータ・システム構築の現場監督&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;2003年に執筆された本。今から13年も前になるので内容としては古い。
+ただ入力・演算・出力から始まり、ハードウェアとソフトウェア、プログラミング、データベース、ネットワークなど、コンピュータの初等教育で扱われる内容をほぼひととおり網羅している。&lt;/p&gt;
+
+&lt;p&gt;現場に役に立つ知識ではないが、間違ったことがかかれているわけでもない。
+自分の知らない分野について少し知るという意味ではいい。
+特にコンピュータのハードウェア的な動作についてやアセンブルについてはとても勉強になった。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;以下、メモ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コンピュータは「入力、演算、出力」を行う装置である&lt;/li&gt;
+&lt;li&gt;プログラムは命令とデータの集合体である&lt;/li&gt;
+&lt;li&gt;コンピュータの都合は人間の感覚と異なる場合がある&lt;/li&gt;
+&lt;li&gt;コンピュータのハードウェアはたくさん「IC」から構成され、ICには数多くのピンがついている&lt;/li&gt;
+&lt;li&gt;ピンは入力用、出力用のいずれか&lt;/li&gt;
+&lt;li&gt;CPUは内部で演算を行い、メモリとI/Oを制御&lt;/li&gt;
+&lt;li&gt;メモリは命令とデータを記憶&lt;/li&gt;
+&lt;li&gt;I/Oは周辺機器と接続し、データの受け渡しを可能にする&lt;/li&gt;
+&lt;li&gt;CPUを動作させるためには「クロック信号」という電気信号が必要&lt;/li&gt;
+&lt;li&gt;クロック信号を出力する部品を「クロックジェネレータ」と呼ぶ&lt;/li&gt;
+&lt;li&gt;レジスタはCPU及びI/Oの中で、データを記憶する部分&lt;/li&gt;
+&lt;li&gt;0と1の羅列にニックネームを付けてプログラムする手法を「ニーモニック」と呼ぶ&lt;/li&gt;
+&lt;li&gt;「ニーモニック」を使う言語が「アセンブリ言語」&lt;/li&gt;
+&lt;li&gt;アセンブリの文法は1行に「ラベル」と「オペコード(命令)」と「オペランド(対象)」を記述するだけ&lt;/li&gt;
+&lt;li&gt;アセンブリ言語ではオペランドにレジスタの名前を指定する&lt;/li&gt;
+&lt;li&gt;CPU資料を見ればアセンブリ言語を手作業でマシン語に変換でき、それを「ハンドアセンブル」という&lt;/li&gt;
+&lt;li&gt;ユークリッドの互除法: 最大公約数を求める&lt;/li&gt;
+&lt;li&gt;エラトステネスのふるい: 素数を求める&lt;/li&gt;
+&lt;li&gt;線形探索: データを探索&lt;/li&gt;
+&lt;li&gt;2分探索: データを探索&lt;/li&gt;
+&lt;li&gt;ハッシュ法: データを探索&lt;/li&gt;
+&lt;li&gt;バブルソート: データを整列&lt;/li&gt;
+&lt;li&gt;クイックソート: データを整列&lt;/li&gt;
+&lt;li&gt;スタック: データを山のように積み上げる&lt;/li&gt;
+&lt;li&gt;キュー: データを行列のように並ばせる&lt;/li&gt;
+&lt;li&gt;LIFO: Last In First Out&lt;/li&gt;
+&lt;li&gt;FIFO: First in First Out&lt;/li&gt;
+&lt;li&gt;キーはテーブル間のリレーションシップを設定するもの&lt;/li&gt;
+&lt;li&gt;インデックスはデータの検索速度を向上させる&lt;/li&gt;
+&lt;li&gt;テーブルに登録される1行のデータのまとまりを「レコード」「ロウ」「行」と呼ぶ&lt;/li&gt;
+&lt;li&gt;レコードを構成する項目を「フィールド」「カラム」「列」と呼ぶ&lt;/li&gt;
+&lt;li&gt;正規化とは、テーブルを複数に分け、個々のテーブルのリレーションシップを設定して、データベースの構造を整理すること&lt;/li&gt;
+&lt;li&gt;リレーションシップを設定するためにはテーブルとテーブルを関連ふけるためのフィールドが必要。それを「キー」と呼ぶ&lt;/li&gt;
+&lt;li&gt;↑自分から見たら「主キー」、逆から見たら「外部キー」&lt;/li&gt;
+&lt;li&gt;トランザクションはトラブルが発生した時にロールバックする&lt;/li&gt;
+&lt;li&gt;TCPは送受信者が確認を取りながらデータを受け渡すプロトコル。&lt;/li&gt;
+&lt;li&gt;↑このようなデータの送信方式が「ハンドシェイク」&lt;/li&gt;
+&lt;li&gt;TCPでは大きなデータはパケット単位に分割する&lt;/li&gt;
+&lt;li&gt;あらゆるデータは数値なので、形式が違っても暗号手法は基本的に同じ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;ざっくりそんな感じ。書き出してみると為になったことけっこうあった。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【訳読】JSX</title>
@@ -1925,171 +2017,6 @@ IE9+ and Android 4.1+も。&lt;/p&gt;
 &lt;li&gt;I&amp;rsquo;ve quit smoking.&lt;/li&gt;
 &lt;li&gt;Being able to speak a foreign language is a major asset.&lt;/li&gt;
 &lt;li&gt;She&amp;rsquo;ll be an asset to the team.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;けっこう喋れるようになってきた。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【DMM英会話】 Business Call | Business Basic</title>
-      <link>http://kotazi.github.io/blog/post/2016/0113_dmm/</link>
-      <pubDate>Wed, 13 Jan 2016 00:46:15 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0113_dmm/</guid>
-      <description>
-
-&lt;p&gt;DMM英会話のレッスン中。その日学んだことをメモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://eikaiwa.dmm.com/download/pdf/Business_basic_05_01.pdf/&#34;&gt;Lesson 05: Business Call | Business Basic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;practice-1-formal-and-informal-expressions:32e6095ac2826eefdb4ce507a949dfe9&#34;&gt;◯ Practice 1 | Formal and Informal Expressions&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-2-reading-sentences:32e6095ac2826eefdb4ce507a949dfe9&#34;&gt;◯ Practice 2 | Reading Sentences&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-3-studying-the-manual:32e6095ac2826eefdb4ce507a949dfe9&#34;&gt;◯ Practice 3 | Studying the Manual&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Don’t forget to introduce yourself and say why you are calling.&lt;/li&gt;
-&lt;li&gt;Be polite, brief and informative.&lt;/li&gt;
-&lt;li&gt;If you are deciding on some specific details such as a meeting date and place, make sure to repeat it twice so there would be no misunderstandings.&lt;/li&gt;
-&lt;li&gt;If the recipient is busy, you can leave an informative message. Don’t forget to mention your contact details before ending the call if you are calling for the first time.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;意訳&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;自己紹介と電話の理由を伝えることを忘れないこと&lt;/li&gt;
-&lt;li&gt;丁寧に、簡潔に、有益であること。&lt;/li&gt;
-&lt;li&gt;ミーティングの時間や場所の詳細といったことを話しているときは、誤解のないように2回繰り返すこと。&lt;/li&gt;
-&lt;li&gt;受付が忙しかったらメッセージを残すこと。その際に、初めてならば自分の連絡先を伝えることを忘れないように。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-4-situation-questions:32e6095ac2826eefdb4ce507a949dfe9&#34;&gt;◯ Practice 4 | Situation Questions&lt;/h5&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;Imagine you are making a business call and your phone battery drains mid-way. What do you do?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I borrow a battery from my co-worker!&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;You are calling a company, but it seems you have misdialed the number. What do you do?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I&amp;rsquo;ll apologize and check the company name again.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;You’ve just finished a business call, but you cannot remember the details of the upcoming meeting.What do you do? How can you avoid this?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I call him again.
-And then, to avoid these case I&amp;rsquo;ll take care to take memo.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;覚えた英単語:32e6095ac2826eefdb4ce507a949dfe9&#34;&gt;◯ 覚えた英単語&lt;/h5&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;単語&lt;/th&gt;
-&lt;th&gt;意味&lt;/th&gt;
-&lt;th&gt;その他&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;inquire about&lt;/td&gt;
-&lt;td&gt;について尋ねる&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Receptionist&lt;/td&gt;
-&lt;td&gt;受付係&lt;/td&gt;
-&lt;td&gt;a person who receives something&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;diale&lt;/td&gt;
-&lt;td&gt;ダイヤルする&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;further&lt;/td&gt;
-&lt;td&gt;さらに、もっと&lt;/td&gt;
-&lt;td&gt;to a greater degree or extent&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;informative&lt;/td&gt;
-&lt;td&gt;有益な&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;brief&lt;/td&gt;
-&lt;td&gt;短く&lt;/td&gt;
-&lt;td&gt;using few words or short&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;postpone A&lt;/td&gt;
-&lt;td&gt;Aを延期する&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;secretary&lt;/td&gt;
-&lt;td&gt;秘書&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;mid-way&lt;/td&gt;
-&lt;td&gt;中間&lt;/td&gt;
-&lt;td&gt;that is at an equal distance between two points&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;borrow&lt;/td&gt;
-&lt;td&gt;借りる&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I borrow a battery from my co-worker!&lt;/li&gt;
-&lt;li&gt;I did a quick double-check of the figures.&lt;/li&gt;
-&lt;li&gt;Our 1 000th member will be the lucky recipient of a mystery gift.&lt;/li&gt;
-&lt;li&gt;I haven&amp;rsquo;t received a letter from him yet.&lt;/li&gt;
-&lt;li&gt;My life is further complicated by having to work such long hours.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr&gt;

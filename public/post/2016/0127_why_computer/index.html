@@ -1,0 +1,239 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【読書】コンピュータはなぜ動くのか &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【読書】コンピュータはなぜ動くのか</h1>
+                    <h2 class="headline">January 27, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p><a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4822281655/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4822281655&linkCode=as2&tag=kotazi-22">コンピュータはなぜ動くのか～知っておきたいハードウエア＆ソフトウエアの基礎知識～</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4822281655" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<p>を読んだ。</p>
+
+<hr>
+
+<h3 id="本の構成:5107f846ab8915f5eb5dfb42a6814246">本の構成</h3>
+
+<ul>
+<li>【第1章】コンピュータの3大原則とは</li>
+<li>【第2章】コンピュータを作ってみよう</li>
+<li>【第3章】一度は体験してほしいハンド・アセンブル</li>
+<li>【第4章】川の流れのようにプログラムは流れる</li>
+<li>【第5章】アルゴリズムと仲良くなる7つのポイント</li>
+<li>【第6章】データ構造と仲良くなる7つのポイント</li>
+<li>【第7章】オブジェクト指向プログラミングを語れるようになろう</li>
+<li>【第8章】作れば分かるデータベース</li>
+<li>【第9章】簡単な実験7つでTCP/IPネットワークを理解する</li>
+<li>【第10章】データを暗号化してみよう</li>
+<li>【第11章】そもそもXMLって何だっけ</li>
+<li>【第12章】SEはコンピュータ・システム構築の現場監督</li>
+</ul>
+
+<hr>
+
+<p>2003年に執筆された本。今から13年も前になるので内容としては古い。
+ただ入力・演算・出力から始まり、ハードウェアとソフトウェア、プログラミング、データベース、ネットワークなど、コンピュータの初等教育で扱われる内容をほぼひととおり網羅している。</p>
+
+<p>現場に役に立つ知識ではないが、間違ったことがかかれているわけでもない。
+自分の知らない分野について少し知るという意味ではいい。
+特にコンピュータのハードウェア的な動作についてやアセンブルについてはとても勉強になった。</p>
+
+<hr>
+
+<p>以下、メモ。</p>
+
+<ul>
+<li>コンピュータは「入力、演算、出力」を行う装置である</li>
+<li>プログラムは命令とデータの集合体である</li>
+<li>コンピュータの都合は人間の感覚と異なる場合がある</li>
+<li>コンピュータのハードウェアはたくさん「IC」から構成され、ICには数多くのピンがついている</li>
+<li>ピンは入力用、出力用のいずれか</li>
+<li>CPUは内部で演算を行い、メモリとI/Oを制御</li>
+<li>メモリは命令とデータを記憶</li>
+<li>I/Oは周辺機器と接続し、データの受け渡しを可能にする</li>
+<li>CPUを動作させるためには「クロック信号」という電気信号が必要</li>
+<li>クロック信号を出力する部品を「クロックジェネレータ」と呼ぶ</li>
+<li>レジスタはCPU及びI/Oの中で、データを記憶する部分</li>
+<li>0と1の羅列にニックネームを付けてプログラムする手法を「ニーモニック」と呼ぶ</li>
+<li>「ニーモニック」を使う言語が「アセンブリ言語」</li>
+<li>アセンブリの文法は1行に「ラベル」と「オペコード(命令)」と「オペランド(対象)」を記述するだけ</li>
+<li>アセンブリ言語ではオペランドにレジスタの名前を指定する</li>
+<li>CPU資料を見ればアセンブリ言語を手作業でマシン語に変換でき、それを「ハンドアセンブル」という</li>
+<li>ユークリッドの互除法: 最大公約数を求める</li>
+<li>エラトステネスのふるい: 素数を求める</li>
+<li>線形探索: データを探索</li>
+<li>2分探索: データを探索</li>
+<li>ハッシュ法: データを探索</li>
+<li>バブルソート: データを整列</li>
+<li>クイックソート: データを整列</li>
+<li>スタック: データを山のように積み上げる</li>
+<li>キュー: データを行列のように並ばせる</li>
+<li>LIFO: Last In First Out</li>
+<li>FIFO: First in First Out</li>
+<li>キーはテーブル間のリレーションシップを設定するもの</li>
+<li>インデックスはデータの検索速度を向上させる</li>
+<li>テーブルに登録される1行のデータのまとまりを「レコード」「ロウ」「行」と呼ぶ</li>
+<li>レコードを構成する項目を「フィールド」「カラム」「列」と呼ぶ</li>
+<li>正規化とは、テーブルを複数に分け、個々のテーブルのリレーションシップを設定して、データベースの構造を整理すること</li>
+<li>リレーションシップを設定するためにはテーブルとテーブルを関連ふけるためのフィールドが必要。それを「キー」と呼ぶ</li>
+<li>↑自分から見たら「主キー」、逆から見たら「外部キー」</li>
+<li>トランザクションはトラブルが発生した時にロールバックする</li>
+<li>TCPは送受信者が確認を取りながらデータを受け渡すプロトコル。</li>
+<li>↑このようなデータの送信方式が「ハンドシェイク」</li>
+<li>TCPでは大きなデータはパケット単位に分割する</li>
+<li>あらゆるデータは数値なので、形式が違っても暗号手法は基本的に同じ</li>
+</ul>
+
+<hr>
+
+<p>ざっくりそんな感じ。書き出してみると為になったことけっこうあった。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0127_why_computer%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91%e3%82%b3%e3%83%b3%e3%83%94%e3%83%a5%e3%83%bc%e3%82%bf%e3%81%af%e3%81%aa%e3%81%9c%e5%8b%95%e3%81%8f%e3%81%ae%e3%81%8b by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0126_jsx/">【訳読】JSX<aside class="dates">Jan 26</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0125_calendar/">【FullCalendar】Current Date<aside class="dates">Jan 25</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0129_google/">【読書】How Google Works<aside class="dates">Jan 24</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0123_calendar/">【FullCalendar】General Display<aside class="dates">Jan 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0122_calendar/">【FullCalendar】Google Calendar<aside class="dates">Jan 22</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0121_calendar/">【FullCalendar】Basic Usage<aside class="dates">Jan 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0119_37signals/">【読書】強いチームはオフィスを捨てる<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0124_calendar/">【FullCalendar】Agenda Options<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0119_gitup/">gemをインストールしたけれど見つからない時に疑うこと<aside class="dates">Jan 19</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>
