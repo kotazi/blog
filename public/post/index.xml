@@ -6,8 +6,866 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jan 2016 11:40:44 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jan 2016 17:08:28 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】React Tutorial</title>
+      <link>http://kotazi.github.io/blog/post/2016/0128_react/</link>
+      <pubDate>Thu, 28 Jan 2016 17:08:28 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0128_react/</guid>
+      <description>
+
+&lt;p&gt;勉強がてら&lt;a href=&#34;https://facebook.github.io/react/docs/tutorial.html&#34;&gt;Reactチュートリアル&lt;/a&gt;を翻訳しました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;tutorial:c4edc588c83982a0e8967944828e886f&#34;&gt;Tutorial&lt;/h2&gt;
+
+&lt;p&gt;シンプルではあるものの、ブログに書ける現実的なコメントボックスを実装していく。
+この基本バージョンのリアルタイムコメントはDisqusやLibeFyre、Facebook commentsにオファーをいただいた。&lt;/p&gt;
+
+&lt;p&gt;提供する機能:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;全てのコメントのView&lt;/li&gt;
+&lt;li&gt;コメントを送信するためのフォーム&lt;/li&gt;
+&lt;li&gt;バックエンドをカスタムするためのHook&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;またこれらの機能もしっかり備えている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;オプティミスティックコメント&lt;/strong&gt;: サーバーに保存される前にコメントが表示されるため非常に速い&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ライブアップデート&lt;/strong&gt;: 他者のコメントがリアルタイムで反映される&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Markdown対応&lt;/strong&gt;: Markdownによる記述が可能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;want-to-skip-all-this-and-just-see-the-source:c4edc588c83982a0e8967944828e886f&#34;&gt;Want to skip all this and just see the source?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/reactjs/react-tutorial&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;running-a-server:c4edc588c83982a0e8967944828e886f&#34;&gt;Running a server&lt;/h3&gt;
+
+&lt;p&gt;チュートリアルを開始するためには、稼働しているサーバーが必要。
+あくまでデータの取得と保存に使用するAPIエンドポイントとしてのサーバーだ。&lt;/p&gt;
+
+&lt;p&gt;できるだけ簡単にするため、仕様を実現するシンプルなサーバーをいくつかのスクリプト言語で用意した。
+開始に必要なものは&lt;a href=&#34;https://github.com/reactjs/react-tutorial/&#34;&gt;こちら&lt;/a&gt;からインストール可能。&lt;/p&gt;
+
+&lt;p&gt;簡潔にするために、実行するサーバーはJSONファイルをデータベースとして利用する。
+本番でこんなことはしないが、APIを用いたシュミレーションを行うには簡単でいいだろう。
+一度サーバーを起動したら、APIエンドポイントをサポートし、必要なスタティックペーシを出してくれる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;getting-started:c4edc588c83982a0e8967944828e886f&#34;&gt;Getting started&lt;/h3&gt;
+
+&lt;p&gt;このチュートリアルでは、できるだけ簡単なものにしていくつもりである。
+サーバーパッケージの中に私たちが動かすHTMLファイルが含まれている。
+&lt;code&gt;public/index.html&lt;/code&gt;を好みのエディタで開いてみてほしい。このようになっているはずだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- index.html --&amp;gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot; /&amp;gt;
+    &amp;lt;title&amp;gt;React Tutorial&amp;lt;/title&amp;gt;
+    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;script type=&amp;quot;text/babel&amp;quot; src=&amp;quot;scripts/example.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/babel&amp;quot;&amp;gt;
+      // To get started with this tutorial running your own code, simply remove
+      // the script tag loading scripts/example.js and start writing code here.
+    &amp;lt;/script&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このチュートリアルのリマインダーとして、このスクリプトタグの中にコードを記述している。
+ライブリロードは備えていないので、ファイルを更新した際はブラウザをリロードすること。
+(サーバー起動後、)ブラウザで&lt;code&gt;http://localhost:3000&lt;/code&gt;を開けば進捗が確認できる。
+このファイルをそのまま開けば、完成したプロダクトを確認することができる。
+準備ができたら&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;タグを削除して続けよう。&lt;/p&gt;
+
+&lt;p&gt;注意: ajax呼び出しをシンプルに記述するため、jQueryを含んでいるが必ずしも必要なわけではない。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;your-first-component:c4edc588c83982a0e8967944828e886f&#34;&gt;Your first component&lt;/h3&gt;
+
+&lt;p&gt;Reactは要するにmodular, composable componentsである。
+コメントボックスのサンプルとして、次のようなコンポーネント構造を持つことにする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- CommentBox
+  - CommentList
+    - Comment
+  - CommentForm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;シンプルに&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;を使って、&lt;code&gt;CommentBox&lt;/code&gt;コンポーネントを作成しよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial1.js
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        Hello, world! I am a CommentBox.
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+ReactDOM.render(
+  &amp;lt;CommentBox /&amp;gt;,
+  document.getElementById(&#39;content&#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ネイティブのHTMLエレメント名が小文字で綴られていることに注意。
+Reactクラスは大文字で始まっている。&lt;/p&gt;
+
+&lt;h5 id=&#34;jsx-syntax:c4edc588c83982a0e8967944828e886f&#34;&gt;JSX Syntax&lt;/h5&gt;
+
+&lt;p&gt;JSがXMLのような構文だったことに気づかれただろう。
+シンタックスシュガーをピュアJSに変換するシンプルなプリコンパイラを備えている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial1-raw.js
+var CommentBox = React.createClass({displayName: &#39;CommentBox&#39;,
+  render: function() {
+    return (
+      React.createElement(&#39;div&#39;, {className: &amp;quot;commentBox&amp;quot;},
+        &amp;quot;Hello, world! I am a CommentBox.&amp;quot;
+      )
+    );
+  }
+});
+ReactDOM.render(
+  React.createElement(CommentBox, null),
+  document.getElementById(&#39;content&#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;任意ではあるがJSXシンタックスを使ったほうがかんだんだ。
+JSXについては&lt;a href=&#34;https://facebook.github.io/react/docs/jsx-in-depth.html&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;what-s-going-on:c4edc588c83982a0e8967944828e886f&#34;&gt;What&amp;rsquo;s going on&lt;/h5&gt;
+
+&lt;p&gt;新しいReactコンポーネントを作成するために、&lt;code&gt;React.createClass()&lt;/code&gt;にいくつかのメソッドを持ったJSオブジェクトを渡した。
+これらのメソッドの中で最も重要なものが&lt;code&gt;render&lt;/code&gt;メソッドだ。
+Reactコンポーネントのツリー構造を返り値にし、ゆくゆくはHTMLにレンダリングするメソッドだ。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;タグは実際のDOMノードではない。Reactの&lt;code&gt;div&lt;/code&gt;コンポーネントのインスタンスである。
+これらのことはReactの操作方法を知るデータの欠片や印と思ってくれていい。
+Reactは安全だ。
+HTML文字列を生成しないため、XSS対策をデフォルトでしていることになる。&lt;/p&gt;
+
+&lt;p&gt;基本的なHTMLを返す必要はない。あなた(もしくは誰か)の組み立てたコンポーネントのツリーを返せばいい。
+これがReactをcomposableにしてくれる。フロントエンドを保守するキーとなる。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ReactDOM.render()&lt;/code&gt;はルートコンポーネントをインスタンス化し、骨組みを作る。
+そしてマークアップ部分を生のDOMへ注入し、ふたつ目の引数として提供される。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ReactDOM&lt;/code&gt;モジュールはDOM特有のメソッドを提供する。
+&lt;code&gt;React&lt;/code&gt;は&lt;a href=&#34;http://facebook.github.io/react-native/&#34;&gt;React Native&lt;/a&gt;といったことなるプラットフォーム上で共有されるコアのツールを持つ。
+&lt;code&gt;ReactDOM.render&lt;/code&gt;がこのチュートリアルのスクリプトの最下部にとどまることは重要な事だ。
+&lt;code&gt;ReactDOM.render&lt;/code&gt;は複合的なコンポーネントが定義された後に呼び出されるべきだからである。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;composing-components:c4edc588c83982a0e8967944828e886f&#34;&gt;Composing components&lt;/h3&gt;
+
+&lt;p&gt;それでは再びシンプルな&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;を使って&lt;code&gt;CommentList&lt;/code&gt;と&lt;code&gt;CommentForm&lt;/code&gt;の骨組みを作成しよう。
+ファイルに２つのコンポーネントを作成し、&lt;code&gt;CommentBox&lt;/code&gt;宣言を保ったうえで&lt;code&gt;ReactDOM.render&lt;/code&gt;を呼び出す。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial2.js
+var CommentList = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentList&amp;quot;&amp;gt;
+        Hello, world! I am a CommentList.
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+
+var CommentForm = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentForm&amp;quot;&amp;gt;
+        Hello, world! I am a CommentForm.
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;続いて&lt;code&gt;CommentBox&lt;/code&gt;コンポーネントを更新し、新しいコンポーネントを利用する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial3.js
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
+        &amp;lt;CommentList /&amp;gt;
+        &amp;lt;CommentForm /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;どのようにしてHTMLタグと作成したコンポーネントを混在させるかに注意すること。
+HTMLコンポーネントは通常Reactコンポーネントであり、ひとつの違いはあるが、あなたが定義したもののようだ。
+JSXコンパイラは自動的にHTMLタグを&lt;code&gt;React.createElement(tagName)&lt;/code&gt;式に書き直し、全てを孤独にする。
+これが名前名前汚染を防ぐことになる。&lt;/p&gt;
+
+&lt;h4 id=&#34;using-props:c4edc588c83982a0e8967944828e886f&#34;&gt;Using props&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;Comment&lt;/code&gt;コンポーネントを作成しよう。親から渡されたデータに依存するものになる。
+親コンポーネントから渡されたデータは子コンポーネントの&lt;code&gt;property&lt;/code&gt;として利用可能だ。
+これらのプロパティには&lt;code&gt;this.props&lt;/code&gt;を使ってアクセスする。&lt;code&gt;props&lt;/code&gt;を使えば、&lt;code&gt;CommentList&lt;/code&gt;から渡された&lt;code&gt;Comment&lt;/code&gt;を読むことができ、レンダリングも可能だ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial4.js
+var Comment = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;comment&amp;quot;&amp;gt;
+        &amp;lt;h2 className=&amp;quot;commentAuthor&amp;quot;&amp;gt;
+          {this.props.author}
+        &amp;lt;/h2&amp;gt;
+        {this.props.children}
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;JSXの中のJavaScript式を取り囲むことで、ツリー内にReactコンポーネントを書くことができる。
+コンポーネントの属性やネストされた要素に&lt;code&gt;this.props&lt;/code&gt;や&lt;code&gt;this.props.children&lt;/code&gt;を用いてアクセスする。&lt;/p&gt;
+
+&lt;h4 id=&#34;component-properties:c4edc588c83982a0e8967944828e886f&#34;&gt;Component Properties&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;Comment&lt;/code&gt;コンポーネントの定義が完了したところで、コンポーネントに名前とコメント分を渡していきたい。
+各ユニークなコメントに対して同じコードの再利用が可能になる。
+&lt;code&gt;CommentList&lt;/code&gt;にコメントを追加してみよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial5.js
+var CommentList = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentList&amp;quot;&amp;gt;
+        &amp;lt;Comment author=&amp;quot;Pete Hunt&amp;quot;&amp;gt;This is one comment&amp;lt;/Comment&amp;gt;
+        &amp;lt;Comment author=&amp;quot;Jordan Walke&amp;quot;&amp;gt;This is *another* comment&amp;lt;/Comment&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;親の&lt;code&gt;CommentList&lt;/code&gt;コンポーネントから子の&lt;code&gt;Comment&lt;/code&gt;コンポーネントにデータを渡していることに注目。
+たとえば、属性をお通して&amp;rdquo;Pete Hunt&amp;rdquo;、XMLのような子ノードで&amp;rdquo;This is one comment&amp;rdquo;を渡している。
+さらに、&lt;code&gt;Comment&lt;/code&gt;コンポーネントはこれらのプロパティに&lt;code&gt;this.props.author&lt;/code&gt;や&lt;code&gt;this.props.children&lt;/code&gt;を通してアクセスしている。&lt;/p&gt;
+
+&lt;h4 id=&#34;adding-markdown:c4edc588c83982a0e8967944828e886f&#34;&gt;Adding Markdown&lt;/h4&gt;
+
+&lt;p&gt;Markdownはテキストをシンプルに記述するためのフォーマットだ。
+例えばテキストをアスタリスクで囲めば、テキストを強調させる。&lt;/p&gt;
+
+&lt;p&gt;このチュートリアルでは、受け取ったMarkdownを生のHTMLにコンバートするサードパーティライブラリである*marked*を利用する。既にこのライブラリは読み込んであるので、もう使いはじめることができる。コメント文のMarkdownをコンバートして出力しよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial6.js
+var Comment = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;comment&amp;quot;&amp;gt;
+        &amp;lt;h2 className=&amp;quot;commentAuthor&amp;quot;&amp;gt;
+          {this.props.author}
+        &amp;lt;/h2&amp;gt;
+        {marked(this.props.children.toString())}
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここではmarkedライブラリの呼び出しを行っているだけだ。&lt;code&gt;this.props.children&lt;/code&gt;をReactのラッパーテキストからmarkedが理解できるように生の文字列にコンバートする必要があるため&lt;code&gt;toString()&lt;/code&gt;を呼び出している。&lt;/p&gt;
+
+&lt;p&gt;けれども問題がひとつ！レンダリングされたコメントが&lt;code&gt;&amp;lt;p&amp;gt;This is &amp;lt;em&amp;gt;another&amp;lt;/em&amp;gt; comment&amp;lt;/p&amp;gt;&lt;/code&gt;のようになっている。
+タグを実際のHTMLとしてレンダリングしたいのに。&lt;/p&gt;
+
+&lt;p&gt;これは&lt;a href=&#34;https://en.wikipedia.org/wiki/Cross-site_scripting&#34;&gt;XSS攻撃&lt;/a&gt;からの防御手段となる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial7.js
+var Comment = React.createClass({
+  rawMarkup: function() {
+    var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+    return { __html: rawMarkup };
+  },
+
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;comment&amp;quot;&amp;gt;
+        &amp;lt;h2 className=&amp;quot;commentAuthor&amp;quot;&amp;gt;
+          {this.props.author}
+        &amp;lt;/h2&amp;gt;
+        &amp;lt;span dangerouslySetInnerHTML={this.rawMarkup()} /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;特別なAPIを使って故意に生HTMLの挿入を難しくしているが、markedにとってはメリットとなる。&lt;/p&gt;
+
+&lt;p&gt;こうすることでmarkedの安全性に信頼を置くことができる。このケースでは、&lt;code&gt;sanitize: true&lt;/code&gt;を渡してmarkedにそのまま渡すのではなくソース内のどんなHTMLでもエスケープするように伝えた。&lt;/p&gt;
+
+&lt;h4 id=&#34;hook-up-the-data-model:c4edc588c83982a0e8967944828e886f&#34;&gt;Hook up the data model&lt;/h4&gt;
+
+&lt;p&gt;これまで私たちはコメントをソースコード内に直接挿入してきた。
+代わりにJSONデータの塊をコメントリストにレンダリングしてみよう。
+ゆくゆくはサーバーから受け取るデータだが、ここではコード内に記述しよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial8.js
+var data = [
+  {id: 1, author: &amp;quot;Pete Hunt&amp;quot;, text: &amp;quot;This is one comment&amp;quot;},
+  {id: 2, author: &amp;quot;Jordan Walke&amp;quot;, text: &amp;quot;This is *another* comment&amp;quot;}
+];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;データをモジュール方式に&lt;code&gt;CommentList&lt;/code&gt;に入れる必要がある。
+&lt;code&gt;CommentBox&lt;/code&gt;を修正し、このデータをプロパティを通して&lt;code&gt;CommentList&lt;/code&gt;に入れるために&lt;code&gt;ReactDom.render()&lt;/code&gt;を呼び出す。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial9.js
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
+        &amp;lt;CommentList data={this.props.data} /&amp;gt;
+        &amp;lt;CommentForm /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &amp;lt;CommentBox data={data} /&amp;gt;,
+  document.getElementById(&#39;content&#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでデータが&lt;code&gt;CommentList&lt;/code&gt;内で利用可能になる、コメントをレンダリングしよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial10.js
+var CommentList = React.createClass({
+  render: function() {
+    var commentNodes = this.props.data.map(function(comment) {
+      return (
+        &amp;lt;Comment author={comment.author} key={comment.id}&amp;gt;
+          {comment.text}
+        &amp;lt;/Comment&amp;gt;
+      );
+    });
+    return (
+      &amp;lt;div className=&amp;quot;commentList&amp;quot;&amp;gt;
+        {commentNodes}
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;fetching-from-the-server:c4edc588c83982a0e8967944828e886f&#34;&gt;Fetching from the server&lt;/h4&gt;
+
+&lt;p&gt;ハードコーディングしてあるデータをサーバーから受け取るように書き換えよう。
+データプロパティを取り除き、フェッチするURLに置き換える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial11.js
+ReactDOM.render(
+  &amp;lt;CommentBox url=&amp;quot;/api/comments&amp;quot; /&amp;gt;,
+  document.getElementById(&#39;content&#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このコンポーネントは先ほどまでのコンポーネントとは異なる。なぜなら自身で再度レンダリングする必要があるからだ。
+コンポーネントにはサーバーからのリクエストが返ってくるまで何もデータがなく、返ってきたら新しいコメントをレンダリングする必要がある。&lt;/p&gt;
+
+&lt;h4 id=&#34;reactive-state:c4edc588c83982a0e8967944828e886f&#34;&gt;Reactive state&lt;/h4&gt;
+
+&lt;p&gt;これまではプロパティに基づいて各コンポーネントは1回だけレンダリングをしてきた。
+&lt;code&gt;props&lt;/code&gt;は不変のものだったのだ。親からもらったり、自身で所持していたり。
+インタラクションを実装するために、コンポーネントにmutable(変わりやすい)stateを紹介する。
+&lt;code&gt;this.state&lt;/code&gt;はprovateであり、&lt;code&gt;this.setState()&lt;/code&gt;を呼び出すことで変更される。
+ステートが更新されると、コンポーネントは自身を再レンダリングする。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;render()&lt;/code&gt;メソッドは&lt;code&gt;this.props&lt;/code&gt;と&lt;code&gt;this.state&lt;/code&gt;の関数の宣言的に記述されている。
+フレームワークはUIが常に入力に対して安定していることを保証する。&lt;/p&gt;
+
+&lt;p&gt;サーバーがデータをフェッチすると、所持しているコメントデータを変更する必要がある。
+&lt;code&gt;CommentBox&lt;/code&gt;コンポーネントに自身のステートとしてコメントデータの配列を追加しよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial12.js
+var CommentBox = React.createClass({
+  getInitialState: function() {
+    return {data: []};
+  },
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
+        &amp;lt;CommentList data={this.state.data} /&amp;gt;
+        &amp;lt;CommentForm /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;getInitialState()&lt;/code&gt;はコンポーネントのライフサイクルの中で正確に一度だけ実行され、コンポーネントの初期ステートをセットアップする。&lt;/p&gt;
+
+&lt;h4 id=&#34;updating-state:c4edc588c83982a0e8967944828e886f&#34;&gt;Updating state&lt;/h4&gt;
+
+&lt;p&gt;コンポーネントが最初に作成されたら、サーバーからJSONをGETし、最新のデータを反映させるためにステートを更新したい。
+サーバーへの非同期通信を行い、必要なデータを手早くフェッチするためにjQueryを使うつもりだ。
+起動しているサーバーの中には既にデータが含まれている。(&lt;code&gt;comments.json&lt;/code&gt;)
+なので一度フェッチして、&lt;code&gt;this.state.date&lt;/code&gt;を見ていこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[
+  {&amp;quot;author&amp;quot;: &amp;quot;Pete Hunt&amp;quot;, &amp;quot;text&amp;quot;: &amp;quot;This is one comment&amp;quot;},
+  {&amp;quot;author&amp;quot;: &amp;quot;Jordan Walke&amp;quot;, &amp;quot;text&amp;quot;: &amp;quot;This is *another* comment&amp;quot;}
+]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial13.js
+var CommentBox = React.createClass({
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: &#39;json&#39;,
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
+        &amp;lt;CommentList data={this.state.data} /&amp;gt;
+        &amp;lt;CommentForm /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;componentDidMount&lt;/code&gt;メソッドはコンポーネントが最初にレンダリングされた際にReactから自動的に呼び出されるメソッドである。
+ダイナミックな更新のキーとなっているのが&lt;code&gt;this.setState()&lt;/code&gt;の呼び出しである。
+古いコメントの配列をサーバーから取得した新しい物に置き換え、UIを自動的に更新する。
+このリアクティブ性のために、小さな変更を加えライブアップデートを実現する。
+ここではシンプルなポーリングを行うが、WebSocketやその他のテクノロジーを使うため簡単にできる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial14.js
+var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: &#39;json&#39;,
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
+        &amp;lt;CommentList data={this.state.data} /&amp;gt;
+        &amp;lt;CommentForm /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &amp;lt;CommentBox url=&amp;quot;/api/comments&amp;quot; pollInterval={2000} /&amp;gt;,
+  document.getElementById(&#39;content&#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この変更で行ったことはAJAX呼び出しのメソッドを分割して移動し、そのメソッドをコンポーネントの初期読み込み時とその後毎2秒おきに呼び出すというものだ。試しにブラウザで実行し&lt;code&gt;comments.json&lt;/code&gt;を変更してみよう。
+2秒以内に変更が反映されるはずだ！&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;adding-new-comments:c4edc588c83982a0e8967944828e886f&#34;&gt;Adding new comments&lt;/h3&gt;
+
+&lt;p&gt;ここではフォームを組み立てよう。&lt;code&gt;CommentForm&lt;/code&gt;コンポーネントはユーザーに名前とコメントテキストを求め、コメントを保存するためにサーバーへ送信する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial15.js
+var CommentForm = React.createClass({
+  render: function() {
+    return (
+      &amp;lt;form className=&amp;quot;commentForm&amp;quot;&amp;gt;
+        &amp;lt;input type=&amp;quot;text&amp;quot; placeholder=&amp;quot;Your name&amp;quot; /&amp;gt;
+        &amp;lt;input type=&amp;quot;text&amp;quot; placeholder=&amp;quot;Say something...&amp;quot; /&amp;gt;
+        &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Post&amp;quot; /&amp;gt;
+      &amp;lt;/form&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;controlled-components:c4edc588c83982a0e8967944828e886f&#34;&gt;Controlled components&lt;/h4&gt;
+
+&lt;p&gt;伝統的なDOMでは、&lt;code&gt;input&lt;/code&gt;要素はレンダリングされ、ブラウザはステートを管理する。
+その結果、実際のDOMのステートとコンポーネントのステートの間に差分が生じる。
+ビューのステートがコンポーネントのステートを異なるのは理想的ではない。
+Reactの場合、初期化の時だけでなくコンポーネントは常にビューのステートを表す。&lt;/p&gt;
+
+&lt;p&gt;それゆえに、入力されたユーザーのインプットを保存するには&lt;code&gt;this.state&lt;/code&gt;を用いる。
+私たちは初期の&lt;code&gt;state&lt;/code&gt;を２つのプロパティ、&lt;code&gt;author&lt;/code&gt;と&lt;code&gt;text&lt;/code&gt;で定義し、それらに空の文字列を入れた。
+Reactの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素では、コンポーネントの&lt;code&gt;state&lt;/code&gt;を反映させるための&lt;code&gt;value&lt;/code&gt;プロパティをセットし、&lt;code&gt;onChange&lt;/code&gt;ハンドラをつけた。これらの&lt;code&gt;value&lt;/code&gt;つきの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素は&amp;rdquo;controlled components&amp;rdquo;と呼ばれる。
+より詳しく知りければ&lt;a href=&#34;https://facebook.github.io/react/docs/forms.html#controlled-components&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var CommentForm = React.createClass({
+  getInitialState: function() {
+    return {author: &#39;&#39;, text: &#39;&#39;};
+  },
+  handleAuthorChange: function(e) {
+    this.setState({author: e.target.value});
+  },
+  handleTextChange: function(e) {
+    this.setState({text: e.target.value});
+  },
+  render: function() {
+    return (
+      &amp;lt;form className=&amp;quot;commentForm&amp;quot;&amp;gt;
+        &amp;lt;input
+          type=&amp;quot;text&amp;quot;
+          placeholder=&amp;quot;Your name&amp;quot;
+          value={this.state.author}
+          onChange={this.handleAuthorChange}
+        /&amp;gt;
+        &amp;lt;input
+          type=&amp;quot;text&amp;quot;
+          placeholder=&amp;quot;Say something...&amp;quot;
+          value={this.state.text}
+          onChange={this.handleTextChange}
+        /&amp;gt;
+        &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Post&amp;quot; /&amp;gt;
+      &amp;lt;/form&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;events:c4edc588c83982a0e8967944828e886f&#34;&gt;Events&lt;/h4&gt;
+
+&lt;p&gt;Reactではコンポーネントにイベントハンドラを付けるときにキャメルケースを使う。
+私たちは２つの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素に&lt;code&gt;onChange&lt;/code&gt;というイベントハンドラをつけた。
+ここで、ユーザーが&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;フィールドにテキストを入力した場合、&lt;code&gt;onChange&lt;/code&gt;コールバックは発火し、コンポーネントの&lt;code&gt;state&lt;/code&gt;が変更される。&lt;/p&gt;
+
+&lt;p&gt;その後&lt;code&gt;input&lt;/code&gt;要素のレンダリングされた値は現在のコンポーネントの&lt;code&gt;state&lt;/code&gt;を反映するために更新される。&lt;/p&gt;
+
+&lt;h4 id=&#34;submitting-the-form:c4edc588c83982a0e8967944828e886f&#34;&gt;Submitting the form&lt;/h4&gt;
+
+&lt;p&gt;インタラクティブなフォームを作成しよう！
+ユーザーがフォームを送信する時、それらをクリアする必要があり、リクエストをサーバーに送信し、そしてコメントのリストをリフレッシュする。
+はじめに、フォームの送信イベントをキャッチしてクリアしよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial17.js
+var CommentForm = React.createClass({
+  getInitialState: function() {
+    return {author: &#39;&#39;, text: &#39;&#39;};
+  },
+  handleAuthorChange: function(e) {
+    this.setState({author: e.target.value});
+  },
+  handleTextChange: function(e) {
+    this.setState({text: e.target.value});
+  },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var author = this.state.author.trim();
+    var text = this.state.text.trim();
+    if (!text || !author) {
+      return;
+    }
+    // TODO: send request to the server
+    this.setState({author: &#39;&#39;, text: &#39;&#39;});
+  },
+  render: function() {
+    return (
+      &amp;lt;form className=&amp;quot;commentForm&amp;quot; onSubmit={this.handleSubmit}&amp;gt;
+        &amp;lt;input
+          type=&amp;quot;text&amp;quot;
+          placeholder=&amp;quot;Your name&amp;quot;
+          value={this.state.author}
+          onChange={this.handleAuthorChange}
+        /&amp;gt;
+        &amp;lt;input
+          type=&amp;quot;text&amp;quot;
+          placeholder=&amp;quot;Say something...&amp;quot;
+          value={this.state.text}
+          onChange={this.handleTextChange}
+        /&amp;gt;
+        &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Post&amp;quot; /&amp;gt;
+      &amp;lt;/form&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;正しい入力でフォームが送信された時はフォームをクリアするような&lt;code&gt;onSubmit&lt;/code&gt;ハンドラを追加した。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;preventDefault()&lt;/code&gt;を呼び出してブラウザのデフォルトのフォーム送信アクションを妨げる。&lt;/p&gt;
+
+&lt;h4 id=&#34;callbacks-as-props:c4edc588c83982a0e8967944828e886f&#34;&gt;Callbacks as props&lt;/h4&gt;
+
+&lt;p&gt;ユーザーがコメントを送信したら、新しいコメントを追加した状態でリストをリフレッシュ留守必要がある。
+この全てのロジックを&lt;code&gt;CommentBox&lt;/code&gt;内で行うので、&lt;code&gt;CommentBox&lt;/code&gt;はコメントリストに相応するステートを所有する。&lt;/p&gt;
+
+&lt;p&gt;子コンポーネントから親コンポーネントにデータを渡す必要がある。それを親の&lt;code&gt;render&lt;/code&gt;メソッド内で子に新しいコールバック(&lt;code&gt;handleCommentSubmit&lt;/code&gt;)を渡し、それを子の&lt;code&gt;onCommentSubmit&lt;/code&gt;にバインドすることで実行する。
+イベントがトリガーされた時は、コールバックが発動する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial18.js
+var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: &#39;json&#39;,
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  handleCommentSubmit: function(comment) {
+    // TODO: submit to the server and refresh the list
+  },
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
+        &amp;lt;CommentList data={this.state.data} /&amp;gt;
+        &amp;lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ユーザがフォームを送信した時は&lt;code&gt;CommentForm&lt;/code&gt;からコールバックを呼びだそう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial19.js
+var CommentForm = React.createClass({
+  getInitialState: function() {
+    return {author: &#39;&#39;, text: &#39;&#39;};
+  },
+  handleAuthorChange: function(e) {
+    this.setState({author: e.target.value});
+  },
+  handleTextChange: function(e) {
+    this.setState({text: e.target.value});
+  },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var author = this.state.author.trim();
+    var text = this.state.text.trim();
+    if (!text || !author) {
+      return;
+    }
+    this.props.onCommentSubmit({author: author, text: text});
+    this.setState({author: &#39;&#39;, text: &#39;&#39;});
+  },
+  render: function() {
+    return (
+      &amp;lt;form className=&amp;quot;commentForm&amp;quot; onSubmit={this.handleSubmit}&amp;gt;
+        &amp;lt;input
+          type=&amp;quot;text&amp;quot;
+          placeholder=&amp;quot;Your name&amp;quot;
+          value={this.state.author}
+          onChange={this.handleAuthorChange}
+        /&amp;gt;
+        &amp;lt;input
+          type=&amp;quot;text&amp;quot;
+          placeholder=&amp;quot;Say something...&amp;quot;
+          value={this.state.text}
+          onChange={this.handleTextChange}
+        /&amp;gt;
+        &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Post&amp;quot; /&amp;gt;
+      &amp;lt;/form&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;コールバックについて平たく言えば、サーバーに送信してリストをリフレッシュするんだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial20.js
+var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: &#39;json&#39;,
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  handleCommentSubmit: function(comment) {
+    $.ajax({
+      url: this.props.url,
+      dataType: &#39;json&#39;,
+      type: &#39;POST&#39;,
+      data: comment,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
+        &amp;lt;CommentList data={this.state.data} /&amp;gt;
+        &amp;lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;optimization-optimistic-updates:c4edc588c83982a0e8967944828e886f&#34;&gt;Optimization: optimistic updates&lt;/h3&gt;
+
+&lt;p&gt;このアプリケーションについて機能は完璧であるが、コメントが表示されるまでリクエストが完了するのを待たなければならないため遅いように感じる。
+アプリがより早く感じられるようにコメントをリストに追加することが可能だ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// tutorial21.js
+var CommentBox = React.createClass({
+  loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: &#39;json&#39;,
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  handleCommentSubmit: function(comment) {
+    var comments = this.state.data;
+    // Optimistically set an id on the new comment. It will be replaced by an
+    // id generated by the server. In a production application you would likely
+    // not use Date.now() for this and would have a more robust system in place.
+    comment.id = Date.now();
+    var newComments = comments.concat([comment]);
+    this.setState({data: newComments});
+    $.ajax({
+      url: this.props.url,
+      dataType: &#39;json&#39;,
+      type: &#39;POST&#39;,
+      data: comment,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        this.setState({data: comments});
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  getInitialState: function() {
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function() {
+    return (
+      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
+        &amp;lt;CommentList data={this.state.data} /&amp;gt;
+        &amp;lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;congrats:c4edc588c83982a0e8967944828e886f&#34;&gt;Congrats!&lt;/h3&gt;
+
+&lt;p&gt;いくつかのシンプルなステップとを押してコメントボックスを作成することができた。
+&lt;a href=&#34;https://facebook.github.io/react/docs/why-react.html&#34;&gt;何故Reactを使うのか&lt;/a&gt;、もしくは&lt;a href=&#34;https://facebook.github.io/react/docs/top-level-api.html&#34;&gt;APIリファレンス&lt;/a&gt;について学び開発を始めよう！&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【読書】コンピュータはなぜ動くのか</title>
@@ -1853,175 +2711,6 @@ IE9+ and Android 4.1+も。&lt;/p&gt;
 &lt;h2 id=&#34;internationalization-i18n-accessibility:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;INTERNATIONALIZATION (I18N) &amp;amp; ACCESSIBILITY&lt;/h2&gt;
 
 &lt;p&gt;全ての人に届くようにできてる。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【DMM英会話】 Job Interview | Business Basic</title>
-      <link>http://kotazi.github.io/blog/post/2016/0115_dmm/</link>
-      <pubDate>Fri, 15 Jan 2016 00:46:15 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0115_dmm/</guid>
-      <description>
-
-&lt;p&gt;DMM英会話のレッスン中。その日学んだことをメモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://eikaiwa.dmm.com/download/pdf/Business_basic_06_01.pdf/&#34;&gt;Lesson 05: Job Interview | Business Basic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;practice-1-formal-and-informal-expressions:ca0c426fea0849d8af802cb6719a1e4b&#34;&gt;◯ Practice 1 | Formal and Informal Expressions&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-2-reading-sentences:ca0c426fea0849d8af802cb6719a1e4b&#34;&gt;◯ Practice 2 | Reading Sentences&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-3-studying-the-manual:ca0c426fea0849d8af802cb6719a1e4b&#34;&gt;◯ Practice 3 | Studying the Manual&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Research the company you are applying for. Find out about its history, main goals and the founders of the company.&lt;/li&gt;
-&lt;li&gt;Don’t be nervous and act confident. Know your best qualities and don’t be afraid to mention a few weaknesses.&lt;/li&gt;
-&lt;li&gt;Decide why you are applying for this specific company. You need to be motivated. No company wants an employee who can work anywhere.&lt;/li&gt;
-&lt;li&gt;Think: why should they hire you? What can you give to the company? Why are you special?&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Be polite, formal, keep eye contact and believe in yourself!
-&lt;strong&gt;意訳&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;志願する会社について調査すること。歴史や創立者、目標について調べる。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;ナーバスにならずに自身を持つこと。自分の最高の状態を知り、弱みを言及されることを恐れないこと&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;なぜこの会社を特別に志望するかを決めること。意欲が必要。どこでもいいと思っている人を欲しがる会社はない。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;何故会社があなたを雇うべきか考える。会社に何を与えられる。何故あなたは特別なの？&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;丁寧に。フォーマルに。アイコンタクトを忘れずに自分を信じること！&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-4-situation-questions:ca0c426fea0849d8af802cb6719a1e4b&#34;&gt;◯ Practice 4 | Situation Questions&lt;/h5&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;You did not have time to research the company and went to a business interview. What do you do if they ask about the company? How can you avoid this?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;省略。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;You were in a hurry and you forgot to wear a tie for the interview. What do you do?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;省略。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;Your friend is getting ready for a job interview. What advice can you give him?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;省略。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;覚えた英単語:ca0c426fea0849d8af802cb6719a1e4b&#34;&gt;◯ 覚えた英単語&lt;/h5&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;単語&lt;/th&gt;
-&lt;th&gt;意味&lt;/th&gt;
-&lt;th&gt;その他&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;strengths&lt;/td&gt;
-&lt;td&gt;強み&lt;/td&gt;
-&lt;td&gt;a quality or an ability that a person or thing has that gives them an advantage&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;apply&lt;/td&gt;
-&lt;td&gt;申し込む&lt;/td&gt;
-&lt;td&gt;to make a formal request, usually in writing, for something such as a job, a place at college, university, etc.&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Find out&lt;/td&gt;
-&lt;td&gt;調べる&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;founders&lt;/td&gt;
-&lt;td&gt;創立者&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;confident&lt;/td&gt;
-&lt;td&gt;自身に溢れた&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;weaknesses&lt;/td&gt;
-&lt;td&gt;弱み&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Decide&lt;/td&gt;
-&lt;td&gt;決意する、決定する&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;motivated&lt;/td&gt;
-&lt;td&gt;意欲のある&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;quit&lt;/td&gt;
-&lt;td&gt;やめる&lt;/td&gt;
-&lt;td&gt;to stop doing something,  to leave your job, school, etc&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;asset&lt;/td&gt;
-&lt;td&gt;価値のあるもの、人、・資産&lt;/td&gt;
-&lt;td&gt;a person or thing that is valuable or useful to somebody/something&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The ability to keep calm is one of her many strengths.&lt;/li&gt;
-&lt;li&gt;He has applied to join the army.&lt;/li&gt;
-&lt;li&gt;She quit school at 16.&lt;/li&gt;
-&lt;li&gt;I&amp;rsquo;ve quit smoking.&lt;/li&gt;
-&lt;li&gt;Being able to speak a foreign language is a major asset.&lt;/li&gt;
-&lt;li&gt;She&amp;rsquo;ll be an asset to the team.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;けっこう喋れるようになってきた。&lt;/p&gt;
 </description>
     </item>
     

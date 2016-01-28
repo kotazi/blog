@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>React on kotazi.com</title>
-    <link>http://localhost:1313/blog/tags/react/</link>
+    <link>http://kotazi.github.io/blog/tags/react/</link>
     <description>Recent content in React on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2016 17:08:28 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jan 2016 17:08:28 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>【訳読】React Tutorial</title>
-      <link>http://localhost:1313/blog/post/2016/0128_react/</link>
-      <pubDate>Fri, 22 Jan 2016 17:08:28 +0900</pubDate>
+      <link>http://kotazi.github.io/blog/post/2016/0128_react/</link>
+      <pubDate>Thu, 28 Jan 2016 17:08:28 +0900</pubDate>
       
-      <guid>http://localhost:1313/blog/post/2016/0128_react/</guid>
+      <guid>http://kotazi.github.io/blog/post/2016/0128_react/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;https://facebook.github.io/react/docs/tutorial.html&#34;&gt;Reactチュートリアル&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;勉強がてら&lt;a href=&#34;https://facebook.github.io/react/docs/tutorial.html&#34;&gt;Reactチュートリアル&lt;/a&gt;を翻訳しました。&lt;/p&gt;
 
 &lt;hr&gt;
 

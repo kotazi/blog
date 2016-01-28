@@ -1,11 +1,11 @@
 +++
-date = "2016-01-22T17:08:28+09:00"
-draft = true
+date = "2016-01-28T17:08:28+09:00"
+draft = false
 title = "【訳読】React Tutorial"
-tags = "react"
+tags = ["react"]
 +++
 
-[Reactチュートリアル](https://facebook.github.io/react/docs/tutorial.html).
+勉強がてら[Reactチュートリアル](https://facebook.github.io/react/docs/tutorial.html)を翻訳しました。
 
 <hr>
 
