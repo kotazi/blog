@@ -1,6 +1,6 @@
 +++
-date = "2016-01-22T12:06:51+09:00"
-draft = true
+date = "2016-02-01T12:06:51+09:00"
+draft = false
 title = "ES6とReact試してみた"
 tags = ["FullCalendar", "React", "ES6"]
 +++
