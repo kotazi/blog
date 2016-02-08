@@ -6,8 +6,437 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Feb 2016 12:06:51 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 08 Feb 2016 18:45:53 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>0202_angular_unit</title>
+      <link>http://kotazi.github.io/blog/post/2016/0202_angular_unit/</link>
+      <pubDate>Mon, 08 Feb 2016 18:45:53 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0202_angular_unit/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;[Unit Testing|AngularJS]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;JavaScriptは強い式の力を持った動的型付け言語であり、コンパイラの助けを得ることがない。
+そのため、JavaScriptのコードにはしっかりしたテストが必要である。
+Angularには、Angularアプリケーションのテストを用意にするための機能がたくさん組み込まれている。
+Angularにおいて、テストをしないということはありえない。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;separation-of-concerns:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Separation of Concerns&lt;/h3&gt;
+
+&lt;p&gt;ユニットテストという名前から示されるように、これは独立した単体のコードのテストのことである。
+ユニットテストは「そのロジックは正しく動くだろうか」、「ソート関数が並び替えたリストは正しい順番だろうか」
+といった質問に回答しようとするものだ。&lt;/p&gt;
+
+&lt;p&gt;テストにおいてこのような質問に答えるためには、単体のコードを孤立させることがとても重要である。
+ソート関数のテストをしている時に、関連するDOM要素を生成したり、ソートデータをフェッチするためにXHRを呼び出すといったことをしたくないため。&lt;/p&gt;
+
+&lt;p&gt;これは明らかなことなのに、典型的なプロジェクトでは独立した関数を呼び出すことはとてもむずかしい。
+これは開発者がしばしば全てのことをするコードを混合させてしまうことに原因があり、
+XHRを生成するもの、受け取ったデータをソートするもの、そしてDOMを操作するもの、である。&lt;/p&gt;
+
+&lt;p&gt;Angularを用いて、あなたが正しくことを行うことを簡単にした。
+XHRのために依存性注入を提供するので、リクエストをシミュレーションすることが可能になり、
+レスポンスデータをソートすることができ、DOMを操作することができる。
+DOMを生成したり、状態を監視したりXHRリクエストのレスポンスデータを待ったりすることなく、
+データのソートをテストすることができる。
+単独のソート関数を分離してテストすることができる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;with-great-power-comes-great-responsibility:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;With great power comes great responsibility&lt;/h3&gt;
+
+&lt;p&gt;Angularはテストしやすいことを念頭に書かれているが、それでもまだ
+正しい書き方をする必要がある。
+書き方が簡単になるよう努めたものの、ガイドラインを無視すれば
+アンテスタブルなアプリケーションになってしまう。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;dependency-injection:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Dependency Injection&lt;/h3&gt;
+
+&lt;p&gt;Angularは&lt;a href=&#34;https://docs.angularjs.org/guide/di&#34;&gt;依存性注入&lt;/a&gt;のビルトインからなっており、
+それはテストのコンポーネント化するため、思いどおりにコンポーネント間での依存関係やスタブ、モックをテストすることが可能。&lt;/p&gt;
+
+&lt;p&gt;コンポーネントに依存性注入をすればテストのモックが簡単になり、
+グローバル汚染もなくなりうっかり別のテストに影響してしまうこともなくなる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;additional-tools-for-testing-angular-applications:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Additional tools for testing Angular applications&lt;/h3&gt;
+
+&lt;p&gt;Angularアプリケーションのテストでは、テストをより簡単にセットアップし実行するために使うべきツールがある。&lt;/p&gt;
+
+&lt;h4 id=&#34;karma:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Karma&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://karma-runner.github.io/&#34;&gt;Karma&lt;/a&gt;はコマンドラインツールである。
+アプリケーションのコードを読み込み、実行するWebサーバーを用意する。
+アプリケーションがサポートする全てのブラウザにで操作することをテストするために、ブラウザの数分に対してKarmaを実行するように設定することができる。
+Karmaをコマンドライン上で実行すると、ブラウザでのテスト実行結果をコマンドライン上にすぐに表示する。&lt;/p&gt;
+
+&lt;p&gt;KarmaはNodeJS製のアプリケーションであり、npmでインストールする。
+インストールガイドについては&lt;a href=&#34;http://karma-runner.github.io/0.12/intro/installation.html&#34;&gt;Karmaのサイト&lt;/a&gt;が役に立つ。&lt;/p&gt;
+
+&lt;h4 id=&#34;jasmine:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Jasmine&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jasmine.github.io/1.3/introduction.html&#34;&gt;Jasmin&lt;/a&gt;はビヘイビア駆動開発のJavaScriptフレームワークであり、
+Angularアプリケーションをテストするうえで最も人気のフレームワークである。
+テストに構造をもたせ、アサーションを作成するための関数を提供する。
+テストが大きくなっても構造的であり、ドキュメント性を保ちながら、アーカイブしてく。&lt;/p&gt;
+
+&lt;p&gt;テストをグループ化するためには&lt;code&gt;describe&lt;/code&gt;を利用する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe(&amp;quot;sorting the list of users&amp;quot;, function() {
+  // individual tests go here
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;個々のテストは&lt;code&gt;it&lt;/code&gt;関数の中に定義される。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe(&#39;sorting the list of users&#39;, function() {
+  it(&#39;sorts in descending order by default&#39;, function() {
+    // your test assertion goes here
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;関連するテストを&lt;code&gt;describe&lt;/code&gt;ブロックでグルーピングし、個々のテストは&lt;code&gt;it&lt;/code&gt;関数内に記述することで
+テストをドキュメントとして保ち続けることが可能になる。&lt;/p&gt;
+
+&lt;p&gt;最後に、Jasmineは作成するアサーションのマッチャーを提供する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe(&#39;sorting the list of users&#39;, function() {
+  it(&#39;sorts in descending order by default&#39;, function() {
+    var users = [&#39;jack&#39;, &#39;igor&#39;, &#39;jeff&#39;];
+    var sorted = sortUsers(users);
+    expect(sorted).toEqual([&#39;jeff&#39;, &#39;jack&#39;, &#39;igor&#39;]);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Jasminは様々なアサーションを作成するためのたくさんのマッチャーから成っている。
+マッチャーについては&lt;a href=&#34;http://jasmine.github.io/1.3/introduction.html#section-Matchers&#34;&gt;こちらの記事&lt;/a&gt;を読むこと。
+KarmaとJasminを使うために、&lt;a href=&#34;https://github.com/karma-runner/karma-jasmine&#34;&gt;karma-jasmin&lt;/a&gt;を利用する。&lt;/p&gt;
+
+&lt;h4 id=&#34;angular-mocks:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;angular-mocks&lt;/h4&gt;
+
+&lt;p&gt;Angularはテスト用のモックを提供する&lt;code&gt;ngMock&lt;/code&gt;というものを用意している。
+ユニットテスト内でのAngularサービスをモックしたりインジェクトするために用いられる。
+加えて、別のモジュールを拡張できるので、同期的だ。
+テストを同期することで明確に保ち、簡単に動作させることができる。
+もっとも便利なうちのひとつが&lt;code&gt;$httpBackend&lt;/code&gt;だ。
+テストでXHRリクエストのモックを行うことができ、代わりにサンプルのデータを返す。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;testing-a-controller:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing a Controller&lt;/h3&gt;
+
+&lt;p&gt;Angularのビューレイヤーはロジックから切り離されているので、コントローラを簡単にテストすることができる。
+下記でコントローラをどのようにテストしているか見ていこう。
+パスワードの長さに基づいてスコープのプロパティをセットする&lt;code&gt;$scope.grade&lt;/code&gt;を提供している。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;angular.module(&#39;app&#39;, [])
+.controller(&#39;PasswordController&#39;, function PasswordController($scope) {
+  $scope.password = &#39;&#39;;
+  $scope.grade = function() {
+    var size = $scope.password.length;
+    if (size &amp;gt; 8) {
+      $scope.strength = &#39;strong&#39;;
+    } else if (size &amp;gt; 3) {
+      $scope.strength = &#39;medium&#39;;
+    } else {
+      $scope.strength = &#39;weak&#39;;
+    }
+  };
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;コントローラはグローバルスコープでは利用できないため、
+はじめに&lt;code&gt;angular.mock.inject&lt;/code&gt;を使ってコントローラをインジェクトする必要がある。
+最初のステップは、angular-mocksが提供する&lt;code&gt;module&lt;/code&gt;関数を使うことだ。
+この関数は与えられたモジュールを読み込み、読み込まれたモジュールはテスト内で利用う可能となる。
+これをJasminの提供する関数であり、各テストの前にコードを実行できる&lt;code&gt;beforeEach&lt;/code&gt;に渡す。
+そしてコントローラのインスタンス化に責任を持つサービス&lt;code&gt;$controller&lt;/code&gt;にアクセスするために&lt;code&gt;inject&lt;/code&gt;を用いる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe(&#39;PasswordController&#39;, function() {
+  beforeEach(module(&#39;app&#39;));
+
+  var $controller;
+
+  beforeEach(inject(function(_$controller_){
+    // The injector unwraps the underscores (_) from around the parameter names when matching
+    $controller = _$controller_;
+  }));
+
+  describe(&#39;$scope.grade&#39;, function() {
+    it(&#39;sets the strength to &amp;quot;strong&amp;quot; if the password length is &amp;gt;8 chars&#39;, function() {
+      var $scope = {};
+      var controller = $controller(&#39;PasswordController&#39;, { $scope: $scope });
+      $scope.password = &#39;longerthaneightchars&#39;;
+      $scope.grade();
+      expect($scope.strength).toEqual(&#39;strong&#39;);
+    });
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ネストした&lt;code&gt;describe&lt;/code&gt;の呼び出しや、文字列を用いて呼び出す時の描写でテストが明確になっていることに注目する。
+何をテストしているかハッキリと記し、何が起きているかを簡単に理解できる。
+では3文字以下のパスワードを追加して、&lt;code&gt;$scope.strength&lt;/code&gt;が&amp;rdquo;weak&amp;rdquo;であるか見ていこう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe(&#39;PasswordController&#39;, function() {
+  beforeEach(module(&#39;app&#39;));
+
+  var $controller;
+
+  beforeEach(inject(function(_$controller_){
+    // The injector unwraps the underscores (_) from around the parameter names when matching
+    $controller = _$controller_;
+  }));
+
+  describe(&#39;$scope.grade&#39;, function() {
+    it(&#39;sets the strength to &amp;quot;strong&amp;quot; if the password length is &amp;gt;8 chars&#39;, function() {
+      var $scope = {};
+      var controller = $controller(&#39;PasswordController&#39;, { $scope: $scope });
+      $scope.password = &#39;longerthaneightchars&#39;;
+      $scope.grade();
+      expect($scope.strength).toEqual(&#39;strong&#39;);
+    });
+
+    it(&#39;sets the strength to &amp;quot;weak&amp;quot; if the password length &amp;lt;3 chars&#39;, function() {
+      var $scope = {};
+      var controller = $controller(&#39;PasswordController&#39;, { $scope: $scope });
+      $scope.password = &#39;a&#39;;
+      $scope.grade();
+      expect($scope.strength).toEqual(&#39;weak&#39;);
+    });
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;現在２つのテストがあるが、テストが重複していることに気付いて欲しい。
+両方で&lt;code&gt;$scope&lt;/code&gt;を作成しており、コントローラを生成している。
+テストを重複するならこの重複は良くない。
+ありがたいことにJasminには&lt;code&gt;beforeEach&lt;/code&gt;がある。
+個々のテストの前に関数を実行してくれる。
+どのようにテストをセットするか確認しよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe(&#39;PasswordController&#39;, function() {
+  beforeEach(module(&#39;app&#39;));
+
+  var $controller;
+
+  beforeEach(inject(function(_$controller_){
+    // The injector unwraps the underscores (_) from around the parameter names when matching
+    $controller = _$controller_;
+  }));
+
+  describe(&#39;$scope.grade&#39;, function() {
+    var $scope, controller;
+
+    beforeEach(function() {
+      $scope = {};
+      controller = $controller(&#39;PasswordController&#39;, { $scope: $scope });
+    });
+
+    it(&#39;sets the strength to &amp;quot;strong&amp;quot; if the password length is &amp;gt;8 chars&#39;, function() {
+      $scope.password = &#39;longerthaneightchars&#39;;
+      $scope.grade();
+      expect($scope.strength).toEqual(&#39;strong&#39;);
+    });
+
+    it(&#39;sets the strength to &amp;quot;weak&amp;quot; if the password length &amp;lt;3 chars&#39;, function() {
+      $scope.password = &#39;a&#39;;
+      $scope.grade();
+      expect($scope.strength).toEqual(&#39;weak&#39;);
+    });
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重複部分を外へ出し、&lt;code&gt;beforeEach&lt;/code&gt;ブロックへ移動した。
+これで個々のテストには特有のコードだけになり、全体に入っているようなコードはなくなった。
+テストを拡張するうえで、テストをきちんとするためにどこで&lt;code&gt;beforeEach&lt;/code&gt;を使えるか目を見張ることだ。
+Jasminが提供するのは&lt;code&gt;beforeEach&lt;/code&gt;だけじゃない。&lt;a href=&#34;http://jasmine.github.io/1.3/introduction.html#section-Setup_and_Teardown&#34;&gt;こちら&lt;/a&gt;も見てみること。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;testing-filters:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Filters&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/provider/$filterProvider&#34;&gt;フィルタ&lt;/a&gt;はデータをユーザが読みやすいフォーマットに変換する。
+これはフォーマットの責任をアプリケーションロジックから取り除くことになるのでとても重要なこと。さらにはアプリケーションロジックを単純にできる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;myModule.filter(&#39;length&#39;, function() {
+  return function(text) {
+    return (&#39;&#39; + (text || &#39;&#39;)).length;
+  }
+});
+
+describe(&#39;length filter&#39;, function() {
+
+  var $filter;
+
+  beforeEach(inject(function(_$filter_){
+    $filter = _$filter_;
+  }));
+
+  it(&#39;returns 0 when given null&#39;, function() {
+    var length = $filter(&#39;length&#39;);
+    expect(length(null)).toEqual(0);
+  });
+
+  it(&#39;returns the correct value when given a string of chars&#39;, function() {
+    var length = $filter(&#39;length&#39;);
+    expect(length(&#39;abc&#39;)).toEqual(3);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;testing-directives:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Directives&lt;/h3&gt;
+
+&lt;p&gt;AngularのディレクティブはカスタムHTMLタグや属性、クラス、コメントと複雑な機能に責任を持っている。
+ディレクティブを使って生成したコンポーネントがさまざまな背景で思った通りに使われているかのテストになるので、
+ディレクティブのユニットテストはとても重要です。&lt;/p&gt;
+
+&lt;h4 id=&#34;simple-html-element-directive:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Simple HTML Element Directive&lt;/h4&gt;
+
+&lt;p&gt;依存関係のないAngularアプリで始める。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var app = angular.module(&#39;myApp&#39;, []);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アプリにディレクティブを追加する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;app.directive(&#39;aGreatEye&#39;, function () {
+    return {
+        restrict: &#39;E&#39;,
+        replace: true,
+        template: &#39;&amp;lt;h1&amp;gt;lidless, wreathed in flame, {{1 + 1}} times&amp;lt;/h1&amp;gt;&#39;
+    };
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a-great-eye&amp;gt;&amp;lt;/a-great-eye&amp;gt;&lt;/code&gt;といったタグでこのディレクティブは利用する。
+タグごと&lt;code&gt;&amp;lt;h1&amp;gt;lidless, wreathed in flame, {{1 + 1}} times&amp;lt;/h1&amp;gt;&lt;/code&gt;テンプレートを置き換えるものだ。
+その機能を確認するためのJasminテストを書いていく。
+レンダリングされると&lt;code&gt;{{1 + 1}}&lt;/code&gt;式が評価されることに注意する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;describe(&#39;Unit testing great quotes&#39;, function() {
+  var $compile,
+      $rootScope;
+
+  // ディレクティブを含んだmyAppモジュールを読み込む
+  beforeEach(module(&#39;myApp&#39;));
+
+  // $rootScopeと$compileへの参照を保持する
+  // このdescribeブロックにおいて全てのテストで利用可能になる
+  beforeEach(inject(function(_$compile_, _$rootScope_){
+    // The injector unwraps the underscores (_) from around the parameter names when matching
+    $compile = _$compile_;
+    $rootScope = _$rootScope_;
+  }));
+
+  it(&#39;Replaces the element with the appropriate content&#39;, function() {
+    // ディレクティブのHTMLをコンパイルする
+    var element = $compile(&amp;quot;&amp;lt;a-great-eye&amp;gt;&amp;lt;/a-great-eye&amp;gt;&amp;quot;)($rootScope);
+    // ウォッチャーを発火させ、式を評価する
+    $rootScope.$digest();
+    // コンパイルされた要素がテンプレートの中身を含んでいることを確認する
+    expect(element.html()).toContain(&amp;quot;lidless, wreathed in flame, 2 times&amp;quot;);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;$compile&lt;/code&gt;サービスと&lt;code&gt;$rootScope&lt;/code&gt;をJasminテストの前にインジェクトする。
+&lt;code&gt;$compile&lt;/code&gt;サービスはaGreatEyeディレクティブをレンダリングするために利用する。
+レンダリング後に、&amp;rdquo;lidless, wreathed in flame, 2 times&amp;rdquo;は現れる。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Underscore notation:&lt;/strong&gt; &lt;code&gt;_$rootScope_&lt;/code&gt;といったアンダースコアの使い方は、テスト内での変数名をきれいに保つためAngularJSコミュニティ内で広く広がった風習である。
+パラメータがマッチングした際に、&lt;code&gt;$injector&lt;/code&gt;がアンダースコアを取り払うのはこれが理由である。
+このアンダースコアルールが働くのは名前が一つのアンダースコアで始まり一つのアンダースコアで終わる時のみに限られ、それ以外での置換は起こらない。&lt;/p&gt;
+
+&lt;h4 id=&#34;testing-transclusion-directives:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Transclusion Directives&lt;/h4&gt;
+
+&lt;p&gt;トランスクルージョンを使ったディレクティブはコンパイラに特別に扱われる。
+コンパイル関数が呼び出される前に、ディレクティブ要素のコンテンツは取り除かれ、トランスクルージョン関数を通して提供される。
+ディレクティブのテンプレートはその際に、ディレクティブ要素に追加され、トランスクルードされたコンテンツをテンプレート内に挿入する。&lt;/p&gt;
+
+&lt;p&gt;コンピレーション前:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div transclude-directive&amp;gt;
+  Some transcluded content
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;トランスクルージョンが引き抜かれる:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div transclude-directive&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;コンピレーション後:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div transclude-directive&amp;gt;
+  Some Template
+  &amp;lt;span ng-transclude&amp;gt;Some transcluded content&amp;lt;/span&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ディレクティブが&amp;rdquo;要素&amp;rdquo;のトランスクルージョンを利用しているのであれば、コンパイラは実質的にDOMからディレクティブ全体の要素を取り除き、
+コメントノードを持ってそれを置き換える。
+そしてコンパイラはディレクティブのテンプレートをコメントノードの&lt;strong&gt;後に&lt;/strong&gt;、兄弟として挿入する。&lt;/p&gt;
+
+&lt;p&gt;コンピレーション前:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div element-transclude&amp;gt;
+  Some Content
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;トランスクルージョンが引き抜かれる:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- elementTransclude --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;コンピレーション後:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- elementTransclude --&amp;gt;
+&amp;lt;div element-transclude&amp;gt;
+  Some Template
+  &amp;lt;span ng-transclude&amp;gt;Some transcluded content&amp;lt;/span&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;要素のトランスクルージョンを使ったディレクティブのテストを書いている時に、このことに気づくことが重要。
+もし&lt;code&gt;$compile&lt;/code&gt;へ渡すDOMフラグメントのルート要素にディレクティブを置くのであれば、関連する関数から返されるDOMノードはコメントノードであり、テンプレートとトランスクルードされたコンテンツを繋ぐ能力には負けるだろう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var node = $compile(&#39;&amp;lt;div element-transclude&amp;gt;&amp;lt;/div&amp;gt;&#39;)($rootScope);
+expect(node[0].nodeType).toEqual(node.COMMENT_NODE);
+expect(node[1]).toBeUndefined();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これに対処するためには単純に要素をトランスクルードするディレクティブを&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;のようなエレメントでラップする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var node = $compile(&#39;&amp;lt;div&amp;gt;&amp;lt;div element-transclude&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&#39;)($rootScope);
+var contents = node.contents();
+expect(contents[0].nodeType).toEqual(node.COMMENT_NODE);
+expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;testing-directives-with-external-templates:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Directives With External Templates&lt;/h4&gt;
+
+&lt;p&gt;もぢディレクティブで&lt;code&gt;templateUrl&lt;/code&gt;を使っているのであれば、HTMLテンプレートをプリコンパイルするために&lt;a href=&#34;https://github.com/karma-runner/karma-ng-html2js-preprocessor&#34;&gt;karma-ng-html2js-preprocessor&lt;/a&gt;を使うことを考え、HTTPリクエストを使ってテキストをロードすることは避けること。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ES6とReact試してみた</title>
@@ -2565,105 +2994,6 @@ Geekと呼ばれる人たちにとって何よりも重要なものは「構造�
 だが、きっとそれは気分の悪いことではないはずだ。直感を信じて前進しよう。&lt;/p&gt;
 
 &lt;p&gt;という話。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Angular2のチュートリアル</title>
-      <link>http://kotazi.github.io/blog/post/2016/0115_angular2_2/</link>
-      <pubDate>Fri, 15 Jan 2016 20:07:16 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0115_angular2_2/</guid>
-      <description>
-
-&lt;p&gt;Angualr2のチュートリアルやったのでメモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kotazi/angular2-quick-start&#34;&gt;kotazi/angular2-quick-start&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/tutorial/&#34;&gt;TUTORIAL: TOUR OF HEROES&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;構成:24456ac087966b3ecdbdd8d437837263&#34;&gt;構成&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;angular2-tour-of-heroes
-|- node_modules
-|-app
-| |- app.component.ts
-| |- boot.ts
-| |- hero.ts
-| |- hero-detail.component.ts
-| |- hero.service.ts
-| |- mock-heroes.ts
-|- index.html
-|- package.json
-|- tsconfig.json
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;index-html:24456ac087966b3ecdbdd8d437837263&#34;&gt;index.html&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Angular2では&lt;code&gt;angular2-polyfills.js&lt;/code&gt;と&lt;code&gt;Rx.js&lt;/code&gt;が必要&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;System&lt;/code&gt;でconfigとbootの読み込み&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;my-app&amp;gt;&lt;/code&gt;タグを埋め込む&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/00d1d0fbe1a4fb92be11.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;boot-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;boot.ts&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;bootstrap()&lt;/code&gt;でアプリケーション起動&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/bf9b1e29e590582dc895.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;app-component-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;app.component.ts&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;@Component&lt;/code&gt;はAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;selector&lt;/code&gt;でHTMLのタグ名を指定する。&lt;code&gt;template&lt;/code&gt;にはレンタリングするHTMLを記述する。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;*ngFor=&amp;ldquo;#hero of heroes&amp;rdquo; ng-repeatが変わった&lt;/li&gt;
-&lt;li&gt;アスタリスクとシャープが特徴&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/e407ee5a6dfe7599c8df.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;hero-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero.ts&lt;/h2&gt;
-
-&lt;p&gt;classではなくinterfaceを利用している。&lt;br /&gt;
-ここでの選び方は&lt;code&gt;Hero&lt;/code&gt;をどのように使いたいか。&lt;br /&gt;
-ロジックや振る舞いを書く場合は、&lt;code&gt;class&lt;/code&gt;。
-型の定義などだけであれば、&lt;code&gt;interface&lt;/code&gt;で十分。&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/958abfee0ee7cce36257.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;mock-heroes-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;mock-heroes.ts&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HREOES配列はHero型。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/d3b073e5f33ff8ef1605.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;hero-detail-component-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero-detail.component.ts&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;[(ngModel)]=&amp;ldquo;hero.name&amp;rdquo; 書き方変わった&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/9bd78998321fde979038.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;hero-service-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero.service.ts&lt;/h2&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/f27b3bc4c989d37fde72.js&#34;&gt;&lt;/script&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;けっこう変わってるけど抵抗はそんなにないかも。&lt;/p&gt;
 </description>
     </item>
     
