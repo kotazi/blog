@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://kotazi.github.io/blog/</loc>
-    <lastmod>2016-02-01T12:06:51+09:00</lastmod>
+    <lastmod>2016-02-08T18:45:53+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0202_angular_unit/</loc>
+    <lastmod>2016-02-08T18:45:53+09:00</lastmod>
   </url>
   
   <url>
