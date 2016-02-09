@@ -1,7 +1,7 @@
 +++
 date = "2016-02-08T18:45:53+09:00"
 draft = false
-title = "0202_angular_unit"
+title = "【Angular】ユニットテスト"
 tags = ["Angular", "unit", "Jasmine"]
 +++
 

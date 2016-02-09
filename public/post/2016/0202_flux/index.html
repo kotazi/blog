@@ -1,0 +1,327 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【Flux】概要 &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【Flux】概要</h1>
+                    <h2 class="headline">February 9, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<ul>
+<li><a href="https://facebook.github.io/flux/docs/overview.html#content">Overview|Flux</a></li>
+</ul>
+
+<hr>
+
+<p>FluxはFacebookがクライアントサイドのWebアプリケーション構築の際に利用するアプリケーションのアーキテクチャです。
+一定方向のデータフローを利用することでReactのビューコンポーネントの構成を補います。
+Fluxはフレームワークというよりひとつのパターンなので、新しいコードを必要とすることなくいつでもFluxを使い始めることができます。</p>
+
+<p>Fluxアプリケーションには主要な3つのパーツがあります。ディスパッチャー、ストア、ビュー(Reactコンポーネント)です。
+これらをMVCと混同すべきではありません。
+コントローラはFluxアプリケーションの中にも存在します。
+<code>controller-views</code>-ビューはストアからデータを受け取るヒエラルキーのトップに位置し、受け取ったデータを子へと渡します。
+加えて、アクションを生成する— dispatcher helper methods —はアプリケーション内で可能な変更を全て描画するセマンティックなAPIを
+描画するサポートに利用します。
+それらをFluxの更新サイクルにおける4番目のパートと考えると便利です。</p>
+
+<p>FluxではMVCを避けて一定方向のデータフローを支持しています。
+あるユーザーがReactのビューに触れると、そのビューはアプリケーションのデータやロジックを保持した様々なストアへと、中央のディスパッチャーを介してアクションを広め、影響する全てのビューを更新します。
+とりわけReactのプログラミングスタイルに良く働き、ステート間でのビューの遷移を細かく支持することなくストアが更新を送れるようになります。</p>
+
+<p>私たちは元々得られたデータを正しく扱います。例として、スレッドのリストを表示するビューに対して、メッセージスレッドの未読数を表示したかったとします。
+MVCでは、単一のスレッドをマークし、スレッドモデルと未読数モデルを更新することは難しいです。
+これらの依存関係やカスケードの更新は大規模なMVCアプリケーションでしばしば行われ、
+データの流れをもつれさせ、予期せぬ結果をもたらします。</p>
+
+<p>ストアが制御をひっくり返します。ストアは外部の何かに更新を依存するのではなく、更新を受け入れ、適切に調和します。
+内部でのデータの管理方法をストアに留めれば、心配事がなくなります。
+ストアは<code>setAsRead()</code>といった直接的なセッターメソッドを持ちませんが、代わりに自身のコンテナに新しいデータを取得する手段をもっています。
+そのコールバックをディスパッチャーとともに登録します。</p>
+
+<hr>
+
+<h3 id="structure-and-data-flow:0cfbdc0fe96d51285b80a2daaffddeb1">Structure and Data Flow</h3>
+
+<p>Fluxアプリケーションのデータの流れは一方向です。</p>
+
+<p><img src="https://facebook.github.io/flux/img/flux-simple-f8-diagram-1300w.png" alt="" /></p>
+
+<p>一方高のデータの流れはFluxアプリケーションの基本であり、上図はFluxプログラマーにとって主要なメンタルモデルとなります。
+ディスパッチャー、ストア、ビューは入力と出力をもった独立したノードです。
+アクションは新データと<code>type</code>プロパティをもった単純なオブジェクトです。</p>
+
+<p>ビューはユーザーインタラクションが起こるとシステムを通して新しいアクションを伝播します。</p>
+
+<p><img src="https://facebook.github.io/flux/img/flux-simple-f8-diagram-with-client-action-1300w.png" alt="" /></p>
+
+<p>ディスパッチャーを介した全てのデータフローはセントラルハブとなります。
+ディスパッチャーに提供されるアクションは、ユーザーのインタラクションをきっかけに、たいていはアクション生成メソッドから始まります。
+そしてディスパッチャーはストアに登録されたコールバックを発動し、アクションを全てのストアに伝えます。
+登録されたコールバック内では、ストアの保持しているステートに関連している全てのアクションに反応します。
+そしてストアはデータレイヤーが引き起こした変更のイベントをcontroller-viewsに送信します。
+controller-viewsはこれらのイベントをキャッチし、イベントハンドラ内でストアからデータを受け取ります。
+controller-viewsは自身の<code>setState()</code>メソッドを呼び出し、自身と全ての子孫を再度レンダリングします。</p>
+
+<p><img src="https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png" alt="" /></p>
+
+<p>この構造によって、関数型リアクティブプログラミング(FRP)、データフロープログラミング(DFP)、フローベースプログラミング(FBP)の理解が容易になり、アプリケーション内のデータの流れが一方向になります。(これは2wayバインディングとは異なります。)
+アプリケーションのステートはストア内のみに保たれ、アプリケーションの異なる部分をしっかりと分離させることができます。
+ストア間での依存関係は、ヒエラルキーにより厳格に保たれ、ディスパッチャーによって更新が同期されます。</p>
+
+<p>2wayデータバインディングではあるオブジェクトが変更されると他のオブジェクトも変更され、たくさんの更新がトリガされます。
+アプリケーションが大きくなると、ユーザのインタラクションによって引き起こされる結果として何が変更されるかを予測することが非常に難しくなってシまいます。
+シングルラウンド内でデータの変更ができれば、システム全体を予測しやすくなります。</p>
+
+<p>Fluxの様々な部分を見ていきましょう。</p>
+
+<hr>
+
+<h3 id="a-single-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1">A Single Dispatcher</h3>
+
+<p>Fluxアプリケーションではディスパッチャーがセントラルハブであり、全てのデータの流れを管理します。
+ストアにコールバックを登録することが本質的なところであり、ディスパッチャー自身が実際に知性を持っているわけではありません。
+ストアにアクションを割り当てるためのシンプルなmechanismです。
+各ストアは自身を登録し、コールバックを提供します。
+アクションクリエータが新しいアクションを持ったディスパッチャーを登録すると、アプリケーション内の登録されたすべてのストアがコールバックを通してアクションを受け取ります。</p>
+
+<p>アプリケーションが大きくなると、ディスパッチャーはより活発になり、明確な順番で登録されたコールバックを呼び出すため、ストア間の依存関係を管理するために役立ちます。
+ストアは他のストアの更新を待ち、そのあとに自身を更新します。</p>
+
+<p>npmやbowerからFacebookが実際の本番環境で使用しているディスパッチャーが利用可能です。</p>
+
+<hr>
+
+<h3 id="stores:0cfbdc0fe96d51285b80a2daaffddeb1">Stores</h3>
+
+<p>ストアにはアプリケーションのステートとロジックが含まれます。
+ストアの役割は伝統的なMVCにおけるモデルに似ていますが、ストアはたくさんのオブジェクトのステートを管理します。(ORMのようなシングルレコードを表すわけではありません。)
+Backboneのコレクションとも違います。
+ORMスタイルのコレクションをよりシンプルに管理するもので、ストアはアプリケーション内で特定のドメインのためのアプリケーションステートを管理します。</p>
+
+<p>例としてFacebookのLookback Video Editorは&rdquo;TimeStore&rdquo;を利用して、プレイバックタイムの位置とステートのトラックを保ちます。
+一方で、同アプリケーションの&rdquo;ImageStore&rdquo;はToDoリストの管理に似ています。ストアはモデルのコレクションとシングルトンとしての特徴を持ち合わせています。</p>
+
+<p>上記で言及したように、ストアは自身にディスパッチャーを登録し、コールバックをもったディスパッチャーを提供します。
+このコールバックはアクションをparameterとして受け取ります。
+ストアに登録されたコールバックの内部では、アクションタイプに基づいたステートのスイッチはアクションを解釈し、固有のフックをストア内部のメソッドに提供するために使われます。
+こうしてアクションはディスパッチャーを介してストアのステートを更新します。
+ストアが更新された後、ステートが変更されたことを宣言するイベントをブロードキャストします。
+そしてビューがステートと更新を確認します。</p>
+
+<hr>
+
+<h3 id="views-and-controller-views:0cfbdc0fe96d51285b80a2daaffddeb1">Views and Controller-Views</h3>
+
+<p>Reactは私たちがビューレイヤーに必要としていた構成可能かつ自由で再レンダリングが可能なビューを提供します。
+ビューヒエラルキーのトップに位置するビューは依存するストアにブロードキャストされたイベントを受け取る特別なビューです。
+これらをcontroller-viewと呼び、ストアからデータを取得し、取得したデータを子孫に渡すようなグルーコードを提供します。</p>
+
+<p>controller-viewがストアからイベントを受け取ると、ストアのゲッターメソッドを通して必要な新しいデータを要求します。
+自身の<code>setState()</code>もしくは<code>forceUpdate()</code>関数を呼び出し、自身の<code>render()</code>メソッドと、子孫の<code>render()</code>メソッドを引き起こします。</p>
+
+<p>シングルオブジェクト内のストアの全体のステートを子のビューに下ろすことで、異なる子孫が使えるようになります。
+トップ階層でコントローラのような振る舞いを保つことで、このビューを機能的に保つことが可能になり、管理しなければならないプロパティの数を減らすことができます。</p>
+
+<p>時々、コンポーネントをシンプルに保つために、追加でcontroller-viewsを付け足す必要が出てくるかもしれません。
+特定のデータドメインに関連するセクションのヒエラルキーを要約することに役立ちます。
+しかし、controller-viewsを深くすることで一方向のデータフローを破ってしまう可能性があることに注意してください。
+controller-viewを深い位置に追加するのであれば、異なる点でのヒエラルキーにおいてシンプルなコンポーネントとデータ更新のフローの複雑性にバランスをとってください。
+こういった複雑なデータの更新は、Reactのレンダリングメソッドを繰り返し発動させてしまう恐れがあり、潜在的にデバッグを難しくしてしまいます。</p>
+
+<hr>
+
+<h3 id="actions:0cfbdc0fe96d51285b80a2daaffddeb1">Actions</h3>
+
+<p>ディスパッチャーはストアとデータに対してのディスパッチをトリガするメソッドを提供し、
+アクションの生成はディスパッチャーにアクションを送るセマンティックなヘルパーメソッドにラップされます。
+例えば、ToDoリストアプリケーションのToDoアイテムのテキストを変更したかったとします。
+<code>TodoActions</code>モジュール内で<code>updateText(todoId, newText)</code>関数を生成します。
+このメソッドはビューのイベントハンドラから呼び出され、ユーザーインタラクションによって呼び出すことができます。
+このアクションを生成するメソッドはアクションに<code>type</code>を持たせるため、ストア内で解釈され、適切に反応することができます。
+例として、<code>type</code>を<code>TODO_UPDATE_TEXT</code>のように名づけます。</p>
+
+<p>アクションはサーバーなど別の場所から来ることもあるかもしれません。
+例えば、データ初期化時などにおこります。
+サーバーがエラーコードを返した時や、アプリケーションをアップデートしたときに起こります。</p>
+
+<hr>
+
+<h3 id="what-about-that-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1">What About that Dispatcher?</h3>
+
+<p>以前に言及したように、ディスパッチャーはストア間の依存関係を管理します。
+ディスパッチャークラスの<code>waitFor()</code>関数を通して利用可能です。
+極めてシンプルなTodoアプリなどで使用する必要はありませんが、より複雑で大きなアプリケーションでは活発になります。</p>
+
+<p><code>TodoStore</code>に登録されたコールバックが他の依存関係の更新を待っている様子：</p>
+
+<pre><code>case 'TODO_CREATE':
+  Dispatcher.waitFor([
+    PrependedTextStore.dispatchToken,
+    YetAnotherStore.dispatchToken
+  ]);
+
+  TodoStore.create(PrependedTextStore.getText() + ' ' + action.text);
+  break;
+</code></pre>
+
+<p><code>waitFor()</code>は登録したディスパッチャーの配列を一つ引数として受け、<code>dispatch token</code>と呼ばれます。
+このように<code>waitFor()</code>を発動するストアはどのように自身のステートを更新するかを通知するために別のストアのステートに依存します。</p>
+
+<p>ディスパッチャーのコールバックが登録された時に<code>register()</code>が<code>dispatch token</code>を返します。</p>
+
+<pre><code>PrependedTextStore.dispatchToken = Dispatcher.register(function (payload) {
+  // ...
+});
+</code></pre>
+
+<p>より<code>waitFor()</code>やアクションクリエータ、ディスパッチャーについてしりたければ<a href="http://facebook.github.io/react/blog/2014/07/30/flux-actions-and-the-dispatcher.html">こちら</a>です。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0202_flux%2f - %e3%80%90Flux%e3%80%91%e6%a6%82%e8%a6%81 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0202_angular_unit/">【Angular】ユニットテスト<aside class="dates">Feb 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0130_react_calendar/">ES6とReact試してみた<aside class="dates">Feb 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0128_react/">【訳読】React Tutorial<aside class="dates">Jan 28</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0127_why_computer/">【読書】コンピュータはなぜ動くのか<aside class="dates">Jan 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0213_algorithm/">【読書】アルゴリズムが世界を支配する<aside class="dates">Jan 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0213_user_story/">【読書】ユーザーストーリーマッピング<aside class="dates">Jan 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0126_jsx/">【訳読】JSX<aside class="dates">Jan 26</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0125_calendar/">【FullCalendar】Current Date<aside class="dates">Jan 25</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0129_google/">【読書】How Google Works<aside class="dates">Jan 24</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>
