@@ -6,11 +6,191 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Feb 2016 18:45:53 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2016 17:46:23 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>0202_angular_unit</title>
+      <title>【Flux】概要</title>
+      <link>http://kotazi.github.io/blog/post/2016/0202_flux/</link>
+      <pubDate>Tue, 09 Feb 2016 17:46:23 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0202_flux/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://facebook.github.io/flux/docs/overview.html#content&#34;&gt;Overview|Flux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;FluxはFacebookがクライアントサイドのWebアプリケーション構築の際に利用するアプリケーションのアーキテクチャです。
+一定方向のデータフローを利用することでReactのビューコンポーネントの構成を補います。
+Fluxはフレームワークというよりひとつのパターンなので、新しいコードを必要とすることなくいつでもFluxを使い始めることができます。&lt;/p&gt;
+
+&lt;p&gt;Fluxアプリケーションには主要な3つのパーツがあります。ディスパッチャー、ストア、ビュー(Reactコンポーネント)です。
+これらをMVCと混同すべきではありません。
+コントローラはFluxアプリケーションの中にも存在します。
+&lt;code&gt;controller-views&lt;/code&gt;-ビューはストアからデータを受け取るヒエラルキーのトップに位置し、受け取ったデータを子へと渡します。
+加えて、アクションを生成する— dispatcher helper methods —はアプリケーション内で可能な変更を全て描画するセマンティックなAPIを
+描画するサポートに利用します。
+それらをFluxの更新サイクルにおける4番目のパートと考えると便利です。&lt;/p&gt;
+
+&lt;p&gt;FluxではMVCを避けて一定方向のデータフローを支持しています。
+あるユーザーがReactのビューに触れると、そのビューはアプリケーションのデータやロジックを保持した様々なストアへと、中央のディスパッチャーを介してアクションを広め、影響する全てのビューを更新します。
+とりわけReactのプログラミングスタイルに良く働き、ステート間でのビューの遷移を細かく支持することなくストアが更新を送れるようになります。&lt;/p&gt;
+
+&lt;p&gt;私たちは元々得られたデータを正しく扱います。例として、スレッドのリストを表示するビューに対して、メッセージスレッドの未読数を表示したかったとします。
+MVCでは、単一のスレッドをマークし、スレッドモデルと未読数モデルを更新することは難しいです。
+これらの依存関係やカスケードの更新は大規模なMVCアプリケーションでしばしば行われ、
+データの流れをもつれさせ、予期せぬ結果をもたらします。&lt;/p&gt;
+
+&lt;p&gt;ストアが制御をひっくり返します。ストアは外部の何かに更新を依存するのではなく、更新を受け入れ、適切に調和します。
+内部でのデータの管理方法をストアに留めれば、心配事がなくなります。
+ストアは&lt;code&gt;setAsRead()&lt;/code&gt;といった直接的なセッターメソッドを持ちませんが、代わりに自身のコンテナに新しいデータを取得する手段をもっています。
+そのコールバックをディスパッチャーとともに登録します。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;structure-and-data-flow:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Structure and Data Flow&lt;/h3&gt;
+
+&lt;p&gt;Fluxアプリケーションのデータの流れは一方向です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://facebook.github.io/flux/img/flux-simple-f8-diagram-1300w.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一方高のデータの流れはFluxアプリケーションの基本であり、上図はFluxプログラマーにとって主要なメンタルモデルとなります。
+ディスパッチャー、ストア、ビューは入力と出力をもった独立したノードです。
+アクションは新データと&lt;code&gt;type&lt;/code&gt;プロパティをもった単純なオブジェクトです。&lt;/p&gt;
+
+&lt;p&gt;ビューはユーザーインタラクションが起こるとシステムを通して新しいアクションを伝播します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://facebook.github.io/flux/img/flux-simple-f8-diagram-with-client-action-1300w.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ディスパッチャーを介した全てのデータフローはセントラルハブとなります。
+ディスパッチャーに提供されるアクションは、ユーザーのインタラクションをきっかけに、たいていはアクション生成メソッドから始まります。
+そしてディスパッチャーはストアに登録されたコールバックを発動し、アクションを全てのストアに伝えます。
+登録されたコールバック内では、ストアの保持しているステートに関連している全てのアクションに反応します。
+そしてストアはデータレイヤーが引き起こした変更のイベントをcontroller-viewsに送信します。
+controller-viewsはこれらのイベントをキャッチし、イベントハンドラ内でストアからデータを受け取ります。
+controller-viewsは自身の&lt;code&gt;setState()&lt;/code&gt;メソッドを呼び出し、自身と全ての子孫を再度レンダリングします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;この構造によって、関数型リアクティブプログラミング(FRP)、データフロープログラミング(DFP)、フローベースプログラミング(FBP)の理解が容易になり、アプリケーション内のデータの流れが一方向になります。(これは2wayバインディングとは異なります。)
+アプリケーションのステートはストア内のみに保たれ、アプリケーションの異なる部分をしっかりと分離させることができます。
+ストア間での依存関係は、ヒエラルキーにより厳格に保たれ、ディスパッチャーによって更新が同期されます。&lt;/p&gt;
+
+&lt;p&gt;2wayデータバインディングではあるオブジェクトが変更されると他のオブジェクトも変更され、たくさんの更新がトリガされます。
+アプリケーションが大きくなると、ユーザのインタラクションによって引き起こされる結果として何が変更されるかを予測することが非常に難しくなってシまいます。
+シングルラウンド内でデータの変更ができれば、システム全体を予測しやすくなります。&lt;/p&gt;
+
+&lt;p&gt;Fluxの様々な部分を見ていきましょう。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;a-single-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;A Single Dispatcher&lt;/h3&gt;
+
+&lt;p&gt;Fluxアプリケーションではディスパッチャーがセントラルハブであり、全てのデータの流れを管理します。
+ストアにコールバックを登録することが本質的なところであり、ディスパッチャー自身が実際に知性を持っているわけではありません。
+ストアにアクションを割り当てるためのシンプルなmechanismです。
+各ストアは自身を登録し、コールバックを提供します。
+アクションクリエータが新しいアクションを持ったディスパッチャーを登録すると、アプリケーション内の登録されたすべてのストアがコールバックを通してアクションを受け取ります。&lt;/p&gt;
+
+&lt;p&gt;アプリケーションが大きくなると、ディスパッチャーはより活発になり、明確な順番で登録されたコールバックを呼び出すため、ストア間の依存関係を管理するために役立ちます。
+ストアは他のストアの更新を待ち、そのあとに自身を更新します。&lt;/p&gt;
+
+&lt;p&gt;npmやbowerからFacebookが実際の本番環境で使用しているディスパッチャーが利用可能です。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;stores:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Stores&lt;/h3&gt;
+
+&lt;p&gt;ストアにはアプリケーションのステートとロジックが含まれます。
+ストアの役割は伝統的なMVCにおけるモデルに似ていますが、ストアはたくさんのオブジェクトのステートを管理します。(ORMのようなシングルレコードを表すわけではありません。)
+Backboneのコレクションとも違います。
+ORMスタイルのコレクションをよりシンプルに管理するもので、ストアはアプリケーション内で特定のドメインのためのアプリケーションステートを管理します。&lt;/p&gt;
+
+&lt;p&gt;例としてFacebookのLookback Video Editorは&amp;rdquo;TimeStore&amp;rdquo;を利用して、プレイバックタイムの位置とステートのトラックを保ちます。
+一方で、同アプリケーションの&amp;rdquo;ImageStore&amp;rdquo;はToDoリストの管理に似ています。ストアはモデルのコレクションとシングルトンとしての特徴を持ち合わせています。&lt;/p&gt;
+
+&lt;p&gt;上記で言及したように、ストアは自身にディスパッチャーを登録し、コールバックをもったディスパッチャーを提供します。
+このコールバックはアクションをparameterとして受け取ります。
+ストアに登録されたコールバックの内部では、アクションタイプに基づいたステートのスイッチはアクションを解釈し、固有のフックをストア内部のメソッドに提供するために使われます。
+こうしてアクションはディスパッチャーを介してストアのステートを更新します。
+ストアが更新された後、ステートが変更されたことを宣言するイベントをブロードキャストします。
+そしてビューがステートと更新を確認します。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;views-and-controller-views:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Views and Controller-Views&lt;/h3&gt;
+
+&lt;p&gt;Reactは私たちがビューレイヤーに必要としていた構成可能かつ自由で再レンダリングが可能なビューを提供します。
+ビューヒエラルキーのトップに位置するビューは依存するストアにブロードキャストされたイベントを受け取る特別なビューです。
+これらをcontroller-viewと呼び、ストアからデータを取得し、取得したデータを子孫に渡すようなグルーコードを提供します。&lt;/p&gt;
+
+&lt;p&gt;controller-viewがストアからイベントを受け取ると、ストアのゲッターメソッドを通して必要な新しいデータを要求します。
+自身の&lt;code&gt;setState()&lt;/code&gt;もしくは&lt;code&gt;forceUpdate()&lt;/code&gt;関数を呼び出し、自身の&lt;code&gt;render()&lt;/code&gt;メソッドと、子孫の&lt;code&gt;render()&lt;/code&gt;メソッドを引き起こします。&lt;/p&gt;
+
+&lt;p&gt;シングルオブジェクト内のストアの全体のステートを子のビューに下ろすことで、異なる子孫が使えるようになります。
+トップ階層でコントローラのような振る舞いを保つことで、このビューを機能的に保つことが可能になり、管理しなければならないプロパティの数を減らすことができます。&lt;/p&gt;
+
+&lt;p&gt;時々、コンポーネントをシンプルに保つために、追加でcontroller-viewsを付け足す必要が出てくるかもしれません。
+特定のデータドメインに関連するセクションのヒエラルキーを要約することに役立ちます。
+しかし、controller-viewsを深くすることで一方向のデータフローを破ってしまう可能性があることに注意してください。
+controller-viewを深い位置に追加するのであれば、異なる点でのヒエラルキーにおいてシンプルなコンポーネントとデータ更新のフローの複雑性にバランスをとってください。
+こういった複雑なデータの更新は、Reactのレンダリングメソッドを繰り返し発動させてしまう恐れがあり、潜在的にデバッグを難しくしてしまいます。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;actions:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Actions&lt;/h3&gt;
+
+&lt;p&gt;ディスパッチャーはストアとデータに対してのディスパッチをトリガするメソッドを提供し、
+アクションの生成はディスパッチャーにアクションを送るセマンティックなヘルパーメソッドにラップされます。
+例えば、ToDoリストアプリケーションのToDoアイテムのテキストを変更したかったとします。
+&lt;code&gt;TodoActions&lt;/code&gt;モジュール内で&lt;code&gt;updateText(todoId, newText)&lt;/code&gt;関数を生成します。
+このメソッドはビューのイベントハンドラから呼び出され、ユーザーインタラクションによって呼び出すことができます。
+このアクションを生成するメソッドはアクションに&lt;code&gt;type&lt;/code&gt;を持たせるため、ストア内で解釈され、適切に反応することができます。
+例として、&lt;code&gt;type&lt;/code&gt;を&lt;code&gt;TODO_UPDATE_TEXT&lt;/code&gt;のように名づけます。&lt;/p&gt;
+
+&lt;p&gt;アクションはサーバーなど別の場所から来ることもあるかもしれません。
+例えば、データ初期化時などにおこります。
+サーバーがエラーコードを返した時や、アプリケーションをアップデートしたときに起こります。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;what-about-that-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;What About that Dispatcher?&lt;/h3&gt;
+
+&lt;p&gt;以前に言及したように、ディスパッチャーはストア間の依存関係を管理します。
+ディスパッチャークラスの&lt;code&gt;waitFor()&lt;/code&gt;関数を通して利用可能です。
+極めてシンプルなTodoアプリなどで使用する必要はありませんが、より複雑で大きなアプリケーションでは活発になります。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;TodoStore&lt;/code&gt;に登録されたコールバックが他の依存関係の更新を待っている様子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;case &#39;TODO_CREATE&#39;:
+  Dispatcher.waitFor([
+    PrependedTextStore.dispatchToken,
+    YetAnotherStore.dispatchToken
+  ]);
+
+  TodoStore.create(PrependedTextStore.getText() + &#39; &#39; + action.text);
+  break;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;waitFor()&lt;/code&gt;は登録したディスパッチャーの配列を一つ引数として受け、&lt;code&gt;dispatch token&lt;/code&gt;と呼ばれます。
+このように&lt;code&gt;waitFor()&lt;/code&gt;を発動するストアはどのように自身のステートを更新するかを通知するために別のストアのステートに依存します。&lt;/p&gt;
+
+&lt;p&gt;ディスパッチャーのコールバックが登録された時に&lt;code&gt;register()&lt;/code&gt;が&lt;code&gt;dispatch token&lt;/code&gt;を返します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PrependedTextStore.dispatchToken = Dispatcher.register(function (payload) {
+  // ...
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;より&lt;code&gt;waitFor()&lt;/code&gt;やアクションクリエータ、ディスパッチャーについてしりたければ&lt;a href=&#34;http://facebook.github.io/react/blog/2014/07/30/flux-actions-and-the-dispatcher.html&#34;&gt;こちら&lt;/a&gt;です。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Angular】ユニットテスト</title>
       <link>http://kotazi.github.io/blog/post/2016/0202_angular_unit/</link>
       <pubDate>Mon, 08 Feb 2016 18:45:53 +0900</pubDate>
       
@@ -1312,6 +1492,69 @@ var CommentBox = React.createClass({
     </item>
     
     <item>
+      <title>【読書】アルゴリズムが世界を支配する</title>
+      <link>http://kotazi.github.io/blog/post/2016/0213_algorithm/</link>
+      <pubDate>Wed, 27 Jan 2016 11:40:44 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0213_algorithm/</guid>
+      <description>
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00FMI2XIW/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00FMI2XIW&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;アルゴリズムが世界を支配する (角川ＥＰＵＢ選書)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=B00FMI2XIW&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;p&gt;オンラインスーパーマーケットAisle50の共同設立社、クリストファー・スタイナーの著書。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;目次:ede789d548135e377784ce81f1ae62ff&#34;&gt;目次&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第1章 ドミノの最初の一牌目、ウォールストリート&lt;/li&gt;
+&lt;li&gt;第2章 人類とアルゴリズムの歴史&lt;/li&gt;
+&lt;li&gt;第3章 ボット トップ40&lt;/li&gt;
+&lt;li&gt;第4章 ボットの秘密のハイウェイ&lt;/li&gt;
+&lt;li&gt;第5章 システムをゲーム化しろ&lt;/li&gt;
+&lt;li&gt;第6章 ドクター・ボットを呼べ&lt;/li&gt;
+&lt;li&gt;第7章 人類をカテゴライズする&lt;/li&gt;
+&lt;li&gt;第8章 ウォールストリート vs シリコンバレー&lt;/li&gt;
+&lt;li&gt;第9章 ウォールストリートが損をすれば他のみんなは儲かる&lt;/li&gt;
+&lt;li&gt;第10章 未来はアルゴリズムとそのクリエイターのもの&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;ここのところ機械学習やディープラーニングの話題をよく耳にするので買ってみた。&lt;/p&gt;
+
+&lt;p&gt;読んでみると株式取引や音楽を自動生成するアルゴリズムなどがかなり昔から存在することを知った。
+近年ではポーカーや医療の場でもアルゴリズムは大きく活躍しており、
+これからは本当にデータやアルゴリズムの時代のような気がしてしまった。&lt;/p&gt;
+
+&lt;p&gt;アルゴリズムはすでに我々の言葉をきいて、その本音を読み取ることができるようになっている。
+ポーカーや電話の自動オペレーターの話を読んでいると、今まではアルゴリズムは
+天才的な人間のモデルを作ることだと思っていたけれど、どうやらそれには少し誤解があるらしかった。&lt;/p&gt;
+
+&lt;p&gt;例えば電話対応の場合、ある電話は情報を得るためにかけられており、ある電話は共感や日常会話を求めてかかってきたものだとする。
+最初の電話では、情報を伝えれば相手はすぐに満足するだろうが、雑談をし始めたらイライラするかもしれない。
+2つ目の電話の場合、謝罪や誠実で思いやりのある対応が相手を最も満足させる。&lt;/p&gt;
+
+&lt;p&gt;このようにアルゴリズムは相手によって対応を変える必要がある。&lt;br /&gt;
+そして元々NASAで宇宙飛行士の相性を調べるために開発されたテービー・ケーラー博士の手法では
+人間を以下の6つのタイプに分類するらしい。&lt;/p&gt;
+
+&lt;p&gt;1: 感情重視型の人。課題に取り掛かる前に関係者と人間関係を築く。女性がこのグループの3/4を占める。全体の30%がこのグループ。窮地に陥ると劇的になり過剰反応を起こす&lt;br /&gt;
+2: 思考重視型の人。社交辞令や冗談を言わない。現実ジを重視し、意思決定は厳格な現実主義に基づいて行われる。&lt;br /&gt;
+3: 行動重視型の人。進捗や行動を望む。常に精力的で押しが強い。魅力的な人間が多い。&lt;br /&gt;
+4: 内省重視型の人。温和で想像力が豊か。現実に取り組みよりも、これからどうなるだろうかと考えをめぐらせる。&lt;br /&gt;
+5: 意見重視型の人。話し言葉は命令形と断定系が多い。状況の一面しか見ない傾向がある。自分お意見に固執する。政治家の70%はこのグループ。全人口ではったの10%。勤勉であり、問題解決まで粘り強い。&lt;br /&gt;
+6: リアクション重視型の人。自発的で独創的。冗談が好きである。物事に対して強い反応を示す。起業家、発明家に多い。&lt;/p&gt;
+
+&lt;p&gt;もちろん複数のタイプを持つこともある。&lt;/p&gt;
+
+&lt;p&gt;この本を読んでアルゴリズムに興味が湧いた。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>【読書】コンピュータはなぜ動くのか</title>
       <link>http://kotazi.github.io/blog/post/2016/0127_why_computer/</link>
       <pubDate>Wed, 27 Jan 2016 11:40:44 +0900</pubDate>
@@ -1400,6 +1643,142 @@ var CommentBox = React.createClass({
 &lt;hr&gt;
 
 &lt;p&gt;ざっくりそんな感じ。書き出してみると為になったことけっこうあった。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【読書】ユーザーストーリーマッピング</title>
+      <link>http://kotazi.github.io/blog/post/2016/0213_user_story/</link>
+      <pubDate>Wed, 27 Jan 2016 11:40:44 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0213_user_story/</guid>
+      <description>
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4873117321/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873117321&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;ユーザーストーリーマッピング&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4873117321&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;p&gt;アジャイルUXの第一人者として活躍するジェフ・パットン氏の著書。&lt;br /&gt;
+自身が開発した手法について書き下ろされら書籍。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://codezine.jp/article/detail/6404&#34;&gt;良いプロダクトを発見・具現化するために、チームはどう動くべきか？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://daipresents.com/2011/jeff-patton%E6%B0%8F%E3%81%AE-%E6%83%85%E7%86%B1%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%82%AA%E3%83%BC%E3%83%8A%E3%83%BC%E3%82%B7%E3%83%83%E3%83%97-%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97/&#34;&gt;Jeff Patton氏の “情熱プロダクトオーナーシップ” に参加しました&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;目次:2179e5f5f3ee66c47dc4d32c38e661c1&#34;&gt;目次&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;0章 まず最初に読んでください&lt;/li&gt;
+&lt;li&gt;1章 全体像&lt;/li&gt;
+&lt;li&gt;2章 作るものを減らすためのプラン&lt;/li&gt;
+&lt;li&gt;3章 より速く学ぶためのプラン&lt;/li&gt;
+&lt;li&gt;4章 時間どおりに終わらせるためのプラン&lt;/li&gt;
+&lt;li&gt;5章 あなたはもうやり方を知っている&lt;/li&gt;
+&lt;li&gt;6章 ストーリーについての本当のストーリー&lt;/li&gt;
+&lt;li&gt;7章 より良いストーリーテリングのために&lt;/li&gt;
+&lt;li&gt;8章 カードに書かれていることが全てではない&lt;/li&gt;
+&lt;li&gt;9章 カードは始まりにすぎない&lt;/li&gt;
+&lt;li&gt;10章 ケーキのようにストーリーを焼く&lt;/li&gt;
+&lt;li&gt;11章 岩を砕いていく&lt;/li&gt;
+&lt;li&gt;12章 岩を砕く人&lt;/li&gt;
+&lt;li&gt;13章 オポチュニティから始める&lt;/li&gt;
+&lt;li&gt;14章 ディスカバリーを介して共通理解を築く&lt;/li&gt;
+&lt;li&gt;15章 ディスカバリーによる検証された学習&lt;/li&gt;
+&lt;li&gt;16章 リファイン、定義、構築&lt;/li&gt;
+&lt;li&gt;17章 ストーリーは実際にはアステロイドに似ている&lt;/li&gt;
+&lt;li&gt;18章 構築するすべてのものから学ぶ&lt;/li&gt;
+&lt;li&gt;19章 終わり？それとも&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;多くの企業がアジャイルやリーンプロセスを取り入れる一環としてストーリーを取り入れている。
+しかしその取組の中で、全体像を見失ってしまったり、何が作られているのか分からなくなってしまったり、
+共通理解が得られなかったり。そういったチーム開発における悩みをユーザーストーリーマッピングを用いて紐解いていく本。&lt;/p&gt;
+
+&lt;p&gt;ただ、この本の序文を&lt;a href=&#34;http://www.amazon.co.jp/Inspired-%E9%A1%A7%E5%AE%A2%E3%81%AE%E5%BF%83%E3%82%92%E6%8D%89%E3%81%88%E3%82%8B%E8%A3%BD%E5%93%81%E3%81%AE%E5%89%B5%E3%82%8A%E6%96%B9-%E3%83%9E%E3%83%BC%E3%83%86%E3%82%A3-%E3%82%B1%E3%82%A4%E3%82%AC%E3%83%B3-ebook/dp/B00TCM8TB4&#34;&gt;Inspired&lt;/a&gt;の著者マーティケーガンが執筆しており、
+&lt;a href=&#34;http://www.amazon.co.jp/HARD-THINGS-%E7%AD%94%E3%81%88%E3%81%8C%E3%81%AA%E3%81%84%E9%9B%A3%E5%95%8F%E3%81%A8%E5%9B%B0%E9%9B%A3%E3%81%AB%E3%81%8D%E3%81%BF%E3%81%AF%E3%81%A9%E3%81%86%E7%AB%8B%E3%81%A1%E5%90%91%E3%81%8B%E3%81%86%E3%81%8B-%E3%83%99%E3%83%B3-%E3%83%9B%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%83%E3%83%84-ebook/dp/B00W535LOU&#34;&gt;HARD THINGS&lt;/a&gt;の著者ベン・ホロヴィッツの
+&lt;a href=&#34;https://a16z.files.wordpress.com/2014/08/good-product-manager.pdf&#34;&gt;Good Product Manager/Bad Product Manager&lt;/a&gt;
+に倣い、強力な製品開発チームと非力なチームの重要な違いを挙げている。&lt;br /&gt;
+それが面白かったので引用したい。&lt;/p&gt;
+
+&lt;p&gt;優れたチームには、使命感といえるほどの情熱を持って追求したくなる圧倒的な魅力のあるビジョンがある。
+ダメなチームは報酬しか考えない。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、リアルな問題を解決するためにスコアカードKPI，顧客の苦闘の状況、顧客が製品を使った時に生成されるデータを良く見て、絶えず新技術を応用するチャンスを探しながら、ヒントやアイディアを掴んでいる。ダメなチームは営業や顧客から要件を集めてくる。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、もっとも大切なステークホルダーが誰か、そのステークホルダーがどのような制約を抱えているのかを理解し、
+ユーザーと顧客のために役立つだけでなく、ビジネスの制約の枠内で作れるソリューションを作り出すことに力を注いでいる。
+ダメなチームは、ステークホルダーから要件を集めてくる。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、そのアイディアが本当に構築に値するのか見極めるために、アイディアをすぐに試せるテクニックを習熟している。
+ダメなチームは、優先順位を指定したロードマップを作るために会議を開く。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、社内各部署の優秀なリーダーを集めたブレーンストーミングを積極的に行う。ダメなチームは、チーム外の誰かが提案してくれても反発する。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、製品担当、デザイン担当、技術担当が隣同士に座り、機能、ユーザーエクスペリエンス、実現するためのテクノロジーにおける助け合いを推進している。ダメなチームは、それぞれの部門の席に座り、部門の外からのサービスの以来には、文書による以来や会議の日程調整を要求する。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、イノベーションのためにいつでも新しいアイディアを試そうとするが、収益とブランドはきっちり守る。
+ダメなチームはテストの実行許可を待ち続ける。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、力のあるインタラクションデザインなど、勝てる商品を作るために必要なスキルセットの確保にこだわる。
+ダメなチームは、インタラクションデザインがどのような仕事かさえ知らない。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、エンジニアが毎日ディスカバリープロトタイプを試す時間を持っている。製品をよくするための意見も言える。
+ダメなチームは、急ぎの案件の時だけ、見積書を作るためにエンジニアにプロトタイプを見せる。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、顧客をよりよく理解し、最新のアイディアに対する顧客の反応を見るために毎週、顧客と直接議論する。
+ダメなチームは、自分がお客さんだと思っている。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、自分たちが気に入ったアイディアの多くが顧客の役に立たないことを知っており、役に立つかもしれないものでも、
+望ましい成果を挙げるまでには、数回のイテレーションが必要であることを知っている。
+ダメなチームは、ロードマップに載ったものを作り、納期と要件を満たしていれば満足してしまう。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、スピードの重要性を知っていて、イノベーションで鍵を握るのがイテレーションの早さであることを理解している。
+ここで言うスピードは、適切なテクニックによって得られるもので、時間労働のようなもので得られるものではないこともわかっている。
+ダメなチームは、同僚が働いてくれないからペースが上がらないと不満を言う。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、顧客からの要望をよく吟味し、顧客と自社の業績に貢献できそうなソリューションだと確信したら、
+その実現のために力を注ぐ。
+ダメなチームは、営業に振り回される会社だと文句を言う。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、フィードバックの仕組みを作る。製品がどのように使われているかをすばやく知り、そのデータにもとづいて製品に調整を加える。
+ダメなチームは、分析、レポート機能を、あると良い機能だと思っている。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、コンスタントに小規模なリリースを重ねたほうが顧客に安定したソリューションを提供できることを知っている。
+そのために継続的にインテグレーション、リリースを行う。ダメなチームは、苦痛に満ちたインテグレーションのフェーズの
+最後にマニュアルでテストを行い、それからすべてをまとめてリリースをする。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、重要な顧客のことで悩む。
+ダメなチームは、競合他社のことで悩む。&lt;/p&gt;
+
+&lt;p&gt;優れたチームは、ビジネスKPIに大きなインパクトを与えられたときに祝杯をあげる。
+ダメなチームは、何かをリリース出来たときに祝杯をあげる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;序文を引用したら長くなってしまった。
+とにかく本著の内容は、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ストーリーは、要件を形式に落としこむためのものではない。言葉と絵を使いながらストーリーを話すのは、共通理解を築くためのメカニズムだ。&lt;/li&gt;
+&lt;li&gt;ストーリーは要件ではない。会社、顧客、ユーザーが抱える問題の解決についての議論であり、何を作るかについての意見を一致に導くものだ。&lt;/li&gt;
+&lt;li&gt;あなたがしなければならないことは、より早くより多くのソフトウェアを作ることではない。作ると決めたものから最大限の成果とインパクトを生み出すことだ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ということである。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;最後に、もっとも感動した一文。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;「本当は、あなたの仕事は世界を変えることだ。」&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;素晴らしいアイディアを製品に転化するのであれば、
+それを使う人々の世界を少し、あるいは少なからず変えてしまうことになる。&lt;br /&gt;
+実際にそうなっていなければ、あなたの取り組みは失敗なのだ。&lt;/p&gt;
 </description>
     </item>
     
@@ -2799,201 +3178,6 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
 こういうサービスから新しい働き方が広がったら素晴らしいことだと思います。&lt;/p&gt;
 
 &lt;iframe src=&#34;//dspb1oyxjua32.cloudfront.net/p?t=YOj5SQJVvS9yi0j79FoK5YHyUUu5UYSOi7t1HB0qSAU%3D&#34; frameborder=&#34;0&#34; height=&#34;230&#34; width=&#34;170&#34;&gt;&lt;/iframe&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>gemをインストールしたけれど見つからない時に疑うこと</title>
-      <link>http://kotazi.github.io/blog/post/2016/0119_gitup/</link>
-      <pubDate>Tue, 19 Jan 2016 13:55:26 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0119_gitup/</guid>
-      <description>&lt;nav&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#git-up-をインストール:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ &lt;code&gt;git-up&lt;/code&gt;をインストール&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#探す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ 探す&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#パスを通す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ パスを通す&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/nav&gt;
-
-&lt;p&gt;&lt;code&gt;git-up&lt;/code&gt;をインストールしたけれど使えなかったのでその時の対処法をメモ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h6 id=&#34;git-up-をインストール:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ &lt;code&gt;git-up&lt;/code&gt;をインストール&lt;/h6&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gem install git-up
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この状態で&lt;code&gt;git up&lt;/code&gt;を試したけれど見つからなかった&lt;/p&gt;
-
-&lt;h6 id=&#34;探す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ 探す&lt;/h6&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bundle list | grep git-up
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これは見つかる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ which git-up
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これが見つからない。rbenvあたりでパスが通っていないっぽい。&lt;/p&gt;
-
-&lt;h5 id=&#34;パスを通す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ パスを通す&lt;/h5&gt;
-
-&lt;p&gt;rbev内にgit-upが入っているかを確認する&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ find .rbenv -name git-up
-.rbenv/versions/2.2.2/bin/git-up
-.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/git-up-0.5.12/bin/git-up
-.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/git-up-0.5.12/lib/git-up
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;あった。&lt;/p&gt;
-
-&lt;p&gt;シンボリックリンクを作成する&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ ln -s ~/.rbenv/versions/2.2.2/bin/git-up /usr/local/bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最後にgit-upがあることを確認する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ which git-up
-/usr/local/bin/git-up
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】小さなチーム、大きな仕事</title>
-      <link>http://kotazi.github.io/blog/post/2016/0118_37signals/</link>
-      <pubDate>Mon, 18 Jan 2016 12:53:46 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0118_37signals/</guid>
-      <description>&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/415209267X/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=415209267X&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;小さなチーム、大きな仕事〔完全版〕: 37シグナルズ成功の法則&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=415209267X&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;本書は37signalsのCEO、ジェイソン・フリードに書かれた本である。
-37signalsは1999年にシカゴに設立されたウェブアプリケーションの会社である。
-プロジェクト管理ツール「Basecamp」や、Ruby用のフレームワークである「Runy on Rails」を開発した会社として有名。&lt;/p&gt;
-
-&lt;p&gt;この本は&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;はじめに&lt;/li&gt;
-&lt;li&gt;まず最初に&lt;/li&gt;
-&lt;li&gt;見直す&lt;/li&gt;
-&lt;li&gt;先に進む&lt;/li&gt;
-&lt;li&gt;進展&lt;/li&gt;
-&lt;li&gt;生産性&lt;/li&gt;
-&lt;li&gt;競合相手&lt;/li&gt;
-&lt;li&gt;進化&lt;/li&gt;
-&lt;li&gt;プロモーション&lt;/li&gt;
-&lt;li&gt;人を雇う&lt;/li&gt;
-&lt;li&gt;ダメージ・コントロール&lt;/li&gt;
-&lt;li&gt;文化&lt;/li&gt;
-&lt;li&gt;最後に&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;といった各章から成る。
-小題は2ページ程度で挿絵も入っていて読みやすい。&lt;/p&gt;
-
-&lt;p&gt;「ビジネスを立ちあげて、経営して、拡大する(あるいは拡大しない)ことについて、言いたいことがある。」
-という一文から本書は始まる。&lt;/p&gt;
-
-&lt;p&gt;本書の著者、ジェイソン・フリードが経営する37signalsは少数精鋭型のチームと自分たちのやり方で大きな成果を残してきた。
-大方この本は、そんなジェイソン・フリードが一般的なビジネス手法をやんわりと否定するビジネスエッセイである。&lt;/p&gt;
-
-&lt;p&gt;この本でも最後に書かれているのは「ひらめき」についてだった。&lt;/p&gt;
-
-&lt;p&gt;「ひらめきには賞味期限がある」&lt;/p&gt;
-
-&lt;p&gt;ひらめきは永遠に持続できるものではない。何かしたいことがあれば、今しなければならない。
-しばらく放っておいて二ヶ月後に取りかかるというわけにはいかない。
-「後でやる」とはいえない。「後で」ではそんなにやる気満々でもないだろう。&lt;/p&gt;
-
-&lt;p&gt;待ってはくれない。ひらめきとは「今」のものだ。
-もし、虜にされたなら、逆に仕事に専念することだ。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】Being Geek</title>
-      <link>http://kotazi.github.io/blog/post/2016/0117_geek/</link>
-      <pubDate>Sun, 17 Jan 2016 12:53:46 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0117_geek/</guid>
-      <description>&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4873114993/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4873114993&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;Being Geek ―ギークであり続けるためのキャリア戦略&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4873114993&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;第一部 キャリアの形成&lt;/li&gt;
-&lt;li&gt;第二部 マネージメント&lt;/li&gt;
-&lt;li&gt;第三部 日々の仕事に必要なスキル&lt;/li&gt;
-&lt;li&gt;第四部 変化&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;
-上記4部が全40章で構成されている。&lt;/p&gt;
-
-&lt;p&gt;Geekとはについてよく書かれた本である。&lt;br /&gt;
-「Geekは普通の人とは違っている。」&lt;/p&gt;
-
-&lt;p&gt;そんなGeekのための本であり、&lt;br /&gt;
-Geekがいかにして生きていくべきかを掘り下げていく。&lt;/p&gt;
-
-&lt;p&gt;基本的には日本でいう「オタク」のような技術者を想定された本であり、
-「電話に出るべきか？」とか「Geekにとって人間は困りごと」だとかそういう視点でキャリアや人生が語られる。&lt;/p&gt;
-
-&lt;p&gt;本書ではGeekとは次のような信条を持つ人のことであると記される。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;物事を理解するにはまず定義を知るべき&lt;/li&gt;
-&lt;li&gt;システムは必ず認識可能な要素に分けられる&lt;/li&gt;
-&lt;li&gt;何をすべきかを判断するには、まずルールを見つける&lt;/li&gt;
-&lt;li&gt;ルールを知れば成功のための行動がとれる&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;
-Geekと呼ばれる人たちにとって何よりも重要なものは「構造」である。&lt;br /&gt;
-すべてのGeekに共通しているのは「この世界について十分に学べば、全ては予測可能になる。」と信じているという点だ。&lt;/p&gt;
-
-&lt;p&gt;Geekのキャリア形成や転職といってことについて書かれた本書であるが、本の終わりではアイディアについて語られている。&lt;/p&gt;
-
-&lt;p&gt;良いアイディアが思い浮かんでしまったらどうしようという話である。&lt;br /&gt;
-もしも、まったく誰も思いついていない斬新なアイディアが浮かんでしまったらどうしよう。&lt;/p&gt;
-
-&lt;p&gt;真剣に考えなくてはならない。
-住宅ローンを抱え、幼い子供がいるあなたが素晴らしいアイディアを思いついたとする。
-しかも、今のところ、誰も実現していない。ならば、思い切って実現に乗り出すべきではないだろうか。&lt;/p&gt;
-
-&lt;p&gt;ともかくやってみよう。小さいところから始めてみるのだ。
-自分で考え、自分の判断で先へ進むのだ。
-成功するかは分からないが、いろいろと面倒なことに巻き込まれるのは確実だろう。
-新しいことをしようとすれば、おそらく既存のルールをいくつも破ることになるからだ。
-だが、きっとそれは気分の悪いことではないはずだ。直感を信じて前進しよう。&lt;/p&gt;
-
-&lt;p&gt;という話。&lt;/p&gt;
 </description>
     </item>
     

@@ -6,8 +6,188 @@
     <description>Recent content in Es6 on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Feb 2016 12:06:51 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2016 17:46:23 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Flux】概要</title>
+      <link>http://kotazi.github.io/blog/post/2016/0202_flux/</link>
+      <pubDate>Tue, 09 Feb 2016 17:46:23 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0202_flux/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://facebook.github.io/flux/docs/overview.html#content&#34;&gt;Overview|Flux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;FluxはFacebookがクライアントサイドのWebアプリケーション構築の際に利用するアプリケーションのアーキテクチャです。
+一定方向のデータフローを利用することでReactのビューコンポーネントの構成を補います。
+Fluxはフレームワークというよりひとつのパターンなので、新しいコードを必要とすることなくいつでもFluxを使い始めることができます。&lt;/p&gt;
+
+&lt;p&gt;Fluxアプリケーションには主要な3つのパーツがあります。ディスパッチャー、ストア、ビュー(Reactコンポーネント)です。
+これらをMVCと混同すべきではありません。
+コントローラはFluxアプリケーションの中にも存在します。
+&lt;code&gt;controller-views&lt;/code&gt;-ビューはストアからデータを受け取るヒエラルキーのトップに位置し、受け取ったデータを子へと渡します。
+加えて、アクションを生成する— dispatcher helper methods —はアプリケーション内で可能な変更を全て描画するセマンティックなAPIを
+描画するサポートに利用します。
+それらをFluxの更新サイクルにおける4番目のパートと考えると便利です。&lt;/p&gt;
+
+&lt;p&gt;FluxではMVCを避けて一定方向のデータフローを支持しています。
+あるユーザーがReactのビューに触れると、そのビューはアプリケーションのデータやロジックを保持した様々なストアへと、中央のディスパッチャーを介してアクションを広め、影響する全てのビューを更新します。
+とりわけReactのプログラミングスタイルに良く働き、ステート間でのビューの遷移を細かく支持することなくストアが更新を送れるようになります。&lt;/p&gt;
+
+&lt;p&gt;私たちは元々得られたデータを正しく扱います。例として、スレッドのリストを表示するビューに対して、メッセージスレッドの未読数を表示したかったとします。
+MVCでは、単一のスレッドをマークし、スレッドモデルと未読数モデルを更新することは難しいです。
+これらの依存関係やカスケードの更新は大規模なMVCアプリケーションでしばしば行われ、
+データの流れをもつれさせ、予期せぬ結果をもたらします。&lt;/p&gt;
+
+&lt;p&gt;ストアが制御をひっくり返します。ストアは外部の何かに更新を依存するのではなく、更新を受け入れ、適切に調和します。
+内部でのデータの管理方法をストアに留めれば、心配事がなくなります。
+ストアは&lt;code&gt;setAsRead()&lt;/code&gt;といった直接的なセッターメソッドを持ちませんが、代わりに自身のコンテナに新しいデータを取得する手段をもっています。
+そのコールバックをディスパッチャーとともに登録します。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;structure-and-data-flow:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Structure and Data Flow&lt;/h3&gt;
+
+&lt;p&gt;Fluxアプリケーションのデータの流れは一方向です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://facebook.github.io/flux/img/flux-simple-f8-diagram-1300w.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一方高のデータの流れはFluxアプリケーションの基本であり、上図はFluxプログラマーにとって主要なメンタルモデルとなります。
+ディスパッチャー、ストア、ビューは入力と出力をもった独立したノードです。
+アクションは新データと&lt;code&gt;type&lt;/code&gt;プロパティをもった単純なオブジェクトです。&lt;/p&gt;
+
+&lt;p&gt;ビューはユーザーインタラクションが起こるとシステムを通して新しいアクションを伝播します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://facebook.github.io/flux/img/flux-simple-f8-diagram-with-client-action-1300w.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ディスパッチャーを介した全てのデータフローはセントラルハブとなります。
+ディスパッチャーに提供されるアクションは、ユーザーのインタラクションをきっかけに、たいていはアクション生成メソッドから始まります。
+そしてディスパッチャーはストアに登録されたコールバックを発動し、アクションを全てのストアに伝えます。
+登録されたコールバック内では、ストアの保持しているステートに関連している全てのアクションに反応します。
+そしてストアはデータレイヤーが引き起こした変更のイベントをcontroller-viewsに送信します。
+controller-viewsはこれらのイベントをキャッチし、イベントハンドラ内でストアからデータを受け取ります。
+controller-viewsは自身の&lt;code&gt;setState()&lt;/code&gt;メソッドを呼び出し、自身と全ての子孫を再度レンダリングします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;この構造によって、関数型リアクティブプログラミング(FRP)、データフロープログラミング(DFP)、フローベースプログラミング(FBP)の理解が容易になり、アプリケーション内のデータの流れが一方向になります。(これは2wayバインディングとは異なります。)
+アプリケーションのステートはストア内のみに保たれ、アプリケーションの異なる部分をしっかりと分離させることができます。
+ストア間での依存関係は、ヒエラルキーにより厳格に保たれ、ディスパッチャーによって更新が同期されます。&lt;/p&gt;
+
+&lt;p&gt;2wayデータバインディングではあるオブジェクトが変更されると他のオブジェクトも変更され、たくさんの更新がトリガされます。
+アプリケーションが大きくなると、ユーザのインタラクションによって引き起こされる結果として何が変更されるかを予測することが非常に難しくなってシまいます。
+シングルラウンド内でデータの変更ができれば、システム全体を予測しやすくなります。&lt;/p&gt;
+
+&lt;p&gt;Fluxの様々な部分を見ていきましょう。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;a-single-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;A Single Dispatcher&lt;/h3&gt;
+
+&lt;p&gt;Fluxアプリケーションではディスパッチャーがセントラルハブであり、全てのデータの流れを管理します。
+ストアにコールバックを登録することが本質的なところであり、ディスパッチャー自身が実際に知性を持っているわけではありません。
+ストアにアクションを割り当てるためのシンプルなmechanismです。
+各ストアは自身を登録し、コールバックを提供します。
+アクションクリエータが新しいアクションを持ったディスパッチャーを登録すると、アプリケーション内の登録されたすべてのストアがコールバックを通してアクションを受け取ります。&lt;/p&gt;
+
+&lt;p&gt;アプリケーションが大きくなると、ディスパッチャーはより活発になり、明確な順番で登録されたコールバックを呼び出すため、ストア間の依存関係を管理するために役立ちます。
+ストアは他のストアの更新を待ち、そのあとに自身を更新します。&lt;/p&gt;
+
+&lt;p&gt;npmやbowerからFacebookが実際の本番環境で使用しているディスパッチャーが利用可能です。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;stores:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Stores&lt;/h3&gt;
+
+&lt;p&gt;ストアにはアプリケーションのステートとロジックが含まれます。
+ストアの役割は伝統的なMVCにおけるモデルに似ていますが、ストアはたくさんのオブジェクトのステートを管理します。(ORMのようなシングルレコードを表すわけではありません。)
+Backboneのコレクションとも違います。
+ORMスタイルのコレクションをよりシンプルに管理するもので、ストアはアプリケーション内で特定のドメインのためのアプリケーションステートを管理します。&lt;/p&gt;
+
+&lt;p&gt;例としてFacebookのLookback Video Editorは&amp;rdquo;TimeStore&amp;rdquo;を利用して、プレイバックタイムの位置とステートのトラックを保ちます。
+一方で、同アプリケーションの&amp;rdquo;ImageStore&amp;rdquo;はToDoリストの管理に似ています。ストアはモデルのコレクションとシングルトンとしての特徴を持ち合わせています。&lt;/p&gt;
+
+&lt;p&gt;上記で言及したように、ストアは自身にディスパッチャーを登録し、コールバックをもったディスパッチャーを提供します。
+このコールバックはアクションをparameterとして受け取ります。
+ストアに登録されたコールバックの内部では、アクションタイプに基づいたステートのスイッチはアクションを解釈し、固有のフックをストア内部のメソッドに提供するために使われます。
+こうしてアクションはディスパッチャーを介してストアのステートを更新します。
+ストアが更新された後、ステートが変更されたことを宣言するイベントをブロードキャストします。
+そしてビューがステートと更新を確認します。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;views-and-controller-views:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Views and Controller-Views&lt;/h3&gt;
+
+&lt;p&gt;Reactは私たちがビューレイヤーに必要としていた構成可能かつ自由で再レンダリングが可能なビューを提供します。
+ビューヒエラルキーのトップに位置するビューは依存するストアにブロードキャストされたイベントを受け取る特別なビューです。
+これらをcontroller-viewと呼び、ストアからデータを取得し、取得したデータを子孫に渡すようなグルーコードを提供します。&lt;/p&gt;
+
+&lt;p&gt;controller-viewがストアからイベントを受け取ると、ストアのゲッターメソッドを通して必要な新しいデータを要求します。
+自身の&lt;code&gt;setState()&lt;/code&gt;もしくは&lt;code&gt;forceUpdate()&lt;/code&gt;関数を呼び出し、自身の&lt;code&gt;render()&lt;/code&gt;メソッドと、子孫の&lt;code&gt;render()&lt;/code&gt;メソッドを引き起こします。&lt;/p&gt;
+
+&lt;p&gt;シングルオブジェクト内のストアの全体のステートを子のビューに下ろすことで、異なる子孫が使えるようになります。
+トップ階層でコントローラのような振る舞いを保つことで、このビューを機能的に保つことが可能になり、管理しなければならないプロパティの数を減らすことができます。&lt;/p&gt;
+
+&lt;p&gt;時々、コンポーネントをシンプルに保つために、追加でcontroller-viewsを付け足す必要が出てくるかもしれません。
+特定のデータドメインに関連するセクションのヒエラルキーを要約することに役立ちます。
+しかし、controller-viewsを深くすることで一方向のデータフローを破ってしまう可能性があることに注意してください。
+controller-viewを深い位置に追加するのであれば、異なる点でのヒエラルキーにおいてシンプルなコンポーネントとデータ更新のフローの複雑性にバランスをとってください。
+こういった複雑なデータの更新は、Reactのレンダリングメソッドを繰り返し発動させてしまう恐れがあり、潜在的にデバッグを難しくしてしまいます。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;actions:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Actions&lt;/h3&gt;
+
+&lt;p&gt;ディスパッチャーはストアとデータに対してのディスパッチをトリガするメソッドを提供し、
+アクションの生成はディスパッチャーにアクションを送るセマンティックなヘルパーメソッドにラップされます。
+例えば、ToDoリストアプリケーションのToDoアイテムのテキストを変更したかったとします。
+&lt;code&gt;TodoActions&lt;/code&gt;モジュール内で&lt;code&gt;updateText(todoId, newText)&lt;/code&gt;関数を生成します。
+このメソッドはビューのイベントハンドラから呼び出され、ユーザーインタラクションによって呼び出すことができます。
+このアクションを生成するメソッドはアクションに&lt;code&gt;type&lt;/code&gt;を持たせるため、ストア内で解釈され、適切に反応することができます。
+例として、&lt;code&gt;type&lt;/code&gt;を&lt;code&gt;TODO_UPDATE_TEXT&lt;/code&gt;のように名づけます。&lt;/p&gt;
+
+&lt;p&gt;アクションはサーバーなど別の場所から来ることもあるかもしれません。
+例えば、データ初期化時などにおこります。
+サーバーがエラーコードを返した時や、アプリケーションをアップデートしたときに起こります。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;what-about-that-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;What About that Dispatcher?&lt;/h3&gt;
+
+&lt;p&gt;以前に言及したように、ディスパッチャーはストア間の依存関係を管理します。
+ディスパッチャークラスの&lt;code&gt;waitFor()&lt;/code&gt;関数を通して利用可能です。
+極めてシンプルなTodoアプリなどで使用する必要はありませんが、より複雑で大きなアプリケーションでは活発になります。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;TodoStore&lt;/code&gt;に登録されたコールバックが他の依存関係の更新を待っている様子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;case &#39;TODO_CREATE&#39;:
+  Dispatcher.waitFor([
+    PrependedTextStore.dispatchToken,
+    YetAnotherStore.dispatchToken
+  ]);
+
+  TodoStore.create(PrependedTextStore.getText() + &#39; &#39; + action.text);
+  break;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;waitFor()&lt;/code&gt;は登録したディスパッチャーの配列を一つ引数として受け、&lt;code&gt;dispatch token&lt;/code&gt;と呼ばれます。
+このように&lt;code&gt;waitFor()&lt;/code&gt;を発動するストアはどのように自身のステートを更新するかを通知するために別のストアのステートに依存します。&lt;/p&gt;
+
+&lt;p&gt;ディスパッチャーのコールバックが登録された時に&lt;code&gt;register()&lt;/code&gt;が&lt;code&gt;dispatch token&lt;/code&gt;を返します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PrependedTextStore.dispatchToken = Dispatcher.register(function (payload) {
+  // ...
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;より&lt;code&gt;waitFor()&lt;/code&gt;やアクションクリエータ、ディスパッチャーについてしりたければ&lt;a href=&#34;http://facebook.github.io/react/blog/2014/07/30/flux-actions-and-the-dispatcher.html&#34;&gt;こちら&lt;/a&gt;です。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ES6とReact試してみた</title>
