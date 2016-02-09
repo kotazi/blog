@@ -5,7 +5,7 @@ title = "【Angular】ユニットテスト"
 tags = ["Angular", "unit", "Jasmine"]
 +++
 
-- [Unit Testing|AngularJS]
+- [Unit Testing|AngularJS](https://docs.angularjs.org/guide/unit-testing)
 
 <hr>
 
