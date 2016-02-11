@@ -6,8 +6,49 @@
     <description>Recent content in Ruby on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Dec 2015 17:48:50 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 11 Feb 2016 20:34:06 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【プログラミング言語Ruby】1章-イントロダクション</title>
+      <link>http://kotazi.github.io/blog/post/2016/0210_ruby/</link>
+      <pubDate>Thu, 11 Feb 2016 20:34:06 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0210_ruby/</guid>
+      <description>&lt;p&gt;Rubyは完全なオブジェクト指向言語。
+すべての値は、単純な数値リテラルやbooleanなども含めてオブジェクトである。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Rubyでは関数やメソッド軌道のための括弧が多くの場合省略可能である。
+メソッド呼び出しで括弧が省略されているためオブジェクトの名前付きフィールドか名前付き変数のように見える。
+オブジェクトの外からオブジェクトの内部状態にアクセスすることはできない、カプセル化については厳格な言語である。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;ブロックとイテレータは繰り返し処理でよく使われるが、
+ブロックを一度しか実行しないメソッドでも役に立つ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;File.open(&amp;quot;data.txt&amp;quot;) do |f|
+  line = f.readline
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Rubyのメソッド名は疑問符や感嘆符で終わることもできる。
+通常感嘆符のないメソッドは元のオブジェクトのコピーに変更を加えて返してくるが、
+感嘆符付きのメソッドはオブジェクトをその場で書き換えるミューテータ(mutator)メソッドである。&lt;/p&gt;
+
+&lt;p&gt;グローバル変数には&lt;code&gt;$&lt;/code&gt;、インスタンス変数には&lt;code&gt;@&lt;/code&gt;、クラス変数には&lt;code&gt;@@&lt;/code&gt;というプレフィックスをつける。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;クラスとはオブジェクトの状態を操作する関連メソッドのコレクションである。
+オブジェクトの状態は、インスタンス変数によって管理されている。
+インスタンス変数とは名前の先頭が&lt;code&gt;@&lt;/code&gt;で、オブジェクトごとに異なる値を持てる変数のことである。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Ruby - pry導入編</title>

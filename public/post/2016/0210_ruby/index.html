@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【Rails】ForbiddenAttributesError覚書 &middot; kotazi.com</title>
+		<title>【プログラミング言語Ruby】1章-イントロダクション &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,45 +32,42 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【Rails】ForbiddenAttributesError覚書</h1>
-                    <h2 class="headline">January 6, 2016</h2>
+                    <h1>【プログラミング言語Ruby】1章-イントロダクション</h1>
+                    <h2 class="headline">February 11, 2016</h2>
                 </header>
                 <section id="post-body">
-                    
-
-<p>Railsで<code>ActiveModel::ForbiddenAttributesError:</code>エラーが出た。</p>
+                    <p>Rubyは完全なオブジェクト指向言語。
+すべての値は、単純な数値リテラルやbooleanなども含めてオブジェクトである。</p>
 
 <hr>
 
-<h2 id="マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162">マスアサインメント脆弱性</h2>
+<p>Rubyでは関数やメソッド軌道のための括弧が多くの場合省略可能である。
+メソッド呼び出しで括弧が省略されているためオブジェクトの名前付きフィールドか名前付き変数のように見える。
+オブジェクトの外からオブジェクトの内部状態にアクセスすることはできない、カプセル化については厳格な言語である。</p>
 
-<p>モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
-モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。</p>
+<hr>
 
-<p>管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。
-けれども知識のある人間がスクリプト書けば悪用することができてしまう。</p>
+<p>ブロックとイテレータは繰り返し処理でよく使われるが、
+ブロックを一度しか実行しないメソッドでも役に立つ。</p>
 
-<p>このアプリケーションの脆弱性を<strong>マスアサインメント脆弱性</strong>と呼ぶ。</p>
-
-<p>そしてこの脆弱性に対してRails4.0から導入された対抗策が、<strong>Strong Parameters</strong>。</p>
-
-<h2 id="strong-parameters:c93acd2fcd4285cd58c99e0793697162">Strong Parameters</h2>
-
-<p>サンプルコード:</p>
-
-<pre><code>def staff_member_params
-  params.require(:staff_member).permit(
-    :email, :password, :family_name, :given_name,
-    :family_name_kana, :given_name_kana,
-    :start_date, :end_date, :suspended
-  )
+<pre><code>File.open(&quot;data.txt&quot;) do |f|
+  line = f.readline
 end
 </code></pre>
 
-<p><code>params.require(:staff_member)</code><br />
-paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<code>:staff_member</code>というキーと持っているかを調べる。</p>
+<hr>
 
-<p>=&gt; 持っていなければActionController::ParameterMissingエラー</p>
+<p>Rubyのメソッド名は疑問符や感嘆符で終わることもできる。
+通常感嘆符のないメソッドは元のオブジェクトのコピーに変更を加えて返してくるが、
+感嘆符付きのメソッドはオブジェクトをその場で書き換えるミューテータ(mutator)メソッドである。</p>
+
+<p>グローバル変数には<code>$</code>、インスタンス変数には<code>@</code>、クラス変数には<code>@@</code>というプレフィックスをつける。</p>
+
+<hr>
+
+<p>クラスとはオブジェクトの状態を操作する関連メソッドのコレクションである。
+オブジェクトの状態は、インスタンス変数によって管理されている。
+インスタンス変数とは名前の先頭が<code>@</code>で、オブジェクトごとに異なる値を持てる変数のことである。</p>
 
                 </section>
             </article>
@@ -83,7 +80,7 @@ paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0105_ForbiddenAttributesError%2f - %e3%80%90Rails%e3%80%91ForbiddenAttributesError%e8%a6%9a%e6%9b%b8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0210_ruby%2f - %e3%80%90%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e8%a8%80%e8%aa%9eRuby%e3%80%911%e7%ab%a0-%e3%82%a4%e3%83%b3%e3%83%88%e3%83%ad%e3%83%80%e3%82%af%e3%82%b7%e3%83%a7%e3%83%b3 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -100,10 +97,6 @@ paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0210_ruby/">【プログラミング言語Ruby】1章-イントロダクション<aside class="dates">Feb 11</aside></a>
-        </li>
         
    
     
