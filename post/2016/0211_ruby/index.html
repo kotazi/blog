@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>Angular2のチュートリアル &middot; kotazi.com</title>
+		<title>【プログラミング言語Ruby】2章-Rubyプログラムの構造と実行 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,100 +32,48 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Angular2のチュートリアル</h1>
-                    <h2 class="headline">January 15, 2016</h2>
+                    <h1>【プログラミング言語Ruby】2章-Rubyプログラムの構造と実行</h1>
+                    <h2 class="headline">February 15, 2016</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>Angualr2のチュートリアルやったのでメモ。</p>
-
-<ul>
-<li><a href="https://github.com/kotazi/angular2-quick-start">kotazi/angular2-quick-start</a></li>
-<li><a href="https://angular.io/docs/ts/latest/tutorial/">TUTORIAL: TOUR OF HEROES</a></li>
-</ul>
+<p>Rubyインタープリタは、トークンの連続としてプログタムを解析する。
+トークンは、コメント、リテラル、記号類、識別子、キーワードである。</p>
 
 <hr>
 
-<h2 id="構成:24456ac087966b3ecdbdd8d437837263">構成</h2>
-
-<pre><code>angular2-tour-of-heroes
-|- node_modules
-|-app
-| |- app.component.ts
-| |- boot.ts
-| |- hero.ts
-| |- hero-detail.component.ts
-| |- hero.service.ts
-| |- mock-heroes.ts
-|- index.html
-|- package.json
-|- tsconfig.json
-</code></pre>
-
-<h2 id="index-html:24456ac087966b3ecdbdd8d437837263">index.html</h2>
-
-<ul>
-<li>Angular2では<code>angular2-polyfills.js</code>と<code>Rx.js</code>が必要</li>
-<li><code>System</code>でconfigとbootの読み込み</li>
-<li><code>&lt;my-app&gt;</code>タグを埋め込む</li>
-</ul>
-
-<script src="https://gist.github.com/kotazi/00d1d0fbe1a4fb92be11.js"></script>
-
-<h2 id="boot-ts:24456ac087966b3ecdbdd8d437837263">boot.ts</h2>
-
-<ul>
-<li><code>bootstrap()</code>でアプリケーション起動</li>
-</ul>
-
-<script src="https://gist.github.com/kotazi/bf9b1e29e590582dc895.js"></script>
-
-<h2 id="app-component-ts:24456ac087966b3ecdbdd8d437837263">app.component.ts</h2>
-
-<p><code>@Component</code>はAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。</p>
-
-<p><code>selector</code>でHTMLのタグ名を指定する。<code>template</code>にはレンタリングするHTMLを記述する。</p>
-
-<ul>
-<li>*ngFor=&ldquo;#hero of heroes&rdquo; ng-repeatが変わった</li>
-<li>アスタリスクとシャープが特徴</li>
-</ul>
-
-<script src="https://gist.github.com/kotazi/e407ee5a6dfe7599c8df.js"></script>
-
-<h2 id="hero-ts:24456ac087966b3ecdbdd8d437837263">hero.ts</h2>
-
-<p>classではなくinterfaceを利用している。<br />
-ここでの選び方は<code>Hero</code>をどのように使いたいか。<br />
-ロジックや振る舞いを書く場合は、<code>class</code>。
-型の定義などだけであれば、<code>interface</code>で十分。</p>
-
-<script src="https://gist.github.com/kotazi/958abfee0ee7cce36257.js"></script>
-
-<h2 id="mock-heroes-ts:24456ac087966b3ecdbdd8d437837263">mock-heroes.ts</h2>
-
-<ul>
-<li>HREOES配列はHero型。</li>
-</ul>
-
-<script src="https://gist.github.com/kotazi/d3b073e5f33ff8ef1605.js"></script>
-
-<h2 id="hero-detail-component-ts:24456ac087966b3ecdbdd8d437837263">hero-detail.component.ts</h2>
-
-<ul>
-<li>[(ngModel)]=&ldquo;hero.name&rdquo; 書き方変わった</li>
-</ul>
-
-<script src="https://gist.github.com/kotazi/9bd78998321fde979038.js"></script>
-
-<h2 id="hero-service-ts:24456ac087966b3ecdbdd8d437837263">hero.service.ts</h2>
-
-<script src="https://gist.github.com/kotazi/f27b3bc4c989d37fde72.js"></script>
+<p>コメントは<code>#</code>。
+複数行コメントは<code>=begin</code>に始まり、<code>=end</code>で終わる</p>
 
 <hr>
 
-<p>けっこう変わってるけど抵抗はそんなにないかも。</p>
+<p>リテラルはRubyソースコードに直接現れる値。数値、文字列、正規表現の3種類がある。</p>
+
+<hr>
+
+<p>識別子とは単純に名前のことである。Rubyは変数、メソッド、クラスなどに名前を与えるために識別子を使っている。</p>
+
+<hr>
+
+<h4 id="識別子の中の記号類:5cf09527adc08d8c661f06f43d913565">▼ 識別子の中の記号類</h4>
+
+<p>|記号|意味|
+|===|===|
+|$|グローバル変数にプレフィックスとして付ける。|
+|@|インスタンス変数に付ける。クラス変数には２つつける|
+|?|役に立つ慣習として、論理値を返すメソッドの末尾に疑問符を付ける|
+|!|注意が必要なことを示すときに付ける|
+|=|末尾が統合になっているメソッド式は、代入演算子のサ変で東道なしのメソッド名を置くだけで実行できる|</p>
+
+<hr>
+
+<p>Rubyの構文の基本単位は式である。Rubyインタープリタは式を評価して値を生成する。</p>
+
+<p>Rubyはオブジェクト指向なので、メソッドという言葉を使う。</p>
+
+<p>相互作用するように作られたメソッドのグループはクラスにまとめることができる。
+そして、関連するクラスとクラスを持たないメソッドはモジュールにまとめることができる。</p>
 
                 </section>
             </article>
@@ -138,7 +86,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0115_angular2_2%2f - Angular2%e3%81%ae%e3%83%81%e3%83%a5%e3%83%bc%e3%83%88%e3%83%aa%e3%82%a2%e3%83%ab by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0211_ruby%2f - %e3%80%90%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e8%a8%80%e8%aa%9eRuby%e3%80%912%e7%ab%a0-Ruby%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%e3%81%ae%e6%a7%8b%e9%80%a0%e3%81%a8%e5%ae%9f%e8%a1%8c by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -155,10 +103,6 @@
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0211_ruby/">【プログラミング言語Ruby】2章-Rubyプログラムの構造と実行<aside class="dates">Feb 15</aside></a>
-        </li>
         
    
     
