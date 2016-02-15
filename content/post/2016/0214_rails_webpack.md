@@ -1,6 +1,6 @@
 +++
-date = "2016-02-11T13:41:03+09:00"
-draft = true
+date = "2016-02-19T13:41:03+09:00"
+draft = false
 title = "Rails内でのwebpackの使い方"
 tags = ["rails", "webpack"]
 +++

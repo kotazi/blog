@@ -6,13 +6,136 @@
     <description>Recent content in Ruby on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Feb 2016 20:34:06 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Feb 2016 20:34:06 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【プログラミング言語Ruby】3章-データ型とオブジェクト</title>
+      <link>http://kotazi.github.io/blog/post/2016/0212_ruby/</link>
+      <pubDate>Sat, 13 Feb 2016 20:34:06 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0212_ruby/</guid>
+      <description>
+
+&lt;h3 id=&#34;数値:1999afa650d3f1ac291df7d051f99de9&#34;&gt;数値&lt;/h3&gt;
+
+&lt;p&gt;Rubyは数値を表現する5種類の組み込みクラスを持っており、
+標準ライブラリにはさらに3種類の役に立ち数値クラスが含まれている。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/AHWcSL7aQflDHarJQfPcwzy2xDWCtDv8WdUB/image.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Rubyの全ての数値オブジェクトは&lt;code&gt;Numeric&lt;/code&gt;のインスタンスになっている。
+全ての整数は&lt;code&gt;Integer&lt;/code&gt;のインスタンスである。31ビット幅に収まる整数値は&lt;code&gt;Fixnum&lt;/code&gt;のインスタンスであり、
+そうでなければ&lt;code&gt;Bignum&lt;/code&gt;のインスタンスである。
+Rubyでは実数値を&lt;code&gt;Float&lt;/code&gt;クラスで近似的に表現する。&lt;code&gt;Float&lt;/code&gt;クラスは
+プラットフォーム固有の浮動小数点表現を使う。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Complex&lt;/code&gt;クラスは複素数を表現する。
+&lt;code&gt;BigDecimal&lt;/code&gt;クラスは10進数表現を使って任意の制度の実数を表現する。
+&lt;code&gt;Rational&lt;/code&gt;クラスは有理数、すなわち整数を別の整数で除算した値を表現する。&lt;/p&gt;
+
+&lt;p&gt;また、全ての数値オブジェクトはイミュータブルである。&lt;/p&gt;
+
+&lt;h3 id=&#34;文字列:1999afa650d3f1ac291df7d051f99de9&#34;&gt;文字列&lt;/h3&gt;
+
+&lt;p&gt;文字列は&lt;code&gt;String&lt;/code&gt;クラスによって表現する。ミュータブルなオブジェクトである。
+パターンは&lt;code&gt;Regexp&lt;/code&gt;オブジェクトとして表現される。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;%q&lt;/code&gt;、&lt;code&gt;%Q&lt;/code&gt;はStringリテラル。&lt;/p&gt;
+
+&lt;h3 id=&#34;配列:1999afa650d3f1ac291df7d051f99de9&#34;&gt;配列&lt;/h3&gt;
+
+&lt;p&gt;配列とは、値の列で、列の中の位置(添字)によって値にアクセスできるようになっているものである。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;%w&lt;/code&gt;、&lt;code&gt;%W&lt;/code&gt;は配列リテラル。&lt;/p&gt;
+
+&lt;p&gt;配列は&lt;code&gt;Array.new&lt;/code&gt;コンストラクタでも作成できる。&lt;/p&gt;
+
+&lt;h3 id=&#34;ハッシュ:1999afa650d3f1ac291df7d051f99de9&#34;&gt;ハッシュ&lt;/h3&gt;
+
+&lt;p&gt;ハッシュとはキーと呼ばれるオブジェクトの集合を保持し、ここのキーに値を対応付けているデータ構造である。
+キーを値にマッピングするので、ハッシュはマップとも呼ばれる。
+個々のキーから値を連想するように導き出すので、連想配列とも呼ばれることもあるし、
+添字が整数ではなく任意のオブジェクトになった配列と考え得ることもできる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;numbers = Hash.new
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;ハッシュリテラル:1999afa650d3f1ac291df7d051f99de9&#34;&gt;ハッシュリテラル&lt;/h4&gt;
+
+&lt;p&gt;ハッシュリテラルは全体が中括弧で囲まれ、カンマで区切られたキー/値の対という形で記述される。
+キーと値は&lt;code&gt;=&amp;gt;&lt;/code&gt;という2文字の矢印で区切られる。先ほど作成したHashオブジェクトは次のリテラルでも作成できる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;numbers = { &amp;quot;one&amp;quot; =&amp;gt; 1, &amp;quot;two&amp;quot; =&amp;gt; 2, &amp;quot;three&amp;quot; =&amp;gt; 3 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;一般に、ハッシュキーとしては文字列よりも&lt;code&gt;Symbol&lt;/code&gt;オブジェクトの方が効率的に使える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;numbers = { :one =&amp;gt; 1, :two =&amp;gt; 2, :three =&amp;gt; 3 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Symbol&lt;/code&gt;とはinternされたイミュータブルな文字列で、プレフィックスとしてコロンが付けられた識別子という形で記述される。&lt;/p&gt;
+
+&lt;p&gt;Rubyのハッシュは、ハッシュテーブルというデータ構造を使って実装されている。
+ハッシュのキーとして使えるオブジェクトは、キーのハッシュ値となるFixnumを返すhashという名前のメソッドを保つ必要がある。&lt;/p&gt;
+
+&lt;h3 id=&#34;範囲:1999afa650d3f1ac291df7d051f99de9&#34;&gt;範囲&lt;/h3&gt;
+
+&lt;p&gt;Rangeオブジェクトは先頭の値から末尾の値までのすべての値を表す。範囲リテラルは、先頭の値と末尾の値の間に2個または3子のドットを入れて記述する。
+ドットが２個なら範囲は包含的で、末尾の値も範囲の一部となる。
+ドットが３個なら、範囲は排他的で、末尾の値は範囲に含まれない。&lt;/p&gt;
+
+&lt;p&gt;範囲には暗黙的に順序がある。
+Stringクラスにはsuccメソッド定義されており、&lt;code&gt;&#39;a&#39;.succ&lt;/code&gt;が&amp;rsquo;b&amp;rsquo;、&lt;code&gt;&#39;b&#39;.succ&lt;/code&gt;が&amp;rsquo;c&amp;rsquo;である。
+このように反復処理できる範囲を離散範囲(discrete range)という。短点がsuccメソッドを定義していない範囲は反復処理できないので
+連続範囲(continuous range)という。
+短点が整数になっている範囲は離散範囲だが、浮動小数点になっている範囲は連続範囲である。&lt;/p&gt;
+
+&lt;h3 id=&#34;シンボル:1999afa650d3f1ac291df7d051f99de9&#34;&gt;シンボル&lt;/h3&gt;
+
+&lt;p&gt;Rubyの一般的な実装は、実装が把握しているすべてのクラス、メソッド、変数の名前を格納するシンボルテーブルを管理している。
+シンボルテーブルがあるおかげで、インタープリタは文字列の比較をほとんどせずに済ませられる。
+たとえばメソッド名は、このシンボルテーブル内でのメソッド名の位置によって参照する。
+こうすることにより、比較的コストの高い文字列の処理がコストの低い整数処理に変わる。&lt;br /&gt;
+これらのシンボルは、純粋にインタープリタの内部構造としてしまい込まれているわけではなく、Rubyプログラムからも使えるようになっている。
+Symbolオブジェクトは、シンボルを参照しているのである。シンボルリテラルは、コロンをプレフィックスとする識別子や文字列という形で書ける。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:symbol       # Symbolのリテラル
+:&amp;quot;symbol&amp;quot;     # 全く同じリテラル
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2個の文字列では、同じ内容を持ちつつ、全く異なるオブジェクトという場合があるが、シンボルではそのようなことは決して起きない。
+同じ内容を持つ2個の文字列をシンボルに変換すると、全く同じSymbolオブジェクトになる。2つの異なるSymbolオブジェクトは、必ず異なる内容を持つ。&lt;/p&gt;
+
+&lt;p&gt;文字列の内容のためではなく、一種の固有な識別子として文字列を扱うコードを書こうとしているときには、シンボルを使うことを検討すると良い。
+たとえば、引数として&amp;rdquo;AM&amp;rdquo;または&amp;rdquo;PM&amp;rdquo;という文字列を受け付けるメソッドを書くのではなく、:AMか:PMというシンボルを受け付けるようにするのである。
+2つの文字列が等しいかどうかを比較するよりも、2つのSymbolオブジェクトが等しいかどうかを検討する方が、はるかに速い。
+同じ理由から、ハッシュキーとしては一般に文字列を使うよりもシンボルを使ったほうがよい。&lt;/p&gt;
+
+&lt;h3 id=&#34;true-false-nil:1999afa650d3f1ac291df7d051f99de9&#34;&gt;true、false、nil&lt;/h3&gt;
+
+&lt;p&gt;true、false、nilはRubyのキーワードとなっており、予約された特別な値である。
+これらのキーワードを評価すると、専用のオブジェクトになる。
+trueを評価すると、&lt;code&gt;TrueClass&lt;/code&gt;のシングルトンインスタンスのオブジェクトになる。
+同様に、falseとnilは&lt;code&gt;FalseClass&lt;/code&gt;、&lt;code&gt;NilClass&lt;/code&gt;のシングルトンインスタンスである。
+Booleanクラスがないことに注意。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;o == nil
+o.nil?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;オブジェクト:1999afa650d3f1ac291df7d051f99de9&#34;&gt;オブジェクト&lt;/h3&gt;
+
+&lt;p&gt;Rubyはオブジェクト指向言語として非常に純度が高い。
+すべての値はオブジェクトであり、他の多くの言事は異なり、原始型と呼べるようなものはない。
+Rubyでは、すべてのオブジェクトはObjectだという名前のクラスの敬称をシており、&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【プログラミング言語Ruby】2章-Rubyプログラムの構造と実行</title>
       <link>http://kotazi.github.io/blog/post/2016/0211_ruby/</link>
-      <pubDate>Mon, 15 Feb 2016 20:34:06 +0900</pubDate>
+      <pubDate>Fri, 12 Feb 2016 20:34:06 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0211_ruby/</guid>
       <description>

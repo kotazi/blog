@@ -1,0 +1,270 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【プログラミング言語Ruby】3章-データ型とオブジェクト &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【プログラミング言語Ruby】3章-データ型とオブジェクト</h1>
+                    <h2 class="headline">February 13, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<h3 id="数値:1999afa650d3f1ac291df7d051f99de9">数値</h3>
+
+<p>Rubyは数値を表現する5種類の組み込みクラスを持っており、
+標準ライブラリにはさらに3種類の役に立ち数値クラスが含まれている。</p>
+
+<p><img src="https://www.evernote.com/l/AHWcSL7aQflDHarJQfPcwzy2xDWCtDv8WdUB/image.png" alt="" /></p>
+
+<p>Rubyの全ての数値オブジェクトは<code>Numeric</code>のインスタンスになっている。
+全ての整数は<code>Integer</code>のインスタンスである。31ビット幅に収まる整数値は<code>Fixnum</code>のインスタンスであり、
+そうでなければ<code>Bignum</code>のインスタンスである。
+Rubyでは実数値を<code>Float</code>クラスで近似的に表現する。<code>Float</code>クラスは
+プラットフォーム固有の浮動小数点表現を使う。</p>
+
+<p><code>Complex</code>クラスは複素数を表現する。
+<code>BigDecimal</code>クラスは10進数表現を使って任意の制度の実数を表現する。
+<code>Rational</code>クラスは有理数、すなわち整数を別の整数で除算した値を表現する。</p>
+
+<p>また、全ての数値オブジェクトはイミュータブルである。</p>
+
+<h3 id="文字列:1999afa650d3f1ac291df7d051f99de9">文字列</h3>
+
+<p>文字列は<code>String</code>クラスによって表現する。ミュータブルなオブジェクトである。
+パターンは<code>Regexp</code>オブジェクトとして表現される。</p>
+
+<p><code>%q</code>、<code>%Q</code>はStringリテラル。</p>
+
+<h3 id="配列:1999afa650d3f1ac291df7d051f99de9">配列</h3>
+
+<p>配列とは、値の列で、列の中の位置(添字)によって値にアクセスできるようになっているものである。</p>
+
+<p><code>%w</code>、<code>%W</code>は配列リテラル。</p>
+
+<p>配列は<code>Array.new</code>コンストラクタでも作成できる。</p>
+
+<h3 id="ハッシュ:1999afa650d3f1ac291df7d051f99de9">ハッシュ</h3>
+
+<p>ハッシュとはキーと呼ばれるオブジェクトの集合を保持し、ここのキーに値を対応付けているデータ構造である。
+キーを値にマッピングするので、ハッシュはマップとも呼ばれる。
+個々のキーから値を連想するように導き出すので、連想配列とも呼ばれることもあるし、
+添字が整数ではなく任意のオブジェクトになった配列と考え得ることもできる。</p>
+
+<pre><code>numbers = Hash.new
+</code></pre>
+
+<h4 id="ハッシュリテラル:1999afa650d3f1ac291df7d051f99de9">ハッシュリテラル</h4>
+
+<p>ハッシュリテラルは全体が中括弧で囲まれ、カンマで区切られたキー/値の対という形で記述される。
+キーと値は<code>=&gt;</code>という2文字の矢印で区切られる。先ほど作成したHashオブジェクトは次のリテラルでも作成できる。</p>
+
+<pre><code>numbers = { &quot;one&quot; =&gt; 1, &quot;two&quot; =&gt; 2, &quot;three&quot; =&gt; 3 }
+</code></pre>
+
+<p>一般に、ハッシュキーとしては文字列よりも<code>Symbol</code>オブジェクトの方が効率的に使える。</p>
+
+<pre><code>numbers = { :one =&gt; 1, :two =&gt; 2, :three =&gt; 3 }
+</code></pre>
+
+<p><code>Symbol</code>とはinternされたイミュータブルな文字列で、プレフィックスとしてコロンが付けられた識別子という形で記述される。</p>
+
+<p>Rubyのハッシュは、ハッシュテーブルというデータ構造を使って実装されている。
+ハッシュのキーとして使えるオブジェクトは、キーのハッシュ値となるFixnumを返すhashという名前のメソッドを保つ必要がある。</p>
+
+<h3 id="範囲:1999afa650d3f1ac291df7d051f99de9">範囲</h3>
+
+<p>Rangeオブジェクトは先頭の値から末尾の値までのすべての値を表す。範囲リテラルは、先頭の値と末尾の値の間に2個または3子のドットを入れて記述する。
+ドットが２個なら範囲は包含的で、末尾の値も範囲の一部となる。
+ドットが３個なら、範囲は排他的で、末尾の値は範囲に含まれない。</p>
+
+<p>範囲には暗黙的に順序がある。
+Stringクラスにはsuccメソッド定義されており、<code>'a'.succ</code>が&rsquo;b&rsquo;、<code>'b'.succ</code>が&rsquo;c&rsquo;である。
+このように反復処理できる範囲を離散範囲(discrete range)という。短点がsuccメソッドを定義していない範囲は反復処理できないので
+連続範囲(continuous range)という。
+短点が整数になっている範囲は離散範囲だが、浮動小数点になっている範囲は連続範囲である。</p>
+
+<h3 id="シンボル:1999afa650d3f1ac291df7d051f99de9">シンボル</h3>
+
+<p>Rubyの一般的な実装は、実装が把握しているすべてのクラス、メソッド、変数の名前を格納するシンボルテーブルを管理している。
+シンボルテーブルがあるおかげで、インタープリタは文字列の比較をほとんどせずに済ませられる。
+たとえばメソッド名は、このシンボルテーブル内でのメソッド名の位置によって参照する。
+こうすることにより、比較的コストの高い文字列の処理がコストの低い整数処理に変わる。<br />
+これらのシンボルは、純粋にインタープリタの内部構造としてしまい込まれているわけではなく、Rubyプログラムからも使えるようになっている。
+Symbolオブジェクトは、シンボルを参照しているのである。シンボルリテラルは、コロンをプレフィックスとする識別子や文字列という形で書ける。</p>
+
+<pre><code>:symbol       # Symbolのリテラル
+:&quot;symbol&quot;     # 全く同じリテラル
+</code></pre>
+
+<p>2個の文字列では、同じ内容を持ちつつ、全く異なるオブジェクトという場合があるが、シンボルではそのようなことは決して起きない。
+同じ内容を持つ2個の文字列をシンボルに変換すると、全く同じSymbolオブジェクトになる。2つの異なるSymbolオブジェクトは、必ず異なる内容を持つ。</p>
+
+<p>文字列の内容のためではなく、一種の固有な識別子として文字列を扱うコードを書こうとしているときには、シンボルを使うことを検討すると良い。
+たとえば、引数として&rdquo;AM&rdquo;または&rdquo;PM&rdquo;という文字列を受け付けるメソッドを書くのではなく、:AMか:PMというシンボルを受け付けるようにするのである。
+2つの文字列が等しいかどうかを比較するよりも、2つのSymbolオブジェクトが等しいかどうかを検討する方が、はるかに速い。
+同じ理由から、ハッシュキーとしては一般に文字列を使うよりもシンボルを使ったほうがよい。</p>
+
+<h3 id="true-false-nil:1999afa650d3f1ac291df7d051f99de9">true、false、nil</h3>
+
+<p>true、false、nilはRubyのキーワードとなっており、予約された特別な値である。
+これらのキーワードを評価すると、専用のオブジェクトになる。
+trueを評価すると、<code>TrueClass</code>のシングルトンインスタンスのオブジェクトになる。
+同様に、falseとnilは<code>FalseClass</code>、<code>NilClass</code>のシングルトンインスタンスである。
+Booleanクラスがないことに注意。</p>
+
+<pre><code>o == nil
+o.nil?
+</code></pre>
+
+<h3 id="オブジェクト:1999afa650d3f1ac291df7d051f99de9">オブジェクト</h3>
+
+<p>Rubyはオブジェクト指向言語として非常に純度が高い。
+すべての値はオブジェクトであり、他の多くの言事は異なり、原始型と呼べるようなものはない。
+Rubyでは、すべてのオブジェクトはObjectだという名前のクラスの敬称をシており、</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0212_ruby%2f - %e3%80%90%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e8%a8%80%e8%aa%9eRuby%e3%80%913%e7%ab%a0-%e3%83%87%e3%83%bc%e3%82%bf%e5%9e%8b%e3%81%a8%e3%82%aa%e3%83%96%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0214_rails_webpack/">Rails内でのwebpackの使い方<aside class="dates">Feb 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0213_user_story/">【読書】ユーザーストーリーマッピング<aside class="dates">Feb 17</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0213_algorithm/">【読書】アルゴリズムが世界を支配する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0215_trast/">信頼残高のことを思い出した。<aside class="dates">Feb 15</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0211_ruby/">【プログラミング言語Ruby】2章-Rubyプログラムの構造と実行<aside class="dates">Feb 12</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0210_ruby/">【プログラミング言語Ruby】1章-イントロダクション<aside class="dates">Feb 11</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0202_flux/">【Flux】概要<aside class="dates">Feb 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0202_angular_unit/">【Angular】ユニットテスト<aside class="dates">Feb 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0130_react_calendar/">ES6とReact試してみた<aside class="dates">Feb 1</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>
