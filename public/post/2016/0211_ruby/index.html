@@ -1,0 +1,194 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【プログラミング言語Ruby】2章-Rubyプログラムの構造と実行 &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【プログラミング言語Ruby】2章-Rubyプログラムの構造と実行</h1>
+                    <h2 class="headline">February 15, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>Rubyインタープリタは、トークンの連続としてプログタムを解析する。
+トークンは、コメント、リテラル、記号類、識別子、キーワードである。</p>
+
+<hr>
+
+<p>コメントは<code>#</code>。
+複数行コメントは<code>=begin</code>に始まり、<code>=end</code>で終わる</p>
+
+<hr>
+
+<p>リテラルはRubyソースコードに直接現れる値。数値、文字列、正規表現の3種類がある。</p>
+
+<hr>
+
+<p>識別子とは単純に名前のことである。Rubyは変数、メソッド、クラスなどに名前を与えるために識別子を使っている。</p>
+
+<hr>
+
+<h4 id="識別子の中の記号類:5cf09527adc08d8c661f06f43d913565">▼ 識別子の中の記号類</h4>
+
+<p>|記号|意味|
+|===|===|
+|$|グローバル変数にプレフィックスとして付ける。|
+|@|インスタンス変数に付ける。クラス変数には２つつける|
+|?|役に立つ慣習として、論理値を返すメソッドの末尾に疑問符を付ける|
+|!|注意が必要なことを示すときに付ける|
+|=|末尾が統合になっているメソッド式は、代入演算子のサ変で東道なしのメソッド名を置くだけで実行できる|</p>
+
+<hr>
+
+<p>Rubyの構文の基本単位は式である。Rubyインタープリタは式を評価して値を生成する。</p>
+
+<p>Rubyはオブジェクト指向なので、メソッドという言葉を使う。</p>
+
+<p>相互作用するように作られたメソッドのグループはクラスにまとめることができる。
+そして、関連するクラスとクラスを持たないメソッドはモジュールにまとめることができる。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0211_ruby%2f - %e3%80%90%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e8%a8%80%e8%aa%9eRuby%e3%80%912%e7%ab%a0-Ruby%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%e3%81%ae%e6%a7%8b%e9%80%a0%e3%81%a8%e5%ae%9f%e8%a1%8c by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0210_ruby/">【プログラミング言語Ruby】1章-イントロダクション<aside class="dates">Feb 11</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0202_flux/">【Flux】概要<aside class="dates">Feb 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0202_angular_unit/">【Angular】ユニットテスト<aside class="dates">Feb 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0130_react_calendar/">ES6とReact試してみた<aside class="dates">Feb 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0128_react/">【訳読】React Tutorial<aside class="dates">Jan 28</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0127_why_computer/">【読書】コンピュータはなぜ動くのか<aside class="dates">Jan 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0213_algorithm/">【読書】アルゴリズムが世界を支配する<aside class="dates">Jan 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0213_user_story/">【読書】ユーザーストーリーマッピング<aside class="dates">Jan 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0126_jsx/">【訳読】JSX<aside class="dates">Jan 26</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>

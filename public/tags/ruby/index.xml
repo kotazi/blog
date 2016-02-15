@@ -6,8 +6,55 @@
     <description>Recent content in Ruby on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Feb 2016 20:34:06 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 15 Feb 2016 20:34:06 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【プログラミング言語Ruby】2章-Rubyプログラムの構造と実行</title>
+      <link>http://kotazi.github.io/blog/post/2016/0211_ruby/</link>
+      <pubDate>Mon, 15 Feb 2016 20:34:06 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0211_ruby/</guid>
+      <description>
+
+&lt;p&gt;Rubyインタープリタは、トークンの連続としてプログタムを解析する。
+トークンは、コメント、リテラル、記号類、識別子、キーワードである。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;コメントは&lt;code&gt;#&lt;/code&gt;。
+複数行コメントは&lt;code&gt;=begin&lt;/code&gt;に始まり、&lt;code&gt;=end&lt;/code&gt;で終わる&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;リテラルはRubyソースコードに直接現れる値。数値、文字列、正規表現の3種類がある。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;識別子とは単純に名前のことである。Rubyは変数、メソッド、クラスなどに名前を与えるために識別子を使っている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h4 id=&#34;識別子の中の記号類:5cf09527adc08d8c661f06f43d913565&#34;&gt;▼ 識別子の中の記号類&lt;/h4&gt;
+
+&lt;p&gt;|記号|意味|
+|===|===|
+|$|グローバル変数にプレフィックスとして付ける。|
+|@|インスタンス変数に付ける。クラス変数には２つつける|
+|?|役に立つ慣習として、論理値を返すメソッドの末尾に疑問符を付ける|
+|!|注意が必要なことを示すときに付ける|
+|=|末尾が統合になっているメソッド式は、代入演算子のサ変で東道なしのメソッド名を置くだけで実行できる|&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Rubyの構文の基本単位は式である。Rubyインタープリタは式を評価して値を生成する。&lt;/p&gt;
+
+&lt;p&gt;Rubyはオブジェクト指向なので、メソッドという言葉を使う。&lt;/p&gt;
+
+&lt;p&gt;相互作用するように作られたメソッドのグループはクラスにまとめることができる。
+そして、関連するクラスとクラスを持たないメソッドはモジュールにまとめることができる。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【プログラミング言語Ruby】1章-イントロダクション</title>
