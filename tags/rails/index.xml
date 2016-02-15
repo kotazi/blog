@@ -6,13 +6,13 @@
     <description>Recent content in Rails on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Feb 2016 13:41:03 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 Feb 2016 13:41:03 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/rails/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Rails内でのwebpackの使い方</title>
       <link>http://kotazi.github.io/blog/post/2016/0214_rails_webpack/</link>
-      <pubDate>Fri, 19 Feb 2016 13:41:03 +0900</pubDate>
+      <pubDate>Sun, 14 Feb 2016 13:41:03 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0214_rails_webpack/</guid>
       <description>
