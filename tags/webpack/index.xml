@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rails on kotazi.com</title>
-    <link>http://kotazi.github.io/blog/tags/rails/</link>
-    <description>Recent content in Rails on kotazi.com</description>
+    <title>Webpack on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/webpack/</link>
+    <description>Recent content in Webpack on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Feb 2016 13:41:03 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://kotazi.github.io/blog/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Rails内でのwebpackの使い方</title>
@@ -474,142 +474,6 @@ app.start();
 &lt;p&gt;再度webpackを実行して、ブラウザで予想通りに動作していることが確認できる。&lt;/p&gt;
 
 &lt;h3 id=&#34;code-splitting-and-lazily-loading-modules:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Code splitting and lazily loading modules&lt;/h3&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Rails】Routing周りのメモ書き</title>
-      <link>http://kotazi.github.io/blog/post/2016/0107_rails_routing/</link>
-      <pubDate>Thu, 07 Jan 2016 18:31:41 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0107_rails_routing/</guid>
-      <description>
-
-&lt;p&gt;新しいRailsプロジェクトの&lt;code&gt;routes.rb&lt;/code&gt;を読んでいて調べたこととか。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;namespaceとscope-moduleとscopeのち外:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ namespaceとscope moduleとscopeのち外&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;namespace&lt;/code&gt;はURI PatternもController#Actionも指定したパスに&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scope module&lt;/code&gt;はController#Actionのみ指定したパスに&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scope&lt;/code&gt;はURI Patternのみ指定したパスに&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/blueplanet/items/522cc8364f6cf189ecad&#34;&gt;routeのmoduleとnamespaceとscopeの違い&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;constraintsについて:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ constraintsについて&lt;/h5&gt;
-
-&lt;p&gt;constraintsを使うことでさまざまな制限を兼ねることができる。
-独自のクラスを使用すうることなども可能。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://y-yagi.tumblr.com/post/92386974040/rails-routing-constraints%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6&#34;&gt;rails routing constraintsについて&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;resourcesルーティング一覧:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ resourcesルーティング一覧&lt;/h5&gt;
-
-&lt;table class=&#34;responsive&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;HTTP動詞&lt;/th&gt;
-&lt;th&gt;パス&lt;/th&gt;
-&lt;th&gt;コントローラ#アクション&lt;/th&gt;
-&lt;th&gt;目的&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos&lt;/td&gt;
-&lt;td&gt;photos#index&lt;/td&gt;
-&lt;td&gt;すべての写真の一覧を表示&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/new&lt;/td&gt;
-&lt;td&gt;photos#new&lt;/td&gt;
-&lt;td&gt;写真を1つ作成するためのHTMLフォームを返す&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;POST&lt;/td&gt;
-&lt;td&gt;/photos&lt;/td&gt;
-&lt;td&gt;photos#create&lt;/td&gt;
-&lt;td&gt;写真を1つ作成する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#show&lt;/td&gt;
-&lt;td&gt;特定の写真を表示する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/:id/edit&lt;/td&gt;
-&lt;td&gt;photos#edit&lt;/td&gt;
-&lt;td&gt;写真編集用のHTMLフォームを1つ返す&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;PATCH/PUT&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#update&lt;/td&gt;
-&lt;td&gt;特定の写真を更新する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DELETE&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#destroy&lt;/td&gt;
-&lt;td&gt;特定の写真を削除する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ActiveAdminとEngineについてはまた今度。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Rails】ForbiddenAttributesError覚書</title>
-      <link>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</link>
-      <pubDate>Wed, 06 Jan 2016 18:31:41 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</guid>
-      <description>
-
-&lt;p&gt;Railsで&lt;code&gt;ActiveModel::ForbiddenAttributesError:&lt;/code&gt;エラーが出た。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162&#34;&gt;マスアサインメント脆弱性&lt;/h2&gt;
-
-&lt;p&gt;モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
-モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。&lt;/p&gt;
-
-&lt;p&gt;管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。
-けれども知識のある人間がスクリプト書けば悪用することができてしまう。&lt;/p&gt;
-
-&lt;p&gt;このアプリケーションの脆弱性を&lt;strong&gt;マスアサインメント脆弱性&lt;/strong&gt;と呼ぶ。&lt;/p&gt;
-
-&lt;p&gt;そしてこの脆弱性に対してRails4.0から導入された対抗策が、&lt;strong&gt;Strong Parameters&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;strong-parameters:c93acd2fcd4285cd58c99e0793697162&#34;&gt;Strong Parameters&lt;/h2&gt;
-
-&lt;p&gt;サンプルコード:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def staff_member_params
-  params.require(:staff_member).permit(
-    :email, :password, :family_name, :given_name,
-    :family_name_kana, :given_name_kana,
-    :start_date, :end_date, :suspended
-  )
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;params.require(:staff_member)&lt;/code&gt;&lt;br /&gt;
-paramsオブジェクトのrequireメソッドで、paramsオブジェクトが&lt;code&gt;:staff_member&lt;/code&gt;というキーと持っているかを調べる。&lt;/p&gt;
-
-&lt;p&gt;=&amp;gt; 持っていなければActionController::ParameterMissingエラー&lt;/p&gt;
 </description>
     </item>
     
