@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【Rails】ForbiddenAttributesError覚書 &middot; kotazi.com</title>
+		<title>信頼残高のことを思い出した。 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,45 +32,38 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【Rails】ForbiddenAttributesError覚書</h1>
-                    <h2 class="headline">January 6, 2016</h2>
+                    <h1>信頼残高のことを思い出した。</h1>
+                    <h2 class="headline">February 15, 2016</h2>
                 </header>
                 <section id="post-body">
-                    
+                    <p>サイバーエージェントで働いていたころ、しばしば「信頼残高」という言葉を耳にした。(こういう考え方が社内に浸透していることが本当にすごいと今になって思う。)</p>
 
-<p>Railsで<code>ActiveModel::ForbiddenAttributesError:</code>エラーが出た。</p>
+<p>仕事というものは信頼の積み重ねで成り立っている。
+この信頼の積み重ねこそが、自身の「信頼残高」だ。</p>
+
+<p>大きな仕事や、期待以上の成果を出せば信頼残高が増えていく。
+信頼残高のある人間には、また大きな仕事やチャンスが回ってくる。</p>
+
+<p>逆につまらないミスなどをすれば信頼残高は減っていってしまう。</p>
+
+<ul>
+<li>メールの誤字脱字が多い</li>
+<li>会議に2、3分遅刻してしまう</li>
+<li>二日酔いで出社してくる</li>
+<li>資料のまとめ方が下手</li>
+<li>デスク周りがいつも散らかっている</li>
+</ul>
+
+<p>こういったことでも信頼残高はどんどん削られていってしまう。
+「稼いでいるのに全然貯金が貯まらない人」みたいになってしまう。</p>
+
+<p>日々の積み重ねをしっかりとやっていこう。</p>
 
 <hr>
 
-<h2 id="マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162">マスアサインメント脆弱性</h2>
-
-<p>モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
-モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。</p>
-
-<p>管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。
-けれども知識のある人間がスクリプト書けば悪用することができてしまう。</p>
-
-<p>このアプリケーションの脆弱性を<strong>マスアサインメント脆弱性</strong>と呼ぶ。</p>
-
-<p>そしてこの脆弱性に対してRails4.0から導入された対抗策が、<strong>Strong Parameters</strong>。</p>
-
-<h2 id="strong-parameters:c93acd2fcd4285cd58c99e0793697162">Strong Parameters</h2>
-
-<p>サンプルコード:</p>
-
-<pre><code>def staff_member_params
-  params.require(:staff_member).permit(
-    :email, :password, :family_name, :given_name,
-    :family_name_kana, :given_name_kana,
-    :start_date, :end_date, :suspended
-  )
-end
-</code></pre>
-
-<p><code>params.require(:staff_member)</code><br />
-paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<code>:staff_member</code>というキーと持っているかを調べる。</p>
-
-<p>=&gt; 持っていなければActionController::ParameterMissingエラー</p>
+<p>個人的に思ったのが、NZ内での信頼が積み重ねられていないなと思った。
+自分の成果が海を超えて認められるように努力することはもちろんなのだけれど、
+各国での評価が一律になるような透明度の高い組織を作っていきたい。</p>
 
                 </section>
             </article>
@@ -83,7 +76,7 @@ paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0105_ForbiddenAttributesError%2f - %e3%80%90Rails%e3%80%91ForbiddenAttributesError%e8%a6%9a%e6%9b%b8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0215_trast%2f - %e4%bf%a1%e9%a0%bc%e6%ae%8b%e9%ab%98%e3%81%ae%e3%81%93%e3%81%a8%e3%82%92%e6%80%9d%e3%81%84%e5%87%ba%e3%81%97%e3%81%9f%e3%80%82 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -107,10 +100,6 @@ paramsオブジェクトのrequireメソッドで、paramsオブジェクトが<
         
    
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0215_trast/">信頼残高のことを思い出した。<aside class="dates">Feb 15</aside></a>
-        </li>
         
    
     

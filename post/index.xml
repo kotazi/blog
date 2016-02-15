@@ -57,6 +57,43 @@
     </item>
     
     <item>
+      <title>信頼残高のことを思い出した。</title>
+      <link>http://kotazi.github.io/blog/post/2016/0215_trast/</link>
+      <pubDate>Mon, 15 Feb 2016 19:27:45 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0215_trast/</guid>
+      <description>&lt;p&gt;サイバーエージェントで働いていたころ、しばしば「信頼残高」という言葉を耳にした。(こういう考え方が社内に浸透していることが本当にすごいと今になって思う。)&lt;/p&gt;
+
+&lt;p&gt;仕事というものは信頼の積み重ねで成り立っている。
+この信頼の積み重ねこそが、自身の「信頼残高」だ。&lt;/p&gt;
+
+&lt;p&gt;大きな仕事や、期待以上の成果を出せば信頼残高が増えていく。
+信頼残高のある人間には、また大きな仕事やチャンスが回ってくる。&lt;/p&gt;
+
+&lt;p&gt;逆につまらないミスなどをすれば信頼残高は減っていってしまう。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;メールの誤字脱字が多い&lt;/li&gt;
+&lt;li&gt;会議に2、3分遅刻してしまう&lt;/li&gt;
+&lt;li&gt;二日酔いで出社してくる&lt;/li&gt;
+&lt;li&gt;資料のまとめ方が下手&lt;/li&gt;
+&lt;li&gt;デスク周りがいつも散らかっている&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;こういったことでも信頼残高はどんどん削られていってしまう。
+「稼いでいるのに全然貯金が貯まらない人」みたいになってしまう。&lt;/p&gt;
+
+&lt;p&gt;日々の積み重ねをしっかりとやっていこう。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;個人的に思ったのが、NZ内での信頼が積み重ねられていないなと思った。
+自分の成果が海を超えて認められるように努力することはもちろんなのだけれど、
+各国での評価が一律になるような透明度の高い組織を作っていきたい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>【プログラミング言語Ruby】1章-イントロダクション</title>
       <link>http://kotazi.github.io/blog/post/2016/0210_ruby/</link>
       <pubDate>Thu, 11 Feb 2016 20:34:06 +0900</pubDate>
@@ -2912,100 +2949,6 @@ $(document).ready(function() {
 &lt;p&gt;カレンダーごとに異なるAPIキーを利用する場合、&lt;code&gt;googleCalendarApiKey&lt;/code&gt;をセットするには個々の[EventSource]を用います。&lt;/p&gt;
 
 &lt;p&gt;GoogleAPIのエラーを検知する必要がある場合、jQueryのAJAZエラーハンドリングには方法がありません。FullCalendarの&lt;code&gt;googleCalendarError&lt;/code&gt;を使います。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【FullCalendar】Basic Usage</title>
-      <link>http://kotazi.github.io/blog/post/2016/0121_calendar/</link>
-      <pubDate>Thu, 21 Jan 2016 22:53:46 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0121_calendar/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://fullcalendar.io/&#34;&gt;FullCalendar&lt;/a&gt;の基本的な使い方です。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/usage/&#34;&gt;Basic Usage&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;basic-usage:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Basic Usage&lt;/h3&gt;
-
-&lt;p&gt;Webページにカレンダーを組み込む最初のステップは、正しいJSとCSSファイルを用意することです。
-FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイルを&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;に含めたことを確認してください。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&#39;stylesheet&#39; href=&#39;fullcalendar/fullcalendar.css&#39; /&amp;gt;
-&amp;lt;script src=&#39;lib/jquery.min.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&#39;lib/moment.min.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&#39;fullcalendar/fullcalendar.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;jQueryとMomentは必ずFullCalendarのJSファイルより先に読み込んでください。&lt;/p&gt;
-
-&lt;p&gt;もしドラッグやリサイズをするのであれば、追加する必要のあるライブラリがあるかもしれないので、&lt;a href=&#34;http://fullcalendar.io/docs/event_ui/Requirements/&#34;&gt;こちら&lt;/a&gt;を見てください。&lt;/p&gt;
-
-&lt;p&gt;依存関係を書き終えたら、カレンダーを初期化するためのスクリプトを記述します。
-このコードはページの初期化後に実行される必要があります。最も良い方法はjQueryの&lt;code&gt;$(document).ready&lt;/code&gt;あたりを使うことです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
-    $(&#39;#calendar&#39;).fullCalendar({
-        // put your options and callbacks here
-    })
-
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上記のコードは&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;タグで囲んでください。
-ページ内のID&lt;code&gt;calendar&lt;/code&gt;要素の中にカレンダーを生成します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&#39;calendar&#39;&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで空っぽの月カレンダーが表示されると思います。
-イベントの表示方法について学ぶには&lt;a href=&#34;http://fullcalendar.io/docs/google_calendar/&#34;&gt;Google Calendar&lt;/a&gt;もしくは&lt;a href=&#34;http://fullcalendar.io/docs/event_data/&#34;&gt;Event Data&lt;/a&gt;のセクションを参考にしてください。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;options:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Options&lt;/h3&gt;
-
-&lt;p&gt;FullCalendarのドキュメントの大半は、オプションの影響や振る舞いについてです。
-オプションはこのように、たいていカレンダーの初期化時にセットされます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar({
-    weekends: false // will hide Saturdays and Sundays
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;callbacks:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Callbacks&lt;/h3&gt;
-
-&lt;p&gt;コールバックはオプションのように並べられますが、これらの関数は特別なことが起こらなければ呼ばれません。
-下記のサンプルでは、ユーザーが日にちをクリックするとアラートが表示されるものです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar({
-    dayClick: function() {
-        alert(&#39;a day has been clicked!&#39;);
-    }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;methods:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Methods&lt;/h3&gt;
-
-&lt;p&gt;メソッドは様々な方法を提供します。
-メソッドは既に初期化されたカレンダーのjQueryオブジェクトに対し、&lt;code&gt;fullCalendar&lt;/code&gt;コマンドを買います。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar(&#39;next&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これは&lt;code&gt;next&lt;/code&gt;メソッドです。カレンダーを次に進めるためのメソッドです。&lt;/p&gt;
 </description>
     </item>
     
