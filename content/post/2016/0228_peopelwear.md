@@ -1,8 +1,8 @@
 +++
 date = "2016-02-28T22:33:30+09:00"
 draft = false
-title = "0228_peopelwear"
-tag = ["reading"]
+title = "【読書】ピープルウエア"
+tags = ["読書"]
 +++
 
 13冊目。

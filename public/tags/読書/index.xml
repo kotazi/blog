@@ -6,8 +6,145 @@
     <description>Recent content in 読書 on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Feb 2016 11:40:44 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 28 Feb 2016 22:33:30 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/%E8%AA%AD%E6%9B%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【読書】ピープルウエア</title>
+      <link>http://kotazi.github.io/blog/post/2016/0228_peopelwear/</link>
+      <pubDate>Sun, 28 Feb 2016 22:33:30 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0228_peopelwear/</guid>
+      <description>
+
+&lt;p&gt;13冊目。
+アメリカのソフトウェア工学者トム・デマルコの著書、&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/B00I96CJWO/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00I96CJWO&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;ピープルウエア　第3版&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=B00I96CJWO&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;実際のところ、ソフトウェア開発上の問題の多くは、技術的というより社会学的なものである。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;というとても有名な文章が登場する本書。
+ソフトウェア開発においてありがちな人間関係のトラブルとそれらに対する有用な対処が紹介される。&lt;/p&gt;
+
+&lt;p&gt;目次は下記である。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第1部: 人材を活用する&lt;/li&gt;
+&lt;li&gt;第2部: オフィス環境と生産性&lt;/li&gt;
+&lt;li&gt;第3部: 人材を揃える&lt;/li&gt;
+&lt;li&gt;第4部: 生産性の高いチームを育てる&lt;/li&gt;
+&lt;li&gt;第5部: 肥沃な土壌&lt;/li&gt;
+&lt;li&gt;第6部: きっとそこは楽しいところ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;本テーマの出発点は失敗したプロジェクトの調査にあった。
+調査した失敗プロジェクトの圧倒的多数は、
+原因が単なる技術的問題として片付けられないものばかりだった。
+ということから始められる。&lt;/p&gt;
+
+&lt;p&gt;プロジェクトの成功は関係者の緊密な対人関係によって生まれ、
+失敗は疎遠な対人関係の結果である。&lt;/p&gt;
+
+&lt;h5 id=&#34;品質第一主義からの頭皮:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 品質第一主義からの頭皮&lt;/h5&gt;
+
+&lt;p&gt;ユーザーの品質意識は実は低い。
+少なくとも開発者に比べると、必要とする製品品質のレベルが低いということだ。&lt;/p&gt;
+
+&lt;p&gt;開発者ではなく、買い手に品質基準を決めさせることを「&lt;strong&gt;品質第一主義からの逃避&lt;/strong&gt;」という。
+顧客の要求通りの品質を提供することは一見最もらしく見えるが、
+長い目で見ると市場に品質を合わせるとコストが増える。&lt;/p&gt;
+
+&lt;p&gt;言い換えるならば、
+&lt;strong&gt;エンドユーザーの要求を遥かに超えた品質水準は、生産性を上げるひとつの手段である。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;価格と品質はトレードオフであるという考えは、日本には存在しない。反対に、高品質がコスト低減をもたらすという考えが広く受け入れられている。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;ラエトライルの話:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ ラエトライルの話&lt;/h5&gt;
+
+&lt;p&gt;ラエトライルとは、杏の種の中のある部分から搾り取れる液体。
+スウェーデンではアーモンドエキスと同じぐらいの値段で買えるが、
+メキシコでは末期癌の治療薬として一滴50ドルで売られている。
+絶望の淵にある人には、証拠などどうでもよくすがってしまうとうこと。&lt;/p&gt;
+
+&lt;p&gt;プロジェクト開発においても同じようなことが見られる。
+多くのマネージャーが生産性があがると聞くと、証拠もなしに飛びついてしまう。&lt;/p&gt;
+
+&lt;p&gt;安易な解決方法では手に負えない。
+よい実績は、効果的な人の使い方、作業場所や企業文化の改善などから生まれる。
+けれども企業文化の改善は難しく、短期的には効果が上がりにくいため、
+生産性向上ツールなどに手を伸ばしたくなってしまう。&lt;/p&gt;
+
+&lt;h5 id=&#34;生産性の高いチームを育てる:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 生産性の高いチームを育てる&lt;/h5&gt;
+
+&lt;p&gt;挑戦はチームメンバーに&lt;strong&gt;一緒になって努力する&lt;/strong&gt;目標を与えるからこそ重要。
+挑戦とはチームをひとつにまとめるための道具である。&lt;/p&gt;
+
+&lt;p&gt;チームの結束の可能性を高めるように行動することもできるが、
+現実に結束させることはできない。チーム結束の過程はコントロールしようとすると壊れてしまう。&lt;/p&gt;
+
+&lt;p&gt;チームの構築とは言わずに、チームの育成と言うこと。&lt;/p&gt;
+
+&lt;h5 id=&#34;健全な会社にするための化学反応を生み出す要素:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 健全な会社にするための化学反応を生み出す要素&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;品質至上主義を作り出す&lt;/li&gt;
+&lt;li&gt;満足感を与える打ち上げをたくさん用意する&lt;/li&gt;
+&lt;li&gt;エリート感覚を醸成する&lt;/li&gt;
+&lt;li&gt;チームに異分子を混ぜることを奨励する&lt;/li&gt;
+&lt;li&gt;成功しているチームを守り、維持する&lt;/li&gt;
+&lt;li&gt;戦術ではなく戦略を与える&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;いい加減な製品を納入することからは、仲間とともに味合う満足感によって、
+チームを一体化させる力は生まれない。
+逆に、「完全な製品だけを求める」態度を取れば、
+チームが一つにまとまる可能性が高くなる。この品質至上主義が、
+チーム形成にとって最も強力な触媒である。&lt;/p&gt;
+
+&lt;h5 id=&#34;メソドロジー:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ メソドロジー&lt;/h5&gt;
+
+&lt;p&gt;メソドロジーとは、あらゆる頭脳集約型作業をどのように進めるかについての一般的なシステム理論。
+大抵の組織では、業務の質が職員の質を超えることができない。
+平凡であまり能力のない人々でも、優れた組織を作るための方法論。&lt;/p&gt;
+
+&lt;p&gt;すべての決定を下すのはメソドロジーであり、人間は何も判断しない。
+組織は完全に決定論的になる。&lt;/p&gt;
+
+&lt;p&gt;=&amp;gt; ある意味全てをマニュアル化するなど。臨機応変な対応がとれなかったりして一長一短。&lt;/p&gt;
+
+&lt;h5 id=&#34;ホーソン効果:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ ホーソン効果&lt;/h5&gt;
+
+&lt;p&gt;人は、他と違った扱いを受けることに魅力を感じ、注目されることを好み、珍しい物に好奇心をよせる。
+これをホーソン効果という。&lt;/p&gt;
+
+&lt;h5 id=&#34;君主論:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 君主論&lt;/h5&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;自分が先頭に立って新たな秩序を導入することほど、扱うのが困難で、成功が疑わしく、管理するのが危険なものはない、
+ということをよく考えるべきだ。導入する人々にとって、古い秩序から恩恵を受けた人は全て敵であり、新たな秩序から恩恵を受ける人からは、
+気のない支援しか受けられない。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&#34;アリストテレスの哲学を構成する5つの学問:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ アリストテレスの哲学を構成する5つの学問&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;形而上学&lt;/li&gt;
+&lt;li&gt;論理学&lt;/li&gt;
+&lt;li&gt;倫理学&lt;/li&gt;
+&lt;li&gt;政治学&lt;/li&gt;
+&lt;li&gt;美学&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;少し各項目が抽象的すぎたような感じもするが書かれている項目は的を得ていた。
+とくに現場経験のあまりない人間が読むにはちょうどよい感じがした。&lt;/p&gt;
+
+&lt;p&gt;表紙から受けたイメージよりはかなり入門的な本。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【読書】インターネットの基礎　〜情報革命を支えるインフラストラクチャー〜</title>
