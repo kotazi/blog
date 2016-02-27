@@ -1,6 +1,6 @@
 +++
 date = "2016-02-27T20:18:53+09:00"
-draft = true
+draft = false
 title = "【Rails】whenever導入を通した学び"
 tags = ["rails"]
 +++

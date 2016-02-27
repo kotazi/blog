@@ -1,6 +1,6 @@
 +++
 date = "2016-02-28T22:33:30+09:00"
-draft = true
+draft = false
 title = "0228_peopelwear"
 tag = ["reading"]
 +++
