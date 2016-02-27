@@ -6,8 +6,295 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Feb 2016 11:40:44 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 28 Feb 2016 22:33:30 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>0228_peopelwear</title>
+      <link>http://kotazi.github.io/blog/post/2016/0228_peopelwear/</link>
+      <pubDate>Sun, 28 Feb 2016 22:33:30 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0228_peopelwear/</guid>
+      <description>
+
+&lt;p&gt;13冊目。
+アメリカのソフトウェア工学者トム・デマルコの著書、&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/B00I96CJWO/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00I96CJWO&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;ピープルウエア　第3版&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=B00I96CJWO&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;実際のところ、ソフトウェア開発上の問題の多くは、技術的というより社会学的なものである。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;というとても有名な文章が登場する本書。
+ソフトウェア開発においてありがちな人間関係のトラブルとそれらに対する有用な対処が紹介される。&lt;/p&gt;
+
+&lt;p&gt;目次は下記である。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第1部: 人材を活用する&lt;/li&gt;
+&lt;li&gt;第2部: オフィス環境と生産性&lt;/li&gt;
+&lt;li&gt;第3部: 人材を揃える&lt;/li&gt;
+&lt;li&gt;第4部: 生産性の高いチームを育てる&lt;/li&gt;
+&lt;li&gt;第5部: 肥沃な土壌&lt;/li&gt;
+&lt;li&gt;第6部: きっとそこは楽しいところ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;本テーマの出発点は失敗したプロジェクトの調査にあった。
+調査した失敗プロジェクトの圧倒的多数は、
+原因が単なる技術的問題として片付けられないものばかりだった。
+ということから始められる。&lt;/p&gt;
+
+&lt;p&gt;プロジェクトの成功は関係者の緊密な対人関係によって生まれ、
+失敗は疎遠な対人関係の結果である。&lt;/p&gt;
+
+&lt;h5 id=&#34;品質第一主義からの頭皮:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 品質第一主義からの頭皮&lt;/h5&gt;
+
+&lt;p&gt;ユーザーの品質意識は実は低い。
+少なくとも開発者に比べると、必要とする製品品質のレベルが低いということだ。&lt;/p&gt;
+
+&lt;p&gt;開発者ではなく、買い手に品質基準を決めさせることを「&lt;strong&gt;品質第一主義からの逃避&lt;/strong&gt;」という。
+顧客の要求通りの品質を提供することは一見最もらしく見えるが、
+長い目で見ると市場に品質を合わせるとコストが増える。&lt;/p&gt;
+
+&lt;p&gt;言い換えるならば、
+&lt;strong&gt;エンドユーザーの要求を遥かに超えた品質水準は、生産性を上げるひとつの手段である。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;価格と品質はトレードオフであるという考えは、日本には存在しない。反対に、高品質がコスト低減をもたらすという考えが広く受け入れられている。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;ラエトライルの話:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ ラエトライルの話&lt;/h5&gt;
+
+&lt;p&gt;ラエトライルとは、杏の種の中のある部分から搾り取れる液体。
+スウェーデンではアーモンドエキスと同じぐらいの値段で買えるが、
+メキシコでは末期癌の治療薬として一滴50ドルで売られている。
+絶望の淵にある人には、証拠などどうでもよくすがってしまうとうこと。&lt;/p&gt;
+
+&lt;p&gt;プロジェクト開発においても同じようなことが見られる。
+多くのマネージャーが生産性があがると聞くと、証拠もなしに飛びついてしまう。&lt;/p&gt;
+
+&lt;p&gt;安易な解決方法では手に負えない。
+よい実績は、効果的な人の使い方、作業場所や企業文化の改善などから生まれる。
+けれども企業文化の改善は難しく、短期的には効果が上がりにくいため、
+生産性向上ツールなどに手を伸ばしたくなってしまう。&lt;/p&gt;
+
+&lt;h5 id=&#34;生産性の高いチームを育てる:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 生産性の高いチームを育てる&lt;/h5&gt;
+
+&lt;p&gt;挑戦はチームメンバーに&lt;strong&gt;一緒になって努力する&lt;/strong&gt;目標を与えるからこそ重要。
+挑戦とはチームをひとつにまとめるための道具である。&lt;/p&gt;
+
+&lt;p&gt;チームの結束の可能性を高めるように行動することもできるが、
+現実に結束させることはできない。チーム結束の過程はコントロールしようとすると壊れてしまう。&lt;/p&gt;
+
+&lt;p&gt;チームの構築とは言わずに、チームの育成と言うこと。&lt;/p&gt;
+
+&lt;h5 id=&#34;健全な会社にするための化学反応を生み出す要素:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 健全な会社にするための化学反応を生み出す要素&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;品質至上主義を作り出す&lt;/li&gt;
+&lt;li&gt;満足感を与える打ち上げをたくさん用意する&lt;/li&gt;
+&lt;li&gt;エリート感覚を醸成する&lt;/li&gt;
+&lt;li&gt;チームに異分子を混ぜることを奨励する&lt;/li&gt;
+&lt;li&gt;成功しているチームを守り、維持する&lt;/li&gt;
+&lt;li&gt;戦術ではなく戦略を与える&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;いい加減な製品を納入することからは、仲間とともに味合う満足感によって、
+チームを一体化させる力は生まれない。
+逆に、「完全な製品だけを求める」態度を取れば、
+チームが一つにまとまる可能性が高くなる。この品質至上主義が、
+チーム形成にとって最も強力な触媒である。&lt;/p&gt;
+
+&lt;h5 id=&#34;メソドロジー:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ メソドロジー&lt;/h5&gt;
+
+&lt;p&gt;メソドロジーとは、あらゆる頭脳集約型作業をどのように進めるかについての一般的なシステム理論。
+大抵の組織では、業務の質が職員の質を超えることができない。
+平凡であまり能力のない人々でも、優れた組織を作るための方法論。&lt;/p&gt;
+
+&lt;p&gt;すべての決定を下すのはメソドロジーであり、人間は何も判断しない。
+組織は完全に決定論的になる。&lt;/p&gt;
+
+&lt;p&gt;=&amp;gt; ある意味全てをマニュアル化するなど。臨機応変な対応がとれなかったりして一長一短。&lt;/p&gt;
+
+&lt;h5 id=&#34;ホーソン効果:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ ホーソン効果&lt;/h5&gt;
+
+&lt;p&gt;人は、他と違った扱いを受けることに魅力を感じ、注目されることを好み、珍しい物に好奇心をよせる。
+これをホーソン効果という。&lt;/p&gt;
+
+&lt;h5 id=&#34;君主論:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 君主論&lt;/h5&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;自分が先頭に立って新たな秩序を導入することほど、扱うのが困難で、成功が疑わしく、管理するのが危険なものはない、
+ということをよく考えるべきだ。導入する人々にとって、古い秩序から恩恵を受けた人は全て敵であり、新たな秩序から恩恵を受ける人からは、
+気のない支援しか受けられない。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&#34;アリストテレスの哲学を構成する5つの学問:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ アリストテレスの哲学を構成する5つの学問&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;形而上学&lt;/li&gt;
+&lt;li&gt;論理学&lt;/li&gt;
+&lt;li&gt;倫理学&lt;/li&gt;
+&lt;li&gt;政治学&lt;/li&gt;
+&lt;li&gt;美学&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;少し各項目が抽象的すぎたような感じもするが書かれている項目は的を得ていた。
+とくに現場経験のあまりない人間が読むにはちょうどよい感じがした。&lt;/p&gt;
+
+&lt;p&gt;表紙から受けたイメージよりはかなり入門的な本。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Rails】whenever導入を通した学び</title>
+      <link>http://kotazi.github.io/blog/post/2016/0227_whenever/</link>
+      <pubDate>Sat, 27 Feb 2016 20:18:53 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0227_whenever/</guid>
+      <description>
+
+&lt;p&gt;Railsのwheneverを使う機会があったのでその学びをまとめる。
+やりたかっとことはRakeタスクを作成し、wheneverを使って定期的にSlackへポストする。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;slack通知:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;Slack通知&lt;/h2&gt;
+
+&lt;p&gt;Slackへの通知はすごく簡単。&lt;br /&gt;
+ここにだいたい書いてある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/ysk_1031/items/f74c8b8274ec6c58520d&#34;&gt;RailsアプリからSlackに通知&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;とりあえず、&lt;code&gt;config/intializers/slack_api.rb&lt;/code&gt;を作成してtokenを登録しておけば、いろいろできるみたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;rakeタスクの作成:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;rakeタスクの作成&lt;/h2&gt;
+
+&lt;p&gt;初めてrakeタスクを作成した。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.ruby-lang.org/ja/2.2.0/library/rake.html&#34;&gt;library rake&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake &amp;lt;タスク名&amp;gt; # 指定のタスクを実行。
+$ rake &amp;lt;パラメータキー&amp;gt;=&amp;lt;値&amp;gt; &amp;lt;タスク名&amp;gt; # パラメータ指定ありで、指定のタスクを実行。
+$ rake -h # 使い方を表示。
+$ rake -T # 定義されているタスク一覧を表示
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(引用:&lt;a href=&#34;http://unageanu.hatenablog.com/entry/20100829/1283069269&#34;&gt;Rakeの基本的な使い方まとめ|うなの日記&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&#34;whenever:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;whenever&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/javan/whenever&#34;&gt;javan/whenever|github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://morizyun.github.io/blog/whenever-gem-rails-ruby-capistrano/&#34;&gt;Wheneverは導入が超簡単なcrontab管理ライブラリGemです！&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;mixpanel:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;mixpanel&lt;/h2&gt;
+
+&lt;p&gt;mixpanelのデータのエクスポートしたい。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mixpanel.com/docs/api-documentation/data-export-api&#34;&gt;Data Export API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kitak.hatenablog.jp/entry/2014/10/07/231003&#34;&gt;Rubyでmixpanelのイベントをtrackしたり、データをexportする術&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【読書】インターネットの基礎　〜情報革命を支えるインフラストラクチャー〜</title>
+      <link>http://kotazi.github.io/blog/post/2016/0224_internet/</link>
+      <pubDate>Wed, 24 Feb 2016 11:40:44 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0224_internet/</guid>
+      <description>
+
+&lt;p&gt;2016年12冊目。&lt;/p&gt;
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/B00PRPWMXG/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00PRPWMXG&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;角川インターネット講座２　ネットを支えるオープンソース　ソフトウェアの進化&amp;lt;角川インターネット講座&amp;gt; (角川学芸出版全集)&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=B00PRPWMXG&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;目次-http-kci-salon-jp-books-02:07728f0e849bb9a57f3960dfd474f609&#34;&gt;&lt;a href=&#34;http://kci-salon.jp/books/02/&#34;&gt;目次&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h5 id=&#34;第1部-プログラミングがすべてをつくった:07728f0e849bb9a57f3960dfd474f609&#34;&gt;◯ 第1部 プログラミングがすべてをつくった&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;序章　インターネットはソフトウェアでできている   　…まつもと ゆきひろ 著&lt;/li&gt;
+&lt;li&gt;第1章　インターネットを支えるソフトウェアを知る  　…法林 浩之 著&lt;/li&gt;
+&lt;li&gt;第2章　プログラミングとは何か   　…久野 靖 著&lt;/li&gt;
+&lt;li&gt;第3章　プログラミングと教育    　…阿部 和広 著&lt;/li&gt;
+&lt;li&gt;第4章　ハッカー精神とは何か    　&lt;/li&gt;
+&lt;li&gt;プログラマーに求められる素養と思考方法   　…吉岡 弘隆 著&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;第2部-オープンソースが高めたネットの価値:07728f0e849bb9a57f3960dfd474f609&#34;&gt;◯ 第2部 オープンソースが高めたネットの価値&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第5章　ライセンスというプロトコル OSSエコシステムを繋ぐ仕組み 　…やまね ひでき 著&lt;/li&gt;
+&lt;li&gt;第6章　オープンソース化が生んだ変化    　…瀧田 佐登子 著&lt;/li&gt;
+&lt;li&gt;第7章　企業とオープンソース    　…鵜飼 文敏 著&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;第2回はプログラミングとオープンソースについて。
+各種ライセンスについて触れられていてとても勉強になりました。
+今後は自分のプロジェクトでもライセンスを付加して利用者のリスクを可視化するよう心掛けようと思った。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【読書】インターネットの基礎　〜情報革命を支えるインフラストラクチャー〜</title>
+      <link>http://kotazi.github.io/blog/post/2016/0218_internet/</link>
+      <pubDate>Thu, 18 Feb 2016 11:40:44 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0218_internet/</guid>
+      <description>
+
+&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4046538813/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4046538813&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;角川インターネット講座 (1) インターネットの基礎情報革命を支えるインフラストラクチャー&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4046538813&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;目次-http-kci-salon-jp-books-01:2a8efb0e9ce9ce1d09880ed3ba0fd408&#34;&gt;&lt;a href=&#34;http://kci-salon.jp/books/01/&#34;&gt;目次&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h5 id=&#34;はしがき:2a8efb0e9ce9ce1d09880ed3ba0fd408&#34;&gt;◯ はしがき&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;インターネット前提社会の出発によせて&amp;hellip;村井 純 著&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;第1部-インターネットの理念:2a8efb0e9ce9ce1d09880ed3ba0fd408&#34;&gt;◯ 第1部 インターネットの理念&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;序章　フロンティアの流儀&amp;hellip;村井 純 著&lt;/li&gt;
+&lt;li&gt;第1章　技術の誕生と成長&amp;hellip;村井 純 著&lt;/li&gt;
+&lt;li&gt;第2章　インターネットの仕組み&amp;hellip;村井 純 著&lt;/li&gt;
+&lt;li&gt;第3章　変貌するインターネット&amp;hellip;村井 純 著&lt;/li&gt;
+&lt;li&gt;第4章　インターネットを誰がどのように運用するのか&amp;hellip;村井 純 著&lt;/li&gt;
+&lt;li&gt;技術解説　インターネットプロコトル&amp;hellip;砂原 秀樹 著&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;第2部-tcp-ip発明者からの-宿題:2a8efb0e9ce9ce1d09880ed3ba0fd408&#34;&gt;◯ 第2部 TCP/IP発明者からの「宿題」&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;インターネットの再発明 Reinventing the Internet&amp;hellip;ヴィントン・グレイ・サーフ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;日本のインターネットの父とも呼ばれる村井純氏によって、インターネットの歴史や仕組みが語られる。&lt;/p&gt;
+
+&lt;p&gt;現代のインターネットの成り立ちまでの経緯が当事者でしか知らないであろう言葉によって語られ、
+難しいと思っていたインターネットの仕組みや全貌もとても分かりやすく解説されている。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【読書】ユーザーストーリーマッピング</title>
@@ -1686,1514 +1973,6 @@ expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
 
 &lt;p&gt;&lt;p data-height=&#34;266&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;KVoXob&#34; data-default-tab=&#34;result&#34; data-user=&#34;kotazi&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/kotazi/pen/KVoXob/&#39;&gt;FullCalendar With React ES6&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#39;http://codepen.io/kotazi&#39;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 &lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【訳読】React Tutorial</title>
-      <link>http://kotazi.github.io/blog/post/2016/0128_react/</link>
-      <pubDate>Thu, 28 Jan 2016 23:08:28 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0128_react/</guid>
-      <description>
-
-&lt;p&gt;勉強がてら&lt;a href=&#34;https://facebook.github.io/react/docs/tutorial.html&#34;&gt;Reactチュートリアル&lt;/a&gt;を翻訳しました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;tutorial:c4edc588c83982a0e8967944828e886f&#34;&gt;Tutorial&lt;/h2&gt;
-
-&lt;p&gt;シンプルではあるものの、ブログに書ける現実的なコメントボックスを実装していく。
-この基本バージョンのリアルタイムコメントはDisqusやLibeFyre、Facebook commentsにオファーをいただいた。&lt;/p&gt;
-
-&lt;p&gt;提供する機能:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;全てのコメントのView&lt;/li&gt;
-&lt;li&gt;コメントを送信するためのフォーム&lt;/li&gt;
-&lt;li&gt;バックエンドをカスタムするためのHook&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;またこれらの機能もしっかり備えている。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;オプティミスティックコメント&lt;/strong&gt;: サーバーに保存される前にコメントが表示されるため非常に速い&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ライブアップデート&lt;/strong&gt;: 他者のコメントがリアルタイムで反映される&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Markdown対応&lt;/strong&gt;: Markdownによる記述が可能&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;want-to-skip-all-this-and-just-see-the-source:c4edc588c83982a0e8967944828e886f&#34;&gt;Want to skip all this and just see the source?&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/reactjs/react-tutorial&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;running-a-server:c4edc588c83982a0e8967944828e886f&#34;&gt;Running a server&lt;/h3&gt;
-
-&lt;p&gt;チュートリアルを開始するためには、稼働しているサーバーが必要。
-あくまでデータの取得と保存に使用するAPIエンドポイントとしてのサーバーだ。&lt;/p&gt;
-
-&lt;p&gt;できるだけ簡単にするため、仕様を実現するシンプルなサーバーをいくつかのスクリプト言語で用意した。
-開始に必要なものは&lt;a href=&#34;https://github.com/reactjs/react-tutorial/&#34;&gt;こちら&lt;/a&gt;からインストール可能。&lt;/p&gt;
-
-&lt;p&gt;簡潔にするために、実行するサーバーはJSONファイルをデータベースとして利用する。
-本番でこんなことはしないが、APIを用いたシュミレーションを行うには簡単でいいだろう。
-一度サーバーを起動したら、APIエンドポイントをサポートし、必要なスタティックペーシを出してくれる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;getting-started:c4edc588c83982a0e8967944828e886f&#34;&gt;Getting started&lt;/h3&gt;
-
-&lt;p&gt;このチュートリアルでは、できるだけ簡単なものにしていくつもりである。
-サーバーパッケージの中に私たちが動かすHTMLファイルが含まれている。
-&lt;code&gt;public/index.html&lt;/code&gt;を好みのエディタで開いてみてほしい。このようになっているはずだ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;!-- index.html --&amp;gt;
-&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
-  &amp;lt;head&amp;gt;
-    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot; /&amp;gt;
-    &amp;lt;title&amp;gt;React Tutorial&amp;lt;/title&amp;gt;
-    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-    &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;
-    &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-    &amp;lt;script type=&amp;quot;text/babel&amp;quot; src=&amp;quot;scripts/example.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-    &amp;lt;script type=&amp;quot;text/babel&amp;quot;&amp;gt;
-      // To get started with this tutorial running your own code, simply remove
-      // the script tag loading scripts/example.js and start writing code here.
-    &amp;lt;/script&amp;gt;
-  &amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このチュートリアルのリマインダーとして、このスクリプトタグの中にコードを記述している。
-ライブリロードは備えていないので、ファイルを更新した際はブラウザをリロードすること。
-(サーバー起動後、)ブラウザで&lt;code&gt;http://localhost:3000&lt;/code&gt;を開けば進捗が確認できる。
-このファイルをそのまま開けば、完成したプロダクトを確認することができる。
-準備ができたら&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;タグを削除して続けよう。&lt;/p&gt;
-
-&lt;p&gt;注意: ajax呼び出しをシンプルに記述するため、jQueryを含んでいるが必ずしも必要なわけではない。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;your-first-component:c4edc588c83982a0e8967944828e886f&#34;&gt;Your first component&lt;/h3&gt;
-
-&lt;p&gt;Reactは要するにmodular, composable componentsである。
-コメントボックスのサンプルとして、次のようなコンポーネント構造を持つことにする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;- CommentBox
-  - CommentList
-    - Comment
-  - CommentForm
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;シンプルに&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;を使って、&lt;code&gt;CommentBox&lt;/code&gt;コンポーネントを作成しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial1.js
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        Hello, world! I am a CommentBox.
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-ReactDOM.render(
-  &amp;lt;CommentBox /&amp;gt;,
-  document.getElementById(&#39;content&#39;)
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ネイティブのHTMLエレメント名が小文字で綴られていることに注意。
-Reactクラスは大文字で始まっている。&lt;/p&gt;
-
-&lt;h5 id=&#34;jsx-syntax:c4edc588c83982a0e8967944828e886f&#34;&gt;JSX Syntax&lt;/h5&gt;
-
-&lt;p&gt;JSがXMLのような構文だったことに気づかれただろう。
-シンタックスシュガーをピュアJSに変換するシンプルなプリコンパイラを備えている。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial1-raw.js
-var CommentBox = React.createClass({displayName: &#39;CommentBox&#39;,
-  render: function() {
-    return (
-      React.createElement(&#39;div&#39;, {className: &amp;quot;commentBox&amp;quot;},
-        &amp;quot;Hello, world! I am a CommentBox.&amp;quot;
-      )
-    );
-  }
-});
-ReactDOM.render(
-  React.createElement(CommentBox, null),
-  document.getElementById(&#39;content&#39;)
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;任意ではあるがJSXシンタックスを使ったほうがかんだんだ。
-JSXについては&lt;a href=&#34;https://facebook.github.io/react/docs/jsx-in-depth.html&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;what-s-going-on:c4edc588c83982a0e8967944828e886f&#34;&gt;What&amp;rsquo;s going on&lt;/h5&gt;
-
-&lt;p&gt;新しいReactコンポーネントを作成するために、&lt;code&gt;React.createClass()&lt;/code&gt;にいくつかのメソッドを持ったJSオブジェクトを渡した。
-これらのメソッドの中で最も重要なものが&lt;code&gt;render&lt;/code&gt;メソッドだ。
-Reactコンポーネントのツリー構造を返り値にし、ゆくゆくはHTMLにレンダリングするメソッドだ。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;タグは実際のDOMノードではない。Reactの&lt;code&gt;div&lt;/code&gt;コンポーネントのインスタンスである。
-これらのことはReactの操作方法を知るデータの欠片や印と思ってくれていい。
-Reactは安全だ。
-HTML文字列を生成しないため、XSS対策をデフォルトでしていることになる。&lt;/p&gt;
-
-&lt;p&gt;基本的なHTMLを返す必要はない。あなた(もしくは誰か)の組み立てたコンポーネントのツリーを返せばいい。
-これがReactをcomposableにしてくれる。フロントエンドを保守するキーとなる。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ReactDOM.render()&lt;/code&gt;はルートコンポーネントをインスタンス化し、骨組みを作る。
-そしてマークアップ部分を生のDOMへ注入し、ふたつ目の引数として提供される。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ReactDOM&lt;/code&gt;モジュールはDOM特有のメソッドを提供する。
-&lt;code&gt;React&lt;/code&gt;は&lt;a href=&#34;http://facebook.github.io/react-native/&#34;&gt;React Native&lt;/a&gt;といったことなるプラットフォーム上で共有されるコアのツールを持つ。
-&lt;code&gt;ReactDOM.render&lt;/code&gt;がこのチュートリアルのスクリプトの最下部にとどまることは重要な事だ。
-&lt;code&gt;ReactDOM.render&lt;/code&gt;は複合的なコンポーネントが定義された後に呼び出されるべきだからである。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;composing-components:c4edc588c83982a0e8967944828e886f&#34;&gt;Composing components&lt;/h3&gt;
-
-&lt;p&gt;それでは再びシンプルな&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;を使って&lt;code&gt;CommentList&lt;/code&gt;と&lt;code&gt;CommentForm&lt;/code&gt;の骨組みを作成しよう。
-ファイルに２つのコンポーネントを作成し、&lt;code&gt;CommentBox&lt;/code&gt;宣言を保ったうえで&lt;code&gt;ReactDOM.render&lt;/code&gt;を呼び出す。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial2.js
-var CommentList = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentList&amp;quot;&amp;gt;
-        Hello, world! I am a CommentList.
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-
-var CommentForm = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentForm&amp;quot;&amp;gt;
-        Hello, world! I am a CommentForm.
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;続いて&lt;code&gt;CommentBox&lt;/code&gt;コンポーネントを更新し、新しいコンポーネントを利用する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial3.js
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
-        &amp;lt;CommentList /&amp;gt;
-        &amp;lt;CommentForm /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;どのようにしてHTMLタグと作成したコンポーネントを混在させるかに注意すること。
-HTMLコンポーネントは通常Reactコンポーネントであり、ひとつの違いはあるが、あなたが定義したもののようだ。
-JSXコンパイラは自動的にHTMLタグを&lt;code&gt;React.createElement(tagName)&lt;/code&gt;式に書き直し、全てを孤独にする。
-これが名前名前汚染を防ぐことになる。&lt;/p&gt;
-
-&lt;h4 id=&#34;using-props:c4edc588c83982a0e8967944828e886f&#34;&gt;Using props&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;Comment&lt;/code&gt;コンポーネントを作成しよう。親から渡されたデータに依存するものになる。
-親コンポーネントから渡されたデータは子コンポーネントの&lt;code&gt;property&lt;/code&gt;として利用可能だ。
-これらのプロパティには&lt;code&gt;this.props&lt;/code&gt;を使ってアクセスする。&lt;code&gt;props&lt;/code&gt;を使えば、&lt;code&gt;CommentList&lt;/code&gt;から渡された&lt;code&gt;Comment&lt;/code&gt;を読むことができ、レンダリングも可能だ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial4.js
-var Comment = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;comment&amp;quot;&amp;gt;
-        &amp;lt;h2 className=&amp;quot;commentAuthor&amp;quot;&amp;gt;
-          {this.props.author}
-        &amp;lt;/h2&amp;gt;
-        {this.props.children}
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;JSXの中のJavaScript式を取り囲むことで、ツリー内にReactコンポーネントを書くことができる。
-コンポーネントの属性やネストされた要素に&lt;code&gt;this.props&lt;/code&gt;や&lt;code&gt;this.props.children&lt;/code&gt;を用いてアクセスする。&lt;/p&gt;
-
-&lt;h4 id=&#34;component-properties:c4edc588c83982a0e8967944828e886f&#34;&gt;Component Properties&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;Comment&lt;/code&gt;コンポーネントの定義が完了したところで、コンポーネントに名前とコメント分を渡していきたい。
-各ユニークなコメントに対して同じコードの再利用が可能になる。
-&lt;code&gt;CommentList&lt;/code&gt;にコメントを追加してみよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial5.js
-var CommentList = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentList&amp;quot;&amp;gt;
-        &amp;lt;Comment author=&amp;quot;Pete Hunt&amp;quot;&amp;gt;This is one comment&amp;lt;/Comment&amp;gt;
-        &amp;lt;Comment author=&amp;quot;Jordan Walke&amp;quot;&amp;gt;This is *another* comment&amp;lt;/Comment&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;親の&lt;code&gt;CommentList&lt;/code&gt;コンポーネントから子の&lt;code&gt;Comment&lt;/code&gt;コンポーネントにデータを渡していることに注目。
-たとえば、属性をお通して&amp;rdquo;Pete Hunt&amp;rdquo;、XMLのような子ノードで&amp;rdquo;This is one comment&amp;rdquo;を渡している。
-さらに、&lt;code&gt;Comment&lt;/code&gt;コンポーネントはこれらのプロパティに&lt;code&gt;this.props.author&lt;/code&gt;や&lt;code&gt;this.props.children&lt;/code&gt;を通してアクセスしている。&lt;/p&gt;
-
-&lt;h4 id=&#34;adding-markdown:c4edc588c83982a0e8967944828e886f&#34;&gt;Adding Markdown&lt;/h4&gt;
-
-&lt;p&gt;Markdownはテキストをシンプルに記述するためのフォーマットだ。
-例えばテキストをアスタリスクで囲めば、テキストを強調させる。&lt;/p&gt;
-
-&lt;p&gt;このチュートリアルでは、受け取ったMarkdownを生のHTMLにコンバートするサードパーティライブラリである*marked*を利用する。既にこのライブラリは読み込んであるので、もう使いはじめることができる。コメント文のMarkdownをコンバートして出力しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial6.js
-var Comment = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;comment&amp;quot;&amp;gt;
-        &amp;lt;h2 className=&amp;quot;commentAuthor&amp;quot;&amp;gt;
-          {this.props.author}
-        &amp;lt;/h2&amp;gt;
-        {marked(this.props.children.toString())}
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ここではmarkedライブラリの呼び出しを行っているだけだ。&lt;code&gt;this.props.children&lt;/code&gt;をReactのラッパーテキストからmarkedが理解できるように生の文字列にコンバートする必要があるため&lt;code&gt;toString()&lt;/code&gt;を呼び出している。&lt;/p&gt;
-
-&lt;p&gt;けれども問題がひとつ！レンダリングされたコメントが&lt;code&gt;&amp;lt;p&amp;gt;This is &amp;lt;em&amp;gt;another&amp;lt;/em&amp;gt; comment&amp;lt;/p&amp;gt;&lt;/code&gt;のようになっている。
-タグを実際のHTMLとしてレンダリングしたいのに。&lt;/p&gt;
-
-&lt;p&gt;これは&lt;a href=&#34;https://en.wikipedia.org/wiki/Cross-site_scripting&#34;&gt;XSS攻撃&lt;/a&gt;からの防御手段となる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial7.js
-var Comment = React.createClass({
-  rawMarkup: function() {
-    var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
-    return { __html: rawMarkup };
-  },
-
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;comment&amp;quot;&amp;gt;
-        &amp;lt;h2 className=&amp;quot;commentAuthor&amp;quot;&amp;gt;
-          {this.props.author}
-        &amp;lt;/h2&amp;gt;
-        &amp;lt;span dangerouslySetInnerHTML={this.rawMarkup()} /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;特別なAPIを使って故意に生HTMLの挿入を難しくしているが、markedにとってはメリットとなる。&lt;/p&gt;
-
-&lt;p&gt;こうすることでmarkedの安全性に信頼を置くことができる。このケースでは、&lt;code&gt;sanitize: true&lt;/code&gt;を渡してmarkedにそのまま渡すのではなくソース内のどんなHTMLでもエスケープするように伝えた。&lt;/p&gt;
-
-&lt;h4 id=&#34;hook-up-the-data-model:c4edc588c83982a0e8967944828e886f&#34;&gt;Hook up the data model&lt;/h4&gt;
-
-&lt;p&gt;これまで私たちはコメントをソースコード内に直接挿入してきた。
-代わりにJSONデータの塊をコメントリストにレンダリングしてみよう。
-ゆくゆくはサーバーから受け取るデータだが、ここではコード内に記述しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial8.js
-var data = [
-  {id: 1, author: &amp;quot;Pete Hunt&amp;quot;, text: &amp;quot;This is one comment&amp;quot;},
-  {id: 2, author: &amp;quot;Jordan Walke&amp;quot;, text: &amp;quot;This is *another* comment&amp;quot;}
-];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;データをモジュール方式に&lt;code&gt;CommentList&lt;/code&gt;に入れる必要がある。
-&lt;code&gt;CommentBox&lt;/code&gt;を修正し、このデータをプロパティを通して&lt;code&gt;CommentList&lt;/code&gt;に入れるために&lt;code&gt;ReactDom.render()&lt;/code&gt;を呼び出す。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial9.js
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
-        &amp;lt;CommentList data={this.props.data} /&amp;gt;
-        &amp;lt;CommentForm /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-
-ReactDOM.render(
-  &amp;lt;CommentBox data={data} /&amp;gt;,
-  document.getElementById(&#39;content&#39;)
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これでデータが&lt;code&gt;CommentList&lt;/code&gt;内で利用可能になる、コメントをレンダリングしよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial10.js
-var CommentList = React.createClass({
-  render: function() {
-    var commentNodes = this.props.data.map(function(comment) {
-      return (
-        &amp;lt;Comment author={comment.author} key={comment.id}&amp;gt;
-          {comment.text}
-        &amp;lt;/Comment&amp;gt;
-      );
-    });
-    return (
-      &amp;lt;div className=&amp;quot;commentList&amp;quot;&amp;gt;
-        {commentNodes}
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;fetching-from-the-server:c4edc588c83982a0e8967944828e886f&#34;&gt;Fetching from the server&lt;/h4&gt;
-
-&lt;p&gt;ハードコーディングしてあるデータをサーバーから受け取るように書き換えよう。
-データプロパティを取り除き、フェッチするURLに置き換える。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial11.js
-ReactDOM.render(
-  &amp;lt;CommentBox url=&amp;quot;/api/comments&amp;quot; /&amp;gt;,
-  document.getElementById(&#39;content&#39;)
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このコンポーネントは先ほどまでのコンポーネントとは異なる。なぜなら自身で再度レンダリングする必要があるからだ。
-コンポーネントにはサーバーからのリクエストが返ってくるまで何もデータがなく、返ってきたら新しいコメントをレンダリングする必要がある。&lt;/p&gt;
-
-&lt;h4 id=&#34;reactive-state:c4edc588c83982a0e8967944828e886f&#34;&gt;Reactive state&lt;/h4&gt;
-
-&lt;p&gt;これまではプロパティに基づいて各コンポーネントは1回だけレンダリングをしてきた。
-&lt;code&gt;props&lt;/code&gt;は不変のものだったのだ。親からもらったり、自身で所持していたり。
-インタラクションを実装するために、コンポーネントにmutable(変わりやすい)stateを紹介する。
-&lt;code&gt;this.state&lt;/code&gt;はprovateであり、&lt;code&gt;this.setState()&lt;/code&gt;を呼び出すことで変更される。
-ステートが更新されると、コンポーネントは自身を再レンダリングする。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;render()&lt;/code&gt;メソッドは&lt;code&gt;this.props&lt;/code&gt;と&lt;code&gt;this.state&lt;/code&gt;の関数の宣言的に記述されている。
-フレームワークはUIが常に入力に対して安定していることを保証する。&lt;/p&gt;
-
-&lt;p&gt;サーバーがデータをフェッチすると、所持しているコメントデータを変更する必要がある。
-&lt;code&gt;CommentBox&lt;/code&gt;コンポーネントに自身のステートとしてコメントデータの配列を追加しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial12.js
-var CommentBox = React.createClass({
-  getInitialState: function() {
-    return {data: []};
-  },
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
-        &amp;lt;CommentList data={this.state.data} /&amp;gt;
-        &amp;lt;CommentForm /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;getInitialState()&lt;/code&gt;はコンポーネントのライフサイクルの中で正確に一度だけ実行され、コンポーネントの初期ステートをセットアップする。&lt;/p&gt;
-
-&lt;h4 id=&#34;updating-state:c4edc588c83982a0e8967944828e886f&#34;&gt;Updating state&lt;/h4&gt;
-
-&lt;p&gt;コンポーネントが最初に作成されたら、サーバーからJSONをGETし、最新のデータを反映させるためにステートを更新したい。
-サーバーへの非同期通信を行い、必要なデータを手早くフェッチするためにjQueryを使うつもりだ。
-起動しているサーバーの中には既にデータが含まれている。(&lt;code&gt;comments.json&lt;/code&gt;)
-なので一度フェッチして、&lt;code&gt;this.state.date&lt;/code&gt;を見ていこう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[
-  {&amp;quot;author&amp;quot;: &amp;quot;Pete Hunt&amp;quot;, &amp;quot;text&amp;quot;: &amp;quot;This is one comment&amp;quot;},
-  {&amp;quot;author&amp;quot;: &amp;quot;Jordan Walke&amp;quot;, &amp;quot;text&amp;quot;: &amp;quot;This is *another* comment&amp;quot;}
-]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial13.js
-var CommentBox = React.createClass({
-  getInitialState: function() {
-    return {data: []};
-  },
-  componentDidMount: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: &#39;json&#39;,
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
-        &amp;lt;CommentList data={this.state.data} /&amp;gt;
-        &amp;lt;CommentForm /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;componentDidMount&lt;/code&gt;メソッドはコンポーネントが最初にレンダリングされた際にReactから自動的に呼び出されるメソッドである。
-ダイナミックな更新のキーとなっているのが&lt;code&gt;this.setState()&lt;/code&gt;の呼び出しである。
-古いコメントの配列をサーバーから取得した新しい物に置き換え、UIを自動的に更新する。
-このリアクティブ性のために、小さな変更を加えライブアップデートを実現する。
-ここではシンプルなポーリングを行うが、WebSocketやその他のテクノロジーを使うため簡単にできる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial14.js
-var CommentBox = React.createClass({
-  loadCommentsFromServer: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: &#39;json&#39;,
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  getInitialState: function() {
-    return {data: []};
-  },
-  componentDidMount: function() {
-    this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-  },
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
-        &amp;lt;CommentList data={this.state.data} /&amp;gt;
-        &amp;lt;CommentForm /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-
-ReactDOM.render(
-  &amp;lt;CommentBox url=&amp;quot;/api/comments&amp;quot; pollInterval={2000} /&amp;gt;,
-  document.getElementById(&#39;content&#39;)
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この変更で行ったことはAJAX呼び出しのメソッドを分割して移動し、そのメソッドをコンポーネントの初期読み込み時とその後毎2秒おきに呼び出すというものだ。試しにブラウザで実行し&lt;code&gt;comments.json&lt;/code&gt;を変更してみよう。
-2秒以内に変更が反映されるはずだ！&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;adding-new-comments:c4edc588c83982a0e8967944828e886f&#34;&gt;Adding new comments&lt;/h3&gt;
-
-&lt;p&gt;ここではフォームを組み立てよう。&lt;code&gt;CommentForm&lt;/code&gt;コンポーネントはユーザーに名前とコメントテキストを求め、コメントを保存するためにサーバーへ送信する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial15.js
-var CommentForm = React.createClass({
-  render: function() {
-    return (
-      &amp;lt;form className=&amp;quot;commentForm&amp;quot;&amp;gt;
-        &amp;lt;input type=&amp;quot;text&amp;quot; placeholder=&amp;quot;Your name&amp;quot; /&amp;gt;
-        &amp;lt;input type=&amp;quot;text&amp;quot; placeholder=&amp;quot;Say something...&amp;quot; /&amp;gt;
-        &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Post&amp;quot; /&amp;gt;
-      &amp;lt;/form&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;controlled-components:c4edc588c83982a0e8967944828e886f&#34;&gt;Controlled components&lt;/h4&gt;
-
-&lt;p&gt;伝統的なDOMでは、&lt;code&gt;input&lt;/code&gt;要素はレンダリングされ、ブラウザはステートを管理する。
-その結果、実際のDOMのステートとコンポーネントのステートの間に差分が生じる。
-ビューのステートがコンポーネントのステートを異なるのは理想的ではない。
-Reactの場合、初期化の時だけでなくコンポーネントは常にビューのステートを表す。&lt;/p&gt;
-
-&lt;p&gt;それゆえに、入力されたユーザーのインプットを保存するには&lt;code&gt;this.state&lt;/code&gt;を用いる。
-私たちは初期の&lt;code&gt;state&lt;/code&gt;を２つのプロパティ、&lt;code&gt;author&lt;/code&gt;と&lt;code&gt;text&lt;/code&gt;で定義し、それらに空の文字列を入れた。
-Reactの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素では、コンポーネントの&lt;code&gt;state&lt;/code&gt;を反映させるための&lt;code&gt;value&lt;/code&gt;プロパティをセットし、&lt;code&gt;onChange&lt;/code&gt;ハンドラをつけた。これらの&lt;code&gt;value&lt;/code&gt;つきの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素は&amp;rdquo;controlled components&amp;rdquo;と呼ばれる。
-より詳しく知りければ&lt;a href=&#34;https://facebook.github.io/react/docs/forms.html#controlled-components&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var CommentForm = React.createClass({
-  getInitialState: function() {
-    return {author: &#39;&#39;, text: &#39;&#39;};
-  },
-  handleAuthorChange: function(e) {
-    this.setState({author: e.target.value});
-  },
-  handleTextChange: function(e) {
-    this.setState({text: e.target.value});
-  },
-  render: function() {
-    return (
-      &amp;lt;form className=&amp;quot;commentForm&amp;quot;&amp;gt;
-        &amp;lt;input
-          type=&amp;quot;text&amp;quot;
-          placeholder=&amp;quot;Your name&amp;quot;
-          value={this.state.author}
-          onChange={this.handleAuthorChange}
-        /&amp;gt;
-        &amp;lt;input
-          type=&amp;quot;text&amp;quot;
-          placeholder=&amp;quot;Say something...&amp;quot;
-          value={this.state.text}
-          onChange={this.handleTextChange}
-        /&amp;gt;
-        &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Post&amp;quot; /&amp;gt;
-      &amp;lt;/form&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;events:c4edc588c83982a0e8967944828e886f&#34;&gt;Events&lt;/h4&gt;
-
-&lt;p&gt;Reactではコンポーネントにイベントハンドラを付けるときにキャメルケースを使う。
-私たちは２つの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素に&lt;code&gt;onChange&lt;/code&gt;というイベントハンドラをつけた。
-ここで、ユーザーが&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;フィールドにテキストを入力した場合、&lt;code&gt;onChange&lt;/code&gt;コールバックは発火し、コンポーネントの&lt;code&gt;state&lt;/code&gt;が変更される。&lt;/p&gt;
-
-&lt;p&gt;その後&lt;code&gt;input&lt;/code&gt;要素のレンダリングされた値は現在のコンポーネントの&lt;code&gt;state&lt;/code&gt;を反映するために更新される。&lt;/p&gt;
-
-&lt;h4 id=&#34;submitting-the-form:c4edc588c83982a0e8967944828e886f&#34;&gt;Submitting the form&lt;/h4&gt;
-
-&lt;p&gt;インタラクティブなフォームを作成しよう！
-ユーザーがフォームを送信する時、それらをクリアする必要があり、リクエストをサーバーに送信し、そしてコメントのリストをリフレッシュする。
-はじめに、フォームの送信イベントをキャッチしてクリアしよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial17.js
-var CommentForm = React.createClass({
-  getInitialState: function() {
-    return {author: &#39;&#39;, text: &#39;&#39;};
-  },
-  handleAuthorChange: function(e) {
-    this.setState({author: e.target.value});
-  },
-  handleTextChange: function(e) {
-    this.setState({text: e.target.value});
-  },
-  handleSubmit: function(e) {
-    e.preventDefault();
-    var author = this.state.author.trim();
-    var text = this.state.text.trim();
-    if (!text || !author) {
-      return;
-    }
-    // TODO: send request to the server
-    this.setState({author: &#39;&#39;, text: &#39;&#39;});
-  },
-  render: function() {
-    return (
-      &amp;lt;form className=&amp;quot;commentForm&amp;quot; onSubmit={this.handleSubmit}&amp;gt;
-        &amp;lt;input
-          type=&amp;quot;text&amp;quot;
-          placeholder=&amp;quot;Your name&amp;quot;
-          value={this.state.author}
-          onChange={this.handleAuthorChange}
-        /&amp;gt;
-        &amp;lt;input
-          type=&amp;quot;text&amp;quot;
-          placeholder=&amp;quot;Say something...&amp;quot;
-          value={this.state.text}
-          onChange={this.handleTextChange}
-        /&amp;gt;
-        &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Post&amp;quot; /&amp;gt;
-      &amp;lt;/form&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;正しい入力でフォームが送信された時はフォームをクリアするような&lt;code&gt;onSubmit&lt;/code&gt;ハンドラを追加した。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;preventDefault()&lt;/code&gt;を呼び出してブラウザのデフォルトのフォーム送信アクションを妨げる。&lt;/p&gt;
-
-&lt;h4 id=&#34;callbacks-as-props:c4edc588c83982a0e8967944828e886f&#34;&gt;Callbacks as props&lt;/h4&gt;
-
-&lt;p&gt;ユーザーがコメントを送信したら、新しいコメントを追加した状態でリストをリフレッシュ留守必要がある。
-この全てのロジックを&lt;code&gt;CommentBox&lt;/code&gt;内で行うので、&lt;code&gt;CommentBox&lt;/code&gt;はコメントリストに相応するステートを所有する。&lt;/p&gt;
-
-&lt;p&gt;子コンポーネントから親コンポーネントにデータを渡す必要がある。それを親の&lt;code&gt;render&lt;/code&gt;メソッド内で子に新しいコールバック(&lt;code&gt;handleCommentSubmit&lt;/code&gt;)を渡し、それを子の&lt;code&gt;onCommentSubmit&lt;/code&gt;にバインドすることで実行する。
-イベントがトリガーされた時は、コールバックが発動する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial18.js
-var CommentBox = React.createClass({
-  loadCommentsFromServer: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: &#39;json&#39;,
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  handleCommentSubmit: function(comment) {
-    // TODO: submit to the server and refresh the list
-  },
-  getInitialState: function() {
-    return {data: []};
-  },
-  componentDidMount: function() {
-    this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-  },
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
-        &amp;lt;CommentList data={this.state.data} /&amp;gt;
-        &amp;lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ユーザがフォームを送信した時は&lt;code&gt;CommentForm&lt;/code&gt;からコールバックを呼びだそう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial19.js
-var CommentForm = React.createClass({
-  getInitialState: function() {
-    return {author: &#39;&#39;, text: &#39;&#39;};
-  },
-  handleAuthorChange: function(e) {
-    this.setState({author: e.target.value});
-  },
-  handleTextChange: function(e) {
-    this.setState({text: e.target.value});
-  },
-  handleSubmit: function(e) {
-    e.preventDefault();
-    var author = this.state.author.trim();
-    var text = this.state.text.trim();
-    if (!text || !author) {
-      return;
-    }
-    this.props.onCommentSubmit({author: author, text: text});
-    this.setState({author: &#39;&#39;, text: &#39;&#39;});
-  },
-  render: function() {
-    return (
-      &amp;lt;form className=&amp;quot;commentForm&amp;quot; onSubmit={this.handleSubmit}&amp;gt;
-        &amp;lt;input
-          type=&amp;quot;text&amp;quot;
-          placeholder=&amp;quot;Your name&amp;quot;
-          value={this.state.author}
-          onChange={this.handleAuthorChange}
-        /&amp;gt;
-        &amp;lt;input
-          type=&amp;quot;text&amp;quot;
-          placeholder=&amp;quot;Say something...&amp;quot;
-          value={this.state.text}
-          onChange={this.handleTextChange}
-        /&amp;gt;
-        &amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;Post&amp;quot; /&amp;gt;
-      &amp;lt;/form&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;コールバックについて平たく言えば、サーバーに送信してリストをリフレッシュするんだ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial20.js
-var CommentBox = React.createClass({
-  loadCommentsFromServer: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: &#39;json&#39;,
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  handleCommentSubmit: function(comment) {
-    $.ajax({
-      url: this.props.url,
-      dataType: &#39;json&#39;,
-      type: &#39;POST&#39;,
-      data: comment,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  getInitialState: function() {
-    return {data: []};
-  },
-  componentDidMount: function() {
-    this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-  },
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
-        &amp;lt;CommentList data={this.state.data} /&amp;gt;
-        &amp;lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;optimization-optimistic-updates:c4edc588c83982a0e8967944828e886f&#34;&gt;Optimization: optimistic updates&lt;/h3&gt;
-
-&lt;p&gt;このアプリケーションについて機能は完璧であるが、コメントが表示されるまでリクエストが完了するのを待たなければならないため遅いように感じる。
-アプリがより早く感じられるようにコメントをリストに追加することが可能だ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// tutorial21.js
-var CommentBox = React.createClass({
-  loadCommentsFromServer: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: &#39;json&#39;,
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  handleCommentSubmit: function(comment) {
-    var comments = this.state.data;
-    // Optimistically set an id on the new comment. It will be replaced by an
-    // id generated by the server. In a production application you would likely
-    // not use Date.now() for this and would have a more robust system in place.
-    comment.id = Date.now();
-    var newComments = comments.concat([comment]);
-    this.setState({data: newComments});
-    $.ajax({
-      url: this.props.url,
-      dataType: &#39;json&#39;,
-      type: &#39;POST&#39;,
-      data: comment,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        this.setState({data: comments});
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  getInitialState: function() {
-    return {data: []};
-  },
-  componentDidMount: function() {
-    this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-  },
-  render: function() {
-    return (
-      &amp;lt;div className=&amp;quot;commentBox&amp;quot;&amp;gt;
-        &amp;lt;h1&amp;gt;Comments&amp;lt;/h1&amp;gt;
-        &amp;lt;CommentList data={this.state.data} /&amp;gt;
-        &amp;lt;CommentForm onCommentSubmit={this.handleCommentSubmit} /&amp;gt;
-      &amp;lt;/div&amp;gt;
-    );
-  }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;congrats:c4edc588c83982a0e8967944828e886f&#34;&gt;Congrats!&lt;/h3&gt;
-
-&lt;p&gt;いくつかのシンプルなステップとを押してコメントボックスを作成することができた。
-&lt;a href=&#34;https://facebook.github.io/react/docs/why-react.html&#34;&gt;何故Reactを使うのか&lt;/a&gt;、もしくは&lt;a href=&#34;https://facebook.github.io/react/docs/top-level-api.html&#34;&gt;APIリファレンス&lt;/a&gt;について学び開発を始めよう！&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】コンピュータはなぜ動くのか</title>
-      <link>http://kotazi.github.io/blog/post/2016/0127_why_computer/</link>
-      <pubDate>Wed, 27 Jan 2016 11:40:44 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0127_why_computer/</guid>
-      <description>
-
-&lt;p&gt;&lt;a rel=&#34;nofollow&#34; href=&#34;http://www.amazon.co.jp/gp/product/4822281655/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4822281655&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;コンピュータはなぜ動くのか～知っておきたいハードウエア＆ソフトウエアの基礎知識～&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4822281655&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;を読んだ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;本の構成:5107f846ab8915f5eb5dfb42a6814246&#34;&gt;本の構成&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;【第1章】コンピュータの3大原則とは&lt;/li&gt;
-&lt;li&gt;【第2章】コンピュータを作ってみよう&lt;/li&gt;
-&lt;li&gt;【第3章】一度は体験してほしいハンド・アセンブル&lt;/li&gt;
-&lt;li&gt;【第4章】川の流れのようにプログラムは流れる&lt;/li&gt;
-&lt;li&gt;【第5章】アルゴリズムと仲良くなる7つのポイント&lt;/li&gt;
-&lt;li&gt;【第6章】データ構造と仲良くなる7つのポイント&lt;/li&gt;
-&lt;li&gt;【第7章】オブジェクト指向プログラミングを語れるようになろう&lt;/li&gt;
-&lt;li&gt;【第8章】作れば分かるデータベース&lt;/li&gt;
-&lt;li&gt;【第9章】簡単な実験7つでTCP/IPネットワークを理解する&lt;/li&gt;
-&lt;li&gt;【第10章】データを暗号化してみよう&lt;/li&gt;
-&lt;li&gt;【第11章】そもそもXMLって何だっけ&lt;/li&gt;
-&lt;li&gt;【第12章】SEはコンピュータ・システム構築の現場監督&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;2003年に執筆された本。今から13年も前になるので内容としては古い。
-ただ入力・演算・出力から始まり、ハードウェアとソフトウェア、プログラミング、データベース、ネットワークなど、コンピュータの初等教育で扱われる内容をほぼひととおり網羅している。&lt;/p&gt;
-
-&lt;p&gt;現場に役に立つ知識ではないが、間違ったことがかかれているわけでもない。
-自分の知らない分野について少し知るという意味ではいい。
-特にコンピュータのハードウェア的な動作についてやアセンブルについてはとても勉強になった。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;以下、メモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;コンピュータは「入力、演算、出力」を行う装置である&lt;/li&gt;
-&lt;li&gt;プログラムは命令とデータの集合体である&lt;/li&gt;
-&lt;li&gt;コンピュータの都合は人間の感覚と異なる場合がある&lt;/li&gt;
-&lt;li&gt;コンピュータのハードウェアはたくさん「IC」から構成され、ICには数多くのピンがついている&lt;/li&gt;
-&lt;li&gt;ピンは入力用、出力用のいずれか&lt;/li&gt;
-&lt;li&gt;CPUは内部で演算を行い、メモリとI/Oを制御&lt;/li&gt;
-&lt;li&gt;メモリは命令とデータを記憶&lt;/li&gt;
-&lt;li&gt;I/Oは周辺機器と接続し、データの受け渡しを可能にする&lt;/li&gt;
-&lt;li&gt;CPUを動作させるためには「クロック信号」という電気信号が必要&lt;/li&gt;
-&lt;li&gt;クロック信号を出力する部品を「クロックジェネレータ」と呼ぶ&lt;/li&gt;
-&lt;li&gt;レジスタはCPU及びI/Oの中で、データを記憶する部分&lt;/li&gt;
-&lt;li&gt;0と1の羅列にニックネームを付けてプログラムする手法を「ニーモニック」と呼ぶ&lt;/li&gt;
-&lt;li&gt;「ニーモニック」を使う言語が「アセンブリ言語」&lt;/li&gt;
-&lt;li&gt;アセンブリの文法は1行に「ラベル」と「オペコード(命令)」と「オペランド(対象)」を記述するだけ&lt;/li&gt;
-&lt;li&gt;アセンブリ言語ではオペランドにレジスタの名前を指定する&lt;/li&gt;
-&lt;li&gt;CPU資料を見ればアセンブリ言語を手作業でマシン語に変換でき、それを「ハンドアセンブル」という&lt;/li&gt;
-&lt;li&gt;ユークリッドの互除法: 最大公約数を求める&lt;/li&gt;
-&lt;li&gt;エラトステネスのふるい: 素数を求める&lt;/li&gt;
-&lt;li&gt;線形探索: データを探索&lt;/li&gt;
-&lt;li&gt;2分探索: データを探索&lt;/li&gt;
-&lt;li&gt;ハッシュ法: データを探索&lt;/li&gt;
-&lt;li&gt;バブルソート: データを整列&lt;/li&gt;
-&lt;li&gt;クイックソート: データを整列&lt;/li&gt;
-&lt;li&gt;スタック: データを山のように積み上げる&lt;/li&gt;
-&lt;li&gt;キュー: データを行列のように並ばせる&lt;/li&gt;
-&lt;li&gt;LIFO: Last In First Out&lt;/li&gt;
-&lt;li&gt;FIFO: First in First Out&lt;/li&gt;
-&lt;li&gt;キーはテーブル間のリレーションシップを設定するもの&lt;/li&gt;
-&lt;li&gt;インデックスはデータの検索速度を向上させる&lt;/li&gt;
-&lt;li&gt;テーブルに登録される1行のデータのまとまりを「レコード」「ロウ」「行」と呼ぶ&lt;/li&gt;
-&lt;li&gt;レコードを構成する項目を「フィールド」「カラム」「列」と呼ぶ&lt;/li&gt;
-&lt;li&gt;正規化とは、テーブルを複数に分け、個々のテーブルのリレーションシップを設定して、データベースの構造を整理すること&lt;/li&gt;
-&lt;li&gt;リレーションシップを設定するためにはテーブルとテーブルを関連ふけるためのフィールドが必要。それを「キー」と呼ぶ&lt;/li&gt;
-&lt;li&gt;↑自分から見たら「主キー」、逆から見たら「外部キー」&lt;/li&gt;
-&lt;li&gt;トランザクションはトラブルが発生した時にロールバックする&lt;/li&gt;
-&lt;li&gt;TCPは送受信者が確認を取りながらデータを受け渡すプロトコル。&lt;/li&gt;
-&lt;li&gt;↑このようなデータの送信方式が「ハンドシェイク」&lt;/li&gt;
-&lt;li&gt;TCPでは大きなデータはパケット単位に分割する&lt;/li&gt;
-&lt;li&gt;あらゆるデータは数値なので、形式が違っても暗号手法は基本的に同じ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ざっくりそんな感じ。書き出してみると為になったことけっこうあった。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【訳読】JSX</title>
-      <link>http://kotazi.github.io/blog/post/2016/0126_jsx/</link>
-      <pubDate>Tue, 26 Jan 2016 21:47:07 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0126_jsx/</guid>
-      <description>
-
-&lt;p&gt;勉強がてら&lt;a href=&#34;https://jsx.github.io/doc/tutorial.html&#34;&gt;JSXのTutorial&lt;/a&gt;を翻訳しました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;background:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;JSXはJavaScriptへのコンパイルが可能な、静的型付けかつオブジェクト指向のプログラミング言語です。
-JavaScriptよりも頑丈なプログラミング言語が必要だったためにJSXは開発されました。
-とはいえ、JSXはとりわけ文や式など、そこそこJavaScriptに近いように作られています。&lt;/p&gt;
-
-&lt;p&gt;ミスタイポや変数名や関数の定義忘れなどをコンパイル時に検知可能のため、静的型付け言語は頑丈なプログラミング言語といえます。
-これは特に多くのエンジニアが携わる中規模から大規模のプロジェクトにおいて重要なことです。&lt;/p&gt;
-
-&lt;p&gt;それゆえに、JSXは静的型付け言語として設計されました。
-全ての値と変数には静的な型があり、適切な方の値のみを代入することができます。
-加えて、全ての関数はパラメータと返り値によって決定されたクロージャーに含まれます。
-引数の型が間違っていると代入することはできません。&lt;/p&gt;
-
-&lt;p&gt;またJSXを開発した別の重要な理由として、JSのパフォーマンスを引き上げつことがありました。
-JavaScript自身が遅いということはないのですが、大規模開発になると抽象的なレイヤーが肥大化しがちです。
-例えば代用的なクラスやアクセサメソッドのことであり、これらはしばしばパフォーマンスにネガティブな影響を与えます。
-JSZでは&amp;rdquo;inline expansion&amp;rdquo;によってパフォーマンスを引き上げています。
-これはコンパイル時に関数呼び出しが決定したものを、関数本体を呼び出し元の方へ拡張することです。
-静的型付け言語のパフォーマンスのちからになります。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;run-hello-world:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Run &amp;ldquo;Hello, World!&amp;rdquo;&lt;/h3&gt;
-
-&lt;p&gt;JSXのプログタムを実行してみましょう。&lt;code&gt;jsx&lt;/code&gt;コマンドを使い、JSXをJavaScriptにコンパイルします。&lt;/p&gt;
-
-&lt;p&gt;まずはnpmでjsxをインストールします。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ npm install -g jsx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;そしたら下記のコードで&lt;code&gt;hello.jsx&lt;/code&gt;を作成しましょう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class _Main {
-    static function main(args : string[]) : void {
-        log &amp;quot;Hello, world!&amp;quot;;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;下記のコマンドでJSXを実行することができ、&amp;rdquo;Hello, world&amp;rdquo;がコンソール上に出力されます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ jsx --run hello.jsx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;次のセクションではhello.jsxについて詳しく見ていきましょう。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;program-structure:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Program Structure&lt;/h3&gt;
-
-&lt;p&gt;ここでは&amp;rdquo;Hello world!&amp;ldquo;サンプルであるhello.jsxについて取り扱っていきます。
-このプログラムに名前や静的型付け、クラス構造といったいくつかのJSXの機能を見ることができます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class _Main {
-    static function main(args : string[]) : void {
-        log &amp;quot;Hello, world!&amp;quot;;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;_Main&lt;/code&gt;クラスは&lt;code&gt;main&lt;/code&gt;という名前の静的メンバ関数を持ちます。&lt;code&gt;main&lt;/code&gt;関数は文字列型の配列を引数に取り、返り値はありません。
-&lt;code&gt;_Main.main(:string[]):&lt;/code&gt;はJSXアプリケーションのエントリーポイントであり、ユーザーがコマンドラインからアプリケーションを実行した時に呼び出されるものです。JSXはJavaのように、トップレベルに文や関数を置くことを許しません。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;log&lt;/code&gt;文はJavaScriptの&lt;code&gt;console.log()&lt;/code&gt;をマップしたものです。&lt;/p&gt;
-
-&lt;p&gt;続いて、別の典型的なライブラリのクラスを見ていきます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class Point {
-    var x = 0;
-    var y = 0;
-
-    function constructor() {
-    }
-
-    function constructor(x : number, y : number) {
-        this.set(x, y);
-    }
-
-    function constructor(other : Point) {
-        this.set(other);
-    }
-
-    function set(x : number, y : number) : void {
-        this.x = x;
-        this.y = y;
-    }
-
-    function set(other : Point) : void {
-        this.set(other.x, other.y);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;見て分かる通り、Pointのメンバ変数であるxとyは型なしで宣言されています。
-けれどもそれらの方は初期値からnumber型であることが分かります。&lt;/p&gt;
-
-&lt;p&gt;複数のconstructorsに驚いたかもしれません。
-ひとつはパラメータをとらず、他のものはとります。
-パラメータの型が重複しています。
-あなたが&lt;code&gt;new Point()&lt;/code&gt;を用いてクラスを生成する場合、最初のコンストラクタは引数無しで呼びだされます。
-ふたつ目のコンストラクタは、&lt;code&gt;new Point(2, 3)&lt;/code&gt;といったように２つの引数を必要とします。３つめはコピーのコンストラクタとしてひとつ引数にとります。
-&lt;code&gt;new Point(42)&lt;/code&gt;や&lt;code&gt;new Point(&amp;quot;foo&amp;quot;, &amp;quot;bar&amp;quot;)&lt;/code&gt;といったその他の方法では、コンパイル時にエラーが起きます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Point#set()&lt;/code&gt;関数もまた重複しており、コンパイラは正しい引数の取り方を知っています。&lt;/p&gt;
-
-&lt;Hr&gt;
-
-&lt;h3 id=&#34;static-typing:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Static Typing&lt;/h3&gt;
-
-&lt;p&gt;基本的な型の概要についてはこの章で述べます。プリミティブ型やオブジェクト型、Variant型、Null型がJSZには存在します。&lt;/p&gt;
-
-&lt;h4 id=&#34;pritimive-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Pritimive Types&lt;/h4&gt;
-
-&lt;p&gt;JSXには3つのプリミティブ型が存在します。&lt;code&gt;string&lt;/code&gt;、&lt;code&gt;number&lt;/code&gt;、&lt;code&gt;boolean&lt;/code&gt;です。
-これらの3つはNull型にはならず、不変の型です。&lt;/p&gt;
-
-&lt;p&gt;下の例文では&lt;code&gt;s&lt;/code&gt;、&lt;code&gt;n&lt;/code&gt;、&lt;code&gt;b&lt;/code&gt;の変数を型とともに宣言しています。&lt;code&gt;:&lt;/code&gt;マークを使って変数名の右側に記述します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var s : string;
-var n : number;
-var b : boolean;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;型宣言は初期値を代入することで省略することができます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var s = &amp;quot;hello&amp;quot;;  // s is string, initialized as &amp;quot;hello&amp;quot;
-var n = 42;       // n is number, initialized as 42
-var b = true;     // b is boolean, initialized as true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;object-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Object Types&lt;/h4&gt;
-
-&lt;p&gt;オブジェクト型はクラスのインスタンスオブジェクトに参照を持つ方になります。
-例えば、関数、文字列配列、Dateオブジェクトは全てオブジェクト型になります。
-型が変わりやすいかは各クラスの定義に依存しいます。&lt;/p&gt;
-
-&lt;p&gt;大半のオブジェクトは&lt;code&gt;new&lt;/code&gt;演算子を用いて生成します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var d = new Date();            // instantiate an object of class Date
-var a = new Array.&amp;lt;string&amp;gt;();  // instantiate an array of string
-var m = new Map.&amp;lt;number&amp;gt;();    // instantiate an associative map of strings to numbers
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ArrayとMapについては初期化式を用いたイニシャライズが可能です。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var a1 = [] : Array.&amp;lt;string&amp;gt;;  // a1 is Array.&amp;lt;string&amp;gt;, and is empty
-var a2 = [ 1, 2, 3 ];          // a2 is Array.&amp;lt;number&amp;gt; with three elements
-
-var m1 : {} : Map.&amp;lt;number&amp;gt;;    // m1 is Map.&amp;lt;number&amp;gt;
-var m2 = {                     // m2 is Map.&amp;lt;string&amp;gt;
-  en: &amp;quot;Good morning&amp;quot;,
-  de: &amp;quot;Guten Morgen&amp;quot;,
-  ja: &amp;quot;ãã¯ãããããã¾ã&amp;quot;
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Functionクラスの変数のみ、静的関数として生成することや、またfunction式やfunction文を使って生成することが可能です。&lt;/p&gt;
-
-&lt;h4 id=&#34;the-variant-type:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;The Variant Type&lt;/h4&gt;
-
-&lt;p&gt;Variant型は&amp;rdquo;静的型情報がない&amp;rdquo;という意味です。既存のJavaScriptAPIに役立ちます。
-バリアント変数を返すJavaScriptライブラリもあるかもしれません。これらの型はコンパイル時に決定することができません。
-バリアントの値に対してできることは、variantのあたいかそうでない値かをチェックすることだけです。&lt;/p&gt;
-
-&lt;p&gt;何かする前に値に対してチェックをする必要があります。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;function guessTheType(v : variant) : void {
-    if (typeof v == &amp;quot;string&amp;quot;) {
-        log &amp;quot;v is string and the value is:&amp;quot; + v as string;
-    } else {
-        log &amp;quot;v is not string&amp;quot;;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;nullable-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Nullable Types&lt;/h4&gt;
-
-&lt;p&gt;Nullable型はメタ型です。値がnullかもしれないことを示します。
-primitive型にnullを代入することは禁止されています。(Object型はデフォルトではnullです。)
-Nullable型はこのような目的で使われます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var s1 : string;
-s1 = &amp;quot;abc&amp;quot;;       // ok
-s1 = null;        // compile error!  cannot assign null to string
-
-var s2 : Nullable.&amp;lt;string&amp;gt;;
-s2 = &amp;quot;abc&amp;quot;;       // ok
-s2 = null;        // ok
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nullable型の最も特出した使い方は、配列との使い方です。
-ある配列の数より多い値にアクセスするとnullを返します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var a = [ 1, 2, 3 ]; // creates Array.&amp;lt;number&amp;gt; with three elements
-a[3];                // out-of-bounds access, returns null
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nullableを返すAPIが他にも存在します。例えば&lt;code&gt;&amp;lt;string&amp;gt;#shift() is Nullable.&amp;lt;string&amp;gt;&lt;/code&gt;。
-Nullableな値を使った時、その値がnullでないか確認する必要があります。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;function shiftOrReturnEmptyString(args : string[]) : string {
-    if (args.length &amp;gt; 0)
-        return args.shift();
-    else
-        return &amp;quot;&amp;quot;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;コードがデバッグモードでコンパイルされる時(デフォルト値です。)、コンパイラは実行時に型の確認コードを埋め込みます。
-null値の誤用が検知されると例外が発生します。
-ランタイム型確認では&lt;code&gt;--release&lt;/code&gt;オプションでコンパイルを生着することができます。&lt;/p&gt;
-
-&lt;p&gt;より詳しく知るためには&lt;a href=&#34;https://jsx.github.io/doc/typeref.html&#34;&gt;Types&lt;/a&gt;セクションを参照してください。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;expressions:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Expressions&lt;/h3&gt;
-
-&lt;p&gt;JSXにおける演算子の定義はほとんどJavaScriptと同じです。しかしながら違う点もあります。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;算術演算子は非演算子に数字のみをとります&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;var a = 3;
-a + 1;      // OK, returns 4
-a * a;      // OK, returns 9
-a + &amp;quot;abc&amp;quot;;  // compile error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;注意: 連結演算子(+)による文字列の結合は存在します。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ドット演算子によるプロパティアクセスは定義されたプロパティのみになります&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;class Point {
-    var x : number;
-    var y : number;
-    function print() : void {
-        log this.z;             // compile error! no property named z
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;[]&lt;/code&gt;プロパティではMapかvariantのみにアクセスできます&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;var m = {            // m is Map.&amp;lt;string&amp;gt;
-    hello: &amp;quot;world!&amp;quot;
-};
-log m[&amp;quot;hello&amp;quot;];      // OK
-log m.hello;         // compile error!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;as&lt;/code&gt;演算子を導入します。型変換に用いられます&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;var n = 123;
-var s = &amp;quot;value of n is &amp;quot; + (n as string);
-log s;               // print &amp;quot;value of n is 123&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;amp;&amp;amp;, ||&lt;/code&gt;演算子はBooleanを返します。&lt;code&gt;?:&lt;/code&gt;を導入します。これは&lt;code&gt;||&lt;/code&gt;と等価です。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;詳しくは&lt;a href=&#34;https://jsx.github.io/doc/operatorref.html&#34;&gt;Operator Reference&lt;/a&gt;を見てください。&lt;/p&gt;
-
-&lt;h4 id=&#34;statements:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Statements&lt;/h4&gt;
-
-&lt;p&gt;JSXではJavaScriptで提供される多くの構文をサポートします。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;log statement&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;log &amp;quot;hello, world&amp;quot;;    // log strings to console, can turned off with compile option: --release
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;assert statement&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;var n = 123;
-assert n != 0;         // assertions.  also can be turned off with --release
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;try-catch-finally statement&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;try {
-    ...
-} catch (e : TypeError) {
-    // got TypeError
-} catch (e : Error) {
-    // got Error, which is not TypeError
-} catch (e : variant) {
-    // applications may throw any kind of value
-} finally {
-    ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;try-catch-finally statement&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;詳しくは&lt;a href=&#34;https://jsx.github.io/doc/statementref.html&#34;&gt;Statement Reference&lt;/a&gt;を見てください。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;classes-and-interfaces:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Classes and Interfaces&lt;/h3&gt;
-
-&lt;p&gt;JSXはクラスベースのオブジェクト指向言語です。クラスモデルはJavaに似ています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;クラスを別のクラスに拡張できる&lt;/li&gt;
-&lt;li&gt;クラスは福通のインターフェイスやミックスインを実装する&lt;/li&gt;
-&lt;li&gt;すべてのクラスはひとつのルートクラスをシェアする: Objectクラス&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;all classes share a single root class: the Object class
-interface Flyable {
-    abstract function fly() : void;
-}
-
-abstract class Animal {
-    function eat() : void {
-      log &amp;quot;An animal is eating!&amp;quot;;
-    }
-}
-
-class Bat extends Animal implements Flyable {
-    override function fly() : void {
-        log &amp;quot;A bat is flying!&amp;quot;;
-    }
-}
-
-abstract class Insect {
-}
-
-class Bee extends Insect implements Flyable {
-    override function fly() : void {
-        log &amp;quot;A bee is flying!&amp;quot;;
-    }
-}
-
-class _Main {
-
-    static function main(args : string[]) : void {
-        // fo bar
-        var bat = new Bat();
-
-        var animal : Animal = bat; // OK. A bat is an animal.
-        animal.eat();
-
-        var flyable : Flyable = bat; // OK. A bat can fly
-        flyable.fly();
-
-        // for Bee
-        var bee = new Bee();
-
-        flyable = bee; // A bee is also flyable
-        flyable.fly();
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例において、BatクラスはAnimalクラスを拡張したものであり、&lt;code&gt;Animal#eat()&lt;/code&gt;というメンバ関数を継承しています。そしてAnimal型に変数に代入することも可能です。
-BatクラスはまたFlyableクラスの&lt;code&gt;Flyable#fly()&lt;/code&gt;メンバ関数をオーバーライドして実装しています。そのため、Flyableの変数に代入することも可能です。
-また、別のflyableクラスがありいます。Beeクラスです。
-Flyableインターフェイスを使うことで、例えbeeとbatが完全に異なる組織だったとしても、両方のクラスに対応することができます。&lt;/p&gt;
-
-&lt;p&gt;メンバ関数をオーバーライドした時に、&lt;code&gt;override&lt;/code&gt;キーワードの使用は委任されます。
-それにも関わらず、コンパイラはエラーを発生させます。言い換えれば、やっかいなエラーを出す代わりに、予期せぬベースクラスのインターフェイスの変更による編集エラーからあなたを救っています。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;functions-and-closures:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Functions and Closures&lt;/h3&gt;
-
-&lt;p&gt;JSXでは、関数が最初のクラスオブジェクトであり、静的な型をもっています。
-&lt;code&gt;var f : function(arg : number) : number&lt;/code&gt;といった関数型の変数を宣言することができます。
-関数は引数にnumberを取り、別のnumberを返すといったように。(同じ値を返すかもしれませんがここでは重要ではありません。)
-その変数&lt;code&gt;f&lt;/code&gt;は&lt;code&gt;f(42)&lt;/code&gt;といって呼び出しをされ、数値を返しいます。&lt;/p&gt;
-
-&lt;p&gt;function式やfunction文を使ってクロージャーを定義することができあmす。
-典型的な方法でGUIプログラミングで人気のイベントリスナやコールバックを実装します。
-クロージャーはJavaScriptの&lt;code&gt;this&lt;/code&gt;に似ています。メンバ関数内でクロージャーが出意義された時、メンバ関数のレシーバーを参照します。下記のサンプルを見てください。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class _Main {
-    var foo = 42;
-
-    function constructor() {
-        var f = function() : void {
-            log this.foo;
-        };
-
-        f(); // says 42
-    }
-
-    static function main(args : string[]) : void {
-        var o = new _Main();
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;function式やfunction文のアノテーションはコンパイラに推測された場合に省略されるかもしれません。
-下記の例では、引数のnも式の返り値も&lt;code&gt;Array#map&lt;/code&gt;の定義からnumberになることが推測されます。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;modules:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Modules&lt;/h3&gt;
-
-&lt;p&gt;JSXはモジュールシステムを持ちます。&lt;code&gt;import&lt;/code&gt;式を使ってJSXのクラスライブラリを利用することができます。
-例えば、下記のプログラムでは&lt;code&gt;timer.jsx&lt;/code&gt;モジュールを使用し、Timerクラスをエクスポートしています。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import &amp;quot;timer.jsx&amp;quot;;
-
-class _Main {
-
-    static function main(args : string[]) : void {
-        Timer.setTimeout(function() : void {
-            log &amp;quot;Hello, world!&amp;quot;;
-        }, 1000);
-    }
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;モジュールは複数のクラスをエクスポートしますが、インポートするモジュールを指定したり、インポートしたモジュールにネームスペースをつけたりすることができます。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;interface-to-web-browsers:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Interface to Web Browsers&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;js/web.jsx&lt;/code&gt;モジュールはWebブラウザへのインターフェイスを提供します。
-下記のサンプルではどのように挿入するかを見せます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// hello.jsx
-import &amp;quot;js/web.jsx&amp;quot;;
-
-class _Main {
-
-    static function main(args : string[]) : void {
-        var document = dom.window.document;
-
-        var text = document.createTextNode(&amp;quot;Hello, world!&amp;quot;);
-        document.getElementById(&amp;quot;hello&amp;quot;).appendChild(text);
-    }
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
-  &amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;Hello, world!&amp;lt;/title&amp;gt;
-    &amp;lt;script src=&amp;quot;hello.jsx.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;
-  &amp;lt;p id=&amp;quot;hello&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;
-  &amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;以前コマンドからコンパイルした&lt;code&gt;hello.jsx&lt;/code&gt;を用いて、アクセスしたHTMLで&amp;rdquo;Hello, world!&amp;ldquo;を確認できます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bin/jsx --executable web --output hello.jsx.js hello.jsx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;further-learning:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Further Learning&lt;/h3&gt;
-
-&lt;p&gt;より詳しいドキュメントは&lt;a href=&#34;https://github.com/jsx/JSX/wiki&#34;&gt;wiki&lt;/a&gt;を見てください。&lt;/p&gt;
-
-&lt;p&gt;サンプルを探しているのであれば、&lt;a href=&#34;https://jsx.github.io/#examples&#34;&gt;example&lt;/a&gt;を参照してください。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【FullCalendar】Current Date</title>
-      <link>http://kotazi.github.io/blog/post/2016/0125_calendar/</link>
-      <pubDate>Mon, 25 Jan 2016 22:53:46 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0125_calendar/</guid>
-      <description>
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/current_date/&#34;&gt;Current Date&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;agendaWeek&lt;/code&gt;と&lt;code&gt;agendaDay&lt;/code&gt;用のオプションです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;defaultdate-http-fullcalendar-io-docs-current-date-defaultdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/defaultDate&#34;&gt;defaultDate&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;最初の読み込み時に表示する日時。&lt;/p&gt;
-
-&lt;h5 id=&#34;nowindicator-http-fullcalendar-io-docs-current-date-nowindicator:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nowIndicator&#34;&gt;nowIndicator&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;現在時刻にマーカーを引くかどうか。&lt;/p&gt;
-
-&lt;h5 id=&#34;prev-method-http-fullcalendar-io-docs-current-date-prev:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prev&#34;&gt;prev (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;前に戻るためのメソッド。&lt;/p&gt;
-
-&lt;h5 id=&#34;next-method-http-fullcalendar-io-docs-current-date-next:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/next&#34;&gt;next (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;次に進むためのメソッド。&lt;/p&gt;
-
-&lt;h5 id=&#34;prevyear-method-http-fullcalendar-io-docs-current-date-prevyear:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prevYear&#34;&gt;prevYear (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;前年に戻る。&lt;/p&gt;
-
-&lt;h5 id=&#34;nextyear-method-http-fullcalendar-io-docs-current-date-nextyear:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nextYear&#34;&gt;nextYear (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;翌年に進む。&lt;/p&gt;
-
-&lt;h5 id=&#34;today-method-http-fullcalendar-io-docs-current-date-today:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/today&#34;&gt;today(method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;今日を表示する。&lt;/p&gt;
-
-&lt;h5 id=&#34;gotodate-method-http-fullcalendar-io-docs-current-date-gotodate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/gotoDate&#34;&gt;gotoDate(method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;指定日へ移動する。&lt;/p&gt;
-
-&lt;h5 id=&#34;incrementdate-method-http-fullcalendar-io-docs-current-date-incrementdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/incrementDate&#34;&gt;incrementDate(method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;指定日時分だけ移動する。&lt;/p&gt;
-
-&lt;h5 id=&#34;getdate-method-http-fullcalendar-io-docs-current-date-getdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/getDate&#34;&gt;getDate(method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;日付を取得する。&lt;/p&gt;
 </description>
     </item>
     

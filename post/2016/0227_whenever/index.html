@@ -1,0 +1,205 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【Rails】whenever導入を通した学び &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【Rails】whenever導入を通した学び</h1>
+                    <h2 class="headline">February 27, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>Railsのwheneverを使う機会があったのでその学びをまとめる。
+やりたかっとことはRakeタスクを作成し、wheneverを使って定期的にSlackへポストする。</p>
+
+<hr>
+
+<h2 id="slack通知:8316899f0dd43c4b70b3dee52ffee325">Slack通知</h2>
+
+<p>Slackへの通知はすごく簡単。<br />
+ここにだいたい書いてある。</p>
+
+<ul>
+<li><a href="http://qiita.com/ysk_1031/items/f74c8b8274ec6c58520d">RailsアプリからSlackに通知</a></li>
+</ul>
+
+<p>とりあえず、<code>config/intializers/slack_api.rb</code>を作成してtokenを登録しておけば、いろいろできるみたい。</p>
+
+<h2 id="rakeタスクの作成:8316899f0dd43c4b70b3dee52ffee325">rakeタスクの作成</h2>
+
+<p>初めてrakeタスクを作成した。</p>
+
+<ul>
+<li><a href="http://docs.ruby-lang.org/ja/2.2.0/library/rake.html">library rake</a></li>
+</ul>
+
+<pre><code>$ rake &lt;タスク名&gt; # 指定のタスクを実行。
+$ rake &lt;パラメータキー&gt;=&lt;値&gt; &lt;タスク名&gt; # パラメータ指定ありで、指定のタスクを実行。
+$ rake -h # 使い方を表示。
+$ rake -T # 定義されているタスク一覧を表示
+</code></pre>
+
+<p>(引用:<a href="http://unageanu.hatenablog.com/entry/20100829/1283069269">Rakeの基本的な使い方まとめ|うなの日記</a>)</p>
+
+<h2 id="whenever:8316899f0dd43c4b70b3dee52ffee325">whenever</h2>
+
+<ul>
+<li><a href="https://github.com/javan/whenever">javan/whenever|github</a></li>
+<li><a href="http://morizyun.github.io/blog/whenever-gem-rails-ruby-capistrano/">Wheneverは導入が超簡単なcrontab管理ライブラリGemです！</a></li>
+</ul>
+
+<h2 id="mixpanel:8316899f0dd43c4b70b3dee52ffee325">mixpanel</h2>
+
+<p>mixpanelのデータのエクスポートしたい。</p>
+
+<ul>
+<li><a href="https://mixpanel.com/docs/api-documentation/data-export-api">Data Export API</a></li>
+<li><a href="http://kitak.hatenablog.jp/entry/2014/10/07/231003">Rubyでmixpanelのイベントをtrackしたり、データをexportする術</a></li>
+</ul>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0227_whenever%2f - %e3%80%90Rails%e3%80%91whenever%e5%b0%8e%e5%85%a5%e3%82%92%e9%80%9a%e3%81%97%e3%81%9f%e5%ad%a6%e3%81%b3 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0228_peopelwear/">0228_peopelwear<aside class="dates">Feb 28</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0224_internet/">【読書】インターネットの基礎　〜情報革命を支えるインフラストラクチャー〜<aside class="dates">Feb 24</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0218_internet/">【読書】インターネットの基礎　〜情報革命を支えるインフラストラクチャー〜<aside class="dates">Feb 18</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0213_user_story/">【読書】ユーザーストーリーマッピング<aside class="dates">Feb 17</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0213_algorithm/">【読書】アルゴリズムが世界を支配する<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0216_dmm/">【DMM英会話】 Job Interview | Business Basic<aside class="dates">Feb 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0215_trast/">信頼残高のことを思い出した。<aside class="dates">Feb 15</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0214_rails_webpack/">Rails内でのwebpackの使い方<aside class="dates">Feb 14</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0212_ruby/">【プログラミング言語Ruby】3章-データ型とオブジェクト<aside class="dates">Feb 13</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>

@@ -6,8 +6,66 @@
     <description>Recent content in Rails on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Feb 2016 13:41:03 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 27 Feb 2016 20:18:53 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Rails】whenever導入を通した学び</title>
+      <link>http://kotazi.github.io/blog/post/2016/0227_whenever/</link>
+      <pubDate>Sat, 27 Feb 2016 20:18:53 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0227_whenever/</guid>
+      <description>
+
+&lt;p&gt;Railsのwheneverを使う機会があったのでその学びをまとめる。
+やりたかっとことはRakeタスクを作成し、wheneverを使って定期的にSlackへポストする。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;slack通知:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;Slack通知&lt;/h2&gt;
+
+&lt;p&gt;Slackへの通知はすごく簡単。&lt;br /&gt;
+ここにだいたい書いてある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/ysk_1031/items/f74c8b8274ec6c58520d&#34;&gt;RailsアプリからSlackに通知&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;とりあえず、&lt;code&gt;config/intializers/slack_api.rb&lt;/code&gt;を作成してtokenを登録しておけば、いろいろできるみたい。&lt;/p&gt;
+
+&lt;h2 id=&#34;rakeタスクの作成:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;rakeタスクの作成&lt;/h2&gt;
+
+&lt;p&gt;初めてrakeタスクを作成した。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.ruby-lang.org/ja/2.2.0/library/rake.html&#34;&gt;library rake&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rake &amp;lt;タスク名&amp;gt; # 指定のタスクを実行。
+$ rake &amp;lt;パラメータキー&amp;gt;=&amp;lt;値&amp;gt; &amp;lt;タスク名&amp;gt; # パラメータ指定ありで、指定のタスクを実行。
+$ rake -h # 使い方を表示。
+$ rake -T # 定義されているタスク一覧を表示
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(引用:&lt;a href=&#34;http://unageanu.hatenablog.com/entry/20100829/1283069269&#34;&gt;Rakeの基本的な使い方まとめ|うなの日記&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&#34;whenever:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;whenever&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/javan/whenever&#34;&gt;javan/whenever|github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://morizyun.github.io/blog/whenever-gem-rails-ruby-capistrano/&#34;&gt;Wheneverは導入が超簡単なcrontab管理ライブラリGemです！&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;mixpanel:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;mixpanel&lt;/h2&gt;
+
+&lt;p&gt;mixpanelのデータのエクスポートしたい。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mixpanel.com/docs/api-documentation/data-export-api&#34;&gt;Data Export API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kitak.hatenablog.jp/entry/2014/10/07/231003&#34;&gt;Rubyでmixpanelのイベントをtrackしたり、データをexportする術&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Rails内でのwebpackの使い方</title>
