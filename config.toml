@@ -2,7 +2,7 @@
 baseurl = "http://kotazi.github.io/blog/"
 languageCode = "en-us"
 title = "kotazi.com"
-theme = "kotazi.com"
+theme = "hugo-cactus-theme"
 canonifyurls = true
 
 [params]

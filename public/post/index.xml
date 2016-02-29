@@ -6,8 +6,56 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Feb 2016 22:33:30 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Feb 2016 11:40:44 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【読書】インターネットの基礎　〜デジタル時代の知識創造ー〜</title>
+      <link>http://kotazi.github.io/blog/post/2016/0229_internet/</link>
+      <pubDate>Mon, 29 Feb 2016 11:40:44 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0229_internet/</guid>
+      <description>
+
+&lt;p&gt;14冊目。&lt;/p&gt;
+
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/404653883X/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=404653883X&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;角川インターネット講座 (3) デジタル時代の知識創造 変容する著作権&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=404653883X&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;目次-http-kci-salon-jp-books-03:01b0d2df845d71ef3a201cb60330d856&#34;&gt;&lt;a href=&#34;http://kci-salon.jp/books/03/&#34;&gt;目次&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h5 id=&#34;第1部-知の共有と著作者の権利:01b0d2df845d71ef3a201cb60330d856&#34;&gt;◯ 第1部 知の共有と著作者の権利&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;序章　知識・情報の活用と著作権   　…長尾 真 著&lt;/li&gt;
+&lt;li&gt;第1章　インターネット時代の著作権制度   　…中山 信弘 著&lt;/li&gt;
+&lt;li&gt;第2章　万人が著作者の時代 米国の議論から    　…名和 小太郎 著&lt;/li&gt;
+&lt;li&gt;第3章　デジタルアーカイブのオープン化と著作権の新時代   　…岡本 真 著&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;第2部-出版と知識創造の未来:01b0d2df845d71ef3a201cb60330d856&#34;&gt;◯ 第2部 出版と知識創造の未来&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第4章　電子書籍とは何か? 　…萩野 正昭 著&lt;/li&gt;
+&lt;li&gt;第5章　情報共有時代の社会制度 グーグルとフェイスブックが投げかける問い 　…歌田 明弘 著&lt;/li&gt;
+&lt;li&gt;第6章　ウェブと電子書籍は、作品と作者をどう変えたか  　…仲俣 暁生 著&lt;/li&gt;
+&lt;li&gt;第7章　デジタルアーカイブとは何か  　…杉本 重雄 著&lt;/li&gt;
+&lt;li&gt;第8章　メタ複製技術時代の〈世界脳〉書物へのオマージュと電子化された〈知〉    　…遠藤 薫 著&lt;/li&gt;
+&lt;li&gt;第9章　デジタルの衝撃と文化のサスティナビリティ   　…吉見 俊哉 著&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;これを読むまでしっかりとインターネットにおける著作権問題についてしっかりと考えたことがなかった。
+そもそも著作権が生まれた経緯についてしっかりと書かれているため、
+なぜ著作権問題が生まれてくるのか、なぜ当時の法が適用できなくなってしまっているのかということについて感じ取ることができた。&lt;/p&gt;
+
+&lt;p&gt;世界中の本が誰にでも読めるようになるためにはまだまだ課題がありそう。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【読書】ピープルウエア</title>
@@ -1958,21 +2006,6 @@ expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
 &lt;h4 id=&#34;testing-directives-with-external-templates:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Directives With External Templates&lt;/h4&gt;
 
 &lt;p&gt;もぢディレクティブで&lt;code&gt;templateUrl&lt;/code&gt;を使っているのであれば、HTMLテンプレートをプリコンパイルするために&lt;a href=&#34;https://github.com/karma-runner/karma-ng-html2js-preprocessor&#34;&gt;karma-ng-html2js-preprocessor&lt;/a&gt;を使うことを考え、HTTPリクエストを使ってテキストをロードすることは避けること。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ES6とReact試してみた</title>
-      <link>http://kotazi.github.io/blog/post/2016/0130_react_calendar/</link>
-      <pubDate>Mon, 01 Feb 2016 12:06:51 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0130_react_calendar/</guid>
-      <description>&lt;p&gt;FullCalendarとReactとES6を使ったサンプルを作ってみた。&lt;/p&gt;
-
-&lt;p&gt;jQueryとReactは相性が悪いと聞いていたが、特に感じられなかった。&lt;/p&gt;
-
-&lt;p&gt;&lt;p data-height=&#34;266&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;KVoXob&#34; data-default-tab=&#34;result&#34; data-user=&#34;kotazi&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/kotazi/pen/KVoXob/&#39;&gt;FullCalendar With React ES6&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#39;http://codepen.io/kotazi&#39;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
     </item>
     
