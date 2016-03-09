@@ -10,6 +10,236 @@
     <atom:link href="http://kotazi.github.io/blog/tags/%E8%AA%AD%E6%9B%B8/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>【読書】ビジネスモデル・ジェネレーション</title>
+      <link>http://kotazi.github.io/blog/post/2016/0309_business/</link>
+      <pubDate>Tue, 08 Mar 2016 11:40:44 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0309_business/</guid>
+      <description>
+
+&lt;p&gt;17冊目。&lt;/p&gt;
+
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4798122971/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4798122971&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;ビジネスモデル・ジェネレーション ビジネスモデル設計書&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4798122971&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;作家アレックス・オスターワルダーの著書。
+ビジネスモデルをフレームワーク化し、さまざまな起業のビジネスモデルを
+そのフレームワークに当てはめながら事例を紹介する。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;目次:612fa179e825e4964c8b6172a0206750&#34;&gt;目次&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Canvas&lt;/li&gt;
+&lt;li&gt;Patterns&lt;/li&gt;
+&lt;li&gt;Design&lt;/li&gt;
+&lt;li&gt;Strategy&lt;/li&gt;
+&lt;li&gt;Process&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;canvas:612fa179e825e4964c8b6172a0206750&#34;&gt;Canvas&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;[定義]ビジネスモデルとは、どのように価値を創造し、顧客に届けるかを論理的に記述したもの&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;9つの構築ブロック:612fa179e825e4964c8b6172a0206750&#34;&gt;9つの構築ブロック&lt;/h4&gt;
+
+&lt;h5 id=&#34;customer-segments:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Customer Segments&lt;/h5&gt;
+
+&lt;p&gt;誰のために価値を想像するのか？最も重要な顧客は誰なのか？
+- マス市場
+- ニッチ市場
+- 細分化
+- 多角化
+- マルチサイドプラットフォーム&lt;/p&gt;
+
+&lt;h5 id=&#34;value-propositions:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Value Propositions&lt;/h5&gt;
+
+&lt;p&gt;顧客にどんな価値を提供するのか？
+どういった問題の解決を手助けするのか？&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;新規性&lt;/li&gt;
+&lt;li&gt;パフォーマンス&lt;/li&gt;
+&lt;li&gt;カスタマイゼーション&lt;/li&gt;
+&lt;li&gt;「仕事を終らせる」&lt;/li&gt;
+&lt;li&gt;ブランド&lt;/li&gt;
+&lt;li&gt;価格&lt;/li&gt;
+&lt;li&gt;デザイン&lt;/li&gt;
+&lt;li&gt;コスト削減&lt;/li&gt;
+&lt;li&gt;アクセスしやすさ&lt;/li&gt;
+&lt;li&gt;リスクの低減&lt;/li&gt;
+&lt;li&gt;快適さ/使いやすさ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;channels:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Channels&lt;/h5&gt;
+
+&lt;p&gt;どのチャネルを通じて、顧客セグメントに立直したいか。
+チャネルを顧客の日常と、どのように統合すればよいか。&lt;/p&gt;
+
+&lt;p&gt;[チャネルフェーズ]
+- 認知
+- 評価
+- 購入
+- 提供
+- アフターサービス&lt;/p&gt;
+
+&lt;h5 id=&#34;customer-relationships:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Customer Relationships&lt;/h5&gt;
+
+&lt;p&gt;顧客セグメントがどんな関係を構築、維持してほしいと期待しているのか。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;パーソナルアシスタンス&lt;/li&gt;
+&lt;li&gt;専任のパーソナルアシスタンス&lt;/li&gt;
+&lt;li&gt;セルフサービス&lt;/li&gt;
+&lt;li&gt;自動サービス&lt;/li&gt;
+&lt;li&gt;コミュニティ&lt;/li&gt;
+&lt;li&gt;共創&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;revenue-stream:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Revenue Stream&lt;/h5&gt;
+
+&lt;p&gt;顧客はどんな価値にお金を払おうとするのか。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;資産価値のある商品の販売&lt;/li&gt;
+&lt;li&gt;使用料&lt;/li&gt;
+&lt;li&gt;購読料&lt;/li&gt;
+&lt;li&gt;レンタル/リース&lt;/li&gt;
+&lt;li&gt;ライセンス&lt;/li&gt;
+&lt;li&gt;仲介手数料&lt;/li&gt;
+&lt;li&gt;広告&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;また、これらのそれぞれに異なる価格メカニズムが存在する。&lt;/p&gt;
+
+&lt;h5 id=&#34;key-resources:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Key Resources&lt;/h5&gt;
+
+&lt;p&gt;価値を提案するのに必要なリソースはなんだろうか。
+流通チャネルや顧客との関係、収益の流れに対してはどうだろうか。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;物理的なリソース&lt;/li&gt;
+&lt;li&gt;知的財産&lt;/li&gt;
+&lt;li&gt;人的リソース&lt;/li&gt;
+&lt;li&gt;ファイナンスリソース&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;key-activities:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Key Activities&lt;/h5&gt;
+
+&lt;p&gt;価値を提案するのに必要な腫瘍活動は何なのか？&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;製造&lt;/li&gt;
+&lt;li&gt;問題解決&lt;/li&gt;
+&lt;li&gt;プラットフォーム/ネットワーク&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;key-partners:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Key Partners&lt;/h5&gt;
+
+&lt;p&gt;主要なパートナーは誰だろうか&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;最適化と規模の経済&lt;/li&gt;
+&lt;li&gt;リスクと不確実性の低減&lt;/li&gt;
+&lt;li&gt;リソースと活動の獲得&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;cost-structure:612fa179e825e4964c8b6172a0206750&#34;&gt;◯ Cost Structure&lt;/h5&gt;
+
+&lt;p&gt;ビシネスモデルにおいて最も重要なコストはなんだろうか？
+どのリソースが最も高価だろうか？&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コスト主導&lt;/li&gt;
+&lt;li&gt;価値主導&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;patterns:612fa179e825e4964c8b6172a0206750&#34;&gt;Patterns&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;アンバンドルビジネスモデル&lt;/li&gt;
+&lt;li&gt;ロングテール&lt;/li&gt;
+&lt;li&gt;マルチサイドプラットフォーム&lt;/li&gt;
+&lt;li&gt;ビジネスモデルとしてのフリー戦略&lt;/li&gt;
+&lt;li&gt;フリーミアム&lt;/li&gt;
+&lt;li&gt;餌と釣り針パターン&lt;/li&gt;
+&lt;li&gt;オープンビジネスモデル&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;design:612fa179e825e4964c8b6172a0206750&#34;&gt;Design&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;顧客インサイト&lt;/li&gt;
+&lt;li&gt;アイディア創造&lt;/li&gt;
+&lt;li&gt;ビジュアルシンキング&lt;/li&gt;
+&lt;li&gt;ストーリーテリング&lt;/li&gt;
+&lt;li&gt;プロトタイピング&lt;/li&gt;
+&lt;li&gt;シナリオ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;strategy:612fa179e825e4964c8b6172a0206750&#34;&gt;Strategy&lt;/h2&gt;
+
+&lt;h4 id=&#34;市場における圧力:612fa179e825e4964c8b6172a0206750&#34;&gt;市場における圧力&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;市場の論点&lt;/li&gt;
+&lt;li&gt;市場セグメント&lt;/li&gt;
+&lt;li&gt;需要と供給&lt;/li&gt;
+&lt;li&gt;スイッチングコスト&lt;/li&gt;
+&lt;li&gt;収益の魅力&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;産業における圧力:612fa179e825e4964c8b6172a0206750&#34;&gt;産業における圧力&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;競合&lt;/li&gt;
+&lt;li&gt;新規参入&lt;/li&gt;
+&lt;li&gt;代替品&lt;/li&gt;
+&lt;li&gt;サプライヤー&lt;/li&gt;
+&lt;li&gt;ステークホルダー&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;重要なトレンド:612fa179e825e4964c8b6172a0206750&#34;&gt;重要なトレンド&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;技術のトレンド&lt;/li&gt;
+&lt;li&gt;規制のトレンド&lt;/li&gt;
+&lt;li&gt;社会的、文化的なトレンド&lt;/li&gt;
+&lt;li&gt;社会経済のトレンド&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;マクロ経済の圧力:612fa179e825e4964c8b6172a0206750&#34;&gt;マクロ経済の圧力&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;グローバル市場の状況&lt;/li&gt;
+&lt;li&gt;資本市場&lt;/li&gt;
+&lt;li&gt;原料や他のリソース&lt;/li&gt;
+&lt;li&gt;経済インフラ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;フレームワークが果たして有用なのかは分からなかったが、
+ビジネスモデルが体系化されることで、ビジネスを考えるうえで最低限検討しなければいけない箇所を
+頭のなかにマッピングできたのでよかった。&lt;/p&gt;
+
+&lt;p&gt;事業でもサービスでも何でもそうなんだけど、
+複数の要素が絡まって成り立っている。&lt;/p&gt;
+
+&lt;p&gt;複数人で話しあえばそれそれにとって
+優先度や移り方も違うのでうまく共有することができない。&lt;/p&gt;
+
+&lt;p&gt;そういう意味でこのようにビジュアライズするための
+共通フレームワークを持っておくべきというのはすごくある。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>【読書】道は開ける</title>
       <link>http://kotazi.github.io/blog/post/2016/0308_carnegie/</link>
       <pubDate>Tue, 08 Mar 2016 11:40:44 +0900</pubDate>
