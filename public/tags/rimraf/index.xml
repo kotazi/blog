@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rimraf on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/rimraf/</link>
+    <description>Recent content in Rimraf on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Mar 2016 15:36:56 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/rimraf/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ファイルやディレクトリの削除にはrimrafを使う</title>
+      <link>http://kotazi.github.io/blog/post/2016/0310_rimraf/</link>
+      <pubDate>Wed, 09 Mar 2016 15:36:56 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0310_rimraf/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/isaacs/rimraf&#34;&gt;isaacs/rimraf&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;コールバッグも使える。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rm -rf&lt;/code&gt;の代わりぐらいに使おうかな。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
