@@ -6,8 +6,131 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Mar 2016 15:36:56 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Mar 2016 23:29:19 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【読書】ネットコミュニティの設計と力　つながる私たちの時代</title>
+      <link>http://kotazi.github.io/blog/post/2016/0312_internet/</link>
+      <pubDate>Sat, 12 Mar 2016 23:29:19 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0312_internet/</guid>
+      <description>
+
+&lt;p&gt;18冊目。&lt;/p&gt;
+
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4046538856/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4046538856&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;角川インターネット講座 (5) ネットコミュニティの設計と力 つながる私たちの時代&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4046538856&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;目次-http-kci-salon-jp-books-05:eb76b670aa6799b46f00323bbec081f8&#34;&gt;&lt;a href=&#34;http://kci-salon.jp/books/05/&#34;&gt;目次&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h5 id=&#34;第1部-人間の集まるコミュニティを設計する:eb76b670aa6799b46f00323bbec081f8&#34;&gt;◯ 第1部 人間の集まるコミュニティを設計する&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;序章　日本のインターネットコミュニティ   　…近藤 淳也 著&lt;/li&gt;
+&lt;li&gt;第1章　ソーシャルメディアの発生と進化  　…yomoyomo 著&lt;/li&gt;
+&lt;li&gt;第2章　恋愛論的コミュニティサイト運営術  　…Hagex 著&lt;/li&gt;
+&lt;li&gt;第3章　人が集まるコミュニティのつくり方 　…古川 健介 著&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;第2部-私たちのコミュニティはと-こへ向かうのか:eb76b670aa6799b46f00323bbec081f8&#34;&gt;◯ 第2部 私たちのコミュニティはどこへ向かうのか?&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第4章　サル学から考える人間のコミュニティの未来  　…山極 寿一 著&lt;/li&gt;
+&lt;li&gt;第5章　情報技術とリアルコミュニティ    　…広井 良典 著&lt;/li&gt;
+&lt;li&gt;第6章　コミュニティと人の力    　…近藤 淳也 著&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;本書のテーマはインターネットコミュニティ。&lt;br /&gt;
+僕自身インターネットを仕事にしていこうと考えたのは、
+コミュニティだとか、コミュニケーションのあり方が
+これからのインターネットによって再構築されていくだろうと感じたことが大きかった。
+だから強い関心を持って読めた。&lt;/p&gt;
+
+&lt;p&gt;思えば少し前までインターネットコミュニティでは、
+匿名であるべき、実名であるべきだとか、
+レビューの信頼性がどうとかあったけれど、
+いつの間にかそういう議論も少なくなり、
+多くの人々がそれぞれのインターネットコミュニティの特性を理解して使い分けれるようになったと思う。&lt;/p&gt;
+
+&lt;p&gt;それ自体はいいことだと思うけれど、その反面、
+道の輝きを放っていたインターネットコミュニティも
+ある程度「こういうもの」みたいなイメージが出来上がってきてしまったようにも感じる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>better-npm-runを使ってpackage.jsonを整備</title>
+      <link>http://kotazi.github.io/blog/post/2016/0310_better-npm-run/</link>
+      <pubDate>Thu, 10 Mar 2016 15:45:52 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0310_better-npm-run/</guid>
+      <description>&lt;p&gt;ReduxのStarterKitを触っていて気付いたのでメモ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/benoror/better-npm-run&#34;&gt;benoror/better-npm-run&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt;内でのハードコーディングを避ける。&lt;/p&gt;
+
+&lt;p&gt;下記のように書く。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;: {
+  &amp;quot;compile&amp;quot;: &amp;quot;better-npm-run compile&amp;quot;,
+  &amp;quot;start&amp;quot;: &amp;quot;better-npm-run start&amp;quot;,
+  &amp;quot;dev&amp;quot;: &amp;quot;better-npm-run dev&amp;quot;,
+  &amp;quot;test&amp;quot;: &amp;quot;better-npm-run test&amp;quot;
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;better-npm-run&lt;/code&gt;がどのように動作するかというと、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;betterScripts&amp;quot;: {
+  &amp;quot;compile&amp;quot;: {
+    &amp;quot;command&amp;quot;: &amp;quot;babel-node bin/compile&amp;quot;,
+    &amp;quot;env&amp;quot;: {
+      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
+    }
+  },
+  &amp;quot;dev&amp;quot;: {
+    &amp;quot;command&amp;quot;: &amp;quot;nodemon --exec babel-node bin/server&amp;quot;,
+    &amp;quot;env&amp;quot;: {
+      &amp;quot;NODE_ENV&amp;quot;: &amp;quot;development&amp;quot;,
+      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
+    }
+  },
+  &amp;quot;deploy&amp;quot;: {
+    &amp;quot;command&amp;quot;: &amp;quot;npm run clean &amp;amp;&amp;amp; npm run compile&amp;quot;,
+    &amp;quot;env&amp;quot;: {
+      &amp;quot;NODE_ENV&amp;quot;: &amp;quot;production&amp;quot;,
+      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
+    }
+  },
+  &amp;quot;start&amp;quot;: {
+    &amp;quot;command&amp;quot;: &amp;quot;babel-node bin/server&amp;quot;,
+    &amp;quot;env&amp;quot;: {
+      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
+    }
+  },
+  &amp;quot;test&amp;quot;: {
+    &amp;quot;command&amp;quot;: &amp;quot;babel-node ./node_modules/karma/bin/karma start build/karma.conf&amp;quot;,
+    &amp;quot;env&amp;quot;: {
+      &amp;quot;NODE_ENV&amp;quot;: &amp;quot;test&amp;quot;,
+      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
+    }
+  }
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じになる。
+冗長になりがちなpackage.jsonがきれいに。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ファイルやディレクトリの削除にはrimrafを使う</title>
@@ -1073,511 +1196,6 @@ And after discussion, I&amp;rsquo;ll point out to him about for his attitude for
 &lt;hr&gt;
 
 &lt;p&gt;けっこう喋れるようになってきた。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>信頼残高のことを思い出した。</title>
-      <link>http://kotazi.github.io/blog/post/2016/0215_trast/</link>
-      <pubDate>Mon, 15 Feb 2016 19:27:45 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0215_trast/</guid>
-      <description>&lt;p&gt;サイバーエージェントで働いていたころ、しばしば「信頼残高」という言葉を耳にした。(こういう考え方が社内に浸透していることが本当にすごいと今になって思う。)&lt;/p&gt;
-
-&lt;p&gt;仕事というものは信頼の積み重ねで成り立っている。
-この信頼の積み重ねこそが、自身の「信頼残高」だ。&lt;/p&gt;
-
-&lt;p&gt;大きな仕事や、期待以上の成果を出せば信頼残高が増えていく。
-信頼残高のある人間には、また大きな仕事やチャンスが回ってくる。&lt;/p&gt;
-
-&lt;p&gt;逆につまらないミスなどをすれば信頼残高は減っていってしまう。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;メールの誤字脱字が多い&lt;/li&gt;
-&lt;li&gt;会議に2、3分遅刻してしまう&lt;/li&gt;
-&lt;li&gt;二日酔いで出社してくる&lt;/li&gt;
-&lt;li&gt;資料のまとめ方が下手&lt;/li&gt;
-&lt;li&gt;デスク周りがいつも散らかっている&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;こういったことでも信頼残高はどんどん削られていってしまう。
-「稼いでいるのに全然貯金が貯まらない人」みたいになってしまう。&lt;/p&gt;
-
-&lt;p&gt;日々の積み重ねをしっかりとやっていこう。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;個人的に思ったのが、NZ内での信頼が積み重ねられていないなと思った。
-自分の成果が海を超えて認められるように努力することはもちろんなのだけれど、
-各国での評価が一律になるような透明度の高い組織を作っていきたい。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Rails内でのwebpackの使い方</title>
-      <link>http://kotazi.github.io/blog/post/2016/0214_rails_webpack/</link>
-      <pubDate>Sun, 14 Feb 2016 13:41:03 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0214_rails_webpack/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://clarkdave.net/2015/01/how-to-use-webpack-with-rails/&#34;&gt;&amp;ldquo;How to use webpack with Rails&amp;rdquo;&lt;/a&gt;翻訳記事になります。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;webpackは強力なモジュールバンドラである。主としてフロントエンド開発のために設計されており、
-bowerやnpmのJavaScriptモジュールをうまく統合することができる。&lt;/p&gt;
-
-&lt;p&gt;Sproketsやアセットパイプラインを用いればシームレスな挿入をすることが可能だけれども、これには典型的なRailsのJSマネジメントシステムを使うによりいくつか大きな利点がある。残念ながらwebpackのドキュメントはまだ要約することが難しく、特にRailsに統合したいとなればなおさらだ。&lt;/p&gt;
-
-&lt;p&gt;あなたがまだwebpackを使っていないのであれば、ここに何ができるのかを示そう。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;npmやbowerを使っている全てのフロントエンドのJS(依存関係も)管理する&lt;/li&gt;
-&lt;li&gt;CoffeeScriptやES6を自動で処理する&lt;/li&gt;
-&lt;li&gt;最小の力で全てのソースマップを出力する&lt;/li&gt;
-&lt;li&gt;難しい部分でのJSの分離に役に立つ。&amp;rdquo;common&amp;rdquo;モジュールが自動的に全てのページに渡ってシェアしてくれる&lt;/li&gt;
-&lt;li&gt;大きなモジュールを複数のファイルに分割し、必要なファイルのみをダウンロードする(&lt;code&gt;require.ensure&lt;/code&gt;を用いる)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;いいなと思ったら、これらを既存のRailsアプリ、もしくは新たなRailsアプリでどのように利用するか呼んでみるといい。
-ちなみに、これはRails中心に書かれているけれども、Railsでなくともそのようなフレームワークにwebpackを導入したいのであればきっと役に立つだろう。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;getting-started:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Getting Started&lt;/h3&gt;
-
-&lt;h4 id=&#34;is-webpack-right-for-your-app:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Is webpack right for your app?&lt;/h4&gt;
-
-&lt;p&gt;webpackは本当にパワフルで素晴らしいツールである。
-けれども本当に効果的に利用するには、あなたが&amp;rdquo;モジュールとしてのJS&amp;rdquo;という哲学をしっかりと信じる必要がある。
-jQueryやBackboneといった人気のライブラリを使っているなら簡単なことだ。
-けれども、特に大きなアプリをwebpackを用いてコンバートしているのなら、いくつかの問題につまづくであろうことを知っておくべきだ。&lt;/p&gt;
-
-&lt;p&gt;典型的な問題:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;モジュールにはちゃんと定義されてエントリーポイントがない(webpackはあなたが要求したときに何を含むべきか知らない)&lt;/li&gt;
-&lt;li&gt;モジュールに&lt;code&gt;package.json&lt;/code&gt;や&lt;code&gt;bower.json&lt;/code&gt;は無効である&lt;/li&gt;
-&lt;li&gt;modules which simply stick something on window and call it a day&lt;/li&gt;
-&lt;li&gt;modules which add something to jQuery, instead of exporting anything&lt;/li&gt;
-&lt;li&gt;modules which, by default, give you a gigantic kitchen sink you don’t need&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;幸運にもこれらの問題に対処するための様々なメソッドがあるため、webpackで全て解決できる。
-さっきも述べたようにwebpackのドキュメントは量が多いので、私が上記についてはカバーする。&lt;/p&gt;
-
-&lt;p&gt;あなたのアプリに向いているか？&lt;/p&gt;
-
-&lt;h4 id=&#34;新しいrailsアプリを作っているところ:78a84d7a250550b9fca3451f0818ba23&#34;&gt;新しいRailsアプリを作っているところ&lt;/h4&gt;
-
-&lt;p&gt;大量のJSコードを使うのなら絶対に。試さない理由がない。&lt;/p&gt;
-
-&lt;h4 id=&#34;アプリは大きいがjsはそこまで量がない:78a84d7a250550b9fca3451f0818ba23&#34;&gt;アプリは大きいがJSはそこまで量がない&lt;/h4&gt;
-
-&lt;p&gt;多分価値が無いかも。webpackはたくさんのモジュールを使っていたり、たくさんのJSコードを書いているときに
-本当に輝く。そんなにJSがないのであれば、大きなメリットはないだろう。&lt;/p&gt;
-
-&lt;h4 id=&#34;アプリは大きいが-jsはよく整備されており-特に問題がない:78a84d7a250550b9fca3451f0818ba23&#34;&gt;アプリは大きいが、JSはよく整備されており、特に問題がない&lt;/h4&gt;
-
-&lt;p&gt;全てをwebpackに移行することはそれなりに労力がかかるため、多分やる価値はない。&lt;/p&gt;
-
-&lt;h4 id=&#34;アプリは大きく-大量のスパゲッティコード-jsファイルは800kbを超えている:78a84d7a250550b9fca3451f0818ba23&#34;&gt;アプリは大きく、大量のスパゲッティコード、jsファイルは800kbを超えている&lt;/h4&gt;
-
-&lt;p&gt;きっとwebpackを使ったほうがいい！少々大変だが、知るべきことはこのガイドで伝える。&lt;/p&gt;
-
-&lt;p&gt;始める準備ができたら、Railsアプリをwebpackに移行しよう。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;preparing-rails-for-webpack:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Preparing Rails for webpack&lt;/h3&gt;
-
-&lt;p&gt;Railsにwebpackを統合するベストプラクティスは存在しないため、多くは意見である。
-もしディレクトリの置き場所が気に食わなければ、好きな場所においてもらって構わない。&lt;/p&gt;
-
-&lt;h4 id=&#34;untangling-sprockets:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Untangling Sprockets&lt;/h4&gt;
-
-&lt;p&gt;最初にすることは&lt;code&gt;app/assets/javascripts&lt;/code&gt;を空にすることだ。
-webpackの設定を個々にすると、Sprocketsに拾われてしまう。
-全てのJSコードを他の場所に移そう。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;.gitignore&lt;/code&gt;にこれを追加しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/app/assets/javascripts
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これには2つの理由がある。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;生成されるバンドルは大きくなりがちだったり変更されがちだったりで、ただのgitのスパムを生成することになる&lt;/li&gt;
-&lt;li&gt;We’ll be integrating webpack with our deloy process later, which will build a production version of the bundles and placing them here. So, even if you checked in the bundles, you’d be replacing them during deploy anyway.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;上記のアドバイスはあなたが全てをwebpackに移行するものとしてのことだ。
-もちろんSprocketsのJSバンドラとwebpackを併用することもできる。
-その場合は、&lt;code&gt;.gitignore&lt;/code&gt;を&lt;code&gt;/app/assets/javascripts/bundle-*&lt;/code&gt;みたいに生成されたJSのみを無視するように修正する。&lt;/p&gt;
-
-&lt;h4 id=&#34;a-new-home-for-your-javascript:78a84d7a250550b9fca3451f0818ba23&#34;&gt;A new home for your JavaScript&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;app/assets/javascripts&lt;/code&gt;は生成されたバンドラのためのものなので、実際のJSのために新しいホームを生成する必要がある。
-私は新しいフォルダを作成するが、もちろん他の場所においてもいい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;app/frontend/javascripts
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ディレクトリ内部に&lt;code&gt;entry.js&lt;/code&gt;というファイルを作成しよう。
-またあとで説明するので、とりあえず追加してくれ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var _ = require(&#39;lodash&#39;);
-_.times(5, function(i) {
-  console.log(i);
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;installing-webpack-bower:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Installing webpack &amp;amp; Bower&lt;/h3&gt;
-
-&lt;h4 id=&#34;installing-webpack:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Installing webpack&lt;/h4&gt;
-
-&lt;p&gt;webpackはnode.jsのアプリケーションのため、&lt;code&gt;package.json&lt;/code&gt;がRailsルートの中に必要だ。&lt;br /&gt;
-シンプルであるために、webpackとwebpackのモジュールを管理するためだけに使っている。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;name&amp;quot;: &amp;quot;my-rails-app&amp;quot;,
-  &amp;quot;description&amp;quot;: &amp;quot;my-rails-app&amp;quot;,
-  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,
-  &amp;quot;devDependencies&amp;quot;: {
-    &amp;quot;webpack&amp;quot;: &amp;quot;~1.4.13&amp;quot;,
-    &amp;quot;expose-loader&amp;quot;: &amp;quot;~0.6.0&amp;quot;,
-    &amp;quot;imports-loader&amp;quot;: &amp;quot;~0.6.3&amp;quot;,
-    &amp;quot;exports-loader&amp;quot;: &amp;quot;~0.6.2&amp;quot;,
-    &amp;quot;lodash&amp;quot;: &amp;quot;~2.4.1&amp;quot;
-  },
-  &amp;quot;dependencies&amp;quot;: {}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;依存関係に&lt;code&gt;webpack&lt;/code&gt;があることが見えるだろう。それと多分必要であろういくつかwebpackのローダーを追加した(後で説明する)。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;npm install&lt;/code&gt;をして&lt;code&gt;node_modules&lt;/code&gt;を確認しよう。
-すでにnode.jsはインストール済み？まだだったらインストールしよう！&lt;/p&gt;
-
-&lt;p&gt;続いて&lt;code&gt;webpack&lt;/code&gt;グローバルにインストールし、コマンドラインツールで使えるようにする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ npm install -g webpack
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;installing-bower-optional:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Installing Bower (optional)&lt;/h4&gt;
-
-&lt;p&gt;webpackのいいところのひとつは利用するパッケージ管理ツールを強要しないところだ。
-デフォルトはたくさんのフロントエンドモジュールをもったnpmだ。
-けれどもBowerというweb用に設計された別のパッケージ管理ツールでしか利用できないフロントエンドライブラリもたくさんある。&lt;/p&gt;
-
-&lt;p&gt;jQueryやunderscore、lodashといった人気で整備されているライブラリのみを使う予定なのであればBowerは必要ない。
-これらはnpmで十分だ。&lt;code&gt;package.json&lt;/code&gt;はnpmを使って簡単に追加できる。&lt;/p&gt;
-
-&lt;p&gt;しかしながら、もし多くのライブラリを使う必要があったり、単にBowerが好きならセットアップは簡単にできる。
-まずは&lt;code&gt;bower&lt;/code&gt;コマンドをインストールしよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ npm install -g bower
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;そしてRailsルートに&lt;code&gt;bower.json&lt;/code&gt;を作成しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;name&amp;quot;: &amp;quot;my-rails-app&amp;quot;,
-  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,
-  &amp;quot;description&amp;quot;: &amp;quot;my-rails-app&amp;quot;,
-  &amp;quot;dependencies&amp;quot;: {
-    &amp;quot;jquery&amp;quot;: &amp;quot;~1.11.0&amp;quot;,
-    &amp;quot;lodash&amp;quot;: &amp;quot;~2.4.1&amp;quot;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ここではjQueryとlodashを依存関係に持った最小限の&lt;code&gt;bower.json&lt;/code&gt;を作成した。
-Railsルートで&lt;code&gt;bower install&lt;/code&gt;を実行すると、bowerはこれらのライブラリを依存関係に沿って&lt;code&gt;bower_components&lt;/code&gt;にインストールする。&lt;/p&gt;
-
-&lt;p&gt;覚えておいて欲しいのが、npmと違いbowerは、フラットな階層で依存関係を解消する。
-だからもし、あなたがjQueryの1.x系を指定しながら、別の依存関係では最低のjQueryバージョンを2.x以上と指定していたのであれば、
-これを自分自身で解消する必要がある。&lt;/p&gt;
-
-&lt;h3 id=&#34;using-bower-and-npm-together:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Using bower and npm together&lt;/h3&gt;
-
-&lt;p&gt;webpack内でnpmとbowerを一緒に使うことを止めるものはいない。
-たとえばもしjQueryとBackboneをnpmから、人気のないモジュールをBowerからといったように。
-事実、&lt;a href=&#34;https://webpack.github.io/docs/usage-with-bower.html#prefer-modules-from-npm-over-bower&#34;&gt;webpackのドキュメント&lt;/a&gt;にも書かれている。&lt;/p&gt;
-
-&lt;p&gt;In a nutshell, npm (CommonJS-style) modules are typically cleaner and easier for webpack to optimise, which will result in smaller bundles and faster compile times.&lt;/p&gt;
-
-&lt;p&gt;In practice, this might not make a huge difference. In the case of large modules like &lt;code&gt;React&lt;/code&gt;, it may be worth including it as a one-off from npm so webpack can optimise it a little better, but for almost everything else I recommend sticking with Bower so you have one place for all your dependencies.&lt;/p&gt;
-
-&lt;h3 id=&#34;configuring-webpack:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Configuring webpack&lt;/h3&gt;
-
-&lt;p&gt;たくさんの引数を用いて完全にコマンドラインからwebpackを実行することもできるが、複雑になってしまうので、コンフィグファイルを用いて始めよう。&lt;/p&gt;
-
-&lt;p&gt;Railsルートに&lt;code&gt;webpack.config.js&lt;/code&gt;を作成しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var path = require(&#39;path&#39;);
-var webpack = require(&#39;webpack&#39;);
-
-var config = module.exports = {
-  // the base path which will be used to resolve entry points
-  context: __dirname,
-  // the main entry point for our application&#39;s frontend JS
-  // メインとなるエントリーポイント
-  entry: &#39;./app/frontend/javascripts/entry.js&#39;,
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最終的に非常に複雑なファイルになるので、最小限のところから始めて、説明をしながら加えていこう。
-ガイドを通してたくさんのことをフィルについかしていくことになる。
-&lt;a href=&#34;https://webpack.github.io/docs/configuration.html&#34;&gt;webpackドキュメント&lt;/a&gt;にも設定用プロパティの概要については書かれている。&lt;/p&gt;
-
-&lt;p&gt;現在ひとつのエントリーファイルを持っているが、配列やオブジェクトを設定することも可能だ。(後に説明)
-注意すべき重要な事は、このエントリーファイルがJSのコアとなるということだ。
-ここでファイルを指定しなければコンパイルが完了することはない。&lt;/p&gt;
-
-&lt;p&gt;次は&lt;code&gt;output&lt;/code&gt;を追加しよう。コンパイルされたバンドルの場所を占めるものだ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;config.output = {
-  // this is our app/assets/javascripts directory, which is part of the Sprockets pipeline
-  // app/assets/javascriptsディレクトリのこと。Sprocketsの一部となる。
-  path: path.join(__dirname, &#39;app&#39;, &#39;assets&#39;, &#39;javascripts&#39;),
-  // the filename of the compiled bundle, e.g. app/assets/javascripts/bundle.js
-  // コンパイルされらバンドラのファイル名。
-  filename: &#39;bundle.js&#39;,
-  // if the webpack code-splitting feature is enabled, this is the path it&#39;ll use to download bundles
-  // webpackの&amp;quot;code-splitting&amp;quot;機能を使う場合。
-  publicPath: &#39;/assets&#39;,
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;続いて&lt;code&gt;resolve&lt;/code&gt;を追加する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;config.resolve = {
-  // tell webpack which extensions to auto search when it resolves modules. With this,
-  // you&#39;ll be able to do `require(&#39;./utils&#39;)` instead of `require(&#39;./utils.js&#39;)`
-  // 自動補完をwebpackに伝える。
-  // この場合`require(&#39;./utils.js&#39;)`の代わりに`require(&#39;./utils&#39;)`とすることができる
-  extensions: [&#39;&#39;, &#39;.js&#39;],
-  // by default, webpack will search in `web_modules` and `node_modules`. Because we&#39;re using
-  // Bower, we want it to look in there too
-  // デフォルトでは`web_module`と`node_modules`を探す。今回はBowerを使うので下記になる
-  modulesDirectories: [ &#39;node_modules&#39;, &#39;bower_components&#39; ],
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最後に&lt;code&gt;plugins&lt;/code&gt;。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;config.plugins = [
-  // we need this plugin to teach webpack how to find module entry points for bower files,
-  // as these may not have a package.json file
-  new webpack.ResolverPlugin([
-    new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(&#39;.bower.json&#39;, [&#39;main&#39;])
-  ])
-];
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;running-webpack:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Running webpack&lt;/h3&gt;
-
-&lt;p&gt;webpackを実行する前に、Bowerの依存関係をインストールしよう。
-NPMだけなら&lt;code&gt;npm install&lt;/code&gt;を実行すればいい。Bower依存関係をインストールするには:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bower install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;jquery&lt;/code&gt;と&lt;code&gt;lodash&lt;/code&gt;の入った&lt;code&gt;bower_components/&lt;/code&gt;ディレクトリがあることだろう。&lt;/p&gt;
-
-&lt;p&gt;それが終わればwebpackをRailsルートから実行しよう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ webpack -d --display-reasons --display-chunks --progress
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このコマンドはwebpackをdevelopmentモードで実行し、何を実行しているかを表示するようになる。
-ゆくゆくはこのコマンドを自動化する。
-すべてが上手く行けば、このような出力が確認できるだろう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Hash: cfee07d10692c4ab1eeb
-Version: webpack 1.4.14
-Time: 548ms
-        Asset    Size  Chunks             Chunk Names
-    bundle.js  254088       0  [emitted]  main
-bundle.js.map  299596       0  [emitted]  main
-chunk    {0} bundle.js, bundle.js.map (main) 244421 [rendered]
-    [0] ./app/frontend/javascripts/entry.js 73 {0} [built]
-     + 2 hidden modules
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この出力には、&lt;code&gt;bundle.js&lt;/code&gt;という&amp;rdquo;チャンク&amp;rdquo;が作成されたことと、sourcemapが作成されたことが書かれている。
-チャンクはJSの分割方法についてだ。
-いまはただ、エントリーポイントにつき一つのチャンクを作成しただけだ。
-けれどももし、エントリーポイント間にたくさんのモジュールがあったり、code-splitting機能を使っているのであれば、
-webpackは&lt;code&gt;1.1-bundle.js&lt;/code&gt;といった名前でたくさんのチャンクを作成する。&lt;/p&gt;
-
-&lt;h4 id=&#34;the-compiled-webpack-bundle:78a84d7a250550b9fca3451f0818ba23&#34;&gt;The compiled webpack bundle&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;app/assets/javascripts/bundle.js&lt;/code&gt;ファイルを開いてみると、コンパイルされたJavaScriptが確認できる。
-このファイルでは、標準のJavaScriptは持っていない機能である依存関係の&lt;code&gt;require&lt;/code&gt;機能を全てのモジュールに提供するwebpackローダーを含んでいる。(数バイト)&lt;/p&gt;
-
-&lt;p&gt;webpackが実際に行っていることは下記のコードを見て呼び出しを&lt;code&gt;require(&#39;lodash&#39;)&lt;/code&gt;に変えてみるといい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var _ = __webpack_require__(/*! lodash */ 1);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;全てのモジュールに注入される&lt;code&gt;__webpack_require__&lt;/code&gt;関数は要求された依存関係をロードすることができる。
-サンプル通りにやっているのであれば、50行目は下記のようになっているはずである。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/* 0 */
-/*!*******************************************!*\
-  !*** ./app/frontend/javascripts/entry.js ***!
-  \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-  var _ = __webpack_require__(/*! lodash */ 1);
-  _.times(5, function(i) {
-    console.log(i);
-  });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;including-webpack-bundles-in-rails-views:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Including webpack bundles in Rails views&lt;/h4&gt;
-
-&lt;p&gt;思っている通りで、コンパイルされtらJSバンドラは普通に含めることができる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;%= javascript_include_tag &#39;bundle&#39;  %&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;基礎はこれで完了。
-あとは大きなアプリケーションで必要になりそうなことをカバーしていく。&lt;/p&gt;
-
-&lt;h3 id=&#34;exposing-global-modules-e-g-jquery:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Exposing global modules (e.g. jQuery)&lt;/h3&gt;
-
-&lt;p&gt;特定のモジュールでjQueryを使いたければ下記のように書ける。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ = require(&#39;jquery&#39;);
-$(&#39;p&#39;).show();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;けれどもきっとこのようなことがしたいだろう:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;自動で全てのモジュールにjQueryを使えるようにし、毎回&lt;code&gt;$ = require(&#39;jquery&#39;)&lt;/code&gt;のようなことは書く必要がない&lt;/li&gt;
-&lt;li&gt;モジュールの外側でも使えるように、&lt;code&gt;window.$&lt;/code&gt;のようにグローバルオブジェクトにする。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;webpackでどちらも可能だ。&lt;code&gt;ProvidePlugin&lt;/code&gt;を使う。webpackのコンフィグにプラグインの配列を追加する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;new webpack.ProvidePlugin({
-  $: &#39;jquery&#39;,
-  jQuery: &#39;jquery&#39;,
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで自動的に&lt;code&gt;$&lt;/code&gt;と&lt;code&gt;jQuery&lt;/code&gt;を注入するようになり、全てのモジュールに&lt;code&gt;require&lt;/code&gt;を追加する必要はもはやなくなる。&lt;/p&gt;
-
-&lt;p&gt;次のステップとして&lt;code&gt;window&lt;/code&gt;オブジェクトの追加だ。&lt;a href=&#34;https://webpack.github.io/docs/loaders.html&#34;&gt;loader&lt;/a&gt;
-を追加する。loaders apply some kind of transformation on a file. For example, later we’ll show how to use a loader to transform CoffeeScript files into JavaScript.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;expose&lt;/code&gt;ローダーはモジュールからエクスポートし、それをグローバルに追加する。今回の場合&lt;code&gt;window&lt;/code&gt;だ。
-ou can configure loaders in the webpack config, which makes sense for transformations like CoffeeScript, but you can also specify them when you require a module, which I think makes more sense for the expose loader as it expresses the intent in your code.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;entry.js&lt;/code&gt;のトップに書きを追加する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(&#39;expose?$!expose?jQuery!jquery&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この書式がアホらしいことは分かっている。&lt;code&gt;window.$&lt;/code&gt;と&lt;code&gt;window.jQuery&lt;/code&gt;にjQueryを追加するために、&lt;code&gt;expose&lt;/code&gt;ローダーを２回呼び出している。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;require(expose?&amp;lt;libraryName&amp;gt;!&amp;lt;moduleName&amp;gt;)&lt;/code&gt;のように書いている。
-&lt;code&gt;&amp;lt;libraryName&amp;gt;&lt;/code&gt;は&lt;code&gt;window.libraryName&lt;/code&gt;となり、&lt;code&gt;&amp;lt;moduleName&amp;gt;&lt;/code&gt;とは含むモジュールのこと。
-このケースでは&lt;code&gt;jquery&lt;/code&gt;だ。&lt;code&gt;!&lt;/code&gt;を使って上記に書いたようにチェインすることが可能。&lt;/p&gt;
-
-&lt;p&gt;さきほどと同じコマンドを使って、再度webpackを実行すると、&lt;code&gt;$&lt;/code&gt;と&lt;code&gt;jQuery&lt;/code&gt;にグローバルアクセスできることが分かるだろう。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;source-maps:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Source maps&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;bundle.js.map&lt;/code&gt;が出力先のディレクトリに作成されていることに気付いただろう。
-このソースマップはwebpackの働きによって生成されている。
-The source maps generated by webpack work extremely well. You get to download a single bundle (instead of 10+ individual files, which can get slow) but can view errors inside individual files, as they exist on your file system. And of course, if you’re using CoffeeScript and friends, you can view errors in the context of the actual CoffeeScript file.&lt;/p&gt;
-
-&lt;p&gt;However, by default Sprockets will break the source maps by appending a semi-colon to them, so browsers can’t parse them. You can fix this with the following configuration option:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Rails.application.config.assets.configure do |env|
-  env.unregister_postprocessor &#39;application/javascript&#39;, Sprockets::SafetyColons
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;At this to your &lt;code&gt;config/initializers/assets.rb&lt;/code&gt; (or directly in &lt;code&gt;config/application.rb&lt;/code&gt; for older versions of Rails). Then clear your Sprockets cache: $ rm -r tmp/cache`&lt;/p&gt;
-
-&lt;p&gt;Now when you get errors, or view loaded sources in a browser, you’ll see the actual file (e.g. entry.js) instead of the giant bundled file.&lt;/p&gt;
-
-&lt;h4 id=&#34;virtual-source-paths:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Virtual source paths&lt;/h4&gt;
-
-&lt;p&gt;In Chrome, by default the source map generated by webpack will put everything in a &amp;lsquo;pseudo path’, &lt;code&gt;webpack://&lt;/code&gt;, when you view it in the inspector’s Sources tab. You can make this a bit nicer by adding the following to your webpack &lt;code&gt;config.output&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;devtoolModuleFilenameTemplate: &#39;[resourcePath]&#39;,
-devtoolFallbackModuleFilenameTemplate: &#39;[resourcePath]?[hash]&#39;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now your &amp;lsquo;virtual’ source files will appear under the &lt;code&gt;domain &amp;gt; assets&lt;/code&gt; directory in the Sources tab.&lt;/p&gt;
-
-&lt;h4 id=&#34;sprockets-cache-and-source-maps:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Sprockets cache and source maps&lt;/h4&gt;
-
-&lt;p&gt;In my experience, Sprockets can be very aggressive at caching source maps. If they ever start acting weird, make sure to clear the sprockets cache in &lt;code&gt;tmp/cache&lt;/code&gt; first.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;loading-coffeescript-and-other-transpiled-languages:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Loading CoffeeScript and other transpiled languages&lt;/h3&gt;
-
-&lt;p&gt;CoffeeScriptやその類で書かれたモジュールをローダーを使って自動でトランスパイルすることができる。
-&lt;code&gt;expose&lt;/code&gt;ローダーのように、&lt;code&gt;require&lt;/code&gt;ステートメントの内部で実行されるが、webpackのコンフィグに記述することがよいとは言えないので、
-CoffeeScriptモジュールをrequireする。&lt;/p&gt;
-
-&lt;p&gt;はじめに、書きのように&lt;code&gt;package.json&lt;/code&gt;に&lt;code&gt;coffee-loader&lt;/code&gt;をインストールする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ npm install coffee-loader@0.7.2 --save-dev
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;webpackのコンフィグで、&lt;code&gt;config.resolve.extensions&lt;/code&gt;も書いておく。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;extensions: [&#39;&#39;, &#39;.js&#39;, &#39;.coffee&#39;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最後に、ローダーを追加する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;config.module = {
-  loaders: [
-    { test: /\.coffee$/, loader: &#39;coffee-loader&#39; },
-  ],
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;app/frontend/javascripts/app.coffee&lt;/code&gt;を作成する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;_ = require(&#39;lodash&#39;)
-
-module.exports = class App
-  start: -&amp;gt;
-    _.times 3, (i) -&amp;gt; console.log(i)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;既存の&lt;code&gt;entry.js&lt;/code&gt;を更新する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;require(&#39;expose?$!expose?jQuery!jquery&#39;);
-var App = require(&#39;./app&#39;);
-
-var app = new App();
-app.start();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;再度webpackを実行して、ブラウザで予想通りに動作していることが確認できる。&lt;/p&gt;
-
-&lt;h3 id=&#34;code-splitting-and-lazily-loading-modules:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Code splitting and lazily loading modules&lt;/h3&gt;
 </description>
     </item>
     

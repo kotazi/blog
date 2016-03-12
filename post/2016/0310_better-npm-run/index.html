@@ -1,0 +1,215 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>better-npm-runを使ってpackage.jsonを整備 &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>better-npm-runを使ってpackage.jsonを整備</h1>
+                    <h2 class="headline">March 10, 2016</h2>
+                </header>
+                <section id="post-body">
+                    <p>ReduxのStarterKitを触っていて気付いたのでメモ。</p>
+
+<p><a href="https://github.com/benoror/better-npm-run">benoror/better-npm-run</a></p>
+
+<hr>
+
+<p><code>package.json</code>内でのハードコーディングを避ける。</p>
+
+<p>下記のように書く。</p>
+
+<pre><code>&quot;scripts&quot;: {
+  &quot;compile&quot;: &quot;better-npm-run compile&quot;,
+  &quot;start&quot;: &quot;better-npm-run start&quot;,
+  &quot;dev&quot;: &quot;better-npm-run dev&quot;,
+  &quot;test&quot;: &quot;better-npm-run test&quot;
+},
+</code></pre>
+
+<p><code>better-npm-run</code>がどのように動作するかというと、</p>
+
+<pre><code>&quot;betterScripts&quot;: {
+  &quot;compile&quot;: {
+    &quot;command&quot;: &quot;babel-node bin/compile&quot;,
+    &quot;env&quot;: {
+      &quot;DEBUG&quot;: &quot;app:*&quot;
+    }
+  },
+  &quot;dev&quot;: {
+    &quot;command&quot;: &quot;nodemon --exec babel-node bin/server&quot;,
+    &quot;env&quot;: {
+      &quot;NODE_ENV&quot;: &quot;development&quot;,
+      &quot;DEBUG&quot;: &quot;app:*&quot;
+    }
+  },
+  &quot;deploy&quot;: {
+    &quot;command&quot;: &quot;npm run clean &amp;&amp; npm run compile&quot;,
+    &quot;env&quot;: {
+      &quot;NODE_ENV&quot;: &quot;production&quot;,
+      &quot;DEBUG&quot;: &quot;app:*&quot;
+    }
+  },
+  &quot;start&quot;: {
+    &quot;command&quot;: &quot;babel-node bin/server&quot;,
+    &quot;env&quot;: {
+      &quot;DEBUG&quot;: &quot;app:*&quot;
+    }
+  },
+  &quot;test&quot;: {
+    &quot;command&quot;: &quot;babel-node ./node_modules/karma/bin/karma start build/karma.conf&quot;,
+    &quot;env&quot;: {
+      &quot;NODE_ENV&quot;: &quot;test&quot;,
+      &quot;DEBUG&quot;: &quot;app:*&quot;
+    }
+  }
+},
+</code></pre>
+
+<p>こんな感じになる。
+冗長になりがちなpackage.jsonがきれいに。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0310_better-npm-run%2f - better-npm-run%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6package.json%e3%82%92%e6%95%b4%e5%82%99 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0312_internet/">【読書】ネットコミュニティの設計と力　つながる私たちの時代<aside class="dates">Mar 12</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0310_rimraf/">ファイルやディレクトリの削除にはrimrafを使う<aside class="dates">Mar 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0308_carnegie/">【読書】道は開ける<aside class="dates">Mar 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0309_business/">【読書】ビジネスモデル・ジェネレーション<aside class="dates">Mar 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0302_internet/">【読書】インターネットの基礎　〜ネットが生んだ文化　誰もが表現者の時代〜<aside class="dates">Mar 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0301_crontab/">cronによるメールを停止する方法<aside class="dates">Mar 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0229_internet/">【読書】インターネットの基礎　〜デジタル時代の知識創造ー〜<aside class="dates">Feb 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0228_peopelwear/">【読書】ピープルウエア<aside class="dates">Feb 28</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0227_whenever/">【Rails】whenever導入を通した学び<aside class="dates">Feb 27</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>
