@@ -5,7 +5,7 @@ title = "【読書】ビジネスモデル・ジェネレーション"
 tags = ["読書"]
 +++
 
-18冊目。
+19冊目。
 
 <a  href="http://www.amazon.co.jp/gp/product/B00JXKGQLK/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B00JXKGQLK&linkCode=as2&tag=kotazi-22">ノヤン先生のマーケティング学</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=B00JXKGQLK" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 を読みました。
