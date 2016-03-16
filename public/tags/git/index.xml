@@ -6,8 +6,39 @@
     <description>Recent content in Git on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Jan 2016 13:55:26 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 16 Mar 2016 13:01:21 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【git】There is an existing release branchへの対処</title>
+      <link>http://kotazi.github.io/blog/post/2016/0316_git_flow/</link>
+      <pubDate>Wed, 16 Mar 2016 13:01:21 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0316_git_flow/</guid>
+      <description>&lt;p&gt;&lt;code&gt;git flow&lt;/code&gt;のメモ。&lt;/p&gt;
+
+&lt;p&gt;リリースをしようとした時に下記のような注意が出てしまった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/W/ git:develop ❯❯❯ git flow release start 2016-03-16-0349
+There is an existing release branch (2016-03-14-0349). Finish that one first.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;リリースブランチを作成しようと思ったけれど、もうあるからまずはそれを完了させてくれとのこと。&lt;br /&gt;
+webからgithubを確認すると既に&lt;code&gt;2016-03-14-0349&lt;/code&gt;があるから何でだろうと。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/W/ git:develop ❯❯❯ git branch | grep release
+  release/2016-03-14-0349
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;grepしてみるとブランチが存在してる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/W/ git:develop ❯❯❯ git branch -D release/2016-03-14-0349
+Deleted branch release/2016-03-14-0349 (was 0c652fd).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ブランチを削除して完了。無事にリリース作業に移れた。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>gemをインストールしたけれど見つからない時に疑うこと</title>
