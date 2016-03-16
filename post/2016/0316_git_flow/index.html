@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【第2章】公的機関の成果/基本と原則 &middot; kotazi.com</title>
+		<title>【git】There is an existing release branchへの対処 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,37 +32,32 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【第2章】公的機関の成果/基本と原則</h1>
-                    <h2 class="headline">November 24, 2015</h2>
+                    <h1>【git】There is an existing release branchへの対処</h1>
+                    <h2 class="headline">March 16, 2016</h2>
                 </header>
                 <section id="post-body">
-                    
+                    <p><code>git flow</code>のメモ。</p>
 
-<p>学生のころは分からなかったことが分かる気がした。<br />
-ドラッカーの基本と原則をKidleで読みなおした。</p>
+<p>リリースをしようとした時に下記のような注意が出てしまった。</p>
 
-<hr>
+<pre><code>~/W/ git:develop ❯❯❯ git flow release start 2016-03-16-0349
+There is an existing release branch (2016-03-14-0349). Finish that one first.
+</code></pre>
 
-<h2 id="多元社会の到来:b0aa24f3472b1b76afe363662b77c804">多元社会の到来</h2>
+<p>リリースブランチを作成しようと思ったけれど、もうあるからまずはそれを完了させてくれとのこと。<br />
+webからgithubを確認すると既に<code>2016-03-14-0349</code>があるから何でだろうと。</p>
 
-<p>企業以外の組織もマネジメントを必要としている。また、企業内の各部門でもマネジメントは必要。</p>
+<pre><code>~/W/ git:develop ❯❯❯ git branch | grep release
+  release/2016-03-14-0349
+</code></pre>
 
-<h2 id="公的機関不振の原因:b0aa24f3472b1b76afe363662b77c804">公的機関不振の原因</h2>
+<p>grepしてみるとブランチが存在してる。</p>
 
-<p>公的機関に欠けているものは、成果であって効率ではない。効率によって成果を手にすることはできない。</p>
+<pre><code>~/W/ git:develop ❯❯❯ git branch -D release/2016-03-14-0349
+Deleted branch release/2016-03-14-0349 (was 0c652fd).
+</code></pre>
 
-<p>公的機関と企業の基本的な違いは、支払いの受け方にある。予算から支払いを受けるということが、成果と業績の意味を変える。予算型組織における成果とは予算獲得である。
-予算型組織において、少ない予算、少ない人員で成果を上げることは業績にならない。むしろ組織を危うくしかねない。</p>
-
-<h2 id="公的機関成功の条件:b0aa24f3472b1b76afe363662b77c804">公的機関成功の条件</h2>
-
-<p>公的機関が成果を上げるうえで必要とするのは偉大な人物ではない。仕組みである。<br />
-公的機関に必要なことは、企業のまねではない。もちろん、成果について評価することは必要である。だがそれらのものは、何よりもまず、病院らしく、行政組織らしく、政府らしくなければならない。自らに特有の使命、も汽笛、機能について徹底的に検討しなければならない。</p>
-
-<hr>
-
-<p>公的機関について考えたことはあまりなかった。<br />
-予算型組織という言葉が印象に残った。</p>
+<p>ブランチを削除して完了。無事にリリース作業に移れた。</p>
 
                 </section>
             </article>
@@ -75,7 +70,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015112301%2f - %e3%80%90%e7%ac%ac2%e7%ab%a0%e3%80%91%e5%85%ac%e7%9a%84%e6%a9%9f%e9%96%a2%e3%81%ae%e6%88%90%e6%9e%9c%2f%e5%9f%ba%e6%9c%ac%e3%81%a8%e5%8e%9f%e5%89%87 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0316_git_flow%2f - %e3%80%90git%e3%80%91There%20is%20an%20existing%20release%20branch%e3%81%b8%e3%81%ae%e5%af%be%e5%87%a6 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -92,10 +87,6 @@
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0316_git_flow/">【git】There is an existing release branchへの対処<aside class="dates">Mar 16</aside></a>
-        </li>
         
    
     
