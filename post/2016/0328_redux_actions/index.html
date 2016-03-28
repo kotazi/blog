@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>HugoブログとGithub Pagesと独自ドメイン &middot; kotazi.com</title>
+		<title>【訳読】2.1 Actions|Redux &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,57 +32,132 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>HugoブログとGithub Pagesと独自ドメイン</h1>
-                    <h2 class="headline">November 12, 2015</h2>
+                    <h1>【訳読】2.1 Actions|Redux</h1>
+                    <h2 class="headline">March 28, 2016</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>Wordpressで続けていたブログをやめて、Hugoでブログを作りなおした。
-以前の記事は削除した。
-<a href="https://gohugo.io/">Hugo</a>はGoで書かれた静的サイトジェネレータだ。早くて便利。</p>
+<p><a href="http://redux.js.org/docs/basics/Actions.html">2.1 Actions|Redux</a></p>
 
 <hr>
 
-<h2 id="hugoブログの立ちあげ:19f26223fdf7a5c73f196d31f8af4d1d">Hugoブログの立ちあげ</h2>
+<h2 id="actions:7bfca12585449761f97344878800fa11">Actions</h2>
 
-<p>基本的には公式サイトの<a href="https://gohugo.io/overview/quickstart/">Quickstart</a>に従う。</p>
+<p>Actionはアプリケーションからの情報をStoreへ渡す。
+<a href="http://redux.js.org/docs/api/Store.html#dispatch"><code>store.dispatch()</code></a>を使ってActionをStoreへ送信する。</p>
 
-<pre><code># Hugoをローカルで立ちあげ
-hugo server --theme=hugo-cactus-theme --buildDrafts -w
+<p>ToDoアイテムのアクションサンプル:</p>
 
-# 新しく投稿
-hugo new post/newpost.md
+<pre><code>const ADD_TODO = 'ADD_TODO'
 </code></pre>
 
-<h2 id="github-pages:19f26223fdf7a5c73f196d31f8af4d1d">Github Pages</h2>
+<pre><code>{
+  type: ADD_TODO,
+  text: 'Build my first Redux app'
+}
+</code></pre>
 
-<p>Github PagesもHugo公式の<a href="https://gohugo.io/tutorials/github-pages-blog/">Hosting on GitHub Pages</a>を参考にする。</p>
+<p>ActionはプレーンなJavaScriptオブジェクトである。<code>type</code>プロパティを必ず持ち、Actionの種類を示す。
+Typeは文字列の定数として定義されるべきであり、アプリケーションが肥大化した際はモジュールに分割することができる。</p>
 
-<ul>
-<li><code>git subtree</code>を使う</li>
-<li>全体のコンテンツは<code>master</code>ブランチに、公開ファイルを<code>gh-pages</code>ブランチで運用</li>
-<li><code>deploy.sh</code>の作成</li>
-</ul>
+<pre><code>import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
+</code></pre>
 
-<p>チュートリアルに沿えばGithub Pagesにサイトができる。</p>
+<p><code>type</code>以外のActionオブジェクトの構造はあなた次第だ。興味があれば<a href="https://github.com/acdlite/flux-standard-action">Flux Standard Action</a>を見ること。</p>
 
-<h2 id="独自ドメイン:19f26223fdf7a5c73f196d31f8af4d1d">独自ドメイン</h2>
+<p>ユニークなIDを付けることはいいかも。</p>
 
-<p>僕はもともとムームードメインで取得したドメインと、ロリポップのレンタルサーバーを使ってWordpressブログを使っていた。<br />
-それにあたりこちらの記事を参考にした。</p>
+<pre><code>{
+  type: COMPLETE_TODO,
+  index: 5
+}
+</code></pre>
 
-<p><a href="http://tanksuzuki.com/post/hugo-github-pages-2/">Hugo + GitHub Pagesでブログを作る#2|TANKSUZUKI.COM</a></p>
+<h2 id="action-creators:7bfca12585449761f97344878800fa11">Action Creators</h2>
 
-<ul>
-<li>サブドメインと<code>Zone Apex</code>(kotazi.com)で公開するのでは手順が異なる</li>
-<li>ムームードメインでは<code>Apex Alias</code>が使えない</li>
-<li>そのため<a href="https://www.gehirn.jp/">Gehirn DNS</a>などを使う必要がある</li>
-</ul>
+<p><strong>Action creators</strong> はActionを生成する関数である。
+&ldquo;Action&rdquo;と&rdquo;Action Creator&rdquo;をまとめるのは簡単なのでそのほうがいいかも。</p>
 
-<h5 id="toc_3:19f26223fdf7a5c73f196d31f8af4d1d">　</h5>
+<p>典型的なFluxの実装では、こんな感じでAction CreatorはDispachのトリガーとなる。</p>
 
-<p>そんな感じでブログの移行が完了しました。</p>
+<pre><code>function addTodoWithDispatch(text) {
+  const action = {
+    type: ADD_TODO,
+    text
+  }
+  dispatch(action)
+}
+</code></pre>
+
+<p>それに対しReduxでは、Action Creatorは単純にActionを返すだけ。</p>
+
+<pre><code>function addTodo(text) {
+  return {
+    type: ADD_TODO,
+    text
+  }
+}
+</code></pre>
+
+<p>これによりテストがすごく簡単になる。
+実際dispachするには<code>dispach()</code>関数に結果を渡すだけだ。</p>
+
+<pre><code>dispatch(addTodo(text))
+dispatch(completeTodo(index))
+</code></pre>
+
+<p>また <strong>bound action creator</strong> を作成して自動的にdispachすることも可能。</p>
+
+<pre><code>const boundAddTodo = (text) =&gt; dispatch(addTodo(text))
+const boundCompleteTodo = (index) =&gt; dispatch(completeTodo(index))
+</code></pre>
+
+<p>こんな感じで呼び出すことができる。</p>
+
+<pre><code>boundAddTodo(text)
+boundCompleteTodo(index)
+</code></pre>
+
+<p><code>dispach()</code>関数はStoreから<code>store.dispatch()</code>を使って直接アクセスすることができるが、<a href="http://github.com/gaearon/react-redux">react-redux</a>の<code>connect()</code>は便利。
+<a href="http://redux.js.org/docs/api/bindActionCreators.html"><code>bindActionCreators()</code></a>を使って自動的にたくさんのアクションを<code>dispatch()</code>関数にバインドすることもできる。</p>
+
+<h2 id="source-code:7bfca12585449761f97344878800fa11">Source Code</h2>
+
+<pre><code>/*
+ * action types
+ */
+
+export const ADD_TODO = 'ADD_TODO'
+export const COMPLETE_TODO = 'COMPLETE_TODO'
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+
+/*
+ * other constants
+ */
+
+export const VisibilityFilters = {
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_COMPLETED: 'SHOW_COMPLETED',
+  SHOW_ACTIVE: 'SHOW_ACTIVE'
+}
+
+/*
+ * action creators
+ */
+
+export function addTodo(text) {
+  return { type: ADD_TODO, text }
+}
+
+export function completeTodo(index) {
+  return { type: COMPLETE_TODO, index }
+}
+
+export function setVisibilityFilter(filter) {
+  return { type: SET_VISIBILITY_FILTER, filter }
+}
+</code></pre>
 
                 </section>
             </article>
@@ -95,7 +170,7 @@ hugo new post/newpost.md
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111201%2f - Hugo%e3%83%96%e3%83%ad%e3%82%b0%e3%81%a8Github%20Pages%e3%81%a8%e7%8b%ac%e8%87%aa%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0328_redux_actions%2f - %e3%80%90%e8%a8%b3%e8%aa%ad%e3%80%912.1%20Actions%7cRedux by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -112,10 +187,6 @@ hugo new post/newpost.md
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0328_redux_actions/">【訳読】2.1 Actions|Redux<aside class="dates">Mar 28</aside></a>
-        </li>
         
    
     
