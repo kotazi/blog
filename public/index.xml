@@ -6,8 +6,139 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Mar 2016 11:40:44 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2016 18:34:45 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】2.1 Actions|Redux</title>
+      <link>http://kotazi.github.io/blog/post/2016/0328_redux_actions/</link>
+      <pubDate>Mon, 28 Mar 2016 18:34:45 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0328_redux_actions/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://redux.js.org/docs/basics/Actions.html&#34;&gt;2.1 Actions|Redux&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;actions:7bfca12585449761f97344878800fa11&#34;&gt;Actions&lt;/h2&gt;
+
+&lt;p&gt;Actionはアプリケーションからの情報をStoreへ渡す。
+&lt;a href=&#34;http://redux.js.org/docs/api/Store.html#dispatch&#34;&gt;&lt;code&gt;store.dispatch()&lt;/code&gt;&lt;/a&gt;を使ってActionをStoreへ送信する。&lt;/p&gt;
+
+&lt;p&gt;ToDoアイテムのアクションサンプル:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const ADD_TODO = &#39;ADD_TODO&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  type: ADD_TODO,
+  text: &#39;Build my first Redux app&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ActionはプレーンなJavaScriptオブジェクトである。&lt;code&gt;type&lt;/code&gt;プロパティを必ず持ち、Actionの種類を示す。
+Typeは文字列の定数として定義されるべきであり、アプリケーションが肥大化した際はモジュールに分割することができる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import { ADD_TODO, REMOVE_TODO } from &#39;../actionTypes&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;type&lt;/code&gt;以外のActionオブジェクトの構造はあなた次第だ。興味があれば&lt;a href=&#34;https://github.com/acdlite/flux-standard-action&#34;&gt;Flux Standard Action&lt;/a&gt;を見ること。&lt;/p&gt;
+
+&lt;p&gt;ユニークなIDを付けることはいいかも。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  type: COMPLETE_TODO,
+  index: 5
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;action-creators:7bfca12585449761f97344878800fa11&#34;&gt;Action Creators&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Action creators&lt;/strong&gt; はActionを生成する関数である。
+&amp;ldquo;Action&amp;rdquo;と&amp;rdquo;Action Creator&amp;rdquo;をまとめるのは簡単なのでそのほうがいいかも。&lt;/p&gt;
+
+&lt;p&gt;典型的なFluxの実装では、こんな感じでAction CreatorはDispachのトリガーとなる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function addTodoWithDispatch(text) {
+  const action = {
+    type: ADD_TODO,
+    text
+  }
+  dispatch(action)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;それに対しReduxでは、Action Creatorは単純にActionを返すだけ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function addTodo(text) {
+  return {
+    type: ADD_TODO,
+    text
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これによりテストがすごく簡単になる。
+実際dispachするには&lt;code&gt;dispach()&lt;/code&gt;関数に結果を渡すだけだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dispatch(addTodo(text))
+dispatch(completeTodo(index))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;また &lt;strong&gt;bound action creator&lt;/strong&gt; を作成して自動的にdispachすることも可能。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const boundAddTodo = (text) =&amp;gt; dispatch(addTodo(text))
+const boundCompleteTodo = (index) =&amp;gt; dispatch(completeTodo(index))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じで呼び出すことができる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;boundAddTodo(text)
+boundCompleteTodo(index)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;dispach()&lt;/code&gt;関数はStoreから&lt;code&gt;store.dispatch()&lt;/code&gt;を使って直接アクセスすることができるが、&lt;a href=&#34;http://github.com/gaearon/react-redux&#34;&gt;react-redux&lt;/a&gt;の&lt;code&gt;connect()&lt;/code&gt;は便利。
+&lt;a href=&#34;http://redux.js.org/docs/api/bindActionCreators.html&#34;&gt;&lt;code&gt;bindActionCreators()&lt;/code&gt;&lt;/a&gt;を使って自動的にたくさんのアクションを&lt;code&gt;dispatch()&lt;/code&gt;関数にバインドすることもできる。&lt;/p&gt;
+
+&lt;h2 id=&#34;source-code:7bfca12585449761f97344878800fa11&#34;&gt;Source Code&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;/*
+ * action types
+ */
+
+export const ADD_TODO = &#39;ADD_TODO&#39;
+export const COMPLETE_TODO = &#39;COMPLETE_TODO&#39;
+export const SET_VISIBILITY_FILTER = &#39;SET_VISIBILITY_FILTER&#39;
+
+/*
+ * other constants
+ */
+
+export const VisibilityFilters = {
+  SHOW_ALL: &#39;SHOW_ALL&#39;,
+  SHOW_COMPLETED: &#39;SHOW_COMPLETED&#39;,
+  SHOW_ACTIVE: &#39;SHOW_ACTIVE&#39;
+}
+
+/*
+ * action creators
+ */
+
+export function addTodo(text) {
+  return { type: ADD_TODO, text }
+}
+
+export function completeTodo(index) {
+  return { type: COMPLETE_TODO, index }
+}
+
+export function setVisibilityFilter(filter) {
+  return { type: SET_VISIBILITY_FILTER, filter }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>【読書】「正義」は決められるのか？</title>
@@ -1243,64 +1374,6 @@ Deleted branch release/2016-03-14-0349 (was 0c652fd).
 とくに現場経験のあまりない人間が読むにはちょうどよい感じがした。&lt;/p&gt;
 
 &lt;p&gt;表紙から受けたイメージよりはかなり入門的な本。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Rails】whenever導入を通した学び</title>
-      <link>http://kotazi.github.io/blog/post/2016/0227_whenever/</link>
-      <pubDate>Sat, 27 Feb 2016 20:18:53 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0227_whenever/</guid>
-      <description>
-
-&lt;p&gt;Railsのwheneverを使う機会があったのでその学びをまとめる。
-やりたかっとことはRakeタスクを作成し、wheneverを使って定期的にSlackへポストする。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;slack通知:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;Slack通知&lt;/h2&gt;
-
-&lt;p&gt;Slackへの通知はすごく簡単。&lt;br /&gt;
-ここにだいたい書いてある。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/ysk_1031/items/f74c8b8274ec6c58520d&#34;&gt;RailsアプリからSlackに通知&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;とりあえず、&lt;code&gt;config/intializers/slack_api.rb&lt;/code&gt;を作成してtokenを登録しておけば、いろいろできるみたい。&lt;/p&gt;
-
-&lt;h2 id=&#34;rakeタスクの作成:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;rakeタスクの作成&lt;/h2&gt;
-
-&lt;p&gt;初めてrakeタスクを作成した。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.ruby-lang.org/ja/2.2.0/library/rake.html&#34;&gt;library rake&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rake &amp;lt;タスク名&amp;gt; # 指定のタスクを実行。
-$ rake &amp;lt;パラメータキー&amp;gt;=&amp;lt;値&amp;gt; &amp;lt;タスク名&amp;gt; # パラメータ指定ありで、指定のタスクを実行。
-$ rake -h # 使い方を表示。
-$ rake -T # 定義されているタスク一覧を表示
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;(引用:&lt;a href=&#34;http://unageanu.hatenablog.com/entry/20100829/1283069269&#34;&gt;Rakeの基本的な使い方まとめ|うなの日記&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h2 id=&#34;whenever:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;whenever&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/javan/whenever&#34;&gt;javan/whenever|github&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://morizyun.github.io/blog/whenever-gem-rails-ruby-capistrano/&#34;&gt;Wheneverは導入が超簡単なcrontab管理ライブラリGemです！&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;mixpanel:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;mixpanel&lt;/h2&gt;
-
-&lt;p&gt;mixpanelのデータのエクスポートしたい。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://mixpanel.com/docs/api-documentation/data-export-api&#34;&gt;Data Export API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://kitak.hatenablog.jp/entry/2014/10/07/231003&#34;&gt;Rubyでmixpanelのイベントをtrackしたり、データをexportする術&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
