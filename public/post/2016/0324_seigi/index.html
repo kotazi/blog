@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【FullCalendar】Basic Usage &middot; kotazi.com</title>
+		<title>【読書】「正義」は決められるのか？ &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,95 +32,52 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【FullCalendar】Basic Usage</h1>
-                    <h2 class="headline">January 21, 2016</h2>
+                    <h1>【読書】「正義」は決められるのか？</h1>
+                    <h2 class="headline">March 25, 2016</h2>
                 </header>
                 <section id="post-body">
-                    
+                    <p>21冊目。</p>
 
-<p><a href="http://fullcalendar.io/">FullCalendar</a>の基本的な使い方です。</p>
+<p><a  href="http://www.amazon.co.jp/gp/product/4761271264/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4761271264&linkCode=as2&tag=kotazi-22">「正義」は決められるのか?</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4761271264" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<p>を読みました。</p>
+
+<hr>
 
 <ul>
-<li><a href="http://fullcalendar.io/docs/usage/">Basic Usage</a></li>
+<li>トロッコ問題</li>
+<li>功利主義</li>
+<li>アナロジー</li>
 </ul>
 
-<hr>
+<p>要点はこの3つ。</p>
 
-<h3 id="basic-usage:618077e916e5f8ed5fedc9c7378a801b">Basic Usage</h3>
+<p>アナロジーの話が特に面白かった。
+有名なトロッコ問題というのは、
+トロッコが暴走していてこのままだと先にいる5人を轢き殺してしまう。<br />
+あなたはスイッチでトロッコの進行方向を切り替えることができるが、
+そうすると、その先にいる1人の人間を轢き殺してしまう。</p>
 
-<p>Webページにカレンダーを組み込む最初のステップは、正しいJSとCSSファイルを用意することです。
-FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイルを<code>&lt;head&gt;</code>に含めたことを確認してください。</p>
+<p>スイッチを切り替えるか？</p>
 
-<pre><code>&lt;link rel='stylesheet' href='fullcalendar/fullcalendar.css' /&gt;
-&lt;script src='lib/jquery.min.js'&gt;&lt;/script&gt;
-&lt;script src='lib/moment.min.js'&gt;&lt;/script&gt;
-&lt;script src='fullcalendar/fullcalendar.js'&gt;&lt;/script&gt;
-</code></pre>
+<p>これを多くの人間に質問するとスイッチを切り替えるという人は多数派になるらしい。</p>
 
-<p>jQueryとMomentは必ずFullCalendarのJSファイルより先に読み込んでください。</p>
+<p>こういう考え方を功利主義といって、「最大多数の最大幸福」を基本原理とした論理思想。</p>
 
-<p>もしドラッグやリサイズをするのであれば、追加する必要のあるライブラリがあるかもしれないので、<a href="http://fullcalendar.io/docs/event_ui/Requirements/">こちら</a>を見てください。</p>
+<p>そういう人たちに例えばこういう質問を返す。
+死にそうな人が5人いるけれど、別の一人から血清を作れば助けることができる。そうするとその一人は死んでしまうのだけれど、
+オペをするべきか。みたいな。</p>
 
-<p>依存関係を書き終えたら、カレンダーを初期化するためのスクリプトを記述します。
-このコードはページの初期化後に実行される必要があります。最も良い方法はjQueryの<code>$(document).ready</code>あたりを使うことです。</p>
+<p>そうするとYesの数が大きく減るらしい。</p>
 
-<pre><code>$(document).ready(function() {
+<p>なんでか。ということになるのだけれど、</p>
 
-    // page is now ready, initialize the calendar...
+<p>こういう時にアナロジーという言葉が出てくる。</p>
 
-    $('#calendar').fullCalendar({
-        // put your options and callbacks here
-    })
+<p>類推。</p>
 
-});
-</code></pre>
-
-<p>上記のコードは<code>&lt;script&gt;</code>タグで囲んでください。
-ページ内のID<code>calendar</code>要素の中にカレンダーを生成します。</p>
-
-<pre><code>&lt;div id='calendar'&gt;&lt;/div&gt;
-</code></pre>
-
-<p>これで空っぽの月カレンダーが表示されると思います。
-イベントの表示方法について学ぶには<a href="http://fullcalendar.io/docs/google_calendar/">Google Calendar</a>もしくは<a href="http://fullcalendar.io/docs/event_data/">Event Data</a>のセクションを参考にしてください。</p>
-
-<hr>
-
-<h3 id="options:618077e916e5f8ed5fedc9c7378a801b">Options</h3>
-
-<p>FullCalendarのドキュメントの大半は、オプションの影響や振る舞いについてです。
-オプションはこのように、たいていカレンダーの初期化時にセットされます。</p>
-
-<pre><code>$('#calendar').fullCalendar({
-    weekends: false // will hide Saturdays and Sundays
-});
-</code></pre>
-
-<hr>
-
-<h3 id="callbacks:618077e916e5f8ed5fedc9c7378a801b">Callbacks</h3>
-
-<p>コールバックはオプションのように並べられますが、これらの関数は特別なことが起こらなければ呼ばれません。
-下記のサンプルでは、ユーザーが日にちをクリックするとアラートが表示されるものです。</p>
-
-<pre><code>$('#calendar').fullCalendar({
-    dayClick: function() {
-        alert('a day has been clicked!');
-    }
-});
-</code></pre>
-
-<hr>
-
-<h3 id="methods:618077e916e5f8ed5fedc9c7378a801b">Methods</h3>
-
-<p>メソッドは様々な方法を提供します。
-メソッドは既に初期化されたカレンダーのjQueryオブジェクトに対し、<code>fullCalendar</code>コマンドを買います。</p>
-
-<pre><code>$('#calendar').fullCalendar('next');
-</code></pre>
-
-<p>これは<code>next</code>メソッドです。カレンダーを次に進めるためのメソッドです。</p>
+<p>似ていれば分かりやすい説明になっていいんだけど、説得力だけを持ってしまって似ていないこともあるから
+それは気をつけないといけない。</p>
 
                 </section>
             </article>
@@ -133,7 +90,7 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0121_calendar%2f - %e3%80%90FullCalendar%e3%80%91Basic%20Usage by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0324_seigi%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91%e3%80%8c%e6%ad%a3%e7%be%a9%e3%80%8d%e3%81%af%e6%b1%ba%e3%82%81%e3%82%89%e3%82%8c%e3%82%8b%e3%81%ae%e3%81%8b%ef%bc%9f by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -150,10 +107,6 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0324_seigi/">【読書】「正義」は決められるのか？<aside class="dates">Mar 25</aside></a>
-        </li>
         
    
     

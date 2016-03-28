@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【FullCalendar】Basic Usage &middot; kotazi.com</title>
+		<title>【読書】Zero to One &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,95 +32,76 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【FullCalendar】Basic Usage</h1>
-                    <h2 class="headline">January 21, 2016</h2>
+                    <h1>【読書】Zero to One</h1>
+                    <h2 class="headline">March 23, 2016</h2>
                 </header>
                 <section id="post-body">
-                    
+                    <p>20冊目。</p>
 
-<p><a href="http://fullcalendar.io/">FullCalendar</a>の基本的な使い方です。</p>
+<p><a  href="http://www.amazon.co.jp/gp/product/4140816589/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4140816589&linkCode=as2&tag=kotazi-22">ゼロ・トゥ・ワン―君はゼロから何を生み出せるか</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4140816589" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<p>を読みました。</p>
+
+<hr>
+
+<p>ペイパルマフィアの一人、ピーター・ティールの著書。<br />
+「我々は空飛ぶ自動車を欲したのに、代わりに手にしたのは百四十文字だ。」
+とTwitterを揶揄しているのは有名。</p>
+
+<p>ティールは今流行の「リーン・スタートアップ」とは真逆の考え方を示す。
+リーン・スタートアップでは事業計画はあまりせずに、改善をすることを大事にしているが、
+ティールはそうしたスタートアップは結局のところ成功しにくいと考える。</p>
 
 <ul>
-<li><a href="http://fullcalendar.io/docs/usage/">Basic Usage</a></li>
+<li>1. 僕たちは未来を創ることができるか</li>
+<li>2. 一九九九年のお祭り騒ぎ</li>
+<li>3. 幸福な企業はみなそれぞれに違う</li>
+<li>4. イデオロギーとしての競争</li>
+<li>5. 終盤を制する</li>
+<li>6. 人生は宝くじじゃない</li>
+<li>7. カネの流れを追え</li>
+<li>8. 隠れた真実</li>
+<li>9. ティールの法則</li>
+<li>10. マフィアの力学</li>
+<li>11. それを作れば、みんあやってくる？</li>
+<li>12. 人間と機会</li>
+<li>13. エネルギー20</li>
+<li>14. 創業者のパラドックス</li>
 </ul>
 
-<hr>
+<p>「２１世紀をこれまでより平和な繁栄の時代にしてくれる新たなテクノロジーを思い描き、それを創り出すことが、今の僕らに与えられた挑戦なのだ。」</p>
 
-<h3 id="basic-usage:618077e916e5f8ed5fedc9c7378a801b">Basic Usage</h3>
+<p>という一文が心に残った。</p>
 
-<p>Webページにカレンダーを組み込む最初のステップは、正しいJSとCSSファイルを用意することです。
-FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイルを<code>&lt;head&gt;</code>に含めたことを確認してください。</p>
+<p>進歩には2種類があるといい。水平進捗と垂直進捗と述べた。
+水平的進捗とは1台のタイプライターから100台作ること、成功のコピーと言い、
+垂直的進歩はタイプライターからワープロを生み出すことだと言った。</p>
 
-<pre><code>&lt;link rel='stylesheet' href='fullcalendar/fullcalendar.css' /&gt;
-&lt;script src='lib/jquery.min.js'&gt;&lt;/script&gt;
-&lt;script src='lib/moment.min.js'&gt;&lt;/script&gt;
-&lt;script src='fullcalendar/fullcalendar.js'&gt;&lt;/script&gt;
-</code></pre>
+<p>日本の多くのベンチャー企業やそこで働く人たちも、大きなことを述べているようで
+水平進捗しか想像できていないということはあるなあと思ったし、
+そういう部分を真っ向から否定するティールの視点の高さに少し痺れた。</p>
 
-<p>jQueryとMomentは必ずFullCalendarのJSファイルより先に読み込んでください。</p>
+<p>他にも独占市場を築くことを進めていて、そのためにはどんなスタートアップも非常に小さな市場から始めるべきだといったり、
+ニッチ市場を創造し支配したら、次は関連する少し大きな市場に徐々に拡大してゆくべきだと。</p>
 
-<p>もしドラッグやリサイズをするのであれば、追加する必要のあるライブラリがあるかもしれないので、<a href="http://fullcalendar.io/docs/event_ui/Requirements/">こちら</a>を見てください。</p>
+<p>企業は創業者の想像以上の会社にはならないというけれど、
+始める時に視点を高く持つのは大事だと感じた。</p>
 
-<p>依存関係を書き終えたら、カレンダーを初期化するためのスクリプトを記述します。
-このコードはページの初期化後に実行される必要があります。最も良い方法はjQueryの<code>$(document).ready</code>あたりを使うことです。</p>
+<p>あと面白かったのは、
+日本だとよく大企業かベンチャーか、とかで意識の高さとか派閥があったりするけど、ティールは</p>
 
-<pre><code>$(document).ready(function() {
+<ul>
+<li>あいまいな楽観主義者</li>
+<li>あいまいな悲観主義者</li>
+<li>明確な楽観主義者</li>
+<li>明確な悲観主義者</li>
+</ul>
 
-    // page is now ready, initialize the calendar...
+<p>に人の考えたを分類していて、あいまいな楽観主義者のことをかなりボロクソに言っていた。</p>
 
-    $('#calendar').fullCalendar({
-        // put your options and callbacks here
-    })
+<p>現状に満足して大して何も考えていないのに、この先もよくなっていくんだろうとか考えているからみたい。</p>
 
-});
-</code></pre>
-
-<p>上記のコードは<code>&lt;script&gt;</code>タグで囲んでください。
-ページ内のID<code>calendar</code>要素の中にカレンダーを生成します。</p>
-
-<pre><code>&lt;div id='calendar'&gt;&lt;/div&gt;
-</code></pre>
-
-<p>これで空っぽの月カレンダーが表示されると思います。
-イベントの表示方法について学ぶには<a href="http://fullcalendar.io/docs/google_calendar/">Google Calendar</a>もしくは<a href="http://fullcalendar.io/docs/event_data/">Event Data</a>のセクションを参考にしてください。</p>
-
-<hr>
-
-<h3 id="options:618077e916e5f8ed5fedc9c7378a801b">Options</h3>
-
-<p>FullCalendarのドキュメントの大半は、オプションの影響や振る舞いについてです。
-オプションはこのように、たいていカレンダーの初期化時にセットされます。</p>
-
-<pre><code>$('#calendar').fullCalendar({
-    weekends: false // will hide Saturdays and Sundays
-});
-</code></pre>
-
-<hr>
-
-<h3 id="callbacks:618077e916e5f8ed5fedc9c7378a801b">Callbacks</h3>
-
-<p>コールバックはオプションのように並べられますが、これらの関数は特別なことが起こらなければ呼ばれません。
-下記のサンプルでは、ユーザーが日にちをクリックするとアラートが表示されるものです。</p>
-
-<pre><code>$('#calendar').fullCalendar({
-    dayClick: function() {
-        alert('a day has been clicked!');
-    }
-});
-</code></pre>
-
-<hr>
-
-<h3 id="methods:618077e916e5f8ed5fedc9c7378a801b">Methods</h3>
-
-<p>メソッドは様々な方法を提供します。
-メソッドは既に初期化されたカレンダーのjQueryオブジェクトに対し、<code>fullCalendar</code>コマンドを買います。</p>
-
-<pre><code>$('#calendar').fullCalendar('next');
-</code></pre>
-
-<p>これは<code>next</code>メソッドです。カレンダーを次に進めるためのメソッドです。</p>
+<p>ひたすら視点の高い本だった。</p>
 
                 </section>
             </article>
@@ -133,7 +114,7 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0121_calendar%2f - %e3%80%90FullCalendar%e3%80%91Basic%20Usage by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0323_zero_to_one%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91Zero%20to%20One by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -157,10 +138,6 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
         
    
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0323_zero_to_one/">【読書】Zero to One<aside class="dates">Mar 23</aside></a>
-        </li>
         
    
     

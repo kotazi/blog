@@ -1,13 +1,14 @@
 +++
 date = "2016-03-23T11:40:44+09:00"
-draft = true
+draft = false
 title = "【読書】考える練習をしよう"
 tags = ["読書"]
 +++
 
 22冊目。
 
-考える練習をしよう
+<a  href="http://www.amazon.co.jp/gp/product/4794919514/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4794919514&linkCode=as2&tag=kotazi-22">考える練習をしよう (子どものためのライフ・スタイル)</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4794919514" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
 
 を読みました。
 
