@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redux on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/redux/</link>
+    <description>Recent content in Redux on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Mar 2016 18:55:03 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/redux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】2.2 Reducers|Redux</title>
+      <link>http://kotazi.github.io/blog/post/2016/0329_redux_reducers/</link>
+      <pubDate>Tue, 29 Mar 2016 18:55:03 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0329_redux_reducers/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://redux.js.org/docs/basics/Reducers.html&#34;&gt;2.2 Reducers|Redux&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Actionは何かが起こったという事実は述べるが、アプリケーションのStateがどのように変わったかということまで細かくは言わない。
+それはReducerの仕事だ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;designing-the-state-shape:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Designing the State Shape&lt;/h2&gt;
+
+&lt;p&gt;Reduxではアプリケーションの全てのステートはシングルオブジェクトとして保たれる。&lt;/p&gt;
+
+&lt;p&gt;ToDoアプリでは2つのことをストアしたい。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;現在選択されているフィルター&lt;/li&gt;
+&lt;li&gt;実際のToDoリスト&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;UI State同様に、ストアしたいデータが見つかると思う。
+それは良いことだけれど、UI Stateからデータは分離するようにすること。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// これがState(ステート）!!
+{
+  visibilityFilter: &#39;SHOW_ALL&#39;,
+  todos: [
+    {
+      text: &#39;Consider using Redux&#39;,
+      completed: true,
+    },
+    {
+      text: &#39;Keep all state in a single tree&#39;,
+      completed: false
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;handling-actions:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Handling Actions&lt;/h2&gt;
+
+&lt;p&gt;Stateオブジェクトの形が決まったので、Reducerを準備していく。
+Reducerは前のStateとActionを引数に取り、次のステートを返すピュア関数だ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(previousState, action) =&amp;gt; newState
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Array.prototype.reduce&lt;/code&gt;関数のようだからReducerと呼ばれる。&lt;br /&gt;
+Reducerの中で決してしてはならないことが下記だ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;引数を変えること&lt;/li&gt;
+&lt;li&gt;APIを呼び出したり、ルーティングを変更すること&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Date.now()&lt;/code&gt;や&lt;code&gt;Math.random()&lt;/code&gt;といったピュアでない関数を呼ぶこと&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;とりあえずReducerはピュアであることを覚えておこう。
+&lt;strong&gt;ただ計算するだけであり、同じ引数を与えれば同じ次の結果を返す。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;最初のStateを決めるところから始めよう。最初は&lt;code&gt;undefined&lt;/code&gt;のStateでReducerを呼ぶ。
+そうして最初のステートを取得する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import { VisibilityFilters } from &#39;./actions&#39;
+
+// 最初のステート
+const initialState = {
+  visibilityFilter: VisibilityFilters.SHOW_ALL,
+  todos: []
+}
+
+function todoApp(state, action) {
+  if (typeof state === &#39;undefined&#39;) {
+    return initialState
+  }
+
+  // For now, don’t handle any actions
+  // and just return the state given to us.
+  return state
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ES6だとこんなふうにも書ける。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todoApp(state = initialState, action) {
+  // For now, don’t handle any actions
+  // and just return the state given to us.
+  return state
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;SET_VISIBILITY_FILTER&lt;/code&gt;を操作する。大切なのはStateの&lt;code&gt;visibilityFilter&lt;/code&gt;を変更すること。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    default:
+      return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;メモ。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;state&lt;/code&gt;を変更しないこと。&lt;code&gt;Object.assign()&lt;/code&gt;を使ってコピーを作成する。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;default&lt;/code&gt;の時は前のステートを返すこと。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;handling-more-actions:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Handling More Actions&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ADD_TODO&lt;/code&gt;も追加する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+      return Object.assign({}, state, {
+        todos: [
+          ...state.todos,
+          {
+            text: action.text,
+            completed: false
+          }
+        ]
+      })    
+    default:
+      return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;先ほどと同じように、&lt;code&gt;state&lt;/code&gt;に直接書き込むことはせず、新しいオブジェクトを返す。&lt;/p&gt;
+
+&lt;p&gt;最後に&lt;code&gt;COMPLETE_TODO&lt;/code&gt;ハンドラの実装。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;case COMPLETE_TODO:
+  return Object.assign({}, state, {
+    todos: state.todos.map((todo, index) =&amp;gt; {
+      if (index === action.index) {
+        return Object.assign({}, todo, {
+          completed: true
+        })
+      }
+      return todo
+    })
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;splitting-reducers:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Splitting Reducers&lt;/h2&gt;
+
+&lt;p&gt;かなりごちゃごちゃしてきた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+      return Object.assign({}, state, {
+        todos: [
+          ...state.todos,
+          {
+            text: action.text,
+            completed: false
+          }
+        ]
+      })
+    case COMPLETE_TODO:
+      return Object.assign({}, state, {
+        todos: state.todos.map((todo, index) =&amp;gt; {
+          if(index === action.index) {
+            return Object.assign({}, todo, {
+              completed: true
+            })
+          }
+          return todo
+        })
+      })
+    default:
+      return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;もっと綺麗に書く方法はないのか？&lt;code&gt;todos&lt;/code&gt;と&lt;code&gt;visibilityFilter&lt;/code&gt;は独立しているように見える。
+今回の場合は&lt;code&gt;todos&lt;/code&gt;はとても分離しやすい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map(todo, index) =&amp;gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      }
+    default:
+      return state
+  }
+}
+
+function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+    case COMPLETE_TODO:
+      return Object.assign({}, state, {
+        todos: todos(state.todos, action)
+      })
+    default:
+      return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;todos&lt;/code&gt;もまた&lt;code&gt;state&lt;/code&gt;を取ることに注意する。しかも配列！
+これはReducer Compositionと呼ばれ、Reduxアプリの基本的なパターンである。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;visibilityFilter&lt;/code&gt;ももっとできるんじゃない？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+  case SET_VISIBILITY_FILTER:
+    return action.filter
+  default:
+    return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;メインのReducerを各パーツとなるステートを管理するReducerを呼び出す関数に書きなおした。
+初期のステートを知る必要はない。子のReducerが初期値で何を返すかを知っていればいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map((todo, index) =&amp;gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
+function todoApp(state = {}, action) {
+  // Actionが関係している場合だけ変更して返す
+  return {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;各Recuderにとっての&lt;code&gt;state&lt;/code&gt;はことなり、各ステートに対応している。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;いいかんじ！アプリが大きくなった時はReducerを分割することができる。&lt;/p&gt;
+
+&lt;p&gt;最後に、Reducerは&lt;a href=&#34;http://redux.js.org/docs/api/combineReducers.html&#34;&gt;&lt;code&gt;conbineReducers()&lt;/code&gt;&lt;/a&gt;と呼ばれるものを提供する。このように書き換えることができるようになる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import { combineReducers } from &#39;redux&#39;
+
+const todoApp = combineReducers({
+  visibilityFilter,
+  todos
+})
+
+export default todoApp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記は下記と全く同じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export default function todoApp(state = {}, action) {
+  return {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;異なるキーや関数呼び出しを与えることができる。下2つは同じことがかいてある。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const reducer = combineReducers({
+  a: doSomethingWithA,
+  b: processB,
+  c: c
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;function reducer(state = {}, action) {
+  return {
+    a: doSomethingWithA(state.a, action),
+    b: processB(state.b, action),
+    c: c(state.c, action)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;source-code:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Source Code&lt;/h2&gt;
+
+&lt;p&gt;最終的なやつ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// combineReducersを読み込む
+import { combineReducers } from &#39;redux&#39;
+
+// 各Actionを読み込む
+import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from &#39;./actions&#39;
+const { SHOW_ALL } = VisibilityFilters
+
+function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
+function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map((todo, index) =&amp;gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+// 親となるReducer
+const todoApp = combineReducers({
+  visibilityFilter,
+  todos
+})
+
+export default todoApp
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【訳読】2.1 Actions|Redux</title>
+      <link>http://kotazi.github.io/blog/post/2016/0328_redux_actions/</link>
+      <pubDate>Mon, 28 Mar 2016 18:34:45 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0328_redux_actions/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://redux.js.org/docs/basics/Actions.html&#34;&gt;2.1 Actions|Redux&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;actions:7bfca12585449761f97344878800fa11&#34;&gt;Actions&lt;/h2&gt;
+
+&lt;p&gt;Actionはアプリケーションからの情報をStoreへ渡す。
+&lt;a href=&#34;http://redux.js.org/docs/api/Store.html#dispatch&#34;&gt;&lt;code&gt;store.dispatch()&lt;/code&gt;&lt;/a&gt;を使ってActionをStoreへ送信する。&lt;/p&gt;
+
+&lt;p&gt;ToDoアイテムのアクションサンプル:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const ADD_TODO = &#39;ADD_TODO&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  type: ADD_TODO,
+  text: &#39;Build my first Redux app&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ActionはプレーンなJavaScriptオブジェクトである。&lt;code&gt;type&lt;/code&gt;プロパティを必ず持ち、Actionの種類を示す。
+Typeは文字列の定数として定義されるべきであり、アプリケーションが肥大化した際はモジュールに分割することができる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import { ADD_TODO, REMOVE_TODO } from &#39;../actionTypes&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;type&lt;/code&gt;以外のActionオブジェクトの構造はあなた次第だ。興味があれば&lt;a href=&#34;https://github.com/acdlite/flux-standard-action&#34;&gt;Flux Standard Action&lt;/a&gt;を見ること。&lt;/p&gt;
+
+&lt;p&gt;ユニークなIDを付けることはいいかも。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  type: COMPLETE_TODO,
+  index: 5
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;action-creators:7bfca12585449761f97344878800fa11&#34;&gt;Action Creators&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Action creators&lt;/strong&gt; はActionを生成する関数である。
+&amp;ldquo;Action&amp;rdquo;と&amp;rdquo;Action Creator&amp;rdquo;をまとめるのは簡単なのでそのほうがいいかも。&lt;/p&gt;
+
+&lt;p&gt;典型的なFluxの実装では、こんな感じでAction CreatorはDispachのトリガーとなる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function addTodoWithDispatch(text) {
+  const action = {
+    type: ADD_TODO,
+    text
+  }
+  dispatch(action)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;それに対しReduxでは、Action Creatorは単純にActionを返すだけ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function addTodo(text) {
+  return {
+    type: ADD_TODO,
+    text
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これによりテストがすごく簡単になる。
+実際dispachするには&lt;code&gt;dispach()&lt;/code&gt;関数に結果を渡すだけだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dispatch(addTodo(text))
+dispatch(completeTodo(index))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;また &lt;strong&gt;bound action creator&lt;/strong&gt; を作成して自動的にdispachすることも可能。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const boundAddTodo = (text) =&amp;gt; dispatch(addTodo(text))
+const boundCompleteTodo = (index) =&amp;gt; dispatch(completeTodo(index))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんな感じで呼び出すことができる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;boundAddTodo(text)
+boundCompleteTodo(index)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;dispach()&lt;/code&gt;関数はStoreから&lt;code&gt;store.dispatch()&lt;/code&gt;を使って直接アクセスすることができるが、&lt;a href=&#34;http://github.com/gaearon/react-redux&#34;&gt;react-redux&lt;/a&gt;の&lt;code&gt;connect()&lt;/code&gt;は便利。
+&lt;a href=&#34;http://redux.js.org/docs/api/bindActionCreators.html&#34;&gt;&lt;code&gt;bindActionCreators()&lt;/code&gt;&lt;/a&gt;を使って自動的にたくさんのアクションを&lt;code&gt;dispatch()&lt;/code&gt;関数にバインドすることもできる。&lt;/p&gt;
+
+&lt;h2 id=&#34;source-code:7bfca12585449761f97344878800fa11&#34;&gt;Source Code&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;/*
+ * action types
+ */
+
+export const ADD_TODO = &#39;ADD_TODO&#39;
+export const COMPLETE_TODO = &#39;COMPLETE_TODO&#39;
+export const SET_VISIBILITY_FILTER = &#39;SET_VISIBILITY_FILTER&#39;
+
+/*
+ * other constants
+ */
+
+export const VisibilityFilters = {
+  SHOW_ALL: &#39;SHOW_ALL&#39;,
+  SHOW_COMPLETED: &#39;SHOW_COMPLETED&#39;,
+  SHOW_ACTIVE: &#39;SHOW_ACTIVE&#39;
+}
+
+/*
+ * action creators
+ */
+
+export function addTodo(text) {
+  return { type: ADD_TODO, text }
+}
+
+export function completeTodo(index) {
+  return { type: COMPLETE_TODO, index }
+}
+
+export function setVisibilityFilter(filter) {
+  return { type: SET_VISIBILITY_FILTER, filter }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;UIを用意する前に振る舞いを明確にできた。
+チュートリアルではやらないけれど、テストをこの時点で書くことができる。
+これらはタダの関数だからモックがいらない。&lt;/p&gt;
+
+&lt;h2 id=&#34;source-code-1:7bfca12585449761f97344878800fa11&#34;&gt;Source Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;index.js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import { createStore } from &#39;redux&#39;
+import todoApp from &#39;./reducers&#39;
+
+let store = createStore(todoApp)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

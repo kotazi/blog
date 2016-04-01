@@ -1,0 +1,547 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【訳読】2.2 Reducers|Redux &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【訳読】2.2 Reducers|Redux</h1>
+                    <h2 class="headline">March 29, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p><a href="http://redux.js.org/docs/basics/Reducers.html">2.2 Reducers|Redux</a></p>
+
+<p>Actionは何かが起こったという事実は述べるが、アプリケーションのStateがどのように変わったかということまで細かくは言わない。
+それはReducerの仕事だ。</p>
+
+<hr>
+
+<h2 id="designing-the-state-shape:efd63614895e76f4b1f41133fc5c5d39">Designing the State Shape</h2>
+
+<p>Reduxではアプリケーションの全てのステートはシングルオブジェクトとして保たれる。</p>
+
+<p>ToDoアプリでは2つのことをストアしたい。</p>
+
+<ul>
+<li>現在選択されているフィルター</li>
+<li>実際のToDoリスト</li>
+</ul>
+
+<p>UI State同様に、ストアしたいデータが見つかると思う。
+それは良いことだけれど、UI Stateからデータは分離するようにすること。</p>
+
+<pre><code>// これがState(ステート）!!
+{
+  visibilityFilter: 'SHOW_ALL',
+  todos: [
+    {
+      text: 'Consider using Redux',
+      completed: true,
+    },
+    {
+      text: 'Keep all state in a single tree',
+      completed: false
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="handling-actions:efd63614895e76f4b1f41133fc5c5d39">Handling Actions</h2>
+
+<p>Stateオブジェクトの形が決まったので、Reducerを準備していく。
+Reducerは前のStateとActionを引数に取り、次のステートを返すピュア関数だ。</p>
+
+<pre><code>(previousState, action) =&gt; newState
+</code></pre>
+
+<p><code>Array.prototype.reduce</code>関数のようだからReducerと呼ばれる。<br />
+Reducerの中で決してしてはならないことが下記だ。</p>
+
+<ul>
+<li>引数を変えること</li>
+<li>APIを呼び出したり、ルーティングを変更すること</li>
+<li><code>Date.now()</code>や<code>Math.random()</code>といったピュアでない関数を呼ぶこと</li>
+</ul>
+
+<p>とりあえずReducerはピュアであることを覚えておこう。
+<strong>ただ計算するだけであり、同じ引数を与えれば同じ次の結果を返す。</strong></p>
+
+<p>最初のStateを決めるところから始めよう。最初は<code>undefined</code>のStateでReducerを呼ぶ。
+そうして最初のステートを取得する。</p>
+
+<pre><code>import { VisibilityFilters } from './actions'
+
+// 最初のステート
+const initialState = {
+  visibilityFilter: VisibilityFilters.SHOW_ALL,
+  todos: []
+}
+
+function todoApp(state, action) {
+  if (typeof state === 'undefined') {
+    return initialState
+  }
+
+  // For now, don’t handle any actions
+  // and just return the state given to us.
+  return state
+}
+</code></pre>
+
+<p>ES6だとこんなふうにも書ける。</p>
+
+<pre><code>function todoApp(state = initialState, action) {
+  // For now, don’t handle any actions
+  // and just return the state given to us.
+  return state
+}
+</code></pre>
+
+<p><code>SET_VISIBILITY_FILTER</code>を操作する。大切なのはStateの<code>visibilityFilter</code>を変更すること。</p>
+
+<pre><code>function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    default:
+      return state
+  }
+}
+</code></pre>
+
+<p>メモ。</p>
+
+<ol>
+<li><code>state</code>を変更しないこと。<code>Object.assign()</code>を使ってコピーを作成する。<br /></li>
+<li><code>default</code>の時は前のステートを返すこと。</li>
+</ol>
+
+<h2 id="handling-more-actions:efd63614895e76f4b1f41133fc5c5d39">Handling More Actions</h2>
+
+<p><code>ADD_TODO</code>も追加する。</p>
+
+<pre><code>function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+      return Object.assign({}, state, {
+        todos: [
+          ...state.todos,
+          {
+            text: action.text,
+            completed: false
+          }
+        ]
+      })    
+    default:
+      return state
+  }
+}
+</code></pre>
+
+<p>先ほどと同じように、<code>state</code>に直接書き込むことはせず、新しいオブジェクトを返す。</p>
+
+<p>最後に<code>COMPLETE_TODO</code>ハンドラの実装。</p>
+
+<pre><code>case COMPLETE_TODO:
+  return Object.assign({}, state, {
+    todos: state.todos.map((todo, index) =&gt; {
+      if (index === action.index) {
+        return Object.assign({}, todo, {
+          completed: true
+        })
+      }
+      return todo
+    })
+  })
+</code></pre>
+
+<h2 id="splitting-reducers:efd63614895e76f4b1f41133fc5c5d39">Splitting Reducers</h2>
+
+<p>かなりごちゃごちゃしてきた。</p>
+
+<pre><code>function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+      return Object.assign({}, state, {
+        todos: [
+          ...state.todos,
+          {
+            text: action.text,
+            completed: false
+          }
+        ]
+      })
+    case COMPLETE_TODO:
+      return Object.assign({}, state, {
+        todos: state.todos.map((todo, index) =&gt; {
+          if(index === action.index) {
+            return Object.assign({}, todo, {
+              completed: true
+            })
+          }
+          return todo
+        })
+      })
+    default:
+      return state
+  }
+}
+</code></pre>
+
+<p>もっと綺麗に書く方法はないのか？<code>todos</code>と<code>visibilityFilter</code>は独立しているように見える。
+今回の場合は<code>todos</code>はとても分離しやすい。</p>
+
+<pre><code>function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map(todo, index) =&gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      }
+    default:
+      return state
+  }
+}
+
+function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+    case COMPLETE_TODO:
+      return Object.assign({}, state, {
+        todos: todos(state.todos, action)
+      })
+    default:
+      return state
+  }
+}
+</code></pre>
+
+<p><code>todos</code>もまた<code>state</code>を取ることに注意する。しかも配列！
+これはReducer Compositionと呼ばれ、Reduxアプリの基本的なパターンである。</p>
+
+<p><code>visibilityFilter</code>ももっとできるんじゃない？</p>
+
+<pre><code>function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+  case SET_VISIBILITY_FILTER:
+    return action.filter
+  default:
+    return state
+  }
+}
+</code></pre>
+
+<p>メインのReducerを各パーツとなるステートを管理するReducerを呼び出す関数に書きなおした。
+初期のステートを知る必要はない。子のReducerが初期値で何を返すかを知っていればいい。</p>
+
+<pre><code>function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map((todo, index) =&gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
+function todoApp(state = {}, action) {
+  // Actionが関係している場合だけ変更して返す
+  return {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  }
+}
+</code></pre>
+
+<p><strong>各Recuderにとっての<code>state</code>はことなり、各ステートに対応している。</strong></p>
+
+<p>いいかんじ！アプリが大きくなった時はReducerを分割することができる。</p>
+
+<p>最後に、Reducerは<a href="http://redux.js.org/docs/api/combineReducers.html"><code>conbineReducers()</code></a>と呼ばれるものを提供する。このように書き換えることができるようになる。</p>
+
+<pre><code>import { combineReducers } from 'redux'
+
+const todoApp = combineReducers({
+  visibilityFilter,
+  todos
+})
+
+export default todoApp
+</code></pre>
+
+<p>上記は下記と全く同じ。</p>
+
+<pre><code>export default function todoApp(state = {}, action) {
+  return {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  }
+}
+</code></pre>
+
+<p>異なるキーや関数呼び出しを与えることができる。下2つは同じことがかいてある。</p>
+
+<pre><code>const reducer = combineReducers({
+  a: doSomethingWithA,
+  b: processB,
+  c: c
+})
+</code></pre>
+
+<pre><code>function reducer(state = {}, action) {
+  return {
+    a: doSomethingWithA(state.a, action),
+    b: processB(state.b, action),
+    c: c(state.c, action)
+  }
+}
+</code></pre>
+
+<h2 id="source-code:efd63614895e76f4b1f41133fc5c5d39">Source Code</h2>
+
+<p>最終的なやつ。</p>
+
+<pre><code>// combineReducersを読み込む
+import { combineReducers } from 'redux'
+
+// 各Actionを読み込む
+import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from './actions'
+const { SHOW_ALL } = VisibilityFilters
+
+function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
+function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map((todo, index) =&gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+// 親となるReducer
+const todoApp = combineReducers({
+  visibilityFilter,
+  todos
+})
+
+export default todoApp
+</code></pre>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0329_redux_reducers%2f - %e3%80%90%e8%a8%b3%e8%aa%ad%e3%80%912.2%20Reducers%7cRedux by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0328_redux_actions/">【訳読】2.1 Actions|Redux<aside class="dates">Mar 28</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0324_seigi/">【読書】「正義」は決められるのか？<aside class="dates">Mar 25</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0323_zero_to_one/">【読書】Zero to One<aside class="dates">Mar 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0325_think_practice/">【読書】考える練習をしよう<aside class="dates">Mar 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0310_marketing/">【読書】ノヤン先生のマーケティング学<aside class="dates">Mar 22</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0316_git_flow/">【git】There is an existing release branchへの対処<aside class="dates">Mar 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0312_internet/">【読書】ネットコミュニティの設計と力　つながる私たちの時代<aside class="dates">Mar 12</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0310_better-npm-run/">better-npm-runを使ってpackage.jsonを整備<aside class="dates">Mar 10</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0310_rimraf/">ファイルやディレクトリの削除にはrimrafを使う<aside class="dates">Mar 9</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>

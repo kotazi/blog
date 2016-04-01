@@ -6,8 +6,408 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Mar 2016 18:34:45 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2016 18:55:03 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【訳読】2.2 Reducers|Redux</title>
+      <link>http://kotazi.github.io/blog/post/2016/0329_redux_reducers/</link>
+      <pubDate>Tue, 29 Mar 2016 18:55:03 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0329_redux_reducers/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://redux.js.org/docs/basics/Reducers.html&#34;&gt;2.2 Reducers|Redux&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Actionは何かが起こったという事実は述べるが、アプリケーションのStateがどのように変わったかということまで細かくは言わない。
+それはReducerの仕事だ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&#34;designing-the-state-shape:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Designing the State Shape&lt;/h2&gt;
+
+&lt;p&gt;Reduxではアプリケーションの全てのステートはシングルオブジェクトとして保たれる。&lt;/p&gt;
+
+&lt;p&gt;ToDoアプリでは2つのことをストアしたい。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;現在選択されているフィルター&lt;/li&gt;
+&lt;li&gt;実際のToDoリスト&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;UI State同様に、ストアしたいデータが見つかると思う。
+それは良いことだけれど、UI Stateからデータは分離するようにすること。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// これがState(ステート）!!
+{
+  visibilityFilter: &#39;SHOW_ALL&#39;,
+  todos: [
+    {
+      text: &#39;Consider using Redux&#39;,
+      completed: true,
+    },
+    {
+      text: &#39;Keep all state in a single tree&#39;,
+      completed: false
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;handling-actions:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Handling Actions&lt;/h2&gt;
+
+&lt;p&gt;Stateオブジェクトの形が決まったので、Reducerを準備していく。
+Reducerは前のStateとActionを引数に取り、次のステートを返すピュア関数だ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(previousState, action) =&amp;gt; newState
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Array.prototype.reduce&lt;/code&gt;関数のようだからReducerと呼ばれる。&lt;br /&gt;
+Reducerの中で決してしてはならないことが下記だ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;引数を変えること&lt;/li&gt;
+&lt;li&gt;APIを呼び出したり、ルーティングを変更すること&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Date.now()&lt;/code&gt;や&lt;code&gt;Math.random()&lt;/code&gt;といったピュアでない関数を呼ぶこと&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;とりあえずReducerはピュアであることを覚えておこう。
+&lt;strong&gt;ただ計算するだけであり、同じ引数を与えれば同じ次の結果を返す。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;最初のStateを決めるところから始めよう。最初は&lt;code&gt;undefined&lt;/code&gt;のStateでReducerを呼ぶ。
+そうして最初のステートを取得する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import { VisibilityFilters } from &#39;./actions&#39;
+
+// 最初のステート
+const initialState = {
+  visibilityFilter: VisibilityFilters.SHOW_ALL,
+  todos: []
+}
+
+function todoApp(state, action) {
+  if (typeof state === &#39;undefined&#39;) {
+    return initialState
+  }
+
+  // For now, don’t handle any actions
+  // and just return the state given to us.
+  return state
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ES6だとこんなふうにも書ける。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todoApp(state = initialState, action) {
+  // For now, don’t handle any actions
+  // and just return the state given to us.
+  return state
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;SET_VISIBILITY_FILTER&lt;/code&gt;を操作する。大切なのはStateの&lt;code&gt;visibilityFilter&lt;/code&gt;を変更すること。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    default:
+      return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;メモ。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;state&lt;/code&gt;を変更しないこと。&lt;code&gt;Object.assign()&lt;/code&gt;を使ってコピーを作成する。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;default&lt;/code&gt;の時は前のステートを返すこと。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;handling-more-actions:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Handling More Actions&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ADD_TODO&lt;/code&gt;も追加する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+      return Object.assign({}, state, {
+        todos: [
+          ...state.todos,
+          {
+            text: action.text,
+            completed: false
+          }
+        ]
+      })    
+    default:
+      return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;先ほどと同じように、&lt;code&gt;state&lt;/code&gt;に直接書き込むことはせず、新しいオブジェクトを返す。&lt;/p&gt;
+
+&lt;p&gt;最後に&lt;code&gt;COMPLETE_TODO&lt;/code&gt;ハンドラの実装。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;case COMPLETE_TODO:
+  return Object.assign({}, state, {
+    todos: state.todos.map((todo, index) =&amp;gt; {
+      if (index === action.index) {
+        return Object.assign({}, todo, {
+          completed: true
+        })
+      }
+      return todo
+    })
+  })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;splitting-reducers:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Splitting Reducers&lt;/h2&gt;
+
+&lt;p&gt;かなりごちゃごちゃしてきた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+      return Object.assign({}, state, {
+        todos: [
+          ...state.todos,
+          {
+            text: action.text,
+            completed: false
+          }
+        ]
+      })
+    case COMPLETE_TODO:
+      return Object.assign({}, state, {
+        todos: state.todos.map((todo, index) =&amp;gt; {
+          if(index === action.index) {
+            return Object.assign({}, todo, {
+              completed: true
+            })
+          }
+          return todo
+        })
+      })
+    default:
+      return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;もっと綺麗に書く方法はないのか？&lt;code&gt;todos&lt;/code&gt;と&lt;code&gt;visibilityFilter&lt;/code&gt;は独立しているように見える。
+今回の場合は&lt;code&gt;todos&lt;/code&gt;はとても分離しやすい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map(todo, index) =&amp;gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      }
+    default:
+      return state
+  }
+}
+
+function todoApp(state = initialState, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return Object.assign({}, state, {
+        visibilityFilter: action.filter
+      })
+    case ADD_TODO:
+    case COMPLETE_TODO:
+      return Object.assign({}, state, {
+        todos: todos(state.todos, action)
+      })
+    default:
+      return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;todos&lt;/code&gt;もまた&lt;code&gt;state&lt;/code&gt;を取ることに注意する。しかも配列！
+これはReducer Compositionと呼ばれ、Reduxアプリの基本的なパターンである。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;visibilityFilter&lt;/code&gt;ももっとできるんじゃない？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+  case SET_VISIBILITY_FILTER:
+    return action.filter
+  default:
+    return state
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;メインのReducerを各パーツとなるステートを管理するReducerを呼び出す関数に書きなおした。
+初期のステートを知る必要はない。子のReducerが初期値で何を返すかを知っていればいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map((todo, index) =&amp;gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
+function todoApp(state = {}, action) {
+  // Actionが関係している場合だけ変更して返す
+  return {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;各Recuderにとっての&lt;code&gt;state&lt;/code&gt;はことなり、各ステートに対応している。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;いいかんじ！アプリが大きくなった時はReducerを分割することができる。&lt;/p&gt;
+
+&lt;p&gt;最後に、Reducerは&lt;a href=&#34;http://redux.js.org/docs/api/combineReducers.html&#34;&gt;&lt;code&gt;conbineReducers()&lt;/code&gt;&lt;/a&gt;と呼ばれるものを提供する。このように書き換えることができるようになる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import { combineReducers } from &#39;redux&#39;
+
+const todoApp = combineReducers({
+  visibilityFilter,
+  todos
+})
+
+export default todoApp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記は下記と全く同じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export default function todoApp(state = {}, action) {
+  return {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+    todos: todos(state.todos, action)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;異なるキーや関数呼び出しを与えることができる。下2つは同じことがかいてある。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const reducer = combineReducers({
+  a: doSomethingWithA,
+  b: processB,
+  c: c
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;function reducer(state = {}, action) {
+  return {
+    a: doSomethingWithA(state.a, action),
+    b: processB(state.b, action),
+    c: c(state.c, action)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;source-code:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Source Code&lt;/h2&gt;
+
+&lt;p&gt;最終的なやつ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// combineReducersを読み込む
+import { combineReducers } from &#39;redux&#39;
+
+// 各Actionを読み込む
+import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from &#39;./actions&#39;
+const { SHOW_ALL } = VisibilityFilters
+
+function visibilityFilter(state = SHOW_ALL, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
+function todos(state = [], action) {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case COMPLETE_TODO:
+      return state.map((todo, index) =&amp;gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+// 親となるReducer
+const todoApp = combineReducers({
+  visibilityFilter,
+  todos
+})
+
+export default todoApp
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>【訳読】2.1 Actions|Redux</title>
@@ -136,6 +536,20 @@ export function completeTodo(index) {
 export function setVisibilityFilter(filter) {
   return { type: SET_VISIBILITY_FILTER, filter }
 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;UIを用意する前に振る舞いを明確にできた。
+チュートリアルではやらないけれど、テストをこの時点で書くことができる。
+これらはタダの関数だからモックがいらない。&lt;/p&gt;
+
+&lt;h2 id=&#34;source-code-1:7bfca12585449761f97344878800fa11&#34;&gt;Source Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;index.js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import { createStore } from &#39;redux&#39;
+import todoApp from &#39;./reducers&#39;
+
+let store = createStore(todoApp)
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -817,80 +1231,6 @@ Deleted branch release/2016-03-14-0349 (was 0c652fd).
     </item>
     
     <item>
-      <title>【読書】道は開ける</title>
-      <link>http://kotazi.github.io/blog/post/2016/0308_carnegie/</link>
-      <pubDate>Tue, 08 Mar 2016 11:40:44 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0308_carnegie/</guid>
-      <description>
-
-&lt;p&gt;16冊目。&lt;/p&gt;
-
-&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/B00Q9NQ8NA/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00Q9NQ8NA&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;新訳　道は開ける 角川文庫&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=B00Q9NQ8NA&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;鉄鋼王や実業家としても名高い、「人を動かす」の著者デール・カーネギー。&lt;br /&gt;
-そのカーネギーのもう一つの代表的な著書であり、悩みへの対処法について書かれている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;目次:de775a07d34a506ba96c546e4363d36d&#34;&gt;目次&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;そもそも不安とは何なのか&lt;/li&gt;
-&lt;li&gt;不安分析の基本テクニック&lt;/li&gt;
-&lt;li&gt;不安の習慣。その先手を打つには&lt;/li&gt;
-&lt;li&gt;平穏と幸福とをもたらす心のあり方を育てる七つの方法&lt;/li&gt;
-&lt;li&gt;不安に打ち勝つ黄金率&lt;/li&gt;
-&lt;li&gt;批判を気にせず忘れる方法&lt;/li&gt;
-&lt;li&gt;疲労と不安を予防して元気になる六つの方法&lt;/li&gt;
-&lt;li&gt;幸福と成功をもたらす仕事の見つけかた&lt;/li&gt;
-&lt;li&gt;お金の不安を軽くするには&lt;/li&gt;
-&lt;li&gt;私はこうして不安を乗り越えた三十二の実話&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;名言まとめ:de775a07d34a506ba96c546e4363d36d&#34;&gt;名言まとめ&lt;/h3&gt;
-
-&lt;p&gt;「賢者位には毎日が新たなる人生である」&lt;/p&gt;
-
-&lt;p&gt;「鉄の扉で過去と未来を閉ざし、今日という一区切りを生きる」&lt;/p&gt;
-
-&lt;p&gt;「私が何より励まされるのは、人はたゆまぬ努力によって人生を向上させてゆく力をはっきり持っているのだ、ということだ。もし胸を張って夢の道を歩き、思い描いた人生に向けて努力ができるのであれば、人は創造もしなかったような成功を収めることができる」&lt;/p&gt;
-
-&lt;p&gt;「小さなことにこだわっている間に、人生は終わってしまう。」&lt;/p&gt;
-
-&lt;p&gt;「人生とは、人の思考が作り上げるものだ。」&lt;/p&gt;
-
-&lt;p&gt;「人は心で思ったとおりの人間になる。」&lt;/p&gt;
-
-&lt;p&gt;「人はできごとそのものではなく、できごとを自分がどう見るかで木津付くのである。」&lt;/p&gt;
-
-&lt;p&gt;「感謝とは、深い教養に実る果実である。粗野な人びとの中には、決して見つかりはしない。」&lt;/p&gt;
-
-&lt;p&gt;「人は、意識の中にあるものしか表現できない。」&lt;/p&gt;
-
-&lt;p&gt;「あなたは、この世界にただ一人の、新しい人間だ。それは、とても素晴らしいことなのだ。持って生まれたものを、最大限に活かさなくてはいけない。」&lt;/p&gt;
-
-&lt;p&gt;「人が自らの責任をしっかりと背負えば、どんな状況であろうとも成功と幸福が訪れる。」&lt;/p&gt;
-
-&lt;p&gt;「善行とは、人の顔に喜びの笑みをもたらす行為である。」&lt;/p&gt;
-
-&lt;p&gt;「人は人生を理解するためにではなく、人生を生きるために作られたのだ」&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;大学生の頃、自己啓発本は一通り読んだけれど社会人になってから読んだのは久しぶりだった。
-カーネギーは文章がうまく、ものすごく読みやすい。&lt;/p&gt;
-
-&lt;p&gt;自己啓発書に書いてあることは実は当たり前の事が多いので、たまに読みなおして調子を調えるのはいいかも。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>【読書】ビジネスモデル・ジェネレーション</title>
       <link>http://kotazi.github.io/blog/post/2016/0309_business/</link>
       <pubDate>Tue, 08 Mar 2016 11:40:44 +0900</pubDate>
@@ -1121,6 +1461,80 @@ Deleted branch release/2016-03-14-0349 (was 0c652fd).
     </item>
     
     <item>
+      <title>【読書】道は開ける</title>
+      <link>http://kotazi.github.io/blog/post/2016/0308_carnegie/</link>
+      <pubDate>Tue, 08 Mar 2016 11:40:44 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0308_carnegie/</guid>
+      <description>
+
+&lt;p&gt;16冊目。&lt;/p&gt;
+
+&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/B00Q9NQ8NA/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00Q9NQ8NA&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;新訳　道は開ける 角川文庫&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=B00Q9NQ8NA&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;鉄鋼王や実業家としても名高い、「人を動かす」の著者デール・カーネギー。&lt;br /&gt;
+そのカーネギーのもう一つの代表的な著書であり、悩みへの対処法について書かれている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;目次:de775a07d34a506ba96c546e4363d36d&#34;&gt;目次&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;そもそも不安とは何なのか&lt;/li&gt;
+&lt;li&gt;不安分析の基本テクニック&lt;/li&gt;
+&lt;li&gt;不安の習慣。その先手を打つには&lt;/li&gt;
+&lt;li&gt;平穏と幸福とをもたらす心のあり方を育てる七つの方法&lt;/li&gt;
+&lt;li&gt;不安に打ち勝つ黄金率&lt;/li&gt;
+&lt;li&gt;批判を気にせず忘れる方法&lt;/li&gt;
+&lt;li&gt;疲労と不安を予防して元気になる六つの方法&lt;/li&gt;
+&lt;li&gt;幸福と成功をもたらす仕事の見つけかた&lt;/li&gt;
+&lt;li&gt;お金の不安を軽くするには&lt;/li&gt;
+&lt;li&gt;私はこうして不安を乗り越えた三十二の実話&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;名言まとめ:de775a07d34a506ba96c546e4363d36d&#34;&gt;名言まとめ&lt;/h3&gt;
+
+&lt;p&gt;「賢者位には毎日が新たなる人生である」&lt;/p&gt;
+
+&lt;p&gt;「鉄の扉で過去と未来を閉ざし、今日という一区切りを生きる」&lt;/p&gt;
+
+&lt;p&gt;「私が何より励まされるのは、人はたゆまぬ努力によって人生を向上させてゆく力をはっきり持っているのだ、ということだ。もし胸を張って夢の道を歩き、思い描いた人生に向けて努力ができるのであれば、人は創造もしなかったような成功を収めることができる」&lt;/p&gt;
+
+&lt;p&gt;「小さなことにこだわっている間に、人生は終わってしまう。」&lt;/p&gt;
+
+&lt;p&gt;「人生とは、人の思考が作り上げるものだ。」&lt;/p&gt;
+
+&lt;p&gt;「人は心で思ったとおりの人間になる。」&lt;/p&gt;
+
+&lt;p&gt;「人はできごとそのものではなく、できごとを自分がどう見るかで木津付くのである。」&lt;/p&gt;
+
+&lt;p&gt;「感謝とは、深い教養に実る果実である。粗野な人びとの中には、決して見つかりはしない。」&lt;/p&gt;
+
+&lt;p&gt;「人は、意識の中にあるものしか表現できない。」&lt;/p&gt;
+
+&lt;p&gt;「あなたは、この世界にただ一人の、新しい人間だ。それは、とても素晴らしいことなのだ。持って生まれたものを、最大限に活かさなくてはいけない。」&lt;/p&gt;
+
+&lt;p&gt;「人が自らの責任をしっかりと背負えば、どんな状況であろうとも成功と幸福が訪れる。」&lt;/p&gt;
+
+&lt;p&gt;「善行とは、人の顔に喜びの笑みをもたらす行為である。」&lt;/p&gt;
+
+&lt;p&gt;「人は人生を理解するためにではなく、人生を生きるために作られたのだ」&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;大学生の頃、自己啓発本は一通り読んだけれど社会人になってから読んだのは久しぶりだった。
+カーネギーは文章がうまく、ものすごく読みやすい。&lt;/p&gt;
+
+&lt;p&gt;自己啓発書に書いてあることは実は当たり前の事が多いので、たまに読みなおして調子を調えるのはいいかも。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>【読書】インターネットの基礎　〜ネットが生んだ文化　誰もが表現者の時代〜</title>
       <link>http://kotazi.github.io/blog/post/2016/0302_internet/</link>
       <pubDate>Wed, 02 Mar 2016 11:40:44 +0900</pubDate>
@@ -1237,143 +1651,6 @@ Deleted branch release/2016-03-14-0349 (was 0c652fd).
 なぜ著作権問題が生まれてくるのか、なぜ当時の法が適用できなくなってしまっているのかということについて感じ取ることができた。&lt;/p&gt;
 
 &lt;p&gt;世界中の本が誰にでも読めるようになるためにはまだまだ課題がありそう。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】ピープルウエア</title>
-      <link>http://kotazi.github.io/blog/post/2016/0228_peopelwear/</link>
-      <pubDate>Sun, 28 Feb 2016 22:33:30 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0228_peopelwear/</guid>
-      <description>
-
-&lt;p&gt;13冊目。
-アメリカのソフトウェア工学者トム・デマルコの著書、&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/B00I96CJWO/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B00I96CJWO&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;ピープルウエア　第3版&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=B00I96CJWO&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;strong&gt;実際のところ、ソフトウェア開発上の問題の多くは、技術的というより社会学的なものである。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;というとても有名な文章が登場する本書。
-ソフトウェア開発においてありがちな人間関係のトラブルとそれらに対する有用な対処が紹介される。&lt;/p&gt;
-
-&lt;p&gt;目次は下記である。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;第1部: 人材を活用する&lt;/li&gt;
-&lt;li&gt;第2部: オフィス環境と生産性&lt;/li&gt;
-&lt;li&gt;第3部: 人材を揃える&lt;/li&gt;
-&lt;li&gt;第4部: 生産性の高いチームを育てる&lt;/li&gt;
-&lt;li&gt;第5部: 肥沃な土壌&lt;/li&gt;
-&lt;li&gt;第6部: きっとそこは楽しいところ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;本テーマの出発点は失敗したプロジェクトの調査にあった。
-調査した失敗プロジェクトの圧倒的多数は、
-原因が単なる技術的問題として片付けられないものばかりだった。
-ということから始められる。&lt;/p&gt;
-
-&lt;p&gt;プロジェクトの成功は関係者の緊密な対人関係によって生まれ、
-失敗は疎遠な対人関係の結果である。&lt;/p&gt;
-
-&lt;h5 id=&#34;品質第一主義からの頭皮:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 品質第一主義からの頭皮&lt;/h5&gt;
-
-&lt;p&gt;ユーザーの品質意識は実は低い。
-少なくとも開発者に比べると、必要とする製品品質のレベルが低いということだ。&lt;/p&gt;
-
-&lt;p&gt;開発者ではなく、買い手に品質基準を決めさせることを「&lt;strong&gt;品質第一主義からの逃避&lt;/strong&gt;」という。
-顧客の要求通りの品質を提供することは一見最もらしく見えるが、
-長い目で見ると市場に品質を合わせるとコストが増える。&lt;/p&gt;
-
-&lt;p&gt;言い換えるならば、
-&lt;strong&gt;エンドユーザーの要求を遥かに超えた品質水準は、生産性を上げるひとつの手段である。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;価格と品質はトレードオフであるという考えは、日本には存在しない。反対に、高品質がコスト低減をもたらすという考えが広く受け入れられている。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;ラエトライルの話:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ ラエトライルの話&lt;/h5&gt;
-
-&lt;p&gt;ラエトライルとは、杏の種の中のある部分から搾り取れる液体。
-スウェーデンではアーモンドエキスと同じぐらいの値段で買えるが、
-メキシコでは末期癌の治療薬として一滴50ドルで売られている。
-絶望の淵にある人には、証拠などどうでもよくすがってしまうとうこと。&lt;/p&gt;
-
-&lt;p&gt;プロジェクト開発においても同じようなことが見られる。
-多くのマネージャーが生産性があがると聞くと、証拠もなしに飛びついてしまう。&lt;/p&gt;
-
-&lt;p&gt;安易な解決方法では手に負えない。
-よい実績は、効果的な人の使い方、作業場所や企業文化の改善などから生まれる。
-けれども企業文化の改善は難しく、短期的には効果が上がりにくいため、
-生産性向上ツールなどに手を伸ばしたくなってしまう。&lt;/p&gt;
-
-&lt;h5 id=&#34;生産性の高いチームを育てる:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 生産性の高いチームを育てる&lt;/h5&gt;
-
-&lt;p&gt;挑戦はチームメンバーに&lt;strong&gt;一緒になって努力する&lt;/strong&gt;目標を与えるからこそ重要。
-挑戦とはチームをひとつにまとめるための道具である。&lt;/p&gt;
-
-&lt;p&gt;チームの結束の可能性を高めるように行動することもできるが、
-現実に結束させることはできない。チーム結束の過程はコントロールしようとすると壊れてしまう。&lt;/p&gt;
-
-&lt;p&gt;チームの構築とは言わずに、チームの育成と言うこと。&lt;/p&gt;
-
-&lt;h5 id=&#34;健全な会社にするための化学反応を生み出す要素:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 健全な会社にするための化学反応を生み出す要素&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;品質至上主義を作り出す&lt;/li&gt;
-&lt;li&gt;満足感を与える打ち上げをたくさん用意する&lt;/li&gt;
-&lt;li&gt;エリート感覚を醸成する&lt;/li&gt;
-&lt;li&gt;チームに異分子を混ぜることを奨励する&lt;/li&gt;
-&lt;li&gt;成功しているチームを守り、維持する&lt;/li&gt;
-&lt;li&gt;戦術ではなく戦略を与える&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;いい加減な製品を納入することからは、仲間とともに味合う満足感によって、
-チームを一体化させる力は生まれない。
-逆に、「完全な製品だけを求める」態度を取れば、
-チームが一つにまとまる可能性が高くなる。この品質至上主義が、
-チーム形成にとって最も強力な触媒である。&lt;/p&gt;
-
-&lt;h5 id=&#34;メソドロジー:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ メソドロジー&lt;/h5&gt;
-
-&lt;p&gt;メソドロジーとは、あらゆる頭脳集約型作業をどのように進めるかについての一般的なシステム理論。
-大抵の組織では、業務の質が職員の質を超えることができない。
-平凡であまり能力のない人々でも、優れた組織を作るための方法論。&lt;/p&gt;
-
-&lt;p&gt;すべての決定を下すのはメソドロジーであり、人間は何も判断しない。
-組織は完全に決定論的になる。&lt;/p&gt;
-
-&lt;p&gt;=&amp;gt; ある意味全てをマニュアル化するなど。臨機応変な対応がとれなかったりして一長一短。&lt;/p&gt;
-
-&lt;h5 id=&#34;ホーソン効果:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ ホーソン効果&lt;/h5&gt;
-
-&lt;p&gt;人は、他と違った扱いを受けることに魅力を感じ、注目されることを好み、珍しい物に好奇心をよせる。
-これをホーソン効果という。&lt;/p&gt;
-
-&lt;h5 id=&#34;君主論:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ 君主論&lt;/h5&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;自分が先頭に立って新たな秩序を導入することほど、扱うのが困難で、成功が疑わしく、管理するのが危険なものはない、
-ということをよく考えるべきだ。導入する人々にとって、古い秩序から恩恵を受けた人は全て敵であり、新たな秩序から恩恵を受ける人からは、
-気のない支援しか受けられない。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h5 id=&#34;アリストテレスの哲学を構成する5つの学問:b53d3c79502dfc895a23efe945a89b7a&#34;&gt;◯ アリストテレスの哲学を構成する5つの学問&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;形而上学&lt;/li&gt;
-&lt;li&gt;論理学&lt;/li&gt;
-&lt;li&gt;倫理学&lt;/li&gt;
-&lt;li&gt;政治学&lt;/li&gt;
-&lt;li&gt;美学&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;少し各項目が抽象的すぎたような感じもするが書かれている項目は的を得ていた。
-とくに現場経験のあまりない人間が読むにはちょうどよい感じがした。&lt;/p&gt;
-
-&lt;p&gt;表紙から受けたイメージよりはかなり入門的な本。&lt;/p&gt;
 </description>
     </item>
     
