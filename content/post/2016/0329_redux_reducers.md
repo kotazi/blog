@@ -1,8 +1,8 @@
 +++
 date = "2016-03-29T18:55:03+09:00"
-draft = true
-tags = []
-title = "【訳読】2.1 Reducers|Redux"
+draft = false
+tags = ['Redux']
+title = "【訳読】2.2 Reducers|Redux"
 
 +++
 

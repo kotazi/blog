@@ -159,6 +159,20 @@ export function setVisibilityFilter(filter) {
 }
 </code></pre>
 
+<p>UIを用意する前に振る舞いを明確にできた。
+チュートリアルではやらないけれど、テストをこの時点で書くことができる。
+これらはタダの関数だからモックがいらない。</p>
+
+<h2 id="source-code-1:7bfca12585449761f97344878800fa11">Source Code</h2>
+
+<p><code>index.js</code>:</p>
+
+<pre><code>import { createStore } from 'redux'
+import todoApp from './reducers'
+
+let store = createStore(todoApp)
+</code></pre>
+
                 </section>
             </article>
             <footer id="post-meta" class="clearfix">
@@ -186,6 +200,13 @@ export function setVisibilityFilter(filter) {
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0329_redux_reducers/">【訳読】2.2 Reducers|Redux<aside class="dates">Mar 29</aside></a>
+        </li>
+        
+   
     
         
    
@@ -242,13 +263,6 @@ export function setVisibilityFilter(filter) {
         
         <li>
             <a href="http://kotazi.github.io/blog/post/2016/0310_rimraf/">ファイルやディレクトリの削除にはrimrafを使う<aside class="dates">Mar 9</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0308_carnegie/">【読書】道は開ける<aside class="dates">Mar 8</aside></a>
         </li>
         
    

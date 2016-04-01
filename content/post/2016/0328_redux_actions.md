@@ -1,7 +1,7 @@
 +++
 date = "2016-03-28T18:34:45+09:00"
 draft = false
-tags = []
+tags = ['Redux']
 title = "【訳読】2.1 Actions|Redux"
 
 +++
@@ -137,4 +137,19 @@ export function completeTodo(index) {
 export function setVisibilityFilter(filter) {
   return { type: SET_VISIBILITY_FILTER, filter }
 }
+```
+
+UIを用意する前に振る舞いを明確にできた。
+チュートリアルではやらないけれど、テストをこの時点で書くことができる。
+これらはタダの関数だからモックがいらない。
+
+## Source Code
+
+`index.js`:
+
+```
+import { createStore } from 'redux'
+import todoApp from './reducers'
+
+let store = createStore(todoApp)
 ```
