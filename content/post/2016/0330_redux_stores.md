@@ -1,5 +1,5 @@
 +++
-date = "2016-03-30T18:55:03+09:00"
+date = "2016-04-02T18:55:03+09:00"
 draft = true
 tags = ['Redux']
 title = "【訳読】2.3 Store|Redux"
