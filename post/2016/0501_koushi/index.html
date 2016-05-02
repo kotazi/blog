@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【Rails】Routing周りのメモ書き &middot; kotazi.com</title>
+		<title>【読書】孫子 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,93 +32,66 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【Rails】Routing周りのメモ書き</h1>
-                    <h2 class="headline">January 7, 2016</h2>
+                    <h1>【読書】孫子</h1>
+                    <h2 class="headline">May 1, 2016</h2>
                 </header>
                 <section id="post-body">
-                    
+                    <p>23冊目。</p>
 
-<p>新しいRailsプロジェクトの<code>routes.rb</code>を読んでいて調べたこととか。</p>
+<p><a  href="http://www.amazon.co.jp/gp/product/4003320719/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4003320719&linkCode=as2&tag=kotazi-22">新訂 孫子 (岩波文庫)</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4003320719" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<p>を読みました。</p>
 
 <hr>
-
-<h5 id="namespaceとscope-moduleとscopeのち外:67c557ff4a695278f8c1eb16d2539ac6">◯ namespaceとscope moduleとscopeのち外</h5>
 
 <ul>
-<li><code>namespace</code>はURI PatternもController#Actionも指定したパスに</li>
-<li><code>scope module</code>はController#Actionのみ指定したパスに</li>
-<li><code>scope</code>はURI Patternのみ指定したパスに</li>
+<li>計篇 - 序論。戦争を決断する以前に考慮すべき事柄について述べる。</li>
+<li>作戦篇 - 戦争準備計画について述べる。</li>
+<li>謀攻篇 - 実際の戦闘に拠らずして、勝利を収める方法について述べる。</li>
+<li>形篇 - 攻撃と守備それぞれの態勢について述べる。</li>
+<li>勢篇 - 上述の態勢から生じる軍勢の勢いについて述べる。</li>
+<li>虚実篇 - 戦争においていかに主導性を発揮するかについて述べる。</li>
+<li>軍争篇 - 敵軍の機先を如何に制するかについて述べる。</li>
+<li>九変篇 - 戦局の変化に臨機応変に対応するための9つの手立てについて述べる。</li>
+<li>行軍篇 - 軍を進める上での注意事項について述べる。</li>
+<li>地形篇 - 地形によって戦術を変更することを説く。</li>
+<li>九地篇 - 9種類の地勢について説明し、それに応じた戦術を説く。</li>
+<li>火攻篇 - 火攻め戦術について述べる。</li>
+<li>用間篇 - 「間」とは間諜を指す。すなわちスパイ。敵情偵察の重要性を説く。</li>
 </ul>
 
-<p><a href="http://qiita.com/blueplanet/items/522cc8364f6cf189ecad">routeのmoduleとnamespaceとscopeの違い</a></p>
+<p>(Wikipedia引用: <a href="https://ja.wikipedia.org/wiki/%E5%AD%AB%E5%AD%90_(%E6%9B%B8%E7%89%A9">孫子 (書物)</a>))</p>
 
-<h5 id="constraintsについて:67c557ff4a695278f8c1eb16d2539ac6">◯ constraintsについて</h5>
+<p>孫子は上記の全十三篇によって構成されている。</p>
 
-<p>constraintsを使うことでさまざまな制限を兼ねることができる。
-独自のクラスを使用すうることなども可能。</p>
+<p>孫子は中国春秋時代の思想家、孫武の作とされる兵法書であり、兵法書の中では最も著名なもののひとつである。<br />
+当時、孫子の成立以前は戦争の勝敗は天運に左右されるという考えが強かった中、孫武は戦争の記録を分析・研究し、勝敗は運ではなく人為的によることを知り、勝利を得るための指針の理論化を目指した。</p>
 
-<p><a href="http://y-yagi.tumblr.com/post/92386974040/rails-routing-constraints%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">rails routing constraintsについて</a></p>
+<p>原文、漢文、訳文の順番で書かれているので比較的気楽に読み進めることができた。</p>
 
-<h5 id="resourcesルーティング一覧:67c557ff4a695278f8c1eb16d2539ac6">◯ resourcesルーティング一覧</h5>
+<p><strong>戦争をする前に考えるべき5つのこと</strong></p>
 
-<table class="responsive">
-<thead>
-<tr>
-<th>HTTP動詞</th>
-<th>パス</th>
-<th>コントローラ#アクション</th>
-<th>目的</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>/photos</td>
-<td>photos#index</td>
-<td>すべての写真の一覧を表示</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/photos/new</td>
-<td>photos#new</td>
-<td>写真を1つ作成するためのHTMLフォームを返す</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>/photos</td>
-<td>photos#create</td>
-<td>写真を1つ作成する</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/photos/:id</td>
-<td>photos#show</td>
-<td>特定の写真を表示する</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/photos/:id/edit</td>
-<td>photos#edit</td>
-<td>写真編集用のHTMLフォームを1つ返す</td>
-</tr>
-<tr>
-<td>PATCH/PUT</td>
-<td>/photos/:id</td>
-<td>photos#update</td>
-<td>特定の写真を更新する</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>/photos/:id</td>
-<td>photos#destroy</td>
-<td>特定の写真を削除する</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>道: 政治のあり方</li>
+<li>天: 自然界のめぐり</li>
+<li>地: 土地の情勢</li>
+<li>将: 将軍の人材</li>
+<li>法: 軍制</li>
+</ul>
+
+<p><strong>勝利を知るための5つの方法</strong></p>
+
+<ul>
+<li>戦ってよいときと戦ってはいけないときをわきまえること</li>
+<li>大軍と小勢とのそれぞれの用い方を知っていること</li>
+<li>上下の人びとが心を合わせていること</li>
+<li>よく準備を整えて、油断している敵に当たること</li>
+<li>将軍が有能で主君がそれに干渉しないこと</li>
+</ul>
 
 <hr>
 
-<p>ActiveAdminとEngineについてはまた今度。</p>
+<p>特別感名を受けることはなかったけれど、想像以上にかなり薄い本なので読んでみるのはいいかも。</p>
 
                 </section>
             </article>
@@ -131,7 +104,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0107_rails_routing%2f - %e3%80%90Rails%e3%80%91Routing%e5%91%a8%e3%82%8a%e3%81%ae%e3%83%a1%e3%83%a2%e6%9b%b8%e3%81%8d by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0501_koushi%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91%e5%ad%ab%e5%ad%90 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -155,10 +128,6 @@
         
    
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0501_koushi/">【読書】孫子<aside class="dates">May 1</aside></a>
-        </li>
         
    
     
