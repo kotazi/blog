@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【読書】Zero to One &middot; kotazi.com</title>
+		<title>【git】タグを間違えてしまった &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,76 +32,47 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【読書】Zero to One</h1>
-                    <h2 class="headline">March 23, 2016</h2>
+                    <h1>【git】タグを間違えてしまった</h1>
+                    <h2 class="headline">May 4, 2016</h2>
                 </header>
                 <section id="post-body">
-                    <p>20冊目。</p>
+                    <p>gitのタグを修正することがあったのでメモ書き。</p>
 
-<p><a  href="http://www.amazon.co.jp/gp/product/4140816589/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4140816589&linkCode=as2&tag=kotazi-22">ゼロ・トゥ・ワン―君はゼロから何を生み出せるか</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4140816589" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
-
-<p>を読みました。</p>
+<p>注釈を間違えてしまったのでやりなおす方法。</p>
 
 <hr>
 
-<p>ペイパルマフィアの一人、ピーター・ティールの著書。<br />
-「我々は空飛ぶ自動車を欲したのに、代わりに手にしたのは百四十文字だ。」
-とTwitterを揶揄しているのは有名。</p>
-
-<p>ティールは今流行の「リーン・スタートアップ」とは真逆の考え方を示す。
-リーン・スタートアップでは事業計画はあまりせずに、改善をすることを大事にしているが、
-ティールはそうしたスタートアップは結局のところ成功しにくいと考える。</p>
-
 <ul>
-<li>1. 僕たちは未来を創ることができるか</li>
-<li>2. 一九九九年のお祭り騒ぎ</li>
-<li>3. 幸福な企業はみなそれぞれに違う</li>
-<li>4. イデオロギーとしての競争</li>
-<li>5. 終盤を制する</li>
-<li>6. 人生は宝くじじゃない</li>
-<li>7. カネの流れを追え</li>
-<li>8. 隠れた真実</li>
-<li>9. ティールの法則</li>
-<li>10. マフィアの力学</li>
-<li>11. それを作れば、みんあやってくる？</li>
-<li>12. 人間と機会</li>
-<li>13. エネルギー20</li>
-<li>14. 創業者のパラドックス</li>
+<li>ローカルのタグを削除</li>
 </ul>
 
-<p>「２１世紀をこれまでより平和な繁栄の時代にしてくれる新たなテクノロジーを思い描き、それを創り出すことが、今の僕らに与えられた挑戦なのだ。」</p>
-
-<p>という一文が心に残った。</p>
-
-<p>進歩には2種類があるといい。水平進捗と垂直進捗と述べた。
-水平的進捗とは1台のタイプライターから100台作ること、成功のコピーと言い、
-垂直的進歩はタイプライターからワープロを生み出すことだと言った。</p>
-
-<p>日本の多くのベンチャー企業やそこで働く人たちも、大きなことを述べているようで
-水平進捗しか想像できていないということはあるなあと思ったし、
-そういう部分を真っ向から否定するティールの視点の高さに少し痺れた。</p>
-
-<p>他にも独占市場を築くことを進めていて、そのためにはどんなスタートアップも非常に小さな市場から始めるべきだといったり、
-ニッチ市場を創造し支配したら、次は関連する少し大きな市場に徐々に拡大してゆくべきだと。</p>
-
-<p>企業は創業者の想像以上の会社にはならないというけれど、
-始める時に視点を高く持つのは大事だと感じた。</p>
-
-<p>あと面白かったのは、
-日本だとよく大企業かベンチャーか、とかで意識の高さとか派閥があったりするけど、ティールは</p>
+<pre><code>git tag -d TAG_NAME
+</code></pre>
 
 <ul>
-<li>あいまいな楽観主義者</li>
-<li>あいまいな悲観主義者</li>
-<li>明確な楽観主義者</li>
-<li>明確な悲観主義者</li>
+<li>リモートのタグを削除(空のタグで上書き)</li>
 </ul>
 
-<p>に人の考えたを分類していて、あいまいな楽観主義者のことをかなりボロクソに言っていた。</p>
+<pre><code>git push origin :refs/tags/TAG_NAME
+</code></pre>
 
-<p>現状に満足して大して何も考えていないのに、この先もよくなっていくんだろうとか考えているからみたい。</p>
+<ul>
+<li>新しくタグをつける(注釈付き)</li>
+</ul>
 
-<p>ひたすら視点の高い本だった。</p>
+<pre><code>git tag TAG_NAME
+</code></pre>
+
+<ul>
+<li>リモートのプッシュ</li>
+</ul>
+
+<pre><code>git push --tags origin
+</code></pre>
+
+<hr>
+
+<p>意外とすんなり。</p>
 
                 </section>
             </article>
@@ -114,7 +85,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0323_zero_to_one%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91Zero%20to%20One by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0504_gittag%2f - %e3%80%90git%e3%80%91%e3%82%bf%e3%82%b0%e3%82%92%e9%96%93%e9%81%95%e3%81%88%e3%81%a6%e3%81%97%e3%81%be%e3%81%a3%e3%81%9f by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -131,10 +102,6 @@
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0504_gittag/">【git】タグを間違えてしまった<aside class="dates">May 4</aside></a>
-        </li>
         
    
     
