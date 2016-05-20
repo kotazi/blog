@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://kotazi.github.io/blog/</loc>
-    <lastmod>2016-05-09T23:22:25+09:00</lastmod>
+    <lastmod>2016-05-20T11:30:10+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0520_xcode_debug/</loc>
+    <lastmod>2016-05-20T11:30:10+09:00</lastmod>
   </url>
   
   <url>
