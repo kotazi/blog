@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>better-npm-runを使ってpackage.jsonを整備 &middot; kotazi.com</title>
+		<title>【読書】いのちの輝き &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,69 +32,40 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>better-npm-runを使ってpackage.jsonを整備</h1>
-                    <h2 class="headline">March 10, 2016</h2>
+                    <h1>【読書】いのちの輝き</h1>
+                    <h2 class="headline">June 1, 2016</h2>
                 </header>
                 <section id="post-body">
-                    <p>ReduxのStarterKitを触っていて気付いたのでメモ。</p>
+                    <p>27冊目。</p>
 
-<p><a href="https://github.com/benoror/better-npm-run">benoror/better-npm-run</a></p>
+<p><a  href="http://www.amazon.co.jp/gp/product/4881354647/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4881354647&linkCode=as2&tag=kotazi-22">いのちの輝き―フルフォード博士が語る自然治癒力</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4881354647" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+
+<p>を読みました。</p>
 
 <hr>
 
-<p><code>package.json</code>内でのハードコーディングを避ける。</p>
+<p>Amazonのレビューがよかったので購入したけれども久しぶりに外したと思った。</p>
 
-<p>下記のように書く。</p>
+<p>この本はオステオパシーについて書かれた本である。
+オステオパシーが何かというとアメリカ人医師アンドリュー・テイラー・スティル博士が1874年に発表した自然医学。</p>
 
-<pre><code>&quot;scripts&quot;: {
-  &quot;compile&quot;: &quot;better-npm-run compile&quot;,
-  &quot;start&quot;: &quot;better-npm-run start&quot;,
-  &quot;dev&quot;: &quot;better-npm-run dev&quot;,
-  &quot;test&quot;: &quot;better-npm-run test&quot;
-},
-</code></pre>
+<p>触診や整体といった感覚に近いのだろうか、けれども単なる医療療法ではなく哲学としての意味合いを持っている。</p>
 
-<p><code>better-npm-run</code>がどのように動作するかというと、</p>
+<ol>
+<li>体全体をひとつのユニットとして考える</li>
+<li>身体の機能と構造は一体のものであると考える</li>
+<li>自然治癒力を鼓舞することを主眼とする</li>
+</ol>
 
-<pre><code>&quot;betterScripts&quot;: {
-  &quot;compile&quot;: {
-    &quot;command&quot;: &quot;babel-node bin/compile&quot;,
-    &quot;env&quot;: {
-      &quot;DEBUG&quot;: &quot;app:*&quot;
-    }
-  },
-  &quot;dev&quot;: {
-    &quot;command&quot;: &quot;nodemon --exec babel-node bin/server&quot;,
-    &quot;env&quot;: {
-      &quot;NODE_ENV&quot;: &quot;development&quot;,
-      &quot;DEBUG&quot;: &quot;app:*&quot;
-    }
-  },
-  &quot;deploy&quot;: {
-    &quot;command&quot;: &quot;npm run clean &amp;&amp; npm run compile&quot;,
-    &quot;env&quot;: {
-      &quot;NODE_ENV&quot;: &quot;production&quot;,
-      &quot;DEBUG&quot;: &quot;app:*&quot;
-    }
-  },
-  &quot;start&quot;: {
-    &quot;command&quot;: &quot;babel-node bin/server&quot;,
-    &quot;env&quot;: {
-      &quot;DEBUG&quot;: &quot;app:*&quot;
-    }
-  },
-  &quot;test&quot;: {
-    &quot;command&quot;: &quot;babel-node ./node_modules/karma/bin/karma start build/karma.conf&quot;,
-    &quot;env&quot;: {
-      &quot;NODE_ENV&quot;: &quot;test&quot;,
-      &quot;DEBUG&quot;: &quot;app:*&quot;
-    }
-  }
-},
-</code></pre>
+<p>などである。</p>
 
-<p>こんな感じになる。
-冗長になりがちなpackage.jsonがきれいに。</p>
+<p>例えで言えば、突然内臓の調子が悪くなって、どこの医者でも解決することができなかったけれども、
+実は十数年前に自転車で転んだ際にできた怪我が原因で体の動かし方に癖が生じてしまっていたみたいな。</p>
+
+<p>それをオステオパシーによって発見し、オステオパシーによって治すみたいな。</p>
+
+<p>それ自体はそれでいいんだけれども、エピソード的な語りが多く、
+データに基づいた根拠がほとんどなかったのであまり深入りすることができなかった。</p>
 
                 </section>
             </article>
@@ -107,7 +78,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0310_better-npm-run%2f - better-npm-run%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%a6package.json%e3%82%92%e6%95%b4%e5%82%99 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0601_osteopathy%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91%e3%81%84%e3%81%ae%e3%81%a1%e3%81%ae%e8%bc%9d%e3%81%8d by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -131,10 +102,6 @@
         
    
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0601_osteopathy/">【読書】いのちの輝き<aside class="dates">Jun 1</aside></a>
-        </li>
         
    
     
