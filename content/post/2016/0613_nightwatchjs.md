@@ -126,4 +126,4 @@ module.exports = {
 
 <img src="https://www.evernote.com/l/Aj0ZHurS-ElLx4ysBBbKhNlEdlaM1BJ33x8B/image.png" alt="Pasted%20Image%206/13/16,%2018:14" />
 
-- [gif](http://g.recordit.co/AqTNXin4mr.gif)
+- <a src="http://g.recordit.co/AqTNXin4mr.gif" target="_blank">gif</a>
