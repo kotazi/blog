@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.14" />
-		<title>【読書】ネットコミュニティの設計と力　つながる私たちの時代 &middot; kotazi.com</title>
+		<title>【Git】fork元の更新を追う &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -32,56 +32,73 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【読書】ネットコミュニティの設計と力　つながる私たちの時代</h1>
-                    <h2 class="headline">March 12, 2016</h2>
+                    <h1>【Git】fork元の更新を追う</h1>
+                    <h2 class="headline">June 14, 2016</h2>
                 </header>
                 <section id="post-body">
                     
 
-<p>18冊目。</p>
+<p>Vuexを最近やっている。<br />
+Cloneしてきたリポジトリを触ったりするわけだけど、
+元のリポジトリに変更があれば反映させたい。</p>
 
-<p><a  href="http://www.amazon.co.jp/gp/product/4046538856/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4046538856&linkCode=as2&tag=kotazi-22">角川インターネット講座 (5) ネットコミュニティの設計と力 つながる私たちの時代</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4046538856" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
-
-<p>を読みました。</p>
-
-<hr>
-
-<h3 id="目次-http-kci-salon-jp-books-05:eb76b670aa6799b46f00323bbec081f8"><a href="http://kci-salon.jp/books/05/">目次</a></h3>
-
-<h5 id="第1部-人間の集まるコミュニティを設計する:eb76b670aa6799b46f00323bbec081f8">◯ 第1部 人間の集まるコミュニティを設計する</h5>
-
-<ul>
-<li>序章　日本のインターネットコミュニティ   　…近藤 淳也 著</li>
-<li>第1章　ソーシャルメディアの発生と進化  　…yomoyomo 著</li>
-<li>第2章　恋愛論的コミュニティサイト運営術  　…Hagex 著</li>
-<li>第3章　人が集まるコミュニティのつくり方 　…古川 健介 著</li>
-</ul>
-
-<h5 id="第2部-私たちのコミュニティはと-こへ向かうのか:eb76b670aa6799b46f00323bbec081f8">◯ 第2部 私たちのコミュニティはどこへ向かうのか?</h5>
-
-<ul>
-<li>第4章　サル学から考える人間のコミュニティの未来  　…山極 寿一 著</li>
-<li>第5章　情報技術とリアルコミュニティ    　…広井 良典 著</li>
-<li>第6章　コミュニティと人の力    　…近藤 淳也 著</li>
-</ul>
+<p>その方法を調べました。</p>
 
 <hr>
 
-<p>本書のテーマはインターネットコミュニティ。<br />
-僕自身インターネットを仕事にしていこうと考えたのは、
-コミュニティだとか、コミュニケーションのあり方が
-これからのインターネットによって再構築されていくだろうと感じたことが大きかった。
-だから強い関心を持って読めた。</p>
+<p>まずはクローンしたブランチの状態を確認するとこのようになっている。</p>
 
-<p>思えば少し前までインターネットコミュニティでは、
-匿名であるべき、実名であるべきだとか、
-レビューの信頼性がどうとかあったけれど、
-いつの間にかそういう議論も少なくなり、
-多くの人々がそれぞれのインターネットコミュニティの特性を理解して使い分けれるようになったと思う。</p>
+<pre><code>~/W/vuex git:master ❯❯❯ git br -a
+* master
+  remotes/origin/0.3.0
+  remotes/origin/0.4.0
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/gh-pages
+  remotes/origin/master
+  remotes/origin/old
+</code></pre>
 
-<p>それ自体はいいことだと思うけれど、その反面、
-道の輝きを放っていたインターネットコミュニティも
-ある程度「こういうもの」みたいなイメージが出来上がってきてしまったようにも感じる。</p>
+<p>リモートに<code>upstream</code>という名前で本家を追加する。</p>
+
+<pre><code>git remote add upstream git@github.com:vuejs/vuex.git
+</code></pre>
+
+<p>フェッチする。</p>
+
+<p><code>git fetch upstream</code></p>
+
+<p>そして再度ブランチの状態を確認すると、
+本家を追従できていることがわかる。</p>
+
+<pre><code>~/W/vuex git:master ❯❯❯ git br -a
+* master
+  remotes/origin/0.3.0
+  remotes/origin/0.4.0
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/gh-pages
+  remotes/origin/master
+  remotes/origin/old
+  remotes/upstream/0.3.0
+  remotes/upstream/0.4.0
+  remotes/upstream/gh-pages
+  remotes/upstream/master
+  remotes/upstream/old
+</code></pre>
+
+<hr>
+
+<h3 id="本家リポジトリの変更を反映するには:5e97cd55c370d01ef8f46218c5604c4f">本家リポジトリの変更を反映するには</h3>
+
+<ul>
+<li><code>git fetch upstream</code></li>
+<li><code>git merge upstream/master</code></li>
+</ul>
+
+<p>となる。</p>
+
+<hr>
+
+<p><a href="http://qiita.com/xtetsuji/items/555a1ef19ed21ee42873">こちらの記事</a>を参考にしました。</p>
 
                 </section>
             </article>
@@ -94,7 +111,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0312_internet%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91%e3%83%8d%e3%83%83%e3%83%88%e3%82%b3%e3%83%9f%e3%83%a5%e3%83%8b%e3%83%86%e3%82%a3%e3%81%ae%e8%a8%ad%e8%a8%88%e3%81%a8%e5%8a%9b%e3%80%80%e3%81%a4%e3%81%aa%e3%81%8c%e3%82%8b%e7%a7%81%e3%81%9f%e3%81%a1%e3%81%ae%e6%99%82%e4%bb%a3 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0614_git_fork%2f - %e3%80%90Git%e3%80%91fork%e5%85%83%e3%81%ae%e6%9b%b4%e6%96%b0%e3%82%92%e8%bf%bd%e3%81%86 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -111,10 +128,6 @@
     <h3>Read more</h3>
     
     
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0614_git_fork/">【Git】fork元の更新を追う<aside class="dates">Jun 14</aside></a>
-        </li>
         
    
     

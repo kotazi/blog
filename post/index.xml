@@ -6,8 +6,80 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2016 17:17:08 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jun 2016 11:31:27 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Git】fork元の更新を追う</title>
+      <link>http://kotazi.github.io/blog/post/2016/0614_git_fork/</link>
+      <pubDate>Tue, 14 Jun 2016 11:31:27 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0614_git_fork/</guid>
+      <description>
+
+&lt;p&gt;Vuexを最近やっている。&lt;br /&gt;
+Cloneしてきたリポジトリを触ったりするわけだけど、
+元のリポジトリに変更があれば反映させたい。&lt;/p&gt;
+
+&lt;p&gt;その方法を調べました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;まずはクローンしたブランチの状態を確認するとこのようになっている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/W/vuex git:master ❯❯❯ git br -a
+* master
+  remotes/origin/0.3.0
+  remotes/origin/0.4.0
+  remotes/origin/HEAD -&amp;gt; origin/master
+  remotes/origin/gh-pages
+  remotes/origin/master
+  remotes/origin/old
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;リモートに&lt;code&gt;upstream&lt;/code&gt;という名前で本家を追加する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add upstream git@github.com:vuejs/vuex.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;フェッチする。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git fetch upstream&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;そして再度ブランチの状態を確認すると、
+本家を追従できていることがわかる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/W/vuex git:master ❯❯❯ git br -a
+* master
+  remotes/origin/0.3.0
+  remotes/origin/0.4.0
+  remotes/origin/HEAD -&amp;gt; origin/master
+  remotes/origin/gh-pages
+  remotes/origin/master
+  remotes/origin/old
+  remotes/upstream/0.3.0
+  remotes/upstream/0.4.0
+  remotes/upstream/gh-pages
+  remotes/upstream/master
+  remotes/upstream/old
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;本家リポジトリの変更を反映するには:5e97cd55c370d01ef8f46218c5604c4f&#34;&gt;本家リポジトリの変更を反映するには&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git fetch upstream&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git merge upstream/master&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;となる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/xtetsuji/items/555a1ef19ed21ee42873&#34;&gt;こちらの記事&lt;/a&gt;を参考にしました。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【サンプルあり】Nightwatch.js覚書</title>
@@ -1326,116 +1398,6 @@ Reederまわりを整えて情報収集はしっかり行う。以上！！&lt;/
 &lt;hr&gt;
 
 &lt;p&gt;苦闘の部分だけ引用したけれども、実践的な経営に関するアドバイスも書かれていてとてもためになる本だった。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【DMM英会話】 Meeting | Business Basic</title>
-      <link>http://kotazi.github.io/blog/post/2016/0412_dmm/</link>
-      <pubDate>Tue, 12 Apr 2016 00:46:15 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0412_dmm/</guid>
-      <description>
-
-&lt;p&gt;DMM英会話のレッスン中。その日学んだことをメモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://eikaiwa.dmm.com/download/pdf/Business_basic_08_01.pdf/&#34;&gt;Lesson 08: Discussion | Business Basic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;practice-1-formal-and-informal-expressions:e6c1c0c2711565ef367ea5f6f70d8643&#34;&gt;◯ Practice 1 | Formal and Informal Expressions&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-2-reading-sentences:e6c1c0c2711565ef367ea5f6f70d8643&#34;&gt;◯ Practice 2 | Reading Sentences&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-3-studying-the-manual:e6c1c0c2711565ef367ea5f6f70d8643&#34;&gt;◯ Practice 3 | Studying the Manual&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A presented purpose of the meeting.&lt;/li&gt;
-&lt;li&gt;Good timing (Before the meeting decide how much time are you planning to talk; it should be neither too short nor too long) feel that you are paying attention to his ideas.&lt;/li&gt;
-&lt;li&gt;A requirement for the audience to join the discussion (ask questions, ask to write the minutes, ask to comment on the graph)&lt;/li&gt;
-&lt;li&gt;Some statistics and/or examples.&lt;/li&gt;
-&lt;li&gt;Visual information is valuable (example: pictures, graphs, etc.)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;意訳&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ミーティングの目的を伝える&lt;/li&gt;
-&lt;li&gt;事前にどのくらいの時間で伝えるのかを考える。長すぎても短すぎてもいけない&lt;/li&gt;
-&lt;li&gt;聴衆が参加するように要求をする(質問をする、メモを頼む、コメントを求める)&lt;/li&gt;
-&lt;li&gt;統計や例を用いる&lt;/li&gt;
-&lt;li&gt;ビジュアルを用意する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;practice-4-situation-questions:e6c1c0c2711565ef367ea5f6f70d8643&#34;&gt;◯ Practice 4 | Situation Questions&lt;/h5&gt;
-
-&lt;p&gt;割愛。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;覚えた英単語:e6c1c0c2711565ef367ea5f6f70d8643&#34;&gt;◯ 覚えた英単語&lt;/h5&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;単語&lt;/th&gt;
-&lt;th&gt;意味&lt;/th&gt;
-&lt;th&gt;その他&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;gradually&lt;/td&gt;
-&lt;td&gt;徐々に&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;attract&lt;/td&gt;
-&lt;td&gt;惹きつける&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;statistics&lt;/td&gt;
-&lt;td&gt;統計&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;involve&lt;/td&gt;
-&lt;td&gt;巻き込む&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;conduct&lt;/td&gt;
-&lt;td&gt;指揮をする&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;passive&lt;/td&gt;
-&lt;td&gt;受け身の&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr&gt;
 </description>
     </item>
     
