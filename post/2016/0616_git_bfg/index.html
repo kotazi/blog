@@ -1,0 +1,223 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.14" />
+		<title>【git/bfg】間違えてプッシュしたパスワードファイルなどを履歴から完全に削除する &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+	</head>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【git/bfg】間違えてプッシュしたパスワードファイルなどを履歴から完全に削除する</h1>
+                    <h2 class="headline">June 16, 2016</h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>AWS情報の書いてあるJSONファイルが間違えてコミットしてあったため、
+その削除方法について調べてトライしました。</p>
+
+<hr>
+
+<ul>
+<li><a href="https://help.github.com/articles/remove-sensitive-data/">Remove sensitive data</a></li>
+</ul>
+
+<p>上記のリンクに方法が書いてある。<br />
+ざっくりまとめると2つの方法があって、</p>
+
+<ol>
+<li><a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a>を使う方法</li>
+<li>コマンドを叩いて頑張る方法</li>
+</ol>
+
+<p>の2つがある。どちらかと言えば1を推奨しているよう。</p>
+
+<hr>
+
+<h2 id="bfgを使って削除する:02eda3ea3d5f357a7d5a931ac00e0b5f">BFGを使って削除する</h2>
+
+<p>Scala製なのでJavaの実行環境が必要になる。<br />
+今回は<code>.zprofile</code>に<code>alias bfg='java -jar /Applications/bfg-1.12.12.jar'</code>としてエイリアスを作成。</p>
+
+<pre><code>$ bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA
+$ git commit -m &quot;Remove sensitive data&quot;
+$ git push --force origin master
+</code></pre>
+
+<p>みたいな感じにすればできる。</p>
+
+<h5 id="参考リンク:02eda3ea3d5f357a7d5a931ac00e0b5f">参考リンク</h5>
+
+<ul>
+<li><a href="http://blog.technolize.net/post/82283923159/git-filter-branch-%E3%81%AE%E3%81%8B%E3%82%8F%E3%82%8A%E3%81%AB-bfg-%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%B1%A5%E6%AD%B4%E3%82%92%E6%B6%88%E5%8E%BB%E3%81%99%E3%82%8B">git filter-branch のかわりに BFG でファイルの履歴を消去する</a></li>
+</ul>
+
+<h2 id="コマンドを叩いて頑張る方法:02eda3ea3d5f357a7d5a931ac00e0b5f">コマンドを叩いて頑張る方法</h2>
+
+<p>意外とシンプルんできるから悪くない。でも長いから覚えるのは無理。<br />
+なんだかんだでBFG入れておいていい気がする。</p>
+
+<pre><code>$ git filter-branch -f --index-filter 'git rm --ignore-unmatch YOUR-FILE-WITH-SENSITIVE-DATA' HEAD
+</code></pre>
+
+<h5 id="参考リンク-1:02eda3ea3d5f357a7d5a931ac00e0b5f">参考リンク</h5>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/ichhi/20110825/1314300975">gitで特定のファイルの履歴を消す方法|おし、プログラミング</a></li>
+<li><a href="http://qiita.com/MahoTakara/items/3b02bf55767a6372596e">GitHub の commit 履歴からパスワードファイル等だけを消す方法</a></li>
+</ul>
+
+<hr>
+
+<p>テーマとは関係ないけど、</p>
+
+<ul>
+<li><code>.jar</code>ファイルはどこに置けばいいのか</li>
+<li>エイリアスを書いておくのは<code>.zprofile</code>でいいのか</li>
+<li>エイリアスを作成する以外に良い方法がないのか</li>
+</ul>
+
+<p>というのが気になった。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0616_git_bfg%2f - %e3%80%90git%2fbfg%e3%80%91%e9%96%93%e9%81%95%e3%81%88%e3%81%a6%e3%83%97%e3%83%83%e3%82%b7%e3%83%a5%e3%81%97%e3%81%9f%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%aa%e3%81%a9%e3%82%92%e5%b1%a5%e6%ad%b4%e3%81%8b%e3%82%89%e5%ae%8c%e5%85%a8%e3%81%ab%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0614_git_fork/">【Git】fork元の更新を追う<aside class="dates">Jun 14</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0607_value_proposition_design/">【読書】バリュー・プロポジション・デザイン<aside class="dates">Jun 7</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0602_ittehaikenai/">【読書】言ってはいけない<aside class="dates">Jun 5</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0601_osteopathy/">【読書】いのちの輝き<aside class="dates">Jun 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0524_innovation/">【読書】イノベーションのジレンマ<aside class="dates">May 31</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0520_xcode_debug/">【Xcode】デバッグスキル向上のために<aside class="dates">May 20</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0509_holiday/">【福利厚生】各企業の◯◯休暇まとめてみた<aside class="dates">May 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0508_human/">【読書】隠れた人材価値 <aside class="dates">May 8</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    <p class="small">
+        © Copyright 2016 kotazi
+    </p>
+</footer>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+    </body>
+</html>
