@@ -3,8 +3,12 @@
   
   <url>
     <loc>http://kotazi.github.io/blog/</loc>
-    <lastmod>2016-07-10T11:57:40+09:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2016-07-26T11:57:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0726_shell/</loc>
+    <lastmod>2016-07-26T11:57:40+09:00</lastmod>
   </url>
   
   <url>
@@ -318,12 +322,12 @@
   </url>
   
   <url>
-    <loc>http://kotazi.github.io/blog/post/2016/0119_37signals/</loc>
+    <loc>http://kotazi.github.io/blog/post/2016/0124_calendar/</loc>
     <lastmod>2016-01-19T22:53:46+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kotazi.github.io/blog/post/2016/0124_calendar/</loc>
+    <loc>http://kotazi.github.io/blog/post/2016/0119_37signals/</loc>
     <lastmod>2016-01-19T22:53:46+09:00</lastmod>
   </url>
   

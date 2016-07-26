@@ -40,43 +40,43 @@
 
 &lt;hr&gt;
 
-&lt;h5 id=&#34;defaultdate-http-fullcalendar-io-docs-current-date-defaultdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/defaultDate&#34;&gt;defaultDate&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;defaultdate-http-fullcalendar-io-docs-current-date-defaultdate&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/defaultDate&#34;&gt;defaultDate&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;最初の読み込み時に表示する日時。&lt;/p&gt;
 
-&lt;h5 id=&#34;nowindicator-http-fullcalendar-io-docs-current-date-nowindicator:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nowIndicator&#34;&gt;nowIndicator&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;nowindicator-http-fullcalendar-io-docs-current-date-nowindicator&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nowIndicator&#34;&gt;nowIndicator&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;現在時刻にマーカーを引くかどうか。&lt;/p&gt;
 
-&lt;h5 id=&#34;prev-method-http-fullcalendar-io-docs-current-date-prev:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prev&#34;&gt;prev (method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;prev-method-http-fullcalendar-io-docs-current-date-prev&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prev&#34;&gt;prev (method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;前に戻るためのメソッド。&lt;/p&gt;
 
-&lt;h5 id=&#34;next-method-http-fullcalendar-io-docs-current-date-next:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/next&#34;&gt;next (method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;next-method-http-fullcalendar-io-docs-current-date-next&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/next&#34;&gt;next (method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;次に進むためのメソッド。&lt;/p&gt;
 
-&lt;h5 id=&#34;prevyear-method-http-fullcalendar-io-docs-current-date-prevyear:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prevYear&#34;&gt;prevYear (method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;prevyear-method-http-fullcalendar-io-docs-current-date-prevyear&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prevYear&#34;&gt;prevYear (method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;前年に戻る。&lt;/p&gt;
 
-&lt;h5 id=&#34;nextyear-method-http-fullcalendar-io-docs-current-date-nextyear:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nextYear&#34;&gt;nextYear (method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;nextyear-method-http-fullcalendar-io-docs-current-date-nextyear&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nextYear&#34;&gt;nextYear (method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;翌年に進む。&lt;/p&gt;
 
-&lt;h5 id=&#34;today-method-http-fullcalendar-io-docs-current-date-today:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/today&#34;&gt;today(method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;today-method-http-fullcalendar-io-docs-current-date-today&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/today&#34;&gt;today(method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;今日を表示する。&lt;/p&gt;
 
-&lt;h5 id=&#34;gotodate-method-http-fullcalendar-io-docs-current-date-gotodate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/gotoDate&#34;&gt;gotoDate(method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;gotodate-method-http-fullcalendar-io-docs-current-date-gotodate&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/gotoDate&#34;&gt;gotoDate(method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;指定日へ移動する。&lt;/p&gt;
 
-&lt;h5 id=&#34;incrementdate-method-http-fullcalendar-io-docs-current-date-incrementdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/incrementDate&#34;&gt;incrementDate(method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;incrementdate-method-http-fullcalendar-io-docs-current-date-incrementdate&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/incrementDate&#34;&gt;incrementDate(method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;指定日時分だけ移動する。&lt;/p&gt;
 
-&lt;h5 id=&#34;getdate-method-http-fullcalendar-io-docs-current-date-getdate:64626c8a94a6af0c72d57024092cd2ec&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/getDate&#34;&gt;getDate(method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;getdate-method-http-fullcalendar-io-docs-current-date-getdate&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/getDate&#34;&gt;getDate(method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;日付を取得する。&lt;/p&gt;
 </description>
@@ -96,100 +96,100 @@
 
 &lt;hr&gt;
 
-&lt;h5 id=&#34;header-http-fullcalendar-io-docs-display-header:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/header/&#34;&gt;header&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;header-http-fullcalendar-io-docs-display-header&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/header/&#34;&gt;header&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;カレンダー上部のボタンとタイトルを定義します。&lt;/p&gt;
 
-&lt;h5 id=&#34;custombuttons-http-fullcalendar-io-docs-display-custombuttons:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/customButtons&#34;&gt;customButtons&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;custombuttons-http-fullcalendar-io-docs-display-custombuttons&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/customButtons&#34;&gt;customButtons&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;ヘッダーで使用されるカスタムボタンを定義します。&lt;/p&gt;
 
-&lt;h5 id=&#34;buttonicons-http-fullcalendar-io-docs-display-buttonicons:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/buttonIcons&#34;&gt;buttonIcons&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;buttonicons-http-fullcalendar-io-docs-display-buttonicons&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/buttonIcons&#34;&gt;buttonIcons&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;ヘッダーボタンで表示するアイコンを決めます。&lt;/p&gt;
 
-&lt;h5 id=&#34;theme-http-fullcalendar-io-docs-display-theme:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/theme&#34;&gt;theme&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;theme-http-fullcalendar-io-docs-display-theme&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/theme&#34;&gt;theme&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;jQuery UIテーマの使用不使用です。&lt;/p&gt;
 
-&lt;h5 id=&#34;themebuttonicons-http-fullcalendar-io-docs-display-themebuttonicons:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/themeButtonIcons&#34;&gt;themeButtonIcons&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;themebuttonicons-http-fullcalendar-io-docs-display-themebuttonicons&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/themeButtonIcons&#34;&gt;themeButtonIcons&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;テーマで使用するアイコンを決定します。&lt;/p&gt;
 
-&lt;h5 id=&#34;firstday-http-fullcalendar-io-docs-display-firstday:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/firstDay&#34;&gt;firstDay&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;firstday-http-fullcalendar-io-docs-display-firstday&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/firstDay&#34;&gt;firstDay&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;週始めを決めます。&lt;/p&gt;
 
-&lt;h5 id=&#34;isrtl-http-fullcalendar-io-docs-display:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;isRTL&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;isrtl-http-fullcalendar-io-docs-display&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;isRTL&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;カレンダーの表示向きです。&lt;/p&gt;
 
-&lt;h5 id=&#34;weekends-http-fullcalendar-io-docs-display-weekends:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/weekends&#34;&gt;weekends&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;weekends-http-fullcalendar-io-docs-display-weekends&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/weekends&#34;&gt;weekends&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;カレンダーのビューに土日を含めるかどうかです。&lt;/p&gt;
 
-&lt;h5 id=&#34;hiddendays-http-fullcalendar-io-docs-display-hiddendays:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/hiddenDays&#34;&gt;hiddenDays&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;hiddendays-http-fullcalendar-io-docs-display-hiddendays&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/hiddenDays&#34;&gt;hiddenDays&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;決まった曜日を非表示にすることができます。&lt;/p&gt;
 
-&lt;h5 id=&#34;fixedweekcount-http-fullcalendar-io-docs-display-fixedweekcount:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/fixedWeekCount&#34;&gt;fixedWeekCount&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;fixedweekcount-http-fullcalendar-io-docs-display-fixedweekcount&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/fixedWeekCount&#34;&gt;fixedWeekCount&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;デフォルトは&lt;code&gt;true&lt;/code&gt;.必ず6週です。
 &lt;code&gt;false&lt;/code&gt;の場合は4や5週の場合があります。&lt;/p&gt;
 
-&lt;h5 id=&#34;weeknumbers-http-fullcalendar-io-docs-display-weeknumbers:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/weekNumbers&#34;&gt;weekNumbers&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;weeknumbers-http-fullcalendar-io-docs-display-weeknumbers&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/weekNumbers&#34;&gt;weekNumbers&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;週番号を表示するかです。&lt;code&gt;true&lt;/code&gt;にすると左側に入ります。&lt;/p&gt;
 
-&lt;h5 id=&#34;weeknumbercalculation-http-fullcalendar-io-docs-display:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;weekNumberCalculation&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;weeknumbercalculation-http-fullcalendar-io-docs-display&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;weekNumberCalculation&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;weekNumbersの設定に合わせて週の数を計算します。&lt;/p&gt;
 
-&lt;h5 id=&#34;businesshours-http-fullcalendar-io-docs-display-businesshours:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/businessHours&#34;&gt;businessHours&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;businesshours-http-fullcalendar-io-docs-display-businesshours&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/businessHours&#34;&gt;businessHours&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;ビジネスタイムの設定。&lt;/p&gt;
 
-&lt;h5 id=&#34;height-http-fullcalendar-io-docs-display-height:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/height&#34;&gt;height&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;height-http-fullcalendar-io-docs-display-height&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/height&#34;&gt;height&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;カレンダーの高さを指定します。&lt;/p&gt;
 
-&lt;h5 id=&#34;aspectratio-http-fullcalendar-io-docs-display-aspectratio:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/aspectRatio&#34;&gt;aspectRatio&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;aspectratio-http-fullcalendar-io-docs-display-aspectratio&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/aspectRatio&#34;&gt;aspectRatio&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;縦横のアスペクト比を決定します。&lt;/p&gt;
 
-&lt;h5 id=&#34;handlewindowresize-http-fullcalendar-io-docs-display-handlewindowresize:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/handleWindowResize&#34;&gt;handleWindowResize&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;handlewindowresize-http-fullcalendar-io-docs-display-handlewindowresize&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/handleWindowResize&#34;&gt;handleWindowResize&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;ブラウザがリサイズされた時に、カレンダーをリサイズします。&lt;/p&gt;
 
-&lt;h5 id=&#34;eventlimit-http-fullcalendar-io-docs-display-eventlimit:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/eventLimit&#34;&gt;eventLimit&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;eventlimit-http-fullcalendar-io-docs-display-eventlimit&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/eventLimit&#34;&gt;eventLimit&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;一日に表示するイベントの数の上限。&lt;/p&gt;
 
-&lt;h5 id=&#34;eventlimitclick-http-fullcalendar-io-docs-display-eventlimitclick:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/eventLimitClick&#34;&gt;eventLimitClick&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;eventlimitclick-http-fullcalendar-io-docs-display-eventlimitclick&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/eventLimitClick&#34;&gt;eventLimitClick&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;eventLimitで設定した上限を超え、&lt;code&gt;more&lt;/code&gt;をクリックした時のアクション。&lt;/p&gt;
 
-&lt;h5 id=&#34;viewrender-callback-http-fullcalendar-io-docs-display-viewrender:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/viewRender&#34;&gt;viewRender (callback)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;viewrender-callback-http-fullcalendar-io-docs-display-viewrender&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/viewRender&#34;&gt;viewRender (callback)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;レンダリング後のコールバック&lt;/p&gt;
 
-&lt;h5 id=&#34;viewdestroy-callback-http-fullcalendar-io-docs-display-viewdestroy:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/viewDestroy&#34;&gt;viewDestroy (callback)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;viewdestroy-callback-http-fullcalendar-io-docs-display-viewdestroy&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/viewDestroy&#34;&gt;viewDestroy (callback)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;データ破壊後のコールバック&lt;/p&gt;
 
-&lt;h5 id=&#34;dayrender-callback-http-fullcalendar-io-docs-display-dayrender:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/dayRender&#34;&gt;dayRender (callback)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;dayrender-callback-http-fullcalendar-io-docs-display-dayrender&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/dayRender&#34;&gt;dayRender (callback)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;セルを修正した時のコールバック&lt;/p&gt;
 
-&lt;h5 id=&#34;windowresize-callback-http-fullcalendar-io-docs-display-windowresize:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/windowResize&#34;&gt;windowResize (callback)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;windowresize-callback-http-fullcalendar-io-docs-display-windowresize&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/windowResize&#34;&gt;windowResize (callback)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;リサイズ時のコールバック&lt;/p&gt;
 
-&lt;h5 id=&#34;render-method-http-fullcalendar-io-docs-display-render:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/render&#34;&gt;render (method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;render-method-http-fullcalendar-io-docs-display-render&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/render&#34;&gt;render (method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;レンダリングメソッド。&lt;/p&gt;
 
-&lt;h5 id=&#34;destroy-method-http-fullcalendar-io-docs-display-destroy:9292537d398d35e2714a7e18b5b2d7a6&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/destroy&#34;&gt;destroy (method)&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;destroy-method-http-fullcalendar-io-docs-display-destroy&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/destroy&#34;&gt;destroy (method)&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;要素を取り除く。&lt;/p&gt;
 </description>
@@ -211,7 +211,7 @@
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;google-calendar:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Google Calendar&lt;/h3&gt;
+&lt;h3 id=&#34;google-calendar&#34;&gt;Google Calendar&lt;/h3&gt;
 
 &lt;p&gt;FullCalendarではGoogle Calendarのイベントを表示することができます。
 GoogleCalendarはバックエンド側で管理・保持しているイベントデータを提供することができます。
@@ -219,7 +219,7 @@ GoogleCalendarはバックエンド側で管理・保持しているイベント
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;before-you-code:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Before you code&amp;hellip;&lt;/h3&gt;
+&lt;h3 id=&#34;before-you-code&#34;&gt;Before you code&amp;hellip;&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;GoogleCalendarのAPIキーが必要です&lt;/strong&gt;&lt;/p&gt;
 
@@ -260,7 +260,7 @@ GoogleCalendarはバックエンド側で管理・保持しているイベント
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;dependencies:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Dependencies&lt;/h3&gt;
+&lt;h3 id=&#34;dependencies&#34;&gt;Dependencies&lt;/h3&gt;
 
 &lt;p&gt;続いて、必要なJS/CSSを追加します。標準的なファイルに加え、&lt;code&gt;gcal.js&lt;/code&gt;も追加します。&lt;/p&gt;
 
@@ -269,7 +269,7 @@ GoogleCalendarはバックエンド側で管理・保持しているイベント
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;writing-the-code:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Writing the code&lt;/h3&gt;
+&lt;h3 id=&#34;writing-the-code&#34;&gt;Writing the code&lt;/h3&gt;
 
 &lt;p&gt;JSでカレンダーを初期化する準備が整いました。これが最小のサンプルになります。&lt;/p&gt;
 
@@ -306,14 +306,14 @@ $(document).ready(function() {
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;timezones:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Timezones&lt;/h3&gt;
+&lt;h3 id=&#34;timezones&#34;&gt;Timezones&lt;/h3&gt;
 
 &lt;p&gt;GoogleCalendarのプラグインでは&lt;a href=&#34;http://fullcalendar.io/docs/timezone/timezone/&#34;&gt;timezone&lt;/a&gt;をリスペクトしています。
 &lt;code&gt;false&lt;/code&gt;(デフォルト)にしておくと、GoogleCalendarのタイムゾーン設定が使用されます。特定のものを指定していれば、これらは無視されます。&lt;/p&gt;
 
 &lt;Hr&gt;
 
-&lt;h3 id=&#34;multiple-google-calendars:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Multiple Google Calendars&lt;/h3&gt;
+&lt;h3 id=&#34;multiple-google-calendars&#34;&gt;Multiple Google Calendars&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;eventSources&lt;/code&gt;オプションを利用すれば複数のGoogleCalendarを利用することができます。&lt;/p&gt;
 
@@ -339,7 +339,7 @@ $(document).ready(function() {
 
 &lt;Hr&gt;
 
-&lt;h3 id=&#34;advanced:d1c1dad631980de0087d81fc9c503c32&#34;&gt;Advanced&lt;/h3&gt;
+&lt;h3 id=&#34;advanced&#34;&gt;Advanced&lt;/h3&gt;
 
 &lt;p&gt;カレンダーごとに異なるAPIキーを利用する場合、&lt;code&gt;googleCalendarApiKey&lt;/code&gt;をセットするには個々の[EventSource]を用います。&lt;/p&gt;
 
@@ -363,7 +363,7 @@ $(document).ready(function() {
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;basic-usage:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Basic Usage&lt;/h3&gt;
+&lt;h3 id=&#34;basic-usage&#34;&gt;Basic Usage&lt;/h3&gt;
 
 &lt;p&gt;Webページにカレンダーを組み込む最初のステップは、正しいJSとCSSファイルを用意することです。
 FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイルを&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;に含めたことを確認してください。&lt;/p&gt;
@@ -403,7 +403,7 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;options:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Options&lt;/h3&gt;
+&lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;
 
 &lt;p&gt;FullCalendarのドキュメントの大半は、オプションの影響や振る舞いについてです。
 オプションはこのように、たいていカレンダーの初期化時にセットされます。&lt;/p&gt;
@@ -415,7 +415,7 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;callbacks:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Callbacks&lt;/h3&gt;
+&lt;h3 id=&#34;callbacks&#34;&gt;Callbacks&lt;/h3&gt;
 
 &lt;p&gt;コールバックはオプションのように並べられますが、これらの関数は特別なことが起こらなければ呼ばれません。
 下記のサンプルでは、ユーザーが日にちをクリックするとアラートが表示されるものです。&lt;/p&gt;
@@ -429,7 +429,7 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;methods:618077e916e5f8ed5fedc9c7378a801b&#34;&gt;Methods&lt;/h3&gt;
+&lt;h3 id=&#34;methods&#34;&gt;Methods&lt;/h3&gt;
 
 &lt;p&gt;メソッドは様々な方法を提供します。
 メソッドは既に初期化されたカレンダーのjQueryオブジェクトに対し、&lt;code&gt;fullCalendar&lt;/code&gt;コマンドを買います。&lt;/p&gt;
@@ -457,43 +457,43 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
 
 &lt;hr&gt;
 
-&lt;h5 id=&#34;alldayslot-http-fullcalendar-io-docs-agenda-alldayslot:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDaySlot&#34;&gt;allDaySlot&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;alldayslot-http-fullcalendar-io-docs-agenda-alldayslot&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDaySlot&#34;&gt;allDaySlot&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;&amp;ldquo;all-day&amp;rdquo;(終日)の表示をカレンダーの上部にするかどうか。&lt;/p&gt;
 
-&lt;h5 id=&#34;alldaytext-http-fullcalendar-io-docs-agenda-alldaytext:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDayText&#34;&gt;allDayText&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;alldaytext-http-fullcalendar-io-docs-agenda-alldaytext&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDayText&#34;&gt;allDayText&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;&amp;ldquo;all-day&amp;rdquo;に表示するテキスト。&lt;/p&gt;
 
-&lt;h5 id=&#34;slotduration-http-fullcalendar-io-docs-agenda-slotduration:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotDuration&#34;&gt;slotDuration&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;slotduration-http-fullcalendar-io-docs-agenda-slotduration&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotDuration&#34;&gt;slotDuration&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;枠の間隔。&lt;/p&gt;
 
-&lt;h5 id=&#34;slotlabelformat-http-fullcalendar-io-docs-agenda-slotlabelformat:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelFormat&#34;&gt;slotLabelFormat&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;slotlabelformat-http-fullcalendar-io-docs-agenda-slotlabelformat&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelFormat&#34;&gt;slotLabelFormat&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;枠の部分の表示フォーマット。&lt;/p&gt;
 
-&lt;h5 id=&#34;slotlabelinterval-http-fullcalendar-io-docs-agenda-slotlabelinterval:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelInterval&#34;&gt;slotLabelInterval&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;slotlabelinterval-http-fullcalendar-io-docs-agenda-slotlabelinterval&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelInterval&#34;&gt;slotLabelInterval&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;枠部分にテキストを表示する間隔を決めます。&lt;/p&gt;
 
-&lt;h5 id=&#34;snapduration-http-fullcalendar-io-docs-agenda-snapduration:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/snapDuration&#34;&gt;snapDuration&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;snapduration-http-fullcalendar-io-docs-agenda-snapduration&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/snapDuration&#34;&gt;snapDuration&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;イベントをドラックでずらす間隔を決めます。&lt;/p&gt;
 
-&lt;h5 id=&#34;scrolltime-http-fullcalendar-io-docs-agenda-scrolltime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/scrollTime&#34;&gt;scrollTime&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;scrolltime-http-fullcalendar-io-docs-agenda-scrolltime&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/scrollTime&#34;&gt;scrollTime&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;スクロール枠を決めます。&lt;/p&gt;
 
-&lt;h5 id=&#34;mintime-http-fullcalendar-io-docs-agenda-mintime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/minTime&#34;&gt;minTime&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;mintime-http-fullcalendar-io-docs-agenda-mintime&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/minTime&#34;&gt;minTime&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;表示する時間の最低枠を決めます。&lt;/p&gt;
 
-&lt;h5 id=&#34;maxtime-http-fullcalendar-io-docs-agenda-maxtime:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/maxTime&#34;&gt;maxTime&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;maxtime-http-fullcalendar-io-docs-agenda-maxtime&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/maxTime&#34;&gt;maxTime&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;表示する時間の最大枠を決めます。&lt;/p&gt;
 
-&lt;h5 id=&#34;loteventoverlap-http-fullcalendar-io-docs-agenda-loteventoverlap:fa802ff0768f75770328542af23e0887&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/lotEventOverlap&#34;&gt;lotEventOverlap&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&#34;loteventoverlap-http-fullcalendar-io-docs-agenda-loteventoverlap&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/lotEventOverlap&#34;&gt;lotEventOverlap&lt;/a&gt;&lt;/h5&gt;
 
 &lt;p&gt;イベントの時間が重複した際の表示方法&lt;/p&gt;
 </description>

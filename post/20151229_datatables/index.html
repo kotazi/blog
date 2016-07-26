@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【訳読】Datatablesの初期化エラー &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,11 @@
             <article class="post">
                 <header>
                     <h1>【訳読】Datatablesの初期化エラー</h1>
-                    <h2 class="headline">January 2, 2016</h2>
+                    <h2 class="headline">
+                    January 2, 2016 
+                    <br>
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -46,7 +59,7 @@
 
 <p>DataTablesではテーブルをカスタマイズする広範囲のオプションを初期化時に設定することができます。これは初期化の時のみなので、それ以降にこのようなオプションを設定しようとするとエラーが出てしまいます。</p>
 
-<h3 id="意義:f6b344828f1ff5de137281b6efc1cbd7">意義</h3>
+<h3 id="意義">意義</h3>
 
 <p>単純に、DataTablesでは初期化時に設定したオプションを後から変更することができないということです。どんな操作をしたとしても、既に<a href="http://datatables.net/reference/api">API</a>を通して初期化されてしまった後ではエラーが発生します。</p>
 
@@ -55,7 +68,7 @@
 
 <p><code>{id}</code>の部分はエラーを引き起こしたDOMのidで置き換えられます。</p>
 
-<h3 id="分析:f6b344828f1ff5de137281b6efc1cbd7">分析</h3>
+<h3 id="分析">分析</h3>
 
 <p>このエラーはDataTablesが選択したノードにおいて既に初期化している際に、DataTablesのコンストラクタオブジェクトを呼び出すと発生しいます。下記がサンプルになります。</p>
 
@@ -71,11 +84,11 @@ $('#example').dataTable( {
 
 <p><code>#example</code>は既にDataTableとして初期化されているので、2つ目のコードブロックが実行されるときにエラーが発生します。</p>
 
-<h3 id="解法:f6b344828f1ff5de137281b6efc1cbd7">解法</h3>
+<h3 id="解法">解法</h3>
 
 <p>このエラーを再現するにはいくつかの方法があります。なのでこのイシューを解決するためにいくつかの方法が使われます。</p>
 
-<h4 id="シングル初期化:f6b344828f1ff5de137281b6efc1cbd7">シングル初期化</h4>
+<h4 id="シングル初期化">シングル初期化</h4>
 
 <p>複数のDataTablesの初期化を行いたいのであれば、単に同じものを設定してください。サンプルでは、ページングと検索を消しました。</p>
 
@@ -87,7 +100,7 @@ $('#example').dataTable( {
 
 <p>より詳しく知るためには、<a href="initialisation options manual">こちら</a>のマニュアルを参考にしてください。</p>
 
-<h4 id="オブジェクトインスタンス検索:f6b344828f1ff5de137281b6efc1cbd7">オブジェクトインスタンス検索</h4>
+<h4 id="オブジェクトインスタンス検索">オブジェクトインスタンス検索</h4>
 
 <p>APIを通してDataTableの活動の参照を得ようとた時にこのエラーはしばしば起こります。
 例えば、もしあなたがDataTableインスタンスを作成する関数を持っていたとしましょう。これに変更を加えようとするとエラーが出てしまいます。
@@ -103,7 +116,7 @@ else {
 }
 </code></pre>
 
-<h4 id="retrieve:f6b344828f1ff5de137281b6efc1cbd7">retrieve</h4>
+<h4 id="retrieve">retrieve</h4>
 
 <p>上記サンプルのコートは魅力的ではありません。<code>retrieve</code>オプションを使って、DataTablesにあなたが初期化後にオプションを変更できないことを知っていると伝えましょう。
 このオプションは<code>$.fn.dataTable.isDataTable()</code>によるチェックよりショートカットになります。</p>
@@ -114,7 +127,7 @@ else {
 } );
 </code></pre>
 
-<h4 id="destroy:f6b344828f1ff5de137281b6efc1cbd7">destroy</h4>
+<h4 id="destroy">destroy</h4>
 
 <p>本当にオプション設定を変更したい場合もあるでしょう。少し特殊な方法を取ることで解決できます。
 古いDatatablesを破壊して新しい物を作るのです。なるべく避けたほうがいいかもしれません。</p>
@@ -147,7 +160,7 @@ $('#example').DataTable( {
 
 <p><code>retrieve</code>オプションと<code>destroy</code>オプションは相容れないので一緒に使用することはできません。</p>
 
-<h4 id="reason:f6b344828f1ff5de137281b6efc1cbd7">Reason</h4>
+<h4 id="reason">Reason</h4>
 
 <p>初期化後にDataTablesの初期設定を変更することができない理由は、その設定を元にしたコートが多すぎるためです。(例えば、スクロールのオンオフなどは複雑過ぎます。)
 その結果、DataTablesのコアコードをキープしたままにするのは利用可能ではなくなっています。注意点として、<code>destroy</code>オプションを使ってもperformanceへの影響はありません。</p>
@@ -156,7 +169,7 @@ $('#example').DataTable( {
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -176,9 +189,18 @@ $('#example').DataTable( {
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -242,19 +264,16 @@ $('#example').DataTable( {
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -263,13 +282,8 @@ $('#example').DataTable( {
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

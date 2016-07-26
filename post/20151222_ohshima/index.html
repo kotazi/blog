@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【AngularJS×InstaAPI】Ohshimagramを作ってみた &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,11 @@
             <article class="post">
                 <header>
                     <h1>【AngularJS×InstaAPI】Ohshimagramを作ってみた</h1>
-                    <h2 class="headline">December 22, 2015</h2>
+                    <h2 class="headline">
+                    December 22, 2015 
+                    <br>
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -41,7 +54,7 @@
 <p>今年のGWの記事。<br />
 ブログを消したのでこの記事だけ復活。</p>
 
-<h2 id="概要:c961446d10dc1756ec8ab013192d7a44">概要</h2>
+<h2 id="概要">概要</h2>
 
 <p>InstagramAPIを利用して<code>#伊豆大島</code>のついたものを引っ張ってくるAngularJSのサービスを作りました。<br />
 今更感が否めないのですが、いくつか改めて勉強し直したいことがあったので。<br />
@@ -53,13 +66,13 @@
 <li><a href="ohshimagram.kotazi.com">ohshimagram</a></li>
 </ul>
 
-<h3 id="はじめに考えたこと:c961446d10dc1756ec8ab013192d7a44">■ はじめに考えたこと</h3>
+<h3 id="はじめに考えたこと">■ はじめに考えたこと</h3>
 
-<h4 id="開発期間:c961446d10dc1756ec8ab013192d7a44">▼ 開発期間</h4>
+<h4 id="開発期間">▼ 開発期間</h4>
 
 <p><sup>4</sup>&frasl;<sub>20</sub>(月)〜4/27(月)の空き時間。と伊豆大島旅行中に締め。</p>
 
-<h4 id="実装する機能:c961446d10dc1756ec8ab013192d7a44">▼ 実装する機能</h4>
+<h4 id="実装する機能">▼ 実装する機能</h4>
 
 <ul>
 <li>Instagram画像の収集をする</li>
@@ -67,7 +80,7 @@
 <li>いいね/コメントをユーザーが行えるようにする</li>
 </ul>
 
-<h4 id="使いたいもの-やりたいこと:c961446d10dc1756ec8ab013192d7a44">▼ 使いたいもの/やりたいこと</h4>
+<h4 id="使いたいもの-やりたいこと">▼ 使いたいもの/やりたいこと</h4>
 
 <ul>
 <li>AngularJS</li>
@@ -88,7 +101,7 @@
 <li>ngInfiniteScroll</li>
 </ul>
 
-<h4 id="意識すること:c961446d10dc1756ec8ab013192d7a44">▼ 意識すること</h4>
+<h4 id="意識すること">▼ 意識すること</h4>
 
 <ul>
 <li>一週間以内に制作すること</li>
@@ -99,7 +112,7 @@
 <li>SourceTreeを使わない =&gt; けっこう使った</li>
 </ul>
 
-<h4 id="参考にしたいurl:c961446d10dc1756ec8ab013192d7a44">▼ 参考にしたいURL</h4>
+<h4 id="参考にしたいurl">▼ 参考にしたいURL</h4>
 
 <ul>
 <li><a href="http://syncer.jp/instagram-api-matome">Instagram APIでwebサービスを作りたい全ての人に向けて書きました</a></li>
@@ -107,11 +120,11 @@
 <li><a href="https://instagram.com/developer/">Instagram API </a></li>
 </ul>
 
-<h2 id="実装中のメモ:c961446d10dc1756ec8ab013192d7a44">実装中のメモ</h2>
+<h2 id="実装中のメモ">実装中のメモ</h2>
 
-<h3 id="プロジェクトの作成:c961446d10dc1756ec8ab013192d7a44">■ プロジェクトの作成</h3>
+<h3 id="プロジェクトの作成">■ プロジェクトの作成</h3>
 
-<h4 id="プロジェクトを作成する:c961446d10dc1756ec8ab013192d7a44">▼ プロジェクトを作成する</h4>
+<h4 id="プロジェクトを作成する">▼ プロジェクトを作成する</h4>
 
 <p>下記の記事を参考に<code>yoman</code>のジェネレータを探す。</p>
 
@@ -136,7 +149,7 @@
 ? Which html template engine would you want? None, I like to code in standard HTML.
 </code></pre>
 
-<h5 id="コマンドメモ:c961446d10dc1756ec8ab013192d7a44">◯ コマンドメモ</h5>
+<h5 id="コマンドメモ">◯ コマンドメモ</h5>
 
 <ul>
 <li><code>gulp serve</code>: ローカルで起動</li>
@@ -145,22 +158,22 @@
 <li><code>gulp test</code>: 単体テスト</li>
 </ul>
 
-<h4 id="ディレクトリ構成を考える:c961446d10dc1756ec8ab013192d7a44">▼ ディレクトリ構成を考える</h4>
+<h4 id="ディレクトリ構成を考える">▼ ディレクトリ構成を考える</h4>
 
 <ul>
 <li><a href="https://github.com/mgechev/angularjs-style-guide/blob/master/README-ja-jp.md">mgechev/angularjs-style-guide</a></li>
 <li><a href="http://qiita.com/n0bisuke/items/6a79d3ee63020f771260">Angular.jsのディレクトリ構成のベストプラクティスを探る</a></li>
 </ul>
 
-<h4 id="環境構築:c961446d10dc1756ec8ab013192d7a44">▼ 環境構築</h4>
+<h4 id="環境構築">▼ 環境構築</h4>
 
-<h5 id="gitにあげておく:c961446d10dc1756ec8ab013192d7a44">◯ gitにあげておく</h5>
+<h5 id="gitにあげておく">◯ gitにあげておく</h5>
 
 <ul>
 <li><a href="https://github.com/kotazi/kyu-maru-gram/tree/master">kotazi/kyu-maru-gram</a></li>
 </ul>
 
-<h5 id="slimの導入:c961446d10dc1756ec8ab013192d7a44">◯ slimの導入</h5>
+<h5 id="slimの導入">◯ slimの導入</h5>
 
 <ul>
 <li><a href="https://www.npmjs.com/package/gulp-slim">gulp-slim</a></li>
@@ -182,7 +195,7 @@ module.exports = function(options) {
 
 <p>これである程度開発環境は整った。</p>
 
-<h3 id="ルーティング:c961446d10dc1756ec8ab013192d7a44">■ ルーティング</h3>
+<h3 id="ルーティング">■ ルーティング</h3>
 
 <p>ひとまず<code>/about</code>/<code>/contact</code>ページを作ってみることにする。
 HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードでは毎回リクエストが飛んでしまうらしいのでHashモードを使うことに。どうやら一長一短みたい。</p>
@@ -191,7 +204,7 @@ HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードで
 <li><a href="http://qiita.com/shogogg/items/542bd6d18f777bcc24bc">AngularJS の $locationProvider.html5Mode について</a></li>
 </ul>
 
-<h4 id="oauth認証について:c961446d10dc1756ec8ab013192d7a44">▼ Oauth認証について</h4>
+<h4 id="oauth認証について">▼ Oauth認証について</h4>
 
 <p>下記のようにしてリダイレクト時のURLをマッチング。<br />
 <code>*path</code>で任意の文字列とマッチングできる。</p>
@@ -203,7 +216,7 @@ HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードで
         )
 </code></pre>
 
-<h3 id="instagramapiの利用:c961446d10dc1756ec8ab013192d7a44">■ InstagramAPIの利用</h3>
+<h3 id="instagramapiの利用">■ InstagramAPIの利用</h3>
 
 <p>ひとまずDeveloper登録から。</p>
 
@@ -220,12 +233,12 @@ HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードで
 <p>認証画面を確認。
 <img src="https://www.evernote.com/shard/s117/sh/3a74eb3d-e878-4fc5-aa30-acec912ff9b5/e31744b19758225816adaa7744c8a29c/deep/0/貼り付けた画像-2015-04-21-13-53.png" alt="%E8%B2%BC%E3%82%8A%E4%BB%98%E3%81%91%E3%81%9F%E7%94%BB%E5%83%8F%202015/04/21%2013:53" /></p>
 
-<h4 id="認証をアプリケーションないで叩く:c961446d10dc1756ec8ab013192d7a44">▼ 認証をアプリケーションないで叩く。</h4>
+<h4 id="認証をアプリケーションないで叩く">▼ 認証をアプリケーションないで叩く。</h4>
 
 <p>アプリケーションの認証には&rdquo;暗黙の認証&rdquo;を使ってクライアント側のみで実行する。<br />
 具体的にはアプリケーション起動時に、ローカルストレージにアクセストークンがなければAPIを叩いて取得するようにした。</p>
 
-<h3 id="corsにハマる:c961446d10dc1756ec8ab013192d7a44">■ CORSにハマる</h3>
+<h3 id="corsにハマる">■ CORSにハマる</h3>
 
 <ul>
 <li><a href="http://codepen.io/netsi1964/pen/drmkL?editors=101">Showing popular Instagram pictures|CODEPEN</a>
@@ -260,7 +273,7 @@ HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードで
       )
 </code></pre>
 
-<h3 id="bootstrap:c961446d10dc1756ec8ab013192d7a44">■ Bootstrap</h3>
+<h3 id="bootstrap">■ Bootstrap</h3>
 
 <p>初めてのBootStrap。<br />
 基本的な使い方はやっぱりドットインストールが助かった。</p>
@@ -271,7 +284,7 @@ HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードで
 <li><a href="http://getbootstrap.com/javascript/">Javascript|Bootstrap</a></li>
 </ul>
 
-<h4 id="bootflat:c961446d10dc1756ec8ab013192d7a44">▼ Bootflat</h4>
+<h4 id="bootflat">▼ Bootflat</h4>
 
 <p>せっかくなのでBootflatも使ってみた。</p>
 
@@ -279,7 +292,7 @@ HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードで
 <li><a href="http://bootflat.github.io/">Bootflat</a></li>
 </ul>
 
-<h4 id="modalが閉じれない:c961446d10dc1756ec8ab013192d7a44">▼ modalが閉じれない</h4>
+<h4 id="modalが閉じれない">▼ modalが閉じれない</h4>
 
 <p>modalが閉じれなくてひどくハマった。<br />
  使っていたのが<a href="https://angular-ui.github.io/bootstrap/">AngularのBootStrap</a>だったのでダイアログの閉じ方が違った。</p>
@@ -288,7 +301,7 @@ HashモードとHTML5モードをどちらか悩んだ末に、HTML5モードで
         $modalInstance.dismiss('cancel')
 </code></pre>
 
-<h3 id="masonry:c961446d10dc1756ec8ab013192d7a44">■ Masonry</h3>
+<h3 id="masonry">■ Masonry</h3>
 
 <p>今回はMasonryではなく、Isotopeで対応することに。<br />
 itemに高さを持たせることができなくてかなりハマったけれど、<code>new Isotope</code>をする際に<code>ng-repeat</code>がまだ回っていなくてDOMの生成が追いついていないだけだった。
@@ -314,7 +327,7 @@ ImageLoadedも入れたいけれど、これは改善案として先へ進む。
 <p>そのあと<code>isFitWidth: true</code>が効かなくてまたハマったけれど、親にちゃんと<code>margin: 0 auto;</code>を付ける必要があるみたい。<br />
 Masonryはあまり親切ではないと思うようになった。</p>
 
-<h3 id="画像の収集:c961446d10dc1756ec8ab013192d7a44">■ 画像の収集</h3>
+<h3 id="画像の収集">■ 画像の収集</h3>
 
 <p>この辺りは意外とAPIを叩くだけ。</p>
 
@@ -336,21 +349,21 @@ Masonryはあまり親切ではないと思うようになった。</p>
 
 <p>次のページを見るには<code>res.pagination</code>内に<code>next_url</code>が含まれているのでそれを使うようにする。</p>
 
-<h3 id="ログイン-ログアウト:c961446d10dc1756ec8ab013192d7a44">■ ログイン/ログアウト</h3>
+<h3 id="ログイン-ログアウト">■ ログイン/ログアウト</h3>
 
 <p>ログインとログアウトの機能は必要なかった。
 アプリケーションの利用には認証を通すようにした。</p>
 
 <p>ちなみにSafariだとImplicit認証のときにaccess_tokenが返ってこない。。</p>
 
-<h3 id="いいね-コメント:c961446d10dc1756ec8ab013192d7a44">■ いいね/コメント</h3>
+<h3 id="いいね-コメント">■ いいね/コメント</h3>
 
 <p>クライアントサイドからだと叩くことができないようだった。<br />
 どこかに書いてあったけど分からなくなってしまった。</p>
 
-<h3 id="unit-testing:c961446d10dc1756ec8ab013192d7a44">■ Unit testing</h3>
+<h3 id="unit-testing">■ Unit testing</h3>
 
-<h4 id="httpbackend:c961446d10dc1756ec8ab013192d7a44">▼ $httpBackend</h4>
+<h4 id="httpbackend">▼ $httpBackend</h4>
 
 <ol>
 <li>期待するリクエストをレスポンスを記述。</li>
@@ -404,7 +417,7 @@ describe 'api.service', -&gt;
   return
 </code></pre>
 
-<h3 id="end-to-end-testing:c961446d10dc1756ec8ab013192d7a44">■ End to End testing</h3>
+<h3 id="end-to-end-testing">■ End to End testing</h3>
 
 <p>新しいことばかりなので、デフォルトにあったやつを。</p>
 
@@ -454,7 +467,7 @@ describe('The main view', function () {
 
 </code></pre>
 
-<h2 id="成果物:c961446d10dc1756ec8ab013192d7a44">成果物</h2>
+<h2 id="成果物">成果物</h2>
 
 <p>改めて一週間で完成したものがこちら。</p>
 
@@ -462,7 +475,7 @@ describe('The main view', function () {
 <li><a href="ohshimagram.kotazi.com">ohshimagram</a></li>
 </ul>
 
-<h4 id="課題:c961446d10dc1756ec8ab013192d7a44">▼ 課題</h4>
+<h4 id="課題">▼ 課題</h4>
 
 <ul>
 <li>Gulpタスクがボロボロ</li>
@@ -474,7 +487,7 @@ describe('The main view', function () {
 <p>とりあえず、この後はどうやってコメントやフォローの機能を付けるかを考える。<br />
 必要であればRailsを学ぶ。というか多分必要。JenkinsとかDatabase周りも触ってみたい。</p>
 
-<h4 id="感想:c961446d10dc1756ec8ab013192d7a44">▼ 感想</h4>
+<h4 id="感想">▼ 感想</h4>
 
 <p>ひとまず一週間でそれなりに動くものができたのでよかった。<br />
 調べてみるとフォローやコメントといった機能はクライアントサイドオンリーではできないみたい？<br />
@@ -489,7 +502,7 @@ describe('The main view', function () {
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -509,9 +522,18 @@ describe('The main view', function () {
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -575,19 +597,16 @@ describe('The main view', function () {
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -596,13 +615,8 @@ describe('The main view', function () {
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

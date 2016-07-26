@@ -22,7 +22,7 @@
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;slack通知:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;Slack通知&lt;/h2&gt;
+&lt;h2 id=&#34;slack通知&#34;&gt;Slack通知&lt;/h2&gt;
 
 &lt;p&gt;Slackへの通知はすごく簡単。&lt;br /&gt;
 ここにだいたい書いてある。&lt;/p&gt;
@@ -33,7 +33,7 @@
 
 &lt;p&gt;とりあえず、&lt;code&gt;config/intializers/slack_api.rb&lt;/code&gt;を作成してtokenを登録しておけば、いろいろできるみたい。&lt;/p&gt;
 
-&lt;h2 id=&#34;rakeタスクの作成:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;rakeタスクの作成&lt;/h2&gt;
+&lt;h2 id=&#34;rakeタスクの作成&#34;&gt;rakeタスクの作成&lt;/h2&gt;
 
 &lt;p&gt;初めてrakeタスクを作成した。&lt;/p&gt;
 
@@ -49,14 +49,14 @@ $ rake -T # 定義されているタスク一覧を表示
 
 &lt;p&gt;(引用:&lt;a href=&#34;http://unageanu.hatenablog.com/entry/20100829/1283069269&#34;&gt;Rakeの基本的な使い方まとめ|うなの日記&lt;/a&gt;)&lt;/p&gt;
 
-&lt;h2 id=&#34;whenever:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;whenever&lt;/h2&gt;
+&lt;h2 id=&#34;whenever&#34;&gt;whenever&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/javan/whenever&#34;&gt;javan/whenever|github&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://morizyun.github.io/blog/whenever-gem-rails-ruby-capistrano/&#34;&gt;Wheneverは導入が超簡単なcrontab管理ライブラリGemです！&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;mixpanel:8316899f0dd43c4b70b3dee52ffee325&#34;&gt;mixpanel&lt;/h2&gt;
+&lt;h2 id=&#34;mixpanel&#34;&gt;mixpanel&lt;/h2&gt;
 
 &lt;p&gt;mixpanelのデータのエクスポートしたい。&lt;/p&gt;
 
@@ -99,9 +99,9 @@ bowerやnpmのJavaScriptモジュールをうまく統合することができ�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;getting-started:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Getting Started&lt;/h3&gt;
+&lt;h3 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h3&gt;
 
-&lt;h4 id=&#34;is-webpack-right-for-your-app:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Is webpack right for your app?&lt;/h4&gt;
+&lt;h4 id=&#34;is-webpack-right-for-your-app&#34;&gt;Is webpack right for your app?&lt;/h4&gt;
 
 &lt;p&gt;webpackは本当にパワフルで素晴らしいツールである。
 けれども本当に効果的に利用するには、あなたが&amp;rdquo;モジュールとしてのJS&amp;rdquo;という哲学をしっかりと信じる必要がある。
@@ -123,20 +123,20 @@ jQueryやBackboneといった人気のライブラリを使っているなら簡
 
 &lt;p&gt;あなたのアプリに向いているか？&lt;/p&gt;
 
-&lt;h4 id=&#34;新しいrailsアプリを作っているところ:78a84d7a250550b9fca3451f0818ba23&#34;&gt;新しいRailsアプリを作っているところ&lt;/h4&gt;
+&lt;h4 id=&#34;新しいrailsアプリを作っているところ&#34;&gt;新しいRailsアプリを作っているところ&lt;/h4&gt;
 
 &lt;p&gt;大量のJSコードを使うのなら絶対に。試さない理由がない。&lt;/p&gt;
 
-&lt;h4 id=&#34;アプリは大きいがjsはそこまで量がない:78a84d7a250550b9fca3451f0818ba23&#34;&gt;アプリは大きいがJSはそこまで量がない&lt;/h4&gt;
+&lt;h4 id=&#34;アプリは大きいがjsはそこまで量がない&#34;&gt;アプリは大きいがJSはそこまで量がない&lt;/h4&gt;
 
 &lt;p&gt;多分価値が無いかも。webpackはたくさんのモジュールを使っていたり、たくさんのJSコードを書いているときに
 本当に輝く。そんなにJSがないのであれば、大きなメリットはないだろう。&lt;/p&gt;
 
-&lt;h4 id=&#34;アプリは大きいが-jsはよく整備されており-特に問題がない:78a84d7a250550b9fca3451f0818ba23&#34;&gt;アプリは大きいが、JSはよく整備されており、特に問題がない&lt;/h4&gt;
+&lt;h4 id=&#34;アプリは大きいが-jsはよく整備されており-特に問題がない&#34;&gt;アプリは大きいが、JSはよく整備されており、特に問題がない&lt;/h4&gt;
 
 &lt;p&gt;全てをwebpackに移行することはそれなりに労力がかかるため、多分やる価値はない。&lt;/p&gt;
 
-&lt;h4 id=&#34;アプリは大きく-大量のスパゲッティコード-jsファイルは800kbを超えている:78a84d7a250550b9fca3451f0818ba23&#34;&gt;アプリは大きく、大量のスパゲッティコード、jsファイルは800kbを超えている&lt;/h4&gt;
+&lt;h4 id=&#34;アプリは大きく-大量のスパゲッティコード-jsファイルは800kbを超えている&#34;&gt;アプリは大きく、大量のスパゲッティコード、jsファイルは800kbを超えている&lt;/h4&gt;
 
 &lt;p&gt;きっとwebpackを使ったほうがいい！少々大変だが、知るべきことはこのガイドで伝える。&lt;/p&gt;
 
@@ -144,12 +144,12 @@ jQueryやBackboneといった人気のライブラリを使っているなら簡
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;preparing-rails-for-webpack:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Preparing Rails for webpack&lt;/h3&gt;
+&lt;h3 id=&#34;preparing-rails-for-webpack&#34;&gt;Preparing Rails for webpack&lt;/h3&gt;
 
 &lt;p&gt;Railsにwebpackを統合するベストプラクティスは存在しないため、多くは意見である。
 もしディレクトリの置き場所が気に食わなければ、好きな場所においてもらって構わない。&lt;/p&gt;
 
-&lt;h4 id=&#34;untangling-sprockets:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Untangling Sprockets&lt;/h4&gt;
+&lt;h4 id=&#34;untangling-sprockets&#34;&gt;Untangling Sprockets&lt;/h4&gt;
 
 &lt;p&gt;最初にすることは&lt;code&gt;app/assets/javascripts&lt;/code&gt;を空にすることだ。
 webpackの設定を個々にすると、Sprocketsに拾われてしまう。
@@ -171,7 +171,7 @@ webpackの設定を個々にすると、Sprocketsに拾われてしまう。
 もちろんSprocketsのJSバンドラとwebpackを併用することもできる。
 その場合は、&lt;code&gt;.gitignore&lt;/code&gt;を&lt;code&gt;/app/assets/javascripts/bundle-*&lt;/code&gt;みたいに生成されたJSのみを無視するように修正する。&lt;/p&gt;
 
-&lt;h4 id=&#34;a-new-home-for-your-javascript:78a84d7a250550b9fca3451f0818ba23&#34;&gt;A new home for your JavaScript&lt;/h4&gt;
+&lt;h4 id=&#34;a-new-home-for-your-javascript&#34;&gt;A new home for your JavaScript&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;app/assets/javascripts&lt;/code&gt;は生成されたバンドラのためのものなので、実際のJSのために新しいホームを生成する必要がある。
 私は新しいフォルダを作成するが、もちろん他の場所においてもいい。&lt;/p&gt;
@@ -190,9 +190,9 @@ _.times(5, function(i) {
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;installing-webpack-bower:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Installing webpack &amp;amp; Bower&lt;/h3&gt;
+&lt;h3 id=&#34;installing-webpack-bower&#34;&gt;Installing webpack &amp;amp; Bower&lt;/h3&gt;
 
-&lt;h4 id=&#34;installing-webpack:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Installing webpack&lt;/h4&gt;
+&lt;h4 id=&#34;installing-webpack&#34;&gt;Installing webpack&lt;/h4&gt;
 
 &lt;p&gt;webpackはnode.jsのアプリケーションのため、&lt;code&gt;package.json&lt;/code&gt;がRailsルートの中に必要だ。&lt;br /&gt;
 シンプルであるために、webpackとwebpackのモジュールを管理するためだけに使っている。&lt;/p&gt;
@@ -222,7 +222,7 @@ _.times(5, function(i) {
 &lt;pre&gt;&lt;code&gt;$ npm install -g webpack
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;installing-bower-optional:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Installing Bower (optional)&lt;/h4&gt;
+&lt;h4 id=&#34;installing-bower-optional&#34;&gt;Installing Bower (optional)&lt;/h4&gt;
 
 &lt;p&gt;webpackのいいところのひとつは利用するパッケージ管理ツールを強要しないところだ。
 デフォルトはたくさんのフロントエンドモジュールをもったnpmだ。
@@ -257,7 +257,7 @@ Railsルートで&lt;code&gt;bower install&lt;/code&gt;を実行すると、bowe
 だからもし、あなたがjQueryの1.x系を指定しながら、別の依存関係では最低のjQueryバージョンを2.x以上と指定していたのであれば、
 これを自分自身で解消する必要がある。&lt;/p&gt;
 
-&lt;h3 id=&#34;using-bower-and-npm-together:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Using bower and npm together&lt;/h3&gt;
+&lt;h3 id=&#34;using-bower-and-npm-together&#34;&gt;Using bower and npm together&lt;/h3&gt;
 
 &lt;p&gt;webpack内でnpmとbowerを一緒に使うことを止めるものはいない。
 たとえばもしjQueryとBackboneをnpmから、人気のないモジュールをBowerからといったように。
@@ -267,7 +267,7 @@ Railsルートで&lt;code&gt;bower install&lt;/code&gt;を実行すると、bowe
 
 &lt;p&gt;In practice, this might not make a huge difference. In the case of large modules like &lt;code&gt;React&lt;/code&gt;, it may be worth including it as a one-off from npm so webpack can optimise it a little better, but for almost everything else I recommend sticking with Bower so you have one place for all your dependencies.&lt;/p&gt;
 
-&lt;h3 id=&#34;configuring-webpack:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Configuring webpack&lt;/h3&gt;
+&lt;h3 id=&#34;configuring-webpack&#34;&gt;Configuring webpack&lt;/h3&gt;
 
 &lt;p&gt;たくさんの引数を用いて完全にコマンドラインからwebpackを実行することもできるが、複雑になってしまうので、コンフィグファイルを用いて始めよう。&lt;/p&gt;
 
@@ -336,7 +336,7 @@ var config = module.exports = {
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;running-webpack:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Running webpack&lt;/h3&gt;
+&lt;h3 id=&#34;running-webpack&#34;&gt;Running webpack&lt;/h3&gt;
 
 &lt;p&gt;webpackを実行する前に、Bowerの依存関係をインストールしよう。
 NPMだけなら&lt;code&gt;npm install&lt;/code&gt;を実行すればいい。Bower依存関係をインストールするには:&lt;/p&gt;
@@ -372,7 +372,7 @@ chunk    {0} bundle.js, bundle.js.map (main) 244421 [rendered]
 けれどももし、エントリーポイント間にたくさんのモジュールがあったり、code-splitting機能を使っているのであれば、
 webpackは&lt;code&gt;1.1-bundle.js&lt;/code&gt;といった名前でたくさんのチャンクを作成する。&lt;/p&gt;
 
-&lt;h4 id=&#34;the-compiled-webpack-bundle:78a84d7a250550b9fca3451f0818ba23&#34;&gt;The compiled webpack bundle&lt;/h4&gt;
+&lt;h4 id=&#34;the-compiled-webpack-bundle&#34;&gt;The compiled webpack bundle&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;app/assets/javascripts/bundle.js&lt;/code&gt;ファイルを開いてみると、コンパイルされたJavaScriptが確認できる。
 このファイルでは、標準のJavaScriptは持っていない機能である依存関係の&lt;code&gt;require&lt;/code&gt;機能を全てのモジュールに提供するwebpackローダーを含んでいる。(数バイト)&lt;/p&gt;
@@ -397,7 +397,7 @@ webpackは&lt;code&gt;1.1-bundle.js&lt;/code&gt;といった名前でたくさ�
   });
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;including-webpack-bundles-in-rails-views:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Including webpack bundles in Rails views&lt;/h4&gt;
+&lt;h4 id=&#34;including-webpack-bundles-in-rails-views&#34;&gt;Including webpack bundles in Rails views&lt;/h4&gt;
 
 &lt;p&gt;思っている通りで、コンパイルされtらJSバンドラは普通に含めることができる。&lt;/p&gt;
 
@@ -407,7 +407,7 @@ webpackは&lt;code&gt;1.1-bundle.js&lt;/code&gt;といった名前でたくさ�
 &lt;p&gt;基礎はこれで完了。
 あとは大きなアプリケーションで必要になりそうなことをカバーしていく。&lt;/p&gt;
 
-&lt;h3 id=&#34;exposing-global-modules-e-g-jquery:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Exposing global modules (e.g. jQuery)&lt;/h3&gt;
+&lt;h3 id=&#34;exposing-global-modules-e-g-jquery&#34;&gt;Exposing global modules (e.g. jQuery)&lt;/h3&gt;
 
 &lt;p&gt;特定のモジュールでjQueryを使いたければ下記のように書ける。&lt;/p&gt;
 
@@ -453,7 +453,7 @@ ou can configure loaders in the webpack config, which makes sense for transforma
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;source-maps:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Source maps&lt;/h3&gt;
+&lt;h3 id=&#34;source-maps&#34;&gt;Source maps&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;bundle.js.map&lt;/code&gt;が出力先のディレクトリに作成されていることに気付いただろう。
 このソースマップはwebpackの働きによって生成されている。
@@ -470,7 +470,7 @@ end
 
 &lt;p&gt;Now when you get errors, or view loaded sources in a browser, you’ll see the actual file (e.g. entry.js) instead of the giant bundled file.&lt;/p&gt;
 
-&lt;h4 id=&#34;virtual-source-paths:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Virtual source paths&lt;/h4&gt;
+&lt;h4 id=&#34;virtual-source-paths&#34;&gt;Virtual source paths&lt;/h4&gt;
 
 &lt;p&gt;In Chrome, by default the source map generated by webpack will put everything in a &amp;lsquo;pseudo path’, &lt;code&gt;webpack://&lt;/code&gt;, when you view it in the inspector’s Sources tab. You can make this a bit nicer by adding the following to your webpack &lt;code&gt;config.output&lt;/code&gt;:&lt;/p&gt;
 
@@ -480,13 +480,13 @@ devtoolFallbackModuleFilenameTemplate: &#39;[resourcePath]?[hash]&#39;,
 
 &lt;p&gt;Now your &amp;lsquo;virtual’ source files will appear under the &lt;code&gt;domain &amp;gt; assets&lt;/code&gt; directory in the Sources tab.&lt;/p&gt;
 
-&lt;h4 id=&#34;sprockets-cache-and-source-maps:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Sprockets cache and source maps&lt;/h4&gt;
+&lt;h4 id=&#34;sprockets-cache-and-source-maps&#34;&gt;Sprockets cache and source maps&lt;/h4&gt;
 
 &lt;p&gt;In my experience, Sprockets can be very aggressive at caching source maps. If they ever start acting weird, make sure to clear the sprockets cache in &lt;code&gt;tmp/cache&lt;/code&gt; first.&lt;/p&gt;
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;loading-coffeescript-and-other-transpiled-languages:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Loading CoffeeScript and other transpiled languages&lt;/h3&gt;
+&lt;h3 id=&#34;loading-coffeescript-and-other-transpiled-languages&#34;&gt;Loading CoffeeScript and other transpiled languages&lt;/h3&gt;
 
 &lt;p&gt;CoffeeScriptやその類で書かれたモジュールをローダーを使って自動でトランスパイルすることができる。
 &lt;code&gt;expose&lt;/code&gt;ローダーのように、&lt;code&gt;require&lt;/code&gt;ステートメントの内部で実行されるが、webpackのコンフィグに記述することがよいとは言えないので、
@@ -531,7 +531,7 @@ app.start();
 
 &lt;p&gt;再度webpackを実行して、ブラウザで予想通りに動作していることが確認できる。&lt;/p&gt;
 
-&lt;h3 id=&#34;code-splitting-and-lazily-loading-modules:78a84d7a250550b9fca3451f0818ba23&#34;&gt;Code splitting and lazily loading modules&lt;/h3&gt;
+&lt;h3 id=&#34;code-splitting-and-lazily-loading-modules&#34;&gt;Code splitting and lazily loading modules&lt;/h3&gt;
 </description>
     </item>
     
@@ -547,7 +547,7 @@ app.start();
 
 &lt;hr&gt;
 
-&lt;h5 id=&#34;namespaceとscope-moduleとscopeのち外:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ namespaceとscope moduleとscopeのち外&lt;/h5&gt;
+&lt;h5 id=&#34;namespaceとscope-moduleとscopeのち外&#34;&gt;◯ namespaceとscope moduleとscopeのち外&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;namespace&lt;/code&gt;はURI PatternもController#Actionも指定したパスに&lt;/li&gt;
@@ -557,14 +557,14 @@ app.start();
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/blueplanet/items/522cc8364f6cf189ecad&#34;&gt;routeのmoduleとnamespaceとscopeの違い&lt;/a&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;constraintsについて:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ constraintsについて&lt;/h5&gt;
+&lt;h5 id=&#34;constraintsについて&#34;&gt;◯ constraintsについて&lt;/h5&gt;
 
 &lt;p&gt;constraintsを使うことでさまざまな制限を兼ねることができる。
 独自のクラスを使用すうることなども可能。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://y-yagi.tumblr.com/post/92386974040/rails-routing-constraints%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6&#34;&gt;rails routing constraintsについて&lt;/a&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;resourcesルーティング一覧:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ resourcesルーティング一覧&lt;/h5&gt;
+&lt;h5 id=&#34;resourcesルーティング一覧&#34;&gt;◯ resourcesルーティング一覧&lt;/h5&gt;
 
 &lt;table class=&#34;responsive&#34;&gt;
 &lt;thead&gt;
@@ -639,7 +639,7 @@ app.start();
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162&#34;&gt;マスアサインメント脆弱性&lt;/h2&gt;
+&lt;h2 id=&#34;マスアサインメント脆弱性&#34;&gt;マスアサインメント脆弱性&lt;/h2&gt;
 
 &lt;p&gt;モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
 モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。&lt;/p&gt;
@@ -651,7 +651,7 @@ app.start();
 
 &lt;p&gt;そしてこの脆弱性に対してRails4.0から導入された対抗策が、&lt;strong&gt;Strong Parameters&lt;/strong&gt;。&lt;/p&gt;
 
-&lt;h2 id=&#34;strong-parameters:c93acd2fcd4285cd58c99e0793697162&#34;&gt;Strong Parameters&lt;/h2&gt;
+&lt;h2 id=&#34;strong-parameters&#34;&gt;Strong Parameters&lt;/h2&gt;
 
 &lt;p&gt;サンプルコード:&lt;/p&gt;
 

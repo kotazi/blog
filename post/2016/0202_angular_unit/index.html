@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【Angular】ユニットテスト &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,21 @@
             <article class="post">
                 <header>
                     <h1>【Angular】ユニットテスト</h1>
-                    <h2 class="headline">February 8, 2016</h2>
+                    <h2 class="headline">
+                    February 8, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/angular">Angular</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/unit">unit</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/jasmine">Jasmine</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -51,7 +74,7 @@ Angularにおいて、テストをしないということはありえない。<
 
 <hr>
 
-<h3 id="separation-of-concerns:1ccf9de45f59b655d54913e04f01fa76">Separation of Concerns</h3>
+<h3 id="separation-of-concerns">Separation of Concerns</h3>
 
 <p>ユニットテストという名前から示されるように、これは独立した単体のコードのテストのことである。
 ユニットテストは「そのロジックは正しく動くだろうか」、「ソート関数が並び替えたリストは正しい順番だろうか」
@@ -73,7 +96,7 @@ DOMを生成したり、状態を監視したりXHRリクエストのレスポ�
 
 <hr>
 
-<h3 id="with-great-power-comes-great-responsibility:1ccf9de45f59b655d54913e04f01fa76">With great power comes great responsibility</h3>
+<h3 id="with-great-power-comes-great-responsibility">With great power comes great responsibility</h3>
 
 <p>Angularはテストしやすいことを念頭に書かれているが、それでもまだ
 正しい書き方をする必要がある。
@@ -82,7 +105,7 @@ DOMを生成したり、状態を監視したりXHRリクエストのレスポ�
 
 <hr>
 
-<h3 id="dependency-injection:1ccf9de45f59b655d54913e04f01fa76">Dependency Injection</h3>
+<h3 id="dependency-injection">Dependency Injection</h3>
 
 <p>Angularは<a href="https://docs.angularjs.org/guide/di">依存性注入</a>のビルトインからなっており、
 それはテストのコンポーネント化するため、思いどおりにコンポーネント間での依存関係やスタブ、モックをテストすることが可能。</p>
@@ -92,11 +115,11 @@ DOMを生成したり、状態を監視したりXHRリクエストのレスポ�
 
 <hr>
 
-<h3 id="additional-tools-for-testing-angular-applications:1ccf9de45f59b655d54913e04f01fa76">Additional tools for testing Angular applications</h3>
+<h3 id="additional-tools-for-testing-angular-applications">Additional tools for testing Angular applications</h3>
 
 <p>Angularアプリケーションのテストでは、テストをより簡単にセットアップし実行するために使うべきツールがある。</p>
 
-<h4 id="karma:1ccf9de45f59b655d54913e04f01fa76">Karma</h4>
+<h4 id="karma">Karma</h4>
 
 <p><a href="http://karma-runner.github.io/">Karma</a>はコマンドラインツールである。
 アプリケーションのコードを読み込み、実行するWebサーバーを用意する。
@@ -106,7 +129,7 @@ Karmaをコマンドライン上で実行すると、ブラウザでのテスト
 <p>KarmaはNodeJS製のアプリケーションであり、npmでインストールする。
 インストールガイドについては<a href="http://karma-runner.github.io/0.12/intro/installation.html">Karmaのサイト</a>が役に立つ。</p>
 
-<h4 id="jasmine:1ccf9de45f59b655d54913e04f01fa76">Jasmine</h4>
+<h4 id="jasmine">Jasmine</h4>
 
 <p><a href="http://jasmine.github.io/1.3/introduction.html">Jasmin</a>はビヘイビア駆動開発のJavaScriptフレームワークであり、
 Angularアプリケーションをテストするうえで最も人気のフレームワークである。
@@ -147,7 +170,7 @@ Angularアプリケーションをテストするうえで最も人気のフレ�
 マッチャーについては<a href="http://jasmine.github.io/1.3/introduction.html#section-Matchers">こちらの記事</a>を読むこと。
 KarmaとJasminを使うために、<a href="https://github.com/karma-runner/karma-jasmine">karma-jasmin</a>を利用する。</p>
 
-<h4 id="angular-mocks:1ccf9de45f59b655d54913e04f01fa76">angular-mocks</h4>
+<h4 id="angular-mocks">angular-mocks</h4>
 
 <p>Angularはテスト用のモックを提供する<code>ngMock</code>というものを用意している。
 ユニットテスト内でのAngularサービスをモックしたりインジェクトするために用いられる。
@@ -158,7 +181,7 @@ KarmaとJasminを使うために、<a href="https://github.com/karma-runner/karm
 
 <hr>
 
-<h3 id="testing-a-controller:1ccf9de45f59b655d54913e04f01fa76">Testing a Controller</h3>
+<h3 id="testing-a-controller">Testing a Controller</h3>
 
 <p>Angularのビューレイヤーはロジックから切り離されているので、コントローラを簡単にテストすることができる。
 下記でコントローラをどのようにテストしているか見ていこう。
@@ -290,7 +313,7 @@ Jasminが提供するのは<code>beforeEach</code>だけじゃない。<a href="
 
 <hr>
 
-<h3 id="testing-filters:1ccf9de45f59b655d54913e04f01fa76">Testing Filters</h3>
+<h3 id="testing-filters">Testing Filters</h3>
 
 <p><a href="https://docs.angularjs.org/api/ng/provider/$filterProvider">フィルタ</a>はデータをユーザが読みやすいフォーマットに変換する。
 これはフォーマットの責任をアプリケーションロジックから取り除くことになるのでとても重要なこと。さらにはアプリケーションロジックを単純にできる。</p>
@@ -323,13 +346,13 @@ describe('length filter', function() {
 
 <hr>
 
-<h3 id="testing-directives:1ccf9de45f59b655d54913e04f01fa76">Testing Directives</h3>
+<h3 id="testing-directives">Testing Directives</h3>
 
 <p>AngularのディレクティブはカスタムHTMLタグや属性、クラス、コメントと複雑な機能に責任を持っている。
 ディレクティブを使って生成したコンポーネントがさまざまな背景で思った通りに使われているかのテストになるので、
 ディレクティブのユニットテストはとても重要です。</p>
 
-<h4 id="simple-html-element-directive:1ccf9de45f59b655d54913e04f01fa76">Simple HTML Element Directive</h4>
+<h4 id="simple-html-element-directive">Simple HTML Element Directive</h4>
 
 <p>依存関係のないAngularアプリで始める。</p>
 
@@ -386,7 +409,7 @@ describe('length filter', function() {
 パラメータがマッチングした際に、<code>$injector</code>がアンダースコアを取り払うのはこれが理由である。
 このアンダースコアルールが働くのは名前が一つのアンダースコアで始まり一つのアンダースコアで終わる時のみに限られ、それ以外での置換は起こらない。</p>
 
-<h4 id="testing-transclusion-directives:1ccf9de45f59b655d54913e04f01fa76">Testing Transclusion Directives</h4>
+<h4 id="testing-transclusion-directives">Testing Transclusion Directives</h4>
 
 <p>トランスクルージョンを使ったディレクティブはコンパイラに特別に扱われる。
 コンパイル関数が呼び出される前に、ディレクティブ要素のコンテンツは取り除かれ、トランスクルージョン関数を通して提供される。
@@ -453,7 +476,7 @@ expect(contents[0].nodeType).toEqual(node.COMMENT_NODE);
 expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
 </code></pre>
 
-<h4 id="testing-directives-with-external-templates:1ccf9de45f59b655d54913e04f01fa76">Testing Directives With External Templates</h4>
+<h4 id="testing-directives-with-external-templates">Testing Directives With External Templates</h4>
 
 <p>もぢディレクティブで<code>templateUrl</code>を使っているのであれば、HTMLテンプレートをプリコンパイルするために<a href="https://github.com/karma-runner/karma-ng-html2js-preprocessor">karma-ng-html2js-preprocessor</a>を使うことを考え、HTTPリクエストを使ってテキストをロードすることは避けること。</p>
 
@@ -461,7 +484,7 @@ expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -481,9 +504,18 @@ expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -547,19 +579,16 @@ expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -568,13 +597,8 @@ expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

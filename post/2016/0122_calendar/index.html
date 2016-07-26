@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【FullCalendar】Google Calendar &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,17 @@
             <article class="post">
                 <header>
                     <h1>【FullCalendar】Google Calendar</h1>
-                    <h2 class="headline">January 22, 2016</h2>
+                    <h2 class="headline">
+                    January 22, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/fullcalendar">fullcalendar</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -46,7 +65,7 @@
 
 <hr>
 
-<h3 id="google-calendar:d1c1dad631980de0087d81fc9c503c32">Google Calendar</h3>
+<h3 id="google-calendar">Google Calendar</h3>
 
 <p>FullCalendarではGoogle Calendarのイベントを表示することができます。
 GoogleCalendarはバックエンド側で管理・保持しているイベントデータを提供することができます。
@@ -54,7 +73,7 @@ GoogleCalendarはバックエンド側で管理・保持しているイベント
 
 <hr>
 
-<h3 id="before-you-code:d1c1dad631980de0087d81fc9c503c32">Before you code&hellip;</h3>
+<h3 id="before-you-code">Before you code&hellip;</h3>
 
 <p><strong>GoogleCalendarのAPIキーが必要です</strong></p>
 
@@ -95,7 +114,7 @@ GoogleCalendarはバックエンド側で管理・保持しているイベント
 
 <hr>
 
-<h3 id="dependencies:d1c1dad631980de0087d81fc9c503c32">Dependencies</h3>
+<h3 id="dependencies">Dependencies</h3>
 
 <p>続いて、必要なJS/CSSを追加します。標準的なファイルに加え、<code>gcal.js</code>も追加します。</p>
 
@@ -104,7 +123,7 @@ GoogleCalendarはバックエンド側で管理・保持しているイベント
 
 <hr>
 
-<h3 id="writing-the-code:d1c1dad631980de0087d81fc9c503c32">Writing the code</h3>
+<h3 id="writing-the-code">Writing the code</h3>
 
 <p>JSでカレンダーを初期化する準備が整いました。これが最小のサンプルになります。</p>
 
@@ -141,14 +160,14 @@ $(document).ready(function() {
 
 <hr>
 
-<h3 id="timezones:d1c1dad631980de0087d81fc9c503c32">Timezones</h3>
+<h3 id="timezones">Timezones</h3>
 
 <p>GoogleCalendarのプラグインでは<a href="http://fullcalendar.io/docs/timezone/timezone/">timezone</a>をリスペクトしています。
 <code>false</code>(デフォルト)にしておくと、GoogleCalendarのタイムゾーン設定が使用されます。特定のものを指定していれば、これらは無視されます。</p>
 
 <Hr>
 
-<h3 id="multiple-google-calendars:d1c1dad631980de0087d81fc9c503c32">Multiple Google Calendars</h3>
+<h3 id="multiple-google-calendars">Multiple Google Calendars</h3>
 
 <p><code>eventSources</code>オプションを利用すれば複数のGoogleCalendarを利用することができます。</p>
 
@@ -174,7 +193,7 @@ $(document).ready(function() {
 
 <Hr>
 
-<h3 id="advanced:d1c1dad631980de0087d81fc9c503c32">Advanced</h3>
+<h3 id="advanced">Advanced</h3>
 
 <p>カレンダーごとに異なるAPIキーを利用する場合、<code>googleCalendarApiKey</code>をセットするには個々の[EventSource]を用います。</p>
 
@@ -184,7 +203,7 @@ $(document).ready(function() {
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -204,9 +223,18 @@ $(document).ready(function() {
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -270,19 +298,16 @@ $(document).ready(function() {
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -291,13 +316,8 @@ $(document).ready(function() {
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

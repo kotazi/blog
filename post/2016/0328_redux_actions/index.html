@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【訳読】2.1 Actions|Redux &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,17 @@
             <article class="post">
                 <header>
                     <h1>【訳読】2.1 Actions|Redux</h1>
-                    <h2 class="headline">March 28, 2016</h2>
+                    <h2 class="headline">
+                    March 28, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/redux">Redux</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -42,7 +61,7 @@
 
 <hr>
 
-<h2 id="actions:7bfca12585449761f97344878800fa11">Actions</h2>
+<h2 id="actions">Actions</h2>
 
 <p>Actionはアプリケーションからの情報をStoreへ渡す。
 <a href="http://redux.js.org/docs/api/Store.html#dispatch"><code>store.dispatch()</code></a>を使ってActionをStoreへ送信する。</p>
@@ -74,7 +93,7 @@ Typeは文字列の定数として定義されるべきであり、アプリケ�
 }
 </code></pre>
 
-<h2 id="action-creators:7bfca12585449761f97344878800fa11">Action Creators</h2>
+<h2 id="action-creators">Action Creators</h2>
 
 <p><strong>Action creators</strong> はActionを生成する関数である。
 &ldquo;Action&rdquo;と&rdquo;Action Creator&rdquo;をまとめるのは簡単なのでそのほうがいいかも。</p>
@@ -122,7 +141,7 @@ boundCompleteTodo(index)
 <p><code>dispach()</code>関数はStoreから<code>store.dispatch()</code>を使って直接アクセスすることができるが、<a href="http://github.com/gaearon/react-redux">react-redux</a>の<code>connect()</code>は便利。
 <a href="http://redux.js.org/docs/api/bindActionCreators.html"><code>bindActionCreators()</code></a>を使って自動的にたくさんのアクションを<code>dispatch()</code>関数にバインドすることもできる。</p>
 
-<h2 id="source-code:7bfca12585449761f97344878800fa11">Source Code</h2>
+<h2 id="source-code">Source Code</h2>
 
 <pre><code>/*
  * action types
@@ -163,7 +182,7 @@ export function setVisibilityFilter(filter) {
 チュートリアルではやらないけれど、テストをこの時点で書くことができる。
 これらはタダの関数だからモックがいらない。</p>
 
-<h2 id="source-code-1:7bfca12585449761f97344878800fa11">Source Code</h2>
+<h2 id="source-code-1">Source Code</h2>
 
 <p><code>index.js</code>:</p>
 
@@ -177,7 +196,7 @@ let store = createStore(todoApp)
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -197,9 +216,18 @@ let store = createStore(todoApp)
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -263,19 +291,16 @@ let store = createStore(todoApp)
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -284,13 +309,8 @@ let store = createStore(todoApp)
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

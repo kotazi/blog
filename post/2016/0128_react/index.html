@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【訳読】React Tutorial &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,17 @@
             <article class="post">
                 <header>
                     <h1>【訳読】React Tutorial</h1>
-                    <h2 class="headline">January 28, 2016</h2>
+                    <h2 class="headline">
+                    January 28, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/react">react</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -42,7 +61,7 @@
 
 <hr>
 
-<h2 id="tutorial:c4edc588c83982a0e8967944828e886f">Tutorial</h2>
+<h2 id="tutorial">Tutorial</h2>
 
 <p>シンプルではあるものの、ブログに書ける現実的なコメントボックスを実装していく。
 この基本バージョンのリアルタイムコメントはDisqusやLibeFyre、Facebook commentsにオファーをいただいた。</p>
@@ -67,7 +86,7 @@
 
 <hr>
 
-<h3 id="want-to-skip-all-this-and-just-see-the-source:c4edc588c83982a0e8967944828e886f">Want to skip all this and just see the source?</h3>
+<h3 id="want-to-skip-all-this-and-just-see-the-source">Want to skip all this and just see the source?</h3>
 
 <ul>
 <li><a href="https://github.com/reactjs/react-tutorial">GitHub</a></li>
@@ -75,7 +94,7 @@
 
 <hr>
 
-<h3 id="running-a-server:c4edc588c83982a0e8967944828e886f">Running a server</h3>
+<h3 id="running-a-server">Running a server</h3>
 
 <p>チュートリアルを開始するためには、稼働しているサーバーが必要。
 あくまでデータの取得と保存に使用するAPIエンドポイントとしてのサーバーだ。</p>
@@ -89,7 +108,7 @@
 
 <hr>
 
-<h3 id="getting-started:c4edc588c83982a0e8967944828e886f">Getting started</h3>
+<h3 id="getting-started">Getting started</h3>
 
 <p>このチュートリアルでは、できるだけ簡単なものにしていくつもりである。
 サーバーパッケージの中に私たちが動かすHTMLファイルが含まれている。
@@ -128,7 +147,7 @@
 
 <hr>
 
-<h3 id="your-first-component:c4edc588c83982a0e8967944828e886f">Your first component</h3>
+<h3 id="your-first-component">Your first component</h3>
 
 <p>Reactは要するにmodular, composable componentsである。
 コメントボックスのサンプルとして、次のようなコンポーネント構造を持つことにする。</p>
@@ -160,7 +179,7 @@ ReactDOM.render(
 <p>ネイティブのHTMLエレメント名が小文字で綴られていることに注意。
 Reactクラスは大文字で始まっている。</p>
 
-<h5 id="jsx-syntax:c4edc588c83982a0e8967944828e886f">JSX Syntax</h5>
+<h5 id="jsx-syntax">JSX Syntax</h5>
 
 <p>JSがXMLのような構文だったことに気づかれただろう。
 シンタックスシュガーをピュアJSに変換するシンプルなプリコンパイラを備えている。</p>
@@ -184,7 +203,7 @@ ReactDOM.render(
 <p>任意ではあるがJSXシンタックスを使ったほうがかんだんだ。
 JSXについては<a href="https://facebook.github.io/react/docs/jsx-in-depth.html">こちら</a></p>
 
-<h5 id="what-s-going-on:c4edc588c83982a0e8967944828e886f">What&rsquo;s going on</h5>
+<h5 id="what-s-going-on">What&rsquo;s going on</h5>
 
 <p>新しいReactコンポーネントを作成するために、<code>React.createClass()</code>にいくつかのメソッドを持ったJSオブジェクトを渡した。
 これらのメソッドの中で最も重要なものが<code>render</code>メソッドだ。
@@ -208,7 +227,7 @@ HTML文字列を生成しないため、XSS対策をデフォルトでしてい�
 
 <hr>
 
-<h3 id="composing-components:c4edc588c83982a0e8967944828e886f">Composing components</h3>
+<h3 id="composing-components">Composing components</h3>
 
 <p>それでは再びシンプルな<code>&lt;div&gt;</code>を使って<code>CommentList</code>と<code>CommentForm</code>の骨組みを作成しよう。
 ファイルに２つのコンポーネントを作成し、<code>CommentBox</code>宣言を保ったうえで<code>ReactDOM.render</code>を呼び出す。</p>
@@ -256,7 +275,7 @@ HTMLコンポーネントは通常Reactコンポーネントであり、ひと�
 JSXコンパイラは自動的にHTMLタグを<code>React.createElement(tagName)</code>式に書き直し、全てを孤独にする。
 これが名前名前汚染を防ぐことになる。</p>
 
-<h4 id="using-props:c4edc588c83982a0e8967944828e886f">Using props</h4>
+<h4 id="using-props">Using props</h4>
 
 <p><code>Comment</code>コンポーネントを作成しよう。親から渡されたデータに依存するものになる。
 親コンポーネントから渡されたデータは子コンポーネントの<code>property</code>として利用可能だ。
@@ -280,7 +299,7 @@ var Comment = React.createClass({
 <p>JSXの中のJavaScript式を取り囲むことで、ツリー内にReactコンポーネントを書くことができる。
 コンポーネントの属性やネストされた要素に<code>this.props</code>や<code>this.props.children</code>を用いてアクセスする。</p>
 
-<h4 id="component-properties:c4edc588c83982a0e8967944828e886f">Component Properties</h4>
+<h4 id="component-properties">Component Properties</h4>
 
 <p><code>Comment</code>コンポーネントの定義が完了したところで、コンポーネントに名前とコメント分を渡していきたい。
 各ユニークなコメントに対して同じコードの再利用が可能になる。
@@ -303,7 +322,7 @@ var CommentList = React.createClass({
 たとえば、属性をお通して&rdquo;Pete Hunt&rdquo;、XMLのような子ノードで&rdquo;This is one comment&rdquo;を渡している。
 さらに、<code>Comment</code>コンポーネントはこれらのプロパティに<code>this.props.author</code>や<code>this.props.children</code>を通してアクセスしている。</p>
 
-<h4 id="adding-markdown:c4edc588c83982a0e8967944828e886f">Adding Markdown</h4>
+<h4 id="adding-markdown">Adding Markdown</h4>
 
 <p>Markdownはテキストをシンプルに記述するためのフォーマットだ。
 例えばテキストをアスタリスクで囲めば、テキストを強調させる。</p>
@@ -356,7 +375,7 @@ var Comment = React.createClass({
 
 <p>こうすることでmarkedの安全性に信頼を置くことができる。このケースでは、<code>sanitize: true</code>を渡してmarkedにそのまま渡すのではなくソース内のどんなHTMLでもエスケープするように伝えた。</p>
 
-<h4 id="hook-up-the-data-model:c4edc588c83982a0e8967944828e886f">Hook up the data model</h4>
+<h4 id="hook-up-the-data-model">Hook up the data model</h4>
 
 <p>これまで私たちはコメントをソースコード内に直接挿入してきた。
 代わりにJSONデータの塊をコメントリストにレンダリングしてみよう。
@@ -412,7 +431,7 @@ var CommentList = React.createClass({
 });
 </code></pre>
 
-<h4 id="fetching-from-the-server:c4edc588c83982a0e8967944828e886f">Fetching from the server</h4>
+<h4 id="fetching-from-the-server">Fetching from the server</h4>
 
 <p>ハードコーディングしてあるデータをサーバーから受け取るように書き換えよう。
 データプロパティを取り除き、フェッチするURLに置き換える。</p>
@@ -427,7 +446,7 @@ ReactDOM.render(
 <p>このコンポーネントは先ほどまでのコンポーネントとは異なる。なぜなら自身で再度レンダリングする必要があるからだ。
 コンポーネントにはサーバーからのリクエストが返ってくるまで何もデータがなく、返ってきたら新しいコメントをレンダリングする必要がある。</p>
 
-<h4 id="reactive-state:c4edc588c83982a0e8967944828e886f">Reactive state</h4>
+<h4 id="reactive-state">Reactive state</h4>
 
 <p>これまではプロパティに基づいて各コンポーネントは1回だけレンダリングをしてきた。
 <code>props</code>は不変のものだったのだ。親からもらったり、自身で所持していたり。
@@ -460,7 +479,7 @@ var CommentBox = React.createClass({
 
 <p><code>getInitialState()</code>はコンポーネントのライフサイクルの中で正確に一度だけ実行され、コンポーネントの初期ステートをセットアップする。</p>
 
-<h4 id="updating-state:c4edc588c83982a0e8967944828e886f">Updating state</h4>
+<h4 id="updating-state">Updating state</h4>
 
 <p>コンポーネントが最初に作成されたら、サーバーからJSONをGETし、最新のデータを反映させるためにステートを更新したい。
 サーバーへの非同期通信を行い、必要なデータを手早くフェッチするためにjQueryを使うつもりだ。
@@ -553,7 +572,7 @@ ReactDOM.render(
 
 <hr>
 
-<h3 id="adding-new-comments:c4edc588c83982a0e8967944828e886f">Adding new comments</h3>
+<h3 id="adding-new-comments">Adding new comments</h3>
 
 <p>ここではフォームを組み立てよう。<code>CommentForm</code>コンポーネントはユーザーに名前とコメントテキストを求め、コメントを保存するためにサーバーへ送信する。</p>
 
@@ -571,7 +590,7 @@ var CommentForm = React.createClass({
 });
 </code></pre>
 
-<h4 id="controlled-components:c4edc588c83982a0e8967944828e886f">Controlled components</h4>
+<h4 id="controlled-components">Controlled components</h4>
 
 <p>伝統的なDOMでは、<code>input</code>要素はレンダリングされ、ブラウザはステートを管理する。
 その結果、実際のDOMのステートとコンポーネントのステートの間に差分が生じる。
@@ -615,7 +634,7 @@ Reactの<code>&lt;input&gt;</code>要素では、コンポーネントの<code>s
 });
 </code></pre>
 
-<h4 id="events:c4edc588c83982a0e8967944828e886f">Events</h4>
+<h4 id="events">Events</h4>
 
 <p>Reactではコンポーネントにイベントハンドラを付けるときにキャメルケースを使う。
 私たちは２つの<code>&lt;input&gt;</code>要素に<code>onChange</code>というイベントハンドラをつけた。
@@ -623,7 +642,7 @@ Reactの<code>&lt;input&gt;</code>要素では、コンポーネントの<code>s
 
 <p>その後<code>input</code>要素のレンダリングされた値は現在のコンポーネントの<code>state</code>を反映するために更新される。</p>
 
-<h4 id="submitting-the-form:c4edc588c83982a0e8967944828e886f">Submitting the form</h4>
+<h4 id="submitting-the-form">Submitting the form</h4>
 
 <p>インタラクティブなフォームを作成しよう！
 ユーザーがフォームを送信する時、それらをクリアする必要があり、リクエストをサーバーに送信し、そしてコメントのリストをリフレッシュする。
@@ -676,7 +695,7 @@ var CommentForm = React.createClass({
 
 <p><code>preventDefault()</code>を呼び出してブラウザのデフォルトのフォーム送信アクションを妨げる。</p>
 
-<h4 id="callbacks-as-props:c4edc588c83982a0e8967944828e886f">Callbacks as props</h4>
+<h4 id="callbacks-as-props">Callbacks as props</h4>
 
 <p>ユーザーがコメントを送信したら、新しいコメントを追加した状態でリストをリフレッシュ留守必要がある。
 この全てのロジックを<code>CommentBox</code>内で行うので、<code>CommentBox</code>はコメントリストに相応するステートを所有する。</p>
@@ -818,7 +837,7 @@ var CommentBox = React.createClass({
 
 <hr>
 
-<h3 id="optimization-optimistic-updates:c4edc588c83982a0e8967944828e886f">Optimization: optimistic updates</h3>
+<h3 id="optimization-optimistic-updates">Optimization: optimistic updates</h3>
 
 <p>このアプリケーションについて機能は完璧であるが、コメントが表示されるまでリクエストが完了するのを待たなければならないため遅いように感じる。
 アプリがより早く感じられるようにコメントをリストに追加することが可能だ。</p>
@@ -881,7 +900,7 @@ var CommentBox = React.createClass({
 
 <hr>
 
-<h3 id="congrats:c4edc588c83982a0e8967944828e886f">Congrats!</h3>
+<h3 id="congrats">Congrats!</h3>
 
 <p>いくつかのシンプルなステップとを押してコメントボックスを作成することができた。
 <a href="https://facebook.github.io/react/docs/why-react.html">何故Reactを使うのか</a>、もしくは<a href="https://facebook.github.io/react/docs/top-level-api.html">APIリファレンス</a>について学び開発を始めよう！</p>
@@ -890,7 +909,7 @@ var CommentBox = React.createClass({
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -910,9 +929,18 @@ var CommentBox = React.createClass({
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -976,19 +1004,16 @@ var CommentBox = React.createClass({
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -997,13 +1022,8 @@ var CommentBox = React.createClass({
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

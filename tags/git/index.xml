@@ -38,7 +38,7 @@
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;bfgを使って削除する:02eda3ea3d5f357a7d5a931ac00e0b5f&#34;&gt;BFGを使って削除する&lt;/h2&gt;
+&lt;h2 id=&#34;bfgを使って削除する&#34;&gt;BFGを使って削除する&lt;/h2&gt;
 
 &lt;p&gt;Scala製なのでJavaの実行環境が必要になる。&lt;br /&gt;
 今回は&lt;code&gt;.zprofile&lt;/code&gt;に&lt;code&gt;alias bfg=&#39;java -jar /Applications/bfg-1.12.12.jar&#39;&lt;/code&gt;としてエイリアスを作成。&lt;/p&gt;
@@ -50,13 +50,13 @@ $ git push --force origin master
 
 &lt;p&gt;みたいな感じにすればできる。&lt;/p&gt;
 
-&lt;h5 id=&#34;参考リンク:02eda3ea3d5f357a7d5a931ac00e0b5f&#34;&gt;参考リンク&lt;/h5&gt;
+&lt;h5 id=&#34;参考リンク&#34;&gt;参考リンク&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://blog.technolize.net/post/82283923159/git-filter-branch-%E3%81%AE%E3%81%8B%E3%82%8F%E3%82%8A%E3%81%AB-bfg-%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%B1%A5%E6%AD%B4%E3%82%92%E6%B6%88%E5%8E%BB%E3%81%99%E3%82%8B&#34;&gt;git filter-branch のかわりに BFG でファイルの履歴を消去する&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;コマンドを叩いて頑張る方法:02eda3ea3d5f357a7d5a931ac00e0b5f&#34;&gt;コマンドを叩いて頑張る方法&lt;/h2&gt;
+&lt;h2 id=&#34;コマンドを叩いて頑張る方法&#34;&gt;コマンドを叩いて頑張る方法&lt;/h2&gt;
 
 &lt;p&gt;意外とシンプルんできるから悪くない。でも長いから覚えるのは無理。&lt;br /&gt;
 なんだかんだでBFG入れておいていい気がする。&lt;/p&gt;
@@ -64,7 +64,7 @@ $ git push --force origin master
 &lt;pre&gt;&lt;code&gt;$ git filter-branch -f --index-filter &#39;git rm --ignore-unmatch YOUR-FILE-WITH-SENSITIVE-DATA&#39; HEAD
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;参考リンク-1:02eda3ea3d5f357a7d5a931ac00e0b5f&#34;&gt;参考リンク&lt;/h5&gt;
+&lt;h5 id=&#34;参考リンク-1&#34;&gt;参考リンク&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/ichhi/20110825/1314300975&#34;&gt;gitで特定のファイルの履歴を消す方法|おし、プログラミング&lt;/a&gt;&lt;/li&gt;
@@ -142,7 +142,7 @@ Cloneしてきたリポジトリを触ったりするわけだけど、
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;本家リポジトリの変更を反映するには:5e97cd55c370d01ef8f46218c5604c4f&#34;&gt;本家リポジトリの変更を反映するには&lt;/h3&gt;
+&lt;h3 id=&#34;本家リポジトリの変更を反映するには&#34;&gt;本家リポジトリの変更を反映するには&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git fetch upstream&lt;/code&gt;&lt;/li&gt;
@@ -252,10 +252,10 @@ Deleted branch release/2016-03-14-0349 (was 0c652fd).
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#git-up-をインストール:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ &lt;code&gt;git-up&lt;/code&gt;をインストール&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#探す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ 探す&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#git-up-をインストール&#34;&gt;◯ &lt;code&gt;git-up&lt;/code&gt;をインストール&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#探す&#34;&gt;◯ 探す&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#パスを通す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ パスを通す&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#パスを通す&#34;&gt;◯ パスを通す&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -267,14 +267,14 @@ Deleted branch release/2016-03-14-0349 (was 0c652fd).
 
 &lt;hr&gt;
 
-&lt;h6 id=&#34;git-up-をインストール:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ &lt;code&gt;git-up&lt;/code&gt;をインストール&lt;/h6&gt;
+&lt;h6 id=&#34;git-up-をインストール&#34;&gt;◯ &lt;code&gt;git-up&lt;/code&gt;をインストール&lt;/h6&gt;
 
 &lt;pre&gt;&lt;code&gt;$ gem install git-up
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;この状態で&lt;code&gt;git up&lt;/code&gt;を試したけれど見つからなかった&lt;/p&gt;
 
-&lt;h6 id=&#34;探す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ 探す&lt;/h6&gt;
+&lt;h6 id=&#34;探す&#34;&gt;◯ 探す&lt;/h6&gt;
 
 &lt;pre&gt;&lt;code&gt;$ bundle list | grep git-up
 &lt;/code&gt;&lt;/pre&gt;
@@ -286,7 +286,7 @@ Deleted branch release/2016-03-14-0349 (was 0c652fd).
 
 &lt;p&gt;これが見つからない。rbenvあたりでパスが通っていないっぽい。&lt;/p&gt;
 
-&lt;h5 id=&#34;パスを通す:965cc11ac52a827b331d0d676625d376&#34;&gt;◯ パスを通す&lt;/h5&gt;
+&lt;h5 id=&#34;パスを通す&#34;&gt;◯ パスを通す&lt;/h5&gt;
 
 &lt;p&gt;rbev内にgit-upが入っているかを確認する&lt;/p&gt;
 

@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【訳読】JSX &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,17 @@
             <article class="post">
                 <header>
                     <h1>【訳読】JSX</h1>
-                    <h2 class="headline">January 26, 2016</h2>
+                    <h2 class="headline">
+                    January 26, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/jsx">jsx</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -42,7 +61,7 @@
 
 <hr>
 
-<h3 id="background:eefede6fd0575a7a2327da935aefa0bf">Background</h3>
+<h3 id="background">Background</h3>
 
 <p>JSXはJavaScriptへのコンパイルが可能な、静的型付けかつオブジェクト指向のプログラミング言語です。
 JavaScriptよりも頑丈なプログラミング言語が必要だったためにJSXは開発されました。
@@ -65,7 +84,7 @@ JSZでは&rdquo;inline expansion&rdquo;によってパフォーマンスを引�
 
 <hr>
 
-<h3 id="run-hello-world:eefede6fd0575a7a2327da935aefa0bf">Run &ldquo;Hello, World!&rdquo;</h3>
+<h3 id="run-hello-world">Run &ldquo;Hello, World!&rdquo;</h3>
 
 <p>JSXのプログタムを実行してみましょう。<code>jsx</code>コマンドを使い、JSXをJavaScriptにコンパイルします。</p>
 
@@ -92,7 +111,7 @@ JSZでは&rdquo;inline expansion&rdquo;によってパフォーマンスを引�
 
 <hr>
 
-<h3 id="program-structure:eefede6fd0575a7a2327da935aefa0bf">Program Structure</h3>
+<h3 id="program-structure">Program Structure</h3>
 
 <p>ここでは&rdquo;Hello world!&ldquo;サンプルであるhello.jsxについて取り扱っていきます。
 このプログラムに名前や静的型付け、クラス構造といったいくつかのJSXの機能を見ることができます。</p>
@@ -151,11 +170,11 @@ JSZでは&rdquo;inline expansion&rdquo;によってパフォーマンスを引�
 
 <Hr>
 
-<h3 id="static-typing:eefede6fd0575a7a2327da935aefa0bf">Static Typing</h3>
+<h3 id="static-typing">Static Typing</h3>
 
 <p>基本的な型の概要についてはこの章で述べます。プリミティブ型やオブジェクト型、Variant型、Null型がJSZには存在します。</p>
 
-<h4 id="pritimive-types:eefede6fd0575a7a2327da935aefa0bf">Pritimive Types</h4>
+<h4 id="pritimive-types">Pritimive Types</h4>
 
 <p>JSXには3つのプリミティブ型が存在します。<code>string</code>、<code>number</code>、<code>boolean</code>です。
 これらの3つはNull型にはならず、不変の型です。</p>
@@ -174,7 +193,7 @@ var n = 42;       // n is number, initialized as 42
 var b = true;     // b is boolean, initialized as true
 </code></pre>
 
-<h4 id="object-types:eefede6fd0575a7a2327da935aefa0bf">Object Types</h4>
+<h4 id="object-types">Object Types</h4>
 
 <p>オブジェクト型はクラスのインスタンスオブジェクトに参照を持つ方になります。
 例えば、関数、文字列配列、Dateオブジェクトは全てオブジェクト型になります。
@@ -202,7 +221,7 @@ var m2 = {                     // m2 is Map.&lt;string&gt;
 
 <p>Functionクラスの変数のみ、静的関数として生成することや、またfunction式やfunction文を使って生成することが可能です。</p>
 
-<h4 id="the-variant-type:eefede6fd0575a7a2327da935aefa0bf">The Variant Type</h4>
+<h4 id="the-variant-type">The Variant Type</h4>
 
 <p>Variant型は&rdquo;静的型情報がない&rdquo;という意味です。既存のJavaScriptAPIに役立ちます。
 バリアント変数を返すJavaScriptライブラリもあるかもしれません。これらの型はコンパイル時に決定することができません。
@@ -219,7 +238,7 @@ var m2 = {                     // m2 is Map.&lt;string&gt;
 }
 </code></pre>
 
-<h4 id="nullable-types:eefede6fd0575a7a2327da935aefa0bf">Nullable Types</h4>
+<h4 id="nullable-types">Nullable Types</h4>
 
 <p>Nullable型はメタ型です。値がnullかもしれないことを示します。
 primitive型にnullを代入することは禁止されています。(Object型はデフォルトではnullです。)
@@ -260,7 +279,7 @@ null値の誤用が検知されると例外が発生します。
 
 <hr>
 
-<h3 id="expressions:eefede6fd0575a7a2327da935aefa0bf">Expressions</h3>
+<h3 id="expressions">Expressions</h3>
 
 <p>JSXにおける演算子の定義はほとんどJavaScriptと同じです。しかしながら違う点もあります。</p>
 
@@ -315,7 +334,7 @@ log s;               // print &quot;value of n is 123&quot;
 
 <p>詳しくは<a href="https://jsx.github.io/doc/operatorref.html">Operator Reference</a>を見てください。</p>
 
-<h4 id="statements:eefede6fd0575a7a2327da935aefa0bf">Statements</h4>
+<h4 id="statements">Statements</h4>
 
 <p>JSXではJavaScriptで提供される多くの構文をサポートします。</p>
 
@@ -359,7 +378,7 @@ assert n != 0;         // assertions.  also can be turned off with --release
 
 <hr>
 
-<h3 id="classes-and-interfaces:eefede6fd0575a7a2327da935aefa0bf">Classes and Interfaces</h3>
+<h3 id="classes-and-interfaces">Classes and Interfaces</h3>
 
 <p>JSXはクラスベースのオブジェクト指向言語です。クラスモデルはJavaに似ています。</p>
 
@@ -428,7 +447,7 @@ Flyableインターフェイスを使うことで、例えbeeとbatが完全に�
 
 <hr>
 
-<h3 id="functions-and-closures:eefede6fd0575a7a2327da935aefa0bf">Functions and Closures</h3>
+<h3 id="functions-and-closures">Functions and Closures</h3>
 
 <p>JSXでは、関数が最初のクラスオブジェクトであり、静的な型をもっています。
 <code>var f : function(arg : number) : number</code>といった関数型の変数を宣言することができます。
@@ -461,7 +480,7 @@ Flyableインターフェイスを使うことで、例えbeeとbatが完全に�
 
 <hr>
 
-<h3 id="modules:eefede6fd0575a7a2327da935aefa0bf">Modules</h3>
+<h3 id="modules">Modules</h3>
 
 <p>JSXはモジュールシステムを持ちます。<code>import</code>式を使ってJSXのクラスライブラリを利用することができます。
 例えば、下記のプログラムでは<code>timer.jsx</code>モジュールを使用し、Timerクラスをエクスポートしています。</p>
@@ -483,7 +502,7 @@ class _Main {
 
 <hr>
 
-<h3 id="interface-to-web-browsers:eefede6fd0575a7a2327da935aefa0bf">Interface to Web Browsers</h3>
+<h3 id="interface-to-web-browsers">Interface to Web Browsers</h3>
 
 <p><code>js/web.jsx</code>モジュールはWebブラウザへのインターフェイスを提供します。
 下記のサンプルではどのように挿入するかを見せます。</p>
@@ -522,7 +541,7 @@ class _Main {
 
 <hr>
 
-<h3 id="further-learning:eefede6fd0575a7a2327da935aefa0bf">Further Learning</h3>
+<h3 id="further-learning">Further Learning</h3>
 
 <p>より詳しいドキュメントは<a href="https://github.com/jsx/JSX/wiki">wiki</a>を見てください。</p>
 
@@ -532,7 +551,7 @@ class _Main {
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -552,9 +571,18 @@ class _Main {
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -618,19 +646,16 @@ class _Main {
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -639,13 +664,8 @@ class _Main {
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

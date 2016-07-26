@@ -23,7 +23,7 @@
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;hugoブログの立ちあげ:19f26223fdf7a5c73f196d31f8af4d1d&#34;&gt;Hugoブログの立ちあげ&lt;/h2&gt;
+&lt;h2 id=&#34;hugoブログの立ちあげ&#34;&gt;Hugoブログの立ちあげ&lt;/h2&gt;
 
 &lt;p&gt;基本的には公式サイトの&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;Quickstart&lt;/a&gt;に従う。&lt;/p&gt;
 
@@ -34,19 +34,21 @@ hugo server --theme=hugo-cactus-theme --buildDrafts -w
 hugo new post/newpost.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;github-pages:19f26223fdf7a5c73f196d31f8af4d1d&#34;&gt;Github Pages&lt;/h2&gt;
+&lt;h2 id=&#34;github-pages&#34;&gt;Github Pages&lt;/h2&gt;
 
 &lt;p&gt;Github PagesもHugo公式の&lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;を参考にする。&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git subtree&lt;/code&gt;を使う&lt;/li&gt;
 &lt;li&gt;全体のコンテンツは&lt;code&gt;master&lt;/code&gt;ブランチに、公開ファイルを&lt;code&gt;gh-pages&lt;/code&gt;ブランチで運用&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;deploy.sh&lt;/code&gt;の作成&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;deploy.sh&lt;/code&gt;の作成
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;チュートリアルに沿えばGithub Pagesにサイトができる。&lt;/p&gt;
 
-&lt;h2 id=&#34;独自ドメイン:19f26223fdf7a5c73f196d31f8af4d1d&#34;&gt;独自ドメイン&lt;/h2&gt;
+&lt;h2 id=&#34;独自ドメイン&#34;&gt;独自ドメイン&lt;/h2&gt;
 
 &lt;p&gt;僕はもともとムームードメインで取得したドメインと、ロリポップのレンタルサーバーを使ってWordpressブログを使っていた。&lt;br /&gt;
 それにあたりこちらの記事を参考にした。&lt;/p&gt;
@@ -59,7 +61,7 @@ hugo new post/newpost.md
 &lt;li&gt;そのため&lt;a href=&#34;https://www.gehirn.jp/&#34;&gt;Gehirn DNS&lt;/a&gt;などを使う必要がある&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;toc_3:19f26223fdf7a5c73f196d31f8af4d1d&#34;&gt;　&lt;/h5&gt;
+&lt;h5 id=&#34;toc_3&#34;&gt;　&lt;/h5&gt;
 
 &lt;p&gt;そんな感じでブログの移行が完了しました。&lt;/p&gt;
 </description>

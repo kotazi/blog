@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>Rails内でのwebpackの使い方 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,19 @@
             <article class="post">
                 <header>
                     <h1>Rails内でのwebpackの使い方</h1>
-                    <h2 class="headline">February 14, 2016</h2>
+                    <h2 class="headline">
+                    February 14, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/rails">rails</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/webpack">webpack</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -62,9 +83,9 @@ bowerやnpmのJavaScriptモジュールをうまく統合することができ�
 
 <hr>
 
-<h3 id="getting-started:78a84d7a250550b9fca3451f0818ba23">Getting Started</h3>
+<h3 id="getting-started">Getting Started</h3>
 
-<h4 id="is-webpack-right-for-your-app:78a84d7a250550b9fca3451f0818ba23">Is webpack right for your app?</h4>
+<h4 id="is-webpack-right-for-your-app">Is webpack right for your app?</h4>
 
 <p>webpackは本当にパワフルで素晴らしいツールである。
 けれども本当に効果的に利用するには、あなたが&rdquo;モジュールとしてのJS&rdquo;という哲学をしっかりと信じる必要がある。
@@ -86,20 +107,20 @@ jQueryやBackboneといった人気のライブラリを使っているなら簡
 
 <p>あなたのアプリに向いているか？</p>
 
-<h4 id="新しいrailsアプリを作っているところ:78a84d7a250550b9fca3451f0818ba23">新しいRailsアプリを作っているところ</h4>
+<h4 id="新しいrailsアプリを作っているところ">新しいRailsアプリを作っているところ</h4>
 
 <p>大量のJSコードを使うのなら絶対に。試さない理由がない。</p>
 
-<h4 id="アプリは大きいがjsはそこまで量がない:78a84d7a250550b9fca3451f0818ba23">アプリは大きいがJSはそこまで量がない</h4>
+<h4 id="アプリは大きいがjsはそこまで量がない">アプリは大きいがJSはそこまで量がない</h4>
 
 <p>多分価値が無いかも。webpackはたくさんのモジュールを使っていたり、たくさんのJSコードを書いているときに
 本当に輝く。そんなにJSがないのであれば、大きなメリットはないだろう。</p>
 
-<h4 id="アプリは大きいが-jsはよく整備されており-特に問題がない:78a84d7a250550b9fca3451f0818ba23">アプリは大きいが、JSはよく整備されており、特に問題がない</h4>
+<h4 id="アプリは大きいが-jsはよく整備されており-特に問題がない">アプリは大きいが、JSはよく整備されており、特に問題がない</h4>
 
 <p>全てをwebpackに移行することはそれなりに労力がかかるため、多分やる価値はない。</p>
 
-<h4 id="アプリは大きく-大量のスパゲッティコード-jsファイルは800kbを超えている:78a84d7a250550b9fca3451f0818ba23">アプリは大きく、大量のスパゲッティコード、jsファイルは800kbを超えている</h4>
+<h4 id="アプリは大きく-大量のスパゲッティコード-jsファイルは800kbを超えている">アプリは大きく、大量のスパゲッティコード、jsファイルは800kbを超えている</h4>
 
 <p>きっとwebpackを使ったほうがいい！少々大変だが、知るべきことはこのガイドで伝える。</p>
 
@@ -107,12 +128,12 @@ jQueryやBackboneといった人気のライブラリを使っているなら簡
 
 <hr>
 
-<h3 id="preparing-rails-for-webpack:78a84d7a250550b9fca3451f0818ba23">Preparing Rails for webpack</h3>
+<h3 id="preparing-rails-for-webpack">Preparing Rails for webpack</h3>
 
 <p>Railsにwebpackを統合するベストプラクティスは存在しないため、多くは意見である。
 もしディレクトリの置き場所が気に食わなければ、好きな場所においてもらって構わない。</p>
 
-<h4 id="untangling-sprockets:78a84d7a250550b9fca3451f0818ba23">Untangling Sprockets</h4>
+<h4 id="untangling-sprockets">Untangling Sprockets</h4>
 
 <p>最初にすることは<code>app/assets/javascripts</code>を空にすることだ。
 webpackの設定を個々にすると、Sprocketsに拾われてしまう。
@@ -134,7 +155,7 @@ webpackの設定を個々にすると、Sprocketsに拾われてしまう。
 もちろんSprocketsのJSバンドラとwebpackを併用することもできる。
 その場合は、<code>.gitignore</code>を<code>/app/assets/javascripts/bundle-*</code>みたいに生成されたJSのみを無視するように修正する。</p>
 
-<h4 id="a-new-home-for-your-javascript:78a84d7a250550b9fca3451f0818ba23">A new home for your JavaScript</h4>
+<h4 id="a-new-home-for-your-javascript">A new home for your JavaScript</h4>
 
 <p><code>app/assets/javascripts</code>は生成されたバンドラのためのものなので、実際のJSのために新しいホームを生成する必要がある。
 私は新しいフォルダを作成するが、もちろん他の場所においてもいい。</p>
@@ -153,9 +174,9 @@ _.times(5, function(i) {
 
 <hr>
 
-<h3 id="installing-webpack-bower:78a84d7a250550b9fca3451f0818ba23">Installing webpack &amp; Bower</h3>
+<h3 id="installing-webpack-bower">Installing webpack &amp; Bower</h3>
 
-<h4 id="installing-webpack:78a84d7a250550b9fca3451f0818ba23">Installing webpack</h4>
+<h4 id="installing-webpack">Installing webpack</h4>
 
 <p>webpackはnode.jsのアプリケーションのため、<code>package.json</code>がRailsルートの中に必要だ。<br />
 シンプルであるために、webpackとwebpackのモジュールを管理するためだけに使っている。</p>
@@ -185,7 +206,7 @@ _.times(5, function(i) {
 <pre><code>$ npm install -g webpack
 </code></pre>
 
-<h4 id="installing-bower-optional:78a84d7a250550b9fca3451f0818ba23">Installing Bower (optional)</h4>
+<h4 id="installing-bower-optional">Installing Bower (optional)</h4>
 
 <p>webpackのいいところのひとつは利用するパッケージ管理ツールを強要しないところだ。
 デフォルトはたくさんのフロントエンドモジュールをもったnpmだ。
@@ -220,7 +241,7 @@ Railsルートで<code>bower install</code>を実行すると、bowerはこれ�
 だからもし、あなたがjQueryの1.x系を指定しながら、別の依存関係では最低のjQueryバージョンを2.x以上と指定していたのであれば、
 これを自分自身で解消する必要がある。</p>
 
-<h3 id="using-bower-and-npm-together:78a84d7a250550b9fca3451f0818ba23">Using bower and npm together</h3>
+<h3 id="using-bower-and-npm-together">Using bower and npm together</h3>
 
 <p>webpack内でnpmとbowerを一緒に使うことを止めるものはいない。
 たとえばもしjQueryとBackboneをnpmから、人気のないモジュールをBowerからといったように。
@@ -230,7 +251,7 @@ Railsルートで<code>bower install</code>を実行すると、bowerはこれ�
 
 <p>In practice, this might not make a huge difference. In the case of large modules like <code>React</code>, it may be worth including it as a one-off from npm so webpack can optimise it a little better, but for almost everything else I recommend sticking with Bower so you have one place for all your dependencies.</p>
 
-<h3 id="configuring-webpack:78a84d7a250550b9fca3451f0818ba23">Configuring webpack</h3>
+<h3 id="configuring-webpack">Configuring webpack</h3>
 
 <p>たくさんの引数を用いて完全にコマンドラインからwebpackを実行することもできるが、複雑になってしまうので、コンフィグファイルを用いて始めよう。</p>
 
@@ -299,7 +320,7 @@ var config = module.exports = {
 
 <hr>
 
-<h3 id="running-webpack:78a84d7a250550b9fca3451f0818ba23">Running webpack</h3>
+<h3 id="running-webpack">Running webpack</h3>
 
 <p>webpackを実行する前に、Bowerの依存関係をインストールしよう。
 NPMだけなら<code>npm install</code>を実行すればいい。Bower依存関係をインストールするには:</p>
@@ -335,7 +356,7 @@ chunk    {0} bundle.js, bundle.js.map (main) 244421 [rendered]
 けれどももし、エントリーポイント間にたくさんのモジュールがあったり、code-splitting機能を使っているのであれば、
 webpackは<code>1.1-bundle.js</code>といった名前でたくさんのチャンクを作成する。</p>
 
-<h4 id="the-compiled-webpack-bundle:78a84d7a250550b9fca3451f0818ba23">The compiled webpack bundle</h4>
+<h4 id="the-compiled-webpack-bundle">The compiled webpack bundle</h4>
 
 <p><code>app/assets/javascripts/bundle.js</code>ファイルを開いてみると、コンパイルされたJavaScriptが確認できる。
 このファイルでは、標準のJavaScriptは持っていない機能である依存関係の<code>require</code>機能を全てのモジュールに提供するwebpackローダーを含んでいる。(数バイト)</p>
@@ -360,7 +381,7 @@ webpackは<code>1.1-bundle.js</code>といった名前でたくさんのチャ�
   });
 </code></pre>
 
-<h4 id="including-webpack-bundles-in-rails-views:78a84d7a250550b9fca3451f0818ba23">Including webpack bundles in Rails views</h4>
+<h4 id="including-webpack-bundles-in-rails-views">Including webpack bundles in Rails views</h4>
 
 <p>思っている通りで、コンパイルされtらJSバンドラは普通に含めることができる。</p>
 
@@ -370,7 +391,7 @@ webpackは<code>1.1-bundle.js</code>といった名前でたくさんのチャ�
 <p>基礎はこれで完了。
 あとは大きなアプリケーションで必要になりそうなことをカバーしていく。</p>
 
-<h3 id="exposing-global-modules-e-g-jquery:78a84d7a250550b9fca3451f0818ba23">Exposing global modules (e.g. jQuery)</h3>
+<h3 id="exposing-global-modules-e-g-jquery">Exposing global modules (e.g. jQuery)</h3>
 
 <p>特定のモジュールでjQueryを使いたければ下記のように書ける。</p>
 
@@ -416,7 +437,7 @@ ou can configure loaders in the webpack config, which makes sense for transforma
 
 <hr>
 
-<h3 id="source-maps:78a84d7a250550b9fca3451f0818ba23">Source maps</h3>
+<h3 id="source-maps">Source maps</h3>
 
 <p><code>bundle.js.map</code>が出力先のディレクトリに作成されていることに気付いただろう。
 このソースマップはwebpackの働きによって生成されている。
@@ -433,7 +454,7 @@ end
 
 <p>Now when you get errors, or view loaded sources in a browser, you’ll see the actual file (e.g. entry.js) instead of the giant bundled file.</p>
 
-<h4 id="virtual-source-paths:78a84d7a250550b9fca3451f0818ba23">Virtual source paths</h4>
+<h4 id="virtual-source-paths">Virtual source paths</h4>
 
 <p>In Chrome, by default the source map generated by webpack will put everything in a &lsquo;pseudo path’, <code>webpack://</code>, when you view it in the inspector’s Sources tab. You can make this a bit nicer by adding the following to your webpack <code>config.output</code>:</p>
 
@@ -443,13 +464,13 @@ devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]',
 
 <p>Now your &lsquo;virtual’ source files will appear under the <code>domain &gt; assets</code> directory in the Sources tab.</p>
 
-<h4 id="sprockets-cache-and-source-maps:78a84d7a250550b9fca3451f0818ba23">Sprockets cache and source maps</h4>
+<h4 id="sprockets-cache-and-source-maps">Sprockets cache and source maps</h4>
 
 <p>In my experience, Sprockets can be very aggressive at caching source maps. If they ever start acting weird, make sure to clear the sprockets cache in <code>tmp/cache</code> first.</p>
 
 <hr>
 
-<h3 id="loading-coffeescript-and-other-transpiled-languages:78a84d7a250550b9fca3451f0818ba23">Loading CoffeeScript and other transpiled languages</h3>
+<h3 id="loading-coffeescript-and-other-transpiled-languages">Loading CoffeeScript and other transpiled languages</h3>
 
 <p>CoffeeScriptやその類で書かれたモジュールをローダーを使って自動でトランスパイルすることができる。
 <code>expose</code>ローダーのように、<code>require</code>ステートメントの内部で実行されるが、webpackのコンフィグに記述することがよいとは言えないので、
@@ -494,13 +515,13 @@ app.start();
 
 <p>再度webpackを実行して、ブラウザで予想通りに動作していることが確認できる。</p>
 
-<h3 id="code-splitting-and-lazily-loading-modules:78a84d7a250550b9fca3451f0818ba23">Code splitting and lazily loading modules</h3>
+<h3 id="code-splitting-and-lazily-loading-modules">Code splitting and lazily loading modules</h3>
 
                 </section>
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -520,9 +541,18 @@ app.start();
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -586,19 +616,16 @@ app.start();
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -607,13 +634,8 @@ app.start();
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

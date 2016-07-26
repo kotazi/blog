@@ -26,12 +26,12 @@
 なんで動かなかったかというと&lt;a href=&#34;http://qiita.com/ukyo/items/0aa47142020c07874415&#34;&gt;MyInclude&lt;/a&gt;とngIfがよくなかった。&lt;br /&gt;
 とりあえずサンプル&lt;/p&gt;
 
-&lt;h3 id=&#34;ng-ifバージョン-動かない:4972609874c0ecfbd9a991e9e31f8075&#34;&gt;■ ng-ifバージョン(動かない)&lt;/h3&gt;
+&lt;h3 id=&#34;ng-ifバージョン-動かない&#34;&gt;■ ng-ifバージョン(動かない)&lt;/h3&gt;
 
 &lt;p&gt;&lt;p data-height=&#34;266&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;ojRRmP&#34; data-default-tab=&#34;result&#34; data-user=&#34;kotazi&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/kotazi/pen/ojRRmP/&#39;&gt;【AngularJS】Masonry Directive Behavior with Stamp(ng-if)&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#39;http://codepen.io/kotazi&#39;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 &lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ng-showバージョン-動く:4972609874c0ecfbd9a991e9e31f8075&#34;&gt;■ ng-showバージョン(動く)&lt;/h3&gt;
+&lt;h3 id=&#34;ng-showバージョン-動く&#34;&gt;■ ng-showバージョン(動く)&lt;/h3&gt;
 
 &lt;p&gt;&lt;p data-height=&#34;266&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;EVBZeG&#34; data-default-tab=&#34;result&#34; data-user=&#34;kotazi&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/kotazi/pen/EVBZeG/&#39;&gt;【AngularJS】Masonry Directive Behavior with Stamp(ng-show)&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#39;http://codepen.io/kotazi&#39;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 &lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
@@ -53,15 +53,15 @@ Issueが溜まっているけれど、一年近く更新がない。&lt;/p&gt;
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;ドキュメント:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 
 &lt;p&gt;infiniteScroll (directive in module infinite-scroll)&lt;/p&gt;
 
-&lt;h2 id=&#34;説明:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;説明&lt;/h2&gt;
+&lt;h2 id=&#34;説明&#34;&gt;説明&lt;/h2&gt;
 
 &lt;p&gt;要素の底がブラウザの底に近づいた時に、infiniteScrollで特定の振る舞いを指定することができます。&lt;/p&gt;
 
-&lt;h2 id=&#34;使い方:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;使い方&lt;/h2&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;ANY infinite-scroll=&#39;{expression}&#39;
      [infinite-scroll-distance=&#39;{number}&#39;]
@@ -71,36 +71,36 @@ Issueが溜まっているけれど、一年近く更新がない。&lt;/p&gt;
 &amp;lt;/ANY&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;パラメータ:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;パラメータ&lt;/h2&gt;
+&lt;h2 id=&#34;パラメータ&#34;&gt;パラメータ&lt;/h2&gt;
 
-&lt;h4 id=&#34;infinite-scroll-expression:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll - {expression}&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;infinite-scroll-expression&#34;&gt;&lt;strong&gt;infinite-scroll - {expression}&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;エレメントの底がブラウザの底に近づいた時に、式を評価します。(基本的には関数呼び出し)&lt;/p&gt;
 
-&lt;h4 id=&#34;infinite-scroll-distance-optional-number:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll-distance (optional) - {number}&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;infinite-scroll-distance-optional-number&#34;&gt;&lt;strong&gt;infinite-scroll-distance (optional) - {number}&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;infinite-scrollに評価された式がトリガーされる前に、エレメントの底がブラウザの底にどれだけ近いかを表す数字です。ウインドウの高さの倍数で測定します。たとえば、ブラウザウィンドウの高さが1000pxで、&lt;code&gt;infinite-scroll-distance&lt;/code&gt;が2にセットされている場合、infinite scrollの式はエレメントの底がブラウザウィンドウの底から2000px以内にあるときに評価します。デフォルトは0です。(要素の底がブラウザウィンドウの下部を横切るとき式が評価されます)&lt;/p&gt;
 
-&lt;h4 id=&#34;infinite-scroll-disabled-optional-boolean:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll-disabled (optional) - {boolean}&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;infinite-scroll-disabled-optional-boolean&#34;&gt;&lt;strong&gt;infinite-scroll-disabled (optional) - {boolean}&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;ブール式です。trueの場合、他のすべての条件が満たされている場合でも infininite scrollが評価されることはありません。たいていは一時停止などで使われます。例えばAjax読込中などです。スクロールイベントが発火し、この属性が評価を妨げた場合、そのイベントは属性値が再度falseになったタイミングで再度評価されます。&lt;/p&gt;
 
-&lt;h4 id=&#34;infinite-scroll-immediate-check-optional-boolean:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll-immediate-check (optional) - {boolean}&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;infinite-scroll-immediate-check-optional-boolean&#34;&gt;&lt;strong&gt;infinite-scroll-immediate-check (optional) - {boolean}&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;スクロールイベントが起こっていない場合でも、ディレクティブがinfinite scroll式を評価するかを指定するブール式です。コンテンツの高さが十分にないときに便利です。デフォルトはtrueです。&lt;/p&gt;
 
-&lt;h4 id=&#34;infinite-scroll-listen-for-event-optional-string:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;&lt;strong&gt;infinite-scroll-listen-for-event (optional) - {string}&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;infinite-scroll-listen-for-event-optional-string&#34;&gt;&lt;strong&gt;infinite-scroll-listen-for-event (optional) - {string}&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;イベント名を設定します。このイベントが実行された際、スクロール位置のチェックが走ります。手動でスクロールハンドラをトリガーする必要がある場合に便利です。&lt;/p&gt;
 
-&lt;h2 id=&#34;モジュールの読み込み:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;モジュールの読み込み&lt;/h2&gt;
+&lt;h2 id=&#34;モジュールの読み込み&#34;&gt;モジュールの読み込み&lt;/h2&gt;
 
 &lt;p&gt;infiniteScrollディレクティブは&lt;code&gt;infinite-scroll&lt;/code&gt;モジュール内で利用可能です。アクセスを可能にするために、&lt;code&gt;infinite-scroll&lt;/code&gt;が自身のモジュールの依存関係に含まれていることを確認してください。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;var myApp = angular.module(&#39;myApp&#39;, [&#39;infinite-scroll&#39;]);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;スクロールイベントを絞る:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;スクロールイベントを絞る&lt;/h2&gt;
+&lt;h2 id=&#34;スクロールイベントを絞る&#34;&gt;スクロールイベントを絞る&lt;/h2&gt;
 
 &lt;p&gt;スクロールイベントは非常に頻繁に発火します。これによってパフォーマンスを低下させたり、スクロールの挙動を悪くしてしまうことがあります。これを和らげるために、infiniteScrollではmillisecondsにおけるスクロールイベントの上限を設定することができます。&lt;/p&gt;
 
@@ -108,7 +108,7 @@ Issueが溜まっているけれど、一年近く更新がない。&lt;/p&gt;
 angular.module(&#39;infinite-scroll&#39;).value(&#39;THROTTLE_MILLISECONDS&#39;, 250)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;手動でスクロールハンドラをトリガーする:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;手動でスクロールハンドラをトリガーする&lt;/h2&gt;
+&lt;h2 id=&#34;手動でスクロールハンドラをトリガーする&#34;&gt;手動でスクロールハンドラをトリガーする&lt;/h2&gt;
 
 &lt;p&gt;アイテムの高さを変更したり隠したりした際に、ユーザーのスクロールイベント無しで短いリストを取得し、再構築させることができます。この場合、&lt;code&gt;infinite-scroll-listen-for-event&lt;/code&gt;を使います。また、スクロールチェックが必要であれば、対応するイベントを発生できます。例えば、&lt;/p&gt;
 
@@ -122,7 +122,7 @@ angular.module(&#39;infinite-scroll&#39;).value(&#39;THROTTLE_MILLISECONDS&#39;,
 &lt;pre&gt;&lt;code&gt;$scope.$emit(&#39;list:filtered&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;典型的な使い方:6bb2504481b08df6e18dc7a6890ecaba&#34;&gt;典型的な使い方&lt;/h2&gt;
+&lt;h2 id=&#34;典型的な使い方&#34;&gt;典型的な使い方&lt;/h2&gt;
 
 &lt;p&gt;一般的には、配列やオブジェクトで一連性を持ったものを見せるためにngRepeatを使うなど、他の要素を含んだ要素上で&lt;code&gt;infiniteScroll&lt;/code&gt;ディレクティブを使います。たいてい、infinite-scroll属性に渡す式ではngRepeatの配列にエレメントを追加します。&lt;/p&gt;
 
@@ -141,7 +141,7 @@ angular.module(&#39;infinite-scroll&#39;).value(&#39;THROTTLE_MILLISECONDS&#39;,
       <guid>http://kotazi.github.io/blog/post/2015111901/</guid>
       <description>
 
-&lt;h2 id=&#34;カスタムフォントの使用-https-github-com-bpampuch-pdfmake-issues-33:16a5f450dd8c50b145f388ac7343234c&#34;&gt;&lt;a href=&#34;https://github.com/bpampuch/pdfmake/issues/33&#34;&gt;カスタムフォントの使用&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;カスタムフォントの使用-https-github-com-bpampuch-pdfmake-issues-33&#34;&gt;&lt;a href=&#34;https://github.com/bpampuch/pdfmake/issues/33&#34;&gt;カスタムフォントの使用&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;vfs_fonts.js&lt;/code&gt;は&amp;rdquo;virtual-file-system&amp;rdquo;オブジェクトを&lt;code&gt;pdfMake.vfs&lt;/code&gt;に割り当てています。
 このオブジェクトの各キーがファイル名であり、値はbase64エンコードされたファイルを含みます。&lt;/p&gt;
@@ -162,14 +162,14 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;1-使用するフォントを含んだ-vfs-fonts-js-を生成する:16a5f450dd8c50b145f388ac7343234c&#34;&gt;&lt;strong&gt;1. 使用するフォントを含んだ&lt;code&gt;vfs_fonts.js&lt;/code&gt;を生成する:&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;1-使用するフォントを含んだ-vfs-fonts-js-を生成する&#34;&gt;&lt;strong&gt;1. 使用するフォントを含んだ&lt;code&gt;vfs_fonts.js&lt;/code&gt;を生成する:&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;examples/fonts&lt;/code&gt;内にフォントをコピーします。
 &lt;code&gt;grunt dump_dir&lt;/code&gt;を実行してください。新しい&lt;code&gt;build/vfs_fonts.js&lt;/code&gt;をウェブページで使います。&lt;/p&gt;
 
 &lt;p&gt;ちなみに、上記のアクションは&lt;code&gt;examples/fonts&lt;/code&gt;内の全てのファイルをダンプしてしまうので、画像ファイルなどを含むこともできます。&lt;/p&gt;
 
-&lt;h3 id=&#34;2-font-familyを定義する:16a5f450dd8c50b145f388ac7343234c&#34;&gt;&lt;strong&gt;2. font familyを定義する&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;2-font-familyを定義する&#34;&gt;&lt;strong&gt;2. font familyを定義する&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;pdfMake.createPdf(docDefinition)&lt;/code&gt;が呼ばれる前に、pdfMake.fontsをセットします。&lt;/p&gt;
 
@@ -201,7 +201,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 };
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;3-doc-definition-object-内にあるfont-familyを変更する:16a5f450dd8c50b145f388ac7343234c&#34;&gt;&lt;strong&gt;3. &lt;code&gt;doc-definition-object&lt;/code&gt;内にあるfont familyを変更する&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;3-doc-definition-object-内にあるfont-familyを変更する&#34;&gt;&lt;strong&gt;3. &lt;code&gt;doc-definition-object&lt;/code&gt;内にあるfont familyを変更する&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;現在、PDFMakeでは&lt;code&gt;Roboto&lt;/code&gt;をデフォルトのfamily nameとして利用しています。あなたのフォントを使うためにはこれを変更する必要があります。一番簡単な方法はグローバルで&lt;code&gt;defaultStyle&lt;/code&gt;を定義することです。&lt;/p&gt;
 
@@ -234,7 +234,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 &lt;p&gt;テーブルデータを含んだPDFファイルを作成保存します。
 注意: このプロパティはDataTablesの&lt;code&gt;Buttons&lt;/code&gt;が必要になります。&lt;/p&gt;
 
-&lt;h2 id=&#34;必要なもの:18343d1ab22b19fd64299064ac08469c&#34;&gt;必要なもの&lt;/h2&gt;
+&lt;h2 id=&#34;必要なもの&#34;&gt;必要なもの&lt;/h2&gt;
 
 &lt;p&gt;In order to operate, this button requires the following:&lt;/p&gt;
 
@@ -247,7 +247,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 &lt;li&gt;フォントファイル(&lt;a href=&#34;http://pdfmake.org/#/gettingstarted&#34;&gt;PDFMakeが用意しているもの&lt;/a&gt;か、&lt;a href=&#34;https://github.com/bpampuch/pdfmake/wiki/Custom-Fonts---client-side&#34;&gt;カスタムフォント&lt;/a&gt;が使えます)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;説明:18343d1ab22b19fd64299064ac08469c&#34;&gt;説明&lt;/h2&gt;
+&lt;h2 id=&#34;説明&#34;&gt;説明&lt;/h2&gt;
 
 &lt;p&gt;このボタンはデータテーブルからPDFファイルを作成し保存します。
 動作させるためにはモダンブラウザが必要となります。(IE8やIE9では動作しません。)
@@ -260,7 +260,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 &lt;p&gt;&lt;strong&gt;Safariについての注意:&lt;/strong&gt;Safariでは生成されたPDFをダウンロードすることができません。(&lt;a href=&#34;https://bugs.webkit.org/show_bug.cgi?id=102914&#34;&gt;Webkitのバグ&lt;/a&gt;)&lt;br /&gt;
 生成されたPDFは新しいタブで表示されます。エンドユーザーはブラウザの&amp;rdquo;Save as&amp;rdquo;ボタンを使って保存してください。&lt;/p&gt;
 
-&lt;h2 id=&#34;options:18343d1ab22b19fd64299064ac08469c&#34;&gt;Options&lt;/h2&gt;
+&lt;h2 id=&#34;options&#34;&gt;Options&lt;/h2&gt;
 
 &lt;p&gt;下記のオプションを使って動作や表示の設定ができます。&lt;/p&gt;
 
@@ -294,7 +294,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;exportOptions&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Datatablesから出力されたデータを選択してください。行や列についても含みます。&lt;a href=&#34;https://datatables.net/reference/api/buttons.exportData(&#34;&gt;&lt;code&gt;buttons.exportData()&lt;/code&gt;&lt;/a&gt;)を見てください。&lt;/td&gt;
+&lt;td&gt;Datatablesから出力されたデータを選択してください。行や列についても含みます。&lt;a href=&#34;https://datatables.net/reference/api/buttons.exportData()&#34;&gt;&lt;code&gt;buttons.exportData()&lt;/code&gt;&lt;/a&gt;を見てください。&lt;/td&gt;
 &lt;td&gt;{}&lt;/td&gt;
 &lt;/tr&gt;
 
@@ -354,7 +354,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&#34;サンプル:18343d1ab22b19fd64299064ac08469c&#34;&gt;サンプル&lt;/h2&gt;
+&lt;h2 id=&#34;サンプル&#34;&gt;サンプル&lt;/h2&gt;
 
 &lt;p&gt;DataTablesの初期化:HTML5PDFボタンを使います。&lt;/p&gt;
 

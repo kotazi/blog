@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【忘備録】Github Pagesへの移行経緯 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,19 @@
             <article class="post">
                 <header>
                     <h1>【忘備録】Github Pagesへの移行経緯</h1>
-                    <h2 class="headline">November 20, 2015</h2>
+                    <h2 class="headline">
+                    November 20, 2015 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/github-pages">Github Pages</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/dns">DNS</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -43,7 +64,7 @@
 
 <hr>
 
-<h2 id="ドメイン移行前:3d672ebc6c92e3656d74a21c4d609c0c">ドメイン移行前</h2>
+<h2 id="ドメイン移行前">ドメイン移行前</h2>
 
 <ul>
 <li>ムームードメイン</li>
@@ -55,7 +76,7 @@
 Wordpressの更新が疎かになっていたので、Hugoに乗り換えたかった。<br />
 過去の記事はなくなってもよかったし、レンタルサーバーもそんなに使わないかなという感じ。</p>
 
-<h2 id="hugoブログ作成:3d672ebc6c92e3656d74a21c4d609c0c">Hugoブログ作成</h2>
+<h2 id="hugoブログ作成">Hugoブログ作成</h2>
 
 <ul>
 <li>Gehirn</li>
@@ -65,13 +86,13 @@ Wordpressの更新が疎かになっていたので、Hugoに乗り換えたか�
 GehirnのZone apexを使って、kotazi.com上でGithub Pagesを表示することができた。<br />
 これで完了と思ったが、ロリポップメールを使っていたので、メールが使えなくなっていた。</p>
 
-<h2 id="zoho-mailを使う:3d672ebc6c92e3656d74a21c4d609c0c">Zoho Mailを使う</h2>
+<h2 id="zoho-mailを使う">Zoho Mailを使う</h2>
 
 <p>Zoho Mailを使えば無料で<code>kotazi@kotazi.com</code>を使えると知った。
 アカウントを作成したもののGehirn上でMXレコードを設定することができなかった。
 これはAレコードをエイリアスで設定してしまったためかなと思っているが正直分からない。</p>
 
-<h2 id="解決編:3d672ebc6c92e3656d74a21c4d609c0c">解決編</h2>
+<h2 id="解決編">解決編</h2>
 
 <p>結局どうにもならなかったのでGehirnを使うことを諦めた。
 ムームーDNS上でCNAMEを使ってブログを表示させることにした。
@@ -80,7 +101,7 @@ Aレコードでリダイレクトは設定できた。
 MXレコードもムームーDNS側から設定した。
 とりあえず、メールもWebサイトも使えるようになった。</p>
 
-<h2 id="参考になった記事:3d672ebc6c92e3656d74a21c4d609c0c">参考になった記事</h2>
+<h2 id="参考になった記事">参考になった記事</h2>
 
 <ul>
 <li><a href="http://tech.blog.aerie.jp/entry/2014/09/09/162135">CNAME を巡る <sup>2</sup>&frasl;<sub>3</sub> のジレンマ | 鷲ノ巣</a></li>
@@ -90,7 +111,7 @@ MXレコードもムームーDNS側から設定した。
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -110,9 +131,18 @@ MXレコードもムームーDNS側から設定した。
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -176,19 +206,16 @@ MXレコードもムームーDNS側から設定した。
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -197,13 +224,8 @@ MXレコードもムームーDNS側から設定した。
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

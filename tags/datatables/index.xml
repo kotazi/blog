@@ -26,7 +26,7 @@
 &lt;p&gt;テーブルデータを含んだPDFファイルを作成保存します。
 注意: このプロパティはDataTablesの&lt;code&gt;Buttons&lt;/code&gt;が必要になります。&lt;/p&gt;
 
-&lt;h2 id=&#34;必要なもの:18343d1ab22b19fd64299064ac08469c&#34;&gt;必要なもの&lt;/h2&gt;
+&lt;h2 id=&#34;必要なもの&#34;&gt;必要なもの&lt;/h2&gt;
 
 &lt;p&gt;In order to operate, this button requires the following:&lt;/p&gt;
 
@@ -39,7 +39,7 @@
 &lt;li&gt;フォントファイル(&lt;a href=&#34;http://pdfmake.org/#/gettingstarted&#34;&gt;PDFMakeが用意しているもの&lt;/a&gt;か、&lt;a href=&#34;https://github.com/bpampuch/pdfmake/wiki/Custom-Fonts---client-side&#34;&gt;カスタムフォント&lt;/a&gt;が使えます)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;説明:18343d1ab22b19fd64299064ac08469c&#34;&gt;説明&lt;/h2&gt;
+&lt;h2 id=&#34;説明&#34;&gt;説明&lt;/h2&gt;
 
 &lt;p&gt;このボタンはデータテーブルからPDFファイルを作成し保存します。
 動作させるためにはモダンブラウザが必要となります。(IE8やIE9では動作しません。)
@@ -52,7 +52,7 @@
 &lt;p&gt;&lt;strong&gt;Safariについての注意:&lt;/strong&gt;Safariでは生成されたPDFをダウンロードすることができません。(&lt;a href=&#34;https://bugs.webkit.org/show_bug.cgi?id=102914&#34;&gt;Webkitのバグ&lt;/a&gt;)&lt;br /&gt;
 生成されたPDFは新しいタブで表示されます。エンドユーザーはブラウザの&amp;rdquo;Save as&amp;rdquo;ボタンを使って保存してください。&lt;/p&gt;
 
-&lt;h2 id=&#34;options:18343d1ab22b19fd64299064ac08469c&#34;&gt;Options&lt;/h2&gt;
+&lt;h2 id=&#34;options&#34;&gt;Options&lt;/h2&gt;
 
 &lt;p&gt;下記のオプションを使って動作や表示の設定ができます。&lt;/p&gt;
 
@@ -86,7 +86,7 @@
 
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;exportOptions&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Datatablesから出力されたデータを選択してください。行や列についても含みます。&lt;a href=&#34;https://datatables.net/reference/api/buttons.exportData(&#34;&gt;&lt;code&gt;buttons.exportData()&lt;/code&gt;&lt;/a&gt;)を見てください。&lt;/td&gt;
+&lt;td&gt;Datatablesから出力されたデータを選択してください。行や列についても含みます。&lt;a href=&#34;https://datatables.net/reference/api/buttons.exportData()&#34;&gt;&lt;code&gt;buttons.exportData()&lt;/code&gt;&lt;/a&gt;を見てください。&lt;/td&gt;
 &lt;td&gt;{}&lt;/td&gt;
 &lt;/tr&gt;
 
@@ -146,7 +146,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&#34;サンプル:18343d1ab22b19fd64299064ac08469c&#34;&gt;サンプル&lt;/h2&gt;
+&lt;h2 id=&#34;サンプル&#34;&gt;サンプル&lt;/h2&gt;
 
 &lt;p&gt;DataTablesの初期化:HTML5PDFボタンを使います。&lt;/p&gt;
 

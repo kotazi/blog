@@ -24,7 +24,7 @@
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;designing-the-state-shape:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Designing the State Shape&lt;/h2&gt;
+&lt;h2 id=&#34;designing-the-state-shape&#34;&gt;Designing the State Shape&lt;/h2&gt;
 
 &lt;p&gt;Reduxではアプリケーションの全てのステートはシングルオブジェクトとして保たれる。&lt;/p&gt;
 
@@ -54,7 +54,7 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;handling-actions:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Handling Actions&lt;/h2&gt;
+&lt;h2 id=&#34;handling-actions&#34;&gt;Handling Actions&lt;/h2&gt;
 
 &lt;p&gt;Stateオブジェクトの形が決まったので、Reducerを準備していく。
 Reducerは前のStateとActionを引数に取り、次のステートを返すピュア関数だ。&lt;/p&gt;
@@ -126,7 +126,7 @@ function todoApp(state, action) {
 &lt;li&gt;&lt;code&gt;default&lt;/code&gt;の時は前のステートを返すこと。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;handling-more-actions:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Handling More Actions&lt;/h2&gt;
+&lt;h2 id=&#34;handling-more-actions&#34;&gt;Handling More Actions&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;ADD_TODO&lt;/code&gt;も追加する。&lt;/p&gt;
 
@@ -169,7 +169,7 @@ function todoApp(state, action) {
   })
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;splitting-reducers:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Splitting Reducers&lt;/h2&gt;
+&lt;h2 id=&#34;splitting-reducers&#34;&gt;Splitting Reducers&lt;/h2&gt;
 
 &lt;p&gt;かなりごちゃごちゃしてきた。&lt;/p&gt;
 
@@ -354,7 +354,7 @@ export default todoApp
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;source-code:efd63614895e76f4b1f41133fc5c5d39&#34;&gt;Source Code&lt;/h2&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
 
 &lt;p&gt;最終的なやつ。&lt;/p&gt;
 
@@ -421,7 +421,7 @@ export default todoApp
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;actions:7bfca12585449761f97344878800fa11&#34;&gt;Actions&lt;/h2&gt;
+&lt;h2 id=&#34;actions&#34;&gt;Actions&lt;/h2&gt;
 
 &lt;p&gt;Actionはアプリケーションからの情報をStoreへ渡す。
 &lt;a href=&#34;http://redux.js.org/docs/api/Store.html#dispatch&#34;&gt;&lt;code&gt;store.dispatch()&lt;/code&gt;&lt;/a&gt;を使ってActionをStoreへ送信する。&lt;/p&gt;
@@ -453,7 +453,7 @@ Typeは文字列の定数として定義されるべきであり、アプリケ�
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;action-creators:7bfca12585449761f97344878800fa11&#34;&gt;Action Creators&lt;/h2&gt;
+&lt;h2 id=&#34;action-creators&#34;&gt;Action Creators&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Action creators&lt;/strong&gt; はActionを生成する関数である。
 &amp;ldquo;Action&amp;rdquo;と&amp;rdquo;Action Creator&amp;rdquo;をまとめるのは簡単なのでそのほうがいいかも。&lt;/p&gt;
@@ -501,7 +501,7 @@ boundCompleteTodo(index)
 &lt;p&gt;&lt;code&gt;dispach()&lt;/code&gt;関数はStoreから&lt;code&gt;store.dispatch()&lt;/code&gt;を使って直接アクセスすることができるが、&lt;a href=&#34;http://github.com/gaearon/react-redux&#34;&gt;react-redux&lt;/a&gt;の&lt;code&gt;connect()&lt;/code&gt;は便利。
 &lt;a href=&#34;http://redux.js.org/docs/api/bindActionCreators.html&#34;&gt;&lt;code&gt;bindActionCreators()&lt;/code&gt;&lt;/a&gt;を使って自動的にたくさんのアクションを&lt;code&gt;dispatch()&lt;/code&gt;関数にバインドすることもできる。&lt;/p&gt;
 
-&lt;h2 id=&#34;source-code:7bfca12585449761f97344878800fa11&#34;&gt;Source Code&lt;/h2&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;/*
  * action types
@@ -542,7 +542,7 @@ export function setVisibilityFilter(filter) {
 チュートリアルではやらないけれど、テストをこの時点で書くことができる。
 これらはタダの関数だからモックがいらない。&lt;/p&gt;
 
-&lt;h2 id=&#34;source-code-1:7bfca12585449761f97344878800fa11&#34;&gt;Source Code&lt;/h2&gt;
+&lt;h2 id=&#34;source-code-1&#34;&gt;Source Code&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;index.js&lt;/code&gt;:&lt;/p&gt;
 

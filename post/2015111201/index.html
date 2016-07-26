@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>HugoブログとGithub Pagesと独自ドメイン &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,19 @@
             <article class="post">
                 <header>
                     <h1>HugoブログとGithub Pagesと独自ドメイン</h1>
-                    <h2 class="headline">November 12, 2015</h2>
+                    <h2 class="headline">
+                    November 12, 2015 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/hugo">Hugo</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/domain">domain</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -44,7 +65,7 @@
 
 <hr>
 
-<h2 id="hugoブログの立ちあげ:19f26223fdf7a5c73f196d31f8af4d1d">Hugoブログの立ちあげ</h2>
+<h2 id="hugoブログの立ちあげ">Hugoブログの立ちあげ</h2>
 
 <p>基本的には公式サイトの<a href="https://gohugo.io/overview/quickstart/">Quickstart</a>に従う。</p>
 
@@ -55,19 +76,21 @@ hugo server --theme=hugo-cactus-theme --buildDrafts -w
 hugo new post/newpost.md
 </code></pre>
 
-<h2 id="github-pages:19f26223fdf7a5c73f196d31f8af4d1d">Github Pages</h2>
+<h2 id="github-pages">Github Pages</h2>
 
 <p>Github PagesもHugo公式の<a href="https://gohugo.io/tutorials/github-pages-blog/">Hosting on GitHub Pages</a>を参考にする。</p>
 
 <ul>
 <li><code>git subtree</code>を使う</li>
 <li>全体のコンテンツは<code>master</code>ブランチに、公開ファイルを<code>gh-pages</code>ブランチで運用</li>
-<li><code>deploy.sh</code>の作成</li>
+<li><code>deploy.sh</code>の作成
+<br />
+<br /></li>
 </ul>
 
 <p>チュートリアルに沿えばGithub Pagesにサイトができる。</p>
 
-<h2 id="独自ドメイン:19f26223fdf7a5c73f196d31f8af4d1d">独自ドメイン</h2>
+<h2 id="独自ドメイン">独自ドメイン</h2>
 
 <p>僕はもともとムームードメインで取得したドメインと、ロリポップのレンタルサーバーを使ってWordpressブログを使っていた。<br />
 それにあたりこちらの記事を参考にした。</p>
@@ -80,7 +103,7 @@ hugo new post/newpost.md
 <li>そのため<a href="https://www.gehirn.jp/">Gehirn DNS</a>などを使う必要がある</li>
 </ul>
 
-<h5 id="toc_3:19f26223fdf7a5c73f196d31f8af4d1d">　</h5>
+<h5 id="toc_3">　</h5>
 
 <p>そんな感じでブログの移行が完了しました。</p>
 
@@ -88,7 +111,7 @@ hugo new post/newpost.md
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -108,9 +131,18 @@ hugo new post/newpost.md
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -174,19 +206,16 @@ hugo new post/newpost.md
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -195,13 +224,8 @@ hugo new post/newpost.md
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

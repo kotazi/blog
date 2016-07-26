@@ -51,7 +51,7 @@ MVCでは、単一のスレッドをマークし、スレッドモデルと未�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;structure-and-data-flow:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Structure and Data Flow&lt;/h3&gt;
+&lt;h3 id=&#34;structure-and-data-flow&#34;&gt;Structure and Data Flow&lt;/h3&gt;
 
 &lt;p&gt;Fluxアプリケーションのデータの流れは一方向です。&lt;/p&gt;
 
@@ -87,7 +87,7 @@ controller-viewsは自身の&lt;code&gt;setState()&lt;/code&gt;メソッドを�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;a-single-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;A Single Dispatcher&lt;/h3&gt;
+&lt;h3 id=&#34;a-single-dispatcher&#34;&gt;A Single Dispatcher&lt;/h3&gt;
 
 &lt;p&gt;Fluxアプリケーションではディスパッチャーがセントラルハブであり、全てのデータの流れを管理します。
 ストアにコールバックを登録することが本質的なところであり、ディスパッチャー自身が実際に知性を持っているわけではありません。
@@ -102,7 +102,7 @@ controller-viewsは自身の&lt;code&gt;setState()&lt;/code&gt;メソッドを�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;stores:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Stores&lt;/h3&gt;
+&lt;h3 id=&#34;stores&#34;&gt;Stores&lt;/h3&gt;
 
 &lt;p&gt;ストアにはアプリケーションのステートとロジックが含まれます。
 ストアの役割は伝統的なMVCにおけるモデルに似ていますが、ストアはたくさんのオブジェクトのステートを管理します。(ORMのようなシングルレコードを表すわけではありません。)
@@ -121,7 +121,7 @@ ORMスタイルのコレクションをよりシンプルに管理するもの�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;views-and-controller-views:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Views and Controller-Views&lt;/h3&gt;
+&lt;h3 id=&#34;views-and-controller-views&#34;&gt;Views and Controller-Views&lt;/h3&gt;
 
 &lt;p&gt;Reactは私たちがビューレイヤーに必要としていた構成可能かつ自由で再レンダリングが可能なビューを提供します。
 ビューヒエラルキーのトップに位置するビューは依存するストアにブロードキャストされたイベントを受け取る特別なビューです。
@@ -141,7 +141,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;actions:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;Actions&lt;/h3&gt;
+&lt;h3 id=&#34;actions&#34;&gt;Actions&lt;/h3&gt;
 
 &lt;p&gt;ディスパッチャーはストアとデータに対してのディスパッチをトリガするメソッドを提供し、
 アクションの生成はディスパッチャーにアクションを送るセマンティックなヘルパーメソッドにラップされます。
@@ -157,7 +157,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;what-about-that-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1&#34;&gt;What About that Dispatcher?&lt;/h3&gt;
+&lt;h3 id=&#34;what-about-that-dispatcher&#34;&gt;What About that Dispatcher?&lt;/h3&gt;
 
 &lt;p&gt;以前に言及したように、ディスパッチャーはストア間の依存関係を管理します。
 ディスパッチャークラスの&lt;code&gt;waitFor()&lt;/code&gt;関数を通して利用可能です。
@@ -216,7 +216,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;tutorial:c4edc588c83982a0e8967944828e886f&#34;&gt;Tutorial&lt;/h2&gt;
+&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
 
 &lt;p&gt;シンプルではあるものの、ブログに書ける現実的なコメントボックスを実装していく。
 この基本バージョンのリアルタイムコメントはDisqusやLibeFyre、Facebook commentsにオファーをいただいた。&lt;/p&gt;
@@ -241,7 +241,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;want-to-skip-all-this-and-just-see-the-source:c4edc588c83982a0e8967944828e886f&#34;&gt;Want to skip all this and just see the source?&lt;/h3&gt;
+&lt;h3 id=&#34;want-to-skip-all-this-and-just-see-the-source&#34;&gt;Want to skip all this and just see the source?&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/reactjs/react-tutorial&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
@@ -249,7 +249,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;running-a-server:c4edc588c83982a0e8967944828e886f&#34;&gt;Running a server&lt;/h3&gt;
+&lt;h3 id=&#34;running-a-server&#34;&gt;Running a server&lt;/h3&gt;
 
 &lt;p&gt;チュートリアルを開始するためには、稼働しているサーバーが必要。
 あくまでデータの取得と保存に使用するAPIエンドポイントとしてのサーバーだ。&lt;/p&gt;
@@ -263,7 +263,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;getting-started:c4edc588c83982a0e8967944828e886f&#34;&gt;Getting started&lt;/h3&gt;
+&lt;h3 id=&#34;getting-started&#34;&gt;Getting started&lt;/h3&gt;
 
 &lt;p&gt;このチュートリアルでは、できるだけ簡単なものにしていくつもりである。
 サーバーパッケージの中に私たちが動かすHTMLファイルが含まれている。
@@ -302,7 +302,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;your-first-component:c4edc588c83982a0e8967944828e886f&#34;&gt;Your first component&lt;/h3&gt;
+&lt;h3 id=&#34;your-first-component&#34;&gt;Your first component&lt;/h3&gt;
 
 &lt;p&gt;Reactは要するにmodular, composable componentsである。
 コメントボックスのサンプルとして、次のようなコンポーネント構造を持つことにする。&lt;/p&gt;
@@ -334,7 +334,7 @@ ReactDOM.render(
 &lt;p&gt;ネイティブのHTMLエレメント名が小文字で綴られていることに注意。
 Reactクラスは大文字で始まっている。&lt;/p&gt;
 
-&lt;h5 id=&#34;jsx-syntax:c4edc588c83982a0e8967944828e886f&#34;&gt;JSX Syntax&lt;/h5&gt;
+&lt;h5 id=&#34;jsx-syntax&#34;&gt;JSX Syntax&lt;/h5&gt;
 
 &lt;p&gt;JSがXMLのような構文だったことに気づかれただろう。
 シンタックスシュガーをピュアJSに変換するシンプルなプリコンパイラを備えている。&lt;/p&gt;
@@ -358,7 +358,7 @@ ReactDOM.render(
 &lt;p&gt;任意ではあるがJSXシンタックスを使ったほうがかんだんだ。
 JSXについては&lt;a href=&#34;https://facebook.github.io/react/docs/jsx-in-depth.html&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;what-s-going-on:c4edc588c83982a0e8967944828e886f&#34;&gt;What&amp;rsquo;s going on&lt;/h5&gt;
+&lt;h5 id=&#34;what-s-going-on&#34;&gt;What&amp;rsquo;s going on&lt;/h5&gt;
 
 &lt;p&gt;新しいReactコンポーネントを作成するために、&lt;code&gt;React.createClass()&lt;/code&gt;にいくつかのメソッドを持ったJSオブジェクトを渡した。
 これらのメソッドの中で最も重要なものが&lt;code&gt;render&lt;/code&gt;メソッドだ。
@@ -382,7 +382,7 @@ HTML文字列を生成しないため、XSS対策をデフォルトでしてい�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;composing-components:c4edc588c83982a0e8967944828e886f&#34;&gt;Composing components&lt;/h3&gt;
+&lt;h3 id=&#34;composing-components&#34;&gt;Composing components&lt;/h3&gt;
 
 &lt;p&gt;それでは再びシンプルな&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;を使って&lt;code&gt;CommentList&lt;/code&gt;と&lt;code&gt;CommentForm&lt;/code&gt;の骨組みを作成しよう。
 ファイルに２つのコンポーネントを作成し、&lt;code&gt;CommentBox&lt;/code&gt;宣言を保ったうえで&lt;code&gt;ReactDOM.render&lt;/code&gt;を呼び出す。&lt;/p&gt;
@@ -430,7 +430,7 @@ HTMLコンポーネントは通常Reactコンポーネントであり、ひと�
 JSXコンパイラは自動的にHTMLタグを&lt;code&gt;React.createElement(tagName)&lt;/code&gt;式に書き直し、全てを孤独にする。
 これが名前名前汚染を防ぐことになる。&lt;/p&gt;
 
-&lt;h4 id=&#34;using-props:c4edc588c83982a0e8967944828e886f&#34;&gt;Using props&lt;/h4&gt;
+&lt;h4 id=&#34;using-props&#34;&gt;Using props&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;Comment&lt;/code&gt;コンポーネントを作成しよう。親から渡されたデータに依存するものになる。
 親コンポーネントから渡されたデータは子コンポーネントの&lt;code&gt;property&lt;/code&gt;として利用可能だ。
@@ -454,7 +454,7 @@ var Comment = React.createClass({
 &lt;p&gt;JSXの中のJavaScript式を取り囲むことで、ツリー内にReactコンポーネントを書くことができる。
 コンポーネントの属性やネストされた要素に&lt;code&gt;this.props&lt;/code&gt;や&lt;code&gt;this.props.children&lt;/code&gt;を用いてアクセスする。&lt;/p&gt;
 
-&lt;h4 id=&#34;component-properties:c4edc588c83982a0e8967944828e886f&#34;&gt;Component Properties&lt;/h4&gt;
+&lt;h4 id=&#34;component-properties&#34;&gt;Component Properties&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;Comment&lt;/code&gt;コンポーネントの定義が完了したところで、コンポーネントに名前とコメント分を渡していきたい。
 各ユニークなコメントに対して同じコードの再利用が可能になる。
@@ -477,7 +477,7 @@ var CommentList = React.createClass({
 たとえば、属性をお通して&amp;rdquo;Pete Hunt&amp;rdquo;、XMLのような子ノードで&amp;rdquo;This is one comment&amp;rdquo;を渡している。
 さらに、&lt;code&gt;Comment&lt;/code&gt;コンポーネントはこれらのプロパティに&lt;code&gt;this.props.author&lt;/code&gt;や&lt;code&gt;this.props.children&lt;/code&gt;を通してアクセスしている。&lt;/p&gt;
 
-&lt;h4 id=&#34;adding-markdown:c4edc588c83982a0e8967944828e886f&#34;&gt;Adding Markdown&lt;/h4&gt;
+&lt;h4 id=&#34;adding-markdown&#34;&gt;Adding Markdown&lt;/h4&gt;
 
 &lt;p&gt;Markdownはテキストをシンプルに記述するためのフォーマットだ。
 例えばテキストをアスタリスクで囲めば、テキストを強調させる。&lt;/p&gt;
@@ -530,7 +530,7 @@ var Comment = React.createClass({
 
 &lt;p&gt;こうすることでmarkedの安全性に信頼を置くことができる。このケースでは、&lt;code&gt;sanitize: true&lt;/code&gt;を渡してmarkedにそのまま渡すのではなくソース内のどんなHTMLでもエスケープするように伝えた。&lt;/p&gt;
 
-&lt;h4 id=&#34;hook-up-the-data-model:c4edc588c83982a0e8967944828e886f&#34;&gt;Hook up the data model&lt;/h4&gt;
+&lt;h4 id=&#34;hook-up-the-data-model&#34;&gt;Hook up the data model&lt;/h4&gt;
 
 &lt;p&gt;これまで私たちはコメントをソースコード内に直接挿入してきた。
 代わりにJSONデータの塊をコメントリストにレンダリングしてみよう。
@@ -586,7 +586,7 @@ var CommentList = React.createClass({
 });
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;fetching-from-the-server:c4edc588c83982a0e8967944828e886f&#34;&gt;Fetching from the server&lt;/h4&gt;
+&lt;h4 id=&#34;fetching-from-the-server&#34;&gt;Fetching from the server&lt;/h4&gt;
 
 &lt;p&gt;ハードコーディングしてあるデータをサーバーから受け取るように書き換えよう。
 データプロパティを取り除き、フェッチするURLに置き換える。&lt;/p&gt;
@@ -601,7 +601,7 @@ ReactDOM.render(
 &lt;p&gt;このコンポーネントは先ほどまでのコンポーネントとは異なる。なぜなら自身で再度レンダリングする必要があるからだ。
 コンポーネントにはサーバーからのリクエストが返ってくるまで何もデータがなく、返ってきたら新しいコメントをレンダリングする必要がある。&lt;/p&gt;
 
-&lt;h4 id=&#34;reactive-state:c4edc588c83982a0e8967944828e886f&#34;&gt;Reactive state&lt;/h4&gt;
+&lt;h4 id=&#34;reactive-state&#34;&gt;Reactive state&lt;/h4&gt;
 
 &lt;p&gt;これまではプロパティに基づいて各コンポーネントは1回だけレンダリングをしてきた。
 &lt;code&gt;props&lt;/code&gt;は不変のものだったのだ。親からもらったり、自身で所持していたり。
@@ -634,7 +634,7 @@ var CommentBox = React.createClass({
 
 &lt;p&gt;&lt;code&gt;getInitialState()&lt;/code&gt;はコンポーネントのライフサイクルの中で正確に一度だけ実行され、コンポーネントの初期ステートをセットアップする。&lt;/p&gt;
 
-&lt;h4 id=&#34;updating-state:c4edc588c83982a0e8967944828e886f&#34;&gt;Updating state&lt;/h4&gt;
+&lt;h4 id=&#34;updating-state&#34;&gt;Updating state&lt;/h4&gt;
 
 &lt;p&gt;コンポーネントが最初に作成されたら、サーバーからJSONをGETし、最新のデータを反映させるためにステートを更新したい。
 サーバーへの非同期通信を行い、必要なデータを手早くフェッチするためにjQueryを使うつもりだ。
@@ -727,7 +727,7 @@ ReactDOM.render(
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;adding-new-comments:c4edc588c83982a0e8967944828e886f&#34;&gt;Adding new comments&lt;/h3&gt;
+&lt;h3 id=&#34;adding-new-comments&#34;&gt;Adding new comments&lt;/h3&gt;
 
 &lt;p&gt;ここではフォームを組み立てよう。&lt;code&gt;CommentForm&lt;/code&gt;コンポーネントはユーザーに名前とコメントテキストを求め、コメントを保存するためにサーバーへ送信する。&lt;/p&gt;
 
@@ -745,7 +745,7 @@ var CommentForm = React.createClass({
 });
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;controlled-components:c4edc588c83982a0e8967944828e886f&#34;&gt;Controlled components&lt;/h4&gt;
+&lt;h4 id=&#34;controlled-components&#34;&gt;Controlled components&lt;/h4&gt;
 
 &lt;p&gt;伝統的なDOMでは、&lt;code&gt;input&lt;/code&gt;要素はレンダリングされ、ブラウザはステートを管理する。
 その結果、実際のDOMのステートとコンポーネントのステートの間に差分が生じる。
@@ -789,7 +789,7 @@ Reactの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素では、コンポ�
 });
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;events:c4edc588c83982a0e8967944828e886f&#34;&gt;Events&lt;/h4&gt;
+&lt;h4 id=&#34;events&#34;&gt;Events&lt;/h4&gt;
 
 &lt;p&gt;Reactではコンポーネントにイベントハンドラを付けるときにキャメルケースを使う。
 私たちは２つの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素に&lt;code&gt;onChange&lt;/code&gt;というイベントハンドラをつけた。
@@ -797,7 +797,7 @@ Reactの&lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt;要素では、コンポ�
 
 &lt;p&gt;その後&lt;code&gt;input&lt;/code&gt;要素のレンダリングされた値は現在のコンポーネントの&lt;code&gt;state&lt;/code&gt;を反映するために更新される。&lt;/p&gt;
 
-&lt;h4 id=&#34;submitting-the-form:c4edc588c83982a0e8967944828e886f&#34;&gt;Submitting the form&lt;/h4&gt;
+&lt;h4 id=&#34;submitting-the-form&#34;&gt;Submitting the form&lt;/h4&gt;
 
 &lt;p&gt;インタラクティブなフォームを作成しよう！
 ユーザーがフォームを送信する時、それらをクリアする必要があり、リクエストをサーバーに送信し、そしてコメントのリストをリフレッシュする。
@@ -850,7 +850,7 @@ var CommentForm = React.createClass({
 
 &lt;p&gt;&lt;code&gt;preventDefault()&lt;/code&gt;を呼び出してブラウザのデフォルトのフォーム送信アクションを妨げる。&lt;/p&gt;
 
-&lt;h4 id=&#34;callbacks-as-props:c4edc588c83982a0e8967944828e886f&#34;&gt;Callbacks as props&lt;/h4&gt;
+&lt;h4 id=&#34;callbacks-as-props&#34;&gt;Callbacks as props&lt;/h4&gt;
 
 &lt;p&gt;ユーザーがコメントを送信したら、新しいコメントを追加した状態でリストをリフレッシュ留守必要がある。
 この全てのロジックを&lt;code&gt;CommentBox&lt;/code&gt;内で行うので、&lt;code&gt;CommentBox&lt;/code&gt;はコメントリストに相応するステートを所有する。&lt;/p&gt;
@@ -992,7 +992,7 @@ var CommentBox = React.createClass({
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;optimization-optimistic-updates:c4edc588c83982a0e8967944828e886f&#34;&gt;Optimization: optimistic updates&lt;/h3&gt;
+&lt;h3 id=&#34;optimization-optimistic-updates&#34;&gt;Optimization: optimistic updates&lt;/h3&gt;
 
 &lt;p&gt;このアプリケーションについて機能は完璧であるが、コメントが表示されるまでリクエストが完了するのを待たなければならないため遅いように感じる。
 アプリがより早く感じられるようにコメントをリストに追加することが可能だ。&lt;/p&gt;
@@ -1055,7 +1055,7 @@ var CommentBox = React.createClass({
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;congrats:c4edc588c83982a0e8967944828e886f&#34;&gt;Congrats!&lt;/h3&gt;
+&lt;h3 id=&#34;congrats&#34;&gt;Congrats!&lt;/h3&gt;
 
 &lt;p&gt;いくつかのシンプルなステップとを押してコメントボックスを作成することができた。
 &lt;a href=&#34;https://facebook.github.io/react/docs/why-react.html&#34;&gt;何故Reactを使うのか&lt;/a&gt;、もしくは&lt;a href=&#34;https://facebook.github.io/react/docs/top-level-api.html&#34;&gt;APIリファレンス&lt;/a&gt;について学び開発を始めよう！&lt;/p&gt;
