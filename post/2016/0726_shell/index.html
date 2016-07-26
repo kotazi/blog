@@ -55,7 +55,47 @@
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>test</p>
+                    <p><a href="https://github.com/JamieMason/ImageOptim-CLI">JamieMason/ImageOptim-CLI</a>のサンプルにあるシェルが読めなかったので調べた。</p>
+
+<pre><code>images=$(git diff --exit-code --cached --name-only --diff-filter=ACM -- '*.png' '*.jpg')
+$(exit $?) || (echo &quot;$images&quot; | imageoptim &amp;&amp; git add $images)
+</code></pre>
+
+<p>↑ これ。</p>
+
+<hr>
+
+<ul>
+<li><a href="http://qiita.com/mashumashu/items/bbc3a79bc779fe8c4f99">bash Tips - コマンド置換と算術式展開、パラメータ展開</a></li>
+</ul>
+
+<p><code>$()</code>で囲むとコマンド実行できる。</p>
+
+<ul>
+<li><a href="http://linux.die.net/man/1/git-diff">git-diff(1) - Linux man page</a></li>
+</ul>
+
+<p><code>-exit-code</code>は差分があれば<code>1</code>を返すし、なければ<code>0</code></p>
+
+<p><code>--cached</code>はステージしたファイルの差分を確認する。</p>
+
+<p><code>--name-only</code>は差分のあるファイル名のみ出力する。</p>
+
+<p><code>--diff-filter</code>は<code>ACDMRTUXB*</code>から選べる。
+今回の<code>ACM</code>はAdded (A), Copied &copy;, Deleted (D), Modified (M), Renamed &reg;, changed (T), are Unmerged (U), are Unknown (X), Broken (B)である。
+今回はAdded/Copied/Modified。</p>
+
+<p>2行目の<code>$?</code>。これは直前に実行された処理の終了コード値を表す。<br />
+参考: <a href="http://kajitiluna.hatenablog.com/entry/20111023/1319381392">Linuxのシェルスクリプト変数の記号あれこれ</a></p>
+
+<p><code>0</code>もしくは<code>1</code>が渡るはず。<br />
+<code>exit 0</code>(差分がなかった場合)はそのまま正常終了。<br />
+<code>exit 1</code>(差分があった場合)は次の処理へ進む。</p>
+
+<p>つまり、<code>(echo &quot;$images&quot; | imageoptim &amp;&amp; git add $images)</code>を実行する。<br />
+<code>$images</code>は1行目の変数を表していて、つまり差分のあるファイル名。<code>|</code>(パイプ)を使ってる。</p>
+
+<p>参考: <a href="http://webkaru.net/linux/commands-pipeline/">パイプ「|」を使って 複数のコマンドを組み合わせる</a></p>
 
                 </section>
             </article>

@@ -15,7 +15,47 @@
       <pubDate>Tue, 26 Jul 2016 11:57:40 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0726_shell/</guid>
-      <description>&lt;p&gt;test&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/JamieMason/ImageOptim-CLI&#34;&gt;JamieMason/ImageOptim-CLI&lt;/a&gt;のサンプルにあるシェルが読めなかったので調べた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;images=$(git diff --exit-code --cached --name-only --diff-filter=ACM -- &#39;*.png&#39; &#39;*.jpg&#39;)
+$(exit $?) || (echo &amp;quot;$images&amp;quot; | imageoptim &amp;amp;&amp;amp; git add $images)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;↑ これ。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/mashumashu/items/bbc3a79bc779fe8c4f99&#34;&gt;bash Tips - コマンド置換と算術式展開、パラメータ展開&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;$()&lt;/code&gt;で囲むとコマンド実行できる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://linux.die.net/man/1/git-diff&#34;&gt;git-diff(1) - Linux man page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;-exit-code&lt;/code&gt;は差分があれば&lt;code&gt;1&lt;/code&gt;を返すし、なければ&lt;code&gt;0&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;--cached&lt;/code&gt;はステージしたファイルの差分を確認する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;--name-only&lt;/code&gt;は差分のあるファイル名のみ出力する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;--diff-filter&lt;/code&gt;は&lt;code&gt;ACDMRTUXB*&lt;/code&gt;から選べる。
+今回の&lt;code&gt;ACM&lt;/code&gt;はAdded (A), Copied &amp;copy;, Deleted (D), Modified (M), Renamed &amp;reg;, changed (T), are Unmerged (U), are Unknown (X), Broken (B)である。
+今回はAdded/Copied/Modified。&lt;/p&gt;
+
+&lt;p&gt;2行目の&lt;code&gt;$?&lt;/code&gt;。これは直前に実行された処理の終了コード値を表す。&lt;br /&gt;
+参考: &lt;a href=&#34;http://kajitiluna.hatenablog.com/entry/20111023/1319381392&#34;&gt;Linuxのシェルスクリプト変数の記号あれこれ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;0&lt;/code&gt;もしくは&lt;code&gt;1&lt;/code&gt;が渡るはず。&lt;br /&gt;
+&lt;code&gt;exit 0&lt;/code&gt;(差分がなかった場合)はそのまま正常終了。&lt;br /&gt;
+&lt;code&gt;exit 1&lt;/code&gt;(差分があった場合)は次の処理へ進む。&lt;/p&gt;
+
+&lt;p&gt;つまり、&lt;code&gt;(echo &amp;quot;$images&amp;quot; | imageoptim &amp;amp;&amp;amp; git add $images)&lt;/code&gt;を実行する。&lt;br /&gt;
+&lt;code&gt;$images&lt;/code&gt;は1行目の変数を表していて、つまり差分のあるファイル名。&lt;code&gt;|&lt;/code&gt;(パイプ)を使ってる。&lt;/p&gt;
+
+&lt;p&gt;参考: &lt;a href=&#34;http://webkaru.net/linux/commands-pipeline/&#34;&gt;パイプ「|」を使って 複数のコマンドを組み合わせる&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
