@@ -26,7 +26,7 @@
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;構成:24456ac087966b3ecdbdd8d437837263&#34;&gt;構成&lt;/h2&gt;
+&lt;h2 id=&#34;構成&#34;&gt;構成&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;angular2-tour-of-heroes
 |- node_modules
@@ -42,7 +42,7 @@
 |- tsconfig.json
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;index-html:24456ac087966b3ecdbdd8d437837263&#34;&gt;index.html&lt;/h2&gt;
+&lt;h2 id=&#34;index-html&#34;&gt;index.html&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Angular2では&lt;code&gt;angular2-polyfills.js&lt;/code&gt;と&lt;code&gt;Rx.js&lt;/code&gt;が必要&lt;/li&gt;
@@ -52,7 +52,7 @@
 
 &lt;script src=&#34;https://gist.github.com/kotazi/00d1d0fbe1a4fb92be11.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;boot-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;boot.ts&lt;/h2&gt;
+&lt;h2 id=&#34;boot-ts&#34;&gt;boot.ts&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;bootstrap()&lt;/code&gt;でアプリケーション起動&lt;/li&gt;
@@ -60,7 +60,7 @@
 
 &lt;script src=&#34;https://gist.github.com/kotazi/bf9b1e29e590582dc895.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;app-component-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;app.component.ts&lt;/h2&gt;
+&lt;h2 id=&#34;app-component-ts&#34;&gt;app.component.ts&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;@Component&lt;/code&gt;はAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。&lt;/p&gt;
 
@@ -73,7 +73,7 @@
 
 &lt;script src=&#34;https://gist.github.com/kotazi/e407ee5a6dfe7599c8df.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;hero-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero.ts&lt;/h2&gt;
+&lt;h2 id=&#34;hero-ts&#34;&gt;hero.ts&lt;/h2&gt;
 
 &lt;p&gt;classではなくinterfaceを利用している。&lt;br /&gt;
 ここでの選び方は&lt;code&gt;Hero&lt;/code&gt;をどのように使いたいか。&lt;br /&gt;
@@ -82,7 +82,7 @@
 
 &lt;script src=&#34;https://gist.github.com/kotazi/958abfee0ee7cce36257.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;mock-heroes-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;mock-heroes.ts&lt;/h2&gt;
+&lt;h2 id=&#34;mock-heroes-ts&#34;&gt;mock-heroes.ts&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;HREOES配列はHero型。&lt;/li&gt;
@@ -90,7 +90,7 @@
 
 &lt;script src=&#34;https://gist.github.com/kotazi/d3b073e5f33ff8ef1605.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;hero-detail-component-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero-detail.component.ts&lt;/h2&gt;
+&lt;h2 id=&#34;hero-detail-component-ts&#34;&gt;hero-detail.component.ts&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;[(ngModel)]=&amp;ldquo;hero.name&amp;rdquo; 書き方変わった&lt;/li&gt;
@@ -98,7 +98,7 @@
 
 &lt;script src=&#34;https://gist.github.com/kotazi/9bd78998321fde979038.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;hero-service-ts:24456ac087966b3ecdbdd8d437837263&#34;&gt;hero.service.ts&lt;/h2&gt;
+&lt;h2 id=&#34;hero-service-ts&#34;&gt;hero.service.ts&lt;/h2&gt;
 
 &lt;script src=&#34;https://gist.github.com/kotazi/f27b3bc4c989d37fde72.js&#34;&gt;&lt;/script&gt;
 
@@ -116,55 +116,55 @@
       <guid>http://kotazi.github.io/blog/post/2016/0115_angular2/</guid>
       <description>
 
-&lt;h2 id=&#34;speed-performance:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SPEED &amp;amp; PERFORMANCE&lt;/h2&gt;
+&lt;h2 id=&#34;speed-performance&#34;&gt;SPEED &amp;amp; PERFORMANCE&lt;/h2&gt;
 
 &lt;p&gt;Angular2ではAngular1から劇的に速くなります。
 - サーバーサイドプリレンダリングによる初期ロードの高速化
 - オフラインコンパイルの立ちあげの速さ、
 - 検出やビューキャッシュの大幅改善によるスムーズなスクロールやトランジション。&lt;/p&gt;
 
-&lt;h2 id=&#34;simple-expressive:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SIMPLE &amp;amp; EXPRESSIVE&lt;/h2&gt;
+&lt;h2 id=&#34;simple-expressive&#34;&gt;SIMPLE &amp;amp; EXPRESSIVE&lt;/h2&gt;
 
 &lt;p&gt;意図を明確に自然に書きやすくなります。
 柔軟なテンプレートは読みやすく理解しやすいので、
 チームの複雑さがなくなります。&lt;/p&gt;
 
-&lt;h2 id=&#34;cross-platform:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;CROSS PLATFORM&lt;/h2&gt;
+&lt;h2 id=&#34;cross-platform&#34;&gt;CROSS PLATFORM&lt;/h2&gt;
 
 &lt;p&gt;Angular2はデスクトップアプリやモバイルウェブ、AndroidとiOSにも対応。
 Angular Universalはモバイル高速化のためにサーバーサイドレンダリングを提供します。&lt;/p&gt;
 
 &lt;p&gt;Web workerによってレスポンシブなアプリUIがサポートされます。&lt;/p&gt;
 
-&lt;h2 id=&#34;seamless-upgrade-from-angular-1:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;SEAMLESS UPGRADE FROM ANGULAR 1&lt;/h2&gt;
+&lt;h2 id=&#34;seamless-upgrade-from-angular-1&#34;&gt;SEAMLESS UPGRADE FROM ANGULAR 1&lt;/h2&gt;
 
 &lt;p&gt;自身のペースでAngular1からのアップデードができます。&lt;/p&gt;
 
-&lt;h2 id=&#34;flexible-development:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;FLEXIBLE DEVELOPMENT&lt;/h2&gt;
+&lt;h2 id=&#34;flexible-development&#34;&gt;FLEXIBLE DEVELOPMENT&lt;/h2&gt;
 
 &lt;p&gt;言語を自由に選べます。
 ES5、TypeScript、Dart、ES2015やJSにコンパイルできる言語なら動作します。&lt;/p&gt;
 
-&lt;h2 id=&#34;comprehensive-routing:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;COMPREHENSIVE ROUTING&lt;/h2&gt;
+&lt;h2 id=&#34;comprehensive-routing&#34;&gt;COMPREHENSIVE ROUTING&lt;/h2&gt;
 
 &lt;p&gt;ビューの設計が洗練されています。&lt;/p&gt;
 
-&lt;h2 id=&#34;dependency-injection:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;DEPENDENCY INJECTION&lt;/h2&gt;
+&lt;h2 id=&#34;dependency-injection&#34;&gt;DEPENDENCY INJECTION&lt;/h2&gt;
 
 &lt;p&gt;依存性注入がシンプルに。
 退屈なコードが不要に。
 テストも書きやすくなる。&lt;/p&gt;
 
-&lt;h2 id=&#34;legacy-browser-support:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;LEGACY BROWSER SUPPORT&lt;/h2&gt;
+&lt;h2 id=&#34;legacy-browser-support&#34;&gt;LEGACY BROWSER SUPPORT&lt;/h2&gt;
 
 &lt;p&gt;Chrome, Edge, Firefox, IE, and Safariの最新バージョンをサポート。
 IE9+ and Android 4.1+も。&lt;/p&gt;
 
-&lt;h2 id=&#34;animations:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;ANIMATIONS&lt;/h2&gt;
+&lt;h2 id=&#34;animations&#34;&gt;ANIMATIONS&lt;/h2&gt;
 
 &lt;p&gt;低レイヤーでのアニメーションをサポート。&lt;/p&gt;
 
-&lt;h2 id=&#34;internationalization-i18n-accessibility:57e1e0be89ee88efc9fe9048ca95358d&#34;&gt;INTERNATIONALIZATION (I18N) &amp;amp; ACCESSIBILITY&lt;/h2&gt;
+&lt;h2 id=&#34;internationalization-i18n-accessibility&#34;&gt;INTERNATIONALIZATION (I18N) &amp;amp; ACCESSIBILITY&lt;/h2&gt;
 
 &lt;p&gt;全ての人に届くようにできてる。&lt;/p&gt;
 </description>

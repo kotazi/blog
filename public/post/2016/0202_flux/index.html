@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【Flux】概要 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,21 @@
             <article class="post">
                 <header>
                     <h1>【Flux】概要</h1>
-                    <h2 class="headline">February 9, 2016</h2>
+                    <h2 class="headline">
+                    February 9, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/flux">flux</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/react">React</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/es6">ES6</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -72,7 +95,7 @@ MVCでは、単一のスレッドをマークし、スレッドモデルと未�
 
 <hr>
 
-<h3 id="structure-and-data-flow:0cfbdc0fe96d51285b80a2daaffddeb1">Structure and Data Flow</h3>
+<h3 id="structure-and-data-flow">Structure and Data Flow</h3>
 
 <p>Fluxアプリケーションのデータの流れは一方向です。</p>
 
@@ -108,7 +131,7 @@ controller-viewsは自身の<code>setState()</code>メソッドを呼び出し�
 
 <hr>
 
-<h3 id="a-single-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1">A Single Dispatcher</h3>
+<h3 id="a-single-dispatcher">A Single Dispatcher</h3>
 
 <p>Fluxアプリケーションではディスパッチャーがセントラルハブであり、全てのデータの流れを管理します。
 ストアにコールバックを登録することが本質的なところであり、ディスパッチャー自身が実際に知性を持っているわけではありません。
@@ -123,7 +146,7 @@ controller-viewsは自身の<code>setState()</code>メソッドを呼び出し�
 
 <hr>
 
-<h3 id="stores:0cfbdc0fe96d51285b80a2daaffddeb1">Stores</h3>
+<h3 id="stores">Stores</h3>
 
 <p>ストアにはアプリケーションのステートとロジックが含まれます。
 ストアの役割は伝統的なMVCにおけるモデルに似ていますが、ストアはたくさんのオブジェクトのステートを管理します。(ORMのようなシングルレコードを表すわけではありません。)
@@ -142,7 +165,7 @@ ORMスタイルのコレクションをよりシンプルに管理するもの�
 
 <hr>
 
-<h3 id="views-and-controller-views:0cfbdc0fe96d51285b80a2daaffddeb1">Views and Controller-Views</h3>
+<h3 id="views-and-controller-views">Views and Controller-Views</h3>
 
 <p>Reactは私たちがビューレイヤーに必要としていた構成可能かつ自由で再レンダリングが可能なビューを提供します。
 ビューヒエラルキーのトップに位置するビューは依存するストアにブロードキャストされたイベントを受け取る特別なビューです。
@@ -162,7 +185,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 <hr>
 
-<h3 id="actions:0cfbdc0fe96d51285b80a2daaffddeb1">Actions</h3>
+<h3 id="actions">Actions</h3>
 
 <p>ディスパッチャーはストアとデータに対してのディスパッチをトリガするメソッドを提供し、
 アクションの生成はディスパッチャーにアクションを送るセマンティックなヘルパーメソッドにラップされます。
@@ -178,7 +201,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 
 <hr>
 
-<h3 id="what-about-that-dispatcher:0cfbdc0fe96d51285b80a2daaffddeb1">What About that Dispatcher?</h3>
+<h3 id="what-about-that-dispatcher">What About that Dispatcher?</h3>
 
 <p>以前に言及したように、ディスパッチャーはストア間の依存関係を管理します。
 ディスパッチャークラスの<code>waitFor()</code>関数を通して利用可能です。
@@ -212,7 +235,7 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -232,9 +255,18 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -298,19 +330,16 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -319,13 +348,8 @@ controller-viewを深い位置に追加するのであれば、異なる点で�
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

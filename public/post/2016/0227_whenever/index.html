@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【Rails】whenever導入を通した学び &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,17 @@
             <article class="post">
                 <header>
                     <h1>【Rails】whenever導入を通した学び</h1>
-                    <h2 class="headline">February 27, 2016</h2>
+                    <h2 class="headline">
+                    February 27, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/rails">rails</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -43,7 +62,7 @@
 
 <hr>
 
-<h2 id="slack通知:8316899f0dd43c4b70b3dee52ffee325">Slack通知</h2>
+<h2 id="slack通知">Slack通知</h2>
 
 <p>Slackへの通知はすごく簡単。<br />
 ここにだいたい書いてある。</p>
@@ -54,7 +73,7 @@
 
 <p>とりあえず、<code>config/intializers/slack_api.rb</code>を作成してtokenを登録しておけば、いろいろできるみたい。</p>
 
-<h2 id="rakeタスクの作成:8316899f0dd43c4b70b3dee52ffee325">rakeタスクの作成</h2>
+<h2 id="rakeタスクの作成">rakeタスクの作成</h2>
 
 <p>初めてrakeタスクを作成した。</p>
 
@@ -70,14 +89,14 @@ $ rake -T # 定義されているタスク一覧を表示
 
 <p>(引用:<a href="http://unageanu.hatenablog.com/entry/20100829/1283069269">Rakeの基本的な使い方まとめ|うなの日記</a>)</p>
 
-<h2 id="whenever:8316899f0dd43c4b70b3dee52ffee325">whenever</h2>
+<h2 id="whenever">whenever</h2>
 
 <ul>
 <li><a href="https://github.com/javan/whenever">javan/whenever|github</a></li>
 <li><a href="http://morizyun.github.io/blog/whenever-gem-rails-ruby-capistrano/">Wheneverは導入が超簡単なcrontab管理ライブラリGemです！</a></li>
 </ul>
 
-<h2 id="mixpanel:8316899f0dd43c4b70b3dee52ffee325">mixpanel</h2>
+<h2 id="mixpanel">mixpanel</h2>
 
 <p>mixpanelのデータのエクスポートしたい。</p>
 
@@ -90,7 +109,7 @@ $ rake -T # 定義されているタスク一覧を表示
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -110,9 +129,18 @@ $ rake -T # 定義されているタスク一覧を表示
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -176,19 +204,16 @@ $ rake -T # 定義されているタスク一覧を表示
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -197,13 +222,8 @@ $ rake -T # 定義されているタスク一覧を表示
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

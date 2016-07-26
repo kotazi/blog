@@ -21,7 +21,7 @@
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;マスアサインメント脆弱性:c93acd2fcd4285cd58c99e0793697162&#34;&gt;マスアサインメント脆弱性&lt;/h2&gt;
+&lt;h2 id=&#34;マスアサインメント脆弱性&#34;&gt;マスアサインメント脆弱性&lt;/h2&gt;
 
 &lt;p&gt;モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
 モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。&lt;/p&gt;
@@ -33,7 +33,7 @@
 
 &lt;p&gt;そしてこの脆弱性に対してRails4.0から導入された対抗策が、&lt;strong&gt;Strong Parameters&lt;/strong&gt;。&lt;/p&gt;
 
-&lt;h2 id=&#34;strong-parameters:c93acd2fcd4285cd58c99e0793697162&#34;&gt;Strong Parameters&lt;/h2&gt;
+&lt;h2 id=&#34;strong-parameters&#34;&gt;Strong Parameters&lt;/h2&gt;
 
 &lt;p&gt;サンプルコード:&lt;/p&gt;
 

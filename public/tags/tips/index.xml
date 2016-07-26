@@ -59,7 +59,7 @@ CircleCiではデフォルトのRubyのバージョンが1.9.3になっている
 &lt;p&gt;&lt;p data-height=&#34;266&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;avQGaQ&#34; data-default-tab=&#34;result&#34; data-user=&#34;kotazi&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/kotazi/pen/avQGaQ/&#39;&gt;【AngularJS】Masonry Directive Behavior with adding items&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#39;http://codepen.io/kotazi&#39;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 &lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;基本サンプル:7ef331abb9d711f5cad819da97b17e52&#34;&gt;■ 基本サンプル&lt;/h2&gt;
+&lt;h2 id=&#34;基本サンプル&#34;&gt;■ 基本サンプル&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;div masonry&amp;gt;
     &amp;lt;div class=&amp;quot;masonry-brick&amp;quot; ng-repeat=&amp;quot;brick in bricks&amp;quot;&amp;gt;
@@ -68,7 +68,7 @@ CircleCiではデフォルトのRubyのバージョンが1.9.3になっている
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;attributes:7ef331abb9d711f5cad819da97b17e52&#34;&gt;■ Attributes&lt;/h3&gt;
+&lt;h3 id=&#34;attributes&#34;&gt;■ Attributes&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;item-selector&lt;/code&gt;: エレメント指定。&lt;code&gt;masonry-brick&lt;/code&gt;属性も付ける必要あり？&lt;/li&gt;
@@ -78,7 +78,7 @@ CircleCiではデフォルトのRubyのバージョンが1.9.3になっている
 &lt;li&gt;&lt;code&gt;masonry-options&lt;/code&gt;: その他のオプションはこれで設定&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;url:7ef331abb9d711f5cad819da97b17e52&#34;&gt;■ URL&lt;/h3&gt;
+&lt;h3 id=&#34;url&#34;&gt;■ URL&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://masonry.desandro.com/&#34;&gt;Masonry&lt;/a&gt;&lt;/li&gt;

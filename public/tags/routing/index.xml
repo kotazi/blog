@@ -21,7 +21,7 @@
 
 &lt;hr&gt;
 
-&lt;h5 id=&#34;namespaceとscope-moduleとscopeのち外:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ namespaceとscope moduleとscopeのち外&lt;/h5&gt;
+&lt;h5 id=&#34;namespaceとscope-moduleとscopeのち外&#34;&gt;◯ namespaceとscope moduleとscopeのち外&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;namespace&lt;/code&gt;はURI PatternもController#Actionも指定したパスに&lt;/li&gt;
@@ -31,14 +31,14 @@
 
 &lt;p&gt;&lt;a href=&#34;http://qiita.com/blueplanet/items/522cc8364f6cf189ecad&#34;&gt;routeのmoduleとnamespaceとscopeの違い&lt;/a&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;constraintsについて:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ constraintsについて&lt;/h5&gt;
+&lt;h5 id=&#34;constraintsについて&#34;&gt;◯ constraintsについて&lt;/h5&gt;
 
 &lt;p&gt;constraintsを使うことでさまざまな制限を兼ねることができる。
 独自のクラスを使用すうることなども可能。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://y-yagi.tumblr.com/post/92386974040/rails-routing-constraints%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6&#34;&gt;rails routing constraintsについて&lt;/a&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;resourcesルーティング一覧:67c557ff4a695278f8c1eb16d2539ac6&#34;&gt;◯ resourcesルーティング一覧&lt;/h5&gt;
+&lt;h5 id=&#34;resourcesルーティング一覧&#34;&gt;◯ resourcesルーティング一覧&lt;/h5&gt;
 
 &lt;table class=&#34;responsive&#34;&gt;
 &lt;thead&gt;

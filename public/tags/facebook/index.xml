@@ -24,7 +24,7 @@
 &lt;p&gt;sdk.jsで初期化処理に一つのappIDしかセットすることができない。
 ２回初期化すれば最後に初期化した時のappIdが使われる。&lt;/p&gt;
 
-&lt;h2 id=&#34;参考:bbd27431d7bc53d05c9c0392b31105ee&#34;&gt;参考&lt;/h2&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.sourcecoast.com/forums/jfbconnect/jfbconnect-joomla-15-support/3514-multiple-fb-apps-on-one-domain&#34; alt=&#34;Multiple FB apps on one domain?&#34; /&gt;&lt;/p&gt;
 </description>

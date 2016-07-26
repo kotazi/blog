@@ -27,25 +27,25 @@
 &lt;p&gt;&lt;a href=&#34;http://pow.cx/&#34;&gt;Pow&lt;/a&gt;は設定が不要なRails &amp;amp; Rackサーバ。&lt;br /&gt;
 そしてそのコマンド操作を手助けしてくれるのが&lt;a href=&#34;https://github.com/Rodreegez/powder&#34;&gt;powder&lt;/a&gt;。&lt;/p&gt;
 
-&lt;h2 id=&#34;設定周り:daa11b13df79a9f8958f02dbe992863e&#34;&gt;設定周り&lt;/h2&gt;
+&lt;h2 id=&#34;設定周り&#34;&gt;設定周り&lt;/h2&gt;
 
-&lt;h5 id=&#34;powのインストール:daa11b13df79a9f8958f02dbe992863e&#34;&gt;◯ Powのインストール&lt;/h5&gt;
+&lt;h5 id=&#34;powのインストール&#34;&gt;◯ Powのインストール&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;$ curl get.pow.cx | sh
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;シンボリックリンクの作成:daa11b13df79a9f8958f02dbe992863e&#34;&gt;◯ シンボリックリンクの作成&lt;/h5&gt;
+&lt;h5 id=&#34;シンボリックリンクの作成&#34;&gt;◯ シンボリックリンクの作成&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;$ cd ~/.pow
 $ ln -s /path/to/myapp
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;powderのインストール:daa11b13df79a9f8958f02dbe992863e&#34;&gt;◯ powderのインストール&lt;/h5&gt;
+&lt;h5 id=&#34;powderのインストール&#34;&gt;◯ powderのインストール&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;$ gem install powder
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;powderコマンド:daa11b13df79a9f8958f02dbe992863e&#34;&gt;◯ powderコマンド&lt;/h5&gt;
+&lt;h5 id=&#34;powderコマンド&#34;&gt;◯ powderコマンド&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;
 # link
@@ -64,7 +64,7 @@ $ powder config
 $ powder restart
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;rbenvで使う時:daa11b13df79a9f8958f02dbe992863e&#34;&gt;◯ rbenvで使う時&lt;/h5&gt;
+&lt;h5 id=&#34;rbenvで使う時&#34;&gt;◯ rbenvで使う時&lt;/h5&gt;
 
 &lt;p&gt;rbenvで使う場合は&lt;code&gt;~/.powconfig&lt;/code&gt;にパスを通す必要がある。&lt;br /&gt;
 powがrbenvを使っているにもかかわらず、システムのrubyを使ってしまうため。&lt;/p&gt;

@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【Hugo】Hosting on GitHub Pages【翻訳】 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,19 @@
             <article class="post">
                 <header>
                     <h1>【Hugo】Hosting on GitHub Pages【翻訳】</h1>
-                    <h2 class="headline">November 13, 2015</h2>
+                    <h2 class="headline">
+                    November 13, 2015 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/hugo">Hugo</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/translation">Translation</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -43,22 +64,22 @@
 
 <hr>
 
-<h2 id="導入:21faba431ee5196663af6ba4fcd50428">導入</h2>
+<h2 id="導入">導入</h2>
 
 <p>多くのHugoユーザーが作成したブログをGithub Pages上にホストする方法に興味を抱いています。
 このチュートリアルはまさにそのためのものです。私たちに必要なドキュメントは、Hugoを正しくインストールし、git上で快適に動作させるためのものなのです。</p>
 
 <p>このチュートリアルでは、主要なステップを通して<a href="http://spencerlyon2.github.io/hugo_gh_blog">http://spencerlyon2.github.io/hugo_gh_blog</a>上で動作するサンプルブログを作成していきます。ソースコードは<a href="https://github.com/spencerlyon2/hugo_gh_blog">Github</a>上に上がっています。読者はサンプルのリポジトリをダウンロードして、それに従ってみることを推奨します。</p>
 
-<h3 id="リポジトリの作成:21faba431ee5196663af6ba4fcd50428">リポジトリの作成</h3>
+<h3 id="リポジトリの作成">リポジトリの作成</h3>
 
 <p>私たちの目的はGithub Pages上にブログをホストすることなので、ブログ記事をGithubリポジトリ上にホストするのは自然なことです。<br />
 従って、最初のステップではウェブサイトのコンテンツを設置する新しいリポジトリ、もしくは既存のリポジトリに新しいディレクトリを作成します。
 このため、私は<code>spencerlyon2/hugo_gh_blog</code>というリポジトリを作成しました。</p>
 
-<h2 id="ブログの作成:21faba431ee5196663af6ba4fcd50428">ブログの作成</h2>
+<h2 id="ブログの作成">ブログの作成</h2>
 
-<h3 id="設定ファイルを用意する:21faba431ee5196663af6ba4fcd50428">設定ファイルを用意する</h3>
+<h3 id="設定ファイルを用意する">設定ファイルを用意する</h3>
 
 <p>新しいHugoサイトを作成するための第一歩として、<a href="https://gohugo.io/overview/configuration/">configファイル</a>を記述します。このconfigファイルは下記の２つの理由において重要な役割を果たします。(1)baseurlなどの、サイトについての広い設定を行います。(2)またこのファイルが、Hugoサイトがどのように作られたかを示すためのものとなります。
 例として、私が作成した<code>config.yaml</code>ファイルがあります。</p>
@@ -81,7 +102,7 @@ canonifyurls: true
 より詳しくは、“Extras: URLs page”にある“Canonicalization: Caveat”を参考にしてみてください。</p>
 </blockquote>
 
-<h3 id="サイト構造を定義する:21faba431ee5196663af6ba4fcd50428">サイト構造を定義する</h3>
+<h3 id="サイト構造を定義する">サイト構造を定義する</h3>
 
 <p>Hugoはあなた自身が意味のあるサイト構造を設計し、それと同じ構造でサイトをレンダリングすることを想定しています。設定ファイルにある<code>contentdir: &quot;content&quot;</code>という行に注目してください。これは全てのコンテンツは<code>content</code>という名前のフォルダ配下に置かれるということを意味します。Hugoでは全てのディレクトリをセクションとして扱います。たとえばセクションがひとつしかなければ、投稿が一箇所に置かれることになります。そのため私たちは新たに２つのフォルダを作成しました。</p>
 
@@ -90,7 +111,7 @@ canonifyurls: true
         ▾ posts/
 </code></pre>
 
-<h3 id="htmlテンプレートの作成:21faba431ee5196663af6ba4fcd50428">HTMLテンプレートの作成</h3>
+<h3 id="htmlテンプレートの作成">HTMLテンプレートの作成</h3>
 
 <p>続いて新しいサイトの見た目の部分を定義していきます。
 Hugoではユーザー(あなた)が作成したHTMLテンプレートを使ってサイトを生成します。このステップはとても主観的なものです。私は単にブログを生成することが可能なテーマを使っています。LanyonというJekyllのテーマを使うことに決めました。LanyonはピュアCSSを使っており、少しだけ修正したものが/static/cssリポジトリに上がっています。チュートリアルに沿っていれば、サンプルリポジトリのstaticフォルダに格納されているはずです。</p>
@@ -122,7 +143,7 @@ Hugoではユーザー(あなた)が作成したHTMLテンプレートを使っ�
 
 <p>サンプルリポジトリの各ファイルは、そのファイルについてのコメントがなされています。Hugoでの、もしくはWebサイト自体の開発が初めてであれば、これらのファイルを確認しながらどのようにHugoのテンプレートが動いているかを確認してみるのもいいでしょう。</p>
 
-<h3 id="コンテンツの追加:21faba431ee5196663af6ba4fcd50428">コンテンツの追加</h3>
+<h3 id="コンテンツの追加">コンテンツの追加</h3>
 
 <p>ブログ作成の最終ステップとして、実際の記事を追加してみます。このように、単なるMarkdown(<code>.md</code>)で作成されたファイルです。各ファイルのトップに、投稿についてのメタデータを含むようにします。サンプルリポジトリから<code>/content/posts/newest.md</code>に含まれるメタデータを参考にしてみてください。</p>
 
@@ -139,7 +160,7 @@ categories:
 
 <p>このセクションで設定されているキーは、タイトルと日付は必要で、説明とカテゴリは任意のものとなります。各アイテムは<code>/layouts</code>ディレクトリ内のテンプレートを通して使用され、Hugoに投稿についての情報を与えます。</p>
 
-<h2 id="gitワークフローの構築:21faba431ee5196663af6ba4fcd50428">gitワークフローの構築</h2>
+<h2 id="gitワークフローの構築">gitワークフローの構築</h2>
 
 <p>適切なサイト設定ができたら、Github Pages上で提供するために、それらをGithubの正しいブランチにpushしていく必要があります。これには多くの方法があります。ここでは私が現在も使っているワークフローを紹介します。</p>
 
@@ -207,7 +228,7 @@ git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh
 
 <p>これらのコマンドを実行してGithubサーバーの更新を待てば、<a href="http://spencerlyon2.github.io/hugo_gh_blog上にブログが作成されていることでしょう。">http://spencerlyon2.github.io/hugo_gh_blog上にブログが作成されていることでしょう。</a></p>
 
-<h3 id="deploy-sh:21faba431ee5196663af6ba4fcd50428"><code>deploy.sh</code></h3>
+<h3 id="deploy-sh"><code>deploy.sh</code></h3>
 
 <p>そして、ブログへ新しい投稿をするために、下記のステップを実行していきましょう。</p>
 
@@ -222,7 +243,7 @@ git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh
 
 <p>上のリストの最初の２つはシンプルで便利な方法であり、まあまあ合理的な方法でしょう。しかし、残りのステップは毎回同じことをしなくてはなりません。この繰り返しのプロセスを簡単にするために、リポジトリにスクリプトを用意しておきました。<code>deploy.sh</code>というファイルで、下記のようになってます。</p>
 
-<h3 id="注意:21faba431ee5196663af6ba4fcd50428">注意:</h3>
+<h3 id="注意">注意:</h3>
 
 <p>最初のコマンドでデフォルトの設定を実行します。
 テーマを使うために、<code>-t ThemeName</code>もつけましょう。</p>
@@ -235,7 +256,7 @@ git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh
 <pre><code>hugo --buildDrafts
 </code></pre>
 
-<h3 id="deploy-sh-1:21faba431ee5196663af6ba4fcd50428">Deploy.sh:</h3>
+<h3 id="deploy-sh-1">Deploy.sh:</h3>
 
 <pre><code>#!/bin/bash
 
@@ -262,7 +283,7 @@ git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh
 <p>これで、ワークフローリストの後ろ4つを<code>bash deploy.sh</code>コマンドに置き換えることができます。
 このスクリプトはオプションでコミットメッセージを含めることができます。カスタムのコミットメッセージを含めたければ、<code>bash deploy.sh &quot;&lt;my commit msg&gt;&quot;</code>としてください。何もなければ現在時刻が生成されます。</p>
 
-<h3 id="別の方法:21faba431ee5196663af6ba4fcd50428">別の方法</h3>
+<h3 id="別の方法">別の方法</h3>
 
 <p>上記の<code>git subtree</code>を用いた例では<code>gh-pages</code>ブランチにデプロイしました。素晴らしいワークですが、ひとつ欠点があります。それは生成されたコンテンツをコミットする必要があるということです。</p>
 
@@ -290,7 +311,7 @@ hugo -d dist
 <p>このコマンドでは、最後のコミットを使用します。
 より詳しくは、こちらを参考にしてください。</p>
 
-<h3 id="個人のページをホストする:21faba431ee5196663af6ba4fcd50428">個人のページをホストする</h3>
+<h3 id="個人のページをホストする">個人のページをホストする</h3>
 
 <p>Githubの記事でも言及されているように、個人のページをホストすることもできます。ここでは下記の点が変わってきます。</p>
 
@@ -341,7 +362,7 @@ cd ..
 
 <p>これで完了！<code>http://username.github.io/</code>といった個人ページで動いているはずです！</p>
 
-<h3 id="結論:21faba431ee5196663af6ba4fcd50428">結論</h3>
+<h3 id="結論">結論</h3>
 
 <p>このチュートリアルがあなたのお役に立てばなによりです。<br />
 まだ分からないことがあれば、<a href="https://gohugo.io/community/mailing-list/">ディスカッションフォーラム</a>から連絡してください。</p>
@@ -354,7 +375,7 @@ cd ..
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -374,9 +395,18 @@ cd ..
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -440,19 +470,16 @@ cd ..
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -461,13 +488,8 @@ cd ..
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

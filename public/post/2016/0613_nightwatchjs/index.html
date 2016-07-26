@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【サンプルあり】Nightwatch.js覚書 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,19 @@
             <article class="post">
                 <header>
                     <h1>【サンプルあり】Nightwatch.js覚書</h1>
-                    <h2 class="headline">June 13, 2016</h2>
+                    <h2 class="headline">
+                    June 13, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/e2e">E2E</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/nightwatch">Nightwatch</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -42,23 +63,23 @@
 
 <hr>
 
-<h2 id="概要:3a38a955a33ec0e2c56b5b792d293395">概要</h2>
+<h2 id="概要">概要</h2>
 
-<h3 id="nightwatchとは:3a38a955a33ec0e2c56b5b792d293395">Nightwatchとは？</h3>
+<h3 id="nightwatchとは">Nightwatchとは？</h3>
 
 <ul>
 <li><a href="http://code.google.com/p/selenium/wiki/JsonWireProtocol">Selenium WebDriver API</a>を使い、<a href="http://nodejs.org/">Node.js</a>で書かれたWebアプリケーション/Webサイト用の自動テストフレームワーク</li>
 <li>継続的インテグレーションを行うためのE2Eテスト自動化へのソリューション</li>
 </ul>
 
-<h3 id="seleniumの概要:3a38a955a33ec0e2c56b5b792d293395">Seleniumの概要</h3>
+<h3 id="seleniumの概要">Seleniumの概要</h3>
 
 <ul>
 <li>ブラウザ自動制御のための人気で包括できなツール。元々Javaだったが現在は多くの言語をサポート</li>
 <li>Nightwatchはブラウザ自動制御のためにSelenium WebDriver(特に<a href="http://code.google.com/p/selenium/wiki/JsonWireProtocol">WebDriver Wire Protocol</a>)を使っている</li>
 </ul>
 
-<h3 id="オペレーションについて:3a38a955a33ec0e2c56b5b792d293395">オペレーションについて</h3>
+<h3 id="オペレーションについて">オペレーションについて</h3>
 
 <p>NightwatchはSeleniumサーバーに正しいパラメータを付与してHTTPリクエストを送ることで動作する。<br />
 RESTfulなAPIプロトコルは<a href="http://code.google.com/p/selenium/wiki/JsonWireProtocol#/session">Selenium JsonWireProtocol</a>に定義されている。</p>
@@ -67,7 +88,7 @@ RESTfulなAPIプロトコルは<a href="http://code.google.com/p/selenium/wiki/J
 
 <p>Nightwatchでは多くの場合、Seleniumサーバーに対して少なくとも2回のリクエストを送る必要がある。最初のリクエストではCSSセレクタで与えられた要素を見つけるためのものであり、次のリクエストでコマンドに対して与えられた要素を演算する。</p>
 
-<h2 id="サンプル-公式から:3a38a955a33ec0e2c56b5b792d293395">サンプル(公式から)</h2>
+<h2 id="サンプル-公式から">サンプル(公式から)</h2>
 
 <p>CSSセレクタを使うことで、簡単にE2Eテストを書ける。</p>
 
@@ -115,7 +136,7 @@ RESTfulなAPIプロトコルは<a href="http://code.google.com/p/selenium/wiki/J
 };
 </code></pre>
 
-<h3 id="書いてみる:3a38a955a33ec0e2c56b5b792d293395">書いてみる</h3>
+<h3 id="書いてみる">書いてみる</h3>
 
 <p>Nightwatchで<a href="http://todomvc.com/examples/vue">Vue.js • TodoMVC</a>のE2Eテストを書いてみた。</p>
 
@@ -165,7 +186,7 @@ RESTfulなAPIプロトコルは<a href="http://code.google.com/p/selenium/wiki/J
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -185,9 +206,18 @@ RESTfulなAPIプロトコルは<a href="http://code.google.com/p/selenium/wiki/J
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -251,15 +281,16 @@ RESTfulなAPIプロトコルは<a href="http://code.google.com/p/selenium/wiki/J
         </li>
         
    
-    
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -268,13 +299,8 @@ RESTfulなAPIプロトコルは<a href="http://code.google.com/p/selenium/wiki/J
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

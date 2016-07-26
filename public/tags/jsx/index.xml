@@ -21,7 +21,7 @@
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;background:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Background&lt;/h3&gt;
+&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;JSXはJavaScriptへのコンパイルが可能な、静的型付けかつオブジェクト指向のプログラミング言語です。
 JavaScriptよりも頑丈なプログラミング言語が必要だったためにJSXは開発されました。
@@ -44,7 +44,7 @@ JSZでは&amp;rdquo;inline expansion&amp;rdquo;によってパフォーマンス
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;run-hello-world:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Run &amp;ldquo;Hello, World!&amp;rdquo;&lt;/h3&gt;
+&lt;h3 id=&#34;run-hello-world&#34;&gt;Run &amp;ldquo;Hello, World!&amp;rdquo;&lt;/h3&gt;
 
 &lt;p&gt;JSXのプログタムを実行してみましょう。&lt;code&gt;jsx&lt;/code&gt;コマンドを使い、JSXをJavaScriptにコンパイルします。&lt;/p&gt;
 
@@ -71,7 +71,7 @@ JSZでは&amp;rdquo;inline expansion&amp;rdquo;によってパフォーマンス
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;program-structure:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Program Structure&lt;/h3&gt;
+&lt;h3 id=&#34;program-structure&#34;&gt;Program Structure&lt;/h3&gt;
 
 &lt;p&gt;ここでは&amp;rdquo;Hello world!&amp;ldquo;サンプルであるhello.jsxについて取り扱っていきます。
 このプログラムに名前や静的型付け、クラス構造といったいくつかのJSXの機能を見ることができます。&lt;/p&gt;
@@ -130,11 +130,11 @@ JSZでは&amp;rdquo;inline expansion&amp;rdquo;によってパフォーマンス
 
 &lt;Hr&gt;
 
-&lt;h3 id=&#34;static-typing:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Static Typing&lt;/h3&gt;
+&lt;h3 id=&#34;static-typing&#34;&gt;Static Typing&lt;/h3&gt;
 
 &lt;p&gt;基本的な型の概要についてはこの章で述べます。プリミティブ型やオブジェクト型、Variant型、Null型がJSZには存在します。&lt;/p&gt;
 
-&lt;h4 id=&#34;pritimive-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Pritimive Types&lt;/h4&gt;
+&lt;h4 id=&#34;pritimive-types&#34;&gt;Pritimive Types&lt;/h4&gt;
 
 &lt;p&gt;JSXには3つのプリミティブ型が存在します。&lt;code&gt;string&lt;/code&gt;、&lt;code&gt;number&lt;/code&gt;、&lt;code&gt;boolean&lt;/code&gt;です。
 これらの3つはNull型にはならず、不変の型です。&lt;/p&gt;
@@ -153,7 +153,7 @@ var n = 42;       // n is number, initialized as 42
 var b = true;     // b is boolean, initialized as true
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;object-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Object Types&lt;/h4&gt;
+&lt;h4 id=&#34;object-types&#34;&gt;Object Types&lt;/h4&gt;
 
 &lt;p&gt;オブジェクト型はクラスのインスタンスオブジェクトに参照を持つ方になります。
 例えば、関数、文字列配列、Dateオブジェクトは全てオブジェクト型になります。
@@ -181,7 +181,7 @@ var m2 = {                     // m2 is Map.&amp;lt;string&amp;gt;
 
 &lt;p&gt;Functionクラスの変数のみ、静的関数として生成することや、またfunction式やfunction文を使って生成することが可能です。&lt;/p&gt;
 
-&lt;h4 id=&#34;the-variant-type:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;The Variant Type&lt;/h4&gt;
+&lt;h4 id=&#34;the-variant-type&#34;&gt;The Variant Type&lt;/h4&gt;
 
 &lt;p&gt;Variant型は&amp;rdquo;静的型情報がない&amp;rdquo;という意味です。既存のJavaScriptAPIに役立ちます。
 バリアント変数を返すJavaScriptライブラリもあるかもしれません。これらの型はコンパイル時に決定することができません。
@@ -198,7 +198,7 @@ var m2 = {                     // m2 is Map.&amp;lt;string&amp;gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;nullable-types:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Nullable Types&lt;/h4&gt;
+&lt;h4 id=&#34;nullable-types&#34;&gt;Nullable Types&lt;/h4&gt;
 
 &lt;p&gt;Nullable型はメタ型です。値がnullかもしれないことを示します。
 primitive型にnullを代入することは禁止されています。(Object型はデフォルトではnullです。)
@@ -239,7 +239,7 @@ null値の誤用が検知されると例外が発生します。
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;expressions:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Expressions&lt;/h3&gt;
+&lt;h3 id=&#34;expressions&#34;&gt;Expressions&lt;/h3&gt;
 
 &lt;p&gt;JSXにおける演算子の定義はほとんどJavaScriptと同じです。しかしながら違う点もあります。&lt;/p&gt;
 
@@ -294,7 +294,7 @@ log s;               // print &amp;quot;value of n is 123&amp;quot;
 
 &lt;p&gt;詳しくは&lt;a href=&#34;https://jsx.github.io/doc/operatorref.html&#34;&gt;Operator Reference&lt;/a&gt;を見てください。&lt;/p&gt;
 
-&lt;h4 id=&#34;statements:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Statements&lt;/h4&gt;
+&lt;h4 id=&#34;statements&#34;&gt;Statements&lt;/h4&gt;
 
 &lt;p&gt;JSXではJavaScriptで提供される多くの構文をサポートします。&lt;/p&gt;
 
@@ -338,7 +338,7 @@ assert n != 0;         // assertions.  also can be turned off with --release
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;classes-and-interfaces:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Classes and Interfaces&lt;/h3&gt;
+&lt;h3 id=&#34;classes-and-interfaces&#34;&gt;Classes and Interfaces&lt;/h3&gt;
 
 &lt;p&gt;JSXはクラスベースのオブジェクト指向言語です。クラスモデルはJavaに似ています。&lt;/p&gt;
 
@@ -407,7 +407,7 @@ Flyableインターフェイスを使うことで、例えbeeとbatが完全に�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;functions-and-closures:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Functions and Closures&lt;/h3&gt;
+&lt;h3 id=&#34;functions-and-closures&#34;&gt;Functions and Closures&lt;/h3&gt;
 
 &lt;p&gt;JSXでは、関数が最初のクラスオブジェクトであり、静的な型をもっています。
 &lt;code&gt;var f : function(arg : number) : number&lt;/code&gt;といった関数型の変数を宣言することができます。
@@ -440,7 +440,7 @@ Flyableインターフェイスを使うことで、例えbeeとbatが完全に�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;modules:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Modules&lt;/h3&gt;
+&lt;h3 id=&#34;modules&#34;&gt;Modules&lt;/h3&gt;
 
 &lt;p&gt;JSXはモジュールシステムを持ちます。&lt;code&gt;import&lt;/code&gt;式を使ってJSXのクラスライブラリを利用することができます。
 例えば、下記のプログラムでは&lt;code&gt;timer.jsx&lt;/code&gt;モジュールを使用し、Timerクラスをエクスポートしています。&lt;/p&gt;
@@ -462,7 +462,7 @@ class _Main {
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;interface-to-web-browsers:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Interface to Web Browsers&lt;/h3&gt;
+&lt;h3 id=&#34;interface-to-web-browsers&#34;&gt;Interface to Web Browsers&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;js/web.jsx&lt;/code&gt;モジュールはWebブラウザへのインターフェイスを提供します。
 下記のサンプルではどのように挿入するかを見せます。&lt;/p&gt;
@@ -501,7 +501,7 @@ class _Main {
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;further-learning:eefede6fd0575a7a2327da935aefa0bf&#34;&gt;Further Learning&lt;/h3&gt;
+&lt;h3 id=&#34;further-learning&#34;&gt;Further Learning&lt;/h3&gt;
 
 &lt;p&gt;より詳しいドキュメントは&lt;a href=&#34;https://github.com/jsx/JSX/wiki&#34;&gt;wiki&lt;/a&gt;を見てください。&lt;/p&gt;
 

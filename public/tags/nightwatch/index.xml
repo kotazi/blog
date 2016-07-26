@@ -21,23 +21,23 @@
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;概要:3a38a955a33ec0e2c56b5b792d293395&#34;&gt;概要&lt;/h2&gt;
+&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 
-&lt;h3 id=&#34;nightwatchとは:3a38a955a33ec0e2c56b5b792d293395&#34;&gt;Nightwatchとは？&lt;/h3&gt;
+&lt;h3 id=&#34;nightwatchとは&#34;&gt;Nightwatchとは？&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol&#34;&gt;Selenium WebDriver API&lt;/a&gt;を使い、&lt;a href=&#34;http://nodejs.org/&#34;&gt;Node.js&lt;/a&gt;で書かれたWebアプリケーション/Webサイト用の自動テストフレームワーク&lt;/li&gt;
 &lt;li&gt;継続的インテグレーションを行うためのE2Eテスト自動化へのソリューション&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;seleniumの概要:3a38a955a33ec0e2c56b5b792d293395&#34;&gt;Seleniumの概要&lt;/h3&gt;
+&lt;h3 id=&#34;seleniumの概要&#34;&gt;Seleniumの概要&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ブラウザ自動制御のための人気で包括できなツール。元々Javaだったが現在は多くの言語をサポート&lt;/li&gt;
 &lt;li&gt;Nightwatchはブラウザ自動制御のためにSelenium WebDriver(特に&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol&#34;&gt;WebDriver Wire Protocol&lt;/a&gt;)を使っている&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;オペレーションについて:3a38a955a33ec0e2c56b5b792d293395&#34;&gt;オペレーションについて&lt;/h3&gt;
+&lt;h3 id=&#34;オペレーションについて&#34;&gt;オペレーションについて&lt;/h3&gt;
 
 &lt;p&gt;NightwatchはSeleniumサーバーに正しいパラメータを付与してHTTPリクエストを送ることで動作する。&lt;br /&gt;
 RESTfulなAPIプロトコルは&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol#/session&#34;&gt;Selenium JsonWireProtocol&lt;/a&gt;に定義されている。&lt;/p&gt;
@@ -46,7 +46,7 @@ RESTfulなAPIプロトコルは&lt;a href=&#34;http://code.google.com/p/selenium
 
 &lt;p&gt;Nightwatchでは多くの場合、Seleniumサーバーに対して少なくとも2回のリクエストを送る必要がある。最初のリクエストではCSSセレクタで与えられた要素を見つけるためのものであり、次のリクエストでコマンドに対して与えられた要素を演算する。&lt;/p&gt;
 
-&lt;h2 id=&#34;サンプル-公式から:3a38a955a33ec0e2c56b5b792d293395&#34;&gt;サンプル(公式から)&lt;/h2&gt;
+&lt;h2 id=&#34;サンプル-公式から&#34;&gt;サンプル(公式から)&lt;/h2&gt;
 
 &lt;p&gt;CSSセレクタを使うことで、簡単にE2Eテストを書ける。&lt;/p&gt;
 
@@ -94,7 +94,7 @@ RESTfulなAPIプロトコルは&lt;a href=&#34;http://code.google.com/p/selenium
 };
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;書いてみる:3a38a955a33ec0e2c56b5b792d293395&#34;&gt;書いてみる&lt;/h3&gt;
+&lt;h3 id=&#34;書いてみる&#34;&gt;書いてみる&lt;/h3&gt;
 
 &lt;p&gt;Nightwatchで&lt;a href=&#34;http://todomvc.com/examples/vue&#34;&gt;Vue.js • TodoMVC&lt;/a&gt;のE2Eテストを書いてみた。&lt;/p&gt;
 

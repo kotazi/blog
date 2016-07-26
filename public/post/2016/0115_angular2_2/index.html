@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>Angular2のチュートリアル &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,7 +42,17 @@
             <article class="post">
                 <header>
                     <h1>Angular2のチュートリアル</h1>
-                    <h2 class="headline">January 15, 2016</h2>
+                    <h2 class="headline">
+                    January 15, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/angular2">angular2</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
@@ -47,7 +66,7 @@
 
 <hr>
 
-<h2 id="構成:24456ac087966b3ecdbdd8d437837263">構成</h2>
+<h2 id="構成">構成</h2>
 
 <pre><code>angular2-tour-of-heroes
 |- node_modules
@@ -63,7 +82,7 @@
 |- tsconfig.json
 </code></pre>
 
-<h2 id="index-html:24456ac087966b3ecdbdd8d437837263">index.html</h2>
+<h2 id="index-html">index.html</h2>
 
 <ul>
 <li>Angular2では<code>angular2-polyfills.js</code>と<code>Rx.js</code>が必要</li>
@@ -73,7 +92,7 @@
 
 <script src="https://gist.github.com/kotazi/00d1d0fbe1a4fb92be11.js"></script>
 
-<h2 id="boot-ts:24456ac087966b3ecdbdd8d437837263">boot.ts</h2>
+<h2 id="boot-ts">boot.ts</h2>
 
 <ul>
 <li><code>bootstrap()</code>でアプリケーション起動</li>
@@ -81,7 +100,7 @@
 
 <script src="https://gist.github.com/kotazi/bf9b1e29e590582dc895.js"></script>
 
-<h2 id="app-component-ts:24456ac087966b3ecdbdd8d437837263">app.component.ts</h2>
+<h2 id="app-component-ts">app.component.ts</h2>
 
 <p><code>@Component</code>はAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。</p>
 
@@ -94,7 +113,7 @@
 
 <script src="https://gist.github.com/kotazi/e407ee5a6dfe7599c8df.js"></script>
 
-<h2 id="hero-ts:24456ac087966b3ecdbdd8d437837263">hero.ts</h2>
+<h2 id="hero-ts">hero.ts</h2>
 
 <p>classではなくinterfaceを利用している。<br />
 ここでの選び方は<code>Hero</code>をどのように使いたいか。<br />
@@ -103,7 +122,7 @@
 
 <script src="https://gist.github.com/kotazi/958abfee0ee7cce36257.js"></script>
 
-<h2 id="mock-heroes-ts:24456ac087966b3ecdbdd8d437837263">mock-heroes.ts</h2>
+<h2 id="mock-heroes-ts">mock-heroes.ts</h2>
 
 <ul>
 <li>HREOES配列はHero型。</li>
@@ -111,7 +130,7 @@
 
 <script src="https://gist.github.com/kotazi/d3b073e5f33ff8ef1605.js"></script>
 
-<h2 id="hero-detail-component-ts:24456ac087966b3ecdbdd8d437837263">hero-detail.component.ts</h2>
+<h2 id="hero-detail-component-ts">hero-detail.component.ts</h2>
 
 <ul>
 <li>[(ngModel)]=&ldquo;hero.name&rdquo; 書き方変わった</li>
@@ -119,7 +138,7 @@
 
 <script src="https://gist.github.com/kotazi/9bd78998321fde979038.js"></script>
 
-<h2 id="hero-service-ts:24456ac087966b3ecdbdd8d437837263">hero.service.ts</h2>
+<h2 id="hero-service-ts">hero.service.ts</h2>
 
 <script src="https://gist.github.com/kotazi/f27b3bc4c989d37fde72.js"></script>
 
@@ -131,7 +150,7 @@
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -151,9 +170,18 @@
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -217,19 +245,16 @@
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -238,13 +263,8 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

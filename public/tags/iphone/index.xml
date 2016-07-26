@@ -25,7 +25,7 @@ Charlesを使う方法だったり、ごちゃごちゃさせたり、いろい�
 
 &lt;p&gt;前提条件としてiPhoneとMacが同じWi-Fiに接続されているものとします。&lt;/p&gt;
 
-&lt;h5 id=&#34;macのipアドレスを確認する:f5e0516d08c181fdb7704efa84ca7cf1&#34;&gt;◯ Macのipアドレスを確認する&lt;/h5&gt;
+&lt;h5 id=&#34;macのipアドレスを確認する&#34;&gt;◯ Macのipアドレスを確認する&lt;/h5&gt;
 
 &lt;p&gt;ターミナル上で&lt;code&gt;ifconfig&lt;/code&gt;と入力して確認する。&lt;/p&gt;
 
@@ -45,7 +45,7 @@ Charlesを使う方法だったり、ごちゃごちゃさせたり、いろい�
 
 &lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/AHWkah5P951L7LCfLBTtPbZVz9miBB-hptcB/image.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;iphone側の設定:f5e0516d08c181fdb7704efa84ca7cf1&#34;&gt;◯ iPhone側の設定&lt;/h5&gt;
+&lt;h5 id=&#34;iphone側の設定&#34;&gt;◯ iPhone側の設定&lt;/h5&gt;
 
 &lt;p&gt;自分のMacのIPアドレスと確認し、iPhoneのWi-Fi設定を開く。
 HTTPプロキシから手動を選択し、MacのIPアドレスを入力する。&lt;/p&gt;

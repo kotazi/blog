@@ -22,14 +22,14 @@ pryを知った。便利そうだったことメモ書き。&lt;/p&gt;
 
 &lt;hr&gt;
 
-&lt;h2 id=&#34;pryとは:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;Pryとは&lt;/h2&gt;
+&lt;h2 id=&#34;pryとは&#34;&gt;Pryとは&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&#34;./../../media/pry_logo.png&#34; alt=&#34;pry&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://pryrepl.org/&#34;&gt;Pry&lt;/a&gt;はRuby標準的なIRBシェルの強力な代替手段です。
 シンタックスハイライトや、フレキシブルなプラグインアーキテクチャ、実行時の呼び出しやドキュメントの閲覧を備えています。&lt;/p&gt;
 
-&lt;h2 id=&#34;インストール:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;インストール&lt;/h2&gt;
+&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ gem install pry pry-doc
 $ pry
@@ -37,7 +37,7 @@ $ pry
 
 &lt;p&gt;&lt;code&gt;.ls&lt;/code&gt;, &lt;code&gt;.pwd&lt;/code&gt;などでShellコマンドを呼び出せる。&lt;/p&gt;
 
-&lt;h2 id=&#34;railsプロジェクトに組み込む:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;Railsプロジェクトに組み込む&lt;/h2&gt;
+&lt;h2 id=&#34;railsプロジェクトに組み込む&#34;&gt;Railsプロジェクトに組み込む&lt;/h2&gt;
 
 &lt;p&gt;RailsプロジェクトにPryを入れて、ブレークポイントやステップ実行が行えるようにした。&lt;/p&gt;
 
@@ -51,7 +51,7 @@ $ pry
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;モデル確認:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;■ モデル確認&lt;/h3&gt;
+&lt;h3 id=&#34;モデル確認&#34;&gt;■ モデル確認&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;[12] pry(main)&amp;gt; show-models
 Administrator
@@ -78,7 +78,7 @@ StaffMember
   updated_at: datetime
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;ルート確認:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;■ ルート確認&lt;/h3&gt;
+&lt;h3 id=&#34;ルート確認&#34;&gt;■ ルート確認&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;[13] pry(main)&amp;gt; show-routes
        Prefix Verb   URI Pattern              Controller#Action
@@ -95,14 +95,14 @@ customer_root GET    /customer(.:format)      customer/top#index
               GET    /*anything(.:format)     errors#routing_error
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;デバッグ:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;デバッグ&lt;/h2&gt;
+&lt;h2 id=&#34;デバッグ&#34;&gt;デバッグ&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;binding.pry&lt;/code&gt;を打ち込むとブレークポイントになる。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;show-stack&lt;/code&gt;でスタックトレースを表示&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;参考url:f3bd45a4a5113941a84c21ea0e18d62f&#34;&gt;参考URL&lt;/h2&gt;
+&lt;h2 id=&#34;参考url&#34;&gt;参考URL&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://labs.timedia.co.jp/2011/12/rubyist-should-use-pry.html&#34;&gt;Rubyistよ、irbを捨ててPryを使おう&lt;/a&gt;&lt;/li&gt;

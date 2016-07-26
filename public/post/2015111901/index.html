@@ -6,13 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.14" />
+		<meta name="generator" content="Hugo 0.16" />
 		<title>【訳読】PDFMakeにおけるカスタムフォントの利用 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
 		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
 	</head>
+
     <body>
        <nav class="main-nav">
 	
@@ -33,12 +42,24 @@
             <article class="post">
                 <header>
                     <h1>【訳読】PDFMakeにおけるカスタムフォントの利用</h1>
-                    <h2 class="headline">November 18, 2015</h2>
+                    <h2 class="headline">
+                    November 18, 2015 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/pdfmake">PDFMake</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/%E8%A8%B3%E8%AA%AD">訳読</a>
+                        
+                    
+                    
+                    </h2>
                 </header>
                 <section id="post-body">
                     
 
-<h2 id="カスタムフォントの使用-https-github-com-bpampuch-pdfmake-issues-33:16a5f450dd8c50b145f388ac7343234c"><a href="https://github.com/bpampuch/pdfmake/issues/33">カスタムフォントの使用</a></h2>
+<h2 id="カスタムフォントの使用-https-github-com-bpampuch-pdfmake-issues-33"><a href="https://github.com/bpampuch/pdfmake/issues/33">カスタムフォントの使用</a></h2>
 
 <p><code>vfs_fonts.js</code>は&rdquo;virtual-file-system&rdquo;オブジェクトを<code>pdfMake.vfs</code>に割り当てています。
 このオブジェクトの各キーがファイル名であり、値はbase64エンコードされたファイルを含みます。</p>
@@ -59,14 +80,14 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 
 <p><br></p>
 
-<h3 id="1-使用するフォントを含んだ-vfs-fonts-js-を生成する:16a5f450dd8c50b145f388ac7343234c"><strong>1. 使用するフォントを含んだ<code>vfs_fonts.js</code>を生成する:</strong></h3>
+<h3 id="1-使用するフォントを含んだ-vfs-fonts-js-を生成する"><strong>1. 使用するフォントを含んだ<code>vfs_fonts.js</code>を生成する:</strong></h3>
 
 <p><code>examples/fonts</code>内にフォントをコピーします。
 <code>grunt dump_dir</code>を実行してください。新しい<code>build/vfs_fonts.js</code>をウェブページで使います。</p>
 
 <p>ちなみに、上記のアクションは<code>examples/fonts</code>内の全てのファイルをダンプしてしまうので、画像ファイルなどを含むこともできます。</p>
 
-<h3 id="2-font-familyを定義する:16a5f450dd8c50b145f388ac7343234c"><strong>2. font familyを定義する</strong></h3>
+<h3 id="2-font-familyを定義する"><strong>2. font familyを定義する</strong></h3>
 
 <p><code>pdfMake.createPdf(docDefinition)</code>が呼ばれる前に、pdfMake.fontsをセットします。</p>
 
@@ -98,7 +119,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 };
 </code></pre>
 
-<h3 id="3-doc-definition-object-内にあるfont-familyを変更する:16a5f450dd8c50b145f388ac7343234c"><strong>3. <code>doc-definition-object</code>内にあるfont familyを変更する</strong></h3>
+<h3 id="3-doc-definition-object-内にあるfont-familyを変更する"><strong>3. <code>doc-definition-object</code>内にあるfont familyを変更する</strong></h3>
 
 <p>現在、PDFMakeでは<code>Roboto</code>をデフォルトのfamily nameとして利用しています。あなたのフォントを使うためにはこれを変更する必要があります。一番簡単な方法はグローバルで<code>defaultStyle</code>を定義することです。</p>
 
@@ -116,7 +137,7 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
             </article>
             <footer id="post-meta" class="clearfix">
                 <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/kotazi.jpg">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
                         <div>
                             <span class="dark">kotazi</span>
                             <span>Imagination and Realization</span>
@@ -136,9 +157,18 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
                 </section>
             </footer>
 
+            
+
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
     
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
     
         
         <li>
@@ -202,19 +232,16 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
         </li>
         
    
-    
-        
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/">【サンプルあり】Nightwatch.js覚書<aside class="dates">Jun 13</aside></a>
-        </li>
-        
-   
 </ul>
             <footer id="footer">
+    
     <p class="small">
+    
         © Copyright 2016 kotazi
+    
     </p>
 </footer>
+
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -223,13 +250,8 @@ RobotにLICENSE.txtが必要かは分かりませんが、ライセンスを壊�
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<!-- Google Analytics -->
-<script>
-  var _gaq=[['_setAccount','UA-70004407-1'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+
+
 
     </body>
 </html>

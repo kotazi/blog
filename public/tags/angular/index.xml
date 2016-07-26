@@ -30,7 +30,7 @@ Angularにおいて、テストをしないということはありえない。&
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;separation-of-concerns:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Separation of Concerns&lt;/h3&gt;
+&lt;h3 id=&#34;separation-of-concerns&#34;&gt;Separation of Concerns&lt;/h3&gt;
 
 &lt;p&gt;ユニットテストという名前から示されるように、これは独立した単体のコードのテストのことである。
 ユニットテストは「そのロジックは正しく動くだろうか」、「ソート関数が並び替えたリストは正しい順番だろうか」
@@ -52,7 +52,7 @@ DOMを生成したり、状態を監視したりXHRリクエストのレスポ�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;with-great-power-comes-great-responsibility:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;With great power comes great responsibility&lt;/h3&gt;
+&lt;h3 id=&#34;with-great-power-comes-great-responsibility&#34;&gt;With great power comes great responsibility&lt;/h3&gt;
 
 &lt;p&gt;Angularはテストしやすいことを念頭に書かれているが、それでもまだ
 正しい書き方をする必要がある。
@@ -61,7 +61,7 @@ DOMを生成したり、状態を監視したりXHRリクエストのレスポ�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;dependency-injection:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Dependency Injection&lt;/h3&gt;
+&lt;h3 id=&#34;dependency-injection&#34;&gt;Dependency Injection&lt;/h3&gt;
 
 &lt;p&gt;Angularは&lt;a href=&#34;https://docs.angularjs.org/guide/di&#34;&gt;依存性注入&lt;/a&gt;のビルトインからなっており、
 それはテストのコンポーネント化するため、思いどおりにコンポーネント間での依存関係やスタブ、モックをテストすることが可能。&lt;/p&gt;
@@ -71,11 +71,11 @@ DOMを生成したり、状態を監視したりXHRリクエストのレスポ�
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;additional-tools-for-testing-angular-applications:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Additional tools for testing Angular applications&lt;/h3&gt;
+&lt;h3 id=&#34;additional-tools-for-testing-angular-applications&#34;&gt;Additional tools for testing Angular applications&lt;/h3&gt;
 
 &lt;p&gt;Angularアプリケーションのテストでは、テストをより簡単にセットアップし実行するために使うべきツールがある。&lt;/p&gt;
 
-&lt;h4 id=&#34;karma:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Karma&lt;/h4&gt;
+&lt;h4 id=&#34;karma&#34;&gt;Karma&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://karma-runner.github.io/&#34;&gt;Karma&lt;/a&gt;はコマンドラインツールである。
 アプリケーションのコードを読み込み、実行するWebサーバーを用意する。
@@ -85,7 +85,7 @@ Karmaをコマンドライン上で実行すると、ブラウザでのテスト
 &lt;p&gt;KarmaはNodeJS製のアプリケーションであり、npmでインストールする。
 インストールガイドについては&lt;a href=&#34;http://karma-runner.github.io/0.12/intro/installation.html&#34;&gt;Karmaのサイト&lt;/a&gt;が役に立つ。&lt;/p&gt;
 
-&lt;h4 id=&#34;jasmine:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Jasmine&lt;/h4&gt;
+&lt;h4 id=&#34;jasmine&#34;&gt;Jasmine&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://jasmine.github.io/1.3/introduction.html&#34;&gt;Jasmin&lt;/a&gt;はビヘイビア駆動開発のJavaScriptフレームワークであり、
 Angularアプリケーションをテストするうえで最も人気のフレームワークである。
@@ -126,7 +126,7 @@ Angularアプリケーションをテストするうえで最も人気のフレ�
 マッチャーについては&lt;a href=&#34;http://jasmine.github.io/1.3/introduction.html#section-Matchers&#34;&gt;こちらの記事&lt;/a&gt;を読むこと。
 KarmaとJasminを使うために、&lt;a href=&#34;https://github.com/karma-runner/karma-jasmine&#34;&gt;karma-jasmin&lt;/a&gt;を利用する。&lt;/p&gt;
 
-&lt;h4 id=&#34;angular-mocks:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;angular-mocks&lt;/h4&gt;
+&lt;h4 id=&#34;angular-mocks&#34;&gt;angular-mocks&lt;/h4&gt;
 
 &lt;p&gt;Angularはテスト用のモックを提供する&lt;code&gt;ngMock&lt;/code&gt;というものを用意している。
 ユニットテスト内でのAngularサービスをモックしたりインジェクトするために用いられる。
@@ -137,7 +137,7 @@ KarmaとJasminを使うために、&lt;a href=&#34;https://github.com/karma-runn
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;testing-a-controller:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing a Controller&lt;/h3&gt;
+&lt;h3 id=&#34;testing-a-controller&#34;&gt;Testing a Controller&lt;/h3&gt;
 
 &lt;p&gt;Angularのビューレイヤーはロジックから切り離されているので、コントローラを簡単にテストすることができる。
 下記でコントローラをどのようにテストしているか見ていこう。
@@ -269,7 +269,7 @@ Jasminが提供するのは&lt;code&gt;beforeEach&lt;/code&gt;だけじゃない
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;testing-filters:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Filters&lt;/h3&gt;
+&lt;h3 id=&#34;testing-filters&#34;&gt;Testing Filters&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://docs.angularjs.org/api/ng/provider/$filterProvider&#34;&gt;フィルタ&lt;/a&gt;はデータをユーザが読みやすいフォーマットに変換する。
 これはフォーマットの責任をアプリケーションロジックから取り除くことになるのでとても重要なこと。さらにはアプリケーションロジックを単純にできる。&lt;/p&gt;
@@ -302,13 +302,13 @@ describe(&#39;length filter&#39;, function() {
 
 &lt;hr&gt;
 
-&lt;h3 id=&#34;testing-directives:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Directives&lt;/h3&gt;
+&lt;h3 id=&#34;testing-directives&#34;&gt;Testing Directives&lt;/h3&gt;
 
 &lt;p&gt;AngularのディレクティブはカスタムHTMLタグや属性、クラス、コメントと複雑な機能に責任を持っている。
 ディレクティブを使って生成したコンポーネントがさまざまな背景で思った通りに使われているかのテストになるので、
 ディレクティブのユニットテストはとても重要です。&lt;/p&gt;
 
-&lt;h4 id=&#34;simple-html-element-directive:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Simple HTML Element Directive&lt;/h4&gt;
+&lt;h4 id=&#34;simple-html-element-directive&#34;&gt;Simple HTML Element Directive&lt;/h4&gt;
 
 &lt;p&gt;依存関係のないAngularアプリで始める。&lt;/p&gt;
 
@@ -365,7 +365,7 @@ describe(&#39;length filter&#39;, function() {
 パラメータがマッチングした際に、&lt;code&gt;$injector&lt;/code&gt;がアンダースコアを取り払うのはこれが理由である。
 このアンダースコアルールが働くのは名前が一つのアンダースコアで始まり一つのアンダースコアで終わる時のみに限られ、それ以外での置換は起こらない。&lt;/p&gt;
 
-&lt;h4 id=&#34;testing-transclusion-directives:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Transclusion Directives&lt;/h4&gt;
+&lt;h4 id=&#34;testing-transclusion-directives&#34;&gt;Testing Transclusion Directives&lt;/h4&gt;
 
 &lt;p&gt;トランスクルージョンを使ったディレクティブはコンパイラに特別に扱われる。
 コンパイル関数が呼び出される前に、ディレクティブ要素のコンテンツは取り除かれ、トランスクルージョン関数を通して提供される。
@@ -432,7 +432,7 @@ expect(contents[0].nodeType).toEqual(node.COMMENT_NODE);
 expect(contents[1].nodeType).toEqual(node.ELEMENT_NODE);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;testing-directives-with-external-templates:1ccf9de45f59b655d54913e04f01fa76&#34;&gt;Testing Directives With External Templates&lt;/h4&gt;
+&lt;h4 id=&#34;testing-directives-with-external-templates&#34;&gt;Testing Directives With External Templates&lt;/h4&gt;
 
 &lt;p&gt;もぢディレクティブで&lt;code&gt;templateUrl&lt;/code&gt;を使っているのであれば、HTMLテンプレートをプリコンパイルするために&lt;a href=&#34;https://github.com/karma-runner/karma-ng-html2js-preprocessor&#34;&gt;karma-ng-html2js-preprocessor&lt;/a&gt;を使うことを考え、HTTPリクエストを使ってテキストをロードすることは避けること。&lt;/p&gt;
 </description>
