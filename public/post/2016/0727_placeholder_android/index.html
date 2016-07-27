@@ -1,0 +1,197 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.16" />
+		<title>【CSS】Android標準ブラウザにおけるPlaceholderのズレ &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【CSS】Android標準ブラウザにおけるPlaceholderのズレ</h1>
+                    <h2 class="headline">
+                    July 27, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/css">CSS</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    <p>iOS/SafariやAndroid/Chromeなどでは再現しなかったが、Androidの標準ブラウザでPlaceholderの位置がずれてしまった。<br />
+調べてみると似たような記事がいくつか見つかった。</p>
+
+<ul>
+<li><a href="http://mmt45.net/2015/02/20/placeholder%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%ABandroid%E3%81%A7%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E8%A1%A8%E7%A4%BA%E4%BD%8D%E7%BD%AE%E3%82%92%E4%B8%AD%E5%A4%AE/">placeholderを指定したときにAndroidでテキスト表示位置を中央にしたい</a></li>
+<li><a href="https://github.com/topcoat/topcoat/issues/453">Placeholders inputs not centered with Android 4.1.2 #453</a></li>
+</ul>
+
+<p>不具合の再現と修正のものを用意した。</p>
+
+<p><p data-height="300" data-theme-id="15717" data-slug-hash="akKBaa" data-default-tab="html,result" data-user="kotazi" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/kotazi/pen/akKBaa/">akKBaa</a> by Kohei  Saeki (<a href="http://codepen.io/kotazi">@kotazi</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<p>結局<code>body</code>で当てていた<code>line-height</code>が良くなかったらしい。
+<code>placeholder</code>の<code>height</code>に合わせて<code>72px</code>を当てたら直った。</p>
+
+<p>ちなみに<code>line-height</code>の初期値は<code>normal</code>。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0727_placeholder_android%2f - %e3%80%90CSS%e3%80%91Android%e6%a8%99%e6%ba%96%e3%83%96%e3%83%a9%e3%82%a6%e3%82%b6%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8bPlaceholder%e3%81%ae%e3%82%ba%e3%83%ac by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0727_placeholder_android/">【CSS】Android標準ブラウザにおけるPlaceholderのズレ<aside class="dates">Jul 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0710_chiki/">【読書】自分のアタマで考えよう<aside class="dates">Jul 10</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0704_focus/">【読書】机に向かってすぐに集中する技術<aside class="dates">Jul 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0703_focus/">【読書】疲れない脳をつくる生活習慣<aside class="dates">Jul 3</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0702_focus/">【読書】集中力<aside class="dates">Jul 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0630_market_feeling/">【読書】マーケット感覚を身につけよう<aside class="dates">Jun 29</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0619_gtd/">【読書】ストレスフリーの整理術<aside class="dates">Jun 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0617_chasm/">【読書】キャズム<aside class="dates">Jun 17</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0616_git_bfg/">【git/bfg】間違えてプッシュしたパスワードファイルなどを履歴から完全に削除する<aside class="dates">Jun 16</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2016 kotazi
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>
