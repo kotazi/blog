@@ -6,16 +6,248 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jul 2016 16:21:11 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jul 2016 11:57:40 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>0729_ECSS</title>
+      <title>【CSS】ECSSまとめ</title>
       <link>http://kotazi.github.io/blog/post/2016/0729_ECSS/</link>
-      <pubDate>Thu, 28 Jul 2016 16:21:11 +0900</pubDate>
+      <pubDate>Thu, 28 Jul 2016 11:57:40 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0729_ECSS/</guid>
-      <description></description>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://ecss.io/&#34;&gt;Enduring CSS&lt;/a&gt;(以下ECSS)についてまとめる。&lt;/p&gt;
+
+&lt;p&gt;ECSSは大規模プロジェクトのためのCSS設計手法だ。考案者は&lt;a href=&#34;https://benfrain.com/&#34;&gt;Ben Frain&lt;/a&gt;。
+大規模WebアプリケーションにおけるCSSの記述について根本的なアプローチを定義したいという彼の個人的な要望から生まれている。&lt;/p&gt;
+
+&lt;h3 id=&#34;ecssの要望&#34;&gt;■ ECSSの要望&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;長期にわたって肥大なCSSのメンテナンスを容易にすること&lt;/li&gt;
+&lt;li&gt;他に影響を与えずに、コードベースから一部のCSSを取り除けるようにすること&lt;/li&gt;
+&lt;li&gt;どんな新しいデザインでも高速に開発することを可能とすること&lt;/li&gt;
+&lt;li&gt;ある要素へのプロパティや値の変更が他に意図しない影響を与えないこと&lt;/li&gt;
+&lt;li&gt;実装の変更には最小限のツールやワークフローしか必要としないこと&lt;/li&gt;
+&lt;li&gt;可能な限り、ユーザーインターフェイス内でのステートの変更を伝達する際などARIAのようなW3C標準をもちいること&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;スケールする際の問題点&#34;&gt;■ スケールする際の問題点&lt;/h3&gt;
+
+&lt;p&gt;プロジェクトの成長に伴いCSSの記述量は増大する。
+多くの開発者が加わり、特殊なケースやブラウザ挙動に対応するうちに手に負えなくなってしまう。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The CSS Specificity(詳細度)&lt;/li&gt;
+&lt;li&gt;セレクタをマークアップで縛ること&lt;/li&gt;
+&lt;li&gt;カスケード&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;どれも便利なものであるが、大規模プロジェクトにおいては既存ルールを取り除いたり、
+修正したりすることが難しく、新しいルールを適用してしまう。このやり方に頼っていると
+コードは不要なルールで溢れかえることになる。&lt;/p&gt;
+
+&lt;h3 id=&#34;その他のcss設計&#34;&gt;■ その他のCSS設計&lt;/h3&gt;
+
+&lt;h4 id=&#34;oocss&#34;&gt;▼ OOCSS&lt;/h4&gt;
+
+&lt;p&gt;これはOOCSSのみならず、Atomic CSSやその他のSRPについても言えることだ。&lt;br /&gt;
+OOCSSの最たる主張はコードの重複を取り除くことにあり、その結果CSSがメンテナブルになるというものだ。
+本質的にはレゴのピースを組み立てるようなもので、可能な限り再利用し、必要であれば拡張する。&lt;/p&gt;
+
+&lt;p&gt;これはレスポンシブデザインにおいて急所を抱えている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;blk m-10 fr&amp;quot;&amp;gt;Here I am&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記のように、OOCSS/Atomic CSSでは再利用可能なクラスに分割する。
+しかしながら、ビューポートが変更された場合はどうするべきだろう。
+例えば別のクラスをつけることもできるが(&lt;code&gt;Mplus-cc2&lt;/code&gt;のような)面倒なことになるし、HTMLが複雑になる。&lt;/p&gt;
+
+&lt;p&gt;さらにはメンテナンスにも問題があり、大規模プロジェクトではメンテナンスは必ず必要になるが、
+その段階ではCSSルールの見直しも必要となる。その場合マークアップについているクラスも書き換えが大きく発生する。&lt;/p&gt;
+
+&lt;h4 id=&#34;smaccs&#34;&gt;▼ SMACCS&lt;/h4&gt;
+
+&lt;p&gt;SMACSSはCSSのスケーラブルモジュールアーキテクチャとして標準的なもの。
+SMACSSではヴィジュアル面の用語や概念を明確に定義する。
+それゆえBase/Layout/Module/State/Themeなどを定義していく。&lt;/p&gt;
+
+&lt;p&gt;よく考えて構成する必要があり、もっと緩いものが欲しかった。&lt;/p&gt;
+
+&lt;h4 id=&#34;bem&#34;&gt;▼ BEM&lt;/h4&gt;
+
+&lt;p&gt;BEM(Block Element Modifier)はネーミングの方法論。&lt;br /&gt;
+既存のものからならBEMを選ぶ。BEMの良い点は下記。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;すべての要素に同様の特殊性があること。ある1つのクラスがすべてのエレメントに与えられる。&lt;/li&gt;
+&lt;li&gt;HTML構造が結合されていないため、スタイルにセレクタを使わないこと。&lt;/li&gt;
+&lt;li&gt;開発ツールやコードエディタ上で、要素の親が何であるかを推論しやすいこと。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;けれどもModifierが適さなかった。&lt;/p&gt;
+
+&lt;h3 id=&#34;ecssのハイライト&#34;&gt;■ ECSSのハイライト&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ビジュアルを分離してよりメンテナブルに&lt;/li&gt;
+&lt;li&gt;ファイルサイズを長期にわたって小さく保てる&lt;/li&gt;
+&lt;li&gt;ルールは「自身隔離(&amp;lsquo;self-quarantining&amp;rsquo;)」&lt;/li&gt;
+&lt;li&gt;クラス名は文脈を伝え、ロジックを持ち変化する&lt;/li&gt;
+&lt;li&gt;モジュール作成したすべてのファイルは共通フォルダに含まれる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;用語定義&#34;&gt;■ 用語定義&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;モジュール&lt;/strong&gt;: 大きいもの。個々の機能性をもつもの&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;コンポーネント&lt;/strong&gt;： モジュール内にネストしたパール&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;子ノード&lt;/strong&gt;: コンポーネントを構成する個々のパーツ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ecssが解決するもの&#34;&gt;■ ECSSが解決するもの&lt;/h3&gt;
+
+&lt;p&gt;ECSSのゴールは抽象的なスタイルを個々に分離すること。&lt;/p&gt;
+
+&lt;p&gt;たいていの場合は、抽象的に機能を共通にするクラスを作ることは理にかなっている。さまざまな要素に対して再利用することができるからだ。
+原理的には聞こえが良い。問題は大規模で複雑なインターフェイスを扱うとき。予期せぬ影響を与えずに修正することが難しくなってしまう。
+だからECSSは分離したスタイルを目指す。&lt;/p&gt;
+
+&lt;p&gt;「見て見ぬふり」に対処することが大切。
+ECSSではすべてのモジュールやコンポーネントは他と分離するためにマイクロネームスペースを付けて書かれる。
+下記は典型的なサンプル。必要に応じて&lt;code&gt;!import&lt;/code&gt;の利用は認められる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.ip-SubHeader_Wrapper {
+    @mixin Headline;
+    align-items: center;
+    /* We want the subheader hidden by default on mobile */
+    display: none;
+    font-size: $text12;
+    background-color: $color-grey-54;
+    border-bottom: 1px solid color($color-grey-54 a(.5));
+    min-height: $size-fine-quadruple;
+    @include MQ(Mplus) {
+        display: flex;
+        background-color: $color-grey-a7;
+        color: $color-grey-54;
+        font-size: $text13;
+        min-height: 1.5rem;
+        border-bottom: 1px solid $color-grey-54;
+        border-top: 1px solid $color-grey-33;
+    }
+    /* However, even on mobile, if the SubHeader Wrapper is in section 1, we want to see it */
+    .ip-Classification_Header-1 &amp;amp; {
+        display: flex;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ポジティブな点:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;冗長で何にも依存していない&lt;/li&gt;
+&lt;li&gt;一般的にとらわれないコンテキスト（それが置かれている場所のサイズのコンテキストに保存）であるが、このコンポーネントに影響を与える任意のメディアクエリーは、中括弧のこの単一のセット内で定義されている。&lt;/li&gt;
+&lt;li&gt;名前空間のモジュールは一度しか書かれていない。変更したければそこを見ればいい。&lt;/li&gt;
+&lt;li&gt;ネスト内でオーバーライドを行えば、優先度が正しく動いて適切にふるまう。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ディレクトリ構造&#34;&gt;■ ディレクトリ構造&lt;/h3&gt;
+
+&lt;p&gt;こうよりも、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;html/
+- shopping-cart-template.html
+- callouts-template.html
+- products-template.html
+
+js/
+- shopping-cart-template.js
+- callouts-template.js
+- products-template.js
+
+css/
+- shopping-cart-template.css
+- callouts-template.css
+- products-template.css
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうがいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;shopping-cart-template/
+- shopping-cart.html
+- shopping-cart.css
+- shopping-cart.js
+
+callouts-template/
+- callouts.html
+- callouts.js
+- callouts.css
+
+products-template/
+- products.html
+- products.js
+- products.css
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;グローバルCSSだけは例外。&lt;/p&gt;
+
+&lt;h3 id=&#34;ecssでのね-m-ing&#34;&gt;ECSSでのね～m，ing&lt;/h3&gt;
+
+&lt;p&gt;BEMの恩恵を感じたうえで、名前空間を使えばより確かに、他への影響の可能性を減らせる。&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;mini cart&amp;rdquo;ビューの&amp;rdquo;ShoppingCart&amp;rdquo;ファイルならば、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mc-ShoppingCart_Title&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mc-ShoppingCart_RemoveBtn&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;などとなる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;namespace: すべてのセレクタに必要。小文字。&lt;/li&gt;
+&lt;li&gt;ModuleOrComponent: アッパーキャメル。ハイフンでつなぐ。&lt;/li&gt;
+&lt;li&gt;ChildNode: 任意。アッパーキャメル。アンダースコアでつなぐ。&lt;/li&gt;
+&lt;li&gt;varient: 任意。小文字のトレインケース&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ステートについて&#34;&gt;■ ステートについて&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.w3.org/TR/wai-aria/&#34;&gt;WAI-ARIA&lt;/a&gt;を用いる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.co-Button {
+    background-color: $color-button-passive;
+    &amp;amp;[aria-selected=&amp;quot;true&amp;quot;] {
+        background-color: $color-button-selected;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;10個の戒律&#34;&gt;■ 10個の戒律&lt;/h3&gt;
+
+&lt;p&gt;詳細は&lt;a href=&#34;http://ecss.io/chapter8.html&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;single source of truthであること&lt;/li&gt;
+&lt;li&gt;ネストしてはならない&lt;/li&gt;
+&lt;li&gt;IDセレクタを使ってはならない&lt;/li&gt;
+&lt;li&gt;ベンダープレフィックスを使ってはならない&lt;/li&gt;
+&lt;li&gt;サイズ/色/z-indexには変数を用いること&lt;/li&gt;
+&lt;li&gt;常にモバイルファースで書くこと&lt;/li&gt;
+&lt;li&gt;(@extend)を避け、mixinを使うこと&lt;/li&gt;
+&lt;li&gt;マジックナンバーやブラウザハックに対してコメントを書くこと&lt;/li&gt;
+&lt;li&gt;画像をinlineにしないこと&lt;/li&gt;
+&lt;li&gt;複雑なCSSを書かないこと&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;感想。思想はすごくいいんだけど制限が多すぎるように感じた。&lt;br /&gt;
+BEMをリスペクトしながらモディファイヤの部分に共感できないようだった。
+そこはすごく理解できたんだけど、その他の成約を加えすぎていると思う。&lt;/p&gt;
+</description>
     </item>
     
     <item>

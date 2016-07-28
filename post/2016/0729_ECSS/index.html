@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.16" />
-		<title>0729_ECSS &middot; kotazi.com</title>
+		<title>【CSS】ECSSまとめ &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -41,15 +41,253 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>0729_ECSS</h1>
+                    <h1>【CSS】ECSSまとめ</h1>
                     <h2 class="headline">
                     July 28, 2016 
                     <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/css">CSS</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
                     
+
+<p><a href="http://ecss.io/">Enduring CSS</a>(以下ECSS)についてまとめる。</p>
+
+<p>ECSSは大規模プロジェクトのためのCSS設計手法だ。考案者は<a href="https://benfrain.com/">Ben Frain</a>。
+大規模WebアプリケーションにおけるCSSの記述について根本的なアプローチを定義したいという彼の個人的な要望から生まれている。</p>
+
+<h3 id="ecssの要望">■ ECSSの要望</h3>
+
+<ul>
+<li>長期にわたって肥大なCSSのメンテナンスを容易にすること</li>
+<li>他に影響を与えずに、コードベースから一部のCSSを取り除けるようにすること</li>
+<li>どんな新しいデザインでも高速に開発することを可能とすること</li>
+<li>ある要素へのプロパティや値の変更が他に意図しない影響を与えないこと</li>
+<li>実装の変更には最小限のツールやワークフローしか必要としないこと</li>
+<li>可能な限り、ユーザーインターフェイス内でのステートの変更を伝達する際などARIAのようなW3C標準をもちいること</li>
+</ul>
+
+<h3 id="スケールする際の問題点">■ スケールする際の問題点</h3>
+
+<p>プロジェクトの成長に伴いCSSの記述量は増大する。
+多くの開発者が加わり、特殊なケースやブラウザ挙動に対応するうちに手に負えなくなってしまう。</p>
+
+<ul>
+<li>The CSS Specificity(詳細度)</li>
+<li>セレクタをマークアップで縛ること</li>
+<li>カスケード</li>
+</ul>
+
+<p>どれも便利なものであるが、大規模プロジェクトにおいては既存ルールを取り除いたり、
+修正したりすることが難しく、新しいルールを適用してしまう。このやり方に頼っていると
+コードは不要なルールで溢れかえることになる。</p>
+
+<h3 id="その他のcss設計">■ その他のCSS設計</h3>
+
+<h4 id="oocss">▼ OOCSS</h4>
+
+<p>これはOOCSSのみならず、Atomic CSSやその他のSRPについても言えることだ。<br />
+OOCSSの最たる主張はコードの重複を取り除くことにあり、その結果CSSがメンテナブルになるというものだ。
+本質的にはレゴのピースを組み立てるようなもので、可能な限り再利用し、必要であれば拡張する。</p>
+
+<p>これはレスポンシブデザインにおいて急所を抱えている。</p>
+
+<pre><code>&lt;div class=&quot;blk m-10 fr&quot;&gt;Here I am&lt;/div&gt;
+</code></pre>
+
+<p>上記のように、OOCSS/Atomic CSSでは再利用可能なクラスに分割する。
+しかしながら、ビューポートが変更された場合はどうするべきだろう。
+例えば別のクラスをつけることもできるが(<code>Mplus-cc2</code>のような)面倒なことになるし、HTMLが複雑になる。</p>
+
+<p>さらにはメンテナンスにも問題があり、大規模プロジェクトではメンテナンスは必ず必要になるが、
+その段階ではCSSルールの見直しも必要となる。その場合マークアップについているクラスも書き換えが大きく発生する。</p>
+
+<h4 id="smaccs">▼ SMACCS</h4>
+
+<p>SMACSSはCSSのスケーラブルモジュールアーキテクチャとして標準的なもの。
+SMACSSではヴィジュアル面の用語や概念を明確に定義する。
+それゆえBase/Layout/Module/State/Themeなどを定義していく。</p>
+
+<p>よく考えて構成する必要があり、もっと緩いものが欲しかった。</p>
+
+<h4 id="bem">▼ BEM</h4>
+
+<p>BEM(Block Element Modifier)はネーミングの方法論。<br />
+既存のものからならBEMを選ぶ。BEMの良い点は下記。</p>
+
+<ul>
+<li>すべての要素に同様の特殊性があること。ある1つのクラスがすべてのエレメントに与えられる。</li>
+<li>HTML構造が結合されていないため、スタイルにセレクタを使わないこと。</li>
+<li>開発ツールやコードエディタ上で、要素の親が何であるかを推論しやすいこと。</li>
+</ul>
+
+<p>けれどもModifierが適さなかった。</p>
+
+<h3 id="ecssのハイライト">■ ECSSのハイライト</h3>
+
+<ul>
+<li>ビジュアルを分離してよりメンテナブルに</li>
+<li>ファイルサイズを長期にわたって小さく保てる</li>
+<li>ルールは「自身隔離(&lsquo;self-quarantining&rsquo;)」</li>
+<li>クラス名は文脈を伝え、ロジックを持ち変化する</li>
+<li>モジュール作成したすべてのファイルは共通フォルダに含まれる</li>
+</ul>
+
+<h3 id="用語定義">■ 用語定義</h3>
+
+<ul>
+<li><strong>モジュール</strong>: 大きいもの。個々の機能性をもつもの</li>
+<li><strong>コンポーネント</strong>： モジュール内にネストしたパール</li>
+<li><strong>子ノード</strong>: コンポーネントを構成する個々のパーツ</li>
+</ul>
+
+<h3 id="ecssが解決するもの">■ ECSSが解決するもの</h3>
+
+<p>ECSSのゴールは抽象的なスタイルを個々に分離すること。</p>
+
+<p>たいていの場合は、抽象的に機能を共通にするクラスを作ることは理にかなっている。さまざまな要素に対して再利用することができるからだ。
+原理的には聞こえが良い。問題は大規模で複雑なインターフェイスを扱うとき。予期せぬ影響を与えずに修正することが難しくなってしまう。
+だからECSSは分離したスタイルを目指す。</p>
+
+<p>「見て見ぬふり」に対処することが大切。
+ECSSではすべてのモジュールやコンポーネントは他と分離するためにマイクロネームスペースを付けて書かれる。
+下記は典型的なサンプル。必要に応じて<code>!import</code>の利用は認められる。</p>
+
+<pre><code>.ip-SubHeader_Wrapper {
+    @mixin Headline;
+    align-items: center;
+    /* We want the subheader hidden by default on mobile */
+    display: none;
+    font-size: $text12;
+    background-color: $color-grey-54;
+    border-bottom: 1px solid color($color-grey-54 a(.5));
+    min-height: $size-fine-quadruple;
+    @include MQ(Mplus) {
+        display: flex;
+        background-color: $color-grey-a7;
+        color: $color-grey-54;
+        font-size: $text13;
+        min-height: 1.5rem;
+        border-bottom: 1px solid $color-grey-54;
+        border-top: 1px solid $color-grey-33;
+    }
+    /* However, even on mobile, if the SubHeader Wrapper is in section 1, we want to see it */
+    .ip-Classification_Header-1 &amp; {
+        display: flex;
+    }
+}
+</code></pre>
+
+<p>ポジティブな点:</p>
+
+<ul>
+<li>冗長で何にも依存していない</li>
+<li>一般的にとらわれないコンテキスト（それが置かれている場所のサイズのコンテキストに保存）であるが、このコンポーネントに影響を与える任意のメディアクエリーは、中括弧のこの単一のセット内で定義されている。</li>
+<li>名前空間のモジュールは一度しか書かれていない。変更したければそこを見ればいい。</li>
+<li>ネスト内でオーバーライドを行えば、優先度が正しく動いて適切にふるまう。</li>
+</ul>
+
+<h3 id="ディレクトリ構造">■ ディレクトリ構造</h3>
+
+<p>こうよりも、</p>
+
+<pre><code>html/
+- shopping-cart-template.html
+- callouts-template.html
+- products-template.html
+
+js/
+- shopping-cart-template.js
+- callouts-template.js
+- products-template.js
+
+css/
+- shopping-cart-template.css
+- callouts-template.css
+- products-template.css
+</code></pre>
+
+<p>こうがいい。</p>
+
+<pre><code>shopping-cart-template/
+- shopping-cart.html
+- shopping-cart.css
+- shopping-cart.js
+
+callouts-template/
+- callouts.html
+- callouts.js
+- callouts.css
+
+products-template/
+- products.html
+- products.js
+- products.css
+</code></pre>
+
+<p>グローバルCSSだけは例外。</p>
+
+<h3 id="ecssでのね-m-ing">ECSSでのね～m，ing</h3>
+
+<p>BEMの恩恵を感じたうえで、名前空間を使えばより確かに、他への影響の可能性を減らせる。</p>
+
+<p>&ldquo;mini cart&rdquo;ビューの&rdquo;ShoppingCart&rdquo;ファイルならば、</p>
+
+<ul>
+<li><code>mc-ShoppingCart_Title</code></li>
+<li><code>mc-ShoppingCart_RemoveBtn</code></li>
+</ul>
+
+<p>などとなる。</p>
+
+<ul>
+<li>namespace: すべてのセレクタに必要。小文字。</li>
+<li>ModuleOrComponent: アッパーキャメル。ハイフンでつなぐ。</li>
+<li>ChildNode: 任意。アッパーキャメル。アンダースコアでつなぐ。</li>
+<li>varient: 任意。小文字のトレインケース</li>
+</ul>
+
+<h3 id="ステートについて">■ ステートについて</h3>
+
+<p><a href="https://www.w3.org/TR/wai-aria/">WAI-ARIA</a>を用いる。</p>
+
+<pre><code>.co-Button {
+    background-color: $color-button-passive;
+    &amp;[aria-selected=&quot;true&quot;] {
+        background-color: $color-button-selected;
+    }
+}
+</code></pre>
+
+<h3 id="10個の戒律">■ 10個の戒律</h3>
+
+<p>詳細は<a href="http://ecss.io/chapter8.html">こちら</a>。</p>
+
+<ul>
+<li>single source of truthであること</li>
+<li>ネストしてはならない</li>
+<li>IDセレクタを使ってはならない</li>
+<li>ベンダープレフィックスを使ってはならない</li>
+<li>サイズ/色/z-indexには変数を用いること</li>
+<li>常にモバイルファースで書くこと</li>
+<li>(@extend)を避け、mixinを使うこと</li>
+<li>マジックナンバーやブラウザハックに対してコメントを書くこと</li>
+<li>画像をinlineにしないこと</li>
+<li>複雑なCSSを書かないこと</li>
+</ul>
+
+<hr>
+
+<p>感想。思想はすごくいいんだけど制限が多すぎるように感じた。<br />
+BEMをリスペクトしながらモディファイヤの部分に共感できないようだった。
+そこはすごく理解できたんだけど、その他の成約を加えすぎていると思う。</p>
+
                 </section>
             </article>
             <footer id="post-meta" class="clearfix">
@@ -61,7 +299,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0729_ECSS%2f - 0729_ECSS by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0729_ECSS%2f - %e3%80%90CSS%e3%80%91ECSS%e3%81%be%e3%81%a8%e3%82%81 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -82,7 +320,7 @@
     
         
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0729_ECSS/">0729_ECSS<aside class="dates">Jul 28</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/0729_ECSS/">【CSS】ECSSまとめ<aside class="dates">Jul 28</aside></a>
         </li>
         
    
