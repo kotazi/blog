@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.16" />
-		<title>ファイルやディレクトリの削除にはrimrafを使う &middot; kotazi.com</title>
+		<title>Atomic Design覚書 &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -41,27 +41,57 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>ファイルやディレクトリの削除にはrimrafを使う</h1>
+                    <h1>Atomic Design覚書</h1>
                     <h2 class="headline">
-                    March 9, 2016 
+                    August 1, 2016 
                     <br>
-                    
-                    
-                        
-                            <a href="http://kotazi.github.io/blog/tags/rimraf">rimraf</a>
-                        
-                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p><a href="https://github.com/isaacs/rimraf">isaacs/rimraf</a></p>
+                    
+
+<p><a href="http://atomicdesign.bradfrost.com/">Atomic Design</a>について少し学んだので覚えているうちにメモにまとめよう。</p>
+
+<h2 id="atomic-design">Atomic Design</h2>
+
+<p>Atomic Designは性質の異なる5つのステージによって構成される方法論である。
+これらのステージはよく考えられたインターフェイスデザインシステムを作り出す。</p>
+
+<h3 id="atoms-原子">Atoms(原子)</h3>
+
+<p>原子が物質の基本的な構成要素であるならば、ユーザーインターフェイスを構成する基本的な要素である。
+それゆえラベルやインプット、ボタンなどのそれ以上分解できない基本的なHTMLタグなどが含まれる。</p>
+
+<p>それに加えて、フォントスタックやカラーパレット、またはアニメーションなどの抽象的な要素も含まれる。</p>
+
+<h3 id="molecules-分子">Molecules(分子)</h3>
+
+<p>比較的シンプルな単一機能のUI要素。
+例えば、フォーム用のラベルと、検索用インプットと、それようのサーチボタンなど。</p>
+
+<h3 id="organisms-有機体">Organisms(有機体)</h3>
+
+<p>比較的複雑なUIコンポーネントであり、分子や原子などが合わさったり合わさらなかったりして構成される。</p>
+
+<h3 id="templates">Templates</h3>
+
+<p>ページレベルのオブジェクトであり、コンポーネントをレイアウトに配置し、設計の基礎となるコンテンツの構造を明確にする。<br />
+ワイヤーフレームのような印象。</p>
+
+<h3 id="pages">Pages</h3>
+
+<p>ページは特有のテンプレートのインスタンスであり、リアルなコンテンツでプレースホルダーを置き換える。</p>
 
 <hr>
 
-<p>コールバッグも使える。</p>
+<p>良いけどうまくまとめられん。</p>
 
-<p><code>rm -rf</code>の代わりぐらいに使おうかな。</p>
+<p>思想は良いけど、実際のワークフローにどのように組み込むかが大切で、
+しっかりそれについても書いてくれているんだけれども、
+今のチームの既存のデザインワークフローを知らないのでなんとも言えない。</p>
+
+<p>また機が来たら向き合おう。</p>
 
                 </section>
             </article>
@@ -74,7 +104,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0310_rimraf%2f - %e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%84%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%81%ae%e5%89%8a%e9%99%a4%e3%81%ab%e3%81%afrimraf%e3%82%92%e4%bd%bf%e3%81%86 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0801_atomic_design%2f - Atomic%20Design%e8%a6%9a%e6%9b%b8 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
