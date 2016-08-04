@@ -1,0 +1,278 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.16" />
+		<title>【Go】Go Bookshelf App: Cloud Storage &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【Go】Go Bookshelf App: Cloud Storage</h1>
+                    <h2 class="headline">
+                    August 4, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/go">Go</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/gcp">GCP</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>続いて、<a href="https://cloud.google.com/go/getting-started/using-cloud-storage">&ldquo;Using Cloud Storage with Go&rdquo;</a>。</p>
+
+<h3 id="cloud-storageの作成">Cloud Storageの作成</h3>
+
+<p>下記コマンドでCloud Storageを作成する。<br />
+実はどんな名前でもいいんだけど、ProjectIDに合わせておくのがよい。</p>
+
+<pre><code>❯❯❯ gsutil mb gs://*****-***-kotazi                                            
+Creating gs://*****-***-kotazi/...
+~/R/blog ❯❯❯ gsutil defacl set public-read gs://*****-***-kotazi
+Setting default object ACL on gs://*****-***-kotazi/...
+</code></pre>
+
+<h3 id="configuring-settings">Configuring settings</h3>
+
+<p>プロジェクトルートへ移動して<code>config.go</code>を開く。</p>
+
+<pre><code>cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+</code></pre>
+
+<p>下記部分のコメントを消して、バケット名に書き換える。</p>
+
+<pre><code>// StorageBucket, err = configureStorage(&quot;&lt;your-storage-bucket&gt;&quot;)
+</code></pre>
+
+<p>ローカル立ち上げやデプロイの方法はさっきと同じ。</p>
+
+<p><img src="https://cloud.google.com/go/images/go-binary-data.png" alt="" /></p>
+
+<p>今回で言うと本棚の画像をCloud Storage側におけるようになる。そのためのコードが下記。</p>
+
+<p><code>getting-started/bookshelf/app/app.go</code>の<code>uploadFileFromForm</code>関数。
+この関数の中で画像があるかないかをチェックした折、あればCloud Storageにアップロードする。</p>
+
+<pre><code>// uploadFileFromForm uploads a file if it's present in the &quot;image&quot; form field.
+func uploadFileFromForm(r *http.Request) (url string, err error) {
+        f, fh, err := r.FormFile(&quot;image&quot;)
+        if err == http.ErrMissingFile {
+                return &quot;&quot;, nil
+        }
+        if err != nil {
+                return &quot;&quot;, err
+        }
+
+        if bookshelf.StorageBucket == nil {
+                return &quot;&quot;, errors.New(&quot;storage bucket is missing - check config.go&quot;)
+        }
+
+        // random filename, retaining existing extension.
+        name := uuid.NewV4().String() + path.Ext(fh.Filename)
+
+        ctx := context.Background()
+        w := bookshelf.StorageBucket.Object(name).NewWriter(ctx)
+        w.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
+        w.ContentType = fh.Header.Get(&quot;Content-Type&quot;)
+
+        // Entries are immutable, be aggressive about caching (1 day).
+        w.CacheControl = &quot;public, max-age=86400&quot;
+
+        if _, err := io.Copy(w, f); err != nil {
+                return &quot;&quot;, err
+        }
+        if err := w.Close(); err != nil {
+                return &quot;&quot;, err
+        }
+
+        const publicURL = &quot;https://storage.googleapis.com/%s/%s&quot;
+        return fmt.Sprintf(publicURL, bookshelf.StorageBucketName, name), nil
+}
+</code></pre>
+
+<p><code>uploadFileFromForm</code>の呼び出しは<code>app.go</code>の<code>bookFromForm</code></p>
+
+<pre><code>// bookFromForm populates the fields of a Book from form values
+// (see templates/edit.html).
+func bookFromForm(r *http.Request) (*bookshelf.Book, error) {
+        imageURL, err := uploadFileFromForm(r)
+        if err != nil {
+                return nil, fmt.Errorf(&quot;could not upload file: %v&quot;, err)
+        }
+        if imageURL == &quot;&quot; {
+                imageURL = r.FormValue(&quot;imageURL&quot;)
+        }
+
+        book := &amp;bookshelf.Book{
+                Title:         r.FormValue(&quot;title&quot;),
+                Author:        r.FormValue(&quot;author&quot;),
+                PublishedDate: r.FormValue(&quot;publishedDate&quot;),
+                ImageURL:      imageURL,
+                Description:   r.FormValue(&quot;description&quot;),
+                CreatedBy:     r.FormValue(&quot;createdBy&quot;),
+                CreatedByID:   r.FormValue(&quot;createdByID&quot;),
+        }
+</code></pre>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0804_go_cloud_strage%2f - %e3%80%90Go%e3%80%91Go%20Bookshelf%20App%3a%20Cloud%20Storage by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/">【Go】Go Bookshelf App: Cloud Storage<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0803_go_nosql/">【Go】Go Bookshelf App: Datastore<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/">0809_go_pub_sub<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0802_go_bookshelf/">【Go】Go Bookshelf App: 概要<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0801_atomic_design/">Atomic Design覚書<aside class="dates">Aug 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0701_innovation/">【読書】イノベーションへの解<aside class="dates">Jul 30</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0729_ECSS/">【CSS】ECSSまとめ<aside class="dates">Jul 28</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0727_placeholder_android/">【CSS】Android標準ブラウザにおけるPlaceholderのズレ<aside class="dates">Jul 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0710_chiki/">【読書】自分のアタマで考えよう<aside class="dates">Jul 10</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2016 kotazi
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

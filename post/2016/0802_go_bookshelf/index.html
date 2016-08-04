@@ -1,0 +1,259 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.16" />
+		<title>【Go】Go Bookshelf App: 概要 &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【Go】Go Bookshelf App: 概要</h1>
+                    <h2 class="headline">
+                    August 2, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/go">Go</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/gcp">GCP</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>GCPのGoのチュートリアルの概要。</p>
+
+<ul>
+<li><a href="https://cloud.google.com/go/getting-started/tutorial-app">Go Bookshelf App</a></li>
+</ul>
+
+<hr>
+
+<h5 id="機能">機能:</h5>
+
+<ul>
+<li>リストの閲覧、追加、削除</li>
+<li>詳細の編集</li>
+<li>カバー画像のアップロード</li>
+<li>Googleアカウントでのログインと、追加した本の確認</li>
+</ul>
+
+<h5 id="目標">目標:</h5>
+
+<ul>
+<li>サンプルアプリケーションのクローン</li>
+<li>ローカルでの起動</li>
+<li>GAE環境へのデプロイ</li>
+<li>サンプルコードを読む</li>
+<li>データ構造のストアについて</li>
+<li>Google Cloud Storeでのバイナリデータのストアについて</li>
+<li>ユーザー認証について</li>
+<li>GCP Consoleで確認するイベントログについて</li>
+<li>バックグラウンドワーカーにタスクを送るGoogle Cloud Pub/Subの使い方</li>
+</ul>
+
+<h5 id="手順">手順:</h5>
+
+<p><a href="https://console.cloud.google.com/project?_ga=1.189765870.459013261.1468980200">ここ</a>からGCP Console Projectを選択/生成する。
+<a href="https://support.google.com/cloud/answer/6293499#enable-billing">ここ</a>を見て課金を有効にする。
+さらに、<a href="https://cloud.google.com/sdk/docs/">Cloud SDK</a>のインストール。</p>
+
+<p>それができたら、下記コマンドで<code>gcloud</code>認証</p>
+
+<pre><code>gcloud init
+</code></pre>
+
+<p>成功すると<a href="https://cloud.google.com/sdk/auth_success">ここ</a>へ飛ぶ。(gcloudのチュートリアルあるから読んでみてみいいかも。)</p>
+
+<p><a href="https://console.cloud.google.com/flows/enableapi?apiid=datastore.googleapis.com,datastore,pubsub,storage_api,logging,plus&amp;_ga=1.180912098.459013261.1468980200">ここ</a>からDatastore、Cloud Pub/Sub, Cloud Storage JSON, Cloud Logging, Google+ APIsを利用できるようにする</p>
+
+<p>続いて、アカウントを確認</p>
+
+<pre><code>~/R/s/gcp ❯❯❯ gcloud config list
+Your active configuration is: [default]
+
+[core]
+account = kotazi@*****.com
+disable_usage_reporting = False
+project = ********
+</code></pre>
+
+<p>必要に応じて、自分で設定もできる</p>
+
+<pre><code>gcloud config set project [YOUR_PROJECT_ID]
+</code></pre>
+
+<p>サンプルリポジトリのクローンします。</p>
+
+<pre><code>go get -u -d github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf/app
+</code></pre>
+
+<p><code>aedeploy</code>コマンドをインストールする</p>
+
+<pre><code>go get -u google.golang.org/appengine/cmd/aedeploy
+</code></pre>
+
+<p>以上で準備が完了。</p>
+
+<p>ここからGoogle Cloud Platformのさまざまな機能を試していく。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0802_go_bookshelf%2f - %e3%80%90Go%e3%80%91Go%20Bookshelf%20App%3a%20%e6%a6%82%e8%a6%81 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/">【Go】Go Bookshelf App: Cloud Storage<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0803_go_nosql/">【Go】Go Bookshelf App: Datastore<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/">0809_go_pub_sub<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0802_go_bookshelf/">【Go】Go Bookshelf App: 概要<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0801_atomic_design/">Atomic Design覚書<aside class="dates">Aug 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0701_innovation/">【読書】イノベーションへの解<aside class="dates">Jul 30</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0729_ECSS/">【CSS】ECSSまとめ<aside class="dates">Jul 28</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0727_placeholder_android/">【CSS】Android標準ブラウザにおけるPlaceholderのズレ<aside class="dates">Jul 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0710_chiki/">【読書】自分のアタマで考えよう<aside class="dates">Jul 10</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2016 kotazi
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

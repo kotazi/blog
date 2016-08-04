@@ -6,8 +6,339 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Aug 2016 13:38:10 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 04 Aug 2016 13:38:10 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Go】Go Bookshelf App: Cloud Storage</title>
+      <link>http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/</link>
+      <pubDate>Thu, 04 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/</guid>
+      <description>
+
+&lt;p&gt;続いて、&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-cloud-storage&#34;&gt;&amp;ldquo;Using Cloud Storage with Go&amp;rdquo;&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;cloud-storageの作成&#34;&gt;Cloud Storageの作成&lt;/h3&gt;
+
+&lt;p&gt;下記コマンドでCloud Storageを作成する。&lt;br /&gt;
+実はどんな名前でもいいんだけど、ProjectIDに合わせておくのがよい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;❯❯❯ gsutil mb gs://*****-***-kotazi                                            
+Creating gs://*****-***-kotazi/...
+~/R/blog ❯❯❯ gsutil defacl set public-read gs://*****-***-kotazi
+Setting default object ACL on gs://*****-***-kotazi/...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;configuring-settings&#34;&gt;Configuring settings&lt;/h3&gt;
+
+&lt;p&gt;プロジェクトルートへ移動して&lt;code&gt;config.go&lt;/code&gt;を開く。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下記部分のコメントを消して、バケット名に書き換える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// StorageBucket, err = configureStorage(&amp;quot;&amp;lt;your-storage-bucket&amp;gt;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ローカル立ち上げやデプロイの方法はさっきと同じ。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-binary-data.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;今回で言うと本棚の画像をCloud Storage側におけるようになる。そのためのコードが下記。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;getting-started/bookshelf/app/app.go&lt;/code&gt;の&lt;code&gt;uploadFileFromForm&lt;/code&gt;関数。
+この関数の中で画像があるかないかをチェックした折、あればCloud Storageにアップロードする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// uploadFileFromForm uploads a file if it&#39;s present in the &amp;quot;image&amp;quot; form field.
+func uploadFileFromForm(r *http.Request) (url string, err error) {
+        f, fh, err := r.FormFile(&amp;quot;image&amp;quot;)
+        if err == http.ErrMissingFile {
+                return &amp;quot;&amp;quot;, nil
+        }
+        if err != nil {
+                return &amp;quot;&amp;quot;, err
+        }
+
+        if bookshelf.StorageBucket == nil {
+                return &amp;quot;&amp;quot;, errors.New(&amp;quot;storage bucket is missing - check config.go&amp;quot;)
+        }
+
+        // random filename, retaining existing extension.
+        name := uuid.NewV4().String() + path.Ext(fh.Filename)
+
+        ctx := context.Background()
+        w := bookshelf.StorageBucket.Object(name).NewWriter(ctx)
+        w.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
+        w.ContentType = fh.Header.Get(&amp;quot;Content-Type&amp;quot;)
+
+        // Entries are immutable, be aggressive about caching (1 day).
+        w.CacheControl = &amp;quot;public, max-age=86400&amp;quot;
+
+        if _, err := io.Copy(w, f); err != nil {
+                return &amp;quot;&amp;quot;, err
+        }
+        if err := w.Close(); err != nil {
+                return &amp;quot;&amp;quot;, err
+        }
+
+        const publicURL = &amp;quot;https://storage.googleapis.com/%s/%s&amp;quot;
+        return fmt.Sprintf(publicURL, bookshelf.StorageBucketName, name), nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;uploadFileFromForm&lt;/code&gt;の呼び出しは&lt;code&gt;app.go&lt;/code&gt;の&lt;code&gt;bookFromForm&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// bookFromForm populates the fields of a Book from form values
+// (see templates/edit.html).
+func bookFromForm(r *http.Request) (*bookshelf.Book, error) {
+        imageURL, err := uploadFileFromForm(r)
+        if err != nil {
+                return nil, fmt.Errorf(&amp;quot;could not upload file: %v&amp;quot;, err)
+        }
+        if imageURL == &amp;quot;&amp;quot; {
+                imageURL = r.FormValue(&amp;quot;imageURL&amp;quot;)
+        }
+
+        book := &amp;amp;bookshelf.Book{
+                Title:         r.FormValue(&amp;quot;title&amp;quot;),
+                Author:        r.FormValue(&amp;quot;author&amp;quot;),
+                PublishedDate: r.FormValue(&amp;quot;publishedDate&amp;quot;),
+                ImageURL:      imageURL,
+                Description:   r.FormValue(&amp;quot;description&amp;quot;),
+                CreatedBy:     r.FormValue(&amp;quot;createdBy&amp;quot;),
+                CreatedByID:   r.FormValue(&amp;quot;createdByID&amp;quot;),
+        }
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Go】Go Bookshelf App: Datastore</title>
+      <link>http://kotazi.github.io/blog/post/2016/0803_go_nosql/</link>
+      <pubDate>Wed, 03 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0803_go_nosql/</guid>
+      <description>
+
+&lt;p&gt;GCPのGoのチュートリアルの概要。&lt;br /&gt;
+とりあえずDatastoreでやってみることに。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-structured-data&#34;&gt;Using Structured Data with Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;先ほどクローンしたコードの編集を加える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config.go&lt;/code&gt;を開き、下記部分のコメントを消して、自分のプロジェクトIDに置き換える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// DB, err = configureDatastoreDB(&amp;quot;projectid&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ローカルマシンで起動&#34;&gt;ローカルマシンで起動&lt;/h3&gt;
+
+&lt;p&gt;下記コマンドでローカルマシンを立ち上げる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;cd app
+go run app.go auth.go template.go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アプリケーションの動作を確認できる。&lt;/p&gt;
+
+&lt;h3 id=&#34;デプロイする&#34;&gt;デプロイする&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;app&lt;/code&gt;ディレクトリ内で下記のコマンド。&lt;code&gt;https://[YOUR_PROJECT_ID].appspot.com&lt;/code&gt;でアクセス可能。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aedeploy gcloud app deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アプリを更新する場合、同じコマンドをを使えばバージョンを更新できる。
+新しくデプロイすると新しいバージョンが作られる。&lt;/p&gt;
+
+&lt;p&gt;古いバージョンも残り続けるので課金対象にしたくなければ削除するのがいい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/appengine/versions&#34;&gt;バージョンページ&lt;/a&gt;から削除できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-datastore.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;getting-started/bookshelf/db_datastore.go&lt;/code&gt;の&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// AddBook saves a given book, assigning it a new ID.
+func (db *datastoreDB) AddBook(b *Book) (id int64, err error) {
+        ctx := context.Background()
+        k := datastore.NewIncompleteKey(ctx, &amp;quot;Book&amp;quot;, nil)
+        k, err = db.client.Put(ctx, k, b)
+        if err != nil {
+                return 0, fmt.Errorf(&amp;quot;datastoredb: could not put Book: %v&amp;quot;, err)
+        }
+        return k.ID(), nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この辺りがDatastoreに保存する処理。&lt;/p&gt;
+
+&lt;p&gt;ちなみに&lt;code&gt;:=&lt;/code&gt;は変数宣言と代入を行っている。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>0809_go_pub_sub</title>
+      <link>http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/</link>
+      <pubDate>Tue, 02 Aug 2016 17:41:51 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-pub-sub&#34;&gt;Using Cloud Pub/Sub with Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/books/&#34;&gt;Google Book API&lt;/a&gt;を使ってバックグラウンドワーカーに処理をさせる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;前回同様、&lt;code&gt;config.go&lt;/code&gt;から下記部分のコメントを削除し、ProjectIDを書き換える。&lt;/p&gt;
+
+&lt;p&gt;ローカルホストを立ち上げた状態で下記のコマンドでバックグラウンドワーカーが動く。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+cd pubsub_worker
+PORT=8081 go run worker.go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;http://localhost:8081/&lt;/code&gt;でワーカーインスタンスに立直できる。
+処理した本の数についてのステータスが確認できる。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj24JXT3jO1BGJQHmgGX0QAoHCxcg56AdDIB/image.png&#34; alt=&#34;Pasted%20Image%208/3/16,%2011:14&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;↑ 「イノベーションのジレンマ」とタイトルをいれると勝手に入る&lt;/p&gt;
+
+&lt;h3 id=&#34;デプロイする&#34;&gt;デプロイする&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+
+# Deploy the worker
+cd pubsub_worker
+aedeploy gcloud app deploy
+
+# Deploy the main app
+cd ../app
+aedeploy gcloud app deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下記がアクセス先になる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://[YOUR_PROJECT_ID].appspot.com
+https://worker-dot-[YOUR_PROJECT_ID].appspot.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-pub-sub.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;データベース内で本が更新されるとCloud Pub/Subが走る。
+ワーカーは分離して稼働していて、これらのイベントをリッスンしている。
+イベントを受け取るとワーカーkはBooksAPIにリクエストを作成し、データベースの本の記録を更新する。&lt;/p&gt;
+
+&lt;p&gt;以上。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Go】Go Bookshelf App: 概要</title>
+      <link>http://kotazi.github.io/blog/post/2016/0802_go_bookshelf/</link>
+      <pubDate>Tue, 02 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0802_go_bookshelf/</guid>
+      <description>
+
+&lt;p&gt;GCPのGoのチュートリアルの概要。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/tutorial-app&#34;&gt;Go Bookshelf App&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id=&#34;機能&#34;&gt;機能:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;リストの閲覧、追加、削除&lt;/li&gt;
+&lt;li&gt;詳細の編集&lt;/li&gt;
+&lt;li&gt;カバー画像のアップロード&lt;/li&gt;
+&lt;li&gt;Googleアカウントでのログインと、追加した本の確認&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;目標&#34;&gt;目標:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;サンプルアプリケーションのクローン&lt;/li&gt;
+&lt;li&gt;ローカルでの起動&lt;/li&gt;
+&lt;li&gt;GAE環境へのデプロイ&lt;/li&gt;
+&lt;li&gt;サンプルコードを読む&lt;/li&gt;
+&lt;li&gt;データ構造のストアについて&lt;/li&gt;
+&lt;li&gt;Google Cloud Storeでのバイナリデータのストアについて&lt;/li&gt;
+&lt;li&gt;ユーザー認証について&lt;/li&gt;
+&lt;li&gt;GCP Consoleで確認するイベントログについて&lt;/li&gt;
+&lt;li&gt;バックグラウンドワーカーにタスクを送るGoogle Cloud Pub/Subの使い方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;手順&#34;&gt;手順:&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/project?_ga=1.189765870.459013261.1468980200&#34;&gt;ここ&lt;/a&gt;からGCP Console Projectを選択/生成する。
+&lt;a href=&#34;https://support.google.com/cloud/answer/6293499#enable-billing&#34;&gt;ここ&lt;/a&gt;を見て課金を有効にする。
+さらに、&lt;a href=&#34;https://cloud.google.com/sdk/docs/&#34;&gt;Cloud SDK&lt;/a&gt;のインストール。&lt;/p&gt;
+
+&lt;p&gt;それができたら、下記コマンドで&lt;code&gt;gcloud&lt;/code&gt;認証&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcloud init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;成功すると&lt;a href=&#34;https://cloud.google.com/sdk/auth_success&#34;&gt;ここ&lt;/a&gt;へ飛ぶ。(gcloudのチュートリアルあるから読んでみてみいいかも。)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/flows/enableapi?apiid=datastore.googleapis.com,datastore,pubsub,storage_api,logging,plus&amp;amp;_ga=1.180912098.459013261.1468980200&#34;&gt;ここ&lt;/a&gt;からDatastore、Cloud Pub/Sub, Cloud Storage JSON, Cloud Logging, Google+ APIsを利用できるようにする&lt;/p&gt;
+
+&lt;p&gt;続いて、アカウントを確認&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/R/s/gcp ❯❯❯ gcloud config list
+Your active configuration is: [default]
+
+[core]
+account = kotazi@*****.com
+disable_usage_reporting = False
+project = ********
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;必要に応じて、自分で設定もできる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcloud config set project [YOUR_PROJECT_ID]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;サンプルリポジトリのクローンします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go get -u -d github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf/app
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;aedeploy&lt;/code&gt;コマンドをインストールする&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go get -u google.golang.org/appengine/cmd/aedeploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上で準備が完了。&lt;/p&gt;
+
+&lt;p&gt;ここからGoogle Cloud Platformのさまざまな機能を試していく。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Atomic Design覚書</title>
@@ -894,581 +1225,6 @@ $(exit $?) || (echo &amp;quot;$images&amp;quot; | imageoptim &amp;amp;&amp;amp; 
 そういうことを知った上でGTDを使うのが良いと思う。&lt;/p&gt;
 
 &lt;p&gt;ただプロジェクトという考え方は本当に秀逸。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】キャズム</title>
-      <link>http://kotazi.github.io/blog/post/2016/0617_chasm/</link>
-      <pubDate>Fri, 17 Jun 2016 13:04:27 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0617_chasm/</guid>
-      <description>
-
-&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4798101524/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4798101524&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;キャズム&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4798101524&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-を読みました。&lt;/p&gt;
-
-&lt;p&gt;ジェフリー・ムーアが1991年に発表した本著は現在でもハイテクマーケティングのバイブルと言われている。
-1962年にエベレット・ロジャーズ博士が提唱した「イノベータ理論」。そのベルカーブにキャズムが存在することを発見した。
-なぜキャズムが存在するのか、どうやって乗り越えるのか、落ちた場合はどうするのか。それが書かれているのがこの本である。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;第一章 ハイテク・マーケティング 錯覚&lt;/li&gt;
-&lt;li&gt;第二章 ハイテク・マーケティング 悟り&lt;/li&gt;
-&lt;li&gt;第三章 Dデー&lt;/li&gt;
-&lt;li&gt;第四章 攻略地点の決定&lt;/li&gt;
-&lt;li&gt;第五章 部隊の集結&lt;/li&gt;
-&lt;li&gt;第六章 戦線の見定め&lt;/li&gt;
-&lt;li&gt;第七章 作戦の実行&lt;/li&gt;
-&lt;li&gt;終章 キャズムを越えて&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;序章で少し、マーケティングに対する誤解を持っていたことに気がつく。
-今までマーケティングの業務は、マーケティングのできる人間のみがやるものだと思っていた。
-本書の目的のひとつは、「キャズムを越える際のマーケティングにかかわる意思決定ロジックを明らかにすることである」と書いた後、以下のような文章が続く。&lt;/p&gt;
-
-&lt;p&gt;[引用] それが明確になれば、全社員がマーケティング・プロセスに参画できるようになる。人並み外れた才気よりも慎重さのほうが重要視されると言うのであれば、一人よりも多人数のほうがよい。マーケティングを企業の原動力とするのであれば(多くの企業がそうしようと考えている)、関係者全員がマーケティングの基本方針を知り得るような体制作りが望まれる。時折目にするケースだが、一部の限られた者だけがこのような情報を手にし得る体制にしてはならない。&lt;/p&gt;
-
-&lt;h3 id=&#34;第一章-ハイテク-マーケティング-錯覚&#34;&gt;■ 第一章 ハイテク・マーケティング 錯覚&lt;/h3&gt;
-
-&lt;p&gt;テクノロジー・ライフサイクルとは、新たな製品が市場でどのように受け入れられていくかを理解するためのひとつのモデルである。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;イノベーター(革新者)(テクノロジー・マニア)&lt;/li&gt;
-&lt;li&gt;アーリー・アダプター(先駆者)(ビジョナリー)&lt;/li&gt;
-&lt;li&gt;アーリー・マジョリティ(現実的な購買者)(実利主義社)&lt;/li&gt;
-&lt;li&gt;レイト・マジョリティ(追従者)(保守派)&lt;/li&gt;
-&lt;li&gt;ラガード(無関心層)(懐疑派)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj0jXE-c-EFHZrNwZRzqbx04Ob9rZhpPO2EB/image.png&#34; alt=&#34;Pasted%20Image%206/16/16,%2019:23&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;有名な図。新製品が市場に投入されると、左のイノベーターから徐々にマジョリティ層へ広がっていく。&lt;br /&gt;
-しかし、このベル・カーブの間にはキャズムと呼ばれる溝が存在する。それが下図である。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj0F_vbbjoxKW56cIeXHinNHJ0bjW7Iy2fYB/image.png&#34; alt=&#34;Pasted%20Image%206/16/16,%2019:32&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;第二章-ハイテク-マーケティング-悟り&#34;&gt;■ 第二章 ハイテク・マーケティング 悟り&lt;/h3&gt;
-
-&lt;p&gt;キャズムを乗り越えてメインストリーム市場のチャンスを逃さないためには最適なマーケティングを取らなければならない。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;今がテクノロジー・ライフサイクルのどの段階にあたるのか見極め、&lt;/li&gt;
-&lt;li&gt;その段階における顧客の購買心理をよく理解し、&lt;/li&gt;
-&lt;li&gt;その顧客層に合ったマーケティング戦術を展開すること&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;本書におけるマーケティングの定義は「マーケットを作り出し、成長させ、維持し、外敵から守るための行動をとること」&lt;br /&gt;
-また、マーケットは下記のように定義する。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;実存する製品やサービスに対して、&lt;/li&gt;
-&lt;li&gt;ニーズや欲求を抱えていて、&lt;/li&gt;
-&lt;li&gt;購買を決定する際に先行事例について知りたがる、&lt;/li&gt;
-&lt;li&gt;既存の、あるいは将来的に見込まれる顧客&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;初期市場の構造&#34;&gt;初期市場の構造&lt;/h4&gt;
-
-&lt;p&gt;初期市場が形成されるためには3つの要素がかかせない。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;将来誰もが必要とするであろうアプリケーションを実現可能にする斬新なテクノロジー&lt;/li&gt;
-&lt;li&gt;そのテクノロジーを評価して、それが現在市場に出回っているものよりも優れていることを検証するテクノロジー・マニア&lt;/li&gt;
-&lt;li&gt;そのテクノロジーを使って現在の業務を飛躍的に進歩させようと考える、資金力のあるビジョナリー&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;第三章-dデー&#34;&gt;■ 第三章 Dデー&lt;/h3&gt;
-
-&lt;p&gt;キャズムに落ち込んだら一刻も早くそこから抜けださなければならない。そこに顧客はいない。&lt;/p&gt;
-
-&lt;p&gt;初期市場で複数のビジョナリーから順調に受注したとしても、このときにはまだ、メインストリーム市場の実利主義者がこぞって製品を購入するような状況になっていない。そのため、収益を得る市場は他にはない。初期市場で改善されたキャッシュフローは瞬く間に悪化を始める。&lt;/p&gt;
-
-&lt;p&gt;初期市場だけでサービスを提供し続けても、安定的な収益が得られるわけではない。他のビジョナリーから受注できるチャンスはあるかもしれないが、ビジョナリーは独自の夢を描いているため、必然的に独自のカスタマイズを要求されることになる。多忙な開発チームにさらなる負担をかけることになる。さらに、初期市場には新たな競合が現れてくるため、早い段階でメインストリーム市場への足場を築かなければならない。&lt;/p&gt;
-
-&lt;p&gt;ではどうやってメインストリーム市場を攻略するか。&lt;br /&gt;
-結論から言えば、&lt;strong&gt;まず支配できそうなニッチ市場をターゲットとし、そこからライバルを追い払い、そこを起点としてさらに戦線を拡大する。これがキャズムを越える方法。肝心なのは、十分に絞り込んだ敵に対して、こちらの最強の兵力を投入すること。&lt;/strong&gt; である。&lt;/p&gt;
-
-&lt;p&gt;絞り込みが効果的に行われるほど、そのマーケットセグメントに向けて発信するメッセージは作成が容易になり、口コミで早く伝わる。&lt;br /&gt;
-設立されたばかりのベンダー、あるいは限られた資源でマーケティング活動を展開しているベンダーは、マーケットを絞り込むことによって自社の競争力を高める必要がある。そうしないと、熱きマーケティング・メッセージはあっという間に雲散霧消し、口コミによる連鎖反応は怒らず、営業部隊は相変わらずだれも知らない製品を売る努力を続けることになる。&lt;/p&gt;
-
-&lt;h4 id=&#34;火を起こす方法&#34;&gt;火を起こす方法&lt;/h4&gt;
-
-&lt;p&gt;ハイテク経営者は市場を選ぶ段階になると、ほとんどがニッチ市場を避ける。&lt;br /&gt;
-ここで協調したいことは、&lt;strong&gt;もしもキャズムを越えられなかったとしたら、その原因は越え方を知らなかったからではなく、越えようという意志が弱かった&lt;/strong&gt; のだ。マーケットをセグメンテーションすることの必要性とその効用は既に説かれている。(セオドア・レビットだと思う)&lt;br /&gt;
-つまりニッチ市場の重要性を知りながら、販売は重視し、それを選択しないということは、マーケットの育成には関与しないという意思表示である。販売を続けていればいつかマーケットがついてくるかというと、それはあり得ない。&lt;/p&gt;
-
-&lt;p&gt;[引用] ひとことで言うなら、キャズムの時期に販売重視の戦略を立てるのは致命的である。その理由はこうだ、。これからメインストリーム市場に進出しようとする企業が目指すのは、何よりも先ず、メインストリーム市場での橋頭堡を確保することである。つまり、&lt;strong&gt;先行事例となる実利主義社の顧客を獲得し、そこを起点としてメインストリーム市場の他の顧客を攻略するのだ。&lt;/strong&gt; この先行事例を打ち立てるためには、メインストリーム市場における当初の顧客の購入目的が完全にじつげんされるように、ベンダーは万全の体制で臨まなければならない。そのためには、ベンダーは単に自社が販売している製品だけでなく、ホールプロダクトを顧客に提示しなければならない。ホールプロダクトとは、後で詳しく見ていくが、顧客の目的を達成するために必要とされる一連の製品やサービスのことである。ここで必要なものがひとつでも欠けていたらソリューションとしては機能せず、そのため、顧客に約束したことも実現されず、先行事例の確保に失敗する結果となる。よって先行事例を何としても確保するためーーそれがキャズムを越えるときの主目標でもあるのだがーー &lt;strong&gt;顧客にホールプロダクトを提供することを確約しなければならない。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;だから唯一の戦略は「小さな池で大きな魚になる」というアプローチになる。実利主義者はマーケットリーダーからしか買わない。&lt;br /&gt;
-そしてニッチ市場を乗り越え次の段階に進む上で必要になるのが、次にターゲットとするマーケットセグメントを戦略的に選ぶこと。
-一番ピンを倒したらそこを橋頭堡として次のニッチ市場を選択する。一番ピンの大きさは重要ではなく、解決されるべき問題の経済価値が重要になる。(問題が深刻なほどニッチ市場がベンダーをキャズムから引き上げてくれる)&lt;br /&gt;
-そして、二番目以降のニッチ市場は最初にニッチ市場でのソリューションを活用できるような市場を念頭に置くこと。&lt;/p&gt;
-
-&lt;h3 id=&#34;第四章-攻略地点の決定&#34;&gt;■ 第四章 攻略地点の決定&lt;/h3&gt;
-
-&lt;p&gt;「どこへ行こうとしているのかがわかっていなければ、おそらく目的地にはたどり着かない」&lt;/p&gt;
-
-&lt;p&gt;上記にも書いたが、キャズム越える時の最大の原則は &lt;strong&gt;特定のニッチ市場を攻略地点として設定し、持てる勢力を総動員してそのニッチ市場を支配すること&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;シナリオを考えながら戦略を立てるのもいい。&lt;/p&gt;
-
-&lt;h5 id=&#34;１-ヘッダー情報&#34;&gt;１. ヘッダー情報&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;エンドユーザー: 製品を実際に使う人&lt;/li&gt;
-&lt;li&gt;エコノミックバイヤー: 製品の経済性を評価する人&lt;/li&gt;
-&lt;li&gt;テクニカルバイヤー: 製品の革新性を評価する人&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;２-エンドユーザーが抱えている問題を考える&#34;&gt;２. エンドユーザーが抱えている問題を考える&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;現状認識: エンドユーザーが抱えている問題をしっかり把握する&lt;/li&gt;
-&lt;li&gt;臨まれている結果: エンドユーザーが手に入れたいものは？なぜ必要なの？&lt;/li&gt;
-&lt;li&gt;試みたこと: 以前にエンドユーザーはどのようにして問題解決を試みたのか？&lt;/li&gt;
-&lt;li&gt;阻害要因: そのときに何がうまくいかなかったのか？なぜ？&lt;/li&gt;
-&lt;li&gt;経済的影響: 結果は？うまく問題解決ができず、どのような影響が出ている？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;３-新しいテクノロジーの適用後&#34;&gt;３. 新しいテクノロジーの適用後&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;新たな試み: 新しいテクノロジー製品を使い、エンドユーザーはどのように問題を解決しようとしたか？&lt;/li&gt;
-&lt;li&gt;支援材料: 新しい製品のどこがよかった？問題を解決できた理由は？&lt;/li&gt;
-&lt;li&gt;経済効果: 削減できた経費はどれがよかった？また得られた便益は？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;キャズムを越えようとしている時にターゲットとすべきマーケットセグメントの規模目安は、&lt;strong&gt;次年度に計画している年間売上と同規模のもの&lt;/strong&gt;(なぜなら市場を支配するから)。&lt;/p&gt;
-
-&lt;h3 id=&#34;第五章-部隊の集結&#34;&gt;■ 第五章 部隊の集結&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;ベンダーが顧客に説明する製品の機能、つまり価値命題と、製品が実際に発揮する機能の間には差がある。その差を埋めるために、本来の製品に各種のサービスや補助的な製品を付け加えて、ホールプロダクトを作り出すのである。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;コアプロダクト: 実際に出荷される製品であり、契約書に記載されている機能を発揮する&lt;/li&gt;
-&lt;li&gt;期待プロダクト: 顧客が前期のコアプロダクトを購入するときに、「こうであるはずだ」と考える製品&lt;/li&gt;
-&lt;li&gt;拡張プロダクト: 数多くの付属品をつけてコアプロダクトの機能を拡張したもの、顧客の購入目的を最大限満たす&lt;/li&gt;
-&lt;li&gt;理想プロダクト: さらに補助や機能強化が施され、顧客に提供される機能の理論上限を表す&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj2Cp-EVjYdKcaPe5vebjy-TzCfBH90NBO0B/image.png&#34; alt=&#34;Pasted%20Image%206/16/16,%2020:44&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;テクノロジー・マニアはコアプロダクトのみでも購入するが、メインストリーム市場はそれでは通用しない。&lt;br /&gt;
-結局、ホールプロダクトを制するものが戦いを制する。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;顧客のプロジェクトの成功に向けて積極的に努力をせず、ただ顧客の成功を祈っているだけならば、そのメーカーは自分自身の成功をも神頼みしていることに等しい。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;第六章-戦線の見定め&#34;&gt;第六章 戦線の見定め&lt;/h3&gt;
-
-&lt;p&gt;競争相手は誰なのか、競争相手を駆逐するためにはどうすればよいかを理解する。&lt;/p&gt;
-
-&lt;p&gt;顧客は一体何を必要としているのだろう？キャズムを越えるためにベンダーが必死で自社製品を売り込んでいるとき、顧客が知りたいと思っているのは、&lt;strong&gt;実は競合製品について&lt;/strong&gt; である。しかし、ベンダーがビジョナリーと協力して新たな製品分野を開拓したばかりならば、競合製品が存在するべくもない。(少なくとも実利主義者がみとめるような競合製品は)そのようなときは競争を作り出す。&lt;/p&gt;
-
-&lt;p&gt;競争がないところには市場もない。&lt;strong&gt;実利主義者は複数の製品を比較するまで購入の決定を下さない。&lt;/strong&gt; したがって、競争相手の存在が必須のものとなる。初期市場では競争相手の存在は必須ではなかったが、メインストリーム市場ではそうはいかない。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj3CmYcJdEhLG7lpAJJth5z2bhmeWvzCankB/image.png&#34; alt=&#34;Pasted%20Image%206/16/16,%2021:35&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ハイテクマーケティングでは、テクノロジー/製品/市場/企業の4つの価値領域が存在する。テクノロジーライフサイクルに合わせた価値を移行していく。
-そしてつまり、キャズムを越えるというのは、「製品中心」とする価値観から「市場」を中心とする価値観に移行すること。&lt;/p&gt;
-
-&lt;h4 id=&#34;ポジショニング&#34;&gt;ポジショニング&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ポジショニングというのは、企業あるいは製品のあるがままの特質を表すものであり、「そうであればよい」「その方向に持っていきたい」といった属性を表すものではない&lt;/li&gt;
-&lt;li&gt;ポジショニングは、購入に関する顧客の決断にもっとも大きな影響を与える要素。顧客はポジショニングをもとに製品を評価し購入の決断を下す。&lt;/li&gt;
-&lt;li&gt;ポジショニングは、企業や製品に対して人々が抱いている観念に根ざすものであり、ベンダーが選んだ言葉で表わされるものではない。(つまり正しいポジショニングをするには、宣伝のキャッチコピーを使うのではなく、人々が製品に感じていることをフレームワークとすべき)&lt;/li&gt;
-&lt;li&gt;ポジショニングの変更は受け入れがたい。できるだけ買えなくて済むようにすること&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ポジションニングの究極の目標は、ターゲットカスタマーに「この状況ではこの製品を購入するのがベスト」という観念を植えつけ、それが未来永劫消えないようにすること。そうなってはじめて、顧客の頭のなかから競合製品のことがなくなり、顧客にとって製品が「買いやすくなった」と言える。&lt;/p&gt;
-
-&lt;h4 id=&#34;ポジショニングの段階&#34;&gt;ポジショニングの段階&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;名前をつけることで観念に枠組みを与える&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;だれが使うのか、何のためにつかうのか&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;競争と差別化(競争に勝ち、マーケットリーダーになる)&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;財務状況と将来性&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;また、「エレベーターテスト」はポジショニングのメッセージ作成にいい。(エレベーターに乗っている時間で説明できるということ)
-ホールプロダクトとして考えていく上で、、「この新市場に注目」といったメッセージは大切。&lt;br /&gt;
-&lt;strong&gt;会社が外部に向けて発信するメッセージはすべてこのポジションステートメントに沿ったものとする。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;第七章-作戦の実行&#34;&gt;■ 第七章 作戦の実行&lt;/h3&gt;
-
-&lt;p&gt;[引用] Dデー作戦決行に際しての最後の決定事項、すなわち、販売チャネルと価格設定について検討する。キャズムを越えて対岸へと向うとき、販売チャネルは言ってみなければ兵員や軍需品を輸送する艦船であり、製品に対する価格決定はその艦船を前進させるための燃料のようなものである、このふたつは、メインストリーム市場の顧客に直接影響を与えるものであり、マーケティング戦略を決定する上で重要なファクターとなる。とりわけ販売チャネルは、判断を誤ったら、やり直す時間は残されていないと考えるべきである。&lt;br /&gt;
-キャズムを越えようとしているベンダーにとって最大の目標は、メインストリーム市場の実利主義者が安心してつきあえる販売チャネルを確保することである。そして、&lt;strong&gt;この目標は何よりも優先されなければならない。&lt;/strong&gt; 売上よりも、利益よりも、対外コミュニケーションよりも、さらには顧客満足よりも優先されなければならないのだ。ここにあげた問題は、しっかりした販売チャネルが確立されていさえすれば、あとから改善することができる。しかし、販売チャネルが機能しなければ、すべての努力が水泡に帰す。さらに、製品価格の決定という問題は、販売チャネルを確立することと密接に結びついている。つまり、キャズムを越えようとしているとき、適切な価格設定によって満足させるべき相手は、顧客でもなければ株主でもない。それは販売チャネルなのだ。(キャズム越えるときは、顧客を満足させる販売チャネルが必要であり、それを実現するための手段が販売チャネルを満足させる製品価格ということ)&lt;/p&gt;
-
-&lt;h4 id=&#34;直販&#34;&gt;直販&lt;/h4&gt;
-
-&lt;p&gt;直販は。需要を作り出すために最適の販売チャネルである。&lt;br /&gt;
-直販が十分に機能するためには、ベンダーと顧客のあいだに相互の信頼関係が構築されており、ベンダーには独占に近い特権が与えられていなければならない(特権を利用して顧客に不利を与えてはならない)。この条件が成立していれば、安定した収益がもたらされ、営業コストも低下する。直販はハイテク市場における最適の販売チャネルとなり、キャズムを越えるときに最強の販売チャネルとなる。マーケットリーダーになるためには、顧客との接触が不可欠。&lt;/p&gt;
-
-&lt;h4 id=&#34;キャズムを越えるときの販売チャネル&#34;&gt;キャズムを越えるときの販売チャネル&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;自社の営業部隊とサポートチームを使って、橋頭堡となるべきターゲットセグメントに需要を作り出す&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;ベンダーがそのセグメントにおけるマーケットリーダーであることをターゲットカスタマーが認識したら、主たる販売チャネルと効率良いものに移行する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;[引用] 直販の営業部隊からスタートする理由は、ターゲットカスタマーで一刻も早く足場を固めなければならないからだ。キャズムを越えるときに重視すべきはスピードであって、経費の削減や売上の増大などではない。この時期には、たとえ一日たりとも無駄にすることは許されず、日々変化する状況にすぐさま対応できる販売チャネルは自分自身なのである。ベンダーが直販によって市場を創り出したら、次はその事実を周囲に知らしめることが必要となる。そうしなければ、だれもこのベンダーから製品を買おうとはしないからである。つまり、いま求められているのは、市場に火をつけることなのだ。&lt;/p&gt;
-
-&lt;h4 id=&#34;販売チャネルの立場を反映した価格設定&#34;&gt;販売チャネルの立場を反映した価格設定&lt;/h4&gt;
-
-&lt;p&gt;価格設定は同じ企業内でもなかなか合意に至らない。それはだれの立場を重視するかによって設定すべき価格が変わってくるため。キャズムを越えるときの価格設定についてのガイドライン。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ビジョナリーは価格にこだわらないほう。プロジェクトの目標が達成されれば桁違いのROIがもたらされるため。&lt;/li&gt;
-&lt;li&gt;対極にいるのが保守派。彼らは低価格であることを求める。いつまでも気長に待ち続ける。&lt;/li&gt;
-&lt;li&gt;間にいるのが実利主義者。彼らが支持するのはマーケットリーダー。マーケットリーダーから購入するのであれば競合より30%ほどまで高く出す&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;販売チャネルの立場を考えて価格を設定するべきということだ。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;次の2つの質問にYESと自信を持って応えられる価格であること。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;それは売れる価格か？&lt;/li&gt;
-&lt;li&gt;それは販売チャネルにとって売る意味のある価格か？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;初期市場でビジョナリーを相手に売ることに成功すると、キャズムを越えるときにも価格を高く設定してしまいがち。&lt;/strong&gt; ところが実利主義者にとって価格は最重要事項のひとつ。競合製品が出てくると、追い返されてしまう。そして安すぎると、メインストリーム市場で買っても利益が出ない。&lt;/p&gt;
-
-&lt;p&gt;[引用] キャズムを越えるときには、まずこちらの価格をその時点でのマーケットリーダーの価格近辺に設定し、それによって自分がマーケットリーダーであることを明確に打ち出す。そして、利潤の中で販売チャネルへの報酬が占める部分を大きくして販売チャネルを優遇する。最後に、ベンダーの製品がメインストリーム市場に浸透し、この製品を販売したいというチャネルが増えた時点で、販売チャネルへの報酬を本来あるべき姿に戻す。&lt;/p&gt;
-
-&lt;h3 id=&#34;終章-キャズムを越えて&#34;&gt;■ 終章 キャズムを越えて&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;実利主義者が知りたいのは、誰が製品を買ったかではなく、だれがその製品を使って業務改善を行ったか&lt;/strong&gt; (事例紹介の仕方)&lt;/li&gt;
-&lt;li&gt;進行中のプロジェクトから得られたノウハウを活用して、業界全体が抱えている問題を解決できるようなホールプロダクトを作り出す。(既存顧客のニーズを聞き、応え、より良い製品を生み出す)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;キャズムを越えるときに再優先されるべきは、メインストリーム市場を代表する実利主義者の満足を高めること&lt;/strong&gt;(多分この時点で製品力は十分に高め済みであることが期待される)&lt;/li&gt;
-&lt;li&gt;初期市場では製品重視の姿勢を貫くべきであり、そのためにも &lt;strong&gt;プロダクト・マネージャーに強い権限を与えなければならない&lt;/strong&gt;(逆に製品のみにしっかり注力できるのがこの時期のみ)&lt;/li&gt;
-&lt;li&gt;メインストリーム市場で成功するかどうかは、ひとえにホールプロダクトにかかっており、コアプロダクトが決定要因になるわけではない(コアプロダクトのみを見てくれるのはテクノロジーマニア)&lt;/li&gt;
-&lt;li&gt;ホールプロダクトは開発部門とマーケティング部門が協力したってはじめて実現される&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;キャズムを読んで反省した点がひとつ。「売上ではなく、顧客の成功を喜ぶべきだった。」&lt;/p&gt;
-
-&lt;p&gt;目先の利益を追ってしまったなどではなく、単純に当時の視野が狭かった。&lt;br /&gt;
-売上目標を追い続けていれば組織は成長すると思い込んでしまっていた。顧客満足に対する指標を立てていなかったため、受注を獲得するとそこで喜び、次の顧客を探しに行った。本来であれば、顧客の目的を達成し満足してもらって初めて喜ぶべきだった。&lt;/p&gt;
-
-&lt;p&gt;顧客の成功を一緒に追うことで、もっと深く彼らのニーズや欲求を理解できたはず。顧客の欲求とニーズを深く探り問題解決に向き合っていれば、より製品力を高めることができた。顧客の抱える課題をしっかりと解決した事例を持っていれば次に当たるべき市場もより的確に捉えることができた。初期市場の段階でこの2つを固めておけば、ここからホールプロダクトを作っていこう、マス市場を攻めていこうといった時にもっと力をつけられていたと思う。&lt;/p&gt;
-
-&lt;p&gt;とはいえまだ未成熟な市場であるので、メインストリーム市場はここからになる。&lt;br /&gt;
-今のところ競合は現れ始めたけれども、明確なマーケットリーダーはいないのでまだまだチャンスがある。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【git/bfg】間違えてプッシュしたパスワードファイルなどを履歴から完全に削除する</title>
-      <link>http://kotazi.github.io/blog/post/2016/0616_git_bfg/</link>
-      <pubDate>Thu, 16 Jun 2016 13:50:34 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0616_git_bfg/</guid>
-      <description>
-
-&lt;p&gt;AWS情報の書いてあるJSONファイルが間違えてコミットしてあったため、
-その削除方法について調べてトライしました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://help.github.com/articles/remove-sensitive-data/&#34;&gt;Remove sensitive data&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;上記のリンクに方法が書いてある。&lt;br /&gt;
-ざっくりまとめると2つの方法があって、&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34;&gt;BFG Repo-Cleaner&lt;/a&gt;を使う方法&lt;/li&gt;
-&lt;li&gt;コマンドを叩いて頑張る方法&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;の2つがある。どちらかと言えば1を推奨しているよう。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;bfgを使って削除する&#34;&gt;BFGを使って削除する&lt;/h2&gt;
-
-&lt;p&gt;Scala製なのでJavaの実行環境が必要になる。&lt;br /&gt;
-今回は&lt;code&gt;.zprofile&lt;/code&gt;に&lt;code&gt;alias bfg=&#39;java -jar /Applications/bfg-1.12.12.jar&#39;&lt;/code&gt;としてエイリアスを作成。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA
-$ git commit -m &amp;quot;Remove sensitive data&amp;quot;
-$ git push --force origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;みたいな感じにすればできる。&lt;/p&gt;
-
-&lt;h5 id=&#34;参考リンク&#34;&gt;参考リンク&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.technolize.net/post/82283923159/git-filter-branch-%E3%81%AE%E3%81%8B%E3%82%8F%E3%82%8A%E3%81%AB-bfg-%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%B1%A5%E6%AD%B4%E3%82%92%E6%B6%88%E5%8E%BB%E3%81%99%E3%82%8B&#34;&gt;git filter-branch のかわりに BFG でファイルの履歴を消去する&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;コマンドを叩いて頑張る方法&#34;&gt;コマンドを叩いて頑張る方法&lt;/h2&gt;
-
-&lt;p&gt;意外とシンプルんできるから悪くない。でも長いから覚えるのは無理。&lt;br /&gt;
-なんだかんだでBFG入れておいていい気がする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git filter-branch -f --index-filter &#39;git rm --ignore-unmatch YOUR-FILE-WITH-SENSITIVE-DATA&#39; HEAD
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;参考リンク-1&#34;&gt;参考リンク&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/ichhi/20110825/1314300975&#34;&gt;gitで特定のファイルの履歴を消す方法|おし、プログラミング&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/MahoTakara/items/3b02bf55767a6372596e&#34;&gt;GitHub の commit 履歴からパスワードファイル等だけを消す方法&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;テーマとは関係ないけど、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.jar&lt;/code&gt;ファイルはどこに置けばいいのか&lt;/li&gt;
-&lt;li&gt;エイリアスを書いておくのは&lt;code&gt;.zprofile&lt;/code&gt;でいいのか&lt;/li&gt;
-&lt;li&gt;エイリアスを作成する以外に良い方法がないのか&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;というのが気になった。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Git】fork元の更新を追う</title>
-      <link>http://kotazi.github.io/blog/post/2016/0614_git_fork/</link>
-      <pubDate>Tue, 14 Jun 2016 11:31:27 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0614_git_fork/</guid>
-      <description>
-
-&lt;p&gt;Vuexを最近やっている。&lt;br /&gt;
-Cloneしてきたリポジトリを触ったりするわけだけど、
-元のリポジトリに変更があれば反映させたい。&lt;/p&gt;
-
-&lt;p&gt;その方法を調べました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;まずはクローンしたブランチの状態を確認するとこのようになっている。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/W/vuex git:master ❯❯❯ git br -a
-* master
-  remotes/origin/0.3.0
-  remotes/origin/0.4.0
-  remotes/origin/HEAD -&amp;gt; origin/master
-  remotes/origin/gh-pages
-  remotes/origin/master
-  remotes/origin/old
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;リモートに&lt;code&gt;upstream&lt;/code&gt;という名前で本家を追加する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git remote add upstream git@github.com:vuejs/vuex.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;フェッチする。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;git fetch upstream&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;そして再度ブランチの状態を確認すると、
-本家を追従できていることがわかる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/W/vuex git:master ❯❯❯ git br -a
-* master
-  remotes/origin/0.3.0
-  remotes/origin/0.4.0
-  remotes/origin/HEAD -&amp;gt; origin/master
-  remotes/origin/gh-pages
-  remotes/origin/master
-  remotes/origin/old
-  remotes/upstream/0.3.0
-  remotes/upstream/0.4.0
-  remotes/upstream/gh-pages
-  remotes/upstream/master
-  remotes/upstream/old
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;本家リポジトリの変更を反映するには&#34;&gt;本家リポジトリの変更を反映するには&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;git fetch upstream&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git merge upstream/master&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;となる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/xtetsuji/items/555a1ef19ed21ee42873&#34;&gt;こちらの記事&lt;/a&gt;を参考にしました。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【サンプルあり】Nightwatch.js覚書</title>
-      <link>http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/</link>
-      <pubDate>Mon, 13 Jun 2016 17:17:08 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://nightwatchjs.org/&#34;&gt;Nightwatch.js&lt;/a&gt;について簡単に学び、簡単にまとめました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;h3 id=&#34;nightwatchとは&#34;&gt;Nightwatchとは？&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol&#34;&gt;Selenium WebDriver API&lt;/a&gt;を使い、&lt;a href=&#34;http://nodejs.org/&#34;&gt;Node.js&lt;/a&gt;で書かれたWebアプリケーション/Webサイト用の自動テストフレームワーク&lt;/li&gt;
-&lt;li&gt;継続的インテグレーションを行うためのE2Eテスト自動化へのソリューション&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;seleniumの概要&#34;&gt;Seleniumの概要&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ブラウザ自動制御のための人気で包括できなツール。元々Javaだったが現在は多くの言語をサポート&lt;/li&gt;
-&lt;li&gt;Nightwatchはブラウザ自動制御のためにSelenium WebDriver(特に&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol&#34;&gt;WebDriver Wire Protocol&lt;/a&gt;)を使っている&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;オペレーションについて&#34;&gt;オペレーションについて&lt;/h3&gt;
-
-&lt;p&gt;NightwatchはSeleniumサーバーに正しいパラメータを付与してHTTPリクエストを送ることで動作する。&lt;br /&gt;
-RESTfulなAPIプロトコルは&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol#/session&#34;&gt;Selenium JsonWireProtocol&lt;/a&gt;に定義されている。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://nightwatchjs.org/img/operation.png&#34; alt=&#34;http://nightwatchjs.org/img/operation.png&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Nightwatchでは多くの場合、Seleniumサーバーに対して少なくとも2回のリクエストを送る必要がある。最初のリクエストではCSSセレクタで与えられた要素を見つけるためのものであり、次のリクエストでコマンドに対して与えられた要素を演算する。&lt;/p&gt;
-
-&lt;h2 id=&#34;サンプル-公式から&#34;&gt;サンプル(公式から)&lt;/h2&gt;
-
-&lt;p&gt;CSSセレクタを使うことで、簡単にE2Eテストを書ける。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports = {
-  &#39;Demo test Google&#39; : function (browser) {
-    browser
-      // URLを指定
-      .url(&#39;http://www.google.com&#39;)
-      // bodyタグが表示されるまで1000ms待つ
-      .waitForElementVisible(&#39;body&#39;, 1000)
-      // input[type=text]に&amp;quot;nightwatch&amp;quot;とセット
-      .setValue(&#39;input[type=text]&#39;, &#39;nightwatch&#39;)
-      // button[name=btnG]が表示されるまで1000ms待つ
-      .waitForElementVisible(&#39;button[name=btnG]&#39;, 1000)
-      // button[name=btnG]ボタンをクリック
-      .click(&#39;button[name=btnG]&#39;)
-      // 1000ms待つ
-      .pause(1000)
-      // #mainタグがNight Watchを含んでいることを確認する
-      .assert.containsText(&#39;#main&#39;, &#39;Night Watch&#39;)
-      // 終了
-      .end();
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;必要に応じて複数のステップに分割することも可能。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports = {
-  &#39;step one&#39; : function (browser) {
-    browser
-      .url(&#39;http://www.google.com&#39;)
-      .waitForElementVisible(&#39;body&#39;, 1000)
-      .setValue(&#39;input[type=text]&#39;, &#39;nightwatch&#39;)
-      .waitForElementVisible(&#39;button[name=btnG]&#39;, 1000)
-  },
-
-  &#39;step two&#39; : function (browser) {
-    browser
-      .click(&#39;button[name=btnG]&#39;)
-      .pause(1000)
-      .assert.containsText(&#39;#main&#39;, &#39;Night Watch&#39;)
-      .end();
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;書いてみる&#34;&gt;書いてみる&lt;/h3&gt;
-
-&lt;p&gt;Nightwatchで&lt;a href=&#34;http://todomvc.com/examples/vue&#34;&gt;Vue.js • TodoMVC&lt;/a&gt;のE2Eテストを書いてみた。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;サイト表示&lt;/li&gt;
-&lt;li&gt;タスクの追加&lt;/li&gt;
-&lt;li&gt;タスクの完了&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;をテストする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports = {
-  // TodoMVCサイトにアクセスするテスト
-  &#39;Access to TodoMVC&#39; : function (browser) {
-    browser
-      .url(&#39;http://todomvc.com/examples/vue/&#39;)
-      .waitForElementVisible(&#39;body&#39;, 1000);
-  },
-
-  // Todoを追加するテスト
-  &#39;Add a Todo task&#39;: function (browser) {
-    browser
-      .setValue(&#39;.new-todo&#39;, [&#39;nightwatch testing&#39;, browser.Keys.ENTER])
-      .pause(1000)
-      .assert.containsText(&#39;.todo-list&#39;, &#39;nightwatch testing&#39;)
-  },
-
-  // Todoを完了するテスト
-  &#39;Complate the Task&#39;: function (browser) {
-    browser
-      .click(&#39;input.toggle[type=checkbox]&#39;)
-      .click(&#39;.filters li:last-child&#39;)
-      .pause(1000)
-      .assert.containsText(&#39;.todo-list&#39;, &#39;nightwatch testing&#39;)
-      .end();
-  }
-};
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj0ZHurS-ElLx4ysBBbKhNlEdlaM1BJ33x8B/image.png&#34; alt=&#34;Pasted%20Image%206/13/16,%2018:14&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;gifのURL&lt;br /&gt;
-&lt;a href=&#34;http://g.recordit.co/AqTNXin4mr.gif&#34;&gt;http://g.recordit.co/AqTNXin4mr.gif&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
