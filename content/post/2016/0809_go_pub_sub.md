@@ -1,7 +1,8 @@
 +++
-date = "2016-08-02T17:41:51+09:00"
-description = ""
-title = "0809_go_pub_sub"
+date = "2016-08-09T13:38:10+09:00"
+draft = true
+tags = ["Go", "GCP"]
+title = "【Go】Go Bookshelf App: PubSub"
 
 +++
 
