@@ -1,0 +1,226 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.16" />
+		<title>0809_go_pub_sub &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>0809_go_pub_sub</h1>
+                    <h2 class="headline">
+                    August 2, 2016 
+                    <br>
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<ul>
+<li><a href="https://cloud.google.com/go/getting-started/using-pub-sub">Using Cloud Pub/Sub with Go</a></li>
+</ul>
+
+<p><a href="https://developers.google.com/books/">Google Book API</a>を使ってバックグラウンドワーカーに処理をさせる。</p>
+
+<hr>
+
+<p>前回同様、<code>config.go</code>から下記部分のコメントを削除し、ProjectIDを書き換える。</p>
+
+<p>ローカルホストを立ち上げた状態で下記のコマンドでバックグラウンドワーカーが動く。</p>
+
+<pre><code>cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+cd pubsub_worker
+PORT=8081 go run worker.go
+</code></pre>
+
+<p><code>http://localhost:8081/</code>でワーカーインスタンスに立直できる。
+処理した本の数についてのステータスが確認できる。</p>
+
+<p><img src="https://www.evernote.com/l/Aj24JXT3jO1BGJQHmgGX0QAoHCxcg56AdDIB/image.png" alt="Pasted%20Image%208/3/16,%2011:14" /></p>
+
+<p>↑ 「イノベーションのジレンマ」とタイトルをいれると勝手に入る</p>
+
+<h3 id="デプロイする">デプロイする</h3>
+
+<pre><code>$ cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+
+# Deploy the worker
+cd pubsub_worker
+aedeploy gcloud app deploy
+
+# Deploy the main app
+cd ../app
+aedeploy gcloud app deploy
+</code></pre>
+
+<p>下記がアクセス先になる。</p>
+
+<pre><code>https://[YOUR_PROJECT_ID].appspot.com
+https://worker-dot-[YOUR_PROJECT_ID].appspot.com
+</code></pre>
+
+<p><img src="https://cloud.google.com/go/images/go-pub-sub.png" alt="" /></p>
+
+<p>データベース内で本が更新されるとCloud Pub/Subが走る。
+ワーカーは分離して稼働していて、これらのイベントをリッスンしている。
+イベントを受け取るとワーカーkはBooksAPIにリクエストを作成し、データベースの本の記録を更新する。</p>
+
+<p>以上。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0809_go_pub_sub%2f - 0809_go_pub_sub by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/">【Go】Go Bookshelf App: Cloud Storage<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0803_go_nosql/">【Go】Go Bookshelf App: Datastore<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/">0809_go_pub_sub<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0802_go_bookshelf/">【Go】Go Bookshelf App: 概要<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0801_atomic_design/">Atomic Design覚書<aside class="dates">Aug 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0701_innovation/">【読書】イノベーションへの解<aside class="dates">Jul 30</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0729_ECSS/">【CSS】ECSSまとめ<aside class="dates">Jul 28</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0727_placeholder_android/">【CSS】Android標準ブラウザにおけるPlaceholderのズレ<aside class="dates">Jul 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0726_shell/">【Shell】ちょっとした覚書<aside class="dates">Jul 26</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0710_chiki/">【読書】自分のアタマで考えよう<aside class="dates">Jul 10</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2016 kotazi
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

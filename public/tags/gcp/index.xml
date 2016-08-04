@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gcp on kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/gcp/</link>
+    <description>Recent content in Gcp on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Aug 2016 13:38:10 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Go】Go Bookshelf App: Cloud Storage</title>
+      <link>http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/</link>
+      <pubDate>Thu, 04 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/</guid>
+      <description>
+
+&lt;p&gt;続いて、&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-cloud-storage&#34;&gt;&amp;ldquo;Using Cloud Storage with Go&amp;rdquo;&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;cloud-storageの作成&#34;&gt;Cloud Storageの作成&lt;/h3&gt;
+
+&lt;p&gt;下記コマンドでCloud Storageを作成する。&lt;br /&gt;
+実はどんな名前でもいいんだけど、ProjectIDに合わせておくのがよい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;❯❯❯ gsutil mb gs://*****-***-kotazi                                            
+Creating gs://*****-***-kotazi/...
+~/R/blog ❯❯❯ gsutil defacl set public-read gs://*****-***-kotazi
+Setting default object ACL on gs://*****-***-kotazi/...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;configuring-settings&#34;&gt;Configuring settings&lt;/h3&gt;
+
+&lt;p&gt;プロジェクトルートへ移動して&lt;code&gt;config.go&lt;/code&gt;を開く。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下記部分のコメントを消して、バケット名に書き換える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// StorageBucket, err = configureStorage(&amp;quot;&amp;lt;your-storage-bucket&amp;gt;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ローカル立ち上げやデプロイの方法はさっきと同じ。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-binary-data.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;今回で言うと本棚の画像をCloud Storage側におけるようになる。そのためのコードが下記。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;getting-started/bookshelf/app/app.go&lt;/code&gt;の&lt;code&gt;uploadFileFromForm&lt;/code&gt;関数。
+この関数の中で画像があるかないかをチェックした折、あればCloud Storageにアップロードする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// uploadFileFromForm uploads a file if it&#39;s present in the &amp;quot;image&amp;quot; form field.
+func uploadFileFromForm(r *http.Request) (url string, err error) {
+        f, fh, err := r.FormFile(&amp;quot;image&amp;quot;)
+        if err == http.ErrMissingFile {
+                return &amp;quot;&amp;quot;, nil
+        }
+        if err != nil {
+                return &amp;quot;&amp;quot;, err
+        }
+
+        if bookshelf.StorageBucket == nil {
+                return &amp;quot;&amp;quot;, errors.New(&amp;quot;storage bucket is missing - check config.go&amp;quot;)
+        }
+
+        // random filename, retaining existing extension.
+        name := uuid.NewV4().String() + path.Ext(fh.Filename)
+
+        ctx := context.Background()
+        w := bookshelf.StorageBucket.Object(name).NewWriter(ctx)
+        w.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
+        w.ContentType = fh.Header.Get(&amp;quot;Content-Type&amp;quot;)
+
+        // Entries are immutable, be aggressive about caching (1 day).
+        w.CacheControl = &amp;quot;public, max-age=86400&amp;quot;
+
+        if _, err := io.Copy(w, f); err != nil {
+                return &amp;quot;&amp;quot;, err
+        }
+        if err := w.Close(); err != nil {
+                return &amp;quot;&amp;quot;, err
+        }
+
+        const publicURL = &amp;quot;https://storage.googleapis.com/%s/%s&amp;quot;
+        return fmt.Sprintf(publicURL, bookshelf.StorageBucketName, name), nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;uploadFileFromForm&lt;/code&gt;の呼び出しは&lt;code&gt;app.go&lt;/code&gt;の&lt;code&gt;bookFromForm&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// bookFromForm populates the fields of a Book from form values
+// (see templates/edit.html).
+func bookFromForm(r *http.Request) (*bookshelf.Book, error) {
+        imageURL, err := uploadFileFromForm(r)
+        if err != nil {
+                return nil, fmt.Errorf(&amp;quot;could not upload file: %v&amp;quot;, err)
+        }
+        if imageURL == &amp;quot;&amp;quot; {
+                imageURL = r.FormValue(&amp;quot;imageURL&amp;quot;)
+        }
+
+        book := &amp;amp;bookshelf.Book{
+                Title:         r.FormValue(&amp;quot;title&amp;quot;),
+                Author:        r.FormValue(&amp;quot;author&amp;quot;),
+                PublishedDate: r.FormValue(&amp;quot;publishedDate&amp;quot;),
+                ImageURL:      imageURL,
+                Description:   r.FormValue(&amp;quot;description&amp;quot;),
+                CreatedBy:     r.FormValue(&amp;quot;createdBy&amp;quot;),
+                CreatedByID:   r.FormValue(&amp;quot;createdByID&amp;quot;),
+        }
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Go】Go Bookshelf App: Datastore</title>
+      <link>http://kotazi.github.io/blog/post/2016/0803_go_nosql/</link>
+      <pubDate>Wed, 03 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0803_go_nosql/</guid>
+      <description>
+
+&lt;p&gt;GCPのGoのチュートリアルの概要。&lt;br /&gt;
+とりあえずDatastoreでやってみることに。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-structured-data&#34;&gt;Using Structured Data with Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;先ほどクローンしたコードの編集を加える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config.go&lt;/code&gt;を開き、下記部分のコメントを消して、自分のプロジェクトIDに置き換える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// DB, err = configureDatastoreDB(&amp;quot;projectid&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ローカルマシンで起動&#34;&gt;ローカルマシンで起動&lt;/h3&gt;
+
+&lt;p&gt;下記コマンドでローカルマシンを立ち上げる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;cd app
+go run app.go auth.go template.go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アプリケーションの動作を確認できる。&lt;/p&gt;
+
+&lt;h3 id=&#34;デプロイする&#34;&gt;デプロイする&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;app&lt;/code&gt;ディレクトリ内で下記のコマンド。&lt;code&gt;https://[YOUR_PROJECT_ID].appspot.com&lt;/code&gt;でアクセス可能。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aedeploy gcloud app deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アプリを更新する場合、同じコマンドをを使えばバージョンを更新できる。
+新しくデプロイすると新しいバージョンが作られる。&lt;/p&gt;
+
+&lt;p&gt;古いバージョンも残り続けるので課金対象にしたくなければ削除するのがいい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/appengine/versions&#34;&gt;バージョンページ&lt;/a&gt;から削除できる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-datastore.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;getting-started/bookshelf/db_datastore.go&lt;/code&gt;の&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// AddBook saves a given book, assigning it a new ID.
+func (db *datastoreDB) AddBook(b *Book) (id int64, err error) {
+        ctx := context.Background()
+        k := datastore.NewIncompleteKey(ctx, &amp;quot;Book&amp;quot;, nil)
+        k, err = db.client.Put(ctx, k, b)
+        if err != nil {
+                return 0, fmt.Errorf(&amp;quot;datastoredb: could not put Book: %v&amp;quot;, err)
+        }
+        return k.ID(), nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この辺りがDatastoreに保存する処理。&lt;/p&gt;
+
+&lt;p&gt;ちなみに&lt;code&gt;:=&lt;/code&gt;は変数宣言と代入を行っている。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Go】Go Bookshelf App: 概要</title>
+      <link>http://kotazi.github.io/blog/post/2016/0802_go_bookshelf/</link>
+      <pubDate>Tue, 02 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0802_go_bookshelf/</guid>
+      <description>
+
+&lt;p&gt;GCPのGoのチュートリアルの概要。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/tutorial-app&#34;&gt;Go Bookshelf App&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id=&#34;機能&#34;&gt;機能:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;リストの閲覧、追加、削除&lt;/li&gt;
+&lt;li&gt;詳細の編集&lt;/li&gt;
+&lt;li&gt;カバー画像のアップロード&lt;/li&gt;
+&lt;li&gt;Googleアカウントでのログインと、追加した本の確認&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;目標&#34;&gt;目標:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;サンプルアプリケーションのクローン&lt;/li&gt;
+&lt;li&gt;ローカルでの起動&lt;/li&gt;
+&lt;li&gt;GAE環境へのデプロイ&lt;/li&gt;
+&lt;li&gt;サンプルコードを読む&lt;/li&gt;
+&lt;li&gt;データ構造のストアについて&lt;/li&gt;
+&lt;li&gt;Google Cloud Storeでのバイナリデータのストアについて&lt;/li&gt;
+&lt;li&gt;ユーザー認証について&lt;/li&gt;
+&lt;li&gt;GCP Consoleで確認するイベントログについて&lt;/li&gt;
+&lt;li&gt;バックグラウンドワーカーにタスクを送るGoogle Cloud Pub/Subの使い方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;手順&#34;&gt;手順:&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/project?_ga=1.189765870.459013261.1468980200&#34;&gt;ここ&lt;/a&gt;からGCP Console Projectを選択/生成する。
+&lt;a href=&#34;https://support.google.com/cloud/answer/6293499#enable-billing&#34;&gt;ここ&lt;/a&gt;を見て課金を有効にする。
+さらに、&lt;a href=&#34;https://cloud.google.com/sdk/docs/&#34;&gt;Cloud SDK&lt;/a&gt;のインストール。&lt;/p&gt;
+
+&lt;p&gt;それができたら、下記コマンドで&lt;code&gt;gcloud&lt;/code&gt;認証&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcloud init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;成功すると&lt;a href=&#34;https://cloud.google.com/sdk/auth_success&#34;&gt;ここ&lt;/a&gt;へ飛ぶ。(gcloudのチュートリアルあるから読んでみてみいいかも。)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/flows/enableapi?apiid=datastore.googleapis.com,datastore,pubsub,storage_api,logging,plus&amp;amp;_ga=1.180912098.459013261.1468980200&#34;&gt;ここ&lt;/a&gt;からDatastore、Cloud Pub/Sub, Cloud Storage JSON, Cloud Logging, Google+ APIsを利用できるようにする&lt;/p&gt;
+
+&lt;p&gt;続いて、アカウントを確認&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/R/s/gcp ❯❯❯ gcloud config list
+Your active configuration is: [default]
+
+[core]
+account = kotazi@*****.com
+disable_usage_reporting = False
+project = ********
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;必要に応じて、自分で設定もできる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcloud config set project [YOUR_PROJECT_ID]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;サンプルリポジトリのクローンします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go get -u -d github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf/app
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;aedeploy&lt;/code&gt;コマンドをインストールする&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go get -u google.golang.org/appengine/cmd/aedeploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上で準備が完了。&lt;/p&gt;
+
+&lt;p&gt;ここからGoogle Cloud Platformのさまざまな機能を試していく。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
