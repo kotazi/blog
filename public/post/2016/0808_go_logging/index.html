@@ -1,0 +1,220 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.16" />
+		<title>【Go】Go Bookshelf App: Logging &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【Go】Go Bookshelf App: Logging</h1>
+                    <h2 class="headline">
+                    August 8, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/go">Go</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/gcp">GCP</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    <p>どのようにして詳細なログ情報を残していくか。</p>
+
+<ul>
+<li><a href="https://cloud.google.com/go/getting-started/logging-application-events">Logging Application Events with Go</a></li>
+</ul>
+
+<p>Cloud Platformの提供するログやモニタリングツールがあるので、Cloud Platform Consoleから簡単に確認することができる。</p>
+
+<p>このサンプルでは標準の<code>log</code>パッケージとGorillaの<code>CombinedLoggingHandler</code>を利用している。</p>
+
+<p>標準のエラー:</p>
+
+<pre><code>type appHandler func(http.ResponseWriter, *http.Request) *appError
+
+type appError struct {
+        Error   error
+        Message string
+        Code    int
+}
+
+func (fn appHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+        if e := fn(w, r); e != nil { // e is *appError, not os.Error.
+                log.Printf(&quot;Handler error: status code: %d, message: %s, underlying err: %#v&quot;,
+                        e.Code, e.Message, e.Error)
+
+                http.Error(w, e.Message, e.Code)
+        }
+}
+</code></pre>
+
+<p>HTTPリクエストのログ:</p>
+
+<pre><code>// Delegate all of the HTTP routing and serving to the gorilla/mux router.
+// Log all requests using the standard Apache format.
+http.Handle(&quot;/&quot;, handlers.CombinedLoggingHandler(os.Stderr, r))
+</code></pre>
+
+<p>ログは<a href="https://console.cloud.google.com/logs/viewer">ここ</a>から見れる。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0808_go_logging%2f - %e3%80%90Go%e3%80%91Go%20Bookshelf%20App%3a%20Logging by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/">Missing .map resource?<aside class="dates">Aug 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0816_nanba/">【読書】不格好経営<aside class="dates">Aug 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0803_spin/">【読書】営業の「聴く技術」 SPIN<aside class="dates">Aug 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0802_syacho_shikkaku/">【読書】社長失格<aside class="dates">Aug 12</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0810_goapp_deploy/">【Go】Deploying a Go App<aside class="dates">Aug 10</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/">【Go】Go Bookshelf App: PubSub<aside class="dates">Aug 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0808_go_logging/">【Go】Go Bookshelf App: Logging<aside class="dates">Aug 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0805_go_authenticating_users/">【Go】Go Bookshelf App: Authenticating Users<aside class="dates">Aug 5</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/">【Go】Go Bookshelf App: Cloud Storage<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0803_go_nosql/">【Go】Go Bookshelf App: Datastore<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2016 kotazi
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,253 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="kotazi">
+		<meta name="description" content="Hi, I&#39;m web engineer">
+		<meta name="generator" content="Hugo 0.16" />
+		<title>【Go】Go Bookshelf App: Authenticating Users &middot; kotazi.com</title>
+		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://kotazi.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>【Go】Go Bookshelf App: Authenticating Users</h1>
+                    <h2 class="headline">
+                    August 5, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/go">Go</a>
+                        
+                            <a href="http://kotazi.github.io/blog/tags/gcp">GCP</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>OAuth2.0を使ったユーザー認証。</p>
+
+<ul>
+<li><a href="https://cloud.google.com/go/getting-started/authenticate-users">Authenticating Users with Go</a></li>
+</ul>
+
+<hr>
+
+<h3 id="web-application-client-idの作成">Web application client IDの作成</h3>
+
+<p><a href="https://console.cloud.google.com/apis/credentials">credentials</a>へアクセスし、<code>OAuth consent screen</code>をクリック。
+プロダクト名のところに<code>Go Bookshelf App</code>と入力し、その他も任意で記入する。</p>
+
+<p>保存後、<code>Create credentials &gt; OAuth client ID</code>と移動し、<code>Application type</code>では<code>Web application</code>を選択。
+<code>Name</code>は<code>Go Bookshelf Client</code>。<code>Authorized redirect URIs</code>にProjectIDに置き換えた値を入れる。</p>
+
+<pre><code>http://localhost:8080/oauth2callback
+http://[YOUR_PROJECT_ID].appspot.com/oauth2callback
+</code></pre>
+
+<p>作成すると、IDとclient secretが表示されるので保存しておくこと。</p>
+
+<hr>
+
+<p>前回同様、下記へ移動して<code>config.go</code>を開く。</p>
+
+<pre><code>cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+</code></pre>
+
+<p>下記のコメントを削除し、clientidとclientsecretを先ほどの値に置き換える。</p>
+
+<pre><code>// oauthConfig = configureOAuthClient(&quot;clientid&quot;, &quot;clientsecret&quot;)
+</code></pre>
+
+<p><code>app/app.yaml</code>を開き、<code>OAUTH2_CALLBACK</code>のProjectIDを自分のものに置き換える。</p>
+
+<hr>
+
+<p>ローカルの立ち上げやデプロイは前回同様。</p>
+
+<p><img src="https://cloud.google.com/go/images/go-auth.png" alt="" /></p>
+
+<p>セッションを扱うために<a href="http://www.gorillatoolkit.org/">Gorilla web toolkit</a>を使っている。
+Gorillaはいくつかの<code>Store</code>インターフェイスを持っているが、今回は<code>CookieStore</code>を利用。</p>
+
+<p>認証の仕組みはまず、Googleの認証画面にリダイレクトさせ、そのレスポンスを、ユーザーがアプリケーションに戻る際に処理させるというものである。</p>
+
+<p>アプリケーションはClientIDとOAuthスコープを使ってURLを生成する。スコープには、アプリケーションがアクセスしようとするユーザー情報が何かということを含む。</p>
+
+<p><code>config.go</code>のこの部分がそれにあたる。</p>
+
+<pre><code>func configureOAuthClient(clientID, clientSecret string) *oauth2.Config {
+        redirectURL := os.Getenv(&quot;OAUTH2_CALLBACK&quot;)
+        if redirectURL == &quot;&quot; {
+                redirectURL = &quot;http://localhost:8080/oauth2callback&quot;
+        }
+        return &amp;oauth2.Config{
+                ClientID:     clientID,
+                ClientSecret: clientSecret,
+                RedirectURL:  redirectURL,
+                Scopes:       []string{&quot;email&quot;, &quot;profile&quot;},
+                Endpoint:     google.Endpoint,
+        }
+}
+</code></pre>
+
+<p>認証が完了するとGoogle認証サービスは<code>/oauth2callback</code>を通してユーザーをアプリケーションへ戻す。</p>
+
+<p>認証後はGoogle+ APIが利用できるため<code>plusService.People.Get(&quot;me&quot;)</code>を使うと認証済みのユーザーの情報が取得できる。</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/kotazi">
+                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
+                        <div>
+                            <span class="dark">kotazi</span>
+                            <span>Imagination and Realization</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0805_go_authenticating_users%2f - %e3%80%90Go%e3%80%91Go%20Bookshelf%20App%3a%20Authenticating%20Users by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/">Missing .map resource?<aside class="dates">Aug 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0816_nanba/">【読書】不格好経営<aside class="dates">Aug 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0803_spin/">【読書】営業の「聴く技術」 SPIN<aside class="dates">Aug 13</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0802_syacho_shikkaku/">【読書】社長失格<aside class="dates">Aug 12</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0810_goapp_deploy/">【Go】Deploying a Go App<aside class="dates">Aug 10</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/">【Go】Go Bookshelf App: PubSub<aside class="dates">Aug 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0808_go_logging/">【Go】Go Bookshelf App: Logging<aside class="dates">Aug 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0805_go_authenticating_users/">【Go】Go Bookshelf App: Authenticating Users<aside class="dates">Aug 5</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/">【Go】Go Bookshelf App: Cloud Storage<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/0803_go_nosql/">【Go】Go Bookshelf App: Datastore<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2016 kotazi
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://kotazi.github.io/blog/js/main.js"></script>
+<script src="http://kotazi.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

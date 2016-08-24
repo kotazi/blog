@@ -1,6 +1,6 @@
 +++
 date = "2016-08-09T13:38:10+09:00"
-draft = true
+draft = false
 tags = ["Go", "GCP"]
 title = "【Go】Go Bookshelf App: PubSub"
 

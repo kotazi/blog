@@ -6,8 +6,387 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Aug 2016 13:38:10 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Aug 2016 13:38:10 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Missing .map resource?</title>
+      <link>http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/</link>
+      <pubDate>Tue, 23 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/18499930/missing-map-resource&#34;&gt;Missing .map resource? [duplicate]&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Failed to load resource: the server responded with a status of 404 (HTTP/2.0 404)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Safariでbootstrap.css.mapがないというエラーが出ていたから調べてみたけど、
+特に問題はないらしい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【読書】不格好経営</title>
+      <link>http://kotazi.github.io/blog/post/2016/0816_nanba/</link>
+      <pubDate>Tue, 16 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0816_nanba/</guid>
+      <description>&lt;p&gt;&lt;a  href=&#34;https://www.amazon.co.jp/gp/product/4532318955/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4532318955&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;不格好経営―チームDeNAの挑戦&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4532318955&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第1章 立ち上げ&lt;/li&gt;
+&lt;li&gt;第2章 生い立ち&lt;/li&gt;
+&lt;li&gt;第3章 金策&lt;/li&gt;
+&lt;li&gt;第4章 モバイルシフト&lt;/li&gt;
+&lt;li&gt;第5章 ソーシャルゲーム&lt;/li&gt;
+&lt;li&gt;第6章 退任&lt;/li&gt;
+&lt;li&gt;第7章 人と組織&lt;/li&gt;
+&lt;li&gt;第8章 これから&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;DeNA創業者の南場社長の著書。&lt;br /&gt;
+本書は一字一句南場社長自身によって綴られている。
+多少日記調の部分もあるが、やはり本人が書いているとリアリティがある。&lt;/p&gt;
+
+&lt;p&gt;新卒説明会でDeNAの話を聞きに行った時、少しだけ南場社長に質問させてもらったことがある。
+何を聞いたか今では忘れてしまったが、すごくエネルギッシュな人だと思った。&lt;/p&gt;
+
+&lt;p&gt;そんな南場社長がDeNAの社長退任をすると聞いた時はとても驚いた。
+本書の中に夫がガン宣告をされた時の考えが記されているので引用する。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;子どもに恵まれなかったふたちは、あまり家庭らしさのない夫婦で、
+互いに仕事を最優先にそれぞれ勝手にやってきた。ふたりとも深夜遅くに帰宅するやいなや爆睡するというパターンが多く、生存確認はするが話をする時間はない。マッキンゼーの同窓会で久しぶり！と挨拶をすることもあった。掃除もしない、漁師もしない、仕事ばかりする妻を、面白がって放っておいてくれた。&lt;br /&gt;
+今を起点にベストを尽くす。10年以上経営者をやり、そういう訓練だけはしてきたはずだ。過去を悔いても仕方がない。これからだ。告知されてからずっと暗い不安の淵に行ってしまったような夫の目を思い出す。今行くから。助けに行くから。これまでの人生は全部この時のためにあったんじゃないだろうか。そんなふうに思った。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;現在は復帰しているのでこれからも頑張ってほしい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【読書】営業の「聴く技術」 SPIN</title>
+      <link>http://kotazi.github.io/blog/post/2016/0803_spin/</link>
+      <pubDate>Sat, 13 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0803_spin/</guid>
+      <description>&lt;p&gt;&lt;a  href=&#34;https://www.amazon.co.jp/gp/product/447808260X/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=447808260X&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;営業の「聴く技術」 新版―SPIN「4つの質問」「3つの説明」&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=447808260X&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Cp1. 営業を成功へと導く質問技法&lt;br /&gt;
+Cp2. ホンモノの営業スキルとは&amp;hellip;&lt;br /&gt;
+Cp3. クロージング神話の崩壊とSPINの誕生&lt;br /&gt;
+Cp4. 顧客の心理をハートフルに動かす「4つの質問」&lt;br /&gt;
+Cp5. 「3つの説明」商談成功のクライマックス&lt;br /&gt;
+Cp6. 変革・改革・激動の世紀を生き抜くスキル&lt;br /&gt;
+Cp7. サクセス企業のリポート 4社の事例&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;非常に文章力に欠けた本だったので感想を簡略に記す。&lt;/p&gt;
+
+&lt;p&gt;SPINの真髄は&amp;rdquo;しゃべるな、しゃべらせろ&amp;rdquo;。&lt;br /&gt;
+従来「営業はしゃべるもの」を前提に本書はSPINについて解説している。&lt;/p&gt;
+
+&lt;p&gt;オールドスタイルのセールス技法として、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;推定承諾法: 買い手が買う気前提に、詰めていく(「いつ届けましょうか？」など)&lt;/li&gt;
+&lt;li&gt;二者択一法: 「AとB、どちらにしますか？」&lt;/li&gt;
+&lt;li&gt;立見席法: 「すごい人気。今日ならまだ買えますよ。」不動産などで使われる。&lt;/li&gt;
+&lt;li&gt;導入時期強調法: 「システム開発に4ヶ月はかかるから、早めに決断しないと」&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;などは、顧客の気持ちに立てていない。&lt;/p&gt;
+
+&lt;p&gt;そこでSPIN。
+SPINは「2つのニーズ、4つの質問、3つの説明」によって構成される。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;潜在ニーズ&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;顕在ニーズ&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;状況質問(SituationQ)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;問題質問(ProblemQ)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;示唆質問(ImplicationQ)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;解決質問(Need-PayoffQ)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;特徴(Features)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;利点(Advantages)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;利益(Benefits)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2008年に書かれたという割には目新しいことが何も書かれていなかった。&lt;/p&gt;
+
+&lt;p&gt;けれども著者が1940年生まれということだったので、仕方ないかなあとも思った。&lt;/p&gt;
+
+&lt;p&gt;昔はそうだったのかも。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【読書】社長失格</title>
+      <link>http://kotazi.github.io/blog/post/2016/0802_syacho_shikkaku/</link>
+      <pubDate>Fri, 12 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0802_syacho_shikkaku/</guid>
+      <description>&lt;p&gt;&lt;a  href=&#34;https://www.amazon.co.jp/gp/product/4822241300/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4822241300&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;社長失格&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4822241300&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;うまくまとまっている本ではないが、ハイパーネットの板倉社長の半生がかなり赤裸々に書かれている。「ここまで書いて平気なのだろうか？」と思うぐらい登場人物の名前や取引会社などのことが書かれているので、ある意味他の本では決して読めないことが書いてあるし、一読の価値がある一冊だ。&lt;/p&gt;
+
+&lt;p&gt;会社が成長し、衰退し倒産していくまで。
+その間で関わってくる人たち、そしてその態度の変化がしっかりと描かれていた。&lt;/p&gt;
+
+&lt;p&gt;また、事業を急成長させていくうえで出資なり融資なりの協力はとても大きい。
+大きいからこそしっかりと知り、適切な関係を築いていかなくてはならない。&lt;/p&gt;
+
+&lt;p&gt;その上で、人が最大の資産だということを忘れない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Go】Deploying a Go App</title>
+      <link>http://kotazi.github.io/blog/post/2016/0810_goapp_deploy/</link>
+      <pubDate>Wed, 10 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0810_goapp_deploy/</guid>
+      <description>&lt;p&gt;GCP/Goアプリケーションのデプロイ周りについて学んでいたところ。&lt;br /&gt;
+&lt;code&gt;goapp deploy&lt;/code&gt;だったり、GoogleAppEngineLauncherだったり、
+&lt;code&gt;appcfg.py&lt;/code&gt;だったり、&lt;code&gt;dev_appserver.py&lt;/code&gt;だったりと少しややこしくなった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/go/tools/uploadinganapp#top_of_page&#34;&gt;Deploying a Go App&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;まず、&lt;code&gt;goapp&lt;/code&gt;は&lt;a href=&#34;https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go&#34;&gt;App Engine Go SDK&lt;/a&gt;
+に含まれているものだ。&lt;code&gt;appcfg.py&lt;/code&gt;もここに含まれている。&lt;/p&gt;
+
+&lt;p&gt;デプロイ後、アプリケーションは&lt;code&gt;https://&amp;lt;YOUR-PROJECT-ID&amp;gt;.appspot.com&lt;/code&gt;で動作する。&lt;/p&gt;
+
+&lt;p&gt;ファイルをアップロードするには、&lt;code&gt;goapp deploy&lt;/code&gt;をアプリケーションのルートディレクトリから実行しよう。この時ルートディレクトリには
+&lt;code&gt;app.yaml&lt;/code&gt;が用意されていなければならない。
+引数を使ってルートの位置を示すこともできるけれども、細かいことは&lt;code&gt;goapp help deploy&lt;/code&gt;で見てほしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;app.yaml&lt;/code&gt;にあるアプリケーションIDを自動的に使う。けれども多くのサンプルアプリケーションでは&lt;code&gt;app.yaml&lt;/code&gt;から&lt;code&gt;application:&lt;/code&gt;や
+&lt;code&gt;version:&lt;/code&gt;を除外している。そういう場合はコンソールからバージョンやアプリケーションIDを指定する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;goapp deploy -application &amp;lt;YOUR_PROJECT_ID&amp;gt; -V v1 myapp/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アプリケーションが複数の&lt;a href=&#34;https://cloud.google.com/appengine/docs/go/configuration-files&#34;&gt;サービス&lt;/a&gt;から成る場合、
+更新するサービスを指定することができる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;デフォルトのサービスを更新する場合、リストの最初ものが更新される&lt;/li&gt;
+&lt;li&gt;初めて更新する場合、デフォルトのサービスは必ず含まれる&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Go】Go Bookshelf App: PubSub</title>
+      <link>http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/</link>
+      <pubDate>Tue, 09 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-pub-sub&#34;&gt;Using Cloud Pub/Sub with Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/books/&#34;&gt;Google Book API&lt;/a&gt;を使ってバックグラウンドワーカーに処理をさせる。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;前回同様、&lt;code&gt;config.go&lt;/code&gt;から下記部分のコメントを削除し、ProjectIDを書き換える。&lt;/p&gt;
+
+&lt;p&gt;ローカルホストを立ち上げた状態で下記のコマンドでバックグラウンドワーカーが動く。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+cd pubsub_worker
+PORT=8081 go run worker.go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;http://localhost:8081/&lt;/code&gt;でワーカーインスタンスに立直できる。
+処理した本の数についてのステータスが確認できる。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj24JXT3jO1BGJQHmgGX0QAoHCxcg56AdDIB/image.png&#34; alt=&#34;Pasted%20Image%208/3/16,%2011:14&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;↑ 「イノベーションのジレンマ」とタイトルをいれると勝手に入る&lt;/p&gt;
+
+&lt;h3 id=&#34;デプロイする&#34;&gt;デプロイする&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+
+# Deploy the worker
+cd pubsub_worker
+aedeploy gcloud app deploy
+
+# Deploy the main app
+cd ../app
+aedeploy gcloud app deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下記がアクセス先になる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://[YOUR_PROJECT_ID].appspot.com
+https://worker-dot-[YOUR_PROJECT_ID].appspot.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-pub-sub.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;データベース内で本が更新されるとCloud Pub/Subが走る。
+ワーカーは分離して稼働していて、これらのイベントをリッスンしている。
+イベントを受け取るとワーカーkはBooksAPIにリクエストを作成し、データベースの本の記録を更新する。&lt;/p&gt;
+
+&lt;p&gt;以上。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Go】Go Bookshelf App: Logging</title>
+      <link>http://kotazi.github.io/blog/post/2016/0808_go_logging/</link>
+      <pubDate>Mon, 08 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0808_go_logging/</guid>
+      <description>&lt;p&gt;どのようにして詳細なログ情報を残していくか。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/logging-application-events&#34;&gt;Logging Application Events with Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cloud Platformの提供するログやモニタリングツールがあるので、Cloud Platform Consoleから簡単に確認することができる。&lt;/p&gt;
+
+&lt;p&gt;このサンプルでは標準の&lt;code&gt;log&lt;/code&gt;パッケージとGorillaの&lt;code&gt;CombinedLoggingHandler&lt;/code&gt;を利用している。&lt;/p&gt;
+
+&lt;p&gt;標準のエラー:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;type appHandler func(http.ResponseWriter, *http.Request) *appError
+
+type appError struct {
+        Error   error
+        Message string
+        Code    int
+}
+
+func (fn appHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+        if e := fn(w, r); e != nil { // e is *appError, not os.Error.
+                log.Printf(&amp;quot;Handler error: status code: %d, message: %s, underlying err: %#v&amp;quot;,
+                        e.Code, e.Message, e.Error)
+
+                http.Error(w, e.Message, e.Code)
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;HTTPリクエストのログ:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Delegate all of the HTTP routing and serving to the gorilla/mux router.
+// Log all requests using the standard Apache format.
+http.Handle(&amp;quot;/&amp;quot;, handlers.CombinedLoggingHandler(os.Stderr, r))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ログは&lt;a href=&#34;https://console.cloud.google.com/logs/viewer&#34;&gt;ここ&lt;/a&gt;から見れる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【Go】Go Bookshelf App: Authenticating Users</title>
+      <link>http://kotazi.github.io/blog/post/2016/0805_go_authenticating_users/</link>
+      <pubDate>Fri, 05 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0805_go_authenticating_users/</guid>
+      <description>
+
+&lt;p&gt;OAuth2.0を使ったユーザー認証。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/authenticate-users&#34;&gt;Authenticating Users with Go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id=&#34;web-application-client-idの作成&#34;&gt;Web application client IDの作成&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/apis/credentials&#34;&gt;credentials&lt;/a&gt;へアクセスし、&lt;code&gt;OAuth consent screen&lt;/code&gt;をクリック。
+プロダクト名のところに&lt;code&gt;Go Bookshelf App&lt;/code&gt;と入力し、その他も任意で記入する。&lt;/p&gt;
+
+&lt;p&gt;保存後、&lt;code&gt;Create credentials &amp;gt; OAuth client ID&lt;/code&gt;と移動し、&lt;code&gt;Application type&lt;/code&gt;では&lt;code&gt;Web application&lt;/code&gt;を選択。
+&lt;code&gt;Name&lt;/code&gt;は&lt;code&gt;Go Bookshelf Client&lt;/code&gt;。&lt;code&gt;Authorized redirect URIs&lt;/code&gt;にProjectIDに置き換えた値を入れる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://localhost:8080/oauth2callback
+http://[YOUR_PROJECT_ID].appspot.com/oauth2callback
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;作成すると、IDとclient secretが表示されるので保存しておくこと。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;前回同様、下記へ移動して&lt;code&gt;config.go&lt;/code&gt;を開く。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下記のコメントを削除し、clientidとclientsecretを先ほどの値に置き換える。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// oauthConfig = configureOAuthClient(&amp;quot;clientid&amp;quot;, &amp;quot;clientsecret&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;app/app.yaml&lt;/code&gt;を開き、&lt;code&gt;OAUTH2_CALLBACK&lt;/code&gt;のProjectIDを自分のものに置き換える。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;ローカルの立ち上げやデプロイは前回同様。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-auth.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;セッションを扱うために&lt;a href=&#34;http://www.gorillatoolkit.org/&#34;&gt;Gorilla web toolkit&lt;/a&gt;を使っている。
+Gorillaはいくつかの&lt;code&gt;Store&lt;/code&gt;インターフェイスを持っているが、今回は&lt;code&gt;CookieStore&lt;/code&gt;を利用。&lt;/p&gt;
+
+&lt;p&gt;認証の仕組みはまず、Googleの認証画面にリダイレクトさせ、そのレスポンスを、ユーザーがアプリケーションに戻る際に処理させるというものである。&lt;/p&gt;
+
+&lt;p&gt;アプリケーションはClientIDとOAuthスコープを使ってURLを生成する。スコープには、アプリケーションがアクセスしようとするユーザー情報が何かということを含む。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.go&lt;/code&gt;のこの部分がそれにあたる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;func configureOAuthClient(clientID, clientSecret string) *oauth2.Config {
+        redirectURL := os.Getenv(&amp;quot;OAUTH2_CALLBACK&amp;quot;)
+        if redirectURL == &amp;quot;&amp;quot; {
+                redirectURL = &amp;quot;http://localhost:8080/oauth2callback&amp;quot;
+        }
+        return &amp;amp;oauth2.Config{
+                ClientID:     clientID,
+                ClientSecret: clientSecret,
+                RedirectURL:  redirectURL,
+                Scopes:       []string{&amp;quot;email&amp;quot;, &amp;quot;profile&amp;quot;},
+                Endpoint:     google.Endpoint,
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;認証が完了するとGoogle認証サービスは&lt;code&gt;/oauth2callback&lt;/code&gt;を通してユーザーをアプリケーションへ戻す。&lt;/p&gt;
+
+&lt;p&gt;認証後はGoogle+ APIが利用できるため&lt;code&gt;plusService.People.Get(&amp;quot;me&amp;quot;)&lt;/code&gt;を使うと認証済みのユーザーの情報が取得できる。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【Go】Go Bookshelf App: Cloud Storage</title>
@@ -762,702 +1141,6 @@ BEMをリスペクトしながらモディファイヤの部分に共感でき�
 &lt;code&gt;placeholder&lt;/code&gt;の&lt;code&gt;height&lt;/code&gt;に合わせて&lt;code&gt;72px&lt;/code&gt;を当てたら直った。&lt;/p&gt;
 
 &lt;p&gt;ちなみに&lt;code&gt;line-height&lt;/code&gt;の初期値は&lt;code&gt;normal&lt;/code&gt;。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Shell】ちょっとした覚書</title>
-      <link>http://kotazi.github.io/blog/post/2016/0726_shell/</link>
-      <pubDate>Tue, 26 Jul 2016 11:57:40 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0726_shell/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/JamieMason/ImageOptim-CLI&#34;&gt;JamieMason/ImageOptim-CLI&lt;/a&gt;のサンプルにあるシェルが読めなかったので調べた。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;images=$(git diff --exit-code --cached --name-only --diff-filter=ACM -- &#39;*.png&#39; &#39;*.jpg&#39;)
-$(exit $?) || (echo &amp;quot;$images&amp;quot; | imageoptim &amp;amp;&amp;amp; git add $images)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;↑ これ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/mashumashu/items/bbc3a79bc779fe8c4f99&#34;&gt;bash Tips - コマンド置換と算術式展開、パラメータ展開&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;$()&lt;/code&gt;で囲むとコマンド実行できる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://linux.die.net/man/1/git-diff&#34;&gt;git-diff(1) - Linux man page&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;-exit-code&lt;/code&gt;は差分があれば&lt;code&gt;1&lt;/code&gt;を返すし、なければ&lt;code&gt;0&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;--cached&lt;/code&gt;はステージしたファイルの差分を確認する。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;--name-only&lt;/code&gt;は差分のあるファイル名のみ出力する。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;--diff-filter&lt;/code&gt;は&lt;code&gt;ACDMRTUXB*&lt;/code&gt;から選べる。
-今回の&lt;code&gt;ACM&lt;/code&gt;はAdded (A), Copied &amp;copy;, Deleted (D), Modified (M), Renamed &amp;reg;, changed (T), are Unmerged (U), are Unknown (X), Broken (B)である。
-今回はAdded/Copied/Modified。&lt;/p&gt;
-
-&lt;p&gt;2行目の&lt;code&gt;$?&lt;/code&gt;。これは直前に実行された処理の終了コード値を表す。&lt;br /&gt;
-参考: &lt;a href=&#34;http://kajitiluna.hatenablog.com/entry/20111023/1319381392&#34;&gt;Linuxのシェルスクリプト変数の記号あれこれ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;0&lt;/code&gt;もしくは&lt;code&gt;1&lt;/code&gt;が渡るはず。&lt;br /&gt;
-&lt;code&gt;exit 0&lt;/code&gt;(差分がなかった場合)はそのまま正常終了。&lt;br /&gt;
-&lt;code&gt;exit 1&lt;/code&gt;(差分があった場合)は次の処理へ進む。&lt;/p&gt;
-
-&lt;p&gt;つまり、&lt;code&gt;(echo &amp;quot;$images&amp;quot; | imageoptim &amp;amp;&amp;amp; git add $images)&lt;/code&gt;を実行する。&lt;br /&gt;
-&lt;code&gt;$images&lt;/code&gt;は1行目の変数を表していて、つまり差分のあるファイル名。&lt;code&gt;|&lt;/code&gt;(パイプ)を使ってる。&lt;/p&gt;
-
-&lt;p&gt;参考: &lt;a href=&#34;http://webkaru.net/linux/commands-pipeline/&#34;&gt;パイプ「|」を使って 複数のコマンドを組み合わせる&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】自分のアタマで考えよう</title>
-      <link>http://kotazi.github.io/blog/post/2016/0710_chiki/</link>
-      <pubDate>Sun, 10 Jul 2016 11:57:40 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0710_chiki/</guid>
-      <description>&lt;p&gt;38冊目。
-&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4478017034/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4478017034&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;自分のアタマで考えよう&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4478017034&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;はじめに&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;序　章   「知っていること」と「考えること」はまったく別モノ&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第一章　最初に考えるべき「決めるプロセス」&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第二章  「なぜ？」と「だからなんなの？」と問うこと&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第三章　あらゆる可能性を検討しよう&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第四章　縦と横に比べてみよう&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第五章　判断基準はシンプルが一番&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第六章　レベルを揃えて考えよう&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第七章　情報ではなく「フィルター」が大事&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第八章　データはトコトン追い詰めよう&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;第九章　グラフの使い方が「思考の生産性」を左右する&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;終　章　 知識は「思考の棚」に整理しよう&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;おわりに&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;なかでも思考は知識に騙されるという話が面白かった。
-自分の頭で考えているようでも、前から持ち合わせていた知識を引っ張りだしているだけの人がいると。
-もちろんそれ自体が悪いことではないのだけれど、やはり「思考する」とそれは別ものだ。&lt;/p&gt;
-
-&lt;p&gt;また、何かを決めるためには「情報」だけではなく、「意思決定のプロセス」が必要。
-さまざまな情報がある中で、その情報が重要かどうかは「今、求められている意思決定プロセスに必要かどうか」によって決まるべき。
-そもそも&lt;strong&gt;考える&lt;/strong&gt;とは、あるインプットを元に結論を出したということ。それは仮の結論でもいいし、最初の段階では間違っているかも知れない。
-それでもそれが考えるということ。&lt;/p&gt;
-
-&lt;p&gt;情報を見た時には「なぜ？」と「だからなんなの？」を考える。
-考えるためにもっとも役に立つ分析手法は「比較すること」&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;個人的には「マーケット感覚を身につけよう」のほうが面白かった。
-けれども、こうやってブログを書いていることのひとつの理由に、
-1冊の本からどれだけのことを学ぼう、学べるだろうということがある。&lt;/p&gt;
-
-&lt;p&gt;もともと自分の中に疑問に思っていたことで、
-本にはたくさんの文字が書かれているけど、
-それを一字一句全て覚えたらその本に書かれていることを理解したことになるのだろうか
-などと考えていたのだ。&lt;/p&gt;
-
-&lt;p&gt;それはもちろんできないのだけれど、
-きっとできたとしても理解するというのはそういうことではない。
-例えば友人にほんの内容を聞かれたときに自分の言葉で伝えられることが、
-本の内容を理解したということなんじゃないだろうかということでブログに書いている。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】机に向かってすぐに集中する技術</title>
-      <link>http://kotazi.github.io/blog/post/2016/0704_focus/</link>
-      <pubDate>Mon, 04 Jul 2016 18:05:34 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0704_focus/</guid>
-      <description>
-
-&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4894517019/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4894517019&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;机に向かってすぐに集中する技術&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4894517019&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;株式会社ミズノに勤め、サメ肌水着を開発した方の書いた本。&lt;br /&gt;
-どちらかといえばデスクワークの人向けに書かれた集中力の本だけれど、
-著者のバックグラウンドもあってかかなりスポーツ寄りな考え方で書かれている。&lt;/p&gt;
-
-&lt;p&gt;「モチベーション」に依存した集中の方法ではなく、
-まずは行動を起こすというところから改善をする。&lt;/p&gt;
-
-&lt;p&gt;はっきり言ってめちゃめちゃよかった。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;目線を一点に集中させる&lt;/li&gt;
-&lt;li&gt;雨の音を集中力のカーテンにする&lt;/li&gt;
-&lt;li&gt;目線が泳がない訓練をする&lt;/li&gt;
-&lt;li&gt;椅子には浅く座る&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&#34;集中カードの使い方&#34;&gt;集中カードの使い方&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;5, 3, 8の深呼吸を3回行う&lt;/li&gt;
-&lt;li&gt;カードの中心にある点に焦点を合わせ、20病患見つめる&lt;/li&gt;
-&lt;li&gt;ゆっくり目を閉じる&lt;/li&gt;
-&lt;li&gt;残像が消えたら、ゆっくりと目を開ける&lt;/li&gt;
-&lt;li&gt;「今からやるべきこと」を開始する&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】疲れない脳をつくる生活習慣</title>
-      <link>http://kotazi.github.io/blog/post/2016/0703_focus/</link>
-      <pubDate>Sun, 03 Jul 2016 18:05:34 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0703_focus/</guid>
-      <description>&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4833421607/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4833421607&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;疲れない脳をつくる生活習慣―働く人のためのマインドフルネス講座&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4833421607&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;第１章◆1日5分の瞑想が人生を変える&lt;br /&gt;
-第２章◆時間管理の肝は睡眠にあり&lt;br /&gt;
-第３章◆仕事のパフォーマンスを劇的に高める姿勢術&lt;br /&gt;
-第４章◆血糖値を制する者は仕事を制す&lt;br /&gt;
-第５章◆疲れない脳をつくるための1日の過ごし方&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;瞑想、時間管理、姿勢、血糖値。&lt;br /&gt;
-精神論みたいなのが展開されていなくてすごくいいと思った。&lt;/p&gt;
-
-&lt;p&gt;内容もすごく難しいことは書いていないので実践しやすい。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】集中力</title>
-      <link>http://kotazi.github.io/blog/post/2016/0702_focus/</link>
-      <pubDate>Fri, 01 Jul 2016 18:05:30 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0702_focus/</guid>
-      <description>&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/B008BCCLQU/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=B008BCCLQU&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;集中力&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=B008BCCLQU&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;1．集中力があれば道は開ける&lt;br /&gt;
-2．集中力で身につけるセルフコントロール術&lt;br /&gt;
-3．望むものを手に入れる方法&lt;br /&gt;
-4．どんなビジネスでも成果を生み出す力&lt;br /&gt;
-5．環境はあなたの思いどおり&lt;br /&gt;
-6．意志を育てるトレーニング&lt;br /&gt;
-7．無限の精神力を引き出すために&lt;br /&gt;
-8．平静な精神状態が集中力の鍵&lt;br /&gt;
-9．悪習感を断ち切る&lt;br /&gt;
-10．ビジネスの達人になる&lt;br /&gt;
-11．勇気のある人間&lt;br /&gt;
-12．裕福になるということ&lt;br /&gt;
-13．できるかできないかは、あなたしだい&lt;br /&gt;
-14．エクササイズで身につける技術&lt;br /&gt;
-15．忘れないための記憶力&lt;br /&gt;
-16．集中力で願望を達成する&lt;br /&gt;
-17．理念の育て方&lt;br /&gt;
-18．メンタルパワーの力&lt;br /&gt;
-19．集中力で伸ばす強い意志&lt;br /&gt;
-20．最後にもう一度、集中力の大切さについて&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;すごく昔に書かれた本らしく精神論が多いように感じた。&lt;br /&gt;
-中身の割にはすごく分厚い。&lt;/p&gt;
-
-&lt;p&gt;集中力やタイムマネジメントに関する本というよりも、
-自己啓発本といったほうがちかい。&lt;/p&gt;
-
-&lt;p&gt;だから目次を見てもらえばわかるけれども、
-勇気の話とか精神力といった言葉が出てくる。&lt;/p&gt;
-
-&lt;p&gt;集中力を高めるために人間を磨くというか、
-修行の本だ。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】マーケット感覚を身につけよう</title>
-      <link>http://kotazi.github.io/blog/post/2016/0630_market_feeling/</link>
-      <pubDate>Wed, 29 Jun 2016 12:41:20 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0630_market_feeling/</guid>
-      <description>
-
-&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4478064784/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4478064784&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;マーケット感覚を身につけよう&amp;mdash;「これから何が売れるのか?」わかる人になる5つの方法&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4478064784&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;本書の目的は「&lt;strong&gt;マーケット感覚とは何かを説明し、なぜそれが大事なのかを理解していただき、マーケット感覚を身につけるための具体的な方法論をていじすること&lt;/strong&gt;」と冒頭に書いてあり、その後の進め方も非常に分かりやすい良書だった。著者は&lt;a href=&#34;http://d.hatena.ne.jp/Chikirin/&#34;&gt;Chikirinの日記&lt;/a&gt;などでも有名なちきりん氏。&lt;/p&gt;
-
-&lt;p&gt;足元に金塊が落ちていたらどんな大人でも驚いてしまうだろうが、&amp;rdquo;金塊には価値がある&amp;rdquo;ことを知らない幼児が見つけても、それは単にキレイな石にしか過ぎない。このように自分の身の回りにある価値に気がつくことができない大人は多い。本書ではこの、「売れるものに気がつく能力」「価値を認識する能力」のことを&lt;strong&gt;マーケット感覚&lt;/strong&gt;と呼ぶ。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;序 もうひとつの能力&lt;/li&gt;
-&lt;li&gt;１ 市場と価値とマーケット感覚&lt;/li&gt;
-&lt;li&gt;2 市場化する社会&lt;/li&gt;
-&lt;li&gt;3 マーケット感覚で変わる世の中の見え方&lt;/li&gt;
-&lt;li&gt;4 すべては「価値」から始まる&lt;/li&gt;
-&lt;li&gt;5 マーケット感覚を鍛える5つの方法&lt;/li&gt;
-&lt;li&gt;終 変わらなければ替えられる&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;マーケット感覚が何かを知るためには、そもそもマーケットとは何かということを知らなければならない。&lt;br /&gt;
-&lt;strong&gt;不特定多数の買い手(需要者)と不特定多数の売り手(供給者)がお互いのニーズを満たしてくれる相手とマッチングされ、価値を交換する場所&lt;/strong&gt; をマーケット(市場)と呼んでいる。この条件を満たすのであれば貨幣の介在は必須ではなく、物々交換であっても市場と呼ぶことができる。就職活動も婚活もすべて市場である。&lt;/p&gt;
-
-&lt;p&gt;① 取引される価値&lt;br /&gt;
-② 買い手=需要者&lt;br /&gt;
-③ 売り手=供給者&lt;br /&gt;
-④ 取引条件&lt;/p&gt;
-
-&lt;p&gt;市場は上記4つの要素によって成り立っており、&lt;/p&gt;
-
-&lt;p&gt;⑤ 買い手と売り手が取引する動機&lt;br /&gt;
-⑥ それぞれの要素に起こりうる今後の変化&lt;br /&gt;
-⑦ 市場の中で選ばれるための方法&lt;/p&gt;
-
-&lt;p&gt;動きを予測し市場を活用するためには上記のような点について考えていく必要がある。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;また今後の社会の変化を知るために&lt;strong&gt;社会の市場化&lt;/strong&gt;がキーワードになる。
-昔は就職も結婚も知人の紹介などを使ってマッチングされる&lt;strong&gt;相対取引&lt;/strong&gt;がメインだった。
-けれどもインターネットが現れ、「全学生が全企業を相手に就職活動を行う」ということが可能になった。
-そしてこれが社会の市場化である、今後もこのようなことがさまざまな分野で起こる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;市場には入れ子構造が存在する。例えば「消費市場」と「貯蓄市場」が存在する。
-メーカーやサービス業は消費市場の中で競い合う。けれども上位レイヤーには保険や銀行といった貯蓄し譲渡の競争があり、
-この競争が重要。(ちなみに自分は最近プルデンシャルの営業を受けているけれど、事前に保険の重要性を示すことや、そのあとは様々なプランを提示することで他社ではなく、プルデンシャルのプランの中から選ばせるようにするのも、入れ子の奥に入れていくような感覚だろう。)&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;マーケット感覚を身につける方法&lt;/p&gt;
-
-&lt;h5 id=&#34;1-プライシング能力を身につける&#34;&gt;1. プライシング能力を身につける&lt;/h5&gt;
-
-&lt;p&gt;日本で生活していると既に価格が付けられたものを購入する機械が多い。
-けれども自分でいくらが妥当か、いくらまで出せるかを考える力は重要。
-良くない例として、値段の高い刺し身を見てそっちのほうが多いと思うようではいけない。&lt;/p&gt;
-
-&lt;h5 id=&#34;2-インセンティブシステムを理解する&#34;&gt;2. インセンティブシステムを理解する&lt;/h5&gt;
-
-&lt;p&gt;人がなにか特定の言動をとったとき、その背景にある要因や、その要因が言動につながるまでの仕組みである「インセンティブシステム」を理解しよう。
-マーケットとは生身の人間が取引をする場所。人間の行動が何に動機づけられているか、そのことに対する洞察がなければマーケット感覚を身につけることはできない。(行動経済学？)&lt;/p&gt;
-
-&lt;p&gt;そしてこれを身につけるためには自分の欲に対して素直になること。生き方としても大切だと思う。&lt;/p&gt;
-
-&lt;h5 id=&#34;3-市場に評価される方法を学ぶ&#34;&gt;3. 市場に評価される方法を学ぶ&lt;/h5&gt;
-
-&lt;p&gt;昔は企画はJASやJISなど、公的な組織や業界団体が定めるものであったが、現在はデファクトスタンダードが残る。&lt;br /&gt;
-組織に選ばれる人間ではなく、市場に評価される人間を選ぼう。&lt;/p&gt;
-
-&lt;h5 id=&#34;4-失敗と成功の関係を理解する&#34;&gt;4. 失敗と成功の関係を理解する&lt;/h5&gt;
-
-&lt;p&gt;失敗してもいいからどんどん市場に出してどんどん学ぶこと&lt;/p&gt;
-
-&lt;h5 id=&#34;5-市場性の高い環境に身を置く&#34;&gt;5. 市場性の高い環境に身を置く&lt;/h5&gt;
-
-&lt;p&gt;市場性の高い場所とは、需要者と供給者が価値を交換する現場や、人間のインセンティブシステムが直接的に働く場所、組織的な意思決定ではなく、委譲的な意思決定方法が採用されている環境のこと。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;事例と挿絵が豊富でとても読みやすい本だった。買って読むべき。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】ストレスフリーの整理術</title>
-      <link>http://kotazi.github.io/blog/post/2016/0619_gtd/</link>
-      <pubDate>Sun, 19 Jun 2016 20:53:15 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0619_gtd/</guid>
-      <description>&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4576082116/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4576082116&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;はじめてのGTD ストレスフリーの整理術&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4576082116&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;を読みました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;本書の内容について触れる前に、
-まずは簡単にGTDをおさらいしたい。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;第1章 イントロダクション&lt;/li&gt;
-&lt;li&gt;第2章 GTD現象&lt;/li&gt;
-&lt;li&gt;第3章 すべてを機能させる&lt;/li&gt;
-&lt;li&gt;第4章 自己管理の基礎&lt;/li&gt;
-&lt;li&gt;第5章 状況のコントロール 収集&lt;/li&gt;
-&lt;li&gt;第6章 状況のコントロール 見極め&lt;/li&gt;
-&lt;li&gt;第7章 状況のコントロール 整理&lt;/li&gt;
-&lt;li&gt;第8章 状況のコントロール 見直し&lt;/li&gt;
-&lt;li&gt;第9章 状況のコントロール 取り組み/行動&lt;/li&gt;
-&lt;li&gt;第10章 状況のコントロール 人生と仕事に活用していく方法&lt;/li&gt;
-&lt;li&gt;第11章 将来への見通し&lt;/li&gt;
-&lt;li&gt;第12章 将来への見通し 次に取るべき行動&lt;/li&gt;
-&lt;li&gt;第13章 将来への見通し プロジェクト&lt;/li&gt;
-&lt;li&gt;第14章 将来への見通し 注意を向けるべき分野や責任を負っている分野&lt;/li&gt;
-&lt;li&gt;第15章 将来への見通し 目標とゴール&lt;/li&gt;
-&lt;li&gt;第16章 将来への見通し 構想&lt;/li&gt;
-&lt;li&gt;第17章 将来への見通し 目的/価値観&lt;/li&gt;
-&lt;li&gt;第18章 将来への見通し グレイシスガーデン再訪&lt;/li&gt;
-&lt;li&gt;第19章 GTDを総合で機に活用する&lt;/li&gt;
-&lt;li&gt;第20章 最後に&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;現在GTDは社会現象のように多くの人に利用されているが、
-考案者であるデビットアレンはその要因を以下の3つのように考えている。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;誰にでも理解できる論理的なプロセスとして機能している&lt;/li&gt;
-&lt;li&gt;誰もが持っている日常的な道具を用いて、誰もが思い立ったときに気軽に導入できる&lt;/li&gt;
-&lt;li&gt;GTDが解決しようとしている問題が世界的な規模で広がりつつある&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;解決しなければならない真の問題とは、意味が明らかになっていない物事が大量に押し寄せてきているというじょうきょうである。&lt;/strong&gt;&lt;br /&gt;
-これがGTDが解決しようとする現代の問題。&lt;/p&gt;
-
-&lt;p&gt;GTDはシステムそのものではなく、システマチックな「うまくいく考え方」である。&lt;/p&gt;
-
-&lt;p&gt;やり方については調べてください。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;GTDは&amp;rdquo;Getting Things Done&amp;rdquo;の頭文字。&lt;br /&gt;
-タスク管理や整理術のフレームワークのうちのひとつだ。&lt;/p&gt;
-
-&lt;p&gt;先に感想を述べていくと決してGTDは最強のフレームワークでなどではない。&lt;br /&gt;
-特徴のひとつに、 &lt;strong&gt;あなたの集中力を妨げるという意味においては、すべてが同じように重要で平等なのだ。&lt;/strong&gt; という一文にあるように、
-基本的に全てのタスクの重要度を同じものと見做す。&lt;/p&gt;
-
-&lt;p&gt;GTDの根本的な目的なひとつに、近代の複合的で複雑なタスクの解消というものがある。&lt;br /&gt;
-絡まりあったタスクに多忙な毎日を送ることになっている現代人のためのフレームワークである。&lt;br /&gt;
-いつも何かをしながらなにか別のことを考えなければならなくなってしまっている人たちの頭の中を空っぽにするために作られている。&lt;/p&gt;
-
-&lt;p&gt;そういう意味ですごく、誰にでも簡単にできて成果が望めると言う点で非常に素晴らしいが、&lt;br /&gt;
-7つの習慣のスティーブン・コヴィーが「簡単すぎる」といったように、「重要だが緊急ではない」といった部分へのアプローチが弱い。&lt;/p&gt;
-
-&lt;p&gt;また、ポモドーロのように人間の生産性や集中力について考えられているわけでもない。
-そういうことを知った上でGTDを使うのが良いと思う。&lt;/p&gt;
-
-&lt;p&gt;ただプロジェクトという考え方は本当に秀逸。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【読書】キャズム</title>
-      <link>http://kotazi.github.io/blog/post/2016/0617_chasm/</link>
-      <pubDate>Fri, 17 Jun 2016 13:04:27 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0617_chasm/</guid>
-      <description>
-
-&lt;p&gt;&lt;a  href=&#34;http://www.amazon.co.jp/gp/product/4798101524/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4798101524&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;キャズム&lt;/a&gt;&lt;img src=&#34;http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&amp;l=as2&amp;o=9&amp;a=4798101524&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;
-を読みました。&lt;/p&gt;
-
-&lt;p&gt;ジェフリー・ムーアが1991年に発表した本著は現在でもハイテクマーケティングのバイブルと言われている。
-1962年にエベレット・ロジャーズ博士が提唱した「イノベータ理論」。そのベルカーブにキャズムが存在することを発見した。
-なぜキャズムが存在するのか、どうやって乗り越えるのか、落ちた場合はどうするのか。それが書かれているのがこの本である。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;第一章 ハイテク・マーケティング 錯覚&lt;/li&gt;
-&lt;li&gt;第二章 ハイテク・マーケティング 悟り&lt;/li&gt;
-&lt;li&gt;第三章 Dデー&lt;/li&gt;
-&lt;li&gt;第四章 攻略地点の決定&lt;/li&gt;
-&lt;li&gt;第五章 部隊の集結&lt;/li&gt;
-&lt;li&gt;第六章 戦線の見定め&lt;/li&gt;
-&lt;li&gt;第七章 作戦の実行&lt;/li&gt;
-&lt;li&gt;終章 キャズムを越えて&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;序章で少し、マーケティングに対する誤解を持っていたことに気がつく。
-今までマーケティングの業務は、マーケティングのできる人間のみがやるものだと思っていた。
-本書の目的のひとつは、「キャズムを越える際のマーケティングにかかわる意思決定ロジックを明らかにすることである」と書いた後、以下のような文章が続く。&lt;/p&gt;
-
-&lt;p&gt;[引用] それが明確になれば、全社員がマーケティング・プロセスに参画できるようになる。人並み外れた才気よりも慎重さのほうが重要視されると言うのであれば、一人よりも多人数のほうがよい。マーケティングを企業の原動力とするのであれば(多くの企業がそうしようと考えている)、関係者全員がマーケティングの基本方針を知り得るような体制作りが望まれる。時折目にするケースだが、一部の限られた者だけがこのような情報を手にし得る体制にしてはならない。&lt;/p&gt;
-
-&lt;h3 id=&#34;第一章-ハイテク-マーケティング-錯覚&#34;&gt;■ 第一章 ハイテク・マーケティング 錯覚&lt;/h3&gt;
-
-&lt;p&gt;テクノロジー・ライフサイクルとは、新たな製品が市場でどのように受け入れられていくかを理解するためのひとつのモデルである。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;イノベーター(革新者)(テクノロジー・マニア)&lt;/li&gt;
-&lt;li&gt;アーリー・アダプター(先駆者)(ビジョナリー)&lt;/li&gt;
-&lt;li&gt;アーリー・マジョリティ(現実的な購買者)(実利主義社)&lt;/li&gt;
-&lt;li&gt;レイト・マジョリティ(追従者)(保守派)&lt;/li&gt;
-&lt;li&gt;ラガード(無関心層)(懐疑派)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj0jXE-c-EFHZrNwZRzqbx04Ob9rZhpPO2EB/image.png&#34; alt=&#34;Pasted%20Image%206/16/16,%2019:23&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;有名な図。新製品が市場に投入されると、左のイノベーターから徐々にマジョリティ層へ広がっていく。&lt;br /&gt;
-しかし、このベル・カーブの間にはキャズムと呼ばれる溝が存在する。それが下図である。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj0F_vbbjoxKW56cIeXHinNHJ0bjW7Iy2fYB/image.png&#34; alt=&#34;Pasted%20Image%206/16/16,%2019:32&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;第二章-ハイテク-マーケティング-悟り&#34;&gt;■ 第二章 ハイテク・マーケティング 悟り&lt;/h3&gt;
-
-&lt;p&gt;キャズムを乗り越えてメインストリーム市場のチャンスを逃さないためには最適なマーケティングを取らなければならない。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;今がテクノロジー・ライフサイクルのどの段階にあたるのか見極め、&lt;/li&gt;
-&lt;li&gt;その段階における顧客の購買心理をよく理解し、&lt;/li&gt;
-&lt;li&gt;その顧客層に合ったマーケティング戦術を展開すること&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;本書におけるマーケティングの定義は「マーケットを作り出し、成長させ、維持し、外敵から守るための行動をとること」&lt;br /&gt;
-また、マーケットは下記のように定義する。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;実存する製品やサービスに対して、&lt;/li&gt;
-&lt;li&gt;ニーズや欲求を抱えていて、&lt;/li&gt;
-&lt;li&gt;購買を決定する際に先行事例について知りたがる、&lt;/li&gt;
-&lt;li&gt;既存の、あるいは将来的に見込まれる顧客&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;初期市場の構造&#34;&gt;初期市場の構造&lt;/h4&gt;
-
-&lt;p&gt;初期市場が形成されるためには3つの要素がかかせない。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;将来誰もが必要とするであろうアプリケーションを実現可能にする斬新なテクノロジー&lt;/li&gt;
-&lt;li&gt;そのテクノロジーを評価して、それが現在市場に出回っているものよりも優れていることを検証するテクノロジー・マニア&lt;/li&gt;
-&lt;li&gt;そのテクノロジーを使って現在の業務を飛躍的に進歩させようと考える、資金力のあるビジョナリー&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;第三章-dデー&#34;&gt;■ 第三章 Dデー&lt;/h3&gt;
-
-&lt;p&gt;キャズムに落ち込んだら一刻も早くそこから抜けださなければならない。そこに顧客はいない。&lt;/p&gt;
-
-&lt;p&gt;初期市場で複数のビジョナリーから順調に受注したとしても、このときにはまだ、メインストリーム市場の実利主義者がこぞって製品を購入するような状況になっていない。そのため、収益を得る市場は他にはない。初期市場で改善されたキャッシュフローは瞬く間に悪化を始める。&lt;/p&gt;
-
-&lt;p&gt;初期市場だけでサービスを提供し続けても、安定的な収益が得られるわけではない。他のビジョナリーから受注できるチャンスはあるかもしれないが、ビジョナリーは独自の夢を描いているため、必然的に独自のカスタマイズを要求されることになる。多忙な開発チームにさらなる負担をかけることになる。さらに、初期市場には新たな競合が現れてくるため、早い段階でメインストリーム市場への足場を築かなければならない。&lt;/p&gt;
-
-&lt;p&gt;ではどうやってメインストリーム市場を攻略するか。&lt;br /&gt;
-結論から言えば、&lt;strong&gt;まず支配できそうなニッチ市場をターゲットとし、そこからライバルを追い払い、そこを起点としてさらに戦線を拡大する。これがキャズムを越える方法。肝心なのは、十分に絞り込んだ敵に対して、こちらの最強の兵力を投入すること。&lt;/strong&gt; である。&lt;/p&gt;
-
-&lt;p&gt;絞り込みが効果的に行われるほど、そのマーケットセグメントに向けて発信するメッセージは作成が容易になり、口コミで早く伝わる。&lt;br /&gt;
-設立されたばかりのベンダー、あるいは限られた資源でマーケティング活動を展開しているベンダーは、マーケットを絞り込むことによって自社の競争力を高める必要がある。そうしないと、熱きマーケティング・メッセージはあっという間に雲散霧消し、口コミによる連鎖反応は怒らず、営業部隊は相変わらずだれも知らない製品を売る努力を続けることになる。&lt;/p&gt;
-
-&lt;h4 id=&#34;火を起こす方法&#34;&gt;火を起こす方法&lt;/h4&gt;
-
-&lt;p&gt;ハイテク経営者は市場を選ぶ段階になると、ほとんどがニッチ市場を避ける。&lt;br /&gt;
-ここで協調したいことは、&lt;strong&gt;もしもキャズムを越えられなかったとしたら、その原因は越え方を知らなかったからではなく、越えようという意志が弱かった&lt;/strong&gt; のだ。マーケットをセグメンテーションすることの必要性とその効用は既に説かれている。(セオドア・レビットだと思う)&lt;br /&gt;
-つまりニッチ市場の重要性を知りながら、販売は重視し、それを選択しないということは、マーケットの育成には関与しないという意思表示である。販売を続けていればいつかマーケットがついてくるかというと、それはあり得ない。&lt;/p&gt;
-
-&lt;p&gt;[引用] ひとことで言うなら、キャズムの時期に販売重視の戦略を立てるのは致命的である。その理由はこうだ、。これからメインストリーム市場に進出しようとする企業が目指すのは、何よりも先ず、メインストリーム市場での橋頭堡を確保することである。つまり、&lt;strong&gt;先行事例となる実利主義社の顧客を獲得し、そこを起点としてメインストリーム市場の他の顧客を攻略するのだ。&lt;/strong&gt; この先行事例を打ち立てるためには、メインストリーム市場における当初の顧客の購入目的が完全にじつげんされるように、ベンダーは万全の体制で臨まなければならない。そのためには、ベンダーは単に自社が販売している製品だけでなく、ホールプロダクトを顧客に提示しなければならない。ホールプロダクトとは、後で詳しく見ていくが、顧客の目的を達成するために必要とされる一連の製品やサービスのことである。ここで必要なものがひとつでも欠けていたらソリューションとしては機能せず、そのため、顧客に約束したことも実現されず、先行事例の確保に失敗する結果となる。よって先行事例を何としても確保するためーーそれがキャズムを越えるときの主目標でもあるのだがーー &lt;strong&gt;顧客にホールプロダクトを提供することを確約しなければならない。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;だから唯一の戦略は「小さな池で大きな魚になる」というアプローチになる。実利主義者はマーケットリーダーからしか買わない。&lt;br /&gt;
-そしてニッチ市場を乗り越え次の段階に進む上で必要になるのが、次にターゲットとするマーケットセグメントを戦略的に選ぶこと。
-一番ピンを倒したらそこを橋頭堡として次のニッチ市場を選択する。一番ピンの大きさは重要ではなく、解決されるべき問題の経済価値が重要になる。(問題が深刻なほどニッチ市場がベンダーをキャズムから引き上げてくれる)&lt;br /&gt;
-そして、二番目以降のニッチ市場は最初にニッチ市場でのソリューションを活用できるような市場を念頭に置くこと。&lt;/p&gt;
-
-&lt;h3 id=&#34;第四章-攻略地点の決定&#34;&gt;■ 第四章 攻略地点の決定&lt;/h3&gt;
-
-&lt;p&gt;「どこへ行こうとしているのかがわかっていなければ、おそらく目的地にはたどり着かない」&lt;/p&gt;
-
-&lt;p&gt;上記にも書いたが、キャズム越える時の最大の原則は &lt;strong&gt;特定のニッチ市場を攻略地点として設定し、持てる勢力を総動員してそのニッチ市場を支配すること&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;シナリオを考えながら戦略を立てるのもいい。&lt;/p&gt;
-
-&lt;h5 id=&#34;１-ヘッダー情報&#34;&gt;１. ヘッダー情報&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;エンドユーザー: 製品を実際に使う人&lt;/li&gt;
-&lt;li&gt;エコノミックバイヤー: 製品の経済性を評価する人&lt;/li&gt;
-&lt;li&gt;テクニカルバイヤー: 製品の革新性を評価する人&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;２-エンドユーザーが抱えている問題を考える&#34;&gt;２. エンドユーザーが抱えている問題を考える&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;現状認識: エンドユーザーが抱えている問題をしっかり把握する&lt;/li&gt;
-&lt;li&gt;臨まれている結果: エンドユーザーが手に入れたいものは？なぜ必要なの？&lt;/li&gt;
-&lt;li&gt;試みたこと: 以前にエンドユーザーはどのようにして問題解決を試みたのか？&lt;/li&gt;
-&lt;li&gt;阻害要因: そのときに何がうまくいかなかったのか？なぜ？&lt;/li&gt;
-&lt;li&gt;経済的影響: 結果は？うまく問題解決ができず、どのような影響が出ている？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;３-新しいテクノロジーの適用後&#34;&gt;３. 新しいテクノロジーの適用後&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;新たな試み: 新しいテクノロジー製品を使い、エンドユーザーはどのように問題を解決しようとしたか？&lt;/li&gt;
-&lt;li&gt;支援材料: 新しい製品のどこがよかった？問題を解決できた理由は？&lt;/li&gt;
-&lt;li&gt;経済効果: 削減できた経費はどれがよかった？また得られた便益は？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;キャズムを越えようとしている時にターゲットとすべきマーケットセグメントの規模目安は、&lt;strong&gt;次年度に計画している年間売上と同規模のもの&lt;/strong&gt;(なぜなら市場を支配するから)。&lt;/p&gt;
-
-&lt;h3 id=&#34;第五章-部隊の集結&#34;&gt;■ 第五章 部隊の集結&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;ベンダーが顧客に説明する製品の機能、つまり価値命題と、製品が実際に発揮する機能の間には差がある。その差を埋めるために、本来の製品に各種のサービスや補助的な製品を付け加えて、ホールプロダクトを作り出すのである。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;コアプロダクト: 実際に出荷される製品であり、契約書に記載されている機能を発揮する&lt;/li&gt;
-&lt;li&gt;期待プロダクト: 顧客が前期のコアプロダクトを購入するときに、「こうであるはずだ」と考える製品&lt;/li&gt;
-&lt;li&gt;拡張プロダクト: 数多くの付属品をつけてコアプロダクトの機能を拡張したもの、顧客の購入目的を最大限満たす&lt;/li&gt;
-&lt;li&gt;理想プロダクト: さらに補助や機能強化が施され、顧客に提供される機能の理論上限を表す&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj2Cp-EVjYdKcaPe5vebjy-TzCfBH90NBO0B/image.png&#34; alt=&#34;Pasted%20Image%206/16/16,%2020:44&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;テクノロジー・マニアはコアプロダクトのみでも購入するが、メインストリーム市場はそれでは通用しない。&lt;br /&gt;
-結局、ホールプロダクトを制するものが戦いを制する。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;顧客のプロジェクトの成功に向けて積極的に努力をせず、ただ顧客の成功を祈っているだけならば、そのメーカーは自分自身の成功をも神頼みしていることに等しい。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;第六章-戦線の見定め&#34;&gt;第六章 戦線の見定め&lt;/h3&gt;
-
-&lt;p&gt;競争相手は誰なのか、競争相手を駆逐するためにはどうすればよいかを理解する。&lt;/p&gt;
-
-&lt;p&gt;顧客は一体何を必要としているのだろう？キャズムを越えるためにベンダーが必死で自社製品を売り込んでいるとき、顧客が知りたいと思っているのは、&lt;strong&gt;実は競合製品について&lt;/strong&gt; である。しかし、ベンダーがビジョナリーと協力して新たな製品分野を開拓したばかりならば、競合製品が存在するべくもない。(少なくとも実利主義者がみとめるような競合製品は)そのようなときは競争を作り出す。&lt;/p&gt;
-
-&lt;p&gt;競争がないところには市場もない。&lt;strong&gt;実利主義者は複数の製品を比較するまで購入の決定を下さない。&lt;/strong&gt; したがって、競争相手の存在が必須のものとなる。初期市場では競争相手の存在は必須ではなかったが、メインストリーム市場ではそうはいかない。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj3CmYcJdEhLG7lpAJJth5z2bhmeWvzCankB/image.png&#34; alt=&#34;Pasted%20Image%206/16/16,%2021:35&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ハイテクマーケティングでは、テクノロジー/製品/市場/企業の4つの価値領域が存在する。テクノロジーライフサイクルに合わせた価値を移行していく。
-そしてつまり、キャズムを越えるというのは、「製品中心」とする価値観から「市場」を中心とする価値観に移行すること。&lt;/p&gt;
-
-&lt;h4 id=&#34;ポジショニング&#34;&gt;ポジショニング&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ポジショニングというのは、企業あるいは製品のあるがままの特質を表すものであり、「そうであればよい」「その方向に持っていきたい」といった属性を表すものではない&lt;/li&gt;
-&lt;li&gt;ポジショニングは、購入に関する顧客の決断にもっとも大きな影響を与える要素。顧客はポジショニングをもとに製品を評価し購入の決断を下す。&lt;/li&gt;
-&lt;li&gt;ポジショニングは、企業や製品に対して人々が抱いている観念に根ざすものであり、ベンダーが選んだ言葉で表わされるものではない。(つまり正しいポジショニングをするには、宣伝のキャッチコピーを使うのではなく、人々が製品に感じていることをフレームワークとすべき)&lt;/li&gt;
-&lt;li&gt;ポジショニングの変更は受け入れがたい。できるだけ買えなくて済むようにすること&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ポジションニングの究極の目標は、ターゲットカスタマーに「この状況ではこの製品を購入するのがベスト」という観念を植えつけ、それが未来永劫消えないようにすること。そうなってはじめて、顧客の頭のなかから競合製品のことがなくなり、顧客にとって製品が「買いやすくなった」と言える。&lt;/p&gt;
-
-&lt;h4 id=&#34;ポジショニングの段階&#34;&gt;ポジショニングの段階&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;名前をつけることで観念に枠組みを与える&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;だれが使うのか、何のためにつかうのか&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;競争と差別化(競争に勝ち、マーケットリーダーになる)&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;財務状況と将来性&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;また、「エレベーターテスト」はポジショニングのメッセージ作成にいい。(エレベーターに乗っている時間で説明できるということ)
-ホールプロダクトとして考えていく上で、、「この新市場に注目」といったメッセージは大切。&lt;br /&gt;
-&lt;strong&gt;会社が外部に向けて発信するメッセージはすべてこのポジションステートメントに沿ったものとする。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;第七章-作戦の実行&#34;&gt;■ 第七章 作戦の実行&lt;/h3&gt;
-
-&lt;p&gt;[引用] Dデー作戦決行に際しての最後の決定事項、すなわち、販売チャネルと価格設定について検討する。キャズムを越えて対岸へと向うとき、販売チャネルは言ってみなければ兵員や軍需品を輸送する艦船であり、製品に対する価格決定はその艦船を前進させるための燃料のようなものである、このふたつは、メインストリーム市場の顧客に直接影響を与えるものであり、マーケティング戦略を決定する上で重要なファクターとなる。とりわけ販売チャネルは、判断を誤ったら、やり直す時間は残されていないと考えるべきである。&lt;br /&gt;
-キャズムを越えようとしているベンダーにとって最大の目標は、メインストリーム市場の実利主義者が安心してつきあえる販売チャネルを確保することである。そして、&lt;strong&gt;この目標は何よりも優先されなければならない。&lt;/strong&gt; 売上よりも、利益よりも、対外コミュニケーションよりも、さらには顧客満足よりも優先されなければならないのだ。ここにあげた問題は、しっかりした販売チャネルが確立されていさえすれば、あとから改善することができる。しかし、販売チャネルが機能しなければ、すべての努力が水泡に帰す。さらに、製品価格の決定という問題は、販売チャネルを確立することと密接に結びついている。つまり、キャズムを越えようとしているとき、適切な価格設定によって満足させるべき相手は、顧客でもなければ株主でもない。それは販売チャネルなのだ。(キャズム越えるときは、顧客を満足させる販売チャネルが必要であり、それを実現するための手段が販売チャネルを満足させる製品価格ということ)&lt;/p&gt;
-
-&lt;h4 id=&#34;直販&#34;&gt;直販&lt;/h4&gt;
-
-&lt;p&gt;直販は。需要を作り出すために最適の販売チャネルである。&lt;br /&gt;
-直販が十分に機能するためには、ベンダーと顧客のあいだに相互の信頼関係が構築されており、ベンダーには独占に近い特権が与えられていなければならない(特権を利用して顧客に不利を与えてはならない)。この条件が成立していれば、安定した収益がもたらされ、営業コストも低下する。直販はハイテク市場における最適の販売チャネルとなり、キャズムを越えるときに最強の販売チャネルとなる。マーケットリーダーになるためには、顧客との接触が不可欠。&lt;/p&gt;
-
-&lt;h4 id=&#34;キャズムを越えるときの販売チャネル&#34;&gt;キャズムを越えるときの販売チャネル&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;自社の営業部隊とサポートチームを使って、橋頭堡となるべきターゲットセグメントに需要を作り出す&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;ベンダーがそのセグメントにおけるマーケットリーダーであることをターゲットカスタマーが認識したら、主たる販売チャネルと効率良いものに移行する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;[引用] 直販の営業部隊からスタートする理由は、ターゲットカスタマーで一刻も早く足場を固めなければならないからだ。キャズムを越えるときに重視すべきはスピードであって、経費の削減や売上の増大などではない。この時期には、たとえ一日たりとも無駄にすることは許されず、日々変化する状況にすぐさま対応できる販売チャネルは自分自身なのである。ベンダーが直販によって市場を創り出したら、次はその事実を周囲に知らしめることが必要となる。そうしなければ、だれもこのベンダーから製品を買おうとはしないからである。つまり、いま求められているのは、市場に火をつけることなのだ。&lt;/p&gt;
-
-&lt;h4 id=&#34;販売チャネルの立場を反映した価格設定&#34;&gt;販売チャネルの立場を反映した価格設定&lt;/h4&gt;
-
-&lt;p&gt;価格設定は同じ企業内でもなかなか合意に至らない。それはだれの立場を重視するかによって設定すべき価格が変わってくるため。キャズムを越えるときの価格設定についてのガイドライン。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ビジョナリーは価格にこだわらないほう。プロジェクトの目標が達成されれば桁違いのROIがもたらされるため。&lt;/li&gt;
-&lt;li&gt;対極にいるのが保守派。彼らは低価格であることを求める。いつまでも気長に待ち続ける。&lt;/li&gt;
-&lt;li&gt;間にいるのが実利主義者。彼らが支持するのはマーケットリーダー。マーケットリーダーから購入するのであれば競合より30%ほどまで高く出す&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;販売チャネルの立場を考えて価格を設定するべきということだ。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;次の2つの質問にYESと自信を持って応えられる価格であること。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;それは売れる価格か？&lt;/li&gt;
-&lt;li&gt;それは販売チャネルにとって売る意味のある価格か？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;初期市場でビジョナリーを相手に売ることに成功すると、キャズムを越えるときにも価格を高く設定してしまいがち。&lt;/strong&gt; ところが実利主義者にとって価格は最重要事項のひとつ。競合製品が出てくると、追い返されてしまう。そして安すぎると、メインストリーム市場で買っても利益が出ない。&lt;/p&gt;
-
-&lt;p&gt;[引用] キャズムを越えるときには、まずこちらの価格をその時点でのマーケットリーダーの価格近辺に設定し、それによって自分がマーケットリーダーであることを明確に打ち出す。そして、利潤の中で販売チャネルへの報酬が占める部分を大きくして販売チャネルを優遇する。最後に、ベンダーの製品がメインストリーム市場に浸透し、この製品を販売したいというチャネルが増えた時点で、販売チャネルへの報酬を本来あるべき姿に戻す。&lt;/p&gt;
-
-&lt;h3 id=&#34;終章-キャズムを越えて&#34;&gt;■ 終章 キャズムを越えて&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;実利主義者が知りたいのは、誰が製品を買ったかではなく、だれがその製品を使って業務改善を行ったか&lt;/strong&gt; (事例紹介の仕方)&lt;/li&gt;
-&lt;li&gt;進行中のプロジェクトから得られたノウハウを活用して、業界全体が抱えている問題を解決できるようなホールプロダクトを作り出す。(既存顧客のニーズを聞き、応え、より良い製品を生み出す)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;キャズムを越えるときに再優先されるべきは、メインストリーム市場を代表する実利主義者の満足を高めること&lt;/strong&gt;(多分この時点で製品力は十分に高め済みであることが期待される)&lt;/li&gt;
-&lt;li&gt;初期市場では製品重視の姿勢を貫くべきであり、そのためにも &lt;strong&gt;プロダクト・マネージャーに強い権限を与えなければならない&lt;/strong&gt;(逆に製品のみにしっかり注力できるのがこの時期のみ)&lt;/li&gt;
-&lt;li&gt;メインストリーム市場で成功するかどうかは、ひとえにホールプロダクトにかかっており、コアプロダクトが決定要因になるわけではない(コアプロダクトのみを見てくれるのはテクノロジーマニア)&lt;/li&gt;
-&lt;li&gt;ホールプロダクトは開発部門とマーケティング部門が協力したってはじめて実現される&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;キャズムを読んで反省した点がひとつ。「売上ではなく、顧客の成功を喜ぶべきだった。」&lt;/p&gt;
-
-&lt;p&gt;目先の利益を追ってしまったなどではなく、単純に当時の視野が狭かった。&lt;br /&gt;
-売上目標を追い続けていれば組織は成長すると思い込んでしまっていた。顧客満足に対する指標を立てていなかったため、受注を獲得するとそこで喜び、次の顧客を探しに行った。本来であれば、顧客の目的を達成し満足してもらって初めて喜ぶべきだった。&lt;/p&gt;
-
-&lt;p&gt;顧客の成功を一緒に追うことで、もっと深く彼らのニーズや欲求を理解できたはず。顧客の欲求とニーズを深く探り問題解決に向き合っていれば、より製品力を高めることができた。顧客の抱える課題をしっかりと解決した事例を持っていれば次に当たるべき市場もより的確に捉えることができた。初期市場の段階でこの2つを固めておけば、ここからホールプロダクトを作っていこう、マス市場を攻めていこうといった時にもっと力をつけられていたと思う。&lt;/p&gt;
-
-&lt;p&gt;とはいえまだ未成熟な市場であるので、メインストリーム市場はここからになる。&lt;br /&gt;
-今のところ競合は現れ始めたけれども、明確なマーケットリーダーはいないのでまだまだチャンスがある。&lt;/p&gt;
 </description>
     </item>
     
