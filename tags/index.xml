@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kotazi.com</title>
+    <link>http://kotazi.github.io/blog/tags/</link>
+    <description>Recent content on kotazi.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Aug 2016 13:38:10 +0900</lastBuildDate>
+    <atom:link href="http://kotazi.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Missing .map resource?</title>
+      <link>http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/</link>
+      <pubDate>Tue, 23 Aug 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/18499930/missing-map-resource&#34;&gt;Missing .map resource? [duplicate]&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Failed to load resource: the server responded with a status of 404 (HTTP/2.0 404)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Safariでbootstrap.css.mapがないというエラーが出ていたから調べてみたけど、
+特に問題はないらしい。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

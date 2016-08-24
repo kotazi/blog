@@ -3,7 +3,47 @@
   
   <url>
     <loc>http://kotazi.github.io/blog/</loc>
-    <lastmod>2016-08-04T13:38:10+09:00</lastmod>
+    <lastmod>2016-08-23T13:38:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/</loc>
+    <lastmod>2016-08-23T13:38:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0816_nanba/</loc>
+    <lastmod>2016-08-16T13:38:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0803_spin/</loc>
+    <lastmod>2016-08-13T13:38:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0802_syacho_shikkaku/</loc>
+    <lastmod>2016-08-12T13:38:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0810_goapp_deploy/</loc>
+    <lastmod>2016-08-10T13:38:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/</loc>
+    <lastmod>2016-08-09T13:38:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0808_go_logging/</loc>
+    <lastmod>2016-08-08T13:38:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kotazi.github.io/blog/post/2016/0805_go_authenticating_users/</loc>
+    <lastmod>2016-08-05T13:38:10+09:00</lastmod>
   </url>
   
   <url>
