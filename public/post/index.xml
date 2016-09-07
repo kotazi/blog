@@ -6,8 +6,30 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Aug 2016 13:38:10 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 06 Sep 2016 13:38:10 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【Webpack】devtoolのこと</title>
+      <link>http://kotazi.github.io/blog/post/2016/0906_webpack_debug/</link>
+      <pubDate>Tue, 06 Sep 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0906_webpack_debug/</guid>
+      <description>&lt;p&gt;Webpackでビルドしたファイルのデバッグ方法が気になっていたので少し調べてみた。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;結論からいうと&lt;code&gt;webpack.config.js&lt;/code&gt;の&lt;code&gt;devtool&lt;/code&gt;オプションから設定できる。
+さらに言えば開発環境では&lt;code&gt;cheap-module-eval-source-map&lt;/code&gt;、本番環境では&lt;code&gt;cheap-module-source-map&lt;/code&gt;を設定するのが良い。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://webpack.github.io/docs/configuration.html#devtool&#34;&gt;configuration | Webpack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cheng.logdown.com/posts/2016/03/25/679045&#34;&gt;Webpack devtool source map « Cheng&amp;rsquo;s Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;本番環境をサポートしているものとしていないものがあるのでその点は注意すること。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Missing .map resource?</title>
@@ -1115,32 +1137,6 @@ products-template/
 &lt;p&gt;感想。思想はすごくいいんだけど制限が多すぎるように感じた。&lt;br /&gt;
 BEMをリスペクトしながらモディファイヤの部分に共感できないようだった。
 そこはすごく理解できたんだけど、その他の成約を加えすぎていると思う。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【CSS】Android標準ブラウザにおけるPlaceholderのズレ</title>
-      <link>http://kotazi.github.io/blog/post/2016/0727_placeholder_android/</link>
-      <pubDate>Wed, 27 Jul 2016 11:57:40 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0727_placeholder_android/</guid>
-      <description>&lt;p&gt;iOS/SafariやAndroid/Chromeなどでは再現しなかったが、Androidの標準ブラウザでPlaceholderの位置がずれてしまった。&lt;br /&gt;
-調べてみると似たような記事がいくつか見つかった。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://mmt45.net/2015/02/20/placeholder%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%ABandroid%E3%81%A7%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E8%A1%A8%E7%A4%BA%E4%BD%8D%E7%BD%AE%E3%82%92%E4%B8%AD%E5%A4%AE/&#34;&gt;placeholderを指定したときにAndroidでテキスト表示位置を中央にしたい&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/topcoat/topcoat/issues/453&#34;&gt;Placeholders inputs not centered with Android 4.1.2 #453&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;不具合の再現と修正のものを用意した。&lt;/p&gt;
-
-&lt;p&gt;&lt;p data-height=&#34;300&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;akKBaa&#34; data-default-tab=&#34;html,result&#34; data-user=&#34;kotazi&#34; data-embed-version=&#34;2&#34; class=&#34;codepen&#34;&gt;See the Pen &lt;a href=&#34;http://codepen.io/kotazi/pen/akKBaa/&#34;&gt;akKBaa&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#34;http://codepen.io/kotazi&#34;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#34;http://codepen.io&#34;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;結局&lt;code&gt;body&lt;/code&gt;で当てていた&lt;code&gt;line-height&lt;/code&gt;が良くなかったらしい。
-&lt;code&gt;placeholder&lt;/code&gt;の&lt;code&gt;height&lt;/code&gt;に合わせて&lt;code&gt;72px&lt;/code&gt;を当てたら直った。&lt;/p&gt;
-
-&lt;p&gt;ちなみに&lt;code&gt;line-height&lt;/code&gt;の初期値は&lt;code&gt;normal&lt;/code&gt;。&lt;/p&gt;
 </description>
     </item>
     
