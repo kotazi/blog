@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.16" />
-		<title>信頼残高のことを思い出した。 &middot; kotazi.com</title>
+		<title>【Redux】Redux要点まとめ &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -41,42 +41,54 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>信頼残高のことを思い出した。</h1>
+                    <h1>【Redux】Redux要点まとめ</h1>
                     <h2 class="headline">
-                    February 15, 2016 
+                    September 6, 2016 
                     <br>
+                    
+                    
+                        
+                            <a href="http://kotazi.github.io/blog/tags/webpack">Webpack</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>サイバーエージェントで働いていたころ、しばしば「信頼残高」という言葉を耳にした。(こういう考え方が社内に浸透していることが本当にすごいと今になって思う。)</p>
+                    
 
-<p>仕事というものは信頼の積み重ねで成り立っている。
-この信頼の積み重ねこそが、自身の「信頼残高」だ。</p>
+<h2 id="api">API</h2>
 
-<p>大きな仕事や、期待以上の成果を出せば信頼残高が増えていく。
-信頼残高のある人間には、また大きな仕事やチャンスが回ってくる。</p>
+<h3 id="createstore">■ <code>createStore</code></h3>
 
-<p>逆につまらないミスなどをすれば信頼残高は減っていってしまう。</p>
+<p>アプリのステートツリーを保持するRedux storeを生成する。
+アプリ内にひとつであるべき。</p>
 
-<ul>
-<li>メールの誤字脱字が多い</li>
-<li>会議に2、3分遅刻してしまう</li>
-<li>二日酔いで出社してくる</li>
-<li>資料のまとめ方が下手</li>
-<li>デスク周りがいつも散らかっている</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>引数</th>
+<th>説明</th>
+</tr>
+</thead>
 
-<p>こういったことでも信頼残高はどんどん削られていってしまう。
-「稼いでいるのに全然貯金が貯まらない人」みたいになってしまう。</p>
+<tbody>
+<tr>
+<td>reducers(Function)</td>
+<td></td>
+</tr>
 
-<p>日々の積み重ねをしっかりとやっていこう。</p>
+<tr>
+<td>[preloadState]</td>
+<td></td>
+</tr>
 
-<hr>
-
-<p>個人的に思ったのが、NZ内での信頼が積み重ねられていないなと思った。
-自分の成果が海を超えて認められるように努力することはもちろんなのだけれど、
-各国での評価が一律になるような透明度の高い組織を作っていきたい。</p>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
                 </section>
             </article>
@@ -89,7 +101,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0215_trast%2f - %e4%bf%a1%e9%a0%bc%e6%ae%8b%e9%ab%98%e3%81%ae%e3%81%93%e3%81%a8%e3%82%92%e6%80%9d%e3%81%84%e5%87%ba%e3%81%97%e3%81%9f%e3%80%82 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0908_redux%2f - %e3%80%90Redux%e3%80%91Redux%e8%a6%81%e7%82%b9%e3%81%be%e3%81%a8%e3%82%81 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(

@@ -10,6 +10,49 @@
     <atom:link href="http://kotazi.github.io/blog/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>【Redux】Redux要点まとめ</title>
+      <link>http://kotazi.github.io/blog/post/2016/0908_redux/</link>
+      <pubDate>Tue, 06 Sep 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0908_redux/</guid>
+      <description>
+
+&lt;h2 id=&#34;api&#34;&gt;API&lt;/h2&gt;
+
+&lt;h3 id=&#34;createstore&#34;&gt;■ &lt;code&gt;createStore&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;アプリのステートツリーを保持するRedux storeを生成する。
+アプリ内にひとつであるべき。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;引数&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;reducers(Function)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;[preloadState]&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
       <title>【Webpack】devtoolのこと</title>
       <link>http://kotazi.github.io/blog/post/2016/0906_webpack_debug/</link>
       <pubDate>Tue, 06 Sep 2016 13:38:10 +0900</pubDate>
