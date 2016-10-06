@@ -1,6 +1,6 @@
 +++
 date = "2016-09-06T13:38:10+09:00"
-draft = false
+draft = true
 tags = ["Webpack"]
 title = "【Redux】Redux要点まとめ"
 
@@ -18,5 +18,5 @@ title = "【Redux】Redux要点まとめ"
 |引数|説明|
 |---|---|
 |reducers(Function)||
-|[preloadState]||
-|||
+|[preloadState]\(any)||
+|[enhancer]\(Function)||
