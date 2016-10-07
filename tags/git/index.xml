@@ -6,8 +6,61 @@
     <description>Recent content in Git on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jun 2016 13:50:34 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Oct 2016 13:38:10 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>git rebaseについて</title>
+      <link>http://kotazi.github.io/blog/post/2016/1007_rebase/</link>
+      <pubDate>Fri, 07 Oct 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/1007_rebase/</guid>
+      <description>
+
+&lt;h2 id=&#34;リモートブランチとリモート追跡ブランチ&#34;&gt;リモートブランチとリモート追跡ブランチ&lt;/h2&gt;
+
+&lt;p&gt;ちょっと洗いざらいしているうえで、けっこう根本的な部分で理解の浅い箇所があるなということに気がついた。&lt;/p&gt;
+
+&lt;p&gt;それがリモートブランチとリモート追跡ブランチ違い。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://kray.jp/blog/git-pull-rebase/&#34;&gt;git pull と git pull –rebase の違いって？図を交えて説明します！&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Docbaseを開発しているKrayのブログ。&lt;br&gt;
+図が最高に分かりやすい。fetch理解する前にリモートブランチとローカルブランチの違いを理解する必要があるということに気づくことができた。&lt;/p&gt;
+
+&lt;p&gt;完全にリンク先を読むのが一番なので、改めて説明はしないけれども、下記のようなことを学べた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;リモート追跡ブランチはローカルにある&lt;/li&gt;
+&lt;li&gt;ユーザー自身がリモート追跡ブランチの内容を変更することはできないこと&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;origin/ブランチ名&lt;/code&gt; ってやつはリモート追跡ブランチを指している&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rebase&lt;/code&gt; はコミットを作り直す(ここがリモートに上げたものに&lt;code&gt;rebase&lt;/code&gt; すべきでないと言われる理由)&lt;/li&gt;
+&lt;li&gt;そして故に、&lt;code&gt;rebase&lt;/code&gt; 後はコミットのハッシュが変わるため、pushがリジェクトされる (これが &lt;code&gt;rebase&lt;/code&gt; 後に &lt;code&gt;force push&lt;/code&gt; が必要になる理由)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ということがわかった上で、最後は運用ルール次第なのかなと思った。&lt;br&gt;
+コミット履歴を汚さないために &lt;code&gt;rebase&lt;/code&gt; を推奨する場合もある。(以前一緒に働いていたロシア人もそうだった。)&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;そんな中で腑に落ちたのがこれ。&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://yakst.com/ja/posts/18&#34;&gt;git rebaseを使うときのルール&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;簡単にまとめると、gitの履歴は綺麗であるべき。だから個人のリポジトリでは&lt;code&gt;rebase&lt;/code&gt; も好きに使えば良い。&lt;br&gt;
+ただチーム開発においてはなにより、他人のコミットに&lt;code&gt;rebase&lt;/code&gt; してはいけない。それは他人のコミットを消すということだから(多分ハッシュ値が書き換わるという意味で)。「自分の履歴をきれいに」と 「他人 の履歴をいじるな」。&lt;/p&gt;
+
+&lt;h2 id=&#34;その他参考リンク&#34;&gt;その他参考リンク&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.kaeruspoon.net/articles/1078&#34;&gt;Gitのリモートブランチと追跡ブランチは違うよ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/uasi/items/69368c17c79e99aaddbf&#34;&gt;Git で「追跡ブランチ」って言うのやめましょう&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html&#34;&gt;gitglossary(7) Manual Page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>【git/bfg】間違えてプッシュしたパスワードファイルなどを履歴から完全に削除する</title>

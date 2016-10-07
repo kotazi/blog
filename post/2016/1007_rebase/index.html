@@ -7,7 +7,7 @@
 		<meta name="author" content="kotazi">
 		<meta name="description" content="Hi, I&#39;m web engineer">
 		<meta name="generator" content="Hugo 0.16" />
-		<title>【Go】Go Bookshelf App: Logging &middot; kotazi.com</title>
+		<title>git rebaseについて &middot; kotazi.com</title>
 		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -41,60 +41,64 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>【Go】Go Bookshelf App: Logging</h1>
+                    <h1>git rebaseについて</h1>
                     <h2 class="headline">
-                    August 8, 2016 
+                    October 7, 2016 
                     <br>
                     
                     
                         
-                            <a href="http://kotazi.github.io/blog/tags/go">Go</a>
-                        
-                            <a href="http://kotazi.github.io/blog/tags/gcp">GCP</a>
+                            <a href="http://kotazi.github.io/blog/tags/git">git</a>
                         
                     
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>どのようにして詳細なログ情報を残していくか。</p>
+                    
+
+<h2 id="リモートブランチとリモート追跡ブランチ">リモートブランチとリモート追跡ブランチ</h2>
+
+<p>ちょっと洗いざらいしているうえで、けっこう根本的な部分で理解の浅い箇所があるなということに気がついた。</p>
+
+<p>それがリモートブランチとリモート追跡ブランチ違い。</p>
 
 <ul>
-<li><a href="https://cloud.google.com/go/getting-started/logging-application-events">Logging Application Events with Go</a></li>
+<li><a href="http://kray.jp/blog/git-pull-rebase/">git pull と git pull –rebase の違いって？図を交えて説明します！</a></li>
 </ul>
 
-<p>Cloud Platformの提供するログやモニタリングツールがあるので、Cloud Platform Consoleから簡単に確認することができる。</p>
+<p>Docbaseを開発しているKrayのブログ。<br>
+図が最高に分かりやすい。fetch理解する前にリモートブランチとローカルブランチの違いを理解する必要があるということに気づくことができた。</p>
 
-<p>このサンプルでは標準の<code>log</code>パッケージとGorillaの<code>CombinedLoggingHandler</code>を利用している。</p>
+<p>完全にリンク先を読むのが一番なので、改めて説明はしないけれども、下記のようなことを学べた。</p>
 
-<p>標準のエラー:</p>
+<ul>
+<li>リモート追跡ブランチはローカルにある</li>
+<li>ユーザー自身がリモート追跡ブランチの内容を変更することはできないこと</li>
+<li><code>origin/ブランチ名</code> ってやつはリモート追跡ブランチを指している</li>
+<li><code>rebase</code> はコミットを作り直す(ここがリモートに上げたものに<code>rebase</code> すべきでないと言われる理由)</li>
+<li>そして故に、<code>rebase</code> 後はコミットのハッシュが変わるため、pushがリジェクトされる (これが <code>rebase</code> 後に <code>force push</code> が必要になる理由)</li>
+</ul>
 
-<pre><code>type appHandler func(http.ResponseWriter, *http.Request) *appError
+<p>ということがわかった上で、最後は運用ルール次第なのかなと思った。<br>
+コミット履歴を汚さないために <code>rebase</code> を推奨する場合もある。(以前一緒に働いていたロシア人もそうだった。)<br></p>
 
-type appError struct {
-        Error   error
-        Message string
-        Code    int
-}
+<p>そんな中で腑に落ちたのがこれ。<br></p>
 
-func (fn appHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-        if e := fn(w, r); e != nil { // e is *appError, not os.Error.
-                log.Printf(&quot;Handler error: status code: %d, message: %s, underlying err: %#v&quot;,
-                        e.Code, e.Message, e.Error)
+<ul>
+<li><a href="https://yakst.com/ja/posts/18">git rebaseを使うときのルール</a></li>
+</ul>
 
-                http.Error(w, e.Message, e.Code)
-        }
-}
-</code></pre>
+<p>簡単にまとめると、gitの履歴は綺麗であるべき。だから個人のリポジトリでは<code>rebase</code> も好きに使えば良い。<br>
+ただチーム開発においてはなにより、他人のコミットに<code>rebase</code> してはいけない。それは他人のコミットを消すということだから(多分ハッシュ値が書き換わるという意味で)。「自分の履歴をきれいに」と 「他人 の履歴をいじるな」。</p>
 
-<p>HTTPリクエストのログ:</p>
+<h2 id="その他参考リンク">その他参考リンク</h2>
 
-<pre><code>// Delegate all of the HTTP routing and serving to the gorilla/mux router.
-// Log all requests using the standard Apache format.
-http.Handle(&quot;/&quot;, handlers.CombinedLoggingHandler(os.Stderr, r))
-</code></pre>
-
-<p>ログは<a href="https://console.cloud.google.com/logs/viewer">ここ</a>から見れる。</p>
+<ul>
+<li><a href="https://www.kaeruspoon.net/articles/1078">Gitのリモートブランチと追跡ブランチは違うよ</a></li>
+<li><a href="http://qiita.com/uasi/items/69368c17c79e99aaddbf">Git で「追跡ブランチ」って言うのやめましょう</a></li>
+<li><a href="https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html">gitglossary(7) Manual Page</a></li>
+</ul>
 
                 </section>
             </article>
@@ -107,7 +111,7 @@ http.Handle(&quot;/&quot;, handlers.CombinedLoggingHandler(os.Stderr, r))
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0808_go_logging%2f - %e3%80%90Go%e3%80%91Go%20Bookshelf%20App%3a%20Logging by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f1007_rebase%2f - git%20rebase%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 by @kotazi"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
