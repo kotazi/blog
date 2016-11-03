@@ -6,8 +6,96 @@
     <description>Recent content in Posts on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Oct 2016 13:38:10 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 03 Nov 2016 13:38:10 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>起業のファイナンス</title>
+      <link>http://kotazi.github.io/blog/post/2016/0817_finance/</link>
+      <pubDate>Thu, 03 Nov 2016 13:38:10 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2016/0817_finance/</guid>
+      <description>&lt;p&gt;&lt;a  href=&#34;https://www.amazon.co.jp/gp/product/4534052456/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4534052456&amp;linkCode=as2&amp;tag=kotazi-22&#34;&gt;起業のファイナンス 増補改訂版 ベンチャーにとって一番大切なこと&lt;/a&gt;
+を読みました。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;ul&gt;
+&lt;li&gt;序章 ■ なぜ今「ベンチャー」なのか？&lt;/li&gt;
+&lt;li&gt;第1章 ■ ベンチャーファイナンスの全体像&lt;/li&gt;
+&lt;li&gt;第2章 ■ 会社の始め方&lt;/li&gt;
+&lt;li&gt;第3章 ■ 事業計画の作り方&lt;/li&gt;
+&lt;li&gt;第4章 ■ 企業価値とは何か？&lt;/li&gt;
+&lt;li&gt;第5章 ■ ストックオプションを有効に活用する&lt;/li&gt;
+&lt;li&gt;第6章 ■ 資本政策の作り方&lt;/li&gt;
+&lt;li&gt;第7章 ■ 投資契約と投資家との交渉&lt;/li&gt;
+&lt;li&gt;第8章 ■ 優先株式のすすめ&lt;/li&gt;
+&lt;li&gt;第9章 ■ ベンチャーのコーポレートガバナンス&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;投資サイドからベンチャーについて描いた一冊。
+経営者の自伝を読むのもいいが、本書のように投資家視点書かれた本を読んでみるのも面白い。
+楽しく読みながらファイナンスについて幅広く知識を得られる一冊。&lt;/p&gt;
+
+&lt;p&gt;ベンチャーやスタートアップの立ち上げがどのようにして行われているかというのは、
+やはり経営に関わってみないと理解できない部分が多い。
+「起業のイメージを持ってもらうこと」を目的として書かれた本書は起業経験のない
+僕にとっていくつか不透明だった部分の疑問に答えてくれた。&lt;/p&gt;
+
+&lt;p&gt;また、ルール地味た話ばかりではなく、
+「例外を無視してあえてシンプルに言えば、ベンチャーはお金を借りるべきではありません。」
+といった具合に投資家としての意見をはっきりと述べてくれている。&lt;/p&gt;
+
+&lt;p&gt;その上で、銀行からの借入金には「期限の利益喪失」という条項が付いているので、元利の支払いができなければ基本的には全額を即時返済しなければならないことや、収入や不安定な状況で毎月の返済は非常にきついこと。個人保証の危なさなど、わかりやすく解説してくれている。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;以下に勉強になったことを簡単にまとめる。&lt;/p&gt;
+
+&lt;p&gt;ベンチャーで投資されるリターンは、基本的にはキャピタルゲインである。金融を考える際の最重要事項は「どうやってお金を取り戻すか」ということ。ベンチャー投資の場合はこれが「EXIT」と呼ばれている。EXITによってキャピタルゲインを得る方法は、上場orM&amp;amp;Aと考えておいていい。(第三は株式の売却)&lt;/p&gt;
+
+&lt;p&gt;2013年度のVCが日本で投資する額は718億円に対し、米国で約425億ドル。
+この数字を聞くと日本はベンチャーに投資される資金が少ないと感じてしまうが、
+イケてる起業には十分な資金は集まる。どちらかと言えば投資したく成るようなイケてる企業が足りていないと考えるべき。&lt;/p&gt;
+
+&lt;p&gt;個人でやってきた事業を法人化し増資を受けるのであれば、その半年ぐらい前に会社にしておいたほうが余裕のあるスケジュールを組める。そもそも株式というのは「会社の権利を小分けしたもの」であるから、株式で資金調達をするということは、会社を小口化して販売するのと同じこと。
+これまでやってきた事業を法人化する場合は、創業者個人から法人への事業譲渡または現物出資といった取引を行う。上場を目指すとなるとシードでもVCから数億円の評価はしてもらいたい。創業時に数十万しかかけていない事業であれば事前に法人化してVCに当たる前にプロトタイプなどを作るようにする。(つまり、自身への事業譲渡とVC評価時で事業が成長していることが明確な状態を作りたい)&lt;/p&gt;
+
+&lt;p&gt;エンジェル投資家で注意点を上げるならば、本来創業者とその投資家が同じ普通株式で同時に出資するとしたら、同業者と出資者の株価は同じでないとおかしい。場合によっては持ち株比率がおかしくなる。生まれた瞬間に資本政策で失敗しているということが起こりうる。事業では失敗をしてもいいが、資本政策で失敗すると取り返しがつかない。&lt;/p&gt;
+
+&lt;p&gt;VCから出資を受けるには事業計画を用意する必要があるが、未だ誰もやったことのないことに取り組むベンチャーが計画通りにことが進むはずがない。ここで重要と成るのが「状況に合わせて臨機応変に対応する能力」。ざっくりいえば、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EXECUTIVE SUMMARY&lt;/li&gt;
+&lt;li&gt;会社の概要&lt;/li&gt;
+&lt;li&gt;外部環境&lt;/li&gt;
+&lt;li&gt;数値計画&lt;/li&gt;
+&lt;li&gt;検討している資金調達の概要や資本政策&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;などがオーソドックス。&lt;/p&gt;
+
+&lt;p&gt;企業価値について。
+企業価値によって株価が決まるため、ベンチャーにとって企業価値は重要。
+株式とは起業の経済的価値やコントロール権(議決権)を小口化したもの。&lt;/p&gt;
+
+&lt;p&gt;純資産方式で企業価値を見る場合、会社の過去に着目して企業価値評価を行うことになる。
+これからことを成すベンチャー向きの考え方ではない。ベンチャーの価値は過去の財務的な実績ではなく、
+未来の可能性で見るべき。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/DCF%E6%B3%95&#34;&gt;DCF法&lt;/a&gt;(Disconuted Cash Flow)は、その起業に入ってくるキャッシュフローを現在の価値に割り引いたものが、その企業の企業価値だと考える方法。EXITから逆算して考えること。(ちなみに、本書には1回の増資で会うべき投資家の数は、数十は普通と書いてある。)&lt;/p&gt;
+
+&lt;p&gt;その他にも、
+- ストックオプション
+- 資本政策
+- コーポレート・ガバナンス&lt;/p&gt;
+
+&lt;p&gt;などについても、しっかりと書かれている。
+またしばらくしたらもう一度読もう。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>git rebaseについて</title>
@@ -784,58 +872,6 @@ project = ********
 &lt;p&gt;以上で準備が完了。&lt;/p&gt;
 
 &lt;p&gt;ここからGoogle Cloud Platformのさまざまな機能を試していく。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Atomic Design覚書</title>
-      <link>http://kotazi.github.io/blog/post/2016/0801_atomic_design/</link>
-      <pubDate>Mon, 01 Aug 2016 13:38:10 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0801_atomic_design/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://atomicdesign.bradfrost.com/&#34;&gt;Atomic Design&lt;/a&gt;について少し学んだので覚えているうちにメモにまとめよう。&lt;/p&gt;
-
-&lt;h2 id=&#34;atomic-design&#34;&gt;Atomic Design&lt;/h2&gt;
-
-&lt;p&gt;Atomic Designは性質の異なる5つのステージによって構成される方法論である。
-これらのステージはよく考えられたインターフェイスデザインシステムを作り出す。&lt;/p&gt;
-
-&lt;h3 id=&#34;atoms-原子&#34;&gt;Atoms(原子)&lt;/h3&gt;
-
-&lt;p&gt;原子が物質の基本的な構成要素であるならば、ユーザーインターフェイスを構成する基本的な要素である。
-それゆえラベルやインプット、ボタンなどのそれ以上分解できない基本的なHTMLタグなどが含まれる。&lt;/p&gt;
-
-&lt;p&gt;それに加えて、フォントスタックやカラーパレット、またはアニメーションなどの抽象的な要素も含まれる。&lt;/p&gt;
-
-&lt;h3 id=&#34;molecules-分子&#34;&gt;Molecules(分子)&lt;/h3&gt;
-
-&lt;p&gt;比較的シンプルな単一機能のUI要素。
-例えば、フォーム用のラベルと、検索用インプットと、それようのサーチボタンなど。&lt;/p&gt;
-
-&lt;h3 id=&#34;organisms-有機体&#34;&gt;Organisms(有機体)&lt;/h3&gt;
-
-&lt;p&gt;比較的複雑なUIコンポーネントであり、分子や原子などが合わさったり合わさらなかったりして構成される。&lt;/p&gt;
-
-&lt;h3 id=&#34;templates&#34;&gt;Templates&lt;/h3&gt;
-
-&lt;p&gt;ページレベルのオブジェクトであり、コンポーネントをレイアウトに配置し、設計の基礎となるコンテンツの構造を明確にする。&lt;br /&gt;
-ワイヤーフレームのような印象。&lt;/p&gt;
-
-&lt;h3 id=&#34;pages&#34;&gt;Pages&lt;/h3&gt;
-
-&lt;p&gt;ページは特有のテンプレートのインスタンスであり、リアルなコンテンツでプレースホルダーを置き換える。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;良いけどうまくまとめられん。&lt;/p&gt;
-
-&lt;p&gt;思想は良いけど、実際のワークフローにどのように組み込むかが大切で、
-しっかりそれについても書いてくれているんだけれども、
-今のチームの既存のデザインワークフローを知らないのでなんとも言えない。&lt;/p&gt;
-
-&lt;p&gt;また機が来たら向き合おう。&lt;/p&gt;
 </description>
     </item>
     
