@@ -6,8 +6,115 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jan 2017 18:31:41 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jan 2017 21:40:19 +0900</lastBuildDate>
     <atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Alfredの有料版を購入して覚えたこと・知ったこと</title>
+      <link>http://kotazi.github.io/blog/post/2017/0118_alfred/</link>
+      <pubDate>Wed, 18 Jan 2017 21:40:19 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2017/0118_alfred/</guid>
+      <description>
+
+&lt;h1 id=&#34;alfredの有料版を購入して覚えたこと-知ったこと&#34;&gt;Alfredの有料版を購入して覚えたこと・知ったこと&lt;/h1&gt;
+
+&lt;p&gt;今更ながらAlfredの有料版を購入。
+せっかくなので使い方を調べて知らなかった便利そうなものをまとめました。&lt;/p&gt;
+
+&lt;h2 id=&#34;ファイル検索&#34;&gt;ファイル検索&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;先頭に&lt;code&gt;&#39;&lt;/code&gt;を入れてファイル検索
+&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/6192cd96-1321-ff1b-5fcd-d135d8a46ef4.png&#34; alt=&#34;Kobito.uE23j5.png&#34; title=&#34;Kobito.uE23j5.png&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ディレクトリ検索&#34;&gt;ディレクトリ検索&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;先頭に&amp;rsquo;~&amp;lsquo;を入れてユーザーディレクトリから検索
+&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/9549f8b8-3648-5fd7-de49-6628d0741bc6.png&#34; alt=&#34;Kobito.VXg9rW.png&#34; title=&#34;Kobito.VXg9rW.png&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ファイルのバッファ&#34;&gt;ファイルのバッファ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;⌥↑&lt;/code&gt;でバッファに追加&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌥←&lt;/code&gt;で最後のアイテムをバッファから除く&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌥→&lt;/code&gt;で全てのバッファアイテムに対してアクションを実行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;⌥backspace&lt;/code&gt;で全て削除&lt;/li&gt;
+&lt;li&gt;細かい設定は&amp;rdquo;Preferences&amp;rdquo; =&amp;gt; &amp;ldquo;Features&amp;rdquo; =&amp;gt; &amp;ldquo;File Search&amp;rdquo; から可能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/dfbf0110-ebe2-e3e6-7723-d7c4fe13bc04.png&#34; alt=&#34;Kobito.aDgiwA.png&#34; title=&#34;Kobito.aDgiwA.png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;その他&#34;&gt;その他&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;↑&lt;/code&gt;で履歴を表示&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;→&lt;/code&gt;でアクションの一覧&lt;/li&gt;
+&lt;li&gt;⌘Yでクイックルック&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/7d806aab-1693-307e-c004-27b0ca69732a.png&#34; alt=&#34;Kobito.9PIejl.png&#34; title=&#34;Kobito.9PIejl.png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;辞書&#34;&gt;辞書&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;辞書の設定が可能&lt;/li&gt;
+&lt;li&gt;デフォルトでは&lt;code&gt;define&lt;/code&gt;で検索する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/9016b02f-d306-e334-27e7-aeb008692425.png&#34; alt=&#34;Kobito.tK6Mde.png&#34; title=&#34;Kobito.tK6Mde.png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;クリップボード履歴&#34;&gt;クリップボード履歴&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;細かい設定は&amp;rdquo;Preferences&amp;rdquo; =&amp;gt; &amp;ldquo;Features&amp;rdquo; =&amp;gt; &amp;ldquo;Clipboard&amp;rdquo; から&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/491ca867-4bf7-6fcc-b1b0-f0eda7133987.png&#34; alt=&#34;Kobito.XX02oY.png&#34; title=&#34;Kobito.XX02oY.png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;スニペットの登録&#34;&gt;スニペットの登録&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;スニペットも登録できる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/a1a0feec-007f-17b0-bc59-d3cb8c82481d.png&#34; alt=&#34;Kobito.n425Rg.png&#34; title=&#34;Kobito.n425Rg.png&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Automaically expand snippets by keyword&amp;rdquo;をオンにすれば、キーワードを入力すると自動でトリガーしてくれる
+&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/c573e715-0578-c1a6-3779-faf618127189.png&#34; alt=&#34;Kobito.RJaSEn.png&#34; title=&#34;Kobito.RJaSEn.png&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;workflows&#34;&gt;Workflows&lt;/h2&gt;
+
+&lt;p&gt;ワークフローもすごく便利。使い方やおすすめのワークフローは下記のリンクでだいたい十分。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/DriftwoodJP/items/6bee03df0a0da499320a&#34;&gt;開発におすすめの Alfred Workflows ○○選&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;入れたもの貼っておく。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://qiita-image-store.s3.amazonaws.com/0/25228/786b967f-6e52-4c67-0b0a-e38d6ba3cc1f.png&#34; alt=&#34;Kobito.2MDvcm.png&#34; title=&#34;Kobito.2MDvcm.png&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;その他参考リンク&#34;&gt;その他参考リンク&lt;/h2&gt;
+
+&lt;p&gt;AlfredのWorkflowsやThemeをさがしたければこちらへ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.packal.org/&#34;&gt;Packal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Alfredの使い方が分からなければこちらへ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.alfredapp.com/help/&#34;&gt;Alfred Help and Support&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>人と企業が信頼で結ばれる新しい雇用 - ALLIANCE</title>
@@ -718,86 +825,6 @@ http.Handle(&amp;quot;/&amp;quot;, handlers.CombinedLoggingHandler(os.Stderr, r)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;ログは&lt;a href=&#34;https://console.cloud.google.com/logs/viewer&#34;&gt;ここ&lt;/a&gt;から見れる。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>【Go】Go Bookshelf App: Authenticating Users</title>
-      <link>http://kotazi.github.io/blog/post/2016/0805_go_authenticating_users/</link>
-      <pubDate>Fri, 05 Aug 2016 13:38:10 +0900</pubDate>
-      
-      <guid>http://kotazi.github.io/blog/post/2016/0805_go_authenticating_users/</guid>
-      <description>
-
-&lt;p&gt;OAuth2.0を使ったユーザー認証。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/authenticate-users&#34;&gt;Authenticating Users with Go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;web-application-client-idの作成&#34;&gt;Web application client IDの作成&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/apis/credentials&#34;&gt;credentials&lt;/a&gt;へアクセスし、&lt;code&gt;OAuth consent screen&lt;/code&gt;をクリック。
-プロダクト名のところに&lt;code&gt;Go Bookshelf App&lt;/code&gt;と入力し、その他も任意で記入する。&lt;/p&gt;
-
-&lt;p&gt;保存後、&lt;code&gt;Create credentials &amp;gt; OAuth client ID&lt;/code&gt;と移動し、&lt;code&gt;Application type&lt;/code&gt;では&lt;code&gt;Web application&lt;/code&gt;を選択。
-&lt;code&gt;Name&lt;/code&gt;は&lt;code&gt;Go Bookshelf Client&lt;/code&gt;。&lt;code&gt;Authorized redirect URIs&lt;/code&gt;にProjectIDに置き換えた値を入れる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http://localhost:8080/oauth2callback
-http://[YOUR_PROJECT_ID].appspot.com/oauth2callback
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;作成すると、IDとclient secretが表示されるので保存しておくこと。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;前回同様、下記へ移動して&lt;code&gt;config.go&lt;/code&gt;を開く。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;下記のコメントを削除し、clientidとclientsecretを先ほどの値に置き換える。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// oauthConfig = configureOAuthClient(&amp;quot;clientid&amp;quot;, &amp;quot;clientsecret&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;app/app.yaml&lt;/code&gt;を開き、&lt;code&gt;OAUTH2_CALLBACK&lt;/code&gt;のProjectIDを自分のものに置き換える。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ローカルの立ち上げやデプロイは前回同様。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-auth.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;セッションを扱うために&lt;a href=&#34;http://www.gorillatoolkit.org/&#34;&gt;Gorilla web toolkit&lt;/a&gt;を使っている。
-Gorillaはいくつかの&lt;code&gt;Store&lt;/code&gt;インターフェイスを持っているが、今回は&lt;code&gt;CookieStore&lt;/code&gt;を利用。&lt;/p&gt;
-
-&lt;p&gt;認証の仕組みはまず、Googleの認証画面にリダイレクトさせ、そのレスポンスを、ユーザーがアプリケーションに戻る際に処理させるというものである。&lt;/p&gt;
-
-&lt;p&gt;アプリケーションはClientIDとOAuthスコープを使ってURLを生成する。スコープには、アプリケーションがアクセスしようとするユーザー情報が何かということを含む。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;config.go&lt;/code&gt;のこの部分がそれにあたる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func configureOAuthClient(clientID, clientSecret string) *oauth2.Config {
-        redirectURL := os.Getenv(&amp;quot;OAUTH2_CALLBACK&amp;quot;)
-        if redirectURL == &amp;quot;&amp;quot; {
-                redirectURL = &amp;quot;http://localhost:8080/oauth2callback&amp;quot;
-        }
-        return &amp;amp;oauth2.Config{
-                ClientID:     clientID,
-                ClientSecret: clientSecret,
-                RedirectURL:  redirectURL,
-                Scopes:       []string{&amp;quot;email&amp;quot;, &amp;quot;profile&amp;quot;},
-                Endpoint:     google.Endpoint,
-        }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;認証が完了するとGoogle認証サービスは&lt;code&gt;/oauth2callback&lt;/code&gt;を通してユーザーをアプリケーションへ戻す。&lt;/p&gt;
-
-&lt;p&gt;認証後はGoogle+ APIが利用できるため&lt;code&gt;plusService.People.Get(&amp;quot;me&amp;quot;)&lt;/code&gt;を使うと認証済みのユーザーの情報が取得できる。&lt;/p&gt;
 </description>
     </item>
     
