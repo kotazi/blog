@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 16 Jun 2016 13:50:34 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/bfg/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/bfg/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>【git/bfg】間違えてプッシュしたパスワードファイルなどを履歴から完全に削除する</title>
@@ -15,74 +17,16 @@
       <pubDate>Thu, 16 Jun 2016 13:50:34 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0616_git_bfg/</guid>
-      <description>
-
-&lt;p&gt;AWS情報の書いてあるJSONファイルが間違えてコミットしてあったため、
-その削除方法について調べてトライしました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://help.github.com/articles/remove-sensitive-data/&#34;&gt;Remove sensitive data&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;上記のリンクに方法が書いてある。&lt;br /&gt;
-ざっくりまとめると2つの方法があって、&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34;&gt;BFG Repo-Cleaner&lt;/a&gt;を使う方法&lt;/li&gt;
-&lt;li&gt;コマンドを叩いて頑張る方法&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;の2つがある。どちらかと言えば1を推奨しているよう。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;bfgを使って削除する&#34;&gt;BFGを使って削除する&lt;/h2&gt;
-
-&lt;p&gt;Scala製なのでJavaの実行環境が必要になる。&lt;br /&gt;
-今回は&lt;code&gt;.zprofile&lt;/code&gt;に&lt;code&gt;alias bfg=&#39;java -jar /Applications/bfg-1.12.12.jar&#39;&lt;/code&gt;としてエイリアスを作成。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA
-$ git commit -m &amp;quot;Remove sensitive data&amp;quot;
-$ git push --force origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;みたいな感じにすればできる。&lt;/p&gt;
-
-&lt;h5 id=&#34;参考リンク&#34;&gt;参考リンク&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.technolize.net/post/82283923159/git-filter-branch-%E3%81%AE%E3%81%8B%E3%82%8F%E3%82%8A%E3%81%AB-bfg-%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%B1%A5%E6%AD%B4%E3%82%92%E6%B6%88%E5%8E%BB%E3%81%99%E3%82%8B&#34;&gt;git filter-branch のかわりに BFG でファイルの履歴を消去する&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;コマンドを叩いて頑張る方法&#34;&gt;コマンドを叩いて頑張る方法&lt;/h2&gt;
-
-&lt;p&gt;意外とシンプルんできるから悪くない。でも長いから覚えるのは無理。&lt;br /&gt;
-なんだかんだでBFG入れておいていい気がする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git filter-branch -f --index-filter &#39;git rm --ignore-unmatch YOUR-FILE-WITH-SENSITIVE-DATA&#39; HEAD
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;参考リンク-1&#34;&gt;参考リンク&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/ichhi/20110825/1314300975&#34;&gt;gitで特定のファイルの履歴を消す方法|おし、プログラミング&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/MahoTakara/items/3b02bf55767a6372596e&#34;&gt;GitHub の commit 履歴からパスワードファイル等だけを消す方法&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;テーマとは関係ないけど、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.jar&lt;/code&gt;ファイルはどこに置けばいいのか&lt;/li&gt;
-&lt;li&gt;エイリアスを書いておくのは&lt;code&gt;.zprofile&lt;/code&gt;でいいのか&lt;/li&gt;
-&lt;li&gt;エイリアスを作成する以外に良い方法がないのか&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;というのが気になった。&lt;/p&gt;
-</description>
+      <description>AWS情報の書いてあるJSONファイルが間違えてコミットしてあったため、 その削除方法について調べてトライしました。
+  Remove sensitive data  上記のリンクに方法が書いてある。
+ざっくりまとめると2つの方法があって、
+ BFG Repo-Cleanerを使う方法 コマンドを叩いて頑張る方法  の2つがある。どちらかと言えば1を推奨しているよう。
+ BFGを使って削除する Scala製なのでJavaの実行環境が必要になる。
+今回は.zprofileにalias bfg=&#39;java -jar /Applications/bfg-1.12.12.jar&#39;としてエイリアスを作成。
+$ bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA $ git commit -m &amp;quot;Remove sensitive data&amp;quot; $ git push --force origin master  みたいな感じにすればできる。
+参考リンク  git filter-branch のかわりに BFG でファイルの履歴を消去する  コマンドを叩いて頑張る方法 意外とシンプルんできるから悪くない。でも長いから覚えるのは無理。
+なんだかんだでBFG入れておいていい気がする。
+$ git filter-branch -f --index-filter &#39;git rm --ignore-unmatch YOUR-FILE-WITH-SENSITIVE-DATA&#39; HEAD  参考リンク  gitで特定のファイルの履歴を消す方法|おし、プログラミング GitHub の commit 履歴からパスワードファイル等だけを消す方法   テーマとは関係ないけど、</description>
     </item>
     
   </channel>

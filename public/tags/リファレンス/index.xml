@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Dec 2015 09:38:50 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>いまいち忘れるjQuery</title>
@@ -15,26 +17,12 @@
       <pubDate>Thu, 10 Dec 2015 09:38:50 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/20151210_jquery/</guid>
-      <description>&lt;p&gt;なんだかjQueryの使い方ってそこそこに忘れる。
-忘れるというか、それなりに検索をかけているなと。&lt;/p&gt;
-
-&lt;p&gt;そこで。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://semooh.jp/jquery/api/selectors/&#34;&gt;jQuery日本語リファレンス&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ヌーのサイトに一覧ページがあることを知った。&lt;br /&gt;
-困ったときはここを見ればいいし、チートシートもある。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://oscarotero.com/jquery/&#34;&gt;jQuery Quick API Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;wrapAll()&lt;/code&gt;とか初めて使ったけど便利だ。&lt;br /&gt;
-ちなみに、&lt;code&gt;createElement()&lt;/code&gt;みたいなメソッドはなくて、
-  普通に&lt;code&gt;$(&#39;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&#39;)&lt;/code&gt;ってやって作るらしい。&lt;/p&gt;
-</description>
+      <description>なんだかjQueryの使い方ってそこそこに忘れる。 忘れるというか、それなりに検索をかけているなと。
+そこで。
+ jQuery日本語リファレンス  ヌーのサイトに一覧ページがあることを知った。
+困ったときはここを見ればいいし、チートシートもある。
+ jQuery Quick API Reference  wrapAll()とか初めて使ったけど便利だ。
+ちなみに、createElement()みたいなメソッドはなくて、 普通に$(&#39;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&#39;)ってやって作るらしい。</description>
     </item>
     
   </channel>

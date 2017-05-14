@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 13 Feb 2016 20:34:06 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>【プログラミング言語Ruby】3章-データ型とオブジェクト</title>
@@ -15,121 +17,22 @@
       <pubDate>Sat, 13 Feb 2016 20:34:06 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0212_ruby/</guid>
-      <description>
-
-&lt;h3 id=&#34;数値&#34;&gt;数値&lt;/h3&gt;
-
-&lt;p&gt;Rubyは数値を表現する5種類の組み込みクラスを持っており、
-標準ライブラリにはさらに3種類の役に立ち数値クラスが含まれている。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/AHWcSL7aQflDHarJQfPcwzy2xDWCtDv8WdUB/image.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Rubyの全ての数値オブジェクトは&lt;code&gt;Numeric&lt;/code&gt;のインスタンスになっている。
-全ての整数は&lt;code&gt;Integer&lt;/code&gt;のインスタンスである。31ビット幅に収まる整数値は&lt;code&gt;Fixnum&lt;/code&gt;のインスタンスであり、
-そうでなければ&lt;code&gt;Bignum&lt;/code&gt;のインスタンスである。
-Rubyでは実数値を&lt;code&gt;Float&lt;/code&gt;クラスで近似的に表現する。&lt;code&gt;Float&lt;/code&gt;クラスは
-プラットフォーム固有の浮動小数点表現を使う。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Complex&lt;/code&gt;クラスは複素数を表現する。
-&lt;code&gt;BigDecimal&lt;/code&gt;クラスは10進数表現を使って任意の制度の実数を表現する。
-&lt;code&gt;Rational&lt;/code&gt;クラスは有理数、すなわち整数を別の整数で除算した値を表現する。&lt;/p&gt;
-
-&lt;p&gt;また、全ての数値オブジェクトはイミュータブルである。&lt;/p&gt;
-
-&lt;h3 id=&#34;文字列&#34;&gt;文字列&lt;/h3&gt;
-
-&lt;p&gt;文字列は&lt;code&gt;String&lt;/code&gt;クラスによって表現する。ミュータブルなオブジェクトである。
-パターンは&lt;code&gt;Regexp&lt;/code&gt;オブジェクトとして表現される。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;%q&lt;/code&gt;、&lt;code&gt;%Q&lt;/code&gt;はStringリテラル。&lt;/p&gt;
-
-&lt;h3 id=&#34;配列&#34;&gt;配列&lt;/h3&gt;
-
-&lt;p&gt;配列とは、値の列で、列の中の位置(添字)によって値にアクセスできるようになっているものである。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;%w&lt;/code&gt;、&lt;code&gt;%W&lt;/code&gt;は配列リテラル。&lt;/p&gt;
-
-&lt;p&gt;配列は&lt;code&gt;Array.new&lt;/code&gt;コンストラクタでも作成できる。&lt;/p&gt;
-
-&lt;h3 id=&#34;ハッシュ&#34;&gt;ハッシュ&lt;/h3&gt;
-
-&lt;p&gt;ハッシュとはキーと呼ばれるオブジェクトの集合を保持し、ここのキーに値を対応付けているデータ構造である。
-キーを値にマッピングするので、ハッシュはマップとも呼ばれる。
-個々のキーから値を連想するように導き出すので、連想配列とも呼ばれることもあるし、
-添字が整数ではなく任意のオブジェクトになった配列と考え得ることもできる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;numbers = Hash.new
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;ハッシュリテラル&#34;&gt;ハッシュリテラル&lt;/h4&gt;
-
-&lt;p&gt;ハッシュリテラルは全体が中括弧で囲まれ、カンマで区切られたキー/値の対という形で記述される。
-キーと値は&lt;code&gt;=&amp;gt;&lt;/code&gt;という2文字の矢印で区切られる。先ほど作成したHashオブジェクトは次のリテラルでも作成できる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;numbers = { &amp;quot;one&amp;quot; =&amp;gt; 1, &amp;quot;two&amp;quot; =&amp;gt; 2, &amp;quot;three&amp;quot; =&amp;gt; 3 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;一般に、ハッシュキーとしては文字列よりも&lt;code&gt;Symbol&lt;/code&gt;オブジェクトの方が効率的に使える。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;numbers = { :one =&amp;gt; 1, :two =&amp;gt; 2, :three =&amp;gt; 3 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;Symbol&lt;/code&gt;とはinternされたイミュータブルな文字列で、プレフィックスとしてコロンが付けられた識別子という形で記述される。&lt;/p&gt;
-
-&lt;p&gt;Rubyのハッシュは、ハッシュテーブルというデータ構造を使って実装されている。
-ハッシュのキーとして使えるオブジェクトは、キーのハッシュ値となるFixnumを返すhashという名前のメソッドを保つ必要がある。&lt;/p&gt;
-
-&lt;h3 id=&#34;範囲&#34;&gt;範囲&lt;/h3&gt;
-
-&lt;p&gt;Rangeオブジェクトは先頭の値から末尾の値までのすべての値を表す。範囲リテラルは、先頭の値と末尾の値の間に2個または3子のドットを入れて記述する。
-ドットが２個なら範囲は包含的で、末尾の値も範囲の一部となる。
-ドットが３個なら、範囲は排他的で、末尾の値は範囲に含まれない。&lt;/p&gt;
-
-&lt;p&gt;範囲には暗黙的に順序がある。
-Stringクラスにはsuccメソッド定義されており、&lt;code&gt;&#39;a&#39;.succ&lt;/code&gt;が&amp;rsquo;b&amp;rsquo;、&lt;code&gt;&#39;b&#39;.succ&lt;/code&gt;が&amp;rsquo;c&amp;rsquo;である。
-このように反復処理できる範囲を離散範囲(discrete range)という。短点がsuccメソッドを定義していない範囲は反復処理できないので
-連続範囲(continuous range)という。
-短点が整数になっている範囲は離散範囲だが、浮動小数点になっている範囲は連続範囲である。&lt;/p&gt;
-
-&lt;h3 id=&#34;シンボル&#34;&gt;シンボル&lt;/h3&gt;
-
-&lt;p&gt;Rubyの一般的な実装は、実装が把握しているすべてのクラス、メソッド、変数の名前を格納するシンボルテーブルを管理している。
-シンボルテーブルがあるおかげで、インタープリタは文字列の比較をほとんどせずに済ませられる。
-たとえばメソッド名は、このシンボルテーブル内でのメソッド名の位置によって参照する。
-こうすることにより、比較的コストの高い文字列の処理がコストの低い整数処理に変わる。&lt;br /&gt;
-これらのシンボルは、純粋にインタープリタの内部構造としてしまい込まれているわけではなく、Rubyプログラムからも使えるようになっている。
-Symbolオブジェクトは、シンボルを参照しているのである。シンボルリテラルは、コロンをプレフィックスとする識別子や文字列という形で書ける。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:symbol       # Symbolのリテラル
-:&amp;quot;symbol&amp;quot;     # 全く同じリテラル
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;2個の文字列では、同じ内容を持ちつつ、全く異なるオブジェクトという場合があるが、シンボルではそのようなことは決して起きない。
-同じ内容を持つ2個の文字列をシンボルに変換すると、全く同じSymbolオブジェクトになる。2つの異なるSymbolオブジェクトは、必ず異なる内容を持つ。&lt;/p&gt;
-
-&lt;p&gt;文字列の内容のためではなく、一種の固有な識別子として文字列を扱うコードを書こうとしているときには、シンボルを使うことを検討すると良い。
-たとえば、引数として&amp;rdquo;AM&amp;rdquo;または&amp;rdquo;PM&amp;rdquo;という文字列を受け付けるメソッドを書くのではなく、:AMか:PMというシンボルを受け付けるようにするのである。
-2つの文字列が等しいかどうかを比較するよりも、2つのSymbolオブジェクトが等しいかどうかを検討する方が、はるかに速い。
-同じ理由から、ハッシュキーとしては一般に文字列を使うよりもシンボルを使ったほうがよい。&lt;/p&gt;
-
-&lt;h3 id=&#34;true-false-nil&#34;&gt;true、false、nil&lt;/h3&gt;
-
-&lt;p&gt;true、false、nilはRubyのキーワードとなっており、予約された特別な値である。
-これらのキーワードを評価すると、専用のオブジェクトになる。
-trueを評価すると、&lt;code&gt;TrueClass&lt;/code&gt;のシングルトンインスタンスのオブジェクトになる。
-同様に、falseとnilは&lt;code&gt;FalseClass&lt;/code&gt;、&lt;code&gt;NilClass&lt;/code&gt;のシングルトンインスタンスである。
-Booleanクラスがないことに注意。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;o == nil
-o.nil?
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;オブジェクト&#34;&gt;オブジェクト&lt;/h3&gt;
-
-&lt;p&gt;Rubyはオブジェクト指向言語として非常に純度が高い。
-すべての値はオブジェクトであり、他の多くの言事は異なり、原始型と呼べるようなものはない。
-Rubyでは、すべてのオブジェクトはObjectだという名前のクラスの敬称をシており、&lt;/p&gt;
-</description>
+      <description>数値 Rubyは数値を表現する5種類の組み込みクラスを持っており、 標準ライブラリにはさらに3種類の役に立ち数値クラスが含まれている。
+Rubyの全ての数値オブジェクトはNumericのインスタンスになっている。 全ての整数はIntegerのインスタンスである。31ビット幅に収まる整数値はFixnumのインスタンスであり、 そうでなければBignumのインスタンスである。 Rubyでは実数値をFloatクラスで近似的に表現する。Floatクラスは プラットフォーム固有の浮動小数点表現を使う。
+Complexクラスは複素数を表現する。 BigDecimalクラスは10進数表現を使って任意の制度の実数を表現する。 Rationalクラスは有理数、すなわち整数を別の整数で除算した値を表現する。
+また、全ての数値オブジェクトはイミュータブルである。
+文字列 文字列はStringクラスによって表現する。ミュータブルなオブジェクトである。 パターンはRegexpオブジェクトとして表現される。
+%q、%QはStringリテラル。
+配列 配列とは、値の列で、列の中の位置(添字)によって値にアクセスできるようになっているものである。
+%w、%Wは配列リテラル。
+配列はArray.newコンストラクタでも作成できる。
+ハッシュ ハッシュとはキーと呼ばれるオブジェクトの集合を保持し、ここのキーに値を対応付けているデータ構造である。 キーを値にマッピングするので、ハッシュはマップとも呼ばれる。 個々のキーから値を連想するように導き出すので、連想配列とも呼ばれることもあるし、 添字が整数ではなく任意のオブジェクトになった配列と考え得ることもできる。
+numbers = Hash.new  ハッシュリテラル ハッシュリテラルは全体が中括弧で囲まれ、カンマで区切られたキー/値の対という形で記述される。 キーと値は=&amp;gt;という2文字の矢印で区切られる。先ほど作成したHashオブジェクトは次のリテラルでも作成できる。
+numbers = { &amp;quot;one&amp;quot; =&amp;gt; 1, &amp;quot;two&amp;quot; =&amp;gt; 2, &amp;quot;three&amp;quot; =&amp;gt; 3 }  一般に、ハッシュキーとしては文字列よりもSymbolオブジェクトの方が効率的に使える。
+numbers = { :one =&amp;gt; 1, :two =&amp;gt; 2, :three =&amp;gt; 3 }  Symbolとはinternされたイミュータブルな文字列で、プレフィックスとしてコロンが付けられた識別子という形で記述される。
+Rubyのハッシュは、ハッシュテーブルというデータ構造を使って実装されている。 ハッシュのキーとして使えるオブジェクトは、キーのハッシュ値となるFixnumを返すhashという名前のメソッドを保つ必要がある。
+範囲 Rangeオブジェクトは先頭の値から末尾の値までのすべての値を表す。範囲リテラルは、先頭の値と末尾の値の間に2個または3子のドットを入れて記述する。 ドットが２個なら範囲は包含的で、末尾の値も範囲の一部となる。 ドットが３個なら、範囲は排他的で、末尾の値は範囲に含まれない。
+範囲には暗黙的に順序がある。 Stringクラスにはsuccメソッド定義されており、&#39;a&#39;.</description>
     </item>
     
     <item>
@@ -138,45 +41,14 @@ Rubyでは、すべてのオブジェクトはObjectだという名前のクラ�
       <pubDate>Fri, 12 Feb 2016 20:34:06 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0211_ruby/</guid>
-      <description>
-
-&lt;p&gt;Rubyインタープリタは、トークンの連続としてプログタムを解析する。
-トークンは、コメント、リテラル、記号類、識別子、キーワードである。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;コメントは&lt;code&gt;#&lt;/code&gt;。
-複数行コメントは&lt;code&gt;=begin&lt;/code&gt;に始まり、&lt;code&gt;=end&lt;/code&gt;で終わる&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;リテラルはRubyソースコードに直接現れる値。数値、文字列、正規表現の3種類がある。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;識別子とは単純に名前のことである。Rubyは変数、メソッド、クラスなどに名前を与えるために識別子を使っている。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h4 id=&#34;識別子の中の記号類&#34;&gt;▼ 識別子の中の記号類&lt;/h4&gt;
-
-&lt;p&gt;|記号|意味|
-|===|===|
-|$|グローバル変数にプレフィックスとして付ける。|
-|@|インスタンス変数に付ける。クラス変数には２つつける|
-|?|役に立つ慣習として、論理値を返すメソッドの末尾に疑問符を付ける|
-|!|注意が必要なことを示すときに付ける|
-|=|末尾が統合になっているメソッド式は、代入演算子のサ変で東道なしのメソッド名を置くだけで実行できる|&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Rubyの構文の基本単位は式である。Rubyインタープリタは式を評価して値を生成する。&lt;/p&gt;
-
-&lt;p&gt;Rubyはオブジェクト指向なので、メソッドという言葉を使う。&lt;/p&gt;
-
-&lt;p&gt;相互作用するように作られたメソッドのグループはクラスにまとめることができる。
-そして、関連するクラスとクラスを持たないメソッドはモジュールにまとめることができる。&lt;/p&gt;
-</description>
+      <description>Rubyインタープリタは、トークンの連続としてプログタムを解析する。 トークンは、コメント、リテラル、記号類、識別子、キーワードである。
+ コメントは#。 複数行コメントは=beginに始まり、=endで終わる
+ リテラルはRubyソースコードに直接現れる値。数値、文字列、正規表現の3種類がある。
+ 識別子とは単純に名前のことである。Rubyは変数、メソッド、クラスなどに名前を与えるために識別子を使っている。
+ ▼ 識別子の中の記号類 |記号|意味| |===|===| |$|グローバル変数にプレフィックスとして付ける。| |@|インスタンス変数に付ける。クラス変数には２つつける| |?|役に立つ慣習として、論理値を返すメソッドの末尾に疑問符を付ける| |!|注意が必要なことを示すときに付ける| |=|末尾が統合になっているメソッド式は、代入演算子のサ変で東道なしのメソッド名を置くだけで実行できる|
+ Rubyの構文の基本単位は式である。Rubyインタープリタは式を評価して値を生成する。
+Rubyはオブジェクト指向なので、メソッドという言葉を使う。
+相互作用するように作られたメソッドのグループはクラスにまとめることができる。 そして、関連するクラスとクラスを持たないメソッドはモジュールにまとめることができる。</description>
     </item>
     
     <item>
@@ -185,39 +57,12 @@ Rubyでは、すべてのオブジェクトはObjectだという名前のクラ�
       <pubDate>Thu, 11 Feb 2016 20:34:06 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0210_ruby/</guid>
-      <description>&lt;p&gt;Rubyは完全なオブジェクト指向言語。
-すべての値は、単純な数値リテラルやbooleanなども含めてオブジェクトである。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Rubyでは関数やメソッド軌道のための括弧が多くの場合省略可能である。
-メソッド呼び出しで括弧が省略されているためオブジェクトの名前付きフィールドか名前付き変数のように見える。
-オブジェクトの外からオブジェクトの内部状態にアクセスすることはできない、カプセル化については厳格な言語である。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ブロックとイテレータは繰り返し処理でよく使われるが、
-ブロックを一度しか実行しないメソッドでも役に立つ。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;File.open(&amp;quot;data.txt&amp;quot;) do |f|
-  line = f.readline
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Rubyのメソッド名は疑問符や感嘆符で終わることもできる。
-通常感嘆符のないメソッドは元のオブジェクトのコピーに変更を加えて返してくるが、
-感嘆符付きのメソッドはオブジェクトをその場で書き換えるミューテータ(mutator)メソッドである。&lt;/p&gt;
-
-&lt;p&gt;グローバル変数には&lt;code&gt;$&lt;/code&gt;、インスタンス変数には&lt;code&gt;@&lt;/code&gt;、クラス変数には&lt;code&gt;@@&lt;/code&gt;というプレフィックスをつける。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;クラスとはオブジェクトの状態を操作する関連メソッドのコレクションである。
-オブジェクトの状態は、インスタンス変数によって管理されている。
-インスタンス変数とは名前の先頭が&lt;code&gt;@&lt;/code&gt;で、オブジェクトごとに異なる値を持てる変数のことである。&lt;/p&gt;
-</description>
+      <description>Rubyは完全なオブジェクト指向言語。 すべての値は、単純な数値リテラルやbooleanなども含めてオブジェクトである。
+ Rubyでは関数やメソッド軌道のための括弧が多くの場合省略可能である。 メソッド呼び出しで括弧が省略されているためオブジェクトの名前付きフィールドか名前付き変数のように見える。 オブジェクトの外からオブジェクトの内部状態にアクセスすることはできない、カプセル化については厳格な言語である。
+ ブロックとイテレータは繰り返し処理でよく使われるが、 ブロックを一度しか実行しないメソッドでも役に立つ。
+File.open(&amp;quot;data.txt&amp;quot;) do |f| line = f.readline end   Rubyのメソッド名は疑問符や感嘆符で終わることもできる。 通常感嘆符のないメソッドは元のオブジェクトのコピーに変更を加えて返してくるが、 感嘆符付きのメソッドはオブジェクトをその場で書き換えるミューテータ(mutator)メソッドである。
+グローバル変数には$、インスタンス変数には@、クラス変数には@@というプレフィックスをつける。
+ クラスとはオブジェクトの状態を操作する関連メソッドのコレクションである。 オブジェクトの状態は、インスタンス変数によって管理されている。 インスタンス変数とは名前の先頭が@で、オブジェクトごとに異なる値を持てる変数のことである。</description>
     </item>
     
     <item>
@@ -226,107 +71,13 @@ end
       <pubDate>Mon, 07 Dec 2015 17:48:50 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/20151207_pry/</guid>
-      <description>
-
-&lt;p&gt;Railsのデバッグについて調べていた。&lt;br /&gt;
-pryを知った。便利そうだったことメモ書き。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;pryとは&#34;&gt;Pryとは&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;./../../media/pry_logo.png&#34; alt=&#34;pry&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://pryrepl.org/&#34;&gt;Pry&lt;/a&gt;はRuby標準的なIRBシェルの強力な代替手段です。
-シンタックスハイライトや、フレキシブルなプラグインアーキテクチャ、実行時の呼び出しやドキュメントの閲覧を備えています。&lt;/p&gt;
-
-&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gem install pry pry-doc
-$ pry
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;.ls&lt;/code&gt;, &lt;code&gt;.pwd&lt;/code&gt;などでShellコマンドを呼び出せる。&lt;/p&gt;
-
-&lt;h2 id=&#34;railsプロジェクトに組み込む&#34;&gt;Railsプロジェクトに組み込む&lt;/h2&gt;
-
-&lt;p&gt;RailsプロジェクトにPryを入れて、ブレークポイントやステップ実行が行えるようにした。&lt;/p&gt;
-
-&lt;p&gt;Gemfileを編集(参考:&lt;a href=&#34;http://ruby-rails.hatenadiary.com/entry/20141024/1414081224&#34;&gt;Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp;amp; デバッグをする&lt;/a&gt;)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;group :development, :test do
-  gem &#39;pry-rails&#39;, &#39;~&amp;gt; 0.3.4&#39;  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
-  gem &#39;pry-doc&#39;, &#39;~&amp;gt; 0.8.0&#39;    # methodを表示
-  gem &#39;pry-byebug&#39;, &#39;~&amp;gt; 3.3.0&#39; # デバッグを実施(Ruby 2.0以降で動作する)
-  gem &#39;pry-stack_explorer&#39;, &#39;~&amp;gt; 0.4.9.2&#39; # スタックをたどれる
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;モデル確認&#34;&gt;■ モデル確認&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;[12] pry(main)&amp;gt; show-models
-Administrator
-  id: integer
-  email: string
-  email_for_index: string
-  hashed_password: string
-  suspended: boolean
-  created_at: datetime
-  updated_at: datetime
-StaffMember
-  id: integer
-  email: string
-  email_for_index: string
-  family_name: string
-  given_name: string
-  family_name_kana: string
-  given_name_kana: string
-  hashed_password: string
-  start_date: date
-  end_date: date
-  suspended: boolean
-  created_at: datetime
-  updated_at: datetime
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;ルート確認&#34;&gt;■ ルート確認&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;[13] pry(main)&amp;gt; show-routes
-       Prefix Verb   URI Pattern              Controller#Action
-   staff_root GET    /staff(.:format)         staff/top#index
-  staff_login GET    /staff/login(.:format)   staff/sessions#new
-staff_session POST   /staff/session(.:format) staff/sessions#create
-              DELETE /staff/session(.:format) staff/sessions#destroy
-   admin_root GET    /admin(.:format)         admin/top#index
-  admin_login GET    /admin/login(.:format)   admin/sessions#new
-admin_session POST   /admin/session(.:format) admin/sessions#create
-              DELETE /admin/session(.:format) admin/sessions#destroy
-customer_root GET    /customer(.:format)      customer/top#index
-         root GET    /                        errors#routing_error
-              GET    /*anything(.:format)     errors#routing_error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;デバッグ&#34;&gt;デバッグ&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;binding.pry&lt;/code&gt;を打ち込むとブレークポイントになる。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;show-stack&lt;/code&gt;でスタックトレースを表示&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;参考url&#34;&gt;参考URL&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://labs.timedia.co.jp/2011/12/rubyist-should-use-pry.html&#34;&gt;Rubyistよ、irbを捨ててPryを使おう&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.tokoyax.com/entry/ruby/how-to-use-pry&#34;&gt;Ruby 2.x.x 入門 -そう、pry ならね。-&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ruby-rails.hatenadiary.com/entry/20141024/1414081224&#34;&gt;Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp;amp; デバッグをする&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/yaotti/items/c6e850010f36acedb0e1&#34;&gt;Railsのコンソールをより便利にするpry-rails gem&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qiita.com/k0kubun/items/b118e9ccaef8707c4d9f&#34;&gt;今更聞けないpryの使い方と便利プラグイン集&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ものすごく便利だった。&lt;/p&gt;
-</description>
+      <description>Railsのデバッグについて調べていた。
+pryを知った。便利そうだったことメモ書き。
+ Pryとは PryはRuby標準的なIRBシェルの強力な代替手段です。 シンタックスハイライトや、フレキシブルなプラグインアーキテクチャ、実行時の呼び出しやドキュメントの閲覧を備えています。
+インストール $ gem install pry pry-doc $ pry  .ls, .pwdなどでShellコマンドを呼び出せる。
+Railsプロジェクトに組み込む RailsプロジェクトにPryを入れて、ブレークポイントやステップ実行が行えるようにした。
+Gemfileを編集(参考:Railsの開発効率をあげる - Pryを使ってRailsのコンソールをパワーアップ &amp;amp; デバッグをする)
+group :development, :test do gem &#39;pry-rails&#39;, &#39;~&amp;gt; 0.3.4&#39; # rails console(もしくは、rails c)でirbの代わりにpryを使われる gem &#39;pry-doc&#39;, &#39;~&amp;gt; 0.8.0&#39; # methodを表示 gem &#39;pry-byebug&#39;, &#39;~&amp;gt; 3.3.0&#39; # デバッグを実施(Ruby 2.0以降で動作する) gem &#39;pry-stack_explorer&#39;, &#39;~&amp;gt; 0.4.9.2&#39; # スタックをたどれる end  ■ モデル確認 [12] pry(main)&amp;gt; show-models Administrator id: integer email: string email_for_index: string hashed_password: string suspended: boolean created_at: datetime updated_at: datetime StaffMember id: integer email: string email_for_index: string family_name: string given_name: string family_name_kana: string given_name_kana: string hashed_password: string start_date: date end_date: date suspended: boolean created_at: datetime updated_at: datetime  ■ ルート確認 [13] pry(main)&amp;gt; show-routes Prefix Verb URI Pattern Controller#Action staff_root GET /staff(.</description>
     </item>
     
   </channel>

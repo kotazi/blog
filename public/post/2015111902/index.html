@@ -1,63 +1,134 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="kotazi">
-		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.16" />
-		<title>【忘備録】Github Pagesへの移行経緯 &middot; kotazi.com</title>
-		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
-		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
-		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
-		
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="kotazi">
+<meta name="description" content="Hi, I&#39;m web engineer">
+<meta name="generator" content="Hugo 0.20.7" />
+<title>【忘備録】Github Pagesへの移行経緯</title>
+<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
 
-		
-		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
-		
 
-		
-		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
-		
-	</head>
 
-    <body>
-       <nav class="main-nav">
-	
+<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+
+
+
+<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+
+
+<meta property="og:title" content="【忘備録】Github Pagesへの移行経緯" />
+<meta property="og:description" content=" こちらの記事でドメイン移行をした。
+けれどもそれ以来メールが受け取れなくなってしまったので、忘備録として事の経緯をまとめる。
+ ドメイン移行前  ムームードメイン ロリポップ Wordpress  でブログを2〜3年やっていた。
+Wordpressの更新が疎かになっていたので、Hugoに乗り換えたかった。
+過去の記事はなくなってもよかったし、レンタルサーバーもそんなに使わないかなという感じ。
+Hugoブログ作成  Gehirn  DNSサーバーをロリポップからGithub Pagesへ変更。 GehirnのZone apexを使って、kotazi.com上でGithub Pagesを表示することができた。
+これで完了と思ったが、ロリポップメールを使っていたので、メールが使えなくなっていた。
+Zoho Mailを使う Zoho Mailを使えば無料でkotazi@kotazi.comを使えると知った。 アカウントを作成したもののGehirn上でMXレコードを設定することができなかった。 これはAレコードをエイリアスで設定してしまったためかなと思っているが正直分からない。
+解決編 結局どうにもならなかったのでGehirnを使うことを諦めた。 ムームーDNS上でCNAMEを使ってブログを表示させることにした。 だからkotazi.comではなく、www.kotazi.comになってしまった。 Aレコードでリダイレクトは設定できた。 MXレコードもムームーDNS側から設定した。 とりあえず、メールもWebサイトも使えるようになった。
+参考になった記事  CNAME を巡る 2&frasl;3 のジレンマ | 鷲ノ巣  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://kotazi.github.io/blog/post/2015111902/" />
+
+
+
+<meta property="article:published_time" content="2015-11-20T19:18:11&#43;09:00"/>
+<meta property="article:modified_time" content="2015-11-20T19:18:11&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="【忘備録】Github Pagesへの移行経緯">
+<meta itemprop="description" content=" こちらの記事でドメイン移行をした。
+けれどもそれ以来メールが受け取れなくなってしまったので、忘備録として事の経緯をまとめる。
+ ドメイン移行前  ムームードメイン ロリポップ Wordpress  でブログを2〜3年やっていた。
+Wordpressの更新が疎かになっていたので、Hugoに乗り換えたかった。
+過去の記事はなくなってもよかったし、レンタルサーバーもそんなに使わないかなという感じ。
+Hugoブログ作成  Gehirn  DNSサーバーをロリポップからGithub Pagesへ変更。 GehirnのZone apexを使って、kotazi.com上でGithub Pagesを表示することができた。
+これで完了と思ったが、ロリポップメールを使っていたので、メールが使えなくなっていた。
+Zoho Mailを使う Zoho Mailを使えば無料でkotazi@kotazi.comを使えると知った。 アカウントを作成したもののGehirn上でMXレコードを設定することができなかった。 これはAレコードをエイリアスで設定してしまったためかなと思っているが正直分からない。
+解決編 結局どうにもならなかったのでGehirnを使うことを諦めた。 ムームーDNS上でCNAMEを使ってブログを表示させることにした。 だからkotazi.comではなく、www.kotazi.comになってしまった。 Aレコードでリダイレクトは設定できた。 MXレコードもムームーDNS側から設定した。 とりあえず、メールもWebサイトも使えるようになった。
+参考になった記事  CNAME を巡る 2&frasl;3 のジレンマ | 鷲ノ巣  ">
+
+
+<meta itemprop="dateModified" content="2015-11-20T19:18:11&#43;09:00" />
+<meta itemprop="wordCount" content="37">
+
+
+
+<meta itemprop="keywords" content=",alfred,angular,angular2,angularjs,better-npm-run,bfg,circleci,crontab,css,datatables,debug,dmm英会話,dns,domain,e2e,error,es6,facebook,flux,fullcalendar,gcp,git,github-pages,go,hugo,ios,iphone,jasmine,jquery,jsx,localhost,nightwatch,pdfmake,pow,pry,rails,rbenv,react,redux,rimraf,routing,ruby,shell,sketch,swift,tips,translation,unit,webpack,xcode,アジャイル,アジャイルサムライ,マネジメント,リファレンス,基本と原則,福利厚生,訳読,読書," />
+
+
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="【忘備録】Github Pagesへの移行経緯"/>
+<meta name="twitter:title" content="【忘備録】Github Pagesへの移行経緯"/>
+<meta name="twitter:description" content=" こちらの記事でドメイン移行をした。
+けれどもそれ以来メールが受け取れなくなってしまったので、忘備録として事の経緯をまとめる。
+ ドメイン移行前  ムームードメイン ロリポップ Wordpress  でブログを2〜3年やっていた。
+Wordpressの更新が疎かになっていたので、Hugoに乗り換えたかった。
+過去の記事はなくなってもよかったし、レンタルサーバーもそんなに使わないかなという感じ。
+Hugoブログ作成  Gehirn  DNSサーバーをロリポップからGithub Pagesへ変更。 GehirnのZone apexを使って、kotazi.com上でGithub Pagesを表示することができた。
+これで完了と思ったが、ロリポップメールを使っていたので、メールが使えなくなっていた。
+Zoho Mailを使う Zoho Mailを使えば無料でkotazi@kotazi.comを使えると知った。 アカウントを作成したもののGehirn上でMXレコードを設定することができなかった。 これはAレコードをエイリアスで設定してしまったためかなと思っているが正直分からない。
+解決編 結局どうにもならなかったのでGehirnを使うことを諦めた。 ムームーDNS上でCNAMEを使ってブログを表示させることにした。 だからkotazi.comではなく、www.kotazi.comになってしまった。 Aレコードでリダイレクトは設定できた。 MXレコードもムームーDNS側から設定した。 とりあえず、メールもWebサイトも使えるようになった。
+参考になった記事  CNAME を巡る 2&frasl;3 のジレンマ | 鷲ノ巣  "/>
+
+
+
+    </head>
+<body>
+    <nav class="main-nav">
 	
 		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
 	
 
 	
-		<a href='http://kotazi.github.io/blog/about'>About</a>
-	
 
 	
-	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+		<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
 	
 </nav>
 
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>【忘備録】Github Pagesへの移行経緯</h1>
-                    <h2 class="headline">
-                    November 20, 2015 
-                    <br>
-                    
-                    
-                        
-                            <a href="http://kotazi.github.io/blog/tags/github-pages">Github Pages</a>
-                        
-                            <a href="http://kotazi.github.io/blog/tags/dns">DNS</a>
-                        
-                    
-                    
-                    </h2>
-                </header>
-                <section id="post-body">
-                    
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>【忘備録】Github Pagesへの移行経緯</h1>
+        <h2 class="headline">
+        November 20, 2015
+        <br>
+        
+        
+            
+                <a href="http://kotazi.github.io/blog/tags/github-pages">Github Pages</a>
+            
+                <a href="http://kotazi.github.io/blog/tags/dns">DNS</a>
+            
+        
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
 
 <p><a href="http://www.kotazi.com/blog/post/2015111201/">こちら</a>の記事でドメイン移行をした。<br />
 けれどもそれ以来メールが受け取れなくなってしまったので、忘備録として事の経緯をまとめる。</p>
@@ -107,18 +178,19 @@ MXレコードもムームーDNS側から設定した。
 <li><a href="http://tech.blog.aerie.jp/entry/2014/09/09/162135">CNAME を巡る <sup>2</sup>&frasl;<sub>3</sub> のジレンマ | 鷲ノ巣</a></li>
 </ul>
 
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
-                        <div>
-                            <span class="dark">kotazi</span>
-                            <span>Imagination and Realization</span>
-                        </div>
-                    </a>
-                <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111902%2f - %e3%80%90%e5%bf%98%e5%82%99%e9%8c%b2%e3%80%91Github%20Pages%e3%81%b8%e3%81%ae%e7%a7%bb%e8%a1%8c%e7%b5%8c%e7%b7%af by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <a href="https://twitter.com/kotazi">
+    <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
+    <div>
+        <span class="dark">kotazi</span>
+        <span>Imagination and Realization</span>
+    </div>
+    </a>
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2015111902%2f - %e3%80%90%e5%bf%98%e5%82%99%e9%8c%b2%e3%80%91Github%20Pages%e3%81%b8%e3%81%ae%e7%a7%bb%e8%a1%8c%e7%b5%8c%e7%b7%af by @kotazi"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -128,86 +200,76 @@ MXレコードもムームーDNS側から設定した。
     return false;"><span class="icon-facebook-rect"> Share</span>
 </a>
 
-                </section>
-            </footer>
+    </section>
+</footer>
 
-            
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'http:\/\/kotazi.github.io\/blog\/post\/2015111902\/';
+    var disqus_title = '【忘備録】Github Pagesへの移行経緯';
+    var disqus_url = 'http:\/\/kotazi.github.io\/blog\/post\/2015111902\/';
 
-            <ul id="post-list" class="archive readmore">
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
+
     
     
-        
+    
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0210_kintore/">筋トレが最強のソリューションである<aside class="dates">Feb 11</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0514_survival/">人はズルなしで生きられるのか<aside class="dates">May 14 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0118_alfred/">Alfredの有料版を購入して覚えたこと・知ったこと<aside class="dates">Jan 18</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0210_kintore/">筋トレが最強のソリューションである<aside class="dates">Feb 11 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0114_alliance/">人と企業が信頼で結ばれる新しい雇用 - ALLIANCE<aside class="dates">Jan 14</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0118_alfred/">Alfredの有料版を購入して覚えたこと・知ったこと<aside class="dates">Jan 18 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0105_inspired/">Inspired: 顧客の心を捉える製品の創り方<aside class="dates">Jan 5</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0114_alliance/">人と企業が信頼で結ばれる新しい雇用 - ALLIANCE<aside class="dates">Jan 14 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0104_internet/">〈インターネット〉の次に来るもの<aside class="dates">Jan 4</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0105_inspired/">Inspired: 顧客の心を捉える製品の創り方<aside class="dates">Jan 5 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0817_finance/">起業のファイナンス<aside class="dates">Nov 3</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0104_internet/">〈インターネット〉の次に来るもの<aside class="dates">Jan 4 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/1007_rebase/">git rebaseについて<aside class="dates">Oct 7</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/0817_finance/">起業のファイナンス<aside class="dates">Nov 3 2016</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/1006_kigyouka/">起業家はどこで選択を誤るのか<aside class="dates">Oct 6</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/1007_rebase/">git rebaseについて<aside class="dates">Oct 7 2016</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0906_webpack_debug/">【Webpack】devtoolのこと<aside class="dates">Sep 6</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/1006_kigyouka/">起業家はどこで選択を誤るのか<aside class="dates">Oct 6 2016</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/">Missing .map resource?<aside class="dates">Aug 23</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/0906_webpack_debug/">【Webpack】devtoolのこと<aside class="dates">Sep 6 2016</aside></a>
         </li>
-        
-   
+    
 </ul>
-            <footer id="footer">
+
+
+
+        <footer id="footer">
     
     <p class="small">
     
@@ -216,9 +278,8 @@ MXレコードもムームーDNS側から設定した。
     </p>
 </footer>
 
-        </section>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://kotazi.github.io/blog/js/main.js"></script>
 <script src="http://kotazi.github.io/blog/js/highlight.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -226,6 +287,16 @@ MXレコードもムームーDNS側から設定した。
 
 
 
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    </body>
+ga('create', 'UA-70004407-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</body>
 </html>

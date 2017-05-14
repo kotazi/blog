@@ -7,50 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Jan 2016 18:31:41 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/error/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/error/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>【Rails】ForbiddenAttributesError覚書</title>
-      <link>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</link>
+      <link>http://kotazi.github.io/blog/post/2016/0105_forbiddenattributeserror/</link>
       <pubDate>Wed, 06 Jan 2016 18:31:41 +0900</pubDate>
       
-      <guid>http://kotazi.github.io/blog/post/2016/0105_ForbiddenAttributesError/</guid>
-      <description>
-
-&lt;p&gt;Railsで&lt;code&gt;ActiveModel::ForbiddenAttributesError:&lt;/code&gt;エラーが出た。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;マスアサインメント脆弱性&#34;&gt;マスアサインメント脆弱性&lt;/h2&gt;
-
-&lt;p&gt;モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、
-モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。&lt;/p&gt;
-
-&lt;p&gt;管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。
-けれども知識のある人間がスクリプト書けば悪用することができてしまう。&lt;/p&gt;
-
-&lt;p&gt;このアプリケーションの脆弱性を&lt;strong&gt;マスアサインメント脆弱性&lt;/strong&gt;と呼ぶ。&lt;/p&gt;
-
-&lt;p&gt;そしてこの脆弱性に対してRails4.0から導入された対抗策が、&lt;strong&gt;Strong Parameters&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;strong-parameters&#34;&gt;Strong Parameters&lt;/h2&gt;
-
-&lt;p&gt;サンプルコード:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def staff_member_params
-  params.require(:staff_member).permit(
-    :email, :password, :family_name, :given_name,
-    :family_name_kana, :given_name_kana,
-    :start_date, :end_date, :suspended
-  )
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;params.require(:staff_member)&lt;/code&gt;&lt;br /&gt;
-paramsオブジェクトのrequireメソッドで、paramsオブジェクトが&lt;code&gt;:staff_member&lt;/code&gt;というキーと持っているかを調べる。&lt;/p&gt;
-
-&lt;p&gt;=&amp;gt; 持っていなければActionController::ParameterMissingエラー&lt;/p&gt;
-</description>
+      <guid>http://kotazi.github.io/blog/post/2016/0105_forbiddenattributeserror/</guid>
+      <description>RailsでActiveModel::ForbiddenAttributesError:エラーが出た。
+ マスアサインメント脆弱性 モデルオブジェクトのassign_attributesメソッドの引数にハッシュもしくはparamsオブジェクトを渡せば、 モデルオブジェクトの属性を一括変更できる。フォームから送信することも可能。
+管理者などがパラメータを変更する分にはいいが、権限によっては書き換えてはならないパラメータもある。 けれども知識のある人間がスクリプト書けば悪用することができてしまう。
+このアプリケーションの脆弱性をマスアサインメント脆弱性と呼ぶ。
+そしてこの脆弱性に対してRails4.0から導入された対抗策が、Strong Parameters。
+Strong Parameters サンプルコード:
+def staff_member_params params.require(:staff_member).permit( :email, :password, :family_name, :given_name, :family_name_kana, :given_name_kana, :start_date, :end_date, :suspended ) end  params.require(:staff_member)
+paramsオブジェクトのrequireメソッドで、paramsオブジェクトが:staff_memberというキーと持っているかを調べる。
+=&amp;gt; 持っていなければActionController::ParameterMissingエラー</description>
     </item>
     
   </channel>

@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Jun 2016 17:17:08 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/nightwatch/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/nightwatch/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>【サンプルあり】Nightwatch.js覚書</title>
@@ -15,131 +17,12 @@
       <pubDate>Mon, 13 Jun 2016 17:17:08 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0613_nightwatchjs/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://nightwatchjs.org/&#34;&gt;Nightwatch.js&lt;/a&gt;について簡単に学び、簡単にまとめました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-
-&lt;h3 id=&#34;nightwatchとは&#34;&gt;Nightwatchとは？&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol&#34;&gt;Selenium WebDriver API&lt;/a&gt;を使い、&lt;a href=&#34;http://nodejs.org/&#34;&gt;Node.js&lt;/a&gt;で書かれたWebアプリケーション/Webサイト用の自動テストフレームワーク&lt;/li&gt;
-&lt;li&gt;継続的インテグレーションを行うためのE2Eテスト自動化へのソリューション&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;seleniumの概要&#34;&gt;Seleniumの概要&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ブラウザ自動制御のための人気で包括できなツール。元々Javaだったが現在は多くの言語をサポート&lt;/li&gt;
-&lt;li&gt;Nightwatchはブラウザ自動制御のためにSelenium WebDriver(特に&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol&#34;&gt;WebDriver Wire Protocol&lt;/a&gt;)を使っている&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;オペレーションについて&#34;&gt;オペレーションについて&lt;/h3&gt;
-
-&lt;p&gt;NightwatchはSeleniumサーバーに正しいパラメータを付与してHTTPリクエストを送ることで動作する。&lt;br /&gt;
-RESTfulなAPIプロトコルは&lt;a href=&#34;http://code.google.com/p/selenium/wiki/JsonWireProtocol#/session&#34;&gt;Selenium JsonWireProtocol&lt;/a&gt;に定義されている。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://nightwatchjs.org/img/operation.png&#34; alt=&#34;http://nightwatchjs.org/img/operation.png&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Nightwatchでは多くの場合、Seleniumサーバーに対して少なくとも2回のリクエストを送る必要がある。最初のリクエストではCSSセレクタで与えられた要素を見つけるためのものであり、次のリクエストでコマンドに対して与えられた要素を演算する。&lt;/p&gt;
-
-&lt;h2 id=&#34;サンプル-公式から&#34;&gt;サンプル(公式から)&lt;/h2&gt;
-
-&lt;p&gt;CSSセレクタを使うことで、簡単にE2Eテストを書ける。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports = {
-  &#39;Demo test Google&#39; : function (browser) {
-    browser
-      // URLを指定
-      .url(&#39;http://www.google.com&#39;)
-      // bodyタグが表示されるまで1000ms待つ
-      .waitForElementVisible(&#39;body&#39;, 1000)
-      // input[type=text]に&amp;quot;nightwatch&amp;quot;とセット
-      .setValue(&#39;input[type=text]&#39;, &#39;nightwatch&#39;)
-      // button[name=btnG]が表示されるまで1000ms待つ
-      .waitForElementVisible(&#39;button[name=btnG]&#39;, 1000)
-      // button[name=btnG]ボタンをクリック
-      .click(&#39;button[name=btnG]&#39;)
-      // 1000ms待つ
-      .pause(1000)
-      // #mainタグがNight Watchを含んでいることを確認する
-      .assert.containsText(&#39;#main&#39;, &#39;Night Watch&#39;)
-      // 終了
-      .end();
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;必要に応じて複数のステップに分割することも可能。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports = {
-  &#39;step one&#39; : function (browser) {
-    browser
-      .url(&#39;http://www.google.com&#39;)
-      .waitForElementVisible(&#39;body&#39;, 1000)
-      .setValue(&#39;input[type=text]&#39;, &#39;nightwatch&#39;)
-      .waitForElementVisible(&#39;button[name=btnG]&#39;, 1000)
-  },
-
-  &#39;step two&#39; : function (browser) {
-    browser
-      .click(&#39;button[name=btnG]&#39;)
-      .pause(1000)
-      .assert.containsText(&#39;#main&#39;, &#39;Night Watch&#39;)
-      .end();
-  }
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;書いてみる&#34;&gt;書いてみる&lt;/h3&gt;
-
-&lt;p&gt;Nightwatchで&lt;a href=&#34;http://todomvc.com/examples/vue&#34;&gt;Vue.js • TodoMVC&lt;/a&gt;のE2Eテストを書いてみた。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;サイト表示&lt;/li&gt;
-&lt;li&gt;タスクの追加&lt;/li&gt;
-&lt;li&gt;タスクの完了&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;をテストする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports = {
-  // TodoMVCサイトにアクセスするテスト
-  &#39;Access to TodoMVC&#39; : function (browser) {
-    browser
-      .url(&#39;http://todomvc.com/examples/vue/&#39;)
-      .waitForElementVisible(&#39;body&#39;, 1000);
-  },
-
-  // Todoを追加するテスト
-  &#39;Add a Todo task&#39;: function (browser) {
-    browser
-      .setValue(&#39;.new-todo&#39;, [&#39;nightwatch testing&#39;, browser.Keys.ENTER])
-      .pause(1000)
-      .assert.containsText(&#39;.todo-list&#39;, &#39;nightwatch testing&#39;)
-  },
-
-  // Todoを完了するテスト
-  &#39;Complate the Task&#39;: function (browser) {
-    browser
-      .click(&#39;input.toggle[type=checkbox]&#39;)
-      .click(&#39;.filters li:last-child&#39;)
-      .pause(1000)
-      .assert.containsText(&#39;.todo-list&#39;, &#39;nightwatch testing&#39;)
-      .end();
-  }
-};
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj0ZHurS-ElLx4ysBBbKhNlEdlaM1BJ33x8B/image.png&#34; alt=&#34;Pasted%20Image%206/13/16,%2018:14&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;gifのURL&lt;br /&gt;
-&lt;a href=&#34;http://g.recordit.co/AqTNXin4mr.gif&#34;&gt;http://g.recordit.co/AqTNXin4mr.gif&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Nightwatch.jsについて簡単に学び、簡単にまとめました。
+ 概要 Nightwatchとは？  Selenium WebDriver APIを使い、Node.jsで書かれたWebアプリケーション/Webサイト用の自動テストフレームワーク 継続的インテグレーションを行うためのE2Eテスト自動化へのソリューション  Seleniumの概要  ブラウザ自動制御のための人気で包括できなツール。元々Javaだったが現在は多くの言語をサポート Nightwatchはブラウザ自動制御のためにSelenium WebDriver(特にWebDriver Wire Protocol)を使っている  オペレーションについて NightwatchはSeleniumサーバーに正しいパラメータを付与してHTTPリクエストを送ることで動作する。
+RESTfulなAPIプロトコルはSelenium JsonWireProtocolに定義されている。
+Nightwatchでは多くの場合、Seleniumサーバーに対して少なくとも2回のリクエストを送る必要がある。最初のリクエストではCSSセレクタで与えられた要素を見つけるためのものであり、次のリクエストでコマンドに対して与えられた要素を演算する。
+サンプル(公式から) CSSセレクタを使うことで、簡単にE2Eテストを書ける。
+module.exports = { &#39;Demo test Google&#39; : function (browser) { browser // URLを指定 .url(&#39;http://www.google.com&#39;) // bodyタグが表示されるまで1000ms待つ .waitForElementVisible(&#39;body&#39;, 1000) // input[type=text]に&amp;quot;nightwatch&amp;quot;とセット .setValue(&#39;input[type=text]&#39;, &#39;nightwatch&#39;) // button[name=btnG]が表示されるまで1000ms待つ .waitForElementVisible(&#39;button[name=btnG]&#39;, 1000) // button[name=btnG]ボタンをクリック .click(&#39;button[name=btnG]&#39;) // 1000ms待つ .pause(1000) // #mainタグがNight Watchを含んでいることを確認する .assert.containsText(&#39;#main&#39;, &#39;Night Watch&#39;) // 終了 .end(); } };  必要に応じて複数のステップに分割することも可能。</description>
     </item>
     
   </channel>

@@ -1,61 +1,117 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="kotazi">
-		<meta name="description" content="Hi, I&#39;m web engineer">
-		<meta name="generator" content="Hugo 0.16" />
-		<title>【読書】コンピュータはなぜ動くのか &middot; kotazi.com</title>
-		<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
-		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
-		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
-		
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="kotazi">
+<meta name="description" content="Hi, I&#39;m web engineer">
+<meta name="generator" content="Hugo 0.20.7" />
+<title>【読書】コンピュータはなぜ動くのか</title>
+<link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
+<link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
+<link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
 
-		
-		<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
-		
 
-		
-		<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
-		
-	</head>
 
-    <body>
-       <nav class="main-nav">
-	
+<link rel="stylesheet" href="http://kotazi.github.io/blog/css/monosocialiconsfont.css">
+
+
+
+<link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
+
+
+<meta property="og:title" content="【読書】コンピュータはなぜ動くのか" />
+<meta property="og:description" content="コンピュータはなぜ動くのか～知っておきたいハードウエア＆ソフトウエアの基礎知識～を読んだ。
+ 本の構成  【第1章】コンピュータの3大原則とは 【第2章】コンピュータを作ってみよう 【第3章】一度は体験してほしいハンド・アセンブル 【第4章】川の流れのようにプログラムは流れる 【第5章】アルゴリズムと仲良くなる7つのポイント 【第6章】データ構造と仲良くなる7つのポイント 【第7章】オブジェクト指向プログラミングを語れるようになろう 【第8章】作れば分かるデータベース 【第9章】簡単な実験7つでTCP/IPネットワークを理解する 【第10章】データを暗号化してみよう 【第11章】そもそもXMLって何だっけ 【第12章】SEはコンピュータ・システム構築の現場監督   2003年に執筆された本。今から13年も前になるので内容としては古い。 ただ入力・演算・出力から始まり、ハードウェアとソフトウェア、プログラミング、データベース、ネットワークなど、コンピュータの初等教育で扱われる内容をほぼひととおり網羅している。
+現場に役に立つ知識ではないが、間違ったことがかかれているわけでもない。 自分の知らない分野について少し知るという意味ではいい。 特にコンピュータのハードウェア的な動作についてやアセンブルについてはとても勉強になった。
+ 以下、メモ。
+ コンピュータは「入力、演算、出力」を行う装置である プログラムは命令とデータの集合体である コンピュータの都合は人間の感覚と異なる場合がある コンピュータのハードウェアはたくさん「IC」から構成され、ICには数多くのピンがついている ピンは入力用、出力用のいずれか CPUは内部で演算を行い、メモリとI/Oを制御 メモリは命令とデータを記憶 I/Oは周辺機器と接続し、データの受け渡しを可能にする CPUを動作させるためには「クロック信号」という電気信号が必要 クロック信号を出力する部品を「クロックジェネレータ」と呼ぶ レジスタはCPU及びI/Oの中で、データを記憶する部分 0と1の羅列にニックネームを付けてプログラムする手法を「ニーモニック」と呼ぶ 「ニーモニック」を使う言語が「アセンブリ言語」 アセンブリの文法は1行に「ラベル」と「オペコード(命令)」と「オペランド(対象)」を記述するだけ アセンブリ言語ではオペランドにレジスタの名前を指定する CPU資料を見ればアセンブリ言語を手作業でマシン語に変換でき、それを「ハンドアセンブル」という ユークリッドの互除法: 最大公約数を求める エラトステネスのふるい: 素数を求める 線形探索: データを探索 2分探索: データを探索 ハッシュ法: データを探索 バブルソート: データを整列 クイックソート: データを整列 スタック: データを山のように積み上げる キュー: データを行列のように並ばせる LIFO: Last In First Out FIFO: First in First Out キーはテーブル間のリレーションシップを設定するもの インデックスはデータの検索速度を向上させる テーブルに登録される1行のデータのまとまりを「レコード」「ロウ」「行」と呼ぶ レコードを構成する項目を「フィールド」「カラム」「列」と呼ぶ 正規化とは、テーブルを複数に分け、個々のテーブルのリレーションシップを設定して、データベースの構造を整理すること リレーションシップを設定するためにはテーブルとテーブルを関連ふけるためのフィールドが必要。それを「キー」と呼ぶ ↑自分から見たら「主キー」、逆から見たら「外部キー」 トランザクションはトラブルが発生した時にロールバックする TCPは送受信者が確認を取りながらデータを受け渡すプロトコル。 ↑このようなデータの送信方式が「ハンドシェイク」 TCPでは大きなデータはパケット単位に分割する あらゆるデータは数値なので、形式が違っても暗号手法は基本的に同じ   ざっくりそんな感じ。書き出してみると為になったことけっこうあった。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://kotazi.github.io/blog/post/2016/0127_why_computer/" />
+
+
+
+<meta property="article:published_time" content="2016-01-27T11:40:44&#43;09:00"/>
+<meta property="article:modified_time" content="2016-01-27T11:40:44&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="【読書】コンピュータはなぜ動くのか">
+<meta itemprop="description" content="コンピュータはなぜ動くのか～知っておきたいハードウエア＆ソフトウエアの基礎知識～を読んだ。
+ 本の構成  【第1章】コンピュータの3大原則とは 【第2章】コンピュータを作ってみよう 【第3章】一度は体験してほしいハンド・アセンブル 【第4章】川の流れのようにプログラムは流れる 【第5章】アルゴリズムと仲良くなる7つのポイント 【第6章】データ構造と仲良くなる7つのポイント 【第7章】オブジェクト指向プログラミングを語れるようになろう 【第8章】作れば分かるデータベース 【第9章】簡単な実験7つでTCP/IPネットワークを理解する 【第10章】データを暗号化してみよう 【第11章】そもそもXMLって何だっけ 【第12章】SEはコンピュータ・システム構築の現場監督   2003年に執筆された本。今から13年も前になるので内容としては古い。 ただ入力・演算・出力から始まり、ハードウェアとソフトウェア、プログラミング、データベース、ネットワークなど、コンピュータの初等教育で扱われる内容をほぼひととおり網羅している。
+現場に役に立つ知識ではないが、間違ったことがかかれているわけでもない。 自分の知らない分野について少し知るという意味ではいい。 特にコンピュータのハードウェア的な動作についてやアセンブルについてはとても勉強になった。
+ 以下、メモ。
+ コンピュータは「入力、演算、出力」を行う装置である プログラムは命令とデータの集合体である コンピュータの都合は人間の感覚と異なる場合がある コンピュータのハードウェアはたくさん「IC」から構成され、ICには数多くのピンがついている ピンは入力用、出力用のいずれか CPUは内部で演算を行い、メモリとI/Oを制御 メモリは命令とデータを記憶 I/Oは周辺機器と接続し、データの受け渡しを可能にする CPUを動作させるためには「クロック信号」という電気信号が必要 クロック信号を出力する部品を「クロックジェネレータ」と呼ぶ レジスタはCPU及びI/Oの中で、データを記憶する部分 0と1の羅列にニックネームを付けてプログラムする手法を「ニーモニック」と呼ぶ 「ニーモニック」を使う言語が「アセンブリ言語」 アセンブリの文法は1行に「ラベル」と「オペコード(命令)」と「オペランド(対象)」を記述するだけ アセンブリ言語ではオペランドにレジスタの名前を指定する CPU資料を見ればアセンブリ言語を手作業でマシン語に変換でき、それを「ハンドアセンブル」という ユークリッドの互除法: 最大公約数を求める エラトステネスのふるい: 素数を求める 線形探索: データを探索 2分探索: データを探索 ハッシュ法: データを探索 バブルソート: データを整列 クイックソート: データを整列 スタック: データを山のように積み上げる キュー: データを行列のように並ばせる LIFO: Last In First Out FIFO: First in First Out キーはテーブル間のリレーションシップを設定するもの インデックスはデータの検索速度を向上させる テーブルに登録される1行のデータのまとまりを「レコード」「ロウ」「行」と呼ぶ レコードを構成する項目を「フィールド」「カラム」「列」と呼ぶ 正規化とは、テーブルを複数に分け、個々のテーブルのリレーションシップを設定して、データベースの構造を整理すること リレーションシップを設定するためにはテーブルとテーブルを関連ふけるためのフィールドが必要。それを「キー」と呼ぶ ↑自分から見たら「主キー」、逆から見たら「外部キー」 トランザクションはトラブルが発生した時にロールバックする TCPは送受信者が確認を取りながらデータを受け渡すプロトコル。 ↑このようなデータの送信方式が「ハンドシェイク」 TCPでは大きなデータはパケット単位に分割する あらゆるデータは数値なので、形式が違っても暗号手法は基本的に同じ   ざっくりそんな感じ。書き出してみると為になったことけっこうあった。">
+
+
+<meta itemprop="dateModified" content="2016-01-27T11:40:44&#43;09:00" />
+<meta itemprop="wordCount" content="77">
+
+
+
+<meta itemprop="keywords" content=",alfred,angular,angular2,angularjs,better-npm-run,bfg,circleci,crontab,css,datatables,debug,dmm英会話,dns,domain,e2e,error,es6,facebook,flux,fullcalendar,gcp,git,github-pages,go,hugo,ios,iphone,jasmine,jquery,jsx,localhost,nightwatch,pdfmake,pow,pry,rails,rbenv,react,redux,rimraf,routing,ruby,shell,sketch,swift,tips,translation,unit,webpack,xcode,アジャイル,アジャイルサムライ,マネジメント,リファレンス,基本と原則,福利厚生,訳読,読書," />
+
+
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="【読書】コンピュータはなぜ動くのか"/>
+<meta name="twitter:title" content="【読書】コンピュータはなぜ動くのか"/>
+<meta name="twitter:description" content="コンピュータはなぜ動くのか～知っておきたいハードウエア＆ソフトウエアの基礎知識～を読んだ。
+ 本の構成  【第1章】コンピュータの3大原則とは 【第2章】コンピュータを作ってみよう 【第3章】一度は体験してほしいハンド・アセンブル 【第4章】川の流れのようにプログラムは流れる 【第5章】アルゴリズムと仲良くなる7つのポイント 【第6章】データ構造と仲良くなる7つのポイント 【第7章】オブジェクト指向プログラミングを語れるようになろう 【第8章】作れば分かるデータベース 【第9章】簡単な実験7つでTCP/IPネットワークを理解する 【第10章】データを暗号化してみよう 【第11章】そもそもXMLって何だっけ 【第12章】SEはコンピュータ・システム構築の現場監督   2003年に執筆された本。今から13年も前になるので内容としては古い。 ただ入力・演算・出力から始まり、ハードウェアとソフトウェア、プログラミング、データベース、ネットワークなど、コンピュータの初等教育で扱われる内容をほぼひととおり網羅している。
+現場に役に立つ知識ではないが、間違ったことがかかれているわけでもない。 自分の知らない分野について少し知るという意味ではいい。 特にコンピュータのハードウェア的な動作についてやアセンブルについてはとても勉強になった。
+ 以下、メモ。
+ コンピュータは「入力、演算、出力」を行う装置である プログラムは命令とデータの集合体である コンピュータの都合は人間の感覚と異なる場合がある コンピュータのハードウェアはたくさん「IC」から構成され、ICには数多くのピンがついている ピンは入力用、出力用のいずれか CPUは内部で演算を行い、メモリとI/Oを制御 メモリは命令とデータを記憶 I/Oは周辺機器と接続し、データの受け渡しを可能にする CPUを動作させるためには「クロック信号」という電気信号が必要 クロック信号を出力する部品を「クロックジェネレータ」と呼ぶ レジスタはCPU及びI/Oの中で、データを記憶する部分 0と1の羅列にニックネームを付けてプログラムする手法を「ニーモニック」と呼ぶ 「ニーモニック」を使う言語が「アセンブリ言語」 アセンブリの文法は1行に「ラベル」と「オペコード(命令)」と「オペランド(対象)」を記述するだけ アセンブリ言語ではオペランドにレジスタの名前を指定する CPU資料を見ればアセンブリ言語を手作業でマシン語に変換でき、それを「ハンドアセンブル」という ユークリッドの互除法: 最大公約数を求める エラトステネスのふるい: 素数を求める 線形探索: データを探索 2分探索: データを探索 ハッシュ法: データを探索 バブルソート: データを整列 クイックソート: データを整列 スタック: データを山のように積み上げる キュー: データを行列のように並ばせる LIFO: Last In First Out FIFO: First in First Out キーはテーブル間のリレーションシップを設定するもの インデックスはデータの検索速度を向上させる テーブルに登録される1行のデータのまとまりを「レコード」「ロウ」「行」と呼ぶ レコードを構成する項目を「フィールド」「カラム」「列」と呼ぶ 正規化とは、テーブルを複数に分け、個々のテーブルのリレーションシップを設定して、データベースの構造を整理すること リレーションシップを設定するためにはテーブルとテーブルを関連ふけるためのフィールドが必要。それを「キー」と呼ぶ ↑自分から見たら「主キー」、逆から見たら「外部キー」 トランザクションはトラブルが発生した時にロールバックする TCPは送受信者が確認を取りながらデータを受け渡すプロトコル。 ↑このようなデータの送信方式が「ハンドシェイク」 TCPでは大きなデータはパケット単位に分割する あらゆるデータは数値なので、形式が違っても暗号手法は基本的に同じ   ざっくりそんな感じ。書き出してみると為になったことけっこうあった。"/>
+
+
+
+    </head>
+<body>
+    <nav class="main-nav">
 	
 		<a href='http://kotazi.github.io/blog/'> <span class="arrow">←</span>Home</a>
 	
 
 	
-		<a href='http://kotazi.github.io/blog/about'>About</a>
-	
 
 	
-	<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
+		<a class="cta" href="http://kotazi.github.io/blog/index.xml">Subscribe</a>
 	
 </nav>
 
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>【読書】コンピュータはなぜ動くのか</h1>
-                    <h2 class="headline">
-                    January 27, 2016 
-                    <br>
-                    
-                    
-                        
-                            <a href="http://kotazi.github.io/blog/tags/%E8%AA%AD%E6%9B%B8">読書</a>
-                        
-                    
-                    
-                    </h2>
-                </header>
-                <section id="post-body">
-                    
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>【読書】コンピュータはなぜ動くのか</h1>
+        <h2 class="headline">
+        January 27, 2016
+        <br>
+        
+        
+            
+                <a href="http://kotazi.github.io/blog/tags/%E8%AA%AD%E6%9B%B8">読書</a>
+            
+        
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
 
 <p><a rel="nofollow" href="http://www.amazon.co.jp/gp/product/4822281655/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4822281655&linkCode=as2&tag=kotazi-22">コンピュータはなぜ動くのか～知っておきたいハードウエア＆ソフトウエアの基礎知識～</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=kotazi-22&l=as2&o=9&a=4822281655" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
 
@@ -139,18 +195,19 @@
 
 <p>ざっくりそんな感じ。書き出してみると為になったことけっこうあった。</p>
 
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                <a href="https://twitter.com/kotazi">
-                        <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
-                        <div>
-                            <span class="dark">kotazi</span>
-                            <span>Imagination and Realization</span>
-                        </div>
-                    </a>
-                <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0127_why_computer%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91%e3%82%b3%e3%83%b3%e3%83%94%e3%83%a5%e3%83%bc%e3%82%bf%e3%81%af%e3%81%aa%e3%81%9c%e5%8b%95%e3%81%8f%e3%81%ae%e3%81%8b by @kotazi"><span class="icon-twitter"> Tweet</span></a>
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <a href="https://twitter.com/kotazi">
+    <img class="avatar" src="http://kotazi.github.io/blog/images/avatar.png">
+    <div>
+        <span class="dark">kotazi</span>
+        <span>Imagination and Realization</span>
+    </div>
+    </a>
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2016%2f0127_why_computer%2f - %e3%80%90%e8%aa%ad%e6%9b%b8%e3%80%91%e3%82%b3%e3%83%b3%e3%83%94%e3%83%a5%e3%83%bc%e3%82%bf%e3%81%af%e3%81%aa%e3%81%9c%e5%8b%95%e3%81%8f%e3%81%ae%e3%81%8b by @kotazi"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -160,86 +217,76 @@
     return false;"><span class="icon-facebook-rect"> Share</span>
 </a>
 
-                </section>
-            </footer>
+    </section>
+</footer>
 
-            
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'http:\/\/kotazi.github.io\/blog\/post\/2016\/0127_why_computer\/';
+    var disqus_title = '【読書】コンピュータはなぜ動くのか';
+    var disqus_url = 'http:\/\/kotazi.github.io\/blog\/post\/2016\/0127_why_computer\/';
 
-            <ul id="post-list" class="archive readmore">
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
+
     
     
-        
+    
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0210_kintore/">筋トレが最強のソリューションである<aside class="dates">Feb 11</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0514_survival/">人はズルなしで生きられるのか<aside class="dates">May 14 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0118_alfred/">Alfredの有料版を購入して覚えたこと・知ったこと<aside class="dates">Jan 18</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0210_kintore/">筋トレが最強のソリューションである<aside class="dates">Feb 11 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0114_alliance/">人と企業が信頼で結ばれる新しい雇用 - ALLIANCE<aside class="dates">Jan 14</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0118_alfred/">Alfredの有料版を購入して覚えたこと・知ったこと<aside class="dates">Jan 18 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0105_inspired/">Inspired: 顧客の心を捉える製品の創り方<aside class="dates">Jan 5</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0114_alliance/">人と企業が信頼で結ばれる新しい雇用 - ALLIANCE<aside class="dates">Jan 14 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0104_internet/">〈インターネット〉の次に来るもの<aside class="dates">Jan 4</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0105_inspired/">Inspired: 顧客の心を捉える製品の創り方<aside class="dates">Jan 5 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0817_finance/">起業のファイナンス<aside class="dates">Nov 3</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2017/0104_internet/">〈インターネット〉の次に来るもの<aside class="dates">Jan 4 2017</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/1007_rebase/">git rebaseについて<aside class="dates">Oct 7</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/0817_finance/">起業のファイナンス<aside class="dates">Nov 3 2016</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/1006_kigyouka/">起業家はどこで選択を誤るのか<aside class="dates">Oct 6</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/1007_rebase/">git rebaseについて<aside class="dates">Oct 7 2016</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0906_webpack_debug/">【Webpack】devtoolのこと<aside class="dates">Sep 6</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/1006_kigyouka/">起業家はどこで選択を誤るのか<aside class="dates">Oct 6 2016</aside></a>
         </li>
-        
-   
     
-        
         <li>
-            <a href="http://kotazi.github.io/blog/post/2016/0824_missing_sourcemap/">Missing .map resource?<aside class="dates">Aug 23</aside></a>
+            <a href="http://kotazi.github.io/blog/post/2016/0906_webpack_debug/">【Webpack】devtoolのこと<aside class="dates">Sep 6 2016</aside></a>
         </li>
-        
-   
+    
 </ul>
-            <footer id="footer">
+
+
+
+        <footer id="footer">
     
     <p class="small">
     
@@ -248,9 +295,8 @@
     </p>
 </footer>
 
-        </section>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://kotazi.github.io/blog/js/main.js"></script>
 <script src="http://kotazi.github.io/blog/js/highlight.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -258,6 +304,16 @@
 
 
 
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    </body>
+ga('create', 'UA-70004407-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</body>
 </html>
