@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Nov 2015 08:28:26 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/domain/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/domain/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>HugoブログとGithub Pagesと独自ドメイン</title>
@@ -15,56 +17,14 @@
       <pubDate>Thu, 12 Nov 2015 08:28:26 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2015111201/</guid>
-      <description>
-
-&lt;p&gt;Wordpressで続けていたブログをやめて、Hugoでブログを作りなおした。
-以前の記事は削除した。
-&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;はGoで書かれた静的サイトジェネレータだ。早くて便利。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;hugoブログの立ちあげ&#34;&gt;Hugoブログの立ちあげ&lt;/h2&gt;
-
-&lt;p&gt;基本的には公式サイトの&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;Quickstart&lt;/a&gt;に従う。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Hugoをローカルで立ちあげ
-hugo server --theme=hugo-cactus-theme --buildDrafts -w
-
-# 新しく投稿
-hugo new post/newpost.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;github-pages&#34;&gt;Github Pages&lt;/h2&gt;
-
-&lt;p&gt;Github PagesもHugo公式の&lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;を参考にする。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;git subtree&lt;/code&gt;を使う&lt;/li&gt;
-&lt;li&gt;全体のコンテンツは&lt;code&gt;master&lt;/code&gt;ブランチに、公開ファイルを&lt;code&gt;gh-pages&lt;/code&gt;ブランチで運用&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;deploy.sh&lt;/code&gt;の作成
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;チュートリアルに沿えばGithub Pagesにサイトができる。&lt;/p&gt;
-
-&lt;h2 id=&#34;独自ドメイン&#34;&gt;独自ドメイン&lt;/h2&gt;
-
-&lt;p&gt;僕はもともとムームードメインで取得したドメインと、ロリポップのレンタルサーバーを使ってWordpressブログを使っていた。&lt;br /&gt;
-それにあたりこちらの記事を参考にした。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://tanksuzuki.com/post/hugo-github-pages-2/&#34;&gt;Hugo + GitHub Pagesでブログを作る#2|TANKSUZUKI.COM&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;サブドメインと&lt;code&gt;Zone Apex&lt;/code&gt;(kotazi.com)で公開するのでは手順が異なる&lt;/li&gt;
-&lt;li&gt;ムームードメインでは&lt;code&gt;Apex Alias&lt;/code&gt;が使えない&lt;/li&gt;
-&lt;li&gt;そのため&lt;a href=&#34;https://www.gehirn.jp/&#34;&gt;Gehirn DNS&lt;/a&gt;などを使う必要がある&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&#34;toc_3&#34;&gt;　&lt;/h5&gt;
-
-&lt;p&gt;そんな感じでブログの移行が完了しました。&lt;/p&gt;
-</description>
+      <description>Wordpressで続けていたブログをやめて、Hugoでブログを作りなおした。 以前の記事は削除した。 HugoはGoで書かれた静的サイトジェネレータだ。早くて便利。
+ Hugoブログの立ちあげ 基本的には公式サイトのQuickstartに従う。
+# Hugoをローカルで立ちあげ hugo server --theme=hugo-cactus-theme --buildDrafts -w # 新しく投稿 hugo new post/newpost.md  Github Pages Github PagesもHugo公式のHosting on GitHub Pagesを参考にする。
+ git subtreeを使う 全体のコンテンツはmasterブランチに、公開ファイルをgh-pagesブランチで運用 deploy.shの作成   チュートリアルに沿えばGithub Pagesにサイトができる。
+独自ドメイン 僕はもともとムームードメインで取得したドメインと、ロリポップのレンタルサーバーを使ってWordpressブログを使っていた。
+それにあたりこちらの記事を参考にした。
+Hugo + GitHub Pagesでブログを作る#2|TANKSUZUKI.COM
+ サブドメインとZone Apex(kotazi.com)で公開するのでは手順が異なる ムームードメインではApex Aliasが使えない そのためGehirn DNSなどを使う必要がある   そんな感じでブログの移行が完了しました。</description>
     </item>
     
   </channel>

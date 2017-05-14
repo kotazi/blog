@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Jan 2016 18:31:41 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/routing/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/routing/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>【Rails】Routing周りのメモ書き</title>
@@ -15,90 +17,11 @@
       <pubDate>Thu, 07 Jan 2016 18:31:41 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0107_rails_routing/</guid>
-      <description>
-
-&lt;p&gt;新しいRailsプロジェクトの&lt;code&gt;routes.rb&lt;/code&gt;を読んでいて調べたこととか。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;namespaceとscope-moduleとscopeのち外&#34;&gt;◯ namespaceとscope moduleとscopeのち外&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;namespace&lt;/code&gt;はURI PatternもController#Actionも指定したパスに&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scope module&lt;/code&gt;はController#Actionのみ指定したパスに&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scope&lt;/code&gt;はURI Patternのみ指定したパスに&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://qiita.com/blueplanet/items/522cc8364f6cf189ecad&#34;&gt;routeのmoduleとnamespaceとscopeの違い&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;constraintsについて&#34;&gt;◯ constraintsについて&lt;/h5&gt;
-
-&lt;p&gt;constraintsを使うことでさまざまな制限を兼ねることができる。
-独自のクラスを使用すうることなども可能。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://y-yagi.tumblr.com/post/92386974040/rails-routing-constraints%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6&#34;&gt;rails routing constraintsについて&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;resourcesルーティング一覧&#34;&gt;◯ resourcesルーティング一覧&lt;/h5&gt;
-
-&lt;table class=&#34;responsive&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;HTTP動詞&lt;/th&gt;
-&lt;th&gt;パス&lt;/th&gt;
-&lt;th&gt;コントローラ#アクション&lt;/th&gt;
-&lt;th&gt;目的&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos&lt;/td&gt;
-&lt;td&gt;photos#index&lt;/td&gt;
-&lt;td&gt;すべての写真の一覧を表示&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/new&lt;/td&gt;
-&lt;td&gt;photos#new&lt;/td&gt;
-&lt;td&gt;写真を1つ作成するためのHTMLフォームを返す&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;POST&lt;/td&gt;
-&lt;td&gt;/photos&lt;/td&gt;
-&lt;td&gt;photos#create&lt;/td&gt;
-&lt;td&gt;写真を1つ作成する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#show&lt;/td&gt;
-&lt;td&gt;特定の写真を表示する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GET&lt;/td&gt;
-&lt;td&gt;/photos/:id/edit&lt;/td&gt;
-&lt;td&gt;photos#edit&lt;/td&gt;
-&lt;td&gt;写真編集用のHTMLフォームを1つ返す&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;PATCH/PUT&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#update&lt;/td&gt;
-&lt;td&gt;特定の写真を更新する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DELETE&lt;/td&gt;
-&lt;td&gt;/photos/:id&lt;/td&gt;
-&lt;td&gt;photos#destroy&lt;/td&gt;
-&lt;td&gt;特定の写真を削除する&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ActiveAdminとEngineについてはまた今度。&lt;/p&gt;
-</description>
+      <description>新しいRailsプロジェクトのroutes.rbを読んでいて調べたこととか。
+ ◯ namespaceとscope moduleとscopeのち外  namespaceはURI PatternもController#Actionも指定したパスに scope moduleはController#Actionのみ指定したパスに scopeはURI Patternのみ指定したパスに  routeのmoduleとnamespaceとscopeの違い
+◯ constraintsについて constraintsを使うことでさまざまな制限を兼ねることができる。 独自のクラスを使用すうることなども可能。
+rails routing constraintsについて
+◯ resourcesルーティング一覧   HTTP動詞 パス コントローラ#アクション 目的     GET /photos photos#index すべての写真の一覧を表示   GET /photos/new photos#new 写真を1つ作成するためのHTMLフォームを返す   POST /photos photos#create 写真を1つ作成する   GET /photos/:id photos#show 特定の写真を表示する   GET /photos/:id/edit photos#edit 写真編集用のHTMLフォームを1つ返す   PATCH/PUT /photos/:id photos#update 特定の写真を更新する   DELETE /photos/:id photos#destroy 特定の写真を削除する     ActiveAdminとEngineについてはまた今度。</description>
     </item>
     
   </channel>

@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Aug 2016 13:38:10 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>【Go】Deploying a Go App</title>
@@ -15,37 +17,14 @@
       <pubDate>Wed, 10 Aug 2016 13:38:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0810_goapp_deploy/</guid>
-      <description>&lt;p&gt;GCP/Goアプリケーションのデプロイ周りについて学んでいたところ。&lt;br /&gt;
-&lt;code&gt;goapp deploy&lt;/code&gt;だったり、GoogleAppEngineLauncherだったり、
-&lt;code&gt;appcfg.py&lt;/code&gt;だったり、&lt;code&gt;dev_appserver.py&lt;/code&gt;だったりと少しややこしくなった。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/appengine/docs/go/tools/uploadinganapp#top_of_page&#34;&gt;Deploying a Go App&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;まず、&lt;code&gt;goapp&lt;/code&gt;は&lt;a href=&#34;https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go&#34;&gt;App Engine Go SDK&lt;/a&gt;
-に含まれているものだ。&lt;code&gt;appcfg.py&lt;/code&gt;もここに含まれている。&lt;/p&gt;
-
-&lt;p&gt;デプロイ後、アプリケーションは&lt;code&gt;https://&amp;lt;YOUR-PROJECT-ID&amp;gt;.appspot.com&lt;/code&gt;で動作する。&lt;/p&gt;
-
-&lt;p&gt;ファイルをアップロードするには、&lt;code&gt;goapp deploy&lt;/code&gt;をアプリケーションのルートディレクトリから実行しよう。この時ルートディレクトリには
-&lt;code&gt;app.yaml&lt;/code&gt;が用意されていなければならない。
-引数を使ってルートの位置を示すこともできるけれども、細かいことは&lt;code&gt;goapp help deploy&lt;/code&gt;で見てほしい。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;app.yaml&lt;/code&gt;にあるアプリケーションIDを自動的に使う。けれども多くのサンプルアプリケーションでは&lt;code&gt;app.yaml&lt;/code&gt;から&lt;code&gt;application:&lt;/code&gt;や
-&lt;code&gt;version:&lt;/code&gt;を除外している。そういう場合はコンソールからバージョンやアプリケーションIDを指定する。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;goapp deploy -application &amp;lt;YOUR_PROJECT_ID&amp;gt; -V v1 myapp/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;アプリケーションが複数の&lt;a href=&#34;https://cloud.google.com/appengine/docs/go/configuration-files&#34;&gt;サービス&lt;/a&gt;から成る場合、
-更新するサービスを指定することができる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;デフォルトのサービスを更新する場合、リストの最初ものが更新される&lt;/li&gt;
-&lt;li&gt;初めて更新する場合、デフォルトのサービスは必ず含まれる&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>GCP/Goアプリケーションのデプロイ周りについて学んでいたところ。
+goapp deployだったり、GoogleAppEngineLauncherだったり、 appcfg.pyだったり、dev_appserver.pyだったりと少しややこしくなった。
+ Deploying a Go App  まず、goappはApp Engine Go SDK に含まれているものだ。appcfg.pyもここに含まれている。
+デプロイ後、アプリケーションはhttps://&amp;lt;YOUR-PROJECT-ID&amp;gt;.appspot.comで動作する。
+ファイルをアップロードするには、goapp deployをアプリケーションのルートディレクトリから実行しよう。この時ルートディレクトリには app.yamlが用意されていなければならない。 引数を使ってルートの位置を示すこともできるけれども、細かいことはgoapp help deployで見てほしい。
+app.yamlにあるアプリケーションIDを自動的に使う。けれども多くのサンプルアプリケーションではapp.yamlからapplication:や version:を除外している。そういう場合はコンソールからバージョンやアプリケーションIDを指定する。
+goapp deploy -application &amp;lt;YOUR_PROJECT_ID&amp;gt; -V v1 myapp/  アプリケーションが複数のサービスから成る場合、 更新するサービスを指定することができる。
+ デフォルトのサービスを更新する場合、リストの最初ものが更新される 初めて更新する場合、デフォルトのサービスは必ず含まれる  </description>
     </item>
     
     <item>
@@ -54,59 +33,14 @@
       <pubDate>Tue, 09 Aug 2016 13:38:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0809_go_pub_sub/</guid>
-      <description>
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-pub-sub&#34;&gt;Using Cloud Pub/Sub with Go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developers.google.com/books/&#34;&gt;Google Book API&lt;/a&gt;を使ってバックグラウンドワーカーに処理をさせる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;前回同様、&lt;code&gt;config.go&lt;/code&gt;から下記部分のコメントを削除し、ProjectIDを書き換える。&lt;/p&gt;
-
-&lt;p&gt;ローカルホストを立ち上げた状態で下記のコマンドでバックグラウンドワーカーが動く。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
-cd pubsub_worker
-PORT=8081 go run worker.go
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;http://localhost:8081/&lt;/code&gt;でワーカーインスタンスに立直できる。
-処理した本の数についてのステータスが確認できる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/Aj24JXT3jO1BGJQHmgGX0QAoHCxcg56AdDIB/image.png&#34; alt=&#34;Pasted%20Image%208/3/16,%2011:14&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;↑ 「イノベーションのジレンマ」とタイトルをいれると勝手に入る&lt;/p&gt;
-
-&lt;h3 id=&#34;デプロイする&#34;&gt;デプロイする&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
-
-# Deploy the worker
-cd pubsub_worker
-aedeploy gcloud app deploy
-
-# Deploy the main app
-cd ../app
-aedeploy gcloud app deploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;下記がアクセス先になる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;https://[YOUR_PROJECT_ID].appspot.com
-https://worker-dot-[YOUR_PROJECT_ID].appspot.com
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-pub-sub.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;データベース内で本が更新されるとCloud Pub/Subが走る。
-ワーカーは分離して稼働していて、これらのイベントをリッスンしている。
-イベントを受け取るとワーカーkはBooksAPIにリクエストを作成し、データベースの本の記録を更新する。&lt;/p&gt;
-
-&lt;p&gt;以上。&lt;/p&gt;
-</description>
+      <description>Using Cloud Pub/Sub with Go  Google Book APIを使ってバックグラウンドワーカーに処理をさせる。
+ 前回同様、config.goから下記部分のコメントを削除し、ProjectIDを書き換える。
+ローカルホストを立ち上げた状態で下記のコマンドでバックグラウンドワーカーが動く。
+cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf cd pubsub_worker PORT=8081 go run worker.go  http://localhost:8081/でワーカーインスタンスに立直できる。 処理した本の数についてのステータスが確認できる。
+↑ 「イノベーションのジレンマ」とタイトルをいれると勝手に入る
+デプロイする $ cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf # Deploy the worker cd pubsub_worker aedeploy gcloud app deploy # Deploy the main app cd ../app aedeploy gcloud app deploy  下記がアクセス先になる。
+https://[YOUR_PROJECT_ID].appspot.com https://worker-dot-[YOUR_PROJECT_ID].appspot.com  データベース内で本が更新されるとCloud Pub/Subが走る。 ワーカーは分離して稼働していて、これらのイベントをリッスンしている。 イベントを受け取るとワーカーkはBooksAPIにリクエストを作成し、データベースの本の記録を更新する。
+以上。</description>
     </item>
     
     <item>
@@ -115,45 +49,11 @@ https://worker-dot-[YOUR_PROJECT_ID].appspot.com
       <pubDate>Mon, 08 Aug 2016 13:38:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0808_go_logging/</guid>
-      <description>&lt;p&gt;どのようにして詳細なログ情報を残していくか。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/logging-application-events&#34;&gt;Logging Application Events with Go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Cloud Platformの提供するログやモニタリングツールがあるので、Cloud Platform Consoleから簡単に確認することができる。&lt;/p&gt;
-
-&lt;p&gt;このサンプルでは標準の&lt;code&gt;log&lt;/code&gt;パッケージとGorillaの&lt;code&gt;CombinedLoggingHandler&lt;/code&gt;を利用している。&lt;/p&gt;
-
-&lt;p&gt;標準のエラー:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;type appHandler func(http.ResponseWriter, *http.Request) *appError
-
-type appError struct {
-        Error   error
-        Message string
-        Code    int
-}
-
-func (fn appHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-        if e := fn(w, r); e != nil { // e is *appError, not os.Error.
-                log.Printf(&amp;quot;Handler error: status code: %d, message: %s, underlying err: %#v&amp;quot;,
-                        e.Code, e.Message, e.Error)
-
-                http.Error(w, e.Message, e.Code)
-        }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;HTTPリクエストのログ:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// Delegate all of the HTTP routing and serving to the gorilla/mux router.
-// Log all requests using the standard Apache format.
-http.Handle(&amp;quot;/&amp;quot;, handlers.CombinedLoggingHandler(os.Stderr, r))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ログは&lt;a href=&#34;https://console.cloud.google.com/logs/viewer&#34;&gt;ここ&lt;/a&gt;から見れる。&lt;/p&gt;
-</description>
+      <description>どのようにして詳細なログ情報を残していくか。
+ Logging Application Events with Go  Cloud Platformの提供するログやモニタリングツールがあるので、Cloud Platform Consoleから簡単に確認することができる。
+このサンプルでは標準のlogパッケージとGorillaのCombinedLoggingHandlerを利用している。
+標準のエラー:
+type appHandler func(http.ResponseWriter, *http.Request) *appError type appError struct { Error error Message string Code int } func (fn appHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) { if e := fn(w, r); e != nil { // e is *appError, not os.Error. log.Printf(&amp;quot;Handler error: status code: %d, message: %s, underlying err: %#v&amp;quot;, e.Code, e.Message, e.Error) http.Error(w, e.Message, e.Code) } }  HTTPリクエストのログ:</description>
     </item>
     
     <item>
@@ -162,78 +62,19 @@ http.Handle(&amp;quot;/&amp;quot;, handlers.CombinedLoggingHandler(os.Stderr, r)
       <pubDate>Fri, 05 Aug 2016 13:38:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0805_go_authenticating_users/</guid>
-      <description>
-
-&lt;p&gt;OAuth2.0を使ったユーザー認証。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/authenticate-users&#34;&gt;Authenticating Users with Go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;web-application-client-idの作成&#34;&gt;Web application client IDの作成&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/apis/credentials&#34;&gt;credentials&lt;/a&gt;へアクセスし、&lt;code&gt;OAuth consent screen&lt;/code&gt;をクリック。
-プロダクト名のところに&lt;code&gt;Go Bookshelf App&lt;/code&gt;と入力し、その他も任意で記入する。&lt;/p&gt;
-
-&lt;p&gt;保存後、&lt;code&gt;Create credentials &amp;gt; OAuth client ID&lt;/code&gt;と移動し、&lt;code&gt;Application type&lt;/code&gt;では&lt;code&gt;Web application&lt;/code&gt;を選択。
-&lt;code&gt;Name&lt;/code&gt;は&lt;code&gt;Go Bookshelf Client&lt;/code&gt;。&lt;code&gt;Authorized redirect URIs&lt;/code&gt;にProjectIDに置き換えた値を入れる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http://localhost:8080/oauth2callback
-http://[YOUR_PROJECT_ID].appspot.com/oauth2callback
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;作成すると、IDとclient secretが表示されるので保存しておくこと。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;前回同様、下記へ移動して&lt;code&gt;config.go&lt;/code&gt;を開く。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;下記のコメントを削除し、clientidとclientsecretを先ほどの値に置き換える。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// oauthConfig = configureOAuthClient(&amp;quot;clientid&amp;quot;, &amp;quot;clientsecret&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;app/app.yaml&lt;/code&gt;を開き、&lt;code&gt;OAUTH2_CALLBACK&lt;/code&gt;のProjectIDを自分のものに置き換える。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;ローカルの立ち上げやデプロイは前回同様。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-auth.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;セッションを扱うために&lt;a href=&#34;http://www.gorillatoolkit.org/&#34;&gt;Gorilla web toolkit&lt;/a&gt;を使っている。
-Gorillaはいくつかの&lt;code&gt;Store&lt;/code&gt;インターフェイスを持っているが、今回は&lt;code&gt;CookieStore&lt;/code&gt;を利用。&lt;/p&gt;
-
-&lt;p&gt;認証の仕組みはまず、Googleの認証画面にリダイレクトさせ、そのレスポンスを、ユーザーがアプリケーションに戻る際に処理させるというものである。&lt;/p&gt;
-
-&lt;p&gt;アプリケーションはClientIDとOAuthスコープを使ってURLを生成する。スコープには、アプリケーションがアクセスしようとするユーザー情報が何かということを含む。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;config.go&lt;/code&gt;のこの部分がそれにあたる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func configureOAuthClient(clientID, clientSecret string) *oauth2.Config {
-        redirectURL := os.Getenv(&amp;quot;OAUTH2_CALLBACK&amp;quot;)
-        if redirectURL == &amp;quot;&amp;quot; {
-                redirectURL = &amp;quot;http://localhost:8080/oauth2callback&amp;quot;
-        }
-        return &amp;amp;oauth2.Config{
-                ClientID:     clientID,
-                ClientSecret: clientSecret,
-                RedirectURL:  redirectURL,
-                Scopes:       []string{&amp;quot;email&amp;quot;, &amp;quot;profile&amp;quot;},
-                Endpoint:     google.Endpoint,
-        }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;認証が完了するとGoogle認証サービスは&lt;code&gt;/oauth2callback&lt;/code&gt;を通してユーザーをアプリケーションへ戻す。&lt;/p&gt;
-
-&lt;p&gt;認証後はGoogle+ APIが利用できるため&lt;code&gt;plusService.People.Get(&amp;quot;me&amp;quot;)&lt;/code&gt;を使うと認証済みのユーザーの情報が取得できる。&lt;/p&gt;
-</description>
+      <description>OAuth2.0を使ったユーザー認証。
+ Authenticating Users with Go   Web application client IDの作成 credentialsへアクセスし、OAuth consent screenをクリック。 プロダクト名のところにGo Bookshelf Appと入力し、その他も任意で記入する。
+保存後、Create credentials &amp;gt; OAuth client IDと移動し、Application typeではWeb applicationを選択。 NameはGo Bookshelf Client。Authorized redirect URIsにProjectIDに置き換えた値を入れる。
+http://localhost:8080/oauth2callback http://[YOUR_PROJECT_ID].appspot.com/oauth2callback  作成すると、IDとclient secretが表示されるので保存しておくこと。
+ 前回同様、下記へ移動してconfig.goを開く。
+cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf  下記のコメントを削除し、clientidとclientsecretを先ほどの値に置き換える。
+// oauthConfig = configureOAuthClient(&amp;quot;clientid&amp;quot;, &amp;quot;clientsecret&amp;quot;)  app/app.yamlを開き、OAUTH2_CALLBACKのProjectIDを自分のものに置き換える。
+ ローカルの立ち上げやデプロイは前回同様。
+セッションを扱うためにGorilla web toolkitを使っている。 GorillaはいくつかのStoreインターフェイスを持っているが、今回はCookieStoreを利用。
+認証の仕組みはまず、Googleの認証画面にリダイレクトさせ、そのレスポンスを、ユーザーがアプリケーションに戻る際に処理させるというものである。
+アプリケーションはClientIDとOAuthスコープを使ってURLを生成する。スコープには、アプリケーションがアクセスしようとするユーザー情報が何かということを含む。
+config.goのこの部分がそれにあたる。
+func configureOAuthClient(clientID, clientSecret string) *oauth2.Config { redirectURL := os.Getenv(&amp;quot;OAUTH2_CALLBACK&amp;quot;) if redirectURL == &amp;quot;&amp;quot; { redirectURL = &amp;quot;http://localhost:8080/oauth2callback&amp;quot; } return &amp;amp;oauth2.</description>
     </item>
     
     <item>
@@ -242,103 +83,15 @@ Gorillaはいくつかの&lt;code&gt;Store&lt;/code&gt;インターフェイス�
       <pubDate>Thu, 04 Aug 2016 13:38:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0804_go_cloud_strage/</guid>
-      <description>
-
-&lt;p&gt;続いて、&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-cloud-storage&#34;&gt;&amp;ldquo;Using Cloud Storage with Go&amp;rdquo;&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h3 id=&#34;cloud-storageの作成&#34;&gt;Cloud Storageの作成&lt;/h3&gt;
-
-&lt;p&gt;下記コマンドでCloud Storageを作成する。&lt;br /&gt;
-実はどんな名前でもいいんだけど、ProjectIDに合わせておくのがよい。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;❯❯❯ gsutil mb gs://*****-***-kotazi                                            
-Creating gs://*****-***-kotazi/...
-~/R/blog ❯❯❯ gsutil defacl set public-read gs://*****-***-kotazi
-Setting default object ACL on gs://*****-***-kotazi/...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;configuring-settings&#34;&gt;Configuring settings&lt;/h3&gt;
-
-&lt;p&gt;プロジェクトルートへ移動して&lt;code&gt;config.go&lt;/code&gt;を開く。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;下記部分のコメントを消して、バケット名に書き換える。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// StorageBucket, err = configureStorage(&amp;quot;&amp;lt;your-storage-bucket&amp;gt;&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ローカル立ち上げやデプロイの方法はさっきと同じ。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-binary-data.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;今回で言うと本棚の画像をCloud Storage側におけるようになる。そのためのコードが下記。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;getting-started/bookshelf/app/app.go&lt;/code&gt;の&lt;code&gt;uploadFileFromForm&lt;/code&gt;関数。
-この関数の中で画像があるかないかをチェックした折、あればCloud Storageにアップロードする。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// uploadFileFromForm uploads a file if it&#39;s present in the &amp;quot;image&amp;quot; form field.
-func uploadFileFromForm(r *http.Request) (url string, err error) {
-        f, fh, err := r.FormFile(&amp;quot;image&amp;quot;)
-        if err == http.ErrMissingFile {
-                return &amp;quot;&amp;quot;, nil
-        }
-        if err != nil {
-                return &amp;quot;&amp;quot;, err
-        }
-
-        if bookshelf.StorageBucket == nil {
-                return &amp;quot;&amp;quot;, errors.New(&amp;quot;storage bucket is missing - check config.go&amp;quot;)
-        }
-
-        // random filename, retaining existing extension.
-        name := uuid.NewV4().String() + path.Ext(fh.Filename)
-
-        ctx := context.Background()
-        w := bookshelf.StorageBucket.Object(name).NewWriter(ctx)
-        w.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
-        w.ContentType = fh.Header.Get(&amp;quot;Content-Type&amp;quot;)
-
-        // Entries are immutable, be aggressive about caching (1 day).
-        w.CacheControl = &amp;quot;public, max-age=86400&amp;quot;
-
-        if _, err := io.Copy(w, f); err != nil {
-                return &amp;quot;&amp;quot;, err
-        }
-        if err := w.Close(); err != nil {
-                return &amp;quot;&amp;quot;, err
-        }
-
-        const publicURL = &amp;quot;https://storage.googleapis.com/%s/%s&amp;quot;
-        return fmt.Sprintf(publicURL, bookshelf.StorageBucketName, name), nil
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;uploadFileFromForm&lt;/code&gt;の呼び出しは&lt;code&gt;app.go&lt;/code&gt;の&lt;code&gt;bookFromForm&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// bookFromForm populates the fields of a Book from form values
-// (see templates/edit.html).
-func bookFromForm(r *http.Request) (*bookshelf.Book, error) {
-        imageURL, err := uploadFileFromForm(r)
-        if err != nil {
-                return nil, fmt.Errorf(&amp;quot;could not upload file: %v&amp;quot;, err)
-        }
-        if imageURL == &amp;quot;&amp;quot; {
-                imageURL = r.FormValue(&amp;quot;imageURL&amp;quot;)
-        }
-
-        book := &amp;amp;bookshelf.Book{
-                Title:         r.FormValue(&amp;quot;title&amp;quot;),
-                Author:        r.FormValue(&amp;quot;author&amp;quot;),
-                PublishedDate: r.FormValue(&amp;quot;publishedDate&amp;quot;),
-                ImageURL:      imageURL,
-                Description:   r.FormValue(&amp;quot;description&amp;quot;),
-                CreatedBy:     r.FormValue(&amp;quot;createdBy&amp;quot;),
-                CreatedByID:   r.FormValue(&amp;quot;createdByID&amp;quot;),
-        }
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>続いて、&amp;ldquo;Using Cloud Storage with Go&amp;rdquo;。
+Cloud Storageの作成 下記コマンドでCloud Storageを作成する。
+実はどんな名前でもいいんだけど、ProjectIDに合わせておくのがよい。
+❯❯❯ gsutil mb gs://*****-***-kotazi Creating gs://*****-***-kotazi/... ~/R/blog ❯❯❯ gsutil defacl set public-read gs://*****-***-kotazi Setting default object ACL on gs://*****-***-kotazi/...  Configuring settings プロジェクトルートへ移動してconfig.goを開く。
+cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf  下記部分のコメントを消して、バケット名に書き換える。
+// StorageBucket, err = configureStorage(&amp;quot;&amp;lt;your-storage-bucket&amp;gt;&amp;quot;)  ローカル立ち上げやデプロイの方法はさっきと同じ。
+今回で言うと本棚の画像をCloud Storage側におけるようになる。そのためのコードが下記。
+getting-started/bookshelf/app/app.goのuploadFileFromForm関数。 この関数の中で画像があるかないかをチェックした折、あればCloud Storageにアップロードする。
+// uploadFileFromForm uploads a file if it&#39;s present in the &amp;quot;image&amp;quot; form field. func uploadFileFromForm(r *http.Request) (url string, err error) { f, fh, err := r.</description>
     </item>
     
     <item>
@@ -347,77 +100,18 @@ func bookFromForm(r *http.Request) (*bookshelf.Book, error) {
       <pubDate>Wed, 03 Aug 2016 13:38:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0803_go_nosql/</guid>
-      <description>
-
-&lt;p&gt;GCPのGoのチュートリアルの概要。&lt;br /&gt;
-とりあえずDatastoreでやってみることに。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/using-structured-data&#34;&gt;Using Structured Data with Go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;先ほどクローンしたコードの編集を加える。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;config.go&lt;/code&gt;を開き、下記部分のコメントを消して、自分のプロジェクトIDに置き換える。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// DB, err = configureDatastoreDB(&amp;quot;projectid&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;ローカルマシンで起動&#34;&gt;ローカルマシンで起動&lt;/h3&gt;
-
-&lt;p&gt;下記コマンドでローカルマシンを立ち上げる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;cd app
-go run app.go auth.go template.go
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;アプリケーションの動作を確認できる。&lt;/p&gt;
-
-&lt;h3 id=&#34;デプロイする&#34;&gt;デプロイする&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;app&lt;/code&gt;ディレクトリ内で下記のコマンド。&lt;code&gt;https://[YOUR_PROJECT_ID].appspot.com&lt;/code&gt;でアクセス可能。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;aedeploy gcloud app deploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;アプリを更新する場合、同じコマンドをを使えばバージョンを更新できる。
-新しくデプロイすると新しいバージョンが作られる。&lt;/p&gt;
-
-&lt;p&gt;古いバージョンも残り続けるので課金対象にしたくなければ削除するのがいい。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/appengine/versions&#34;&gt;バージョンページ&lt;/a&gt;から削除できる。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://cloud.google.com/go/images/go-datastore.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;getting-started/bookshelf/db_datastore.go&lt;/code&gt;の&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// AddBook saves a given book, assigning it a new ID.
-func (db *datastoreDB) AddBook(b *Book) (id int64, err error) {
-        ctx := context.Background()
-        k := datastore.NewIncompleteKey(ctx, &amp;quot;Book&amp;quot;, nil)
-        k, err = db.client.Put(ctx, k, b)
-        if err != nil {
-                return 0, fmt.Errorf(&amp;quot;datastoredb: could not put Book: %v&amp;quot;, err)
-        }
-        return k.ID(), nil
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この辺りがDatastoreに保存する処理。&lt;/p&gt;
-
-&lt;p&gt;ちなみに&lt;code&gt;:=&lt;/code&gt;は変数宣言と代入を行っている。&lt;/p&gt;
-</description>
+      <description>GCPのGoのチュートリアルの概要。
+とりあえずDatastoreでやってみることに。
+ Using Structured Data with Go   先ほどクローンしたコードの編集を加える。
+cd $GOPATH/src/github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf  config.goを開き、下記部分のコメントを消して、自分のプロジェクトIDに置き換える。
+// DB, err = configureDatastoreDB(&amp;quot;projectid&amp;quot;)  ローカルマシンで起動 下記コマンドでローカルマシンを立ち上げる。
+ http://localhost:8080  cd app go run app.go auth.go template.go  アプリケーションの動作を確認できる。
+デプロイする appディレクトリ内で下記のコマンド。https://[YOUR_PROJECT_ID].appspot.comでアクセス可能。
+aedeploy gcloud app deploy  アプリを更新する場合、同じコマンドをを使えばバージョンを更新できる。 新しくデプロイすると新しいバージョンが作られる。
+古いバージョンも残り続けるので課金対象にしたくなければ削除するのがいい。
+バージョンページから削除できる。
+ getting-started/bookshelf/db_datastore.goの
+// AddBook saves a given book, assigning it a new ID. func (db *datastoreDB) AddBook(b *Book) (id int64, err error) { ctx := context.</description>
     </item>
     
     <item>
@@ -426,84 +120,13 @@ func (db *datastoreDB) AddBook(b *Book) (id int64, err error) {
       <pubDate>Tue, 02 Aug 2016 13:38:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0802_go_bookshelf/</guid>
-      <description>
-
-&lt;p&gt;GCPのGoのチュートリアルの概要。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.google.com/go/getting-started/tutorial-app&#34;&gt;Go Bookshelf App&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;機能&#34;&gt;機能:&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;リストの閲覧、追加、削除&lt;/li&gt;
-&lt;li&gt;詳細の編集&lt;/li&gt;
-&lt;li&gt;カバー画像のアップロード&lt;/li&gt;
-&lt;li&gt;Googleアカウントでのログインと、追加した本の確認&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&#34;目標&#34;&gt;目標:&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;サンプルアプリケーションのクローン&lt;/li&gt;
-&lt;li&gt;ローカルでの起動&lt;/li&gt;
-&lt;li&gt;GAE環境へのデプロイ&lt;/li&gt;
-&lt;li&gt;サンプルコードを読む&lt;/li&gt;
-&lt;li&gt;データ構造のストアについて&lt;/li&gt;
-&lt;li&gt;Google Cloud Storeでのバイナリデータのストアについて&lt;/li&gt;
-&lt;li&gt;ユーザー認証について&lt;/li&gt;
-&lt;li&gt;GCP Consoleで確認するイベントログについて&lt;/li&gt;
-&lt;li&gt;バックグラウンドワーカーにタスクを送るGoogle Cloud Pub/Subの使い方&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&#34;手順&#34;&gt;手順:&lt;/h5&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/project?_ga=1.189765870.459013261.1468980200&#34;&gt;ここ&lt;/a&gt;からGCP Console Projectを選択/生成する。
-&lt;a href=&#34;https://support.google.com/cloud/answer/6293499#enable-billing&#34;&gt;ここ&lt;/a&gt;を見て課金を有効にする。
-さらに、&lt;a href=&#34;https://cloud.google.com/sdk/docs/&#34;&gt;Cloud SDK&lt;/a&gt;のインストール。&lt;/p&gt;
-
-&lt;p&gt;それができたら、下記コマンドで&lt;code&gt;gcloud&lt;/code&gt;認証&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gcloud init
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;成功すると&lt;a href=&#34;https://cloud.google.com/sdk/auth_success&#34;&gt;ここ&lt;/a&gt;へ飛ぶ。(gcloudのチュートリアルあるから読んでみてみいいかも。)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://console.cloud.google.com/flows/enableapi?apiid=datastore.googleapis.com,datastore,pubsub,storage_api,logging,plus&amp;amp;_ga=1.180912098.459013261.1468980200&#34;&gt;ここ&lt;/a&gt;からDatastore、Cloud Pub/Sub, Cloud Storage JSON, Cloud Logging, Google+ APIsを利用できるようにする&lt;/p&gt;
-
-&lt;p&gt;続いて、アカウントを確認&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/R/s/gcp ❯❯❯ gcloud config list
-Your active configuration is: [default]
-
-[core]
-account = kotazi@*****.com
-disable_usage_reporting = False
-project = ********
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;必要に応じて、自分で設定もできる&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gcloud config set project [YOUR_PROJECT_ID]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;サンプルリポジトリのクローンします。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;go get -u -d github.com/GoogleCloudPlatform/golang-samples/getting-started/bookshelf/app
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;aedeploy&lt;/code&gt;コマンドをインストールする&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;go get -u google.golang.org/appengine/cmd/aedeploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;以上で準備が完了。&lt;/p&gt;
-
-&lt;p&gt;ここからGoogle Cloud Platformのさまざまな機能を試していく。&lt;/p&gt;
-</description>
+      <description>GCPのGoのチュートリアルの概要。
+ Go Bookshelf App   機能:  リストの閲覧、追加、削除 詳細の編集 カバー画像のアップロード Googleアカウントでのログインと、追加した本の確認  目標:  サンプルアプリケーションのクローン ローカルでの起動 GAE環境へのデプロイ サンプルコードを読む データ構造のストアについて Google Cloud Storeでのバイナリデータのストアについて ユーザー認証について GCP Consoleで確認するイベントログについて バックグラウンドワーカーにタスクを送るGoogle Cloud Pub/Subの使い方  手順: ここからGCP Console Projectを選択/生成する。 ここを見て課金を有効にする。 さらに、Cloud SDKのインストール。
+それができたら、下記コマンドでgcloud認証
+gcloud init  成功するとここへ飛ぶ。(gcloudのチュートリアルあるから読んでみてみいいかも。)
+ここからDatastore、Cloud Pub/Sub, Cloud Storage JSON, Cloud Logging, Google+ APIsを利用できるようにする
+続いて、アカウントを確認
+~/R/s/gcp ❯❯❯ gcloud config list Your active configuration is: [default] [core] account = kotazi@*****.com disable_usage_reporting = False project = ********  必要に応じて、自分で設定もできる</description>
     </item>
     
   </channel>

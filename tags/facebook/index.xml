@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Dec 2015 09:38:38 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/facebook/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/facebook/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>1つのページに2つのFacebookAppIdをセットした時</title>
@@ -15,19 +17,9 @@
       <pubDate>Wed, 16 Dec 2015 09:38:38 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/20151215_fb_app_id/</guid>
-      <description>
-
-&lt;p&gt;FacebookのApp IDを一つのページにセットした時のこと。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;sdk.jsで初期化処理に一つのappIDしかセットすることができない。
-２回初期化すれば最後に初期化した時のappIdが使われる。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.sourcecoast.com/forums/jfbconnect/jfbconnect-joomla-15-support/3514-multiple-fb-apps-on-one-domain&#34; alt=&#34;Multiple FB apps on one domain?&#34; /&gt;&lt;/p&gt;
-</description>
+      <description> FacebookのApp IDを一つのページにセットした時のこと。
+ sdk.jsで初期化処理に一つのappIDしかセットすることができない。 ２回初期化すれば最後に初期化した時のappIdが使われる。
+参考 </description>
     </item>
     
   </channel>

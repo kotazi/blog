@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Jan 2016 20:07:16 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/angular2/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/angular2/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Angular2のチュートリアル</title>
@@ -15,97 +17,13 @@
       <pubDate>Fri, 15 Jan 2016 20:07:16 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0115_angular2_2/</guid>
-      <description>
-
-&lt;p&gt;Angualr2のチュートリアルやったのでメモ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kotazi/angular2-quick-start&#34;&gt;kotazi/angular2-quick-start&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/tutorial/&#34;&gt;TUTORIAL: TOUR OF HEROES&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&#34;構成&#34;&gt;構成&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;angular2-tour-of-heroes
-|- node_modules
-|-app
-| |- app.component.ts
-| |- boot.ts
-| |- hero.ts
-| |- hero-detail.component.ts
-| |- hero.service.ts
-| |- mock-heroes.ts
-|- index.html
-|- package.json
-|- tsconfig.json
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;index-html&#34;&gt;index.html&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Angular2では&lt;code&gt;angular2-polyfills.js&lt;/code&gt;と&lt;code&gt;Rx.js&lt;/code&gt;が必要&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;System&lt;/code&gt;でconfigとbootの読み込み&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;my-app&amp;gt;&lt;/code&gt;タグを埋め込む&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/00d1d0fbe1a4fb92be11.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;boot-ts&#34;&gt;boot.ts&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;bootstrap()&lt;/code&gt;でアプリケーション起動&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/bf9b1e29e590582dc895.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;app-component-ts&#34;&gt;app.component.ts&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;@Component&lt;/code&gt;はAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;selector&lt;/code&gt;でHTMLのタグ名を指定する。&lt;code&gt;template&lt;/code&gt;にはレンタリングするHTMLを記述する。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;*ngFor=&amp;ldquo;#hero of heroes&amp;rdquo; ng-repeatが変わった&lt;/li&gt;
-&lt;li&gt;アスタリスクとシャープが特徴&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/e407ee5a6dfe7599c8df.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;hero-ts&#34;&gt;hero.ts&lt;/h2&gt;
-
-&lt;p&gt;classではなくinterfaceを利用している。&lt;br /&gt;
-ここでの選び方は&lt;code&gt;Hero&lt;/code&gt;をどのように使いたいか。&lt;br /&gt;
-ロジックや振る舞いを書く場合は、&lt;code&gt;class&lt;/code&gt;。
-型の定義などだけであれば、&lt;code&gt;interface&lt;/code&gt;で十分。&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/958abfee0ee7cce36257.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;mock-heroes-ts&#34;&gt;mock-heroes.ts&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HREOES配列はHero型。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/d3b073e5f33ff8ef1605.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;hero-detail-component-ts&#34;&gt;hero-detail.component.ts&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;[(ngModel)]=&amp;ldquo;hero.name&amp;rdquo; 書き方変わった&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/9bd78998321fde979038.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;hero-service-ts&#34;&gt;hero.service.ts&lt;/h2&gt;
-
-&lt;script src=&#34;https://gist.github.com/kotazi/f27b3bc4c989d37fde72.js&#34;&gt;&lt;/script&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;けっこう変わってるけど抵抗はそんなにないかも。&lt;/p&gt;
-</description>
+      <description>Angualr2のチュートリアルやったのでメモ。
+ kotazi/angular2-quick-start TUTORIAL: TOUR OF HEROES   構成 angular2-tour-of-heroes |- node_modules |-app | |- app.component.ts | |- boot.ts | |- hero.ts | |- hero-detail.component.ts | |- hero.service.ts | |- mock-heroes.ts |- index.html |- package.json |- tsconfig.json  index.html  Angular2ではangular2-polyfills.jsとRx.jsが必要 Systemでconfigとbootの読み込み &amp;lt;my-app&amp;gt;タグを埋め込む   boot.ts  bootstrap()でアプリケーション起動   app.component.ts @ComponentはAngularにこのクラスはAngularのコンポーネントだと伝える役割を担う。
+selectorでHTMLのタグ名を指定する。templateにはレンタリングするHTMLを記述する。
+ *ngFor=&amp;ldquo;#hero of heroes&amp;rdquo; ng-repeatが変わった アスタリスクとシャープが特徴   hero.ts classではなくinterfaceを利用している。
+ここでの選び方はHeroをどのように使いたいか。
+ロジックや振る舞いを書く場合は、class。 型の定義などだけであれば、interfaceで十分。
+ mock-heroes.ts  HREOES配列はHero型。   hero-detail.</description>
     </item>
     
     <item>
@@ -114,60 +32,17 @@
       <pubDate>Fri, 15 Jan 2016 11:56:56 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0115_angular2/</guid>
-      <description>
-
-&lt;h2 id=&#34;speed-performance&#34;&gt;SPEED &amp;amp; PERFORMANCE&lt;/h2&gt;
-
-&lt;p&gt;Angular2ではAngular1から劇的に速くなります。
-- サーバーサイドプリレンダリングによる初期ロードの高速化
-- オフラインコンパイルの立ちあげの速さ、
-- 検出やビューキャッシュの大幅改善によるスムーズなスクロールやトランジション。&lt;/p&gt;
-
-&lt;h2 id=&#34;simple-expressive&#34;&gt;SIMPLE &amp;amp; EXPRESSIVE&lt;/h2&gt;
-
-&lt;p&gt;意図を明確に自然に書きやすくなります。
-柔軟なテンプレートは読みやすく理解しやすいので、
-チームの複雑さがなくなります。&lt;/p&gt;
-
-&lt;h2 id=&#34;cross-platform&#34;&gt;CROSS PLATFORM&lt;/h2&gt;
-
-&lt;p&gt;Angular2はデスクトップアプリやモバイルウェブ、AndroidとiOSにも対応。
-Angular Universalはモバイル高速化のためにサーバーサイドレンダリングを提供します。&lt;/p&gt;
-
-&lt;p&gt;Web workerによってレスポンシブなアプリUIがサポートされます。&lt;/p&gt;
-
-&lt;h2 id=&#34;seamless-upgrade-from-angular-1&#34;&gt;SEAMLESS UPGRADE FROM ANGULAR 1&lt;/h2&gt;
-
-&lt;p&gt;自身のペースでAngular1からのアップデードができます。&lt;/p&gt;
-
-&lt;h2 id=&#34;flexible-development&#34;&gt;FLEXIBLE DEVELOPMENT&lt;/h2&gt;
-
-&lt;p&gt;言語を自由に選べます。
-ES5、TypeScript、Dart、ES2015やJSにコンパイルできる言語なら動作します。&lt;/p&gt;
-
-&lt;h2 id=&#34;comprehensive-routing&#34;&gt;COMPREHENSIVE ROUTING&lt;/h2&gt;
-
-&lt;p&gt;ビューの設計が洗練されています。&lt;/p&gt;
-
-&lt;h2 id=&#34;dependency-injection&#34;&gt;DEPENDENCY INJECTION&lt;/h2&gt;
-
-&lt;p&gt;依存性注入がシンプルに。
-退屈なコードが不要に。
-テストも書きやすくなる。&lt;/p&gt;
-
-&lt;h2 id=&#34;legacy-browser-support&#34;&gt;LEGACY BROWSER SUPPORT&lt;/h2&gt;
-
-&lt;p&gt;Chrome, Edge, Firefox, IE, and Safariの最新バージョンをサポート。
-IE9+ and Android 4.1+も。&lt;/p&gt;
-
-&lt;h2 id=&#34;animations&#34;&gt;ANIMATIONS&lt;/h2&gt;
-
-&lt;p&gt;低レイヤーでのアニメーションをサポート。&lt;/p&gt;
-
-&lt;h2 id=&#34;internationalization-i18n-accessibility&#34;&gt;INTERNATIONALIZATION (I18N) &amp;amp; ACCESSIBILITY&lt;/h2&gt;
-
-&lt;p&gt;全ての人に届くようにできてる。&lt;/p&gt;
-</description>
+      <description>SPEED &amp;amp; PERFORMANCE Angular2ではAngular1から劇的に速くなります。 - サーバーサイドプリレンダリングによる初期ロードの高速化 - オフラインコンパイルの立ちあげの速さ、 - 検出やビューキャッシュの大幅改善によるスムーズなスクロールやトランジション。
+SIMPLE &amp;amp; EXPRESSIVE 意図を明確に自然に書きやすくなります。 柔軟なテンプレートは読みやすく理解しやすいので、 チームの複雑さがなくなります。
+CROSS PLATFORM Angular2はデスクトップアプリやモバイルウェブ、AndroidとiOSにも対応。 Angular Universalはモバイル高速化のためにサーバーサイドレンダリングを提供します。
+Web workerによってレスポンシブなアプリUIがサポートされます。
+SEAMLESS UPGRADE FROM ANGULAR 1 自身のペースでAngular1からのアップデードができます。
+FLEXIBLE DEVELOPMENT 言語を自由に選べます。 ES5、TypeScript、Dart、ES2015やJSにコンパイルできる言語なら動作します。
+COMPREHENSIVE ROUTING ビューの設計が洗練されています。
+DEPENDENCY INJECTION 依存性注入がシンプルに。 退屈なコードが不要に。 テストも書きやすくなる。
+LEGACY BROWSER SUPPORT Chrome, Edge, Firefox, IE, and Safariの最新バージョンをサポート。 IE9+ and Android 4.1+も。
+ANIMATIONS 低レイヤーでのアニメーションをサポート。
+INTERNATIONALIZATION (I18N) &amp;amp; ACCESSIBILITY 全ての人に届くようにできてる。</description>
     </item>
     
   </channel>

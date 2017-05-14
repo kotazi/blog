@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Feb 2016 12:06:51 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/fullcalendar/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/fullcalendar/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>ES6とReact試してみた</title>
@@ -15,13 +17,9 @@
       <pubDate>Mon, 01 Feb 2016 12:06:51 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0130_react_calendar/</guid>
-      <description>&lt;p&gt;FullCalendarとReactとES6を使ったサンプルを作ってみた。&lt;/p&gt;
-
-&lt;p&gt;jQueryとReactは相性が悪いと聞いていたが、特に感じられなかった。&lt;/p&gt;
-
-&lt;p&gt;&lt;p data-height=&#34;266&#34; data-theme-id=&#34;15717&#34; data-slug-hash=&#34;KVoXob&#34; data-default-tab=&#34;result&#34; data-user=&#34;kotazi&#34; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/kotazi/pen/KVoXob/&#39;&gt;FullCalendar With React ES6&lt;/a&gt; by Kohei  Saeki (&lt;a href=&#39;http://codepen.io/kotazi&#39;&gt;@kotazi&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-&lt;script async src=&#34;//assets.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
+      <description>FullCalendarとReactとES6を使ったサンプルを作ってみた。
+jQueryとReactは相性が悪いと聞いていたが、特に感じられなかった。
+See the Pen FullCalendar With React ES6 by Kohei Saeki (@kotazi) on CodePen.</description>
     </item>
     
     <item>
@@ -30,56 +28,17 @@
       <pubDate>Mon, 25 Jan 2016 22:53:46 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0125_calendar/</guid>
-      <description>
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/current_date/&#34;&gt;Current Date&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;agendaWeek&lt;/code&gt;と&lt;code&gt;agendaDay&lt;/code&gt;用のオプションです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;defaultdate-http-fullcalendar-io-docs-current-date-defaultdate&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/defaultDate&#34;&gt;defaultDate&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;最初の読み込み時に表示する日時。&lt;/p&gt;
-
-&lt;h5 id=&#34;nowindicator-http-fullcalendar-io-docs-current-date-nowindicator&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nowIndicator&#34;&gt;nowIndicator&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;現在時刻にマーカーを引くかどうか。&lt;/p&gt;
-
-&lt;h5 id=&#34;prev-method-http-fullcalendar-io-docs-current-date-prev&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prev&#34;&gt;prev (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;前に戻るためのメソッド。&lt;/p&gt;
-
-&lt;h5 id=&#34;next-method-http-fullcalendar-io-docs-current-date-next&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/next&#34;&gt;next (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;次に進むためのメソッド。&lt;/p&gt;
-
-&lt;h5 id=&#34;prevyear-method-http-fullcalendar-io-docs-current-date-prevyear&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/prevYear&#34;&gt;prevYear (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;前年に戻る。&lt;/p&gt;
-
-&lt;h5 id=&#34;nextyear-method-http-fullcalendar-io-docs-current-date-nextyear&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/nextYear&#34;&gt;nextYear (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;翌年に進む。&lt;/p&gt;
-
-&lt;h5 id=&#34;today-method-http-fullcalendar-io-docs-current-date-today&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/today&#34;&gt;today(method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;今日を表示する。&lt;/p&gt;
-
-&lt;h5 id=&#34;gotodate-method-http-fullcalendar-io-docs-current-date-gotodate&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/gotoDate&#34;&gt;gotoDate(method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;指定日へ移動する。&lt;/p&gt;
-
-&lt;h5 id=&#34;incrementdate-method-http-fullcalendar-io-docs-current-date-incrementdate&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/incrementDate&#34;&gt;incrementDate(method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;指定日時分だけ移動する。&lt;/p&gt;
-
-&lt;h5 id=&#34;getdate-method-http-fullcalendar-io-docs-current-date-getdate&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/current_date/getDate&#34;&gt;getDate(method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;日付を取得する。&lt;/p&gt;
-</description>
+      <description>Current Date  agendaWeekとagendaDay用のオプションです。
+ ◯ defaultDate 最初の読み込み時に表示する日時。
+◯ nowIndicator 現在時刻にマーカーを引くかどうか。
+◯ prev (method) 前に戻るためのメソッド。
+◯ next (method) 次に進むためのメソッド。
+◯ prevYear (method) 前年に戻る。
+◯ nextYear (method) 翌年に進む。
+◯ today(method) 今日を表示する。
+◯ gotoDate(method) 指定日へ移動する。
+◯ incrementDate(method) 指定日時分だけ移動する。
+◯ getDate(method) 日付を取得する。</description>
     </item>
     
     <item>
@@ -88,111 +47,26 @@
       <pubDate>Sat, 23 Jan 2016 22:53:46 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0123_calendar/</guid>
-      <description>
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;General Display&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;header-http-fullcalendar-io-docs-display-header&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/header/&#34;&gt;header&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;カレンダー上部のボタンとタイトルを定義します。&lt;/p&gt;
-
-&lt;h5 id=&#34;custombuttons-http-fullcalendar-io-docs-display-custombuttons&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/customButtons&#34;&gt;customButtons&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;ヘッダーで使用されるカスタムボタンを定義します。&lt;/p&gt;
-
-&lt;h5 id=&#34;buttonicons-http-fullcalendar-io-docs-display-buttonicons&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/buttonIcons&#34;&gt;buttonIcons&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;ヘッダーボタンで表示するアイコンを決めます。&lt;/p&gt;
-
-&lt;h5 id=&#34;theme-http-fullcalendar-io-docs-display-theme&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/theme&#34;&gt;theme&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;jQuery UIテーマの使用不使用です。&lt;/p&gt;
-
-&lt;h5 id=&#34;themebuttonicons-http-fullcalendar-io-docs-display-themebuttonicons&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/themeButtonIcons&#34;&gt;themeButtonIcons&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;テーマで使用するアイコンを決定します。&lt;/p&gt;
-
-&lt;h5 id=&#34;firstday-http-fullcalendar-io-docs-display-firstday&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/firstDay&#34;&gt;firstDay&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;週始めを決めます。&lt;/p&gt;
-
-&lt;h5 id=&#34;isrtl-http-fullcalendar-io-docs-display&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;isRTL&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;カレンダーの表示向きです。&lt;/p&gt;
-
-&lt;h5 id=&#34;weekends-http-fullcalendar-io-docs-display-weekends&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/weekends&#34;&gt;weekends&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;カレンダーのビューに土日を含めるかどうかです。&lt;/p&gt;
-
-&lt;h5 id=&#34;hiddendays-http-fullcalendar-io-docs-display-hiddendays&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/hiddenDays&#34;&gt;hiddenDays&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;決まった曜日を非表示にすることができます。&lt;/p&gt;
-
-&lt;h5 id=&#34;fixedweekcount-http-fullcalendar-io-docs-display-fixedweekcount&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/fixedWeekCount&#34;&gt;fixedWeekCount&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;デフォルトは&lt;code&gt;true&lt;/code&gt;.必ず6週です。
-&lt;code&gt;false&lt;/code&gt;の場合は4や5週の場合があります。&lt;/p&gt;
-
-&lt;h5 id=&#34;weeknumbers-http-fullcalendar-io-docs-display-weeknumbers&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/weekNumbers&#34;&gt;weekNumbers&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;週番号を表示するかです。&lt;code&gt;true&lt;/code&gt;にすると左側に入ります。&lt;/p&gt;
-
-&lt;h5 id=&#34;weeknumbercalculation-http-fullcalendar-io-docs-display&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/&#34;&gt;weekNumberCalculation&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;weekNumbersの設定に合わせて週の数を計算します。&lt;/p&gt;
-
-&lt;h5 id=&#34;businesshours-http-fullcalendar-io-docs-display-businesshours&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/businessHours&#34;&gt;businessHours&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;ビジネスタイムの設定。&lt;/p&gt;
-
-&lt;h5 id=&#34;height-http-fullcalendar-io-docs-display-height&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/height&#34;&gt;height&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;カレンダーの高さを指定します。&lt;/p&gt;
-
-&lt;h5 id=&#34;aspectratio-http-fullcalendar-io-docs-display-aspectratio&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/aspectRatio&#34;&gt;aspectRatio&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;縦横のアスペクト比を決定します。&lt;/p&gt;
-
-&lt;h5 id=&#34;handlewindowresize-http-fullcalendar-io-docs-display-handlewindowresize&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/handleWindowResize&#34;&gt;handleWindowResize&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;ブラウザがリサイズされた時に、カレンダーをリサイズします。&lt;/p&gt;
-
-&lt;h5 id=&#34;eventlimit-http-fullcalendar-io-docs-display-eventlimit&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/eventLimit&#34;&gt;eventLimit&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;一日に表示するイベントの数の上限。&lt;/p&gt;
-
-&lt;h5 id=&#34;eventlimitclick-http-fullcalendar-io-docs-display-eventlimitclick&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/eventLimitClick&#34;&gt;eventLimitClick&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;eventLimitで設定した上限を超え、&lt;code&gt;more&lt;/code&gt;をクリックした時のアクション。&lt;/p&gt;
-
-&lt;h5 id=&#34;viewrender-callback-http-fullcalendar-io-docs-display-viewrender&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/viewRender&#34;&gt;viewRender (callback)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;レンダリング後のコールバック&lt;/p&gt;
-
-&lt;h5 id=&#34;viewdestroy-callback-http-fullcalendar-io-docs-display-viewdestroy&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/viewDestroy&#34;&gt;viewDestroy (callback)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;データ破壊後のコールバック&lt;/p&gt;
-
-&lt;h5 id=&#34;dayrender-callback-http-fullcalendar-io-docs-display-dayrender&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/dayRender&#34;&gt;dayRender (callback)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;セルを修正した時のコールバック&lt;/p&gt;
-
-&lt;h5 id=&#34;windowresize-callback-http-fullcalendar-io-docs-display-windowresize&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/windowResize&#34;&gt;windowResize (callback)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;リサイズ時のコールバック&lt;/p&gt;
-
-&lt;h5 id=&#34;render-method-http-fullcalendar-io-docs-display-render&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/render&#34;&gt;render (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;レンダリングメソッド。&lt;/p&gt;
-
-&lt;h5 id=&#34;destroy-method-http-fullcalendar-io-docs-display-destroy&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/display/destroy&#34;&gt;destroy (method)&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;要素を取り除く。&lt;/p&gt;
-</description>
+      <description>General Display   ◯ header カレンダー上部のボタンとタイトルを定義します。
+◯ customButtons ヘッダーで使用されるカスタムボタンを定義します。
+◯ buttonIcons ヘッダーボタンで表示するアイコンを決めます。
+◯ theme jQuery UIテーマの使用不使用です。
+◯ themeButtonIcons テーマで使用するアイコンを決定します。
+◯ firstDay 週始めを決めます。
+◯ isRTL カレンダーの表示向きです。
+◯ weekends カレンダーのビューに土日を含めるかどうかです。
+◯ hiddenDays 決まった曜日を非表示にすることができます。
+◯ fixedWeekCount デフォルトはtrue.必ず6週です。 falseの場合は4や5週の場合があります。
+◯ weekNumbers 週番号を表示するかです。trueにすると左側に入ります。
+◯ weekNumberCalculation weekNumbersの設定に合わせて週の数を計算します。
+◯ businessHours ビジネスタイムの設定。
+◯ height カレンダーの高さを指定します。
+◯ aspectRatio 縦横のアスペクト比を決定します。
+◯ handleWindowResize ブラウザがリサイズされた時に、カレンダーをリサイズします。
+◯ eventLimit 一日に表示するイベントの数の上限。
+◯ eventLimitClick eventLimitで設定した上限を超え、moreをクリックした時のアクション。
+◯ viewRender (callback) レンダリング後のコールバック
+◯ viewDestroy (callback) データ破壊後のコールバック</description>
     </item>
     
     <item>
@@ -201,150 +75,12 @@
       <pubDate>Fri, 22 Jan 2016 22:53:46 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0122_calendar/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://fullcalendar.io/&#34;&gt;FullCalendar&lt;/a&gt;のGoogleCalendar同期について。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/google_calendar/&#34;&gt;Google Calendar&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;google-calendar&#34;&gt;Google Calendar&lt;/h3&gt;
-
-&lt;p&gt;FullCalendarではGoogle Calendarのイベントを表示することができます。
-GoogleCalendarはバックエンド側で管理・保持しているイベントデータを提供することができます。
-(FullCalendarにはない機能)&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;before-you-code&#34;&gt;Before you code&amp;hellip;&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;GoogleCalendarのAPIキーが必要です&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://console.developers.google.com/&#34;&gt;Google Developer Console&lt;/a&gt;から新しいプロジェクトを作成してください&lt;/li&gt;
-&lt;li&gt;そのプロジェクトのサイドバーから、「APIs &amp;amp; auth &amp;gt; APIs」と移動します&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Calendar API&amp;rdquo;をオンにしてください。&lt;/li&gt;
-&lt;li&gt;サイドバーから「APIs &amp;amp; auth &amp;gt; Credentials」と移動します&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Public API access&amp;rdquo;セクション内の&amp;rdquo;Create new Key&amp;rdquo;をクリックします&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Browser Key&amp;rdquo;を選択します&lt;/li&gt;
-&lt;li&gt;カレンダーをホストするドメインが分かれば入力してください。いつでも変更できるので分からなければそのままで大丈夫です&lt;/li&gt;
-&lt;li&gt;新しいAPIキーが現れます。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;strong&gt;Googleを公開する&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;GoogleCalendarのインターフェイスで、左側にある&amp;rdquo;My calendars&amp;rdquo;へ&lt;/li&gt;
-&lt;li&gt;カレンダーにカーソルを当て、矢印をクリックします&lt;/li&gt;
-&lt;li&gt;メニューが表示されるので&amp;rdquo;Share this Calendar&amp;rdquo;をクリックします&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Make this calendar public&amp;rdquo;にチェックします&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Share only my free/busy information&amp;rdquo;にチェックが入っていないことを確認してください&lt;/li&gt;
-&lt;li&gt;保存します&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;strong&gt;GoogleCalendarのIDを取得する&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;GoogleCalendarのインターフェイスで、左側にある&amp;rdquo;My calendars&amp;rdquo;へ&lt;/li&gt;
-&lt;li&gt;カレンダーにカーソルを当て、矢印をクリックします&lt;/li&gt;
-&lt;li&gt;メニューが表示されるので&amp;rdquo;Calendar settings&amp;rdquo;をクリックします&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Calendar Address&amp;rdquo;セクションのCalendarIDを見てください。 &amp;ldquo;abcd1234@group.calendar.google.com&amp;rdquo;のようなものです。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;dependencies&#34;&gt;Dependencies&lt;/h3&gt;
-
-&lt;p&gt;続いて、必要なJS/CSSを追加します。標準的なファイルに加え、&lt;code&gt;gcal.js&lt;/code&gt;も追加します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#39;text/javascript&#39; src=&#39;fullcalendar/gcal.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;writing-the-code&#34;&gt;Writing the code&lt;/h3&gt;
-
-&lt;p&gt;JSでカレンダーを初期化する準備が整いました。これが最小のサンプルになります。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#39;text/javascript&#39;&amp;gt;
-
-$(document).ready(function() {
-    $(&#39;#calendar&#39;).fullCalendar({
-        googleCalendarApiKey: &#39;&amp;lt;YOUR API KEY&amp;gt;&#39;,
-        events: {
-            googleCalendarId: &#39;abcd1234@group.calendar.google.com&#39;
-        }
-    });
-});
-
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;特定の&lt;a href=&#34;http://fullcalendar.io/docs/event_data/Event_Source_Object/&#34;&gt;Event Source&lt;/a&gt;オプションを追加したければ、&lt;code&gt;events&lt;/code&gt;オブジェクトに含めることができます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#39;text/javascript&#39;&amp;gt;
-
-$(document).ready(function() {
-    $(&#39;#calendar&#39;).fullCalendar({
-        googleCalendarApiKey: &#39;&amp;lt;YOUR API KEY&amp;gt;&#39;,
-        events: {
-            googleCalendarId: &#39;abcd1234@group.calendar.google.com&#39;,
-            className: &#39;gcal-event&#39; // an option!
-        }
-    });
-});
-
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;timezones&#34;&gt;Timezones&lt;/h3&gt;
-
-&lt;p&gt;GoogleCalendarのプラグインでは&lt;a href=&#34;http://fullcalendar.io/docs/timezone/timezone/&#34;&gt;timezone&lt;/a&gt;をリスペクトしています。
-&lt;code&gt;false&lt;/code&gt;(デフォルト)にしておくと、GoogleCalendarのタイムゾーン設定が使用されます。特定のものを指定していれば、これらは無視されます。&lt;/p&gt;
-
-&lt;Hr&gt;
-
-&lt;h3 id=&#34;multiple-google-calendars&#34;&gt;Multiple Google Calendars&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;eventSources&lt;/code&gt;オプションを利用すれば複数のGoogleCalendarを利用することができます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&#39;text/javascript&#39;&amp;gt;
-
-$(document).ready(function() {
-    $(&#39;#calendar&#39;).fullCalendar({
-        googleCalendarApiKey: &#39;&amp;lt;YOUR API KEY&amp;gt;&#39;,
-        eventSources: [
-            {
-                googleCalendarId: &#39;abcd1234@group.calendar.google.com&#39;
-            },
-            {
-                googleCalendarId: &#39;efgh5678@group.calendar.google.com&#39;,
-                className: &#39;nice-event&#39;
-            }
-        ]
-    });
-});
-
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;Hr&gt;
-
-&lt;h3 id=&#34;advanced&#34;&gt;Advanced&lt;/h3&gt;
-
-&lt;p&gt;カレンダーごとに異なるAPIキーを利用する場合、&lt;code&gt;googleCalendarApiKey&lt;/code&gt;をセットするには個々の[EventSource]を用います。&lt;/p&gt;
-
-&lt;p&gt;GoogleAPIのエラーを検知する必要がある場合、jQueryのAJAZエラーハンドリングには方法がありません。FullCalendarの&lt;code&gt;googleCalendarError&lt;/code&gt;を使います。&lt;/p&gt;
-</description>
+      <description>FullCalendarのGoogleCalendar同期について。
+ Google Calendar   Google Calendar FullCalendarではGoogle Calendarのイベントを表示することができます。 GoogleCalendarはバックエンド側で管理・保持しているイベントデータを提供することができます。 (FullCalendarにはない機能)
+ Before you code&amp;hellip; GoogleCalendarのAPIキーが必要です
+ Google Developer Consoleから新しいプロジェクトを作成してください そのプロジェクトのサイドバーから、「APIs &amp;amp; auth &amp;gt; APIs」と移動します &amp;ldquo;Calendar API&amp;rdquo;をオンにしてください。 サイドバーから「APIs &amp;amp; auth &amp;gt; Credentials」と移動します &amp;ldquo;Public API access&amp;rdquo;セクション内の&amp;rdquo;Create new Key&amp;rdquo;をクリックします &amp;ldquo;Browser Key&amp;rdquo;を選択します カレンダーをホストするドメインが分かれば入力してください。いつでも変更できるので分からなければそのままで大丈夫です 新しいAPIキーが現れます。   Googleを公開する
+ GoogleCalendarのインターフェイスで、左側にある&amp;rdquo;My calendars&amp;rdquo;へ カレンダーにカーソルを当て、矢印をクリックします メニューが表示されるので&amp;rdquo;Share this Calendar&amp;rdquo;をクリックします &amp;ldquo;Make this calendar public&amp;rdquo;にチェックします &amp;ldquo;Share only my free/busy information&amp;rdquo;にチェックが入っていないことを確認してください 保存します   GoogleCalendarのIDを取得する
+ GoogleCalendarのインターフェイスで、左側にある&amp;rdquo;My calendars&amp;rdquo;へ カレンダーにカーソルを当て、矢印をクリックします メニューが表示されるので&amp;rdquo;Calendar settings&amp;rdquo;をクリックします &amp;ldquo;Calendar Address&amp;rdquo;セクションのCalendarIDを見てください。 &amp;ldquo;abcd1234@group.</description>
     </item>
     
     <item>
@@ -353,92 +89,15 @@ $(document).ready(function() {
       <pubDate>Thu, 21 Jan 2016 22:53:46 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0121_calendar/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://fullcalendar.io/&#34;&gt;FullCalendar&lt;/a&gt;の基本的な使い方です。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/usage/&#34;&gt;Basic Usage&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;basic-usage&#34;&gt;Basic Usage&lt;/h3&gt;
-
-&lt;p&gt;Webページにカレンダーを組み込む最初のステップは、正しいJSとCSSファイルを用意することです。
-FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイルを&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;に含めたことを確認してください。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&#39;stylesheet&#39; href=&#39;fullcalendar/fullcalendar.css&#39; /&amp;gt;
-&amp;lt;script src=&#39;lib/jquery.min.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&#39;lib/moment.min.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&#39;fullcalendar/fullcalendar.js&#39;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;jQueryとMomentは必ずFullCalendarのJSファイルより先に読み込んでください。&lt;/p&gt;
-
-&lt;p&gt;もしドラッグやリサイズをするのであれば、追加する必要のあるライブラリがあるかもしれないので、&lt;a href=&#34;http://fullcalendar.io/docs/event_ui/Requirements/&#34;&gt;こちら&lt;/a&gt;を見てください。&lt;/p&gt;
-
-&lt;p&gt;依存関係を書き終えたら、カレンダーを初期化するためのスクリプトを記述します。
-このコードはページの初期化後に実行される必要があります。最も良い方法はjQueryの&lt;code&gt;$(document).ready&lt;/code&gt;あたりを使うことです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
-    $(&#39;#calendar&#39;).fullCalendar({
-        // put your options and callbacks here
-    })
-
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上記のコードは&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;タグで囲んでください。
-ページ内のID&lt;code&gt;calendar&lt;/code&gt;要素の中にカレンダーを生成します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div id=&#39;calendar&#39;&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで空っぽの月カレンダーが表示されると思います。
-イベントの表示方法について学ぶには&lt;a href=&#34;http://fullcalendar.io/docs/google_calendar/&#34;&gt;Google Calendar&lt;/a&gt;もしくは&lt;a href=&#34;http://fullcalendar.io/docs/event_data/&#34;&gt;Event Data&lt;/a&gt;のセクションを参考にしてください。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;
-
-&lt;p&gt;FullCalendarのドキュメントの大半は、オプションの影響や振る舞いについてです。
-オプションはこのように、たいていカレンダーの初期化時にセットされます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar({
-    weekends: false // will hide Saturdays and Sundays
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;callbacks&#34;&gt;Callbacks&lt;/h3&gt;
-
-&lt;p&gt;コールバックはオプションのように並べられますが、これらの関数は特別なことが起こらなければ呼ばれません。
-下記のサンプルでは、ユーザーが日にちをクリックするとアラートが表示されるものです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar({
-    dayClick: function() {
-        alert(&#39;a day has been clicked!&#39;);
-    }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr&gt;
-
-&lt;h3 id=&#34;methods&#34;&gt;Methods&lt;/h3&gt;
-
-&lt;p&gt;メソッドは様々な方法を提供します。
-メソッドは既に初期化されたカレンダーのjQueryオブジェクトに対し、&lt;code&gt;fullCalendar&lt;/code&gt;コマンドを買います。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$(&#39;#calendar&#39;).fullCalendar(&#39;next&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これは&lt;code&gt;next&lt;/code&gt;メソッドです。カレンダーを次に進めるためのメソッドです。&lt;/p&gt;
-</description>
+      <description>FullCalendarの基本的な使い方です。
+ Basic Usage   Basic Usage Webページにカレンダーを組み込む最初のステップは、正しいJSとCSSファイルを用意することです。 FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイルを&amp;lt;head&amp;gt;に含めたことを確認してください。
+&amp;lt;link rel=&#39;stylesheet&#39; href=&#39;fullcalendar/fullcalendar.css&#39; /&amp;gt; &amp;lt;script src=&#39;lib/jquery.min.js&#39;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&#39;lib/moment.min.js&#39;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&#39;fullcalendar/fullcalendar.js&#39;&amp;gt;&amp;lt;/script&amp;gt;  jQueryとMomentは必ずFullCalendarのJSファイルより先に読み込んでください。
+もしドラッグやリサイズをするのであれば、追加する必要のあるライブラリがあるかもしれないので、こちらを見てください。
+依存関係を書き終えたら、カレンダーを初期化するためのスクリプトを記述します。 このコードはページの初期化後に実行される必要があります。最も良い方法はjQueryの$(document).readyあたりを使うことです。
+$(document).ready(function() { // page is now ready, initialize the calendar... $(&#39;#calendar&#39;).fullCalendar({ // put your options and callbacks here }) });  上記のコードは&amp;lt;script&amp;gt;タグで囲んでください。 ページ内のIDcalendar要素の中にカレンダーを生成します。
+&amp;lt;div id=&#39;calendar&#39;&amp;gt;&amp;lt;/div&amp;gt;  これで空っぽの月カレンダーが表示されると思います。 イベントの表示方法について学ぶにはGoogle CalendarもしくはEvent Dataのセクションを参考にしてください。
+ Options FullCalendarのドキュメントの大半は、オプションの影響や振る舞いについてです。 オプションはこのように、たいていカレンダーの初期化時にセットされます。
+$(&#39;#calendar&#39;).fullCalendar({ weekends: false // will hide Saturdays and Sundays });   Callbacks コールバックはオプションのように並べられますが、これらの関数は特別なことが起こらなければ呼ばれません。 下記のサンプルでは、ユーザーが日にちをクリックするとアラートが表示されるものです。</description>
     </item>
     
     <item>
@@ -447,56 +106,17 @@ FullCalendarのスタイルシート、FullCalendar、jQuery、Momentファイ�
       <pubDate>Tue, 19 Jan 2016 22:53:46 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0124_calendar/</guid>
-      <description>
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fullcalendar.io/docs/agenda/&#34;&gt;Agenda Options&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;agendaWeek&lt;/code&gt;と&lt;code&gt;agendaDay&lt;/code&gt;用のオプションです。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h5 id=&#34;alldayslot-http-fullcalendar-io-docs-agenda-alldayslot&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDaySlot&#34;&gt;allDaySlot&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;&amp;ldquo;all-day&amp;rdquo;(終日)の表示をカレンダーの上部にするかどうか。&lt;/p&gt;
-
-&lt;h5 id=&#34;alldaytext-http-fullcalendar-io-docs-agenda-alldaytext&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/allDayText&#34;&gt;allDayText&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;&amp;ldquo;all-day&amp;rdquo;に表示するテキスト。&lt;/p&gt;
-
-&lt;h5 id=&#34;slotduration-http-fullcalendar-io-docs-agenda-slotduration&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotDuration&#34;&gt;slotDuration&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;枠の間隔。&lt;/p&gt;
-
-&lt;h5 id=&#34;slotlabelformat-http-fullcalendar-io-docs-agenda-slotlabelformat&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelFormat&#34;&gt;slotLabelFormat&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;枠の部分の表示フォーマット。&lt;/p&gt;
-
-&lt;h5 id=&#34;slotlabelinterval-http-fullcalendar-io-docs-agenda-slotlabelinterval&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/slotLabelInterval&#34;&gt;slotLabelInterval&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;枠部分にテキストを表示する間隔を決めます。&lt;/p&gt;
-
-&lt;h5 id=&#34;snapduration-http-fullcalendar-io-docs-agenda-snapduration&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/snapDuration&#34;&gt;snapDuration&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;イベントをドラックでずらす間隔を決めます。&lt;/p&gt;
-
-&lt;h5 id=&#34;scrolltime-http-fullcalendar-io-docs-agenda-scrolltime&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/scrollTime&#34;&gt;scrollTime&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;スクロール枠を決めます。&lt;/p&gt;
-
-&lt;h5 id=&#34;mintime-http-fullcalendar-io-docs-agenda-mintime&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/minTime&#34;&gt;minTime&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;表示する時間の最低枠を決めます。&lt;/p&gt;
-
-&lt;h5 id=&#34;maxtime-http-fullcalendar-io-docs-agenda-maxtime&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/maxTime&#34;&gt;maxTime&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;表示する時間の最大枠を決めます。&lt;/p&gt;
-
-&lt;h5 id=&#34;loteventoverlap-http-fullcalendar-io-docs-agenda-loteventoverlap&#34;&gt;◯ &lt;a href=&#34;http://fullcalendar.io/docs/agenda/lotEventOverlap&#34;&gt;lotEventOverlap&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;イベントの時間が重複した際の表示方法&lt;/p&gt;
-</description>
+      <description>Agenda Options  agendaWeekとagendaDay用のオプションです。
+ ◯ allDaySlot &amp;ldquo;all-day&amp;rdquo;(終日)の表示をカレンダーの上部にするかどうか。
+◯ allDayText &amp;ldquo;all-day&amp;rdquo;に表示するテキスト。
+◯ slotDuration 枠の間隔。
+◯ slotLabelFormat 枠の部分の表示フォーマット。
+◯ slotLabelInterval 枠部分にテキストを表示する間隔を決めます。
+◯ snapDuration イベントをドラックでずらす間隔を決めます。
+◯ scrollTime スクロール枠を決めます。
+◯ minTime 表示する時間の最低枠を決めます。
+◯ maxTime 表示する時間の最大枠を決めます。
+◯ lotEventOverlap イベントの時間が重複した際の表示方法</description>
     </item>
     
   </channel>

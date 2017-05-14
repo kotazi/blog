@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Dec 2015 16:41:10 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/iphone/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/iphone/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>手っ取り早くiPhoneからMacのローカルホストを確認する方法</title>
@@ -15,46 +17,14 @@
       <pubDate>Mon, 14 Dec 2015 16:41:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/20151214_iphone_localhost/</guid>
-      <description>
-
-&lt;p&gt;iPhoneでローカル開発環境をかくにんしたいなと思うけれど、
-Charlesを使う方法だったり、ごちゃごちゃさせたり、いろいろ方法がある。
-今回はMacとiPhoneで同じWi-Fiに接続できる際に一番手っ取り早い方法。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;前提条件としてiPhoneとMacが同じWi-Fiに接続されているものとします。&lt;/p&gt;
-
-&lt;h5 id=&#34;macのipアドレスを確認する&#34;&gt;◯ Macのipアドレスを確認する&lt;/h5&gt;
-
-&lt;p&gt;ターミナル上で&lt;code&gt;ifconfig&lt;/code&gt;と入力して確認する。&lt;/p&gt;
-
-&lt;p&gt;ifconfig内の見方についてはここ。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/ait/articles/0109/29/news004.html&#34;&gt;ifconfig　～（IP）ネットワーク環境の確認／設定を行う&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;各インターフェイスの役割については下記が参考になる。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bambinya.hateblo.jp/entry/2015/04/04/234428&#34;&gt;ターミナルからプライベートIPアドレスとMACアドレス、ルーティングテーブルを確認する&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;またifconfigでの確認ができなければ、システム環境設定のネットワークから確認が可能。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/AHWkah5P951L7LCfLBTtPbZVz9miBB-hptcB/image.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;iphone側の設定&#34;&gt;◯ iPhone側の設定&lt;/h5&gt;
-
-&lt;p&gt;自分のMacのIPアドレスと確認し、iPhoneのWi-Fi設定を開く。
-HTTPプロキシから手動を選択し、MacのIPアドレスを入力する。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.evernote.com/l/AHVh_WX90mdKrrXSMLQYw8hVFOwR_lOxmboB/image.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;iPhone側で設定したIPを直接叩けばアクセスできる。
-&lt;img src=&#34;https://www.evernote.com/l/AHWUMT8vaWBG2KRS1P_yJj8tahEkoZX4egoB/image.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <description> iPhoneでローカル開発環境をかくにんしたいなと思うけれど、 Charlesを使う方法だったり、ごちゃごちゃさせたり、いろいろ方法がある。 今回はMacとiPhoneで同じWi-Fiに接続できる際に一番手っ取り早い方法。
+ 前提条件としてiPhoneとMacが同じWi-Fiに接続されているものとします。
+◯ Macのipアドレスを確認する ターミナル上でifconfigと入力して確認する。
+ifconfig内の見方についてはここ。
+ ifconfig　～（IP）ネットワーク環境の確認／設定を行う  各インターフェイスの役割については下記が参考になる。
+ ターミナルからプライベートIPアドレスとMACアドレス、ルーティングテーブルを確認する  またifconfigでの確認ができなければ、システム環境設定のネットワークから確認が可能。
+◯ iPhone側の設定 自分のMacのIPアドレスと確認し、iPhoneのWi-Fi設定を開く。 HTTPプロキシから手動を選択し、MacのIPアドレスを入力する。
+iPhone側で設定したIPを直接叩けばアクセスできる。 </description>
     </item>
     
   </channel>

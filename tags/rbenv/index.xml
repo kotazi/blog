@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Nov 2015 18:11:30 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/rbenv/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/rbenv/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>PowderとrbenvとYosemiteと</title>
@@ -15,66 +17,13 @@
       <pubDate>Mon, 16 Nov 2015 18:11:30 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2015111401/</guid>
-      <description>
-
-&lt;p&gt;言われるがまま導入したPowderがいつのまにか動かなくなっていた。&lt;br /&gt;
-いまいちなんなのか分かっていなかったので調べながら直しました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;img src=&#34;./../../media/logo-pow.png&#34; alt=&#34;pow&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://pow.cx/&#34;&gt;Pow&lt;/a&gt;は設定が不要なRails &amp;amp; Rackサーバ。&lt;br /&gt;
-そしてそのコマンド操作を手助けしてくれるのが&lt;a href=&#34;https://github.com/Rodreegez/powder&#34;&gt;powder&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;設定周り&#34;&gt;設定周り&lt;/h2&gt;
-
-&lt;h5 id=&#34;powのインストール&#34;&gt;◯ Powのインストール&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;$ curl get.pow.cx | sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;シンボリックリンクの作成&#34;&gt;◯ シンボリックリンクの作成&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cd ~/.pow
-$ ln -s /path/to/myapp
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;powderのインストール&#34;&gt;◯ powderのインストール&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gem install powder
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;powderコマンド&#34;&gt;◯ powderコマンド&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;
-# link
-$ powder link
-
-# unlink
-$ powder unlink
-
-# list
-$ powder list
-
-# config
-$ powder config
-
-# restart
-$ powder restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;rbenvで使う時&#34;&gt;◯ rbenvで使う時&lt;/h5&gt;
-
-&lt;p&gt;rbenvで使う場合は&lt;code&gt;~/.powconfig&lt;/code&gt;にパスを通す必要がある。&lt;br /&gt;
-powがrbenvを使っているにもかかわらず、システムのrubyを使ってしまうため。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# ~/.powconfig
-export PATH=&amp;quot;/Users/kz/.rbenv/shims:/Users/kz/.rbenv/bin:$PATH&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;参考: &lt;a href=&#34;https://github.com/basecamp/pow/issues/202&#34;&gt;rbenv does not work well with pow&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>言われるがまま導入したPowderがいつのまにか動かなくなっていた。
+いまいちなんなのか分かっていなかったので調べながら直しました。
+ Powは設定が不要なRails &amp;amp; Rackサーバ。
+そしてそのコマンド操作を手助けしてくれるのがpowder。
+設定周り ◯ Powのインストール $ curl get.pow.cx | sh  ◯ シンボリックリンクの作成 $ cd ~/.pow $ ln -s /path/to/myapp  ◯ powderのインストール $ gem install powder  ◯ powderコマンド  # link $ powder link # unlink $ powder unlink # list $ powder list # config $ powder config # restart $ powder restart  ◯ rbenvで使う時 rbenvで使う場合は~/.powconfigにパスを通す必要がある。
+powがrbenvを使っているにもかかわらず、システムのrubyを使ってしまうため。
+# ~/.powconfig export PATH=&amp;quot;/Users/kz/.</description>
     </item>
     
   </channel>

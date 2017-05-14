@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Mar 2016 18:04:32 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>cronによるメールを停止する方法</title>
@@ -15,24 +17,10 @@
       <pubDate>Tue, 01 Mar 2016 18:04:32 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0301_crontab/</guid>
-      <description>&lt;p&gt;cronからのメールが1分おきに来るようになってしまったので直しました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;pre&gt;&lt;code&gt;crontab -e
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;でcronの設定ファイルを開き、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MAILTO=&amp;quot;&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;を追加。以上。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://network.station.ez-net.jp/server/linux/service/crond/mail.asp&#34;&gt;定時実行プログラム CRON からのメール通知を無効化する&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>cronからのメールが1分おきに来るようになってしまったので直しました。
+ crontab -e  でcronの設定ファイルを開き、
+MAILTO=&amp;quot;&amp;quot;  を追加。以上。
+ 定時実行プログラム CRON からのメール通知を無効化する  </description>
     </item>
     
   </channel>

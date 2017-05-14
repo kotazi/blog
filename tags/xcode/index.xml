@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 May 2016 11:30:10 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>【Xcode】デバッグスキル向上のために</title>
@@ -15,35 +17,15 @@
       <pubDate>Fri, 20 May 2016 11:30:10 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0520_xcode_debug/</guid>
-      <description>&lt;p&gt;最近iOSプログラミングを始めた。&lt;br /&gt;
-まずはデバッグスキルを高めようということでまとめました。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/jp/documentation/ToolsLanguages/Conceptual/Xcode_Overview/Debugging/UsingtheDebugger.html&#34;&gt;Xcodeの概要: デバッガを使う&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;基本的なパネルの使い方や名前。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://developer.apple.com/jp/documentation/ToolsLanguages/Conceptual/Xcode_Overview/Art/XC_O_DebugArea_2x.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://blogios.stack3.net/archives/776&#34;&gt;Xcodeでのデバッグ方法 | Cyber Passion for iOS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Xcodeを使った基本的なデバッグ方法がまとまっている。初心者向き。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://qiita.com/caesar_cat/items/f03e37c543d3059e8776&#34;&gt;知っておくと便利なXcodeのブレークポイントデバッグ術&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://himaratsu.hatenablog.com/entry/xcodedebug&#34;&gt;初級者から中級者にレベルアップするためのXcodeデバッグ術&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://qiita.com/Kta-M/items/b8f6f74b3288611e7536&#34;&gt;XcodeのBreakPointで式の評価値を確認してデバッグに革命を起こす！&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://qiita.com/ppengotsu/items/3862e5bd7fb2129b2a56&#34;&gt;Xcode,プロジェクト設定これだけはしておくといいかも(初心者向けかも)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>最近iOSプログラミングを始めた。
+まずはデバッグスキルを高めようということでまとめました。
+  Xcodeの概要: デバッガを使う  基本的なパネルの使い方や名前。
+ Xcodeでのデバッグ方法 | Cyber Passion for iOS  Xcodeを使った基本的なデバッグ方法がまとまっている。初心者向き。
+ 知っておくと便利なXcodeのブレークポイントデバッグ術
+ 初級者から中級者にレベルアップするためのXcodeデバッグ術
+ XcodeのBreakPointで式の評価値を確認してデバッグに革命を起こす！
+ Xcode,プロジェクト設定これだけはしておくといいかも(初心者向けかも)
+  </description>
     </item>
     
   </channel>

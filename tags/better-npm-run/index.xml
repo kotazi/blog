@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Mar 2016 15:45:52 +0900</lastBuildDate>
-    <atom:link href="http://kotazi.github.io/blog/tags/better-npm-run/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://kotazi.github.io/blog/tags/better-npm-run/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>better-npm-runを使ってpackage.jsonを整備</title>
@@ -15,66 +17,12 @@
       <pubDate>Thu, 10 Mar 2016 15:45:52 +0900</pubDate>
       
       <guid>http://kotazi.github.io/blog/post/2016/0310_better-npm-run/</guid>
-      <description>&lt;p&gt;ReduxのStarterKitを触っていて気付いたのでメモ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/benoror/better-npm-run&#34;&gt;benoror/better-npm-run&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt;内でのハードコーディングを避ける。&lt;/p&gt;
-
-&lt;p&gt;下記のように書く。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;: {
-  &amp;quot;compile&amp;quot;: &amp;quot;better-npm-run compile&amp;quot;,
-  &amp;quot;start&amp;quot;: &amp;quot;better-npm-run start&amp;quot;,
-  &amp;quot;dev&amp;quot;: &amp;quot;better-npm-run dev&amp;quot;,
-  &amp;quot;test&amp;quot;: &amp;quot;better-npm-run test&amp;quot;
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;better-npm-run&lt;/code&gt;がどのように動作するかというと、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;betterScripts&amp;quot;: {
-  &amp;quot;compile&amp;quot;: {
-    &amp;quot;command&amp;quot;: &amp;quot;babel-node bin/compile&amp;quot;,
-    &amp;quot;env&amp;quot;: {
-      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
-    }
-  },
-  &amp;quot;dev&amp;quot;: {
-    &amp;quot;command&amp;quot;: &amp;quot;nodemon --exec babel-node bin/server&amp;quot;,
-    &amp;quot;env&amp;quot;: {
-      &amp;quot;NODE_ENV&amp;quot;: &amp;quot;development&amp;quot;,
-      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
-    }
-  },
-  &amp;quot;deploy&amp;quot;: {
-    &amp;quot;command&amp;quot;: &amp;quot;npm run clean &amp;amp;&amp;amp; npm run compile&amp;quot;,
-    &amp;quot;env&amp;quot;: {
-      &amp;quot;NODE_ENV&amp;quot;: &amp;quot;production&amp;quot;,
-      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
-    }
-  },
-  &amp;quot;start&amp;quot;: {
-    &amp;quot;command&amp;quot;: &amp;quot;babel-node bin/server&amp;quot;,
-    &amp;quot;env&amp;quot;: {
-      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
-    }
-  },
-  &amp;quot;test&amp;quot;: {
-    &amp;quot;command&amp;quot;: &amp;quot;babel-node ./node_modules/karma/bin/karma start build/karma.conf&amp;quot;,
-    &amp;quot;env&amp;quot;: {
-      &amp;quot;NODE_ENV&amp;quot;: &amp;quot;test&amp;quot;,
-      &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot;
-    }
-  }
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんな感じになる。
-冗長になりがちなpackage.jsonがきれいに。&lt;/p&gt;
-</description>
+      <description>ReduxのStarterKitを触っていて気付いたのでメモ。
+benoror/better-npm-run
+ package.json内でのハードコーディングを避ける。
+下記のように書く。
+&amp;quot;scripts&amp;quot;: { &amp;quot;compile&amp;quot;: &amp;quot;better-npm-run compile&amp;quot;, &amp;quot;start&amp;quot;: &amp;quot;better-npm-run start&amp;quot;, &amp;quot;dev&amp;quot;: &amp;quot;better-npm-run dev&amp;quot;, &amp;quot;test&amp;quot;: &amp;quot;better-npm-run test&amp;quot; },  better-npm-runがどのように動作するかというと、
+&amp;quot;betterScripts&amp;quot;: { &amp;quot;compile&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;babel-node bin/compile&amp;quot;, &amp;quot;env&amp;quot;: { &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot; } }, &amp;quot;dev&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;nodemon --exec babel-node bin/server&amp;quot;, &amp;quot;env&amp;quot;: { &amp;quot;NODE_ENV&amp;quot;: &amp;quot;development&amp;quot;, &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot; } }, &amp;quot;deploy&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;npm run clean &amp;amp;&amp;amp; npm run compile&amp;quot;, &amp;quot;env&amp;quot;: { &amp;quot;NODE_ENV&amp;quot;: &amp;quot;production&amp;quot;, &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot; } }, &amp;quot;start&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;babel-node bin/server&amp;quot;, &amp;quot;env&amp;quot;: { &amp;quot;DEBUG&amp;quot;: &amp;quot;app:*&amp;quot; } }, &amp;quot;test&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;babel-node .</description>
     </item>
     
   </channel>
