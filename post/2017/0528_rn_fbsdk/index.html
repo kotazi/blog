@@ -7,7 +7,7 @@
 <meta name="author" content="kotazi">
 <meta name="description" content="Hi, I&#39;m web engineer">
 <meta name="generator" content="Hugo 0.20.7" />
-<title>いまいち忘れるjQuery</title>
+<title>React Native: Facebook SDKエラー対応</title>
 <link rel="shortcut icon" href="http://kotazi.github.io/blog/images/favicon.ico">
 <link rel="stylesheet" href="http://kotazi.github.io/blog/css/style.css">
 <link rel="stylesheet" href="http://kotazi.github.io/blog/css/highlight.css">
@@ -21,24 +21,17 @@
 <link href="http://kotazi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="kotazi.com" />
 
 
-<meta property="og:title" content="いまいち忘れるjQuery" />
-<meta property="og:description" content="なんだかjQueryの使い方ってそこそこに忘れる。 忘れるというか、それなりに検索をかけているなと。
-そこで。
- jQuery日本語リファレンス  ヌーのサイトに一覧ページがあることを知った。
-困ったときはここを見ればいいし、チートシートもある。
- jQuery Quick API Reference  wrapAll()とか初めて使ったけど便利だ。
-ちなみに、createElement()みたいなメソッドはなくて、 普通に$(&#39;&lt;div&gt;&lt;/div&gt;&#39;)ってやって作るらしい。" />
+<meta property="og:title" content="React Native: Facebook SDKエラー対応" />
+<meta property="og:description" content=" 概要 2017/05/25にFacebook SDKの4.23.0がリリースされたらしく、それの影響でfacebook/facebook-android-sdkにエラーが出ている。
+:react-native-fbsdk:processReleaseResources FAILED  対応 /node_modules/react-native-fbsdk/android/build.gradleを以下のように書き換える。
+// Before compile(&#39;com.facebook.android:facebook-android-sdk:4.&#43;&#39;)  // After compile(&#39;com.facebook.android:facebook-android-sdk:4.22.1&#39;)  参考  Facebook SDK for Android Changelog 4.x Facebook Sdk Android Error Building  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://kotazi.github.io/blog/post/20151210_jquery/" />
+<meta property="og:url" content="http://kotazi.github.io/blog/post/2017/0528_rn_fbsdk/" />
 
 
 
-<meta property="article:published_time" content="2015-12-10T09:38:50&#43;09:00"/>
-<meta property="article:modified_time" content="2015-12-10T09:38:50&#43;09:00"/>
-
-
-
-
+<meta property="article:published_time" content="2017-05-28T12:16:06&#43;09:00"/>
+<meta property="article:modified_time" content="2017-05-28T12:16:06&#43;09:00"/>
 
 
 
@@ -48,17 +41,18 @@
 
 
 
-<meta itemprop="name" content="いまいち忘れるjQuery">
-<meta itemprop="description" content="なんだかjQueryの使い方ってそこそこに忘れる。 忘れるというか、それなりに検索をかけているなと。
-そこで。
- jQuery日本語リファレンス  ヌーのサイトに一覧ページがあることを知った。
-困ったときはここを見ればいいし、チートシートもある。
- jQuery Quick API Reference  wrapAll()とか初めて使ったけど便利だ。
-ちなみに、createElement()みたいなメソッドはなくて、 普通に$(&#39;&lt;div&gt;&lt;/div&gt;&#39;)ってやって作るらしい。">
 
 
-<meta itemprop="dateModified" content="2015-12-10T09:38:50&#43;09:00" />
-<meta itemprop="wordCount" content="13">
+
+
+<meta itemprop="name" content="React Native: Facebook SDKエラー対応">
+<meta itemprop="description" content=" 概要 2017/05/25にFacebook SDKの4.23.0がリリースされたらしく、それの影響でfacebook/facebook-android-sdkにエラーが出ている。
+:react-native-fbsdk:processReleaseResources FAILED  対応 /node_modules/react-native-fbsdk/android/build.gradleを以下のように書き換える。
+// Before compile(&#39;com.facebook.android:facebook-android-sdk:4.&#43;&#39;)  // After compile(&#39;com.facebook.android:facebook-android-sdk:4.22.1&#39;)  参考  Facebook SDK for Android Changelog 4.x Facebook Sdk Android Error Building  ">
+
+
+<meta itemprop="dateModified" content="2017-05-28T12:16:06&#43;09:00" />
+<meta itemprop="wordCount" content="25">
 
 
 
@@ -70,14 +64,11 @@
 
 
 
-<meta name="twitter:text:title" content="いまいち忘れるjQuery"/>
-<meta name="twitter:title" content="いまいち忘れるjQuery"/>
-<meta name="twitter:description" content="なんだかjQueryの使い方ってそこそこに忘れる。 忘れるというか、それなりに検索をかけているなと。
-そこで。
- jQuery日本語リファレンス  ヌーのサイトに一覧ページがあることを知った。
-困ったときはここを見ればいいし、チートシートもある。
- jQuery Quick API Reference  wrapAll()とか初めて使ったけど便利だ。
-ちなみに、createElement()みたいなメソッドはなくて、 普通に$(&#39;&lt;div&gt;&lt;/div&gt;&#39;)ってやって作るらしい。"/>
+<meta name="twitter:text:title" content="React Native: Facebook SDKエラー対応"/>
+<meta name="twitter:title" content="React Native: Facebook SDKエラー対応"/>
+<meta name="twitter:description" content=" 概要 2017/05/25にFacebook SDKの4.23.0がリリースされたらしく、それの影響でfacebook/facebook-android-sdkにエラーが出ている。
+:react-native-fbsdk:processReleaseResources FAILED  対応 /node_modules/react-native-fbsdk/android/build.gradleを以下のように書き換える。
+// Before compile(&#39;com.facebook.android:facebook-android-sdk:4.&#43;&#39;)  // After compile(&#39;com.facebook.android:facebook-android-sdk:4.22.1&#39;)  参考  Facebook SDK for Android Changelog 4.x Facebook Sdk Android Error Building  "/>
 
 
 
@@ -100,41 +91,41 @@
         
 <article class="post">
     <header>
-        <h1>いまいち忘れるjQuery</h1>
+        <h1>React Native: Facebook SDKエラー対応</h1>
         <h2 class="headline">
-        December 10, 2015
+        May 28, 2017
         <br>
-        
-        
-            
-                <a href="http://kotazi.github.io/blog/tags/jquery">jQuery</a>
-            
-                <a href="http://kotazi.github.io/blog/tags/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9">リファレンス</a>
-            
-        
         
         </h2>
     </header>
     <section id="post-body">
-        <p>なんだかjQueryの使い方ってそこそこに忘れる。
-忘れるというか、それなりに検索をかけているなと。</p>
+        
 
-<p>そこで。</p>
+<h2 id="概要">概要</h2>
+
+<p>2017/05/25にFacebook SDKの4.23.0がリリースされたらしく、それの影響で<code>facebook/facebook-android-sdk</code>にエラーが出ている。</p>
+
+<pre><code>:react-native-fbsdk:processReleaseResources FAILED
+</code></pre>
+
+<h2 id="対応">対応</h2>
+
+<p><code>/node_modules/react-native-fbsdk/android/build.gradle</code>を以下のように書き換える。</p>
+
+<pre><code>// Before
+compile('com.facebook.android:facebook-android-sdk:4.+')
+</code></pre>
+
+<pre><code>// After
+compile('com.facebook.android:facebook-android-sdk:4.22.1')
+</code></pre>
+
+<h2 id="参考">参考</h2>
 
 <ul>
-<li><a href="http://semooh.jp/jquery/api/selectors/">jQuery日本語リファレンス</a></li>
+<li><a href="https://developers.facebook.com/docs/android/change-log-4x">Facebook SDK for Android Changelog 4.x</a></li>
+<li><a href="https://stackoverflow.com/questions/44190829/facebook-sdk-android-error-building">Facebook Sdk Android Error Building</a></li>
 </ul>
-
-<p>ヌーのサイトに一覧ページがあることを知った。<br />
-困ったときはここを見ればいいし、チートシートもある。</p>
-
-<ul>
-<li><a href="https://oscarotero.com/jquery/">jQuery Quick API Reference</a></li>
-</ul>
-
-<p><code>wrapAll()</code>とか初めて使ったけど便利だ。<br />
-ちなみに、<code>createElement()</code>みたいなメソッドはなくて、
-  普通に<code>$('&lt;div&gt;&lt;/div&gt;')</code>ってやって作るらしい。</p>
 
     </section>
 </article>
@@ -148,7 +139,7 @@
     </div>
     </a>
     <section id="sharing">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f20151210_jquery%2f - %e3%81%84%e3%81%be%e3%81%84%e3%81%a1%e5%bf%98%e3%82%8c%e3%82%8bjQuery by @kotazi"><span class="icon-twitter"> tweet</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fkotazi.github.io%2fblog%2fpost%2f2017%2f0528_rn_fbsdk%2f - React%20Native%3a%20Facebook%20SDK%e3%82%a8%e3%83%a9%e3%83%bc%e5%af%be%e5%bf%9c by @kotazi"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -164,9 +155,9 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'spf13';
-    var disqus_identifier = 'http:\/\/kotazi.github.io\/blog\/post\/20151210_jquery\/';
-    var disqus_title = 'いまいち忘れるjQuery';
-    var disqus_url = 'http:\/\/kotazi.github.io\/blog\/post\/20151210_jquery\/';
+    var disqus_identifier = 'http:\/\/kotazi.github.io\/blog\/post\/2017\/0528_rn_fbsdk\/';
+    var disqus_title = 'React Native: Facebook SDKエラー対応';
+    var disqus_url = 'http:\/\/kotazi.github.io\/blog\/post\/2017\/0528_rn_fbsdk\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -182,10 +173,6 @@
 
     
     
-    
-        <li>
-            <a href="http://kotazi.github.io/blog/post/2017/0528_rn_fbsdk/">React Native: Facebook SDKエラー対応<aside class="dates">May 28 2017</aside></a>
-        </li>
     
         <li>
             <a href="http://kotazi.github.io/blog/post/2017/0517_coffee/">ゆっくり、いそげ<aside class="dates">May 17 2017</aside></a>
@@ -221,6 +208,10 @@
     
         <li>
             <a href="http://kotazi.github.io/blog/post/2016/1007_rebase/">git rebaseについて<aside class="dates">Oct 7 2016</aside></a>
+        </li>
+    
+        <li>
+            <a href="http://kotazi.github.io/blog/post/2016/1006_kigyouka/">起業家はどこで選択を誤るのか<aside class="dates">Oct 6 2016</aside></a>
         </li>
     
 </ul>

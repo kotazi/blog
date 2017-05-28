@@ -6,10 +6,21 @@
     <description>Recent content on kotazi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 May 2017 08:20:19 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 28 May 2017 12:16:06 +0900</lastBuildDate>
     
 	<atom:link href="http://kotazi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>React Native: Facebook SDKエラー対応</title>
+      <link>http://kotazi.github.io/blog/post/2017/0528_rn_fbsdk/</link>
+      <pubDate>Sun, 28 May 2017 12:16:06 +0900</pubDate>
+      
+      <guid>http://kotazi.github.io/blog/post/2017/0528_rn_fbsdk/</guid>
+      <description> 概要 2017/05/25にFacebook SDKの4.23.0がリリースされたらしく、それの影響でfacebook/facebook-android-sdkにエラーが出ている。
+:react-native-fbsdk:processReleaseResources FAILED  対応 /node_modules/react-native-fbsdk/android/build.gradleを以下のように書き換える。
+// Before compile(&#39;com.facebook.android:facebook-android-sdk:4.+&#39;)  // After compile(&#39;com.facebook.android:facebook-android-sdk:4.22.1&#39;)  参考  Facebook SDK for Android Changelog 4.x Facebook Sdk Android Error Building  </description>
+    </item>
     
     <item>
       <title>ゆっくり、いそげ</title>
